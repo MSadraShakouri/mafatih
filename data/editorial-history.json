@@ -1,0 +1,1709 @@
+{
+  "evidence": {
+    "quran-meta-title-check": {
+      "url": "https://api.alquran.cloud/v1/meta",
+      "description": "Quran chapter IDs and Arabic/Persian titles were cross-checked against chapter metadata; replacement display titles reference the existing linked English document metadata. These checks do not verify text, translation or rights."
+    },
+    "quran-merits-title-check": {
+      "url": "https://api.alquran.cloud/v1/meta",
+      "description": "The Persian item titles, chapter names in Quran metadata and linked English document bodies identify five chapter-virtue topics. The replacement English and Arabic display titles are editorial translations, not a verification of the underlying text, translation or rights. The incorrect English document source metadata is preserved separately."
+    },
+    "erfan-mujir-review": {
+      "url": "https://erfan.ir/mafatih46amp",
+      "description": "The live Arabic/Persian Mujir presents the disputed divine names in the same order and prints the missing final letters. The legacy edition may differ in wording; only the evident rotation, truncation and typos were changed."
+    },
+    "erfan-tawassul-review": {
+      "url": "https://erfan.ir/mafatih52amp",
+      "description": "The live Tawassul text has one occurrence of قرار in the disputed Persian phrase; the legacy duplicate is a transcription error."
+    },
+    "erfan-warith-review": {
+      "url": "https://erfan.ir/mafatih259amp",
+      "description": "The Persian instruction is separate from the recited Arabic, and ابن وليه is translated as son of His wali, not son of God."
+    },
+    "quran-basmala-duplication": {
+      "url": "https://api.alquran.cloud/v1/quran/quran-simple",
+      "description": "In 17 added chapters the bilingual opening is already a separate row and verse 1 begins with the same opening. Remove that repeated prefix from the verse row only. Edition and redistribution rights are separate questions."
+    },
+    "unicode-bom": {
+      "url": "https://www.unicode.org/faq/utf_bom.html",
+      "description": "A leading U+FEFF byte-order mark is an encoding signature, not Quran text. The previous exact value remains in the history."
+    },
+    "alhassanain-item-title-review": {
+      "url": "https://alhassanain.org/english/?com=book&id=928",
+      "description": "The relevant Persian headings and the existing English chapter headings identify the item topics; an editorial title correction does not verify the English translation or permission."
+    },
+    "treasures-mixed-document-review": {
+      "url": "https://raw.githubusercontent.com/KazTronics/AhlulBayt_Treasures/a59bd5f8fe078532622a08ea60c19d164fb425cb/duas_data.jsonl",
+      "description": "The pinned source documents contain Arabic/English material for different subjects. Imported introductions from separate non-tr documents had been mixed into those tr documents; preserve their exact references and detach the seven inconsistent item links."
+    },
+    "kumayl-audio-menu-review": {
+      "url": "https://erfan.ir/mafatih41amp",
+      "description": "The current source page separates names in audio menus from the text. The eight isolated person names preceding the imported Kumayl introduction are classified as audio-menu artifacts, not prayer or Persian translation. The current audio list need not reproduce the older list."
+    },
+    "tawassul-audio-menu-review": {
+      "url": "https://erfan.ir/mafatih52amp",
+      "description": "The current source page separates audio choices from the narrative. The three isolated names at the beginning are audio-menu artifacts; retained in canonical data and omitted from runtime content."
+    },
+    "mujir-audio-menu-review": {
+      "url": "https://erfan.ir/mafatih46amp",
+      "description": "The isolated reciter name before the narrative is an audio-menu artifact; retained in canonical data and omitted from runtime content."
+    },
+    "parhizkar-audio-menu-review": {
+      "url": "https://jamilmedia.ir/surah-yasin-parhizkar/",
+      "description": "Parhizkar is identified as a Quran reciter. Sixteen isolated occurrences before Quran/chapter-merit content are audio-menu artifacts; this does not classify every similar name in the corpus."
+    },
+    "seventh-ali-ziyarat-review": {
+      "url": "https://alseraj.net/مفاتيح_الجنان/الزيارة-السابعة-المطلقة-لأميرالمؤمن/",
+      "description": "The seventh ziyarat has the two disputed Arabic greetings in the later sequence, not before سيد السادات. The Persian had duplicated their translation early. The extra alef is a transcription error; Persian instructions are separate from Arabic recitation. See also https://research.rafed.net/الدعاء-والزيارة/373-الزيارات/3063-الزيارة-السابعة-لأمير-المؤمنين-عليه-السلام."
+    },
+    "friday-afternoon-salawat-review": {
+      "url": "https://ar.lib.eshia.ir/71664/4/491",
+      "description": "The traditional text contains ورحمة الله after the reference to souls and bodies. The exact same Arabic in r00005 has a complete Persian rendering; the r00007 Persian omits souls/bodies and adds an unmatched singular. Instructions are separate from recitation."
+    },
+    "ziyarat-hasan-greeting": {
+      "url": "https://almaaref.org.lb/post/3026/",
+      "description": "The complete Hasan visitation has ورحمة الله وبركاته in this greeting."
+    },
+    "asharat-greeting": {
+      "url": "https://hmomen.com/content/dua/9",
+      "description": "Dua al-Asharat contains the standard ورحمة الله وبركاته formula at this location."
+    },
+    "abu-hamza-greeting": {
+      "url": "https://hmomen.com/content/dua/22",
+      "description": "The prayer ends with ورحمة الله وبركاته following reference to the souls and bodies."
+    },
+    "shaban-greeting": {
+      "url": "https://imamhussain.org/6754",
+      "description": "The mid-Shaban visitation has السلام عليك ورحمة الله وبركاته."
+    },
+    "birthday-ali-greeting": {
+      "url": "https://erfan.ir/mafatih228amp",
+      "description": "This visitation includes يا من له طوبى وحسن مآب ورحمة الله وبركاته."
+    },
+    "common-salawat-greeting": {
+      "url": "https://almaaref.org/maarefdetails.php?bb=0&number=0&supcat=16&id=12684&cid=569",
+      "description": "The standard salawat phrase ends والسلام عليه وعليهم ورحمة الله وبركاته; the Persian translations also retain mercy and blessings."
+    },
+    "treasures-record-splitting": {
+      "url": "https://raw.githubusercontent.com/KazTronics/AhlulBayt_Treasures/a59bd5f8fe078532622a08ea60c19d164fb425cb/duas_data.jsonl",
+      "description": "Each separated paragraph equals all English translation rows of one unique differently numbered pinned upstream record after whitespace folding (SHA-256 e9bc183509323dd85b0a32c43901ca23eaabe660e68abe37bcb314dcba37e65f). Proposed links have multiple matching Arabic source clauses but are not reviewed translation, alignment or rights decisions."
+    }
+  },
+  "metadata_corrections": [
+    {
+      "item": "sura-rahman",
+      "field": "title.en",
+      "previous": "tf2d3e801ef85943c93682980",
+      "source_document": "surah-al-rahman",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t515145af9ee4dc076bd586d7"
+    },
+    {
+      "item": "sura-rahman",
+      "field": "title.ar",
+      "previous": "t475605dc367b9e311d9a4219",
+      "source_document": "surah-al-rahman",
+      "evidence": "quran-meta-title-check",
+      "replacement": "ted123538524921603263c25a"
+    },
+    {
+      "item": "sura-mulk",
+      "field": "title.en",
+      "previous": "t515145af9ee4dc076bd586d7",
+      "source_document": "surah-al-mulk",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t90f1491999c29752f2efc59b"
+    },
+    {
+      "item": "sura-mulk",
+      "field": "title.ar",
+      "previous": "ted123538524921603263c25a",
+      "source_document": "surah-al-mulk",
+      "evidence": "quran-meta-title-check",
+      "replacement": "ta013dfaf77f218dac21edf4b"
+    },
+    {
+      "item": "sura-svrh-alnba",
+      "field": "title.en",
+      "previous": "tb91610e4bddf8d0ac72ec63e",
+      "source_document": "surah-al-naba",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t6d267ac23edc20302fc94d60"
+    },
+    {
+      "item": "sura-svrh-alnba",
+      "field": "title.ar",
+      "previous": "tfba9998674219ace3bc62d63",
+      "source_document": "surah-al-naba",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t8a46c7950c30d9fc3751d28d"
+    },
+    {
+      "item": "sura-ala",
+      "field": "title.en",
+      "previous": "t6d267ac23edc20302fc94d60",
+      "source_document": "surah-al-aala",
+      "evidence": "quran-meta-title-check",
+      "replacement": "tc5409a1916406fcbd144cf4b"
+    },
+    {
+      "item": "sura-ala",
+      "field": "title.ar",
+      "previous": "t8a46c7950c30d9fc3751d28d",
+      "source_document": "surah-al-aala",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t2e07f55afd6ca9128c71abb7"
+    },
+    {
+      "item": "sura-shams",
+      "field": "title.en",
+      "previous": "t90f1491999c29752f2efc59b",
+      "source_document": "surah-al-shams",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t6d7ad817a4a227cb47d0e8e2"
+    },
+    {
+      "item": "sura-shams",
+      "field": "title.ar",
+      "previous": "ta013dfaf77f218dac21edf4b",
+      "source_document": "surah-al-shams",
+      "evidence": "quran-meta-title-check",
+      "replacement": "td08bfcb42487b95fd463aa58"
+    },
+    {
+      "item": "sura-qadr",
+      "field": "title.en",
+      "previous": "tdfd22958a7bd72b0cda296a2",
+      "source_document": "surah-al-qadr",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t02dd62418cab287ca10a8dfe"
+    },
+    {
+      "item": "sura-qadr",
+      "field": "title.ar",
+      "previous": "tb72dec43d90be3a3a0f4bdef",
+      "source_document": "surah-al-qadr",
+      "evidence": "quran-meta-title-check",
+      "replacement": "td3359e236cb985a6d4bb9efc"
+    },
+    {
+      "item": "sura-kafirun",
+      "field": "title.en",
+      "previous": "t6b33da9227793c1e7feb93e1",
+      "source_document": "surah-al-kafirun",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t209b442b5195543b5f51ba9e"
+    },
+    {
+      "item": "sura-kafirun",
+      "field": "title.ar",
+      "previous": "t9ca3ebe964277886071170a2",
+      "source_document": "surah-al-kafirun",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t0cf1a112fd5a3a7209924c94"
+    },
+    {
+      "item": "sura-nasr",
+      "field": "title.en",
+      "previous": "t6d7ad817a4a227cb47d0e8e2",
+      "source_document": "surah-al-nasr",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t3a76809e275195ed4a968d4d"
+    },
+    {
+      "item": "sura-nasr",
+      "field": "title.ar",
+      "previous": "td08bfcb42487b95fd463aa58",
+      "source_document": "surah-al-nasr",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t4862a664072651a5090da640"
+    },
+    {
+      "item": "sura-svrh-alakhlas",
+      "field": "title.en",
+      "previous": "tc5409a1916406fcbd144cf4b",
+      "source_document": "surah-al-ikhlaas",
+      "evidence": "quran-meta-title-check",
+      "replacement": "ta0892da231329350091237bb"
+    },
+    {
+      "item": "sura-svrh-alakhlas",
+      "field": "title.ar",
+      "previous": "t2e07f55afd6ca9128c71abb7",
+      "source_document": "surah-al-ikhlaas",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t282bb9446dc6fdd0d257dbda"
+    },
+    {
+      "item": "sura-falaq",
+      "field": "title.en",
+      "previous": "t02dd62418cab287ca10a8dfe",
+      "source_document": "surah-al-falaq",
+      "evidence": "quran-meta-title-check",
+      "replacement": "te26a7746a880902dc657c102"
+    },
+    {
+      "item": "sura-falaq",
+      "field": "title.ar",
+      "previous": "td3359e236cb985a6d4bb9efc",
+      "source_document": "surah-al-falaq",
+      "evidence": "quran-meta-title-check",
+      "replacement": "t2c6221a7583b302bd5e81329"
+    },
+    {
+      "item": "sura-nas",
+      "field": "title.en",
+      "previous": "tbcb14a03bdb7461a6601b8c9",
+      "source_document": "surah-al-nas",
+      "evidence": "quran-meta-title-check",
+      "replacement": "tacd6f6c302f4f2e20a82ef0c"
+    },
+    {
+      "item": "sura-nas",
+      "field": "title.ar",
+      "previous": "t3c9e72f34a16bc821f29c6d0",
+      "source_document": "surah-al-nas",
+      "evidence": "quran-meta-title-check",
+      "replacement": "tb63328b92e297b8528b73e68"
+    },
+    {
+      "item": "fazilat-svrhmbarkys",
+      "field": "title.en",
+      "previous": "tacd6f6c302f4f2e20a82ef0c",
+      "source_document": "self-fadail-yasin",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t8a939f3871711d65d35fe1b6"
+    },
+    {
+      "item": "fazilat-svrhmbarkys",
+      "field": "title.ar",
+      "previous": "tb63328b92e297b8528b73e68",
+      "source_document": "self-fadail-yasin",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t51cec3b3a1010f7af7c97061"
+    },
+    {
+      "item": "fazilat-svrhalrhmn",
+      "field": "title.en",
+      "previous": "t209b442b5195543b5f51ba9e",
+      "source_document": "self-fadail-rahman",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t3f53bf7f0617b9c78d991349"
+    },
+    {
+      "item": "fazilat-svrhalrhmn",
+      "field": "title.ar",
+      "previous": "t0cf1a112fd5a3a7209924c94",
+      "source_document": "self-fadail-rahman",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t45d0210a44e906623e99a802"
+    },
+    {
+      "item": "fazilat-svrhvaqah",
+      "field": "title.en",
+      "previous": "t3a76809e275195ed4a968d4d",
+      "source_document": "self-fadail-waqia",
+      "evidence": "quran-merits-title-check",
+      "replacement": "taa539d8cc2bf5e99a3eb9e63"
+    },
+    {
+      "item": "fazilat-svrhvaqah",
+      "field": "title.ar",
+      "previous": "t4862a664072651a5090da640",
+      "source_document": "self-fadail-waqia",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t7a32e03cf850d3b00ddce635"
+    },
+    {
+      "item": "fazilat-svrhjmah",
+      "field": "title.en",
+      "previous": "ta0892da231329350091237bb",
+      "source_document": "self-fadail-jumua",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t341526f797b3e45c803060c9"
+    },
+    {
+      "item": "fazilat-svrhjmah",
+      "field": "title.ar",
+      "previous": "t282bb9446dc6fdd0d257dbda",
+      "source_document": "self-fadail-jumua",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t2e5354e24b01b02bfd1ab054"
+    },
+    {
+      "item": "fazilat-svrhmlk",
+      "field": "title.en",
+      "previous": "te26a7746a880902dc657c102",
+      "source_document": "self-fadail-mulk",
+      "evidence": "quran-merits-title-check",
+      "replacement": "t489731f3352ea12c89000f05"
+    },
+    {
+      "item": "fazilat-svrhmlk",
+      "field": "title.ar",
+      "previous": "t2c6221a7583b302bd5e81329",
+      "source_document": "self-fadail-mulk",
+      "evidence": "quran-merits-title-check",
+      "replacement": "tb59677744abe9b41007330e5"
+    },
+    {
+      "item": "ziyarat-zkrmsajd-mazmh-mdynh",
+      "field": "title.en",
+      "previous": "tab0a63d5e7aeb2a6565bd6b2",
+      "replacement": "t8f991336c58c4f7a6df638dc",
+      "source_document": "ziyarah-imams-baqi--part7",
+      "evidence": "alhassanain-item-title-review"
+    },
+    {
+      "item": "dua-faraj",
+      "field": "title.en",
+      "previous": "t39b1c2badb130f71b29e60df",
+      "replacement": "td7bde5ad7b27ab214b1dd009",
+      "source_document": "dua-faraj",
+      "evidence": "alhassanain-item-title-review"
+    },
+    {
+      "item": "amal-aamal-shbhay-dhh",
+      "field": "title.en",
+      "previous": "t5ebe63aedc30444bc7b700d7",
+      "replacement": "teb1fe3803ea9f56ba3754b4e",
+      "source_document": "aamal-last-ten-nights",
+      "evidence": "alhassanain-item-title-review"
+    },
+    {
+      "item": "dua-syfy-sghyr-marvf",
+      "field": "title.en",
+      "previous": "tfef7927312da38e9d0c394f0",
+      "replacement": "t85171431ebc9df1e5d804b5f",
+      "source_document": "dua-sayfi-sagir",
+      "evidence": "alhassanain-item-title-review"
+    }
+  ],
+  "quran_number_evidence": "quran-meta-title-check",
+  "row_corrections": [
+    {
+      "item": "dua-mujir",
+      "row": "r00007",
+      "language": "fa",
+      "previous": "t96bb83736765f6bae31e08b8",
+      "replacement": "ta0810096d64a8a5748db789f",
+      "evidence": "erfan-mujir-review",
+      "reason": "Complete the visibly truncated final address."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00008",
+      "language": "fa",
+      "previous": "t860e70f82d12e55a126dfc4b",
+      "replacement": "t9d089ce08475dae0f5c1daef",
+      "evidence": "erfan-mujir-review",
+      "reason": "Realign the Persian invocation with its Arabic names; also fix an obvious typo/duplicate where present."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00009",
+      "language": "fa",
+      "previous": "t861dc7cb02aca9fb9b8f8a9f",
+      "replacement": "t9db8449b7a7243af04ea4c52",
+      "evidence": "erfan-mujir-review",
+      "reason": "Realign the Persian invocation with its Arabic names; also fix an obvious typo/duplicate where present."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00010",
+      "language": "fa",
+      "previous": "t5f9e97e44c8f4d2cb16e9f8c",
+      "replacement": "t861dc7cb02aca9fb9b8f8a9f",
+      "evidence": "erfan-mujir-review",
+      "reason": "Realign the Persian invocation with its Arabic names; also fix an obvious typo/duplicate where present."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00011",
+      "language": "fa",
+      "previous": "t9d089ce08475dae0f5c1daef",
+      "replacement": "tbaab5cdb13113f71c12d9991",
+      "evidence": "erfan-mujir-review",
+      "reason": "Realign the Persian invocation with its Arabic names; also fix an obvious typo/duplicate where present."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00012",
+      "language": "ar",
+      "previous": "t054bd69854abed4791b1f25f",
+      "replacement": "tfdc34a67a2e5f8ff4df1120f",
+      "evidence": "erfan-mujir-review",
+      "reason": "Restore the missing final consonant and vowel of the recurring address."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00010",
+      "language": "fa",
+      "previous": "tf664fbced25f9d3b486b4e5b",
+      "replacement": "t7c1a752eb220eaa6923757ec",
+      "evidence": "erfan-tawassul-review",
+      "reason": "Remove duplicated word."
+    },
+    {
+      "item": "ziyarat-warith",
+      "row": "r00131",
+      "language": "ar",
+      "previous": "t1273c8227feaf624a0a616a2",
+      "replacement": "t19565c881cd5fbbf713a93e9",
+      "evidence": "erfan-warith-review",
+      "reason": "Move the Persian instruction to its own explicitly typed row, retaining the recitation row ID."
+    },
+    {
+      "item": "ziyarat-warith",
+      "row": "r00131",
+      "language": "fa",
+      "previous": "t7295d57aa20364f7bf0dfe90",
+      "replacement": "tefea98b62c4a40b79c3d518e",
+      "evidence": "erfan-warith-review",
+      "reason": "Translate ابن وليه as son of His wali rather than son of God."
+    },
+    {
+      "item": "sura-asr",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "tc3aeecd67d8fffff471a6b77",
+      "replacement": "t61159a09b0d1bc26421cdd17",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-duha",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t94e96695d2239fc2047bad0b",
+      "replacement": "te5b4c5409d74af994115ce4c",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-fil",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "tde2d11615d29fbfcdcc1c47d",
+      "replacement": "t770910b8ebdc3bfcc544a59b",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-kahf",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "tbc2c00f22ab018a26393be81",
+      "replacement": "t321e00a1656f4d1dc33acce3",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-kawthar",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t71b28a2d359b089d52963224",
+      "replacement": "t9b2e80d16fb41eef39543bb8",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-maryam",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t9a7ecf37b723833d169e63b8",
+      "replacement": "tdc180bee70705ff3298b1e92",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-masad",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t20734adb0ca0ba4aba819a83",
+      "replacement": "t55fb8c7e009c7e20e9d3d9e3",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-maun",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t98ab0b622c565e524558bc46",
+      "replacement": "t86bf3caf14d7737ebf0a1c16",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-muddaththir",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t88ae8b586f8ae2612e3a7de8",
+      "replacement": "t1754b114f708e23ce97d0f77",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-muzzammil",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "tda276788f8c6f82b9a6b246a",
+      "replacement": "t63ca062bc40aef854aa02753",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-quraysh",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t52526861fec7ae1e6060bc04",
+      "replacement": "t8eb3ef01d6d9ce20872c69c4",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-sharh",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "tdafb93354896f7a8d184b89b",
+      "replacement": "te5f9f93a13148abc52c5856e",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-svrh-alansan",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t9cd33afa6d98895bac70a774",
+      "replacement": "tc5987c2dbea171630c36218b",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-svrh-alhmzh",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t92a1beddc40b00e7dc65d447",
+      "replacement": "td3550234f15b8dc0a140c345",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-svrh-alsjdh",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t7db0b775111adbbd707a8831",
+      "replacement": "t19d371460a2fc8e9cc75c9b0",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-tin",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "tb99e733141a9f4a1d16a957d",
+      "replacement": "t4add430eb6d7446427c6c862",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-yusuf",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t72650e7eb3c47eb664cd1dd3",
+      "replacement": "t05c344ccb7d1d1d075d3a372",
+      "evidence": "quran-basmala-duplication",
+      "reason": "Retain the existing standalone opening and remove its duplicate prefix from verse 1."
+    },
+    {
+      "item": "sura-svrh-alfathh",
+      "row": "r00001",
+      "language": "ar",
+      "previous": "t99ff2a3b53775d5875ce0dd2",
+      "replacement": "t19e6b2e4b5c9a326e972d613",
+      "evidence": "unicode-bom",
+      "reason": "Remove an embedded UTF-8 byte-order mark from the displayed Arabic value."
+    },
+    {
+      "item": "ziyarat-item-6",
+      "row": "r00005",
+      "language": "ar",
+      "previous": "tfc65adb328ad19d664166798",
+      "replacement": "t6875627964da0ccc29415335",
+      "evidence": "seventh-ali-ziyarat-review",
+      "reason": "Remove one duplicated initial alif."
+    },
+    {
+      "item": "ziyarat-item-6",
+      "row": "r00006",
+      "language": "fa",
+      "previous": "t6dd1b183ea44c8bd60f8d7cf",
+      "replacement": "t1cfc1ab9d77dad81b75d57ed",
+      "evidence": "seventh-ali-ziyarat-review",
+      "reason": "Remove two misplaced duplicated Persian greetings; their corresponding Arabic and Persian occur in the following row."
+    },
+    {
+      "item": "ziyarat-item-6",
+      "row": "r00010",
+      "language": "ar",
+      "previous": "te06d89edf93f4c8e3c8c5b23",
+      "replacement": "t549bdff9d9a98fdc9badbaae",
+      "evidence": "seventh-ali-ziyarat-review",
+      "reason": "Separate the Persian instruction from the Arabic recitation while retaining the recitation row ID."
+    },
+    {
+      "item": "ziyarat-item-6",
+      "row": "r00012",
+      "language": "ar",
+      "previous": "t38a1c1c5ca7ab99c2f8194c7",
+      "replacement": "t7e938cc49077bc7cd42c28b9",
+      "evidence": "seventh-ali-ziyarat-review",
+      "reason": "Separate the Persian instruction from the Arabic recitation while retaining the recitation row ID."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "td65c080bf6fa353f1403c06b",
+      "replacement": "t88f6046b5cc5ac419e6f94b0",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Restore the ordinary phrase ورحمة الله instead of an erroneously parenthesized honorific."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00005",
+      "language": "ar",
+      "previous": "t5b17001bee3666497918aef5",
+      "replacement": "t2a04a5f3412098447e8333b8",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Restore the ordinary phrase ورحمة الله instead of an erroneously parenthesized honorific."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00007",
+      "language": "ar",
+      "previous": "t5b17001bee3666497918aef5",
+      "replacement": "t2a04a5f3412098447e8333b8",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Restore the ordinary phrase ورحمة الله instead of an erroneously parenthesized honorific."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00007",
+      "language": "fa",
+      "previous": "ta0087adb5ff5f359e0ee94b7",
+      "replacement": "t71a07d8f1431be7ed3f56a82",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Restore the omitted souls-and-bodies phrase, matching the identical Arabic and complete Persian in r00005."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00001",
+      "language": "ar",
+      "previous": "tf3a928e6b634febff627ea17",
+      "replacement": "t7dca861aba2793f9c7430372",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Separate the Persian instruction from the Arabic recitation while retaining the recitation row ID."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00002",
+      "language": "ar",
+      "previous": "t88f6046b5cc5ac419e6f94b0",
+      "replacement": "tc231d049858692f4c6fccb52",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Separate the Persian instruction from the Arabic recitation while retaining the recitation row ID."
+    },
+    {
+      "item": "amal-fzylt-aamal-nymh",
+      "row": "r00008",
+      "language": "ar",
+      "previous": "t37b0ef6a6fd1c0e9dbebc1f3",
+      "replacement": "t94e9edf019019578393ef6ae",
+      "evidence": "shaban-greeting",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "amal-tsbyhat-slvat-rmzan",
+      "row": "r00040",
+      "language": "ar",
+      "previous": "t30dc4ce8d598d8a273ae7d9d",
+      "replacement": "te187791f11ea45ede7aef35a",
+      "evidence": "common-salawat-greeting",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "dua-ashrat",
+      "row": "r00009",
+      "language": "ar",
+      "previous": "t344267e9835451a950262856",
+      "replacement": "t8dcf4859483d3eb930b951ed",
+      "evidence": "asharat-greeting",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "dua-daa-asr-alyh",
+      "row": "r00012",
+      "language": "ar",
+      "previous": "ta4f44d8a1b558a8f34f664aa",
+      "replacement": "tcf70b29e20b1f4e312c172b6",
+      "evidence": "common-salawat-greeting",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00204",
+      "language": "ar",
+      "previous": "t633f5d5ea56f5a0c599d3dfa",
+      "replacement": "t80b01c7c7c31088b5d0667ec",
+      "evidence": "abu-hamza-greeting",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "ziyarat-amyralmvmnyn-alyh-alslam-2",
+      "row": "r00009",
+      "language": "ar",
+      "previous": "t72b5696da59650d694eadbc5",
+      "replacement": "t2d34782b3217638b1c2cfeb0",
+      "evidence": "birthday-ali-greeting",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "ziyarat-hsn-alyh-alslam",
+      "row": "r00003",
+      "language": "ar",
+      "previous": "t27743b1a190c3719f771aa93",
+      "replacement": "t3c939052b220bcd0ef00b9a5",
+      "evidence": "ziyarat-hasan-greeting",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "ziyarat-item-6",
+      "row": "r00009",
+      "language": "ar",
+      "previous": "t742a09edb37040a1d658d58b",
+      "replacement": "t1395df75b998b8d27589a401",
+      "evidence": "seventh-ali-ziyarat-review",
+      "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    }
+  ],
+  "row_insertions": [
+    {
+      "item": "ziyarat-warith",
+      "row": "r00131-instruction",
+      "before": "r00131",
+      "evidence": "erfan-warith-review",
+      "reason": "Separate a Persian instruction that had been concatenated into the Arabic field."
+    },
+    {
+      "item": "ziyarat-item-6",
+      "row": "r00010-instruction",
+      "before": "r00010",
+      "evidence": "seventh-ali-ziyarat-review",
+      "reason": "Preserve the Persian instruction in its own explicitly typed row."
+    },
+    {
+      "item": "ziyarat-item-6",
+      "row": "r00012-instruction",
+      "before": "r00012",
+      "evidence": "seventh-ali-ziyarat-review",
+      "reason": "Preserve the Persian instruction in its own explicitly typed row."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00001-instruction",
+      "before": "r00001",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Preserve the Persian instruction in its own explicitly typed row."
+    },
+    {
+      "item": "amal-aamal-asr-jmah",
+      "row": "r00002-instruction",
+      "before": "r00002",
+      "evidence": "friday-afternoon-salawat-review",
+      "reason": "Preserve the Persian instruction in its own explicitly typed row."
+    }
+  ],
+  "row_classifications": [
+    {
+      "item": "dua-kumayl",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00002",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00003",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00004",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00005",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00006",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00007",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00008",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "kumayl-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "tawassul-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00002",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "tawassul-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00003",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "tawassul-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "mujir-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "fazilat-svrhjmah",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-adiyat",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-ala",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-falaq",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-kafirun",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-mulk",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-nas",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-nasr",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-qadr",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-rahman",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-shams",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-svrh-alakhlas",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-svrh-alnba",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-svrh-alvaqah",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-svrh-alzlzlh",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    },
+    {
+      "item": "sura-yasin",
+      "row": "r00001",
+      "previous_kind": null,
+      "replacement_kind": "audio-reciter",
+      "evidence": "parhizkar-audio-menu-review",
+      "reason": "An isolated audio-reciter menu label preceding content, not a text or translation row."
+    }
+  ],
+  "paragraph_removals": [
+    {
+      "document": "tr142-rajab-daily-dua-4",
+      "paragraph": "p00001",
+      "text": "tfc52e38cc956f963853adbde",
+      "preserved_document": "ziyarah-imams-baqi--part7",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr142-rajab-daily-dua-4",
+      "paragraph": "p00002",
+      "text": "t6bac26ef5fafb450a9fea3ff",
+      "preserved_document": "ziyarah-imams-baqi--part7",
+      "preserved_paragraph": "p00002",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr17-dua-faraj",
+      "paragraph": "p00001",
+      "text": "te80a2197e65956e369dc4a71",
+      "preserved_document": "dua-faraj",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr1-ramadhan-daily-dua-1",
+      "paragraph": "p00001",
+      "text": "tc375ccda9d1ebbb2dd57fbdc",
+      "preserved_document": "aamal-last-ten-nights",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr350-dua-after-subh-2",
+      "paragraph": "p00001",
+      "text": "ta7ed87e7f6d81636d5e53cb1",
+      "preserved_document": "dua-sayfi-sagir",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr31-eid-night-salaat",
+      "paragraph": "p00001",
+      "text": "tfd0c05424b839ff8fe29fa12",
+      "preserved_document": "dua-fending-distress--part2",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr31-eid-night-salaat",
+      "paragraph": "p00002",
+      "text": "tbfb5a89b4af1c3eef65bd874",
+      "preserved_document": "dua-fending-distress--part2",
+      "preserved_paragraph": "p00002",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr31-eid-night-salaat",
+      "paragraph": "p00003",
+      "text": "tfd5ba188a0bd6873a58041fd",
+      "preserved_document": "dua-fending-distress--part2",
+      "preserved_paragraph": "p00003",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr31-eid-night-salaat",
+      "paragraph": "p00004",
+      "text": "t98040a10bf81b9a8751c8a45",
+      "preserved_document": "dua-fending-distress--part2",
+      "preserved_paragraph": "p00004",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr31-eid-night-salaat",
+      "paragraph": "p00005",
+      "text": "t3b77e305b3611ab1fa53ad14",
+      "preserved_document": "dua-fending-distress--part2",
+      "preserved_paragraph": "p00005",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr31-eid-night-salaat",
+      "paragraph": "p00006",
+      "text": "t730f28d5da5b60a1d70ffb2f",
+      "preserved_document": "dua-fending-distress--part2",
+      "preserved_paragraph": "p00006",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr31-eid-night-salaat",
+      "paragraph": "p00007",
+      "text": "tc6a191571fc9d0470f6b2a34",
+      "preserved_document": "dua-fending-distress--part2",
+      "preserved_paragraph": "p00007",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr282-dua-after-salaat-1",
+      "paragraph": "p00001",
+      "text": "t28b2c1a93eb1be186889ab22",
+      "preserved_document": "writing-will-before-death--part1",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr52-9th-imam-ziarat-4",
+      "paragraph": "p00001",
+      "text": "te65521f0908b73eb5f4f9865",
+      "preserved_document": "method-ziyarah-prophet-madinah--part1",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr52-9th-imam-ziarat-4",
+      "paragraph": "p00002",
+      "text": "tac4429c7a129e22b8743af01",
+      "preserved_document": "method-ziyarah-prophet-madinah--part1",
+      "preserved_paragraph": "p00002",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr52-9th-imam-ziarat-4",
+      "paragraph": "p00003",
+      "text": "te8b28940c545c76bbea1fb71",
+      "preserved_document": "method-ziyarah-prophet-madinah--part1",
+      "preserved_paragraph": "p00003",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr52-9th-imam-ziarat-4",
+      "paragraph": "p00004",
+      "text": "t9ca01b0e75abe5bae4233a47",
+      "preserved_document": "method-ziyarah-prophet-madinah--part1",
+      "preserved_paragraph": "p00004",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr52-9th-imam-ziarat-4",
+      "paragraph": "p00005",
+      "text": "t1b8ca3b615c24bc2b38027f1",
+      "preserved_document": "method-ziyarah-prophet-madinah--part1",
+      "preserved_paragraph": "p00005",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Exact duplicate of the separately retained introduction; it was incorrectly combined with a different upstream source document."
+    },
+    {
+      "document": "tr1-ramadhan-daily-dua-1",
+      "paragraph": "p00003",
+      "text": "t2161f5c7ab23d73aeb8915a7",
+      "preserved_document": "tr54-dua-for-last-10-nights",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr117-8th-imam-ziarat",
+      "paragraph": "p00002",
+      "text": "t0cbb425c6d90b3ee16591326",
+      "preserved_document": "tr419-before-leaving-for-ziarat-of-imam-hussain",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr121-ziarat-bibi-fatema",
+      "paragraph": "p00004",
+      "text": "t260771ac0aff005626e15537",
+      "preserved_document": "tr122-ziarat-bibi-fatema",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr128-ziarat-imam-hussain-day-of-arafah",
+      "paragraph": "p00013",
+      "text": "t705aa9408a689b5fd82a4449",
+      "preserved_document": "tr422-ziarat-contd-of-imam-hussain",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr158-monthly-amaal-shabaan",
+      "paragraph": "p00005",
+      "text": "t2ade4b9e0aa9ea2f4d69b235",
+      "preserved_document": "tr284-dua-after-salaat-3",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr159-dua-of-imam-hussain",
+      "paragraph": "p00003",
+      "text": "t460d0c9261689094346ccc72",
+      "preserved_document": "tr160-dua-of-imam-hussain",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr165-dua-3-15th-shabaan",
+      "paragraph": "p00002",
+      "text": "t10a6196ff9237ee49276dc66",
+      "preserved_document": "tr166-dua-4-15th-shabaan",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr165-dua-3-15th-shabaan",
+      "paragraph": "p00003",
+      "text": "t8a7b140aa1a7ac9dd1ef26c8",
+      "preserved_document": "tr167-dua-5-15th-shabaan",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr177-dua-1-zilhajj",
+      "paragraph": "p00004",
+      "text": "tf4054811875df1efb6622393",
+      "preserved_document": "tr179-dua-3-zilhajj",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr304-ziarat-for-saturday",
+      "paragraph": "p00002",
+      "text": "t5323fa6b431ad882ad280a55",
+      "preserved_document": "tr320-short-ziarat-for-saturday",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr350-dua-after-subh-2",
+      "paragraph": "p00003",
+      "text": "t6a87aa795509eac9ceecb6b7",
+      "preserved_document": "tr357-dua-saif-al-sagheer-al-qamoos",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr353-dua-for-entering-the-cemetary-i-huss",
+      "paragraph": "p00002",
+      "text": "ta3d1ed19e475780e96e7a2da",
+      "preserved_document": "tr354-dua-for-entering-the-cemetary-i-sadiq",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr425-ziarat-of-hazrat-abbas-in-karbala",
+      "paragraph": "p00004",
+      "text": "t5ec8009ced56d06e1fb68a4a",
+      "preserved_document": "tr426-ziarat-of-hazrat-abbas-contd",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr425-ziarat-of-hazrat-abbas-in-karbala",
+      "paragraph": "p00005",
+      "text": "te7dc54c2db55c0218c5073e3",
+      "preserved_document": "tr427-ziarat-wida-of-hazrat-abbas-in-karbala",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr428-before-leaving-for-ziarat-of-imam-ri",
+      "paragraph": "p00014",
+      "text": "td4f9ec18f5fce8c859f3c251",
+      "preserved_document": "tr429-after-ghusl-in-mashhad",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr428-before-leaving-for-ziarat-of-imam-ri",
+      "paragraph": "p00015",
+      "text": "t8b224b0e67da585378a32577",
+      "preserved_document": "tr432-ziarat-of-imam-rida-in-mashhad",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr49-9th-imam-ziarat-1",
+      "paragraph": "p00011",
+      "text": "t1d8ccb7f4f2f8b1dae124ced",
+      "preserved_document": "tr50-9th-imam-ziarat-2",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr49-9th-imam-ziarat-1",
+      "paragraph": "p00012",
+      "text": "t1a93744a833adef2c1265b33",
+      "preserved_document": "tr51-9th-imam-ziarat-3",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    },
+    {
+      "document": "tr52-9th-imam-ziarat-4",
+      "paragraph": "p00007",
+      "text": "t2ba9f7e336c77221d5de842c",
+      "preserved_document": "tr114-ziarat-1-holy-prophet",
+      "preserved_paragraph": "p00001",
+      "evidence": "treasures-record-splitting",
+      "reason": "Split the complete English body of a distinct pinned upstream record from the misattributed parent document; exact pooled text is retained."
+    }
+  ],
+  "retracted_links": [
+    {
+      "item": "ziyarat-zkrmsajd-mazmh-mdynh",
+      "document": "tr142-rajab-daily-dua-4",
+      "kind": "legacy-primary",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Medina-mosque introduction was mixed with an unrelated daily Rajab prayer."
+    },
+    {
+      "item": "dua-faraj",
+      "document": "tr17-dua-faraj",
+      "kind": "legacy-primary",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Two different prayers share the Faraj label; source body begins إلهي عظم البلاء, not يا عماد من لا عماد له."
+    },
+    {
+      "item": "amal-aamal-shbhay-dhh",
+      "document": "tr1-ramadhan-daily-dua-1",
+      "kind": "legacy-primary",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "The linked daily Ramadan source body is not the last-ten-nights item."
+    },
+    {
+      "item": "dua-syfy-sghyr-marvf",
+      "document": "tr350-dua-after-subh-2",
+      "kind": "legacy-primary",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "The source body is a different after-subh prayer, not Dua Sayfi al Sagir."
+    },
+    {
+      "item": "item-tvsl-pyghmbr-sly",
+      "document": "tr31-eid-night-salaat",
+      "kind": "legacy-primary",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "Eid-night salat source content is unrelated to the distress-supplication item."
+    },
+    {
+      "item": "khavas-ahdnamh-myt",
+      "document": "tr282-dua-after-salaat-1",
+      "kind": "legacy-primary",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "The after-salat prayer source is not the testament instruction."
+    },
+    {
+      "item": "ziyarat-kyfyt-rsvl-s",
+      "document": "tr52-9th-imam-ziarat-4",
+      "kind": "legacy-primary",
+      "evidence": "treasures-mixed-document-review",
+      "reason": "The ninth-imam ziarat source is not the method of visiting the Prophet in Medina."
+    }
+  ],
+  "created_documents": [
+    {
+      "document": "tr54-dua-for-last-10-nights",
+      "based_on_document": "tr1-ramadhan-daily-dua-1",
+      "based_on_paragraph": "p00003",
+      "source_record": "54",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr419-before-leaving-for-ziarat-of-imam-hussain",
+      "based_on_document": "tr117-8th-imam-ziarat",
+      "based_on_paragraph": "p00002",
+      "source_record": "419",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr122-ziarat-bibi-fatema",
+      "based_on_document": "tr121-ziarat-bibi-fatema",
+      "based_on_paragraph": "p00004",
+      "source_record": "122",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr422-ziarat-contd-of-imam-hussain",
+      "based_on_document": "tr128-ziarat-imam-hussain-day-of-arafah",
+      "based_on_paragraph": "p00013",
+      "source_record": "422",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr284-dua-after-salaat-3",
+      "based_on_document": "tr158-monthly-amaal-shabaan",
+      "based_on_paragraph": "p00005",
+      "source_record": "284",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr160-dua-of-imam-hussain",
+      "based_on_document": "tr159-dua-of-imam-hussain",
+      "based_on_paragraph": "p00003",
+      "source_record": "160",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr166-dua-4-15th-shabaan",
+      "based_on_document": "tr165-dua-3-15th-shabaan",
+      "based_on_paragraph": "p00002",
+      "source_record": "166",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr167-dua-5-15th-shabaan",
+      "based_on_document": "tr165-dua-3-15th-shabaan",
+      "based_on_paragraph": "p00003",
+      "source_record": "167",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr179-dua-3-zilhajj",
+      "based_on_document": "tr177-dua-1-zilhajj",
+      "based_on_paragraph": "p00004",
+      "source_record": "179",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr320-short-ziarat-for-saturday",
+      "based_on_document": "tr304-ziarat-for-saturday",
+      "based_on_paragraph": "p00002",
+      "source_record": "320",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr357-dua-saif-al-sagheer-al-qamoos",
+      "based_on_document": "tr350-dua-after-subh-2",
+      "based_on_paragraph": "p00003",
+      "source_record": "357",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr354-dua-for-entering-the-cemetary-i-sadiq",
+      "based_on_document": "tr353-dua-for-entering-the-cemetary-i-huss",
+      "based_on_paragraph": "p00002",
+      "source_record": "354",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr426-ziarat-of-hazrat-abbas-contd",
+      "based_on_document": "tr425-ziarat-of-hazrat-abbas-in-karbala",
+      "based_on_paragraph": "p00004",
+      "source_record": "426",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr427-ziarat-wida-of-hazrat-abbas-in-karbala",
+      "based_on_document": "tr425-ziarat-of-hazrat-abbas-in-karbala",
+      "based_on_paragraph": "p00005",
+      "source_record": "427",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr429-after-ghusl-in-mashhad",
+      "based_on_document": "tr428-before-leaving-for-ziarat-of-imam-ri",
+      "based_on_paragraph": "p00014",
+      "source_record": "429",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr432-ziarat-of-imam-rida-in-mashhad",
+      "based_on_document": "tr428-before-leaving-for-ziarat-of-imam-ri",
+      "based_on_paragraph": "p00015",
+      "source_record": "432",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr50-9th-imam-ziarat-2",
+      "based_on_document": "tr49-9th-imam-ziarat-1",
+      "based_on_paragraph": "p00011",
+      "source_record": "50",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr51-9th-imam-ziarat-3",
+      "based_on_document": "tr49-9th-imam-ziarat-1",
+      "based_on_paragraph": "p00012",
+      "source_record": "51",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    },
+    {
+      "document": "tr114-ziarat-1-holy-prophet",
+      "based_on_document": "tr52-9th-imam-ziarat-4",
+      "based_on_paragraph": "p00007",
+      "source_record": "114",
+      "evidence": "treasures-record-splitting",
+      "reason": "Independent upstream record identified by full English text equality; translator and rights remain unverified."
+    }
+  ],
+  "proposed_links": [
+    {
+      "item": "amal-aamal-shbhay-dhh",
+      "document": "tr54-dua-for-last-10-nights",
+      "evidence": "treasures-record-splitting",
+      "reason": "21/22 substantive Arabic source rows occur in the item, 20 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-adab-mkhsvs-hsyn",
+      "document": "tr419-before-leaving-for-ziarat-of-imam-hussain",
+      "evidence": "treasures-record-splitting",
+      "reason": "2/3 substantive Arabic source rows occur in the item, 2 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-fatima",
+      "document": "tr122-ziarat-bibi-fatema",
+      "evidence": "treasures-record-splitting",
+      "reason": "38/38 substantive Arabic source rows occur in the item, 38 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-shshm-an-arfh",
+      "document": "tr422-ziarat-contd-of-imam-hussain",
+      "evidence": "treasures-record-splitting",
+      "reason": "13/17 substantive Arabic source rows occur in the item, 11 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "item-avl-taqybat-mshtrk",
+      "document": "tr284-dua-after-salaat-3",
+      "evidence": "treasures-record-splitting",
+      "reason": "6/6 substantive Arabic source rows occur in the item, 6 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "amal-aamal-shaban",
+      "document": "tr160-dua-of-imam-hussain",
+      "evidence": "treasures-record-splitting",
+      "reason": "6/7 substantive Arabic source rows occur in the item, 6 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "amal-fzylt-aamal-nymh",
+      "document": "tr166-dua-4-15th-shabaan",
+      "evidence": "treasures-record-splitting",
+      "reason": "4/5 substantive Arabic source rows occur in the item, 4 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "amal-fzylt-aamal-nymh",
+      "document": "tr167-dua-5-15th-shabaan",
+      "evidence": "treasures-record-splitting",
+      "reason": "10/11 substantive Arabic source rows occur in the item, 10 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "namaz-dv-rkat-mshtml",
+      "document": "tr179-dua-3-zilhajj",
+      "evidence": "treasures-record-splitting",
+      "reason": "10/10 substantive Arabic source rows occur in the item, 10 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-rsvl-sly-allh",
+      "document": "tr320-short-ziarat-for-saturday",
+      "evidence": "treasures-record-splitting",
+      "reason": "9/9 substantive Arabic source rows occur in the item, 9 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "dua-syfy-sghyr-marvf",
+      "document": "tr357-dua-saif-al-sagheer-al-qamoos",
+      "evidence": "treasures-record-splitting",
+      "reason": "21/21 substantive Arabic source rows occur in the item, 21 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-qbvr-mvmnan",
+      "document": "tr354-dua-for-entering-the-cemetary-i-sadiq",
+      "evidence": "treasures-record-splitting",
+      "reason": "2/2 substantive Arabic source rows occur in the item, 2 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-abas-alyh-alslam",
+      "document": "tr426-ziarat-of-hazrat-abbas-contd",
+      "evidence": "treasures-record-splitting",
+      "reason": "16/19 substantive Arabic source rows occur in the item, 15 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-abas-alyh-alslam",
+      "document": "tr427-ziarat-wida-of-hazrat-abbas-in-karbala",
+      "evidence": "treasures-record-splitting",
+      "reason": "9/9 substantive Arabic source rows occur in the item, 8 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-kyfyt-rza-alyh",
+      "document": "tr429-after-ghusl-in-mashhad",
+      "evidence": "treasures-record-splitting",
+      "reason": "4/4 substantive Arabic source rows occur in the item, 3 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-kyfyt-rza-alyh",
+      "document": "tr432-ziarat-of-imam-rida-in-mashhad",
+      "evidence": "treasures-record-splitting",
+      "reason": "61/61 substantive Arabic source rows occur in the item, 55 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-mkhts-mhmd-tqy",
+      "document": "tr50-9th-imam-ziarat-2",
+      "evidence": "treasures-record-splitting",
+      "reason": "24/24 substantive Arabic source rows occur in the item, 24 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-mkhts-mhmd-tqy",
+      "document": "tr51-9th-imam-ziarat-3",
+      "evidence": "treasures-record-splitting",
+      "reason": "6/6 substantive Arabic source rows occur in the item, 5 uniquely; review edition, context, translation and rights."
+    },
+    {
+      "item": "ziyarat-kyfyt-rsvl-s",
+      "document": "tr114-ziarat-1-holy-prophet",
+      "evidence": "treasures-record-splitting",
+      "reason": "24/25 substantive Arabic source rows occur in the item, 24 uniquely; review edition, context, translation and rights."
+    }
+  ]
+}

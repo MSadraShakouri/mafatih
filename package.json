@@ -1,0 +1,41 @@
+{
+  "name": "mafatih-content-foundation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "validate": "tsx scripts/validate.ts",
+    "audit": "tsx scripts/audit.ts",
+    "build:data": "tsx scripts/build-data.ts",
+    "build": "npm run validate && npm run build:data",
+    "check:repository": "tsx scripts/check-repository.ts",
+    "check": "npm run typecheck && npm test && npm run check:repository && npm run build",
+    "show:item": "tsx scripts/show-item.ts",
+    "edit:text": "tsx scripts/edit-text.ts",
+    "suggest:alignments": "tsx scripts/suggest-alignments.ts",
+    "split:plan": "tsx scripts/split-plan.ts",
+    "review:html": "tsx scripts/review-page.ts",
+    "build:sqlite": "npm run validate && python3 tools/export_sqlite.py",
+    "edit:item": "tsx scripts/edit-item.ts",
+    "add:item": "tsx scripts/add-item.ts",
+    "add:english": "tsx scripts/add-english.ts",
+    "edit:english": "tsx scripts/edit-english.ts",
+    "check:publication": "tsx scripts/check-publication.ts",
+    "build:release": "npm run check:publication && npm run build:data",
+    "alignment:import": "tsx scripts/import-alignments.ts",
+    "alignment:manual": "tsx scripts/manual-alignment.ts"
+  },
+  "dependencies": {
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.25",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

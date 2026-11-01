@@ -1,0 +1,15 @@
+import fs from 'node:fs';import path from 'node:path';
+import {loadCorpus,validateCorpus} from '../src/corpus.js';import {commit,pretty} from '../src/editor.js';
+import {EditableEnglishSchema,internEnglish} from '../src/editable.js';import {Key} from '../src/schema.js';
+const args=process.argv.slice(2);const input=args[0];if(!input)throw new Error('Usage: npm run add:english -- <draft.json> [--item <slug>]');
+const at=args.indexOf('--item'),item=at>=0?args[at+1]:undefined;if(at>=0&&!item)throw new Error('--item requires a slug');if(item)Key.parse(item);
+const c=loadCorpus();const before=validateCorpus(c);if(before.errors.length)throw new Error(before.errors.join('\n'));
+const d=EditableEnglishSchema.parse(JSON.parse(fs.readFileSync(path.resolve(input),'utf8')));
+if(!d.paragraphs.length)throw new Error('New English documents need at least one paragraph.');
+if(c.english.has(d.id))throw new Error(`Document ${d.id} already exists; use edit:english instead.`);if(item&&!c.items.has(item))throw new Error(`Item ${item} does not exist.`);
+const prev=new Set(c.texts.keys());const doc=internEnglish(c,d);c.english.set(d.id,doc);
+if(item)c.relations.english_links.push({item,document:d.id,kind:'proposed'});
+c.relations.english_links.sort((a,b)=>a.item.localeCompare(b.item,'en')||a.document.localeCompare(b.document,'en'));
+const r=validateCorpus(c);if(r.errors.length)throw new Error(`Refusing invalid document:\n${r.errors.join('\n')}`);
+const changes=new Map<string,string|null>();changes.set(path.join(c.root,'english',d.id+'.json'),pretty(doc));if(item)changes.set(path.join(c.root,'relations.json'),pretty(c.relations));
+commit(c,changes,[],[...c.texts.keys()].filter(id=>!prev.has(id)));console.log(`Added English document ${d.id}${item?' with an unreviewed proposed relationship to '+item:''}.`);
