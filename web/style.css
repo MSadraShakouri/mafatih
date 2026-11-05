@@ -1,4 +1,4 @@
-/* A deliberately plain, usable scaffold—not the finished reader or header. */
+/* Plain reader and provisional controls; the final header is not designed here. */
 :root {
   color-scheme: light dark;
   font-family: system-ui, sans-serif;
@@ -13,9 +13,14 @@ main {
   padding: 1rem;
 }
 
-ul { padding-inline-start: 1.5rem; }
+ul, ol { padding-inline-start: 1.5rem; }
 li { margin-block: 0.25rem; }
 a { color: inherit; }
+button, input { font: inherit; }
+button, input[type='search'] { min-block-size: 2.75rem; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid Highlight; outline-offset: 2px; }
+
 .reader-row { margin-block: 1.5rem; }
 .reader-row p { margin-block: 0.5rem; white-space: pre-wrap; }
 .reader-row .ar {
@@ -25,3 +30,22 @@ a { color: inherit; }
   text-align: justify;
   text-align-last: start;
 }
+
+.reader-tools { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.search-panel { margin-block: 1rem; }
+.search-panel[hidden], [data-search-results][hidden], [data-contents][hidden] { display: none; }
+.search-panel form > label { display: block; }
+.search-panel input[type='search'] { box-sizing: border-box; inline-size: min(100%, 34rem); }
+.search-panel fieldset { border: 0; padding: 0; margin-block: 0.5rem; }
+.search-panel fieldset label { display: inline-flex; align-items: center; gap: 0.25rem; margin-inline-end: 1.25rem; }
+.search-panel input[type='checkbox'] { inline-size: 1.2rem; block-size: 1.2rem; }
+.search-status { min-block-size: 1.7em; }
+[data-search-section] { margin-block: 1.5rem; }
+[data-search-section] h2 { font-size: 1.15rem; }
+.search-hit { display: block; text-align: start; inline-size: 100%; padding-block: 0.3rem; }
+button.search-hit { background: transparent; color: inherit; border: 0; cursor: pointer; text-decoration: underline; }
+.search-hit-title { font-weight: 700; }
+.search-context, .search-excerpt, .search-match-count, .search-matched-terms { display: block; }
+.search-context, .search-match-count, .search-matched-terms, .search-hint { font-size: 0.9em; }
+.search-excerpt { white-space: pre-wrap; line-height: 1.9; }
+mark { background: #ffdf7a; color: #1a1a1a; }

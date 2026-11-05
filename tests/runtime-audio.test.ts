@@ -4,14 +4,19 @@ import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {loadCorpus,text} from '../src/corpus.js';
 import {normalizeSearch} from '../src/normalize.js';
-import {search,type SearchEntry} from '../src/search.js';
+import {IncrementalSearch,type SearchIndex,type SearchShard} from '../src/search.js';
 
 // Build now, rather than relying on potentially stale generated artifacts.
 before(()=>{execFileSync(process.execPath,['--import','tsx','scripts/build-data.ts'],{stdio:'pipe'});});
 
 test('web build excludes classified audio menus from content and search but retains canonical rows',()=>{
   const c=loadCorpus();
-  const index=JSON.parse(fs.readFileSync('generated/web-data/search-index.json','utf8')) as {entries:SearchEntry[]};
+  const index=JSON.parse(fs.readFileSync('generated/web-data/search-index.json','utf8')) as SearchIndex;
+  const allRecords=[...index.records,...index.shards.flatMap(path=>(JSON.parse(fs.readFileSync(`generated/web-data/${path}`,'utf8')) as SearchShard).records)];
+  const searchRows=allRecords.filter(r=>r.section==='text');
+  const priority=(r:typeof searchRows[number])=>(r.featured?0:2)+(r.language==='ar'?0:1);
+  assert.ok(searchRows[0]?.featured&&searchRows[0]?.language==='ar');
+  for(let i=1;i<searchRows.length;i+=1)assert.ok(priority(searchRows[i-1]!)<=priority(searchRows[i]!),`shard priority at ${i}`);
   const catalog=JSON.parse(fs.readFileSync('generated/web-data/catalog.json','utf8')) as {items:Array<{id:string;row_count:number;excluded_audio_rows:number}>};
   let excluded=0;
   for(const [id,item] of c.items){
@@ -24,15 +29,23 @@ test('web build excludes classified audio menus from content and search but reta
     assert.equal(catalogItem.row_count,ordinary.length);
     assert.deepEqual(built.rows.map(r=>r.id),ordinary.map(r=>r.id));
     assert.ok(audio.every(r=>!built.rows.some(b=>b.id===r.id)));
-    const entry=index.entries.find(x=>x.item===id)!;
-    assert.equal(entry.fields.ar,normalizeSearch(ordinary.map(r=>text(c,r.ar)).join(' ')));
-    assert.equal(entry.fields.fa,normalizeSearch(ordinary.map(r=>text(c,r.fa)).join(' ')));
+    const records=allRecords.filter(x=>x.section==='text'&&x.item===id);
+    assert.ok(audio.every(row=>!records.some(record=>record.row===row.id)));
+    for(const row of ordinary){
+      for(const language of ['ar','fa'] as const){
+        const value=text(c,row[language]);
+        const record=records.find(x=>x.row===row.id&&x.language===language);
+        if(!value){assert.equal(record,undefined);continue;}
+        assert.ok(record);assert.equal(record.text,value);assert.equal(record.normalized,normalizeSearch(value));
+      }
+    }
   }
   assert.ok(excluded>=28); // later explicit classifications may add more labels
   assert.ok(c.items.get('dua-kumayl')!.rows.filter(r=>r.kind==='audio-reciter').length>=8);
-  assert.ok(!search(index.entries,'مرتضی الشاهرودی').some(h=>h.item==='dua-kumayl'));
-  assert.ok(!search(index.entries,'میثم مطیعی').some(h=>h.item==='dua-mujir'));
-  assert.ok(search(index.entries,'الهی و ربی').some(h=>h.item==='dua-kumayl'));
+  const engine=new IncrementalSearch(allRecords);
+  let result=engine.begin({id:1,query:'الهی ربی',languages:['ar','fa'],item:'dua-kumayl',tocLimit:100,textLimit:1000});
+  while(!result.complete)result=engine.advance(2000);
+  assert.ok(result.text.some(hit=>hit.record.item==='dua-kumayl'&&hit.matchedWords.length===2));
 });
 
 test('web build publishes retired paragraph redirects without restoring retracted links',()=>{

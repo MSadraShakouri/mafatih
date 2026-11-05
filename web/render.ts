@@ -1,17 +1,28 @@
 import type { Catalog, ReaderItem, Title, TocNode } from './data.js';
 import { itemHref } from './routes.js';
 
-function titleText(title: Title, fallback: string): { text: string; lang: string; dir: 'rtl' | 'ltr' } {
+export function titleText(title: Title, fallback: string): { text: string; lang: string; dir: 'rtl' | 'ltr' } {
   if (title.fa) return { text: title.fa, lang: 'fa', dir: 'rtl' };
   if (title.ar) return { text: title.ar, lang: 'ar', dir: 'rtl' };
   if (title.en) return { text: title.en, lang: 'en', dir: 'ltr' };
   return { text: fallback, lang: 'en', dir: 'ltr' };
 }
 
-function tocList(nodes: TocNode[], names: Map<string, Title>): HTMLUListElement {
+function featuredMark(): HTMLSpanElement {
+  const mark = document.createElement('span');
+  mark.className = 'featured-mark';
+  mark.setAttribute('role', 'img');
+  mark.setAttribute('aria-label', 'برگزیده');
+  mark.textContent = ' ★';
+  return mark;
+}
+
+function tocList(nodes: TocNode[], names: Map<string, Title>, featured: Set<string>, path: number[] = []): HTMLUListElement {
   const list = document.createElement('ul');
-  for (const node of nodes) {
+  nodes.forEach((node, index) => {
+    const location = [...path, index];
     const entry = document.createElement('li');
+    entry.dataset.tocPath = location.join('.');
     if (node.item) {
       const link = document.createElement('a');
       link.href = itemHref(node.item);
@@ -20,17 +31,27 @@ function tocList(nodes: TocNode[], names: Map<string, Title>): HTMLUListElement 
       // display fallback, not a new or corrected canonical title.
       link.textContent = node.title || titleText(names.get(node.item) ?? { fa: '', ar: '', en: '' }, node.item).text;
       link.dir = 'auto';
+      if (featured.has(node.item)) link.append(featuredMark());
       entry.append(link);
     } else {
       const heading = document.createElement('span');
       heading.textContent = node.title;
       heading.dir = 'auto';
+      heading.tabIndex = -1;
       entry.append(heading);
     }
-    if (node.children.length) entry.append(tocList(node.children, names));
+    if (node.children.length) entry.append(tocList(node.children, names, featured, location));
     list.append(entry);
-  }
+  });
   return list;
+}
+
+function toolbar(): HTMLElement {
+  // Deliberately plain and provisional: the final header is a separate design.
+  const controls = document.createElement('div');
+  controls.className = 'reader-tools';
+  controls.dataset.searchToolbar = '';
+  return controls;
 }
 
 export function renderLibrary(catalog: Catalog): HTMLElement {
@@ -38,7 +59,12 @@ export function renderLibrary(catalog: Catalog): HTMLElement {
   main.dataset.screen = 'library';
   const heading = document.createElement('h1');
   heading.textContent = 'فهرست مفاتیح';
-  main.append(heading, tocList(catalog.toc, new Map(catalog.items.map((item) => [item.id, item.title]))));
+  const contents = document.createElement('nav');
+  contents.dataset.contents = '';
+  contents.setAttribute('aria-label', 'فهرست');
+  contents.append(tocList(catalog.toc, new Map(catalog.items.map((item) => [item.id, item.title])),
+    new Set(catalog.items.filter(item => item.featured).map(item => item.id))));
+  main.append(heading, toolbar(), contents);
   return main;
 }
 
@@ -57,7 +83,7 @@ export function renderItem(item: ReaderItem): HTMLElement {
   heading.textContent = title.text;
   heading.lang = title.lang;
   heading.dir = title.dir;
-  main.append(heading);
+  main.append(heading, toolbar());
 
   const article = document.createElement('article');
   for (const row of item.rows) {

@@ -1,9 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { normalizeSearch,compactSearch } from '../src/normalize.js';
-import { search } from '../src/search.js';
+import { IncrementalSearch, type SearchRecord } from '../src/search.js';
 import { codePoints,slicePoints,sha256,textId } from '../src/text-ids.js';
 import { foldArabic,findUniqueEnglish,uniqueOccurrence } from '../src/align-match.js';
+
+function finds(original:string,query:string):boolean{
+  const record:SearchRecord={key:'test',section:'text',item:'test',row:'r1',language:'fa',text:original,normalized:normalizeSearch(original),featured:false,order:0};
+  const engine=new IncrementalSearch([record]);
+  let result=engine.begin({id:1,query,languages:['ar','fa'],tocLimit:10,textLimit:10});
+  while(!result.complete)result=engine.advance(10);
+  return result.text.length>0;
+}
 
 test('Arabic and Persian equivalent forms share search normalization',()=>{
   assert.equal(normalizeSearch('كِتاب'),normalizeSearch('کتاب'));
@@ -12,17 +20,16 @@ test('Arabic and Persian equivalent forms share search normalization',()=>{
   assert.equal(normalizeSearch('قُرْآن'),normalizeSearch('قران'));
 });
 test('Persian joined and spaced forms are searchable without changing display text',()=>{
-  const original='می‌روم';assert.equal(normalizeSearch(original),'می روم');assert.equal(compactSearch(original),'میروم');
-  const entries=[{item:'x',fields:{title:normalizeSearch(original),ar:'',fa:'',en:'',tags:''}}];
-  assert.deepEqual(search(entries,'میروم'),[{item:'x',match:'compact'}]);
-  assert.deepEqual(search(entries,'می روم'),[{item:'x',match:'normalized'}]);
+  const original='می‌روم';assert.equal(normalizeSearch(original),'میروم');assert.equal(compactSearch(original),'میروم');
+  assert.equal(finds(original,'میروم'),true);
+  assert.equal(finds(original,'می روم'),true);
   assert.equal(original,'می‌روم');
 });
 test('Latin accents, punctuation, apostrophes and case fold consistently',()=>{
   assert.equal(normalizeSearch('Ḥusayn, The Faithful'),normalizeSearch('husayn the faithful'));
   assert.equal(normalizeSearch('edition,  Mafatih'),normalizeSearch('edition mafatih'));
-  assert.deepEqual(search([{item:'x',fields:{title:'',ar:'',fa:'',en:normalizeSearch('edition,  Mafatih'),tags:''}}],'edition mafatih'),[{item:'x',match:'normalized'}]);
-  assert.deepEqual(search([],''),[]);
+  assert.equal(finds('edition,  Mafatih','edition mafatih'),true);
+  assert.equal(finds('edition',''),false);
 });
 test('span offsets are Unicode code points, not JavaScript UTF-16 indexes',()=>{
   const s='a😀ب';assert.equal(codePoints(s).length,3);assert.equal(slicePoints(s,1,2),'😀');

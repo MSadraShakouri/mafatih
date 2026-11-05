@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { claim, documentTitle, itemTitle, linksForItem, loadCorpus, text, validateCorpus } from '../src/corpus.js';
 import { normalizeSearch } from '../src/normalize.js';
-import type { SearchEntry } from '../src/search.js';
+import type { SearchIndex, SearchRecord } from '../src/search.js';
 import type { NavNode } from '../src/schema.js';
 
 const c=loadCorpus();const checked=validateCorpus(c);
@@ -10,7 +10,7 @@ if(checked.errors.length)throw new Error(`Structural validation failed:\n${check
 const out=path.resolve('generated/web-data');
 fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
 function write(rel:string,value:unknown){const target=path.join(out,rel);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,JSON.stringify(value)+'\n','utf8');}
-const featured=new Set(c.nav.featured);const catalog=[];const searchEntries:SearchEntry[]=[];
+const featured=new Set(c.nav.featured);const catalog=[];const textSearchRecords:SearchRecord[]=[];
 for(const id of c.nav.default_order){
   const item=c.items.get(id)!;const title=itemTitle(c,id);const tags=item.tags.map(x=>text(c,x));
   const links=linksForItem(c,id).map(l=>({document:l.document,kind:l.kind,coverage:c.english.get(l.document)!.coverage,reviewed:Boolean(l.review)}));
@@ -23,16 +23,15 @@ for(const id of c.nav.default_order){
   write(`items/${id}.json`,{id,legacy_id:item.legacy_id,title,category:item.category,...(item.quran?{quran:item.quran}:{}),tags,
     alignment_claim:item.legacy_alignment,ar_fa_reviewed:Boolean(item.review?.ar_fa),sources:item.sources??{},excluded_audio_rows:excludedAudioRows,rows,english:links,
     reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});
-  const enStrings:string[]=[];const seen=new Set<string>();
-  for(const l of links){
-    const doc=c.english.get(l.document)!;enStrings.push(documentTitle(c,l.document));
-    for(const p of doc.paragraphs)if(!seen.has(p.text)){seen.add(p.text);enStrings.push(text(c,p.text));}
+  // Each field is a separate search result: words are never counted across
+  // unrelated rows or languages. The canonical corpus is not modified.
+  for(const row of rows){
+    for(const language of ['ar','fa'] as const){
+      const value=row[language];if(!value)continue;
+      textSearchRecords.push({key:`row:${id}:${row.id}:${language}`,section:'text',item:id,row:row.id,
+        language,text:value,normalized:normalizeSearch(value),featured:featured.has(id),order:textSearchRecords.length});
+    }
   }
-  searchEntries.push({item:id,fields:{
-    title:normalizeSearch([title.fa,title.ar,title.en].join(' ')),
-    ar:normalizeSearch(rows.map(r=>r.ar).join(' ')),fa:normalizeSearch(rows.map(r=>r.fa).join(' ')),
-    en:normalizeSearch(enStrings.join(' ')),tags:normalizeSearch(tags.join(' '))
-  }});
 }
 // Retired paragraph IDs remain resolvable; this does not re-create an erroneous
 // item/document relationship or approve the new source association.
@@ -60,10 +59,35 @@ const resolvedSources=Object.fromEntries(Object.entries(c.sources.sources).map((
 write('sources.json',{sources:resolvedSources});
 fs.writeFileSync(path.join(out,'legacy-attribution.md'),'# Historical attribution and rights claims (unverified)\n\n> The following is preserved from the original dataset. Claims of permission, public-domain status and attribution have not been independently verified.\n\n'+fs.readFileSync(path.join(c.root,'legacy-attribution.md'),'utf8'));
 write('catalog.json',{format_version:c.meta.format_version,items:catalog,featured:c.nav.featured,toc:c.nav.toc.map(node)});
-write('search-index.json',{normalization:'nfkd-search-v1',entries:searchEntries});
-write('manifest.json',{format_version:c.meta.format_version,normalization:'nfkd-search-v1',
+const tocSearchRecords:SearchRecord[]=[];
+function indexToc(nodes:NavNode[],parents:string[],path:number[]=[]):void{
+  nodes.forEach((n,i)=>{
+    const title=text(c,n.title);const next=[...path,i];
+    if(title)tocSearchRecords.push({key:`toc:${next.join('.')}`,section:'toc',item:n.item,language:'toc',
+      text:title,normalized:normalizeSearch(title),featured:Boolean(n.item&&featured.has(n.item)),
+      order:tocSearchRecords.length,tocPath:next.join('.'),...(parents.length?{context:parents.join(' › ')}:{})});
+    indexToc(n.children,title?[...parents,title]:parents,next);
+  });
+}
+indexToc(c.nav.toc,[]);
+// TOC is immediately available. Fetch featured rows first and give Arabic a
+// head start within the featured/unfeatured groups. `order` remains source order.
+const prioritized=[
+  ...textSearchRecords.filter(r=>r.featured&&r.language==='ar'),
+  ...textSearchRecords.filter(r=>r.featured&&r.language==='fa'),
+  ...textSearchRecords.filter(r=>!r.featured&&r.language==='ar'),
+  ...textSearchRecords.filter(r=>!r.featured&&r.language==='fa'),
+];
+const shards:string[]=[];
+for(let start=0;start<prioritized.length;start+=800){
+  const shard=`search/${String(shards.length).padStart(3,'0')}.json`;
+  shards.push(shard);write(shard,{version:3,records:prioritized.slice(start,start+800)});
+}
+const searchIndex:SearchIndex={version:3,normalization:'nfkd-search-v2',records:tocSearchRecords,shards};
+write('search-index.json',searchIndex);
+write('manifest.json',{format_version:c.meta.format_version,normalization:'nfkd-search-v2',
   counts:{items:c.items.size,rows:checked.stats.rows,english_documents:c.english.size,english_paragraphs:checked.stats.paragraphs},
   // This warning is a runtime fact; it does not claim that review has been completed.
   warning:'Imported titles, translations, source claims, and alignments require review.'});
-console.log(`Built ${catalog.length} lazy items, ${c.english.size} English documents and search into ${out}`);
+console.log(`Built ${catalog.length} lazy items, ${c.english.size} English documents and ${tocSearchRecords.length+textSearchRecords.length} search records in ${shards.length} shards into ${out}`);
 console.log('All original links and source claims are still unverified unless explicitly reviewed.');

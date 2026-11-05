@@ -12,10 +12,16 @@ test('hash routes are stable and reject paths outside item identifiers', () => {
   assert.deepEqual(parseRoute('#/'), { kind: 'library' });
   assert.deepEqual(parseRoute('#/item/dua-kumayl'), { kind: 'item', id: 'dua-kumayl' });
   assert.equal(itemHref('dua-kumayl'), '#/item/dua-kumayl');
-  for (const hash of ['#/item/../secret', '#/item/%2e%2e', '#/item/a/b', '#/other']) {
+  const anchor = { row: 'r00076', language: 'ar' as const, offset: 12 };
+  assert.equal(itemHref('dua-kumayl', anchor), '#/item/dua-kumayl?row=r00076&lang=ar&offset=12');
+  assert.deepEqual(parseRoute(itemHref('dua-kumayl', anchor)), { kind: 'item', id: 'dua-kumayl', anchor });
+  for (const hash of ['#/item/../secret', '#/item/%2e%2e', '#/item/a/b', '#/other',
+    '#/item/dua-kumayl?row=..&lang=ar&offset=0', '#/item/dua-kumayl?row=r1&lang=en&offset=0',
+    '#/item/dua-kumayl?row=r1&lang=ar&offset=-1', '#/item/dua-kumayl?row=r1&lang=ar&offset=1&offset=2']) {
     assert.deepEqual(parseRoute(hash), { kind: 'not-found' });
   }
   assert.throws(() => itemHref('../secret'), /Invalid item ID/);
+  assert.throws(() => itemHref('dua-kumayl', { ...anchor, offset: -1 }), /Invalid reading anchor/);
 });
 
 test('the same client resolves local data at the site root and a Pages subpath', async () => {
