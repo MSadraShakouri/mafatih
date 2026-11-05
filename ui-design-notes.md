@@ -133,10 +133,10 @@ Real-device and human visual checks can supplement these tests, especially for f
 
 ## Questions to revisit
 
-- What should the default reader style and font be, once the options have been tested on real content?
-- How much color customization belongs in the first version, and what can wait for a custom-theme editor?
-- What are the default interface and translation languages, and what is the fallback for Persian-only instructions when English is selected?
-- Across contents and text results, does a three-word text match outrank a one-word contents match?
-- How should wide-screen overflow be measured and controlled? Should a bookmark save an item or a precise place?
+- What should the default reader style and font be, once the options have been tested on real content? ==Plain raw without any formatting, the C of the proposed==
+- How much color customization belongs in the first version, and what can wait for a custom-theme editor? ==Nothing at the start, it's long term==
+- What are the default interface and translation languages, and what is the fallback for Persian-only instructions when English is selected? ==For now default lang Persian and show the Persian fallback for now, we're going to only design the Persian right now and English is later==
+- Across contents and text results, does a three-word text match outrank a one-word contents match? ==Contents is top, text below it, they should be separate rather than competing==
+- How should wide-screen overflow be measured and controlled? Should a bookmark save an item or a precise place? ==Wide screen overflow is simple to see how much it is, I don't know the details but I've never seen it as something difficult, doesn't css do in vanilla? For bookmarks it's the topic==
 
 These are questions for later feedback, not prerequisites for accepting the ideas above.
