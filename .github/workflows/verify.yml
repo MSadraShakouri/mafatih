@@ -1,0 +1,33 @@
+name: Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Typecheck, tests, validation and development build
+        run: npm run check
+      - name: Test APK asset verification
+        run: npm run test:apk-assets
+      - name: Install browser
+        run: npx playwright install --with-deps --only-shell chromium
+      - name: Exercise the production build at root and a Pages subpath
+        run: npx playwright test
+      # This workflow never uploads, deploys, signs, or publishes an artifact.

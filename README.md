@@ -4,13 +4,13 @@
 
 **The data-structure rebuild is done.** The project contains the imported items in structured, version-controlled JSON, plus tools to edit/validate them and generate a SQLite database. The JSON in `data/` is the source of truth; SQLite and search files are generated from it.
 
-**The content work is not finished.** Line-by-line alignment, missing English, independent rights clearance, a website and an APK are still to do. Some rows remain long. English is stored independently, so parts of one English paragraph can later be associated with multiple Arabic/Persian rows without inventing a translation. A text-only AI-agent tool can propose and validate lossless split points; it does not yet physically split the canonical data. See [how segmentation works](docs/segmentation.md), [the AI splitting workflow](docs/ai-splitting.md), and [the long-term plan](ROADMAP.md).
+**The content work and reader are not finished.** Line-by-line alignment, missing English, documented permissions and review, and the finished website/APK are still to do. A minimal Persian-first web reader and Capacitor shell now exist for development. Some rows remain long. English is stored independently, so parts of one English paragraph can later be associated with multiple Arabic/Persian rows without inventing a translation. A text-only agent tool can propose and validate lossless split points; it does not yet physically split the canonical data. See [how segmentation works](docs/segmentation.md), [the splitting workflow](docs/ai-splitting.md), and [the long-term plan](ROADMAP.md).
 
 **Hard rule: no AI translation of Arabic text.** AI may help with permitted Persian explanatory prose; see [CONTENT_POLICY.md](CONTENT_POLICY.md). Existing provenance and permissions need review; this is not publication-ready.
 
 The 686 original items, ordered Arabic/Persian rows, English documents, navigation and provenance claims were migrated from the commit recorded in `data/corpus.json`; the baseline importer checked a round trip before subsequent edits. A targeted 2026 audit corrected specific transcription, alignment, title and mixed-document issues while preserving previous values and stable occurrence references in history. Thirty-four whole-surah items have chapter numbers. These checks do **not** verify the whole corpus or grant publication rights; independent expert and rights review remains necessary. See [the substantive audit](docs/substantive-audit.md) and [rights review](docs/rights-review.md).
 
-The Git-enabled delivery is a **fresh repository** with one initial commit on `main` and no configured remote. It does not carry over the old Git history; see [repository setup](docs/repository-setup.md). The dataset still records its historical provenance. Do not push uncleared text to a public repository.
+The foundation was initialized as a fresh Git repository rather than carrying over the old Git history; see [repository setup](docs/repository-setup.md). The dataset still records its historical provenance. Do not push uncleared text to a public repository.
 
 ## Start here
 
@@ -41,6 +41,9 @@ data/
   legacy-attribution.md    the original credits and their claims
   alignments/              human-reviewed many-to-many span groups, if any
 src/                       shared TypeScript schemas, search and validation
+web/                       minimal shared Persian-first Vite reader
+android/                   Capacitor shell (generated assets are ignored)
+.github/workflows/         test-only CI and manually gated distribution
 ROADMAP.md                 next steps and what is/isn't finished
 CONTENT_POLICY.md          no AI translation of Arabic text
 AGENTS.md                  instructions for future AI coding/content agents
@@ -57,7 +60,7 @@ Exact content values are stored once in the text pool; rows and paragraphs refer
 
 `generated/`, `reports/`, `dist/`, `node_modules/`, databases, APKs and Capacitor's copied web assets are ignored. Catalogs, counts, search indexes, audit reports, review pages and SQLite files are build artifacts—not source-controlled duplicates. `npm run check:repository` also flags common build outputs accidentally staged in Git; it cannot recognize every possible duplicate file.
 
-The owner reports that Hazm was used during earlier Persian normalization, but not all suggestions were applied and its word list is incomplete. The current search normalizer is separate and does not call Hazm. See [Persian normalization](docs/persian-normalization.md); do not apply suggestions blindly.
+Project notes report that Hazm was used during earlier Persian normalization, but not all suggestions were applied and its word list is incomplete. The current search normalizer is separate and does not call Hazm. See [Persian normalization](docs/persian-normalization.md); do not apply suggestions blindly.
 
 ## Alignment status
 
@@ -87,13 +90,11 @@ Working copies are ignored build files, not canonical source. Existing row and p
 
 ## Website and Capacitor integration
 
-`npm run build:data` generates `generated/web-data/` with a catalog, lazy-loadable item and English JSON, attribution/source records, and a multilingual search index. Rows explicitly classified `audio-reciter` remain in canonical data/SQLite but are omitted from runtime prayer rows and search; each item reports the number excluded. After publication approval, copy that directory into your website build (for example `dist/data/`), configure the website's base path for its hosting location, and use relative/base-aware URLs. Use each English document’s `display_title` for display; `source_metadata` preserves historical titles, which can be wrong. The same `src/normalize.ts` function is used at index build and query time.
+The minimal Vite reader stages `generated/web-data/` into one `dist/`, which the tracked Capacitor Android shell consumes. Start it locally with `npm run dev`; run `npm run test:browser` after installing Playwright Chromium. The scaffold shows the real Persian table of contents and Arabic/Persian rows, but search, the final header, settings, audio, auto-scroll, English UI, bundled fonts and website offline caching are not finished. The Android icons are placeholders and its application ID is provisional.
 
-When you later create the Capacitor project, set its `webDir` to your website output, build the website, and then run `npx cap sync android`. Track your native Android project as needed, but not the copied generated web assets. The APK can bundle the corpus offline; a website needs a service worker/cache strategy for offline use.
+Rows explicitly classified `audio-reciter` remain in canonical data/SQLite but are omitted from runtime prayer rows and search. English documents remain separate; `display_title` is the display title, while historical `source_metadata` can be wrong. The existing whole-query search code is a baseline, not the planned final search.
 
-The optional normalized SQLite file is useful for SQL analysis or a future native adapter; it is generated from the same source, not checked into Git. The website does not need SQLite or an Android-specific database plugin.
-
-Read **[docs/data-model.md](docs/data-model.md)** and **[docs/publishing.md](docs/publishing.md)** before building a public app.
+**[Architecture and local builds](docs/web-android.md)** explains the shared build, Pages subpaths and remaining work. **[Signing and workflows](docs/android-signing.md)** contains the exact keystore/`gh` commands; the distribution workflow is manual and passes through `check:publication` before uploading or deploying. The optional normalized SQLite file is for analysis or a future adapter, not a second source of truth. Read **[data model](docs/data-model.md)** and **[publishing](docs/publishing.md)** before distributing.
 
 ## Legacy importer
 

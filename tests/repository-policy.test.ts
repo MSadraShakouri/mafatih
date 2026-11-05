@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {isGeneratedRepositoryPath} from '../src/repository-policy.js';
 
 test('repository policy flags generated indexes, databases, reports, builds and archives',()=>{
-  for(const p of ['generated/web-data/search-index.json','reports/quran-comparison.json','dist/data/catalog.json','build/app.js','node_modules/zod/index.js','site/node_modules/a.js','web/.next/cache/x','generated\\corpus.sqlite','corpus.sqlite','archive.sqlite3','analysis.db','analysis.db-wal','x/search-index.json','app.apk','backup.tar.xz','backup.zip','a.tsbuildinfo'])
+  for(const p of ['generated/web-data/search-index.json','reports/quran-comparison.json','dist/data/catalog.json','build/app.js','node_modules/zod/index.js','site/node_modules/a.js','web/.next/cache/x','generated\\corpus.sqlite','corpus.sqlite','archive.sqlite3','analysis.db','analysis.db-wal','x/search-index.json','app.apk','backup.tar.xz','backup.zip','a.tsbuildinfo','android/app/build/intermediate.bin','android/.gradle/state.bin','android/app/src/main/assets/public/index.html','android/capacitor-cordova-android-plugins/a.java','release.p12','signing.jks','private.keystore'])
     assert.equal(isGeneratedRepositoryPath(p),true,p);
 });
 test('repository policy keeps canonical data, source code, documentation and tests trackable',()=>{

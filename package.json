@@ -7,12 +7,12 @@
     "node": ">=20"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.web.json",
     "test": "node --import tsx --test tests/*.test.ts",
     "validate": "tsx scripts/validate.ts",
     "audit": "tsx scripts/audit.ts",
     "build:data": "tsx scripts/build-data.ts",
-    "build": "npm run validate && npm run build:data",
+    "build": "npm run validate && npm run build:web",
     "check:repository": "tsx scripts/check-repository.ts",
     "check": "npm run typecheck && npm test && npm run check:repository && npm run build",
     "show:item": "tsx scripts/show-item.ts",
@@ -26,16 +26,32 @@
     "add:english": "tsx scripts/add-english.ts",
     "edit:english": "tsx scripts/edit-english.ts",
     "check:publication": "tsx scripts/check-publication.ts",
-    "build:release": "npm run check:publication && npm run build:data",
+    "build:release": "npm run check:publication && npm run build",
     "alignment:import": "tsx scripts/import-alignments.ts",
-    "alignment:manual": "tsx scripts/manual-alignment.ts"
+    "alignment:manual": "tsx scripts/manual-alignment.ts",
+    "stage:web": "tsx scripts/stage-web.ts",
+    "prepare:web": "npm run build:data && npm run stage:web",
+    "dev": "npm run prepare:web && vite",
+    "build:web": "npm run prepare:web && vite build",
+    "preview": "vite preview",
+    "test:browser": "npm run build && playwright test",
+    "test:apk-assets": "python3 -m unittest discover -s tests -p test_verify_apk_assets.py",
+    "android:sync": "npm run build && cap sync android"
   },
   "dependencies": {
+    "@capacitor/android": "7.6.10",
+    "@capacitor/core": "7.6.10",
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@capacitor/cli": "7.6.10",
+    "@playwright/test": "1.64.1",
     "@types/node": "20.19.25",
     "tsx": "4.20.6",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vite": "6.4.5"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }

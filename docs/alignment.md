@@ -22,7 +22,7 @@ npm run suggest:alignments -- --treasures /tmp/duas_data.jsonl
 npm run audit
 ```
 
-`generated/review/alignment-candidates.json` is machine-readable. An AI agent can inspect it and use the text-only [split planning workflow](ai-splitting.md) to propose exact segments and groups; the owner does not need to split lines by hand. Both workflows produce **unreviewed** proposals. The existing optional HTML review artifact is legacy and is not required.
+`generated/review/alignment-candidates.json` is machine-readable. An AI agent can inspect it and use the text-only [split planning workflow](ai-splitting.md) to propose exact segments and groups; manual line splitting is not required. Both workflows produce **unreviewed** proposals. The existing optional HTML review artifact is legacy and is not required.
 
 When a relationship has genuinely received the required review, a reviewer or authorized agent can prepare a reviewed import JSON and run:
 

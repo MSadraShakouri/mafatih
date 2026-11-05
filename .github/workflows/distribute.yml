@@ -1,0 +1,161 @@
+name: Prepare distribution
+
+# Nothing is deployed or distributed on push/tag. A manual run on main still
+# fails at the publication gate until content, permissions and reviews qualify.
+on:
+  workflow_dispatch:
+    inputs:
+      build_apk:
+        description: Build a signed Android APK artifact
+        type: boolean
+        required: true
+        default: true
+      deploy_pages:
+        description: Deploy the same web build to GitHub Pages
+        type: boolean
+        required: true
+        default: false
+      version_name:
+        description: Android version name (letters, digits, dot, underscore, plus or hyphen)
+        type: string
+        required: true
+        default: '0.1.0'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: distribution-main
+  cancel-in-progress: false
+
+jobs:
+  web:
+    # Deliberately do not sign or deploy code from an arbitrary branch.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run test:apk-assets
+      - run: npx playwright install --with-deps --only-shell chromium
+      - run: npx playwright test
+      - name: Require documented publication readiness
+        run: npm run check:publication
+      - name: Upload the one tested web build for downstream jobs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: web-dist
+          path: dist/
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
+
+  apk:
+    if: inputs.build_apk
+    needs: web
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    # Optional branch restrictions and required reviewers can be configured
+    # for this environment in repository settings.
+    environment: android-release
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+      - run: npm ci
+      - name: Download the identical tested web build
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: web-dist
+          path: dist
+      - run: npx cap sync android
+      - name: Decode the existing signing key in the runner's temporary directory
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$KEYSTORE_BASE64" || { echo 'Missing ANDROID_KEYSTORE_BASE64 secret.' >&2; exit 1; }
+          umask 077
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/mafatih-signing.p12"
+          test -s "$RUNNER_TEMP/mafatih-signing.p12"
+      - name: Build a signed release APK
+        env:
+          ANDROID_KEYSTORE_FILE: ${{ runner.temp }}/mafatih-signing.p12
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          VERSION_NAME: ${{ inputs.version_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in ANDROID_KEYSTORE_FILE ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_ALIAS ANDROID_KEY_PASSWORD; do
+            test -n "${!name}" || { echo "Missing signing secret for $name." >&2; exit 1; }
+          done
+          case "$VERSION_NAME" in
+            ''|*[!a-zA-Z0-9._+-]*) echo 'Invalid version name.' >&2; exit 1 ;;
+          esac
+          cd android
+          ./gradlew --no-daemon assembleRelease -PversionCode="$GITHUB_RUN_NUMBER" -PversionName="$VERSION_NAME"
+      - name: Verify signature and packaged web assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          apk=android/app/build/outputs/apk/release/app-release.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$apk"
+          python3 scripts/verify-apk-assets.py dist "$apk"
+      - name: Upload signed APK artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: mafatih-android-apk
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 14
+      - name: Remove temporary signing material
+        if: always()
+        run: rm -f "$RUNNER_TEMP/mafatih-signing.p12"
+
+  pages:
+    if: inputs.deploy_pages
+    needs: web
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download the identical tested web build
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: web-dist
+          path: dist
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+          include-hidden-files: true
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

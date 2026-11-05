@@ -1,0 +1,27 @@
+/* A deliberately plain, usable scaffold—not the finished reader or header. */
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+body { margin: 0; }
+
+main {
+  max-inline-size: 70rem;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+ul { padding-inline-start: 1.5rem; }
+li { margin-block: 0.25rem; }
+a { color: inherit; }
+.reader-row { margin-block: 1.5rem; }
+.reader-row p { margin-block: 0.5rem; white-space: pre-wrap; }
+.reader-row .ar {
+  font-family: serif;
+  font-size: 1.5rem;
+  line-height: 2;
+  text-align: justify;
+  text-align-last: start;
+}

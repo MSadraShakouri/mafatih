@@ -1,6 +1,6 @@
 # Text-only split planning for AI agents
 
-This tool is designed for an AI service or other program to operate; the project owner does not have to split every line by hand. It uses local files only, makes **no AI or network calls**, and requires no graphical interface.
+This tool is designed for an AI service or other program to operate; manual line-by-line splitting is not required. It uses local files only, makes **no AI or network calls**, and requires no graphical interface.
 
 **Hard rule:** do not use AI to translate Arabic text, or devotional Arabic through Persian. Split and align existing text only. Explanatory prose may be translated from Persian under [CONTENT_POLICY.md](../CONTENT_POLICY.md), with provenance. Never invent a missing devotional English translation.
 
@@ -57,4 +57,4 @@ The following is a **template**, not a valid plan until the agent copies real ID
 
 > Read `CONTENT_POLICY.md` and `docs/ai-splitting.md`. Run the export command for the requested item. Propose meaningful boundaries in the existing Arabic, Persian and linked English only; never produce a new translation of Arabic. Prepare JSON using the exported hashes and exact unique anchors, then run the validator and repair any structural errors. Leave uncertain associations out or explicitly unreviewed. Report missing English and rights/source gaps separately. Do not modify `data/` or mark machine proposals as human-reviewed.
 
-This gives an agent a repeatable starting point without a visual editor. For eventual publication, independent textual and rights review is still needed; it does not have to be performed by the project owner personally.
+This gives an agent a repeatable starting point without a visual editor. For eventual publication, independent textual and rights review is still needed; it need not all be performed by a single person.

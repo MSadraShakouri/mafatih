@@ -2,7 +2,7 @@
 
 ## Historical use
 
-The project owner reports that [Hazm](https://github.com/roshan-research/hazm), a Persian NLP toolkit, was used during earlier Persian-text normalization. **Not every suggested change was applied.** Its available word list is limited and does not recognize every valid word, name, religious expression, inflection or spelling; an unrecognized word or suggestion is not by itself evidence that the corpus is wrong.
+Project notes report that [Hazm](https://github.com/roshan-research/hazm), a Persian NLP toolkit, was used during earlier Persian-text normalization. **Not every suggested change was applied.** Its available word list is limited and does not recognize every valid word, name, religious expression, inflection or spelling; an unrecognized word or suggestion is not by itself evidence that the corpus is wrong.
 
 The old tracked repository does not record the exact Hazm version, configuration, original input, output or complete accepted/rejected suggestion list. Those details remain **unknown**; do not claim a particular version or pretend the previous run is reproducible from this repository. Preserve the existing Persian wording unless a specific change is supported and recorded.
 

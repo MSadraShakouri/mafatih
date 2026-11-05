@@ -10,7 +10,7 @@ This is the practical to-do list for turning the current data foundation into a 
 - [x] Research obvious rights questions and record what is known and unknown; keep the publication gate closed.
 - [ ] Review the content and alignments; the existing row pairings and machine-generated candidates are **not** verified. No alignment groups have been reviewed yet.
 - [x] Provide a text/JSON split-planning tool for AI agents: export existing text, validate exact Unicode-safe cuts, and output lossless segments plus optional unreviewed alignment proposals. It makes no model/API calls and never generates a translation.
-- [ ] Build the website and app later. No visual data-editing tool is needed or planned.
+- [x] Add a minimal shared Vite reader and Capacitor shell, with manual, publication-gated distribution workflows. This is a starter, not the finished website or app; no visual data-editing tool is planned.
 - [ ] Extend the agent workflow into a safe canonical split-and-merge operation with automatic migration previews. Today's planner does not physically rewrite source rows, synchronize translations, preserve newly retired row/paragraph addresses, or migrate reviewed groups for you.
 
 ## Non-negotiable rule
@@ -29,7 +29,7 @@ Follow [CONTENT_POLICY.md](CONTENT_POLICY.md): **no AI translation of Arabic tex
 
 ## 2. Review Arabic, Persian and English alignments
 
-- [ ] Have AI agents work in small batches against trusted editions, starting with the prayers most used. Use separate verification passes and, where needed for reliable publication, a qualified human reviewer; this does not require the project owner to split every line by hand. Confirm wording and meaning/context, not just line breaks.
+- [ ] Have AI agents work in small batches against trusted editions, starting with the prayers most used. Use separate verification passes and, where needed for reliable publication, a qualified human reviewer; this does not require manually splitting every line. Confirm wording and meaning/context, not just line breaks.
 - [ ] Resolve the existing coarse rows and the **14 potential split Quran verse sequences** before accepting their alignments. Check whether instructions, headings and reciter menus are separate from recitation.
 - [ ] Examine machine triage candidates and source differences as leads, not verdicts. The current review bundle's 9,396 candidates are all unreviewed; no automatic match is scholarly approval.
 - [ ] Record reviewer, date, evidence, text edition and exact spans. Flag stale review when text changes. Record uncertainty and allow partial AR–FA or AR–EN review when a third language is missing.
@@ -54,16 +54,17 @@ Follow [CONTENT_POLICY.md](CONTENT_POLICY.md): **no AI translation of Arabic tex
 
 ## 5. Build the website and app
 
-- [ ] Design a clear library, search, navigation/contents, and item pages. Display the correct English title and coverage, not just an imported source title.
-- [ ] Allow independent Arabic, Persian and English visibility, font size and reading direction; make Arabic/Persian and English layouts accessible on mobile and desktop.
-- [ ] Use reviewed alignment groups for synchronized highlighting/reading. For unreviewed or incomplete passages, show the full sources honestly instead of making a false line-by-line pairing.
-- [ ] Add offline caching and backup/export; build a website first, then package the tested website with Capacitor for Android. No website or APK currently exists in this repository.
+- [ ] Finish the Persian-first library, search, navigation and item pages. Keep visible search and play/pause in the header when its design is decided. English UI comes later; display the correct English title/coverage and use Persian fallback for a missing needed explanation.
+- [ ] Offer reader styles, font size and all three planned font families, with suitable licenses and offline files. Arabic/Persian and later English need their proper directions. Select Persian or English translations rather than normally showing both full translations simultaneously.
+- [ ] Use reviewed alignment groups where available. For unreviewed or incomplete passages, show the full sources honestly instead of making a false line-by-line pairing.
+- [ ] Complete shared settings, bookmarks, accessible auto-scroll, offline website caching and backup/export. The starter Android shell bundles the website build; device/offline validation and a finished APK remain to do.
 - [ ] Keep data editing and review agent-friendly and text-based, with reversible changes, provenance entry and conflict handling. No visual data-editing tool is requested. Keep canonical data independent from website/app presentation.
 
 ## 6. Keep the repository healthy
 
 - [x] Keep source JSON and editorial history in Git; generate SQLite, search indexes, reports, dependencies and app builds rather than committing duplicate artifacts. `.gitignore` and `npm run check:repository` guard common artifacts.
-- [ ] Add CI for typecheck, tests, the repository-artifact guard, structural validation, data migrations, SQLite integrity, Unicode spans, accessibility and reproducible builds. Keep size/backup checks and restore tests.
+- [x] Add CI for typecheck, existing tests, the repository-artifact guard, structural validation and root/subpath browser smoke tests; keep distribution manual and gated.
+- [ ] Extend CI with data migration/SQLite integrity, accessibility and reproducible-build checks. Keep size/backup checks and restore tests.
 - [ ] Add an explicit schema-version/migration policy before introducing breaking structural changes. Preserve old IDs, redirects, source claims and a way to roll back.
 - [ ] Resolve the retained reversed TOC page range, legacy page-number mapping, remaining source/permission gaps and other audit findings; do not silently guess values.
 - [ ] Decide how audio/reciter metadata and licensed media should work; the 28 known audio-menu rows are currently retained for audit but excluded from prayer/search output.
