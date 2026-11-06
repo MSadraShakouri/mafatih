@@ -17,6 +17,7 @@
     "check": "npm run typecheck && npm test && npm run check:repository && npm run build",
     "show:item": "tsx scripts/show-item.ts",
     "edit:text": "tsx scripts/edit-text.ts",
+    "normalize:punctuation": "tsx scripts/normalize-punctuation.ts",
     "suggest:alignments": "tsx scripts/suggest-alignments.ts",
     "split:plan": "tsx scripts/split-plan.ts",
     "review:html": "tsx scripts/review-page.ts",

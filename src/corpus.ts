@@ -7,6 +7,7 @@ import {
   type AlignmentFile, type EnglishDocument, type Item, type NavNode, type Relations, type Sources
 } from './schema.js';
 import { claimId, codePoints, sha256, slicePoints, textId } from './text-ids.js';
+import { validatePunctuationHistory } from './punctuation-history.js';
 
 type Metadata=z.infer<typeof CorpusMetaSchema>;
 type Navigation=z.infer<typeof NavigationSchema>;
@@ -148,6 +149,7 @@ export function validateCorpus(c:Corpus):ValidationResult {
     if(!c.english.has(edit.source_document))fail(`editorial history: missing document ${edit.source_document}`);
     if(!(edit.evidence in c.editorial.evidence))fail(`editorial history: missing evidence ${edit.evidence}`);
   }
+  for(const error of validatePunctuationHistory(c))fail(error);
   const historyEvidence=(id:string)=>{if(!(id in c.editorial.evidence))fail(`editorial history: missing evidence ${id}`);};
   const historyRow=(item:string,row:string)=>{
     const it=c.items.get(item);if(!it)fail(`editorial history: missing item ${item}`);

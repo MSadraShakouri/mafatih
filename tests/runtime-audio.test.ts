@@ -94,3 +94,57 @@ test('local diagnostic probe reports the combined ranking and real cross-row con
   assert.match(first,/dua-azm-al-bala\/r00002/);
   assert.match(first,/r00003/);
 });
+
+test('generated reader, search, navigation and English data use the corrected canonical occurrences', () => {
+  const c = loadCorpus();
+  const changes = (c.editorial.punctuation_normalizations ?? []).flatMap(batch => batch.changes);
+  assert.ok(changes.length > 0);
+  type BuiltNode = { title: string; children: BuiltNode[] };
+  type BuiltItem = { title: Record<string, string>; rows: Array<{ id: string; ar: string; fa: string }> };
+  type BuiltEnglish = { paragraphs: Array<{ id: string; text: string }> };
+  const catalog = JSON.parse(fs.readFileSync('generated/web-data/catalog.json', 'utf8')) as {
+    items: Array<{ id: string; title: Record<string, string>; tags: string[] }>;
+    toc: BuiltNode[];
+  };
+  const index = JSON.parse(fs.readFileSync('generated/web-data/search-index.json', 'utf8')) as SearchIndex;
+  const records = [...index.records, ...index.shards.flatMap(file => (JSON.parse(fs.readFileSync(`generated/web-data/${file}`, 'utf8')) as SearchShard).records)];
+  const byKey = new Map(records.map(record => [record.key, record]));
+  const itemFiles = new Map<string, BuiltItem>();
+  const englishFiles = new Map<string, BuiltEnglish>();
+  let rows = 0, english = 0, titles = 0, navigation = 0;
+  for (const edit of changes) {
+    const location = edit.location; const expected = text(c, edit.replacement);
+    if (location.kind === 'item-row') {
+      const source = c.items.get(location.item)!.rows.find(row => row.id === location.row)!;
+      if (source.kind === 'audio-reciter') continue;
+      let item = itemFiles.get(location.item);
+      if (!item) {
+        item = JSON.parse(fs.readFileSync(`generated/web-data/items/${location.item}.json`, 'utf8')) as BuiltItem;
+        itemFiles.set(location.item, item);
+      }
+      assert.equal(item.rows.find(row => row.id === location.row)?.[location.language], expected);
+      const indexed = byKey.get(`row:${location.item}:${location.row}:${location.language}`);
+      assert.equal(indexed?.text, expected);
+      assert.equal(indexed?.normalized, normalizeSearch(expected));
+      rows += 1;
+    } else if (location.kind === 'english-paragraph') {
+      let doc = englishFiles.get(location.document);
+      if (!doc) {
+        doc = JSON.parse(fs.readFileSync(`generated/web-data/english/${location.document}.json`, 'utf8')) as BuiltEnglish;
+        englishFiles.set(location.document, doc);
+      }
+      assert.equal(doc.paragraphs.find(paragraph => paragraph.id === location.paragraph)?.text, expected);
+      english += 1;
+    } else if (location.kind === 'item-title') {
+      assert.equal(catalog.items.find(item => item.id === location.item)?.title[location.language], expected);
+      titles += 1;
+    } else if (location.kind === 'navigation') {
+      let children = catalog.toc; let node: BuiltNode | undefined;
+      for (const index of location.path) { node = children[index]; assert.ok(node); children = node.children; }
+      assert.equal(node?.title, expected);
+      assert.equal(byKey.get(`toc:${location.path.join('.')}`)?.text, expected);
+      navigation += 1;
+    }
+  }
+  assert.ok(rows > 0 && english > 0 && titles > 0 && navigation > 0);
+});

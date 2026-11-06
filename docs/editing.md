@@ -19,7 +19,7 @@ npm run edit:english -- export dua-kumayl
 npm run edit:english -- apply generated/edit/dua-kumayl.english.json
 ```
 
-For the five documents with `display_title`, use that field for the current title; `source_metadata` retains the imported historical title. Display overrides are unreviewed; changing one clears its old evidence reference unless you supply a different reference. Paragraph deletion needs `--allow-paragraph-deletion`. A changed reviewed paragraph needs `--invalidate-reviewed`; affected reviewed groups across items are removed rather than silently left valid. Re-run the matcher after changing text.
+For documents with `display_title`, use that field for the current title; `source_metadata` records the imported historical title. If a punctuation-only correction ever changes a metadata title, its exact previous value and occurrence remain in punctuation history. Display overrides are unreviewed; changing one clears its old evidence reference unless you supply a different reference. Paragraph deletion needs `--allow-paragraph-deletion`. A changed reviewed paragraph needs `--invalidate-reviewed`; affected reviewed groups across items are removed rather than silently left valid. Re-run the matcher after changing text.
 
 For an individual exact text value, an alternative is:
 
@@ -34,6 +34,18 @@ The file is read exactly, including any final newline or BOM. See `npm run edit:
 ```sh
 npm run show:item -- dua-kumayl
 ```
+
+## Punctuation spacing
+
+The project has an explicitly requested, language-independent **canonical content** correction for horizontal whitespace immediately before closing and sentence punctuation. It covers item titles, tags and Arabic/Persian rows, navigation titles, and English document titles/metadata and paragraphs. It does not replace punctuation characters or edit source claims, licenses, source records or existing historical entries. It preserves letters, diacritics, half-spaces, line breaks, opening brackets/quotes and spaced dashes. Ambiguous quote glyphs that can introduce a quotation or a transliterated name are left alone.
+
+```sh
+npm run normalize:punctuation              # dry-run summary; writes nothing
+npm run normalize:punctuation -- --check  # nonzero if content changes are needed
+npm run normalize:punctuation -- --apply  # apply only after reviewing the summary
+```
+
+Each change is copy-on-write and adds the exact old/new text IDs and occurrence address to `punctuation_normalizations` in `data/editorial-history.json`. The old values remain in the pool, so the operation is auditable and reversible; a navigation path records its position at the time of correction. Repeating the command on normalized content is a no-op. The command refuses to change reviewed titles, text, documents or affected alignment spans; it never automatically removes or marks reviews. Review those cases separately rather than forcing the command. Punctuation-only changes can shift older character-offset links within a row, even though item, row and paragraph IDs remain stable. This is not a content, translation or rights review.
 
 ## Add an item
 

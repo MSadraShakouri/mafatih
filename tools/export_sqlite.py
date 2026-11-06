@@ -4,7 +4,7 @@ from __future__ import annotations
 import json,os,pathlib,sqlite3,sys
 ROOT=pathlib.Path(__file__).resolve().parent.parent
 DATA=pathlib.Path(os.environ.get('MAFATIH_DATA_ROOT',ROOT/'data')).resolve()
-OUT=ROOT/'generated'/'corpus.sqlite';OUT.parent.mkdir(parents=True,exist_ok=True)
+OUT=pathlib.Path(os.environ.get('MAFATIH_SQLITE_OUT',ROOT/'generated'/'corpus.sqlite')).resolve();OUT.parent.mkdir(parents=True,exist_ok=True)
 TMP=OUT.with_name(OUT.name+f'.tmp-{os.getpid()}')
 load=lambda p:json.loads(p.read_text(encoding='utf-8'))
 compact=lambda x:None if x is None else json.dumps(x,ensure_ascii=False,separators=(',',':'))
@@ -52,6 +52,10 @@ try:
   for pos,e in enumerate(editorial.get('retracted_links',[])):con.execute('INSERT INTO retracted_link VALUES (?,?,?,?,?,?)',(pos,e['item'],e['document'],e['kind'],e['evidence'],e['reason']))
   for pos,e in enumerate(editorial.get('created_documents',[])):con.execute('INSERT INTO created_document VALUES (?,?,?,?,?,?,?)',(pos,e['document'],e['based_on_document'],e['based_on_paragraph'],e['source_record'],e['evidence'],e['reason']))
   for pos,e in enumerate(editorial.get('proposed_links',[])):con.execute('INSERT INTO proposed_link_history VALUES (?,?,?,?,?)',(pos,e['item'],e['document'],e['evidence'],e['reason']))
+  for batch_pos,batch in enumerate(editorial.get('punctuation_normalizations',[])):
+   con.execute('INSERT INTO punctuation_normalization VALUES (?,?,?)',(batch_pos,batch['rule'],batch['date']))
+   for pos,e in enumerate(batch['changes']):con.execute('INSERT INTO punctuation_correction VALUES (?,?,?,?,?)',
+    (batch_pos,pos,compact(e['location']),e['previous'],e['replacement']))
   nav=load(DATA/'navigation.json')
   for pos,id in enumerate(nav['default_order']):con.execute('INSERT INTO default_order VALUES (?,?)',(pos,id))
   for pos,id in enumerate(nav['featured']):con.execute('INSERT INTO featured VALUES (?,?)',(pos,id))

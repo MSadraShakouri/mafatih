@@ -88,6 +88,22 @@ export const SourceSchema = z.object({
   attribution: Ref.optional(), notes: Ref.optional()
 }).strict();
 export const SourcesSchema = z.object({ sources: z.record(Key,SourceSchema) }).strict();
+
+// A punctuation edit addresses an occurrence, not just a pooled value: the
+// same original string can also be used by an unchanged source claim/history.
+export const PunctuationLocationSchema = z.discriminatedUnion('kind', [
+  z.object({kind:z.literal('item-title'),item:Key,language:z.enum(['ar','fa','en'])}).strict(),
+  z.object({kind:z.literal('item-tag'),item:Key,index:z.number().int().nonnegative()}).strict(),
+  z.object({kind:z.literal('item-row'),item:Key,row:Key,language:z.enum(['ar','fa'])}).strict(),
+  z.object({kind:z.literal('english-display'),document:Key,language:z.enum(['ar','en'])}).strict(),
+  z.object({kind:z.literal('english-metadata'),document:Key,field:z.enum(['title','title_ar','section','chapter'])}).strict(),
+  z.object({kind:z.literal('english-paragraph'),document:Key,paragraph:Key}).strict(),
+  z.object({kind:z.literal('navigation'),path:z.array(z.number().int().nonnegative()).min(1)}).strict(),
+]);
+export const PunctuationEditSchema = z.object({location:PunctuationLocationSchema,previous:TextId,replacement:TextId}).strict();
+export type PunctuationLocation = z.infer<typeof PunctuationLocationSchema>;
+export type PunctuationEdit = z.infer<typeof PunctuationEditSchema>;
+
 export const EditorialHistorySchema = z.object({
   evidence: z.record(Key,z.object({url:z.string().url(),description:z.string().min(1)}).strict()),
   metadata_corrections:z.array(z.object({item:Key,field:z.enum(['title.ar','title.en']),previous:TextId.nullable(),replacement:TextId.nullable(),source_document:Key,evidence:Key}).strict()),
@@ -100,6 +116,11 @@ export const EditorialHistorySchema = z.object({
   created_documents:z.array(z.object({document:Key,based_on_document:Key,based_on_paragraph:Key,source_record:z.string().min(1),evidence:Key,reason:z.string().min(1)}).strict()).optional(),
   proposed_links:z.array(z.object({item:Key,document:Key,evidence:Key,reason:z.string().min(1)}).strict()).optional(),
   retracted_links:z.array(z.object({item:Key,document:Key,kind:LinkSchema.shape.kind,evidence:Key,reason:z.string().min(1)}).strict()).optional(),
+  // Previous values remain in the pool; no human review is claimed by this
+  // purely mechanical, occurrence-specific whitespace correction.
+  punctuation_normalizations:z.array(z.object({
+    rule:z.literal('closing-punctuation-v1'),date:ISODate,changes:z.array(PunctuationEditSchema).min(1)
+  }).strict()).optional(),
   quran_number_evidence:Key.optional()
 }).strict();
 export const CorpusMetaSchema = z.object({

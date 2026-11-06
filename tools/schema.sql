@@ -112,6 +112,19 @@ CREATE TABLE proposed_link_history (
   position INTEGER PRIMARY KEY, item_id TEXT NOT NULL REFERENCES item(id), document_id TEXT NOT NULL REFERENCES english_document(id),
   evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL
 ) STRICT;
+-- Mechanical punctuation edits retain the exact old and new pooled text IDs.
+-- location_json is the typed occurrence address from editorial-history.json;
+-- navigation paths are historical positions rather than permanent IDs.
+CREATE TABLE punctuation_normalization (
+  position INTEGER PRIMARY KEY, rule TEXT NOT NULL, edit_date TEXT NOT NULL
+) STRICT;
+CREATE TABLE punctuation_correction (
+  batch_position INTEGER NOT NULL REFERENCES punctuation_normalization(position),
+  position INTEGER NOT NULL, location_json TEXT NOT NULL,
+  previous_text_id TEXT NOT NULL REFERENCES text_value(id),
+  replacement_text_id TEXT NOT NULL REFERENCES text_value(id),
+  PRIMARY KEY(batch_position,position)
+) STRICT;
 CREATE TABLE default_order (position INTEGER PRIMARY KEY, item_id TEXT NOT NULL UNIQUE REFERENCES item(id)) STRICT;
 CREATE TABLE featured (position INTEGER PRIMARY KEY, item_id TEXT NOT NULL UNIQUE REFERENCES item(id)) STRICT;
 CREATE TABLE navigation_node (

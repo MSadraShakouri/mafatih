@@ -8,7 +8,7 @@ The old tracked repository does not record the exact Hazm version, configuration
 
 ## Distinguish text from search
 
-- **Canonical Persian text** is stored exactly as imported or subsequently corrected, with meaningful spelling, punctuation and zero-width non-joiners preserved. The migration did not run Hazm over the corpus. Original historical claims and targeted corrections remain recorded in editorial history.
+- **Canonical Persian text** is stored exactly as imported or subsequently corrected, with meaningful spelling, punctuation characters and zero-width non-joiners preserved. One explicit, reversible correction removes horizontal whitespace before closing/sentence punctuation; its occurrence-level old and new values are recorded in editorial history. It does not use Hazm or claim content review. Original historical claims and targeted corrections remain recorded.
 - The current application/search build uses the project's own `src/normalize.ts` search-only folding. It does **not** call Hazm and is not an implementation of Hazm. Search folding may ignore diacritics, unify Arabic/Persian character variants and use a more permissive joined/spaced fallback; those changes affect the index and queries, not displayed source text.
 - Hazm is not presently a dependency of the build or a live normalization step in this repository. It may be used separately in future as a source of suggestions, but adding it to a reproducible pipeline requires documenting the exact version, options, resources and input checksums.
 
