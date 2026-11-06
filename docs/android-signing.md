@@ -1,65 +1,47 @@
-# Android signing and manual workflows
+# Android signing and tag workflows
 
-Do not distribute an APK until the publication gate and all required reviews have passed. No key or account secret is supplied by this repository. These commands are for a Bash terminal with `keytool`, `base64` and an authenticated `gh` CLI; they are not run by the project.
+**A pushed `v*` tag (including `v0.1.0`) can publish both the APK on GitHub Releases and the website on GitHub Pages.** The workflows deliberately build without running the publication gate. Source permissions and content reviews remain unresolved; review [publishing](publishing.md) and [rights](rights-review.md) before distributing. A debug signature is not a production-release signing policy.
 
-## 1. Decide whether a new key is appropriate
+## Stable debug key
 
-If an existing Android app should receive updates, first determine its exact application ID and signing certificate. Use the appropriate **existing** key instead of generating a new one; a new ID or incompatible certificate means a different app or a rejected update. The current `com.msadrashakouri.mafatih` ID is provisional and the old ID/key have not been verified.
+The Android workflow follows Satr: it builds a **debug** APK using one fixed key, so builds with the same application ID and certificate can update each other. It expects the repository Actions secret `ANDROID_KEYSTORE_BASE64` to contain a PKCS12 keystore with alias `mafatih` and the store and key password `android`. That public password is the Satr-style debug convention, **not strong protection for a production key**. Keep the keystore itself secret, and do not commit it or its base64 form. The workflow decodes it into the runner's temporary directory and removes it afterward.
 
-For a genuinely new app, create a durable key **outside the repository**. This command will not overwrite an existing file:
+The current application ID `com.msadrashakouri.mafatih` is provisional. If an existing app must receive updates, first verify its application ID and existing signing certificate. A newly generated key will not update an app signed by a different key. The fixed debug key must be preserved securely across builds; losing it breaks that update path.
+
+If a new, separate debug key is appropriate, the following commands create one outside the repository without overwriting an existing file. Run them yourself in a Bash terminal with `keytool`, `base64` and an authenticated `gh` CLI; the repository does not execute them:
 
 ```bash
 mkdir -p "$HOME/.local/share/mafatih-keys"
 chmod 700 "$HOME/.local/share/mafatih-keys"
-KEYSTORE="$HOME/.local/share/mafatih-keys/mafatih-release.p12"
+KEYSTORE="$HOME/.local/share/mafatih-keys/mafatih-debug.p12"
 
 if [ -e "$KEYSTORE" ]; then
   echo "Not overwriting existing keystore: $KEYSTORE" >&2
 else
-  keytool -genkeypair -v -storetype PKCS12 -keystore "$KEYSTORE" \
-    -alias mafatih -keyalg RSA -keysize 3072 -validity 10000 &&
+  keytool -genkeypair -storetype PKCS12 -keystore "$KEYSTORE" \
+    -alias mafatih -storepass android -keypass android \
+    -keyalg RSA -keysize 3072 -validity 10000 -dname 'CN=Mafatih' &&
     chmod 600 "$KEYSTORE"
 fi
 ```
 
-Choose a strong password when prompted. For this new PKCS12 key, use the **same** password for the store and key entry if asked for both; Java PKCS12 tooling may not support different passwords. The certificate identity is public, but the private key and passwords are secret. Make encrypted, recoverable backups in more than one secure place; keep the password separately. Losing the key can prevent normal updates. Never commit the keystore, its base64 form, passwords, or recovery copies.
-
-## 2. Set the four matching Actions secrets
-
-Authenticate separately with `gh auth login` if necessary. The following verifies the password and alias locally, reads the password without echoing it or placing it in command history, and sends the keystore through a pipe rather than leaving a base64 file. It uses the **new PKCS12 key and shared password** described above. Run from a Bash terminal; if using a different shell, an existing key, or different key and store passwords, adapt it carefully.
+After checking that this is the key you intend to use, upload it as the repository secret without leaving a base64 file:
 
 ```bash
-KEYSTORE="$HOME/.local/share/mafatih-keys/mafatih-release.p12"
-(
-  set -euo pipefail
-  test -s "$KEYSTORE"
-  read -r -s -p 'Keystore password: ' STOREPASS
-  printf '\n' >&2
-  export STOREPASS
-  keytool -list -storetype PKCS12 -keystore "$KEYSTORE" \
-    -alias mafatih -storepass:env STOREPASS >/dev/null
-
-  base64 < "$KEYSTORE" | tr -d '\r\n' | \
-    gh secret set ANDROID_KEYSTORE_BASE64 --repo MSadraShakouri/mafatih
-  printf '%s' "$STOREPASS" | \
-    gh secret set ANDROID_KEYSTORE_PASSWORD --repo MSadraShakouri/mafatih
-  printf '%s' 'mafatih' | \
-    gh secret set ANDROID_KEY_ALIAS --repo MSadraShakouri/mafatih
-  printf '%s' "$STOREPASS" | \
-    gh secret set ANDROID_KEY_PASSWORD --repo MSadraShakouri/mafatih
-  unset STOREPASS
-)
+KEYSTORE="$HOME/.local/share/mafatih-keys/mafatih-debug.p12"
+base64 < "$KEYSTORE" | tr -d '\r\n' | \
+  gh secret set ANDROID_KEYSTORE_BASE64 --repo MSadraShakouri/mafatih
 ```
 
-All four names correspond exactly to `.github/workflows/distribute.yml`. They are repository-level Actions secrets; alternatively, set them for the `android-release` environment and adjust the commands with `gh secret set --env android-release`. Restrict repository/environment access appropriately. A successful CLI operation stores the secret remotely; do not run these commands until you intend to do so. Repository writers who can modify trusted workflow code may be able to expose secrets, so protect `main`, review workflow changes, and consider required reviewers for the release environment.
+Do not upload an unrelated keystore from another project unless it has the required alias/password and is deliberately the intended signing identity. The workflow compares the APK signing certificate with the configured keystore and fails if they differ. A GitHub Actions artifact is not automatically private merely because it is a debug build; its accessibility follows repository and Actions permissions.
 
-The workflow decodes the key under the runner's temporary directory with restrictive permissions, uses the other three secrets as environment variables, verifies the APK signature, and removes the file in an `always()` cleanup step. GitHub-hosted runners are ephemeral; cleanup cannot be guaranteed after an abrupt machine failure. Do not use an untrusted self-hosted runner.
+For local builds, no signing variables means Android's ordinary debug key. Supplying all four `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, and `ANDROID_KEY_PASSWORD` signs a local debug or release build with the supplied key; partial configuration fails. The tag workflow itself uses only the one base64 secret and builds `assembleDebug`, not `assembleRelease`.
 
-## 3. Manual workflow setup, later
+## Triggering builds and Pages
 
-1. Document rights, attribution and content/alignment reviews. `npm run check:publication` currently fails; it is a conservative checklist, not legal certification. Do not bypass it merely to obtain an artifact.
-2. Decide the permanent application ID, signing key, icon/splash and version policy. Run device/offline tests before distribution. The workflow sets Android `versionCode` from `GITHUB_RUN_NUMBER`: it increases across new runs of this workflow but is unchanged by re-runs, can reset if the workflow is replaced, and may not exceed the code of an older app. Verify and adjust the policy **before** a first release or update.
-3. For Pages, select **GitHub Actions** as the Pages source in repository settings and configure the `github-pages` environment as desired. Configure `android-release` environment protection/reviewers if desired; an environment without protection does not itself require approval.
-4. From Actions, manually run **Prepare distribution** on `main`. Choose whether to build an APK and whether to deploy Pages; Pages is off by default. The gate precedes artifact upload. The signed APK is an Actions artifact, not an automatically published GitHub Release. No deployment or distribution happens merely from pushing or tagging.
+- A push of `v*`, such as `v0.1.0` or `v0.2.0-beta.1`, starts **both** workflows on that tagged commit. Android uploads an Actions artifact and creates/updates a GitHub Release with the APK; Pages deploys separately. The workflows do not run tests or `check:publication`.
+- A manual **Build Android APK** run on a branch uploads an Actions artifact without creating a Release. A manual run selecting a `v*` tag also creates/updates that tag's Release. A manual **Deploy GitHub Pages** run deploys the selected ref.
+- Android's version name comes from the tag without its `v`; manual branch builds use the latest reachable `v*` tag plus the run number. Its version code is the tagged commit count, as in Satr. Re-runs of the same commit have the same code; tags on older commits can have lower codes. Check compatibility with any installed app before distributing.
+- In repository **Settings → Pages**, set **Source** to **GitHub Actions**. The workflow attempts this on a best-effort basis, but its token may not have permission. In **Settings → Environments → github-pages**, allow tag pattern `v*` if deployment rules restrict refs; also allow a branch such as `main` if you want manual branch deployments. Repository policy must allow the workflow's `contents: write` permission for GitHub Release creation.
 
-The ordinary **Verify** workflow runs tests/build checks on pushes and pull requests, but signs nothing and uploads or deploys no content. Distribution workflows and secret values have not been run or configured by this project setup.
+Pushing a tag does not wait for or depend on the other workflow: the APK Release and Pages deployment can succeed or fail independently. No workflow is triggered on ordinary branch pushes or pull requests. The previous Verify workflow was removed; the existing local test commands are unchanged. See [web and Android architecture](web-android.md) for the build paths.

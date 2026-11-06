@@ -10,7 +10,7 @@ This is the practical to-do list for turning the current data foundation into a 
 - [x] Research obvious rights questions and record what is known and unknown; keep the publication gate closed.
 - [ ] Review the content and alignments; the existing row pairings and machine-generated candidates are **not** verified. No alignment groups have been reviewed yet.
 - [x] Provide a text/JSON split-planning tool for AI agents: export existing text, validate exact Unicode-safe cuts, and output lossless segments plus optional unreviewed alignment proposals. It makes no model/API calls and never generates a translation.
-- [x] Add a minimal shared Vite reader and Capacitor shell, with manual, publication-gated distribution workflows. This is a starter, not the finished website or app; no visual data-editing tool is planned.
+- [x] Add a minimal shared Vite reader and Capacitor shell, with version-tag APK and Pages workflows. The workflows do not enforce the publication gate; content and rights remain unreviewed. This is a starter, not the finished website or app; no visual data-editing tool is planned.
 - [ ] Extend the agent workflow into a safe canonical split-and-merge operation with automatic migration previews. Today's planner does not physically rewrite source rows, synchronize translations, preserve newly retired row/paragraph addresses, or migrate reviewed groups for you.
 
 ## Non-negotiable rule
@@ -63,8 +63,8 @@ Follow [CONTENT_POLICY.md](CONTENT_POLICY.md): **no AI translation of Arabic tex
 ## 6. Keep the repository healthy
 
 - [x] Keep source JSON and editorial history in Git; generate SQLite, search indexes, reports, dependencies and app builds rather than committing duplicate artifacts. `.gitignore` and `npm run check:repository` guard common artifacts.
-- [x] Add CI for typecheck, existing tests, the repository-artifact guard, structural validation and root/subpath browser smoke tests; keep distribution manual and gated.
-- [ ] Extend CI with data migration/SQLite integrity, accessibility and reproducible-build checks. Keep size/backup checks and restore tests.
+- [x] Provide local typecheck, tests, the repository-artifact guard, structural validation and root/subpath browser smoke tests. There is no per-commit CI; `v*` tags trigger separate build and Pages workflows.
+- [ ] Extend local checks with data migration/SQLite integrity, accessibility and reproducible-build coverage. Keep size/backup checks and restore tests.
 - [ ] Add an explicit schema-version/migration policy before introducing breaking structural changes. Preserve old IDs, redirects, source claims and a way to roll back.
 - [ ] Resolve the retained reversed TOC page range, legacy page-number mapping, remaining source/permission gaps and other audit findings; do not silently guess values.
 - [ ] Decide how audio/reciter metadata and licensed media should work; the 28 known audio-menu rows are currently retained for audit but excluded from prayer/search output.

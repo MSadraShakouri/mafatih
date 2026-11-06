@@ -1,0 +1,72 @@
+name: Deploy GitHub Pages
+
+# Only version tags (including v0.x), or an explicit manual run, deploy.
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build the website
+        run: npm run build
+
+      # As in the other projects, enabling the Pages source is best-effort:
+      # GITHUB_TOKEN may lack the repository administration permission.
+      - name: Ensure Pages source is GitHub Actions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          build_type="$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type' 2>/dev/null || echo '')"
+          if [ "$build_type" = workflow ]; then
+            echo 'Pages already uses GitHub Actions.'
+          elif [ -n "$build_type" ]; then
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow || \
+              echo '::warning::Set Settings > Pages > Source to GitHub Actions.'
+          else
+            gh api --method POST "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow || \
+              echo '::warning::Enable Pages with GitHub Actions in repository settings.'
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+          include-hidden-files: true
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

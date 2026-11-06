@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
-// Debug builds use Android's normal debug key. A release is signed only when
-// all four environment variables are present; partial configuration is an
-// error rather than a silently unsigned or incorrectly signed APK.
+// Local debug builds use Android's normal debug key when no signing variables
+// are present. Supplying all four variables signs either debug or release with
+// that key; partial configuration is an error, not a silent fallback.
 def signingNames = ['ANDROID_KEYSTORE_FILE', 'ANDROID_KEYSTORE_PASSWORD', 'ANDROID_KEY_ALIAS', 'ANDROID_KEY_PASSWORD']
 def signingValues = signingNames.collectEntries { [(it): System.getenv(it)] }
 def signingProvided = signingValues.values().any { it != null && !it.isEmpty() }
@@ -21,8 +21,8 @@ android {
         applicationId "com.msadrashakouri.mafatih"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        // CI supplies a monotonically increasing run number. Local builds can
-        // pass -PversionCode and -PversionName without editing this file.
+        // CI supplies the commit count and tag-derived version. Local builds
+        // can pass -PversionCode and -PversionName without editing this file.
         versionCode releaseVersionCode
         versionName releaseVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -34,7 +34,7 @@ android {
     }
     signingConfigs {
         if (signingComplete) {
-            release {
+            configured {
                 storeFile file(signingValues['ANDROID_KEYSTORE_FILE'])
                 storePassword signingValues['ANDROID_KEYSTORE_PASSWORD']
                 keyAlias signingValues['ANDROID_KEY_ALIAS']
@@ -43,8 +43,12 @@ android {
         }
     }
     buildTypes {
+        debug {
+            // The tag workflow supplies its fixed debug key, like Satr.
+            if (signingComplete) signingConfig signingConfigs.configured
+        }
         release {
-            if (signingComplete) signingConfig signingConfigs.release
+            if (signingComplete) signingConfig signingConfigs.configured
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

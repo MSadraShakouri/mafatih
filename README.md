@@ -44,7 +44,7 @@ data/
 src/                       shared TypeScript schemas, search and validation
 web/                       minimal shared Persian-first Vite reader
 android/                   Capacitor shell (generated assets are ignored)
-.github/workflows/         test-only CI and manually gated distribution
+.github/workflows/         version-tag Android APK and Pages workflows
 ROADMAP.md                 next steps and what is/isn't finished
 CONTENT_POLICY.md          no AI translation of Arabic text
 AGENTS.md                  instructions for future AI coding/content agents
@@ -95,7 +95,7 @@ The Vite reader stages `generated/web-data/` into one `dist/`, which the tracked
 
 Rows explicitly classified `audio-reciter` remain in canonical data/SQLite but are omitted from runtime prayer rows and search. English documents remain separate; `display_title` is the display title, while historical `source_metadata` can be wrong. Search currently covers the TOC and individual Arabic/Persian fields; English search is deferred rather than inventing a relationship.
 
-**[Architecture and local builds](docs/web-android.md)** explains the shared build, Pages subpaths and remaining work. **[Signing and workflows](docs/android-signing.md)** contains the exact keystore/`gh` commands; the distribution workflow is manual and passes through `check:publication` before uploading or deploying. The optional normalized SQLite file is for analysis or a future adapter, not a second source of truth. Read **[data model](docs/data-model.md)** and **[publishing](docs/publishing.md)** before distributing.
+**[Architecture and local builds](docs/web-android.md)** explains the shared build, Pages subpaths and remaining work. **[Signing and workflows](docs/android-signing.md)** explains the Satr-style debug key and tag-triggered APK/Pages workflows. A pushed `v*` tag, including `v0.*`, can publish both; these workflows do **not** run `check:publication`, and content and rights remain unreviewed. The optional normalized SQLite file is for analysis or a future adapter, not a second source of truth. Read **[data model](docs/data-model.md)** and **[publishing](docs/publishing.md)** before distributing.
 
 ## Legacy importer
 

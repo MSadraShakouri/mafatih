@@ -18,9 +18,9 @@ npm run build:data  →  generated/web-data/ (runtime JSON)
           │
 npm run stage:web   →  generated/web-public/data/
           │
-Vite + web/         →  dist/  (one tested web build)
+Vite + web/         →  dist/
                          ├── GitHub Pages artifact
-                         └── cap sync android → Android assets → signed APK
+                         └── cap sync android → Android assets → debug APK
 ```
 
 `data/` remains the only canonical corpus. Node-only builders run before Vite; browser code fetches resolved data, not the Node loaders. Vite's public directory contains runtime data only, not audit reports, SQLite, or editing files. The native project is a thin Capacitor shell, not a second reader, database, search implementation, or settings system. The optional generated SQLite database remains for analysis or a future adapter, not as a parallel source of truth.
@@ -48,7 +48,7 @@ cd android
 ./gradlew assembleDebug
 ```
 
-Debug APKs use the standard debug signing key and are not release APKs. With no release signing environment, `assembleRelease` produces an unsigned APK; with only some signing variables it fails. For distribution, use the manual workflow and [signing instructions](android-signing.md). The workflow deliberately downloads the already-tested `dist` and runs `npx cap sync android` **without rebuilding it**.
+Local debug APKs use the standard debug signing key unless a complete signing environment is provided. With no signing environment, `assembleRelease` produces an unsigned APK; partial signing variables fail. The Android workflow instead uses a stable debug key as described in [signing instructions](android-signing.md). Each tag workflow independently builds `dist/` from the same tagged commit; they do not share or compare a previously tested artifact.
 
 ## Search and future shared features
 
@@ -63,12 +63,12 @@ The generated `search-index.json` is version 4 with `nfkd-search-v2` normalizati
 
 ## Workflows and publication
 
-`.github/workflows/verify.yml` automatically runs development checks and browser tests without uploading or distributing an artifact. `.github/workflows/distribute.yml` is manual, restricted to `main`, and runs the existing `check:publication` gate **before any artifact upload, APK signing, or Pages deployment**. It currently fails until the required rights, sources and reviews are documented. Passing it is not legal certification.
+The Satr-style `.github/workflows/build-android.yml` builds a fixed-key debug APK, uploads it as an Actions artifact, and creates or updates a GitHub Release when the selected ref is a version tag. `.github/workflows/pages.yml` builds and deploys the website. Both run on `v*` tags, including `v0.*`, and can also be started manually. Ordinary branch pushes and pull requests run neither workflow. The former automatic Verify workflow was removed; test commands remain available locally.
 
-After that gate passes, one uploaded `dist` feeds both optional downstream jobs: the APK job signs and compares its packaged files against that build; the Pages job deploys the same downloaded files only when explicitly selected. Both release jobs are manual, and no GitHub Release or tag is created. See [signing and workflow setup](android-signing.md) before enabling them. Actions are pinned to full commit hashes, which should be reviewed and updated periodically.
+These workflows build independently from the selected commit and do **not** run test suites or `check:publication`. Pushing a version tag can therefore publish both outputs even while the gate fails. Content, permissions and alignments remain unreviewed; a successful build is not publication approval. Review [publishing](publishing.md) and [rights](rights-review.md) before distributing. See [signing and workflow setup](android-signing.md) for the one debug-key secret and Pages environment settings. Actions are pinned to full commit hashes, which should be reviewed and updated periodically.
 
 The Android application ID `com.msadrashakouri.mafatih` is **provisional**. Before distributing anything, check whether an older installation exists and decide the permanent ID and signing key. Updating an existing app normally requires both the same application ID and a compatible signing certificate. The old ID/key were not established by this scaffold; do not assume it can update an older app.
 
 ## Related implementations examined
 
-[Satr](https://github.com/MSadraShakouri/satr) illustrates a TypeScript/Vite web UI packaged using Capacitor's `webDir`, with a tracked native shell. The Android workflows in [piecework](https://github.com/MSadraShakouri/piecework) and the Pages workflows in [insight](https://github.com/MSadraShakouri/insight) and [lyric-sync](https://github.com/MSadraShakouri/lyric-sync) show useful build/deploy patterns. This starter keeps the shared-web principle, but does not copy fixed public passwords or unrelated native features.
+[Satr](https://github.com/MSadraShakouri/satr) illustrates a TypeScript/Vite web UI packaged using Capacitor's `webDir`, with a tracked native shell. The Android workflows in [piecework](https://github.com/MSadraShakouri/piecework) and the Pages workflows in [insight](https://github.com/MSadraShakouri/insight) and [lyric-sync](https://github.com/MSadraShakouri/lyric-sync) show build/deploy patterns. Mafatih follows Satr's fixed debug-key convention, not a production signing policy, and does not copy unrelated native features.
