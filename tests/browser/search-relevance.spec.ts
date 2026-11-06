@@ -103,3 +103,23 @@ test('a cached common word emits provisional hits while the new sequence is stil
   await expect(first).toHaveAttribute('data-item-id', 'dua-frj-zman-ajl');
   await expect(first).toHaveAttribute('data-row-id', 'r00003');
 });
+
+test('a starred Ashura substring precedes an exact unstarred TOC result with the same displayed count', async ({ page }) => {
+  const input = await open(page);
+  await input.fill('عاشورا');
+  await complete(page);
+  const starredToc = page.locator('[data-search-kind="toc"][data-item-id="ziyarat-ashura"]');
+  const exactToc = page.locator('[data-search-kind="toc"][data-item-id="amal-aamal-aashvra-an"]');
+  await expect(starredToc).toBeVisible();
+  await expect(exactToc).toBeVisible();
+  await expect(starredToc.locator('.featured-mark')).toBeVisible();
+  await expect(exactToc.locator('.featured-mark')).toHaveCount(0);
+  await expect(starredToc.locator('.search-match-count')).toHaveText('۱ واژه');
+  await expect(exactToc.locator('.search-match-count')).toHaveText('۱ واژه');
+  const starMarks = (await starredToc.locator('.search-hit-title mark').allTextContents()).map(normalizeSearch);
+  const exactMarks = (await exactToc.locator('.search-hit-title mark').allTextContents()).map(normalizeSearch);
+  expect(starMarks.some(word => word.includes('عاشورا') && word !== 'عاشورا')).toBe(true);
+  expect(exactMarks).toContain('عاشورا');
+  const rank = async (locator: typeof starredToc) => locator.evaluate(row => [...row.parentElement!.children].indexOf(row));
+  expect(await rank(starredToc)).toBeLessThan(await rank(exactToc));
+});

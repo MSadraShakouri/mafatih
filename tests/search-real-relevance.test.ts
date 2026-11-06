@@ -88,11 +88,43 @@ test('the same cross-row behavior respects item and language filters', () => {
   assert.ok(result.results.every(hit => hit.record.section === 'toc' || hit.record.language === 'ar'));
 });
 
-test('exact TOC title ties beat text while a starred scattered title does not override exact titles', () => {
+test('starred scattered TOC titles outrank unstarred exact titles at the same displayed count', () => {
   const result = run('دعای فرج');
   assert.equal(result.results[0]?.record.item, 'dua-faraj');
   assert.equal(result.results[0]?.record.section, 'toc');
   const exactUnstarred = result.results.findIndex(hit => hit.record.section === 'toc' && hit.record.item === 'dua-frj-zman-ajl');
   const scatteredStarred = result.results.findIndex(hit => hit.record.section === 'toc' && hit.record.item === 'dua-esteghase');
-  assert.ok(exactUnstarred >= 0 && scatteredStarred > exactUnstarred);
+  assert.ok(scatteredStarred >= 0 && exactUnstarred > scatteredStarred);
+  const starred = result.results[scatteredStarred]!;
+  const unstarred = result.results[exactUnstarred]!;
+  assert.equal(starred.record.featured, true);
+  assert.equal(unstarred.record.featured, false);
+  assert.equal(starred.matchedWords.length, unstarred.matchedWords.length);
+  assert.ok(starred.relevance.score < unstarred.relevance.score);
+});
+
+test('real-corpus displayed counts, continuation words, stars, and bounded lists agree', () => {
+  const displayedCount = (hit: ReturnType<typeof run>['results'][number]) => new Set([
+    ...hit.matchedWords, ...(hit.continuation ?? []).flatMap(part => part.matchedWords),
+  ]).size;
+  let sawAddedContinuationTerm = false;
+  for (const query of ['عظم البلاء و برح الخفاء', 'الله الله', 'الهی ربی']) {
+    const full = run(query, { tocLimit: records.length, textLimit: records.length });
+    for (const list of [full.results, full.toc, full.text]) {
+      for (const [index, hit] of list.entries()) {
+        if (hit.continuation?.length && displayedCount(hit) > hit.matchedWords.length) sawAddedContinuationTerm = true;
+        if (!index) continue;
+        const previous = list[index - 1]!;
+        assert.ok(displayedCount(previous) >= displayedCount(hit), `${query}: ${previous.record.key} / ${hit.record.key}`);
+        if (displayedCount(previous) === displayedCount(hit)) {
+          assert.ok(previous.record.featured || !hit.record.featured, `${query}: star ordering`);
+        }
+      }
+    }
+    const limited = run(query, { resultLimit: 30, tocLimit: 10, textLimit: 10 });
+    for (const [section, limit] of [['results', 30], ['toc', 10], ['text', 10]] as const) {
+      assert.deepEqual(limited[section].map(hit => hit.record.key), full[section].slice(0, limit).map(hit => hit.record.key));
+    }
+  }
+  assert.equal(sawAddedContinuationTerm, true);
 });

@@ -101,14 +101,14 @@ test('TOC results arrive before text shards and existing word scans resume when 
   assert.deepEqual(engine.progress('alpha'), { cursor: 2, complete: true });
 });
 
-test('exact joined words beat fallback, with stars breaking equal-fallback ties', () => {
+test('stars outrank exact joined words for equal displayed counts', () => {
   const records = [
     record('compact', 'می روم', { order: 0 }),
     record('direct', 'میروم', { order: 1 }),
     record('compact-featured', 'می روم', { featured: true, order: 2 }),
   ];
   const result = finish(new IncrementalSearch(records), request('میروم'));
-  assert.deepEqual(result.text.map(hit => hit.record.key), ['direct', 'compact-featured', 'compact']);
+  assert.deepEqual(result.text.map(hit => hit.record.key), ['compact-featured', 'direct', 'compact']);
 });
 
 test('one-letter, diacritic, yeh/kaf, digit and joined-form searches work', () => {

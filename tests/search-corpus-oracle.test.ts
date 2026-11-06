@@ -144,10 +144,14 @@ function runCases(records: SearchRecord[], cases: Case[]): void {
     // checked against an exhaustive alignment oracle in search-relevance-oracle.
     const ranked = [...result.results].sort((a, b) => {
       const coverage = (hit: typeof a) => Math.max(hit.matchedWords.length, Math.min(referenceWords.length, hit.relevance.matchedSequenceWords));
-      return b.relevance.score - a.relevance.score || b.relevance.matchedSequenceWords - a.relevance.matchedSequenceWords ||
+      const displayedCount = (hit: typeof a) => new Set([
+        ...hit.matchedWords, ...(hit.continuation ?? []).flatMap(part => part.matchedWords),
+      ]).size;
+      return displayedCount(b) - displayedCount(a) || Number(b.record.featured) - Number(a.record.featured) ||
+        b.relevance.score - a.relevance.score || b.relevance.matchedSequenceWords - a.relevance.matchedSequenceWords ||
         b.relevance.exactSequenceWords - a.relevance.exactSequenceWords || coverage(b) - coverage(a) ||
         Number(b.record.section === 'toc') - Number(a.record.section === 'toc') ||
-        Number(b.record.featured) - Number(a.record.featured) || Number(b.record.language === 'ar') - Number(a.record.language === 'ar') ||
+        Number(b.record.language === 'ar') - Number(a.record.language === 'ar') ||
         b.directMatches - a.directMatches || a.record.order - b.record.order;
     });
     assert.deepEqual(result.results.map(hit => hit.record.key), ranked.map(hit => hit.record.key), `${example.query}: combined ranking`);

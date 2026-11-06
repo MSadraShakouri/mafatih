@@ -23,6 +23,11 @@ test('ordered exact text wins over weak TOC and split rows show matching source 
   await expect(first).toHaveAttribute('data-row-id', 'r00002');
   await expect(first.locator('.search-kind')).toHaveText('متن عربی');
   await expect(first.locator('.search-match-count')).toHaveText('۵ واژه');
+  await expect(first.locator('.featured-mark')).toBeVisible();
+  const unstarred = sections.locator('li').nth(1);
+  await expect(unstarred).toHaveAttribute('data-item-id', 'namaz-sahb-alzman-alyh');
+  await expect(unstarred.locator('.search-match-count')).toHaveText('۵ واژه');
+  await expect(unstarred.locator('.featured-mark')).toHaveCount(0);
   const continuation = first.locator('[data-continuation-row="r00003"]');
   await expect(continuation).toBeVisible();
   const marks = (await continuation.locator('mark').allTextContents()).map(normalizeSearch);

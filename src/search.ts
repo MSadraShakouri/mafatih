@@ -91,7 +91,12 @@ interface WordScan {
   used: number;
   work: WordWork;
 }
-interface ScoredRecord { relevance: Relevance; parts: SearchRecord[] }
+interface ScoredRecord {
+  relevance: Relevance;
+  parts: SearchRecord[];
+  /** Distinct terms in the scored continuation, cached for this query sequence. */
+  continuationWords?: string[];
+}
 interface ScoreState { scores: Map<number, ScoredRecord>; waiting: Map<string, Set<number>> }
 interface ActiveSearch extends ScoreState {
   request: SearchRequest;
@@ -362,16 +367,20 @@ export class IncrementalSearch {
         if (!scan.spacedMatches.has(index)) existing.direct += 1;
       }
     }
-    type Candidate = { hit: SearchHit; parts: SearchRecord[]; coverage: number; ordinal: number };
+    type Candidate = { hit: SearchHit; parts: SearchRecord[]; matchedWordCount: number; coverage: number; ordinal: number };
+    // Ranking uses the distinct count displayed by the UI, including words in
+    // the materialized continuation. Count, then star, are unconditional keys:
+    // a conditional star override of score order would create comparator cycles.
     // The final ordinal preserves stable source/term order when every public
     // comparator field ties, including item-first scans discovered earlier.
     const compare = (a: Candidate, b: Candidate): number =>
+      b.matchedWordCount - a.matchedWordCount ||
+      Number(b.hit.record.featured) - Number(a.hit.record.featured) ||
       b.hit.relevance.score - a.hit.relevance.score ||
       b.hit.relevance.matchedSequenceWords - a.hit.relevance.matchedSequenceWords ||
       b.hit.relevance.exactSequenceWords - a.hit.relevance.exactSequenceWords ||
       b.coverage - a.coverage ||
       Number(b.hit.record.section === 'toc') - Number(a.hit.record.section === 'toc') ||
-      Number(b.hit.record.featured) - Number(a.hit.record.featured) ||
       Number(b.hit.record.language === 'ar') - Number(a.hit.record.language === 'ar') ||
       b.hit.directMatches - a.hit.directMatches ||
       a.hit.record.order - b.hit.record.order || a.ordinal - b.ordinal;
@@ -386,8 +395,20 @@ export class IncrementalSearch {
       if (!scored && scoreBudget > 0) { scored = this.score(index, active); scoreBudget -= 1; }
       if (!scored) { rankingPending = true; scored = provisionalScore(record, info.words); }
       const coverage = Math.max(info.words.length, Math.min(words.length, scored.relevance.matchedSequenceWords));
+      // Only scored continuations can contribute additional UI terms. Cache
+      // their distinct terms per scored query; materialize row excerpts only for
+      // the selected top results, as before. Newly loaded adjacent rows already
+      // invalidate their anchor's cached score and thus this cached union.
+      if (scored.parts.length > 1 && !scored.continuationWords) {
+        const continuation = scored.parts.slice(1);
+        scored.continuationWords = words.filter(word => continuation.some(part => Boolean(matchKind(part, word))));
+      }
+      let matchedWordCount = info.words.length;
+      if (scored.continuationWords) {
+        for (const word of scored.continuationWords) if (!info.words.includes(word)) matchedWordCount += 1;
+      }
       const hit: SearchHit = { record, matchedWords: info.words, directMatches: info.direct, relevance: scored.relevance };
-      const candidate = { hit, parts: scored.parts, coverage, ordinal: ordinal++ };
+      const candidate = { hit, parts: scored.parts, matchedWordCount, coverage, ordinal: ordinal++ };
       best.add(candidate);
       if (record.section === 'toc') { tocTotal += 1; bestToc.add(candidate); }
       else { textTotal += 1; bestText.add(candidate); }

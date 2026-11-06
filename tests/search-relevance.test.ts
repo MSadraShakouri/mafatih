@@ -15,16 +15,16 @@ function run(records: SearchRecord[], query: string, extra: Partial<SearchReques
 }
 const keys = (result: ReturnType<typeof run>) => result.results.map(hit => hit.record.key);
 
-test('normalized complete words beat substrings, regardless of source order or a star', () => {
+test('starred substrings beat normalized complete words at the same displayed count', () => {
   const result = run([
     record('substring', 'اللهم', { featured: true, order: 0 }),
     record('whole', 'اللّٰه', { order: 1 }),
   ], 'الله');
-  assert.deepEqual(keys(result), ['whole', 'substring']);
+  assert.deepEqual(keys(result), ['substring', 'whole']);
   assert.deepEqual(result.results.map(hit => hit.matchedWords), [['الله'], ['الله']]);
 });
 
-test('a full phrase and nearby split sequence outrank far-scattered and reversed matches', () => {
+test('count and star outrank relevance, which still orders phrases within equal groups', () => {
   const result = run([
     record('far', 'alpha one two three four five six gamma', { featured: true, order: 0 }),
     record('reverse', 'gamma beta alpha', { featured: true, order: 1 }),
@@ -34,22 +34,20 @@ test('a full phrase and nearby split sequence outrank far-scattered and reversed
     record('full', 'alpha beta gamma', { order: 5 }),
   ], 'alpha beta gamma');
   const rank = (key: string) => keys(result).indexOf(key);
-  assert.ok(rank('full') < rank('near'));
-  assert.ok(rank('near') < rank('pair'));
-  assert.ok(rank('pair') < rank('split'));
-  assert.ok(rank('split') < rank('far'));
-  assert.ok(rank('split') < rank('reverse'));
+  assert.deepEqual(keys(result), ['reverse', 'full', 'near', 'far', 'pair', 'split']);
+  assert.ok(rank('full') < rank('near')); // same count and star status
+  assert.ok(rank('pair') < rank('split')); // same count and star status
   assert.deepEqual(result.results.find(h => h.record.key === 'split')!.matchedWords, ['alpha', 'gamma']);
 });
 
-test('a mistyped middle query word still gives a localized ordered pair a boost', () => {
+test('a mistyped middle term retains a localized boost within the same star status', () => {
   const result = run([
     record('scattered', 'alpha one two three four five gamma', { featured: true }),
     record('near', 'alpha actual gamma'),
     record('exact-pair', 'alpha gamma'),
   ], 'alpha typo gamma');
   assert.ok(keys(result).indexOf('exact-pair') < keys(result).indexOf('near'));
-  assert.ok(keys(result).indexOf('near') < keys(result).indexOf('scattered'));
+  assert.ok(keys(result).indexOf('scattered') < keys(result).indexOf('exact-pair')); // star has equal count
   assert.equal(run([record('x', 'alpha')], 'alfa').results.length, 0); // not edit-distance spelling correction
 });
 
@@ -69,8 +67,10 @@ test('a joined query word can participate in a phrase with a spaced source', () 
     record('separate', 'یا چیز دیگر اهل‌بیت', { featured: true }),
     record('joined', 'یا اهل بیتش'),
   ], 'یا اهلبیت');
-  assert.equal(keys(result)[0], 'joined');
-  assert.deepEqual(result.results[0]!.matchedWords, ['یا', 'اهلبیت']);
+  assert.deepEqual(keys(result), ['separate', 'joined']);
+  const joined = result.results.find(hit => hit.record.key === 'joined')!;
+  assert.deepEqual(joined.matchedWords, ['یا', 'اهلبیت']);
+  assert.ok(joined.relevance.matchedSequenceWords >= 2);
 });
 
 test('TOC and text compete on relevance; TOC wins a truly comparable tie', () => {
@@ -146,7 +146,9 @@ test('joined/spaced equivalent can improve one-word relevance even when a direct
     record('both', 'اهلبیتش و اهل بیت'),
     record('whole', 'اهل‌بیت'),
   ], 'اهلبیت');
-  assert.deepEqual(keys(result), ['whole', 'both', 'substring-only']);
+  assert.deepEqual(keys(result), ['substring-only', 'whole', 'both']);
+  assert.ok(result.results[1]!.relevance.score > result.results[2]!.relevance.score);
+  assert.ok(result.results[2]!.relevance.score > result.results[0]!.relevance.score);
 });
 
 test('a split sequence crosses three rows with an unmatching typo row, even when shards arrive out of order', () => {
@@ -186,8 +188,10 @@ test('a spaced occurrence can form the best phrase even when the joined spelling
     record('direct-far', 'اهلبیتش چیزهای دور هستند سپس یا فردی دیگر', { featured: true }),
     record('both-forms', 'اهلبیتش چیزی است سپس یا اهل بیتش'),
   ], 'یا اهلبیت');
-  assert.equal(keys(result)[0], 'both-forms');
-  assert.ok(result.results[0]!.relevance.matchedSequenceWords >= 2);
+  assert.deepEqual(keys(result), ['direct-far', 'both-forms']);
+  const both = result.results.find(hit => hit.record.key === 'both-forms')!;
+  assert.ok(both.relevance.matchedSequenceWords >= 2);
+  assert.ok(both.relevance.score > result.results[0]!.relevance.score);
 });
 
 test('malformed cycles in adjacent-row metadata cannot loop or join across the item', () => {
