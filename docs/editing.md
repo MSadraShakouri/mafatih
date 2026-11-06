@@ -49,7 +49,7 @@ Each change is copy-on-write and adds the exact old/new text IDs and occurrence 
 
 ## Line breaks
 
-The guard reports new or stale physical separators in active content; it does not change text. Review individual contexts and follow **[line-break review](line-break-review.md)** before changing an exception or editing a field that contains one. `npm run check:line-breaks -- --list` shows the pending locations and reasons.
+The guard reports new or stale physical separators in active content; it does not change text. Review individual contexts and follow **[line-break review](line-break-review.md)** before changing an exception or editing a field that contains one. `npm run check:line-breaks -- --list` shows any retained locations, reasons and review states. The existing correction and marker-move history preserves the earlier exact values.
 
 ## Add an item
 

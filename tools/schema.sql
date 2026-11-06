@@ -77,6 +77,15 @@ CREATE TABLE row_correction (
   replacement_text_id TEXT REFERENCES text_value(id), evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL,
   FOREIGN KEY(item_id,row_id) REFERENCES item_row(item_id,row_id)
 ) STRICT;
+CREATE TABLE line_break_marker_move (
+  position INTEGER PRIMARY KEY, item_id TEXT NOT NULL, language TEXT NOT NULL CHECK(language IN ('ar','fa')),
+  source_row_id TEXT NOT NULL, destination_row_id TEXT NOT NULL, marker TEXT NOT NULL,
+  source_previous_text_id TEXT NOT NULL REFERENCES text_value(id), source_replacement_text_id TEXT NOT NULL REFERENCES text_value(id),
+  destination_previous_text_id TEXT NOT NULL REFERENCES text_value(id), destination_replacement_text_id TEXT NOT NULL REFERENCES text_value(id),
+  evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL,
+  FOREIGN KEY(item_id,source_row_id) REFERENCES item_row(item_id,row_id),
+  FOREIGN KEY(item_id,destination_row_id) REFERENCES item_row(item_id,row_id)
+) STRICT;
 CREATE TABLE row_insertion (
   position INTEGER PRIMARY KEY, item_id TEXT NOT NULL, row_id TEXT NOT NULL, before_row_id TEXT NOT NULL,
   evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL,

@@ -8,6 +8,7 @@ import {
 } from './schema.js';
 import { claimId, codePoints, sha256, slicePoints, textId } from './text-ids.js';
 import { validatePunctuationHistory } from './punctuation-history.js';
+import { validateLineBreakMarkerHistory } from './line-break-history.js';
 
 type Metadata=z.infer<typeof CorpusMetaSchema>;
 type Navigation=z.infer<typeof NavigationSchema>;
@@ -150,6 +151,7 @@ export function validateCorpus(c:Corpus):ValidationResult {
     if(!(edit.evidence in c.editorial.evidence))fail(`editorial history: missing evidence ${edit.evidence}`);
   }
   for(const error of validatePunctuationHistory(c))fail(error);
+  for(const error of validateLineBreakMarkerHistory(c))fail(error);
   const historyEvidence=(id:string)=>{if(!(id in c.editorial.evidence))fail(`editorial history: missing evidence ${id}`);};
   const historyRow=(item:string,row:string)=>{
     const it=c.items.get(item);if(!it)fail(`editorial history: missing item ${item}`);

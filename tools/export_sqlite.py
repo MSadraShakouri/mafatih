@@ -46,6 +46,9 @@ try:
    if title is not None:con.execute('INSERT INTO english_display_title VALUES (?,?,?,?)',(f.stem,title['en'],title['ar'],title.get('evidence')))
   for pos,e in enumerate(editorial['metadata_corrections']):con.execute('INSERT INTO metadata_correction VALUES (?,?,?,?,?,?,?)',(pos,e['item'],e['field'],e['previous'],e['replacement'],e['source_document'],e['evidence']))
   for pos,e in enumerate(editorial.get('row_corrections',[])):con.execute('INSERT INTO row_correction VALUES (?,?,?,?,?,?,?,?)',(pos,e['item'],e['row'],e['language'],e['previous'],e['replacement'],e['evidence'],e['reason']))
+  for pos,e in enumerate(editorial.get('line_break_marker_moves',[])):
+   con.execute('INSERT INTO line_break_marker_move VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+    (pos,e['item'],e['language'],e['source_row'],e['destination_row'],e['marker'],e['source_previous'],e['source_replacement'],e['destination_previous'],e['destination_replacement'],e['evidence'],e['reason']))
   for pos,e in enumerate(editorial.get('row_insertions',[])):con.execute('INSERT INTO row_insertion VALUES (?,?,?,?,?,?)',(pos,e['item'],e['row'],e['before'],e['evidence'],e['reason']))
   for pos,e in enumerate(editorial.get('row_classifications',[])):con.execute('INSERT INTO row_classification VALUES (?,?,?,?,?,?,?)',(pos,e['item'],e['row'],e['previous_kind'],e['replacement_kind'],e['evidence'],e['reason']))
   for pos,e in enumerate(editorial.get('paragraph_removals',[])):con.execute('INSERT INTO paragraph_removal VALUES (?,?,?,?,?,?,?,?)',(pos,e['document'],e['paragraph'],e['text'],e['preserved_document'],e['preserved_paragraph'],e['evidence'],e['reason']))

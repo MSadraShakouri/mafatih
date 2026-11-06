@@ -4,6 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import { loadCorpus, text, type Corpus } from '../src/corpus.js';
 import { breakPositions, compareLineBreaks, LineBreakExceptionFile, scanLineBreaks, type Exception } from '../src/line-breaks.js';
+import { validateLineBreakMarkerHistory } from '../src/line-break-history.js';
 import { normalizeSearch } from '../src/normalize.js';
 import { EnglishDocumentSchema, ItemSchema, NavigationSchema, SourcesSchema } from '../src/schema.js';
 import { textId } from '../src/text-ids.js';
@@ -206,4 +207,66 @@ test('CLI exits nonzero for new breaks, stale exceptions and duplicates in a sep
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
+});
+
+test('the second pass removes the 88 old breaks without losing original text or repeated excerpts', () => {
+  const evidence = 'linebreak-remaining-user-request-2026-11-06';
+  const changes = (real.editorial.row_corrections ?? []).filter(entry => entry.evidence === evidence);
+  const moves = (real.editorial.line_break_marker_moves ?? []).filter(entry => entry.evidence === evidence);
+  assert.equal(changes.length, 84);
+  assert.equal(moves.length, 19);
+  assert.equal(new Set(changes.map(entry => `${entry.item}/${entry.row}/${entry.language}`)).size, changes.length);
+  const moved = new Set(moves.flatMap(move => [
+    `${move.item}/${move.source_row}/${move.language}`, `${move.item}/${move.destination_row}/${move.language}`,
+  ]));
+  let removed = 0, unchangedSearch = 0;
+  for (const entry of changes) {
+    assert.ok(entry.previous && entry.replacement);
+    const before = text(real, entry.previous), after = text(real, entry.replacement);
+    assert.equal(textId(before), entry.previous); assert.equal(textId(after), entry.replacement);
+    assert.match(entry.reason, /AI-assisted, unreviewed/);
+    removed += breakPositions(before).length;
+    assert.equal(breakPositions(after).length, 0);
+    if (normalizeSearch(before) === normalizeSearch(after)) unchangedSearch += 1;
+    if (!moved.has(`${entry.item}/${entry.row}/${entry.language}`)) {
+      assert.equal(before.replace(/\s+/gu, ''), after.replace(/\s+/gu, ''), `${entry.item}/${entry.row}/${entry.language}`);
+    }
+  }
+  assert.equal(removed, 88);
+  assert.equal(unchangedSearch, 78); // only the three moved section numbers change six searchable row fields
+  assert.deepEqual(validateLineBreakMarkerHistory(real), []);
+
+  const samat = real.items.get('dua-samat')!.rows.find(row => row.id === 'r00117')!;
+  const excerpts = text(real, samat.fa);
+  assert.match(excerpts, /خدایا! به حق این دعا… خدایا! به حق این دعا/u);
+  assert.equal(excerpts.split('خدایا! به حق این دعا').length, 3);
+  const monajat = real.items.get('monajat-mnajat-aymh-alyhm')!.rows.find(row => row.id === 'r00020')!;
+  assert.equal(text(real, monajat.ar).split('إِلٰهِى إِنْ حَرَمْتَنِى').length, 3);
+
+  // Do not silently delete or reinterpret previously ambiguous punctuation.
+  const rowText = (item: string, row: string, language: 'ar' | 'fa') =>
+    text(real, real.items.get(item)!.rows.find(value => value.id === row)![language]);
+  assert.equal(rowText('hadith-asnad-hdys-ksa', 'r00012', 'fa'), '..');
+  assert.match(rowText('namaz-adab-zhr', 'r00008', 'fa'), /\.\.$/u);
+  assert.match(rowText('namaz-taqyb-mghrb-nql', 'r00015', 'ar'), /\.»\.$/u); // the two original periods remain
+  assert.match(rowText('amal-aamal-ayd-nvrvz', 'r00006', 'fa'), /\.\u2026$/u);
+});
+
+test('marker-move history rejects duplicate, altered, orphaned and missing-row records', () => {
+  const fresh = (): Corpus => ({ ...real, editorial: structuredClone(real.editorial) });
+  const duplicate = fresh();
+  duplicate.editorial.line_break_marker_moves!.push(structuredClone(duplicate.editorial.line_break_marker_moves![0]!));
+  assert.ok(validateLineBreakMarkerHistory(duplicate).some(message => /duplicate/i.test(message)));
+  const altered = fresh();
+  altered.editorial.line_break_marker_moves![0]!.marker = 'X';
+  assert.ok(validateLineBreakMarkerHistory(altered).some(message => /marker|changed/i.test(message)));
+  const missingRow = fresh();
+  missingRow.editorial.line_break_marker_moves![0]!.source_row = 'missing-row';
+  assert.ok(validateLineBreakMarkerHistory(missingRow).some(message => /missing row/i.test(message)));
+  const missingCorrection = fresh();
+  const m = missingCorrection.editorial.line_break_marker_moves![0]!;
+  missingCorrection.editorial.row_corrections = missingCorrection.editorial.row_corrections!.filter(entry =>
+    !(entry.item === m.item && entry.row === m.source_row && entry.language === m.language &&
+      entry.previous === m.source_previous && entry.replacement === m.source_replacement));
+  assert.ok(validateLineBreakMarkerHistory(missingCorrection).some(message => /missing matching row correction/i.test(message)));
 });

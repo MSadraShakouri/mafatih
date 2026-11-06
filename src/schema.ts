@@ -110,6 +110,14 @@ export const EditorialHistorySchema = z.object({
   // Historical references are preserved even when an occurrence is corrected,
   // a duplicate paragraph is detached, or an erroneous relationship is removed.
   row_corrections:z.array(z.object({item:Key,row:Key,language:z.enum(['ar','fa']),previous:Ref,replacement:Ref,evidence:Key,reason:z.string().min(1)}).strict()).optional(),
+  // Formatting-only movement of existing list/section markers between stable
+  // row occurrences. Both rows also have reversible row_corrections entries.
+  line_break_marker_moves:z.array(z.object({
+    item:Key,language:z.enum(['ar','fa']),source_row:Key,destination_row:Key,
+    marker:z.string().min(1).max(32).refine(value=>!/[\s\u0085]/u.test(value),'marker must not contain whitespace'),
+    source_previous:TextId,source_replacement:TextId,destination_previous:TextId,destination_replacement:TextId,
+    evidence:Key,reason:z.string().min(1)
+  }).strict()).optional(),
   row_insertions:z.array(z.object({item:Key,row:Key,before:Key,evidence:Key,reason:z.string().min(1)}).strict()).optional(),
   row_classifications:z.array(z.object({item:Key,row:Key,previous_kind:z.string().nullable(),replacement_kind:z.literal('audio-reciter'),evidence:Key,reason:z.string().min(1)}).strict()).optional(),
   paragraph_removals:z.array(z.object({document:Key,paragraph:Key,text:TextId,preserved_document:Key,preserved_paragraph:Key,evidence:Key,reason:z.string().min(1)}).strict()).optional(),

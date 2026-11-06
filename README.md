@@ -19,7 +19,7 @@ Requirements: Node.js 20+, npm; Python 3 with SQLite 3.37+ only for the optional
 ```sh
 npm ci
 npm run check            # types, tests, artifact and line-break checks, validation, development build
-npm run check:line-breaks -- --list # pending source/formatting review
+npm run check:line-breaks -- --list # list any retained breaks and their review states
 npm run audit            # generated/audit/audit.md and review CSVs
 npm run build:sqlite     # optional: generated/corpus.sqlite
 ```
@@ -87,7 +87,7 @@ npm run edit:english -- apply generated/edit/dua-kumayl.english.json
 npm run validate
 ```
 
-Working copies are ignored build files, not canonical source. Existing row and paragraph IDs must remain stable. Reviewed span hashes cause stale reviews to fail validation; changing reviewed text requires explicit review invalidation. The documented `normalize:punctuation` command previews or applies the explicitly requested punctuation-spacing correction across current content while retaining exact previous values and refusing affected reviews. The line-break guard and pending occurrence-specific reviews are described in **[docs/line-break-review.md](docs/line-break-review.md)**. Adding items, English documents, sources and individual text edits are documented in **[docs/editing.md](docs/editing.md)**.
+Working copies are ignored build files, not canonical source. Existing row and paragraph IDs must remain stable. Reviewed span hashes cause stale reviews to fail validation; changing reviewed text requires explicit review invalidation. The documented `normalize:punctuation` command previews or applies the explicitly requested punctuation-spacing correction across current content while retaining exact previous values and refusing affected reviews. The line-break guard, reversible corrections and marker-move history are described in **[docs/line-break-review.md](docs/line-break-review.md)**. Adding items, English documents, sources and individual text edits are documented in **[docs/editing.md](docs/editing.md)**.
 
 ## Website and Capacitor integration
 
