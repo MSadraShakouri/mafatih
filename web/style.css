@@ -45,7 +45,7 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid 
 .search-hit { display: block; text-align: start; inline-size: 100%; padding-block: 0.3rem; }
 button.search-hit { background: transparent; color: inherit; border: 0; cursor: pointer; text-decoration: underline; }
 .search-hit-title { font-weight: 700; }
-.search-context, .search-excerpt, .search-match-count, .search-matched-terms { display: block; }
-.search-context, .search-match-count, .search-matched-terms, .search-hint { font-size: 0.9em; }
+.search-kind, .search-context, .search-excerpt, .search-match-count, .search-matched-terms, .search-continuation-label { display: block; }
+.search-kind, .search-context, .search-match-count, .search-matched-terms, .search-continuation-label, .search-counts, .search-hint { font-size: 0.9em; }
 .search-excerpt { white-space: pre-wrap; line-height: 1.9; }
 mark { background: #ffdf7a; color: #1a1a1a; }

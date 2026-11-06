@@ -18,7 +18,7 @@ function finish(engine: IncrementalSearch, value: SearchRequest) {
   return snapshot;
 }
 
-test('OR/substring matches are per record; sections, match counts and stars rank independently', () => {
+test('OR/substring matches remain per record and equal-quality stars rank predictably', () => {
   const records = [
     record('toc', 'alpha', { section: 'toc', language: 'toc', item: 'x', order: 0 }),
     record('one-star', 'alpha', { featured: true, order: 1 }),
@@ -36,7 +36,7 @@ test('OR/substring matches are per record; sections, match counts and stars rank
   assert.equal(onlyBest.textTotal, 4); // the limit is applied after ranking
 });
 
-test('Arabic is a tie-breaker after matched-word count and the featured star', () => {
+test('Arabic and stars break equal-relevance ties, not a stronger exact match', () => {
   const records = [
     record('persian-star-two', 'alpha beta', { featured: true, language: 'fa', order: 0 }),
     record('arabic-star-one', 'alpha', { featured: true, language: 'ar', order: 1 }),
@@ -46,11 +46,11 @@ test('Arabic is a tie-breaker after matched-word count and the featured star', (
   const result = finish(new IncrementalSearch(records), request('alpha beta'));
   assert.deepEqual(result.text.map(hit => hit.record.key),
     ['arabic-star-two', 'persian-star-two', 'arabic-unstarred-two', 'arabic-star-one']);
-  // Language comes before direct-versus-spaced when count and star are tied.
+  // Whole-word direct matching is more relevant than a joined/spaced fallback.
   const joined = [record('persian-direct', 'اهلبیت', { language: 'fa', order: 0 }),
     record('arabic-spaced', 'اهل بیت', { language: 'ar', order: 1 })];
   assert.deepEqual(finish(new IncrementalSearch(joined), request('اهلبیت')).text.map(hit => hit.record.key),
-    ['arabic-spaced', 'persian-direct']);
+    ['persian-direct', 'arabic-spaced']);
 });
 
 test('unfinished and completed word work survives query, item, and language changes', () => {
@@ -95,14 +95,14 @@ test('TOC results arrive before text shards and existing word scans resume when 
   assert.deepEqual(engine.progress('alpha'), { cursor: 2, complete: true });
 });
 
-test('direct matches break only ties left after word count and featured status', () => {
+test('exact joined words beat fallback, with stars breaking equal-fallback ties', () => {
   const records = [
     record('compact', 'می روم', { order: 0 }),
     record('direct', 'میروم', { order: 1 }),
     record('compact-featured', 'می روم', { featured: true, order: 2 }),
   ];
   const result = finish(new IncrementalSearch(records), request('میروم'));
-  assert.deepEqual(result.text.map(hit => hit.record.key), ['compact-featured', 'direct', 'compact']);
+  assert.deepEqual(result.text.map(hit => hit.record.key), ['direct', 'compact-featured', 'compact']);
 });
 
 test('one-letter, diacritic, yeh/kaf, digit and joined-form searches work', () => {

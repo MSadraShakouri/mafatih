@@ -40,7 +40,7 @@ async function load(indexUrl: string): Promise<void> {
   try {
     const indexAddress = new URL(indexUrl);
     const index = await json<SearchIndex>(indexAddress);
-    if (index.version !== 3 || index.normalization !== 'nfkd-search-v2' ||
+    if (index.version !== 4 || index.normalization !== 'nfkd-search-v2' ||
         !Array.isArray(index.records) || !Array.isArray(index.shards)) {
       throw new Error('Unsupported search index.');
     }
@@ -60,7 +60,7 @@ async function load(indexUrl: string): Promise<void> {
       while (next < index.shards.length) {
         const shardPath = index.shards[next++]!;
         const shard = await json<SearchShard>(new URL(shardPath, indexAddress));
-        if (shard.version !== 3 || !Array.isArray(shard.records)) throw new Error('Invalid search shard.');
+        if (shard.version !== 4 || !Array.isArray(shard.records)) throw new Error('Invalid search shard.');
         engine!.appendRecords(shard.records);
         schedule();
       }

@@ -12,7 +12,7 @@ if (!fs.existsSync(manifestPath)) {
   process.exit(1);
 }
 const index = JSON.parse(fs.readFileSync(manifestPath, 'utf8')) as SearchIndex;
-if (index.version !== 3 || index.normalization !== 'nfkd-search-v2') {
+if (index.version !== 4 || index.normalization !== 'nfkd-search-v2') {
   console.error('Search data is stale or incompatible. Run npm run build:data again.');
   process.exit(1);
 }
@@ -33,18 +33,20 @@ function example(hit: SearchHit): string {
     .normalize('NFKD').replace(/\p{M}/gu, '').replace(/\s+/gu, ' ');
   const location = hit.record.section === 'toc' ? (hit.record.item ?? `heading:${hit.record.tocPath}`) : `${hit.record.item}/${hit.record.row}`;
   const featured = hit.record.featured ? ' ★' : '';
-  return `  [${hit.record.language}${featured}] ${location} | ${hit.matchedWords.join(' + ')} | ${excerpt}`;
+  const continuation = hit.continuation?.length ? ` → ${hit.continuation.map(part => part.row).join(', ')}` : '';
+  const found = [...new Set([...hit.matchedWords, ...(hit.continuation ?? []).flatMap(part => part.matchedWords)])];
+  return `  [${hit.record.language}${featured}] ${location}${continuation} | score ${hit.relevance.score} | ${found.join(' + ')} | ${excerpt}`;
 }
 
 console.log(`Search probe: ${index.records.length} TOC entries and ${records.length - index.records.length} text fields.`);
 console.log('Examples below omit combining marks only in this diagnostic output; source text is unchanged.');
 for (const [id, query] of queries.entries()) {
-  let result = engine.begin({ id, query, languages: ['ar', 'fa'], tocLimit: records.length, textLimit: records.length });
+  let result = engine.begin({ id, query, languages: ['ar', 'fa'], tocLimit: records.length, textLimit: records.length, resultLimit: 6 });
   while (!result.complete) result = engine.advance(Math.max(1, records.length));
   const distribution = new Map<number, number>();
   for (const hit of result.text) distribution.set(hit.matchedWords.length, (distribution.get(hit.matchedWords.length) ?? 0) + 1);
   console.log(`\nQuery: ${query}\nTerms: ${JSON.stringify(searchWords(query))}\nTOC: ${result.tocTotal}; text: ${result.textTotal}`);
   console.log(`Text match counts: ${[...distribution].sort((a, b) => a[0] - b[0]).map(([n, count]) => `${n}=${count}`).join(', ') || 'none'}`);
-  for (const hit of result.toc.slice(0, 2)) console.log(example(hit));
-  for (const hit of result.text.slice(0, 3)) console.log(example(hit));
+  console.log('Top combined results:');
+  for (const hit of result.results) console.log(example(hit));
 }

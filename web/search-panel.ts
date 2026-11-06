@@ -110,7 +110,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
   form.append(label, input);
   const hint = document.createElement('p');
   hint.className = 'search-hint';
-  hint.textContent = 'هر واژه جداگانه جست‌وجو می‌شود؛ وجود یک واژه برای نمایش نتیجه کافی است. نیم‌فاصله بخشی از یک واژه است.';
+  hint.textContent = 'هر واژه جداگانه جست‌وجو می‌شود؛ وجود یک واژه برای نمایش نتیجه کافی است. واژه‌های نزدیک و به‌ترتیب رتبهٔ بهتری دارند. نیم‌فاصله بخشی از یک واژه است.';
   form.append(hint);
 
   const filters = document.createElement('fieldset');
@@ -138,21 +138,20 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
   results.hidden = true;
   panel.append(form, status, results);
 
-  let tocLimit = 30;
-  let textLimit = 30;
+  let resultLimit = 30;
   let latest: SearchSnapshot | undefined;
   let pendingTimer: number | undefined;
   let pointerDown = false;
   let destroyed = false;
   let lastAnnouncement = '';
-  let requestedFocus: { section: 'toc' | 'text'; index: number } | undefined;
+  let requestedFocus: number | undefined;
   const rangeCache = new Map<string, { matches: TextRange[]; words: TextRange[]; focuses: TextRange[] }>();
 
-  function rangesFor(hit: SearchHit): { matches: TextRange[]; words: TextRange[]; focuses: TextRange[] } {
-    const key = `${hit.record.key}\u0000${hit.matchedWords.join('\u0000')}`;
+  function rangesFor(keyPart: string, text: string, matchedWords: string[]): { matches: TextRange[]; words: TextRange[]; focuses: TextRange[] } {
+    const key = `${keyPart}\u0000${matchedWords.join('\u0000')}`;
     const cached = rangeCache.get(key);
     if (cached) return cached;
-    const byWord = findOriginalWordMatches(hit.record.text, hit.matchedWords);
+    const byWord = findOriginalWordMatches(text, matchedWords);
     const matches = byWord.map(({ start, end }) => ({ start, end }));
     const seen = new Set<string>();
     const focuses = byWord.filter(match => {
@@ -160,7 +159,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
       seen.add(match.word);
       return true;
     }).map(({ start, end }) => ({ start, end }));
-    const value = { matches, words: wholeWordRanges(hit.record.text, matches), focuses };
+    const value = { matches, words: wholeWordRanges(text, matches), focuses };
     rangeCache.set(key, value);
     if (rangeCache.size > 300) rangeCache.delete(rangeCache.keys().next().value!);
     return value;
@@ -195,8 +194,9 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
     const { record } = hit;
     const row = document.createElement('li');
     row.dataset.resultKey = record.key;
+    row.dataset.searchKind = record.section;
     if (record.item) row.dataset.itemId = record.item;
-    const { matches, words: ranges, focuses } = rangesFor(hit);
+    const { matches, words: ranges, focuses } = rangesFor(record.key, record.text, hit.matchedWords);
     let control: HTMLAnchorElement | HTMLButtonElement;
     if (record.item) {
       const link = document.createElement('a');
@@ -239,6 +239,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
       markText(title, record.text, ranges);
       control.append(title);
       if (record.featured) control.append(star());
+      control.append(span('search-kind', 'فهرست'));
       if (record.context) {
         const context = span('search-context', record.context);
         context.dir = 'auto';
@@ -249,17 +250,32 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
       title.dir = 'auto';
       control.append(title);
       if (record.featured) control.append(star());
-      control.append(span('search-context', record.language === 'ar' ? 'عربی' : 'فارسی'));
+      control.append(span('search-kind', record.language === 'ar' ? 'متن عربی' : 'متن فارسی'));
       const excerpt = document.createElement('span');
       excerpt.className = 'search-excerpt';
       excerpt.lang = record.language;
       excerpt.dir = 'rtl';
       markExcerpt(excerpt, record.text, ranges, focuses);
       control.append(excerpt);
+      if (hit.continuation?.length) {
+        control.append(span('search-continuation-label', 'ادامه در سطرهای بعدی:'));
+        for (const part of hit.continuation.slice(0, 8)) {
+          const next = document.createElement('span');
+          next.className = 'search-excerpt search-continuation';
+          next.lang = record.language;
+          next.dir = 'rtl';
+          next.dataset.continuationRow = part.row;
+          const detail = rangesFor(`${record.key}:${part.row}`, part.text, part.matchedWords);
+          markExcerpt(next, part.text, detail.words, detail.focuses);
+          control.append(next);
+        }
+        if (hit.continuation.length > 8) control.append(span('search-continuation-label', '… ادامه در متن'));
+      }
     }
-    control.append(span('search-match-count', `${persianDigits(hit.matchedWords.length)} واژه`));
-    if (hit.matchedWords.length > 1) {
-      const terms = span('search-matched-terms', `واژه‌های یافته‌شده: ${hit.matchedWords.join('، ')}`);
+    const foundWords = [...new Set([...hit.matchedWords, ...(hit.continuation ?? []).flatMap(part => part.matchedWords)])];
+    control.append(span('search-match-count', `${persianDigits(foundWords.length)} واژه`));
+    if (foundWords.length > 1) {
+      const terms = span('search-matched-terms', `واژه‌های یافته‌شده: ${foundWords.join('، ')}`);
       terms.dir = 'auto';
       control.append(terms);
     }
@@ -267,29 +283,32 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
     return row;
   }
 
-  function section(title: string, kind: 'toc' | 'text', hits: SearchHit[], total: number, limit: number): HTMLElement {
+  function section(snapshot: SearchSnapshot): HTMLElement {
     const section = document.createElement('section');
-    section.dataset.searchSection = kind;
+    section.dataset.searchSection = 'results';
     const heading = document.createElement('h2');
-    heading.textContent = `${title} (${persianDigits(total)})`;
+    heading.textContent = `نتایج (${persianDigits(snapshot.resultsTotal)})`;
     section.append(heading);
-    if (!hits.length) {
+    const counts = document.createElement('p');
+    counts.className = 'search-counts';
+    counts.textContent = `فهرست: ${persianDigits(snapshot.tocTotal)}، متن: ${persianDigits(snapshot.textTotal)}`;
+    section.append(counts);
+    if (!snapshot.results.length) {
       const empty = document.createElement('p');
       empty.textContent = 'هنوز نتیجه‌ای نیست.';
       section.append(empty);
     } else {
       const list = document.createElement('ol');
-      for (const hit of hits) list.append(renderHit(hit));
+      for (const hit of snapshot.results) list.append(renderHit(hit));
       section.append(list);
     }
-    if (total > limit) {
+    if (snapshot.resultsTotal > resultLimit) {
       const more = document.createElement('button');
       more.type = 'button';
       more.textContent = 'نمایش بیشتر';
       more.addEventListener('click', () => {
-        requestedFocus = { section: kind, index: hits.length };
-        if (kind === 'toc') tocLimit += 30;
-        else textLimit += 30;
+        requestedFocus = snapshot.results.length;
+        resultLimit += 30;
         run(false);
       });
       section.append(more);
@@ -299,7 +318,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
 
   function flush(): void {
     pendingTimer = undefined;
-    if (!latest || destroyed || panel.hidden || pointerDown || (results.contains(document.activeElement) && !requestedFocus)) return;
+    if (!latest || destroyed || panel.hidden || pointerDown || (results.contains(document.activeElement) && requestedFocus === undefined)) return;
     const snapshot = latest;
     latest = undefined;
     // Keep the first visible result in place as incremental results are sorted.
@@ -307,20 +326,17 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
       .find(element => element.getBoundingClientRect().bottom > 0 && element.getBoundingClientRect().top < window.innerHeight) : undefined;
     const key = visible?.dataset.resultKey;
     const before = visible?.getBoundingClientRect().top;
-    results.replaceChildren(
-      section('فهرست', 'toc', snapshot.toc, snapshot.tocTotal, tocLimit),
-      section('متن', 'text', snapshot.text, snapshot.textTotal, textLimit),
-    );
+    results.replaceChildren(section(snapshot));
     if (key && before !== undefined) {
       const after = [...results.querySelectorAll<HTMLElement>('[data-result-key]')].find(element => element.dataset.resultKey === key);
       if (after) window.scrollBy(0, after.getBoundingClientRect().top - before);
     }
-    if (requestedFocus) {
-      const choices = results.querySelectorAll<HTMLElement>(`[data-search-section="${requestedFocus.section}"] li > a, [data-search-section="${requestedFocus.section}"] li > button`);
-      choices[requestedFocus.index]?.focus();
+    if (requestedFocus !== undefined) {
+      const choices = results.querySelectorAll<HTMLElement>('[data-search-section="results"] li > a, [data-search-section="results"] li > button');
+      choices[requestedFocus]?.focus();
       requestedFocus = undefined;
     }
-    announce(snapshot.complete ? `${persianDigits(snapshot.tocTotal + snapshot.textTotal)} نتیجه` : 'در حال جست‌وجو…');
+    announce(snapshot.complete ? `${persianDigits(snapshot.resultsTotal)} نتیجه` : 'در حال جست‌وجو…');
   }
 
   function queue(snapshot: SearchSnapshot): void {
@@ -334,8 +350,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
     pendingTimer = undefined;
     latest = undefined;
     if (reset) {
-      tocLimit = 30;
-      textLimit = 30;
+      resultLimit = 30;
       requestedFocus = undefined;
       results.replaceChildren(); // Do not show stale results under a new query/scope.
     }
@@ -352,7 +367,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
     results.hidden = false;
     announce('در حال جست‌وجو…');
     client.search({ query, languages: [...toggles].filter(([, toggle]) => toggle.checked).map(([language]) => language),
-      ...(item ? { item } : {}), tocLimit, textLimit }, queue, () => {
+      ...(item ? { item } : {}), resultLimit, tocLimit: 0, textLimit: 0 }, queue, () => {
       // Discard snapshots already queued by the failed worker: otherwise one
       // could replace the retry control or leave an unfinished status visible.
       window.clearTimeout(pendingTimer);

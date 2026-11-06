@@ -15,16 +15,16 @@ test('diacritic-free کمیل does not match the unrelated phrase یک میل', 
   const input = await openSearch(page);
   await input.fill('کمیل');
   await completed(page);
-  await expect(page.locator('[data-search-section="toc"] [data-item-id="dua-kumayl"]')).toBeVisible();
-  await expect(page.locator('[data-search-section="text"] [data-item-id="amal-fzylt-msjd-kvfh"][data-row-id="r00003"]')).toHaveCount(0);
-  await expect(page.locator('[data-search-section="text"] [data-item-id="ziyarat-adab-mkhsvs-hsyn"][data-row-id="r00013"]')).toHaveCount(0);
-  await expect(page.locator('[data-search-section="text"] li')).toHaveCount(5);
-  await expect(page.locator('[data-search-section="text"] mark').first()).toContainText('کمیل');
+  await expect(page.locator('[data-search-kind="toc"][data-item-id="dua-kumayl"]')).toBeVisible();
+  await expect(page.locator('[data-search-kind="text"][data-item-id="amal-fzylt-msjd-kvfh"][data-row-id="r00003"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="text"][data-item-id="ziyarat-adab-mkhsvs-hsyn"][data-row-id="r00013"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="text"]')).toHaveCount(5);
+  await expect(page.locator('[data-search-kind="text"] mark').first()).toContainText('کمیل');
 });
 
 test('half-space and joined inputs are one term; a real space searches two OR terms', async ({ page }) => {
   const input = await openSearch(page);
-  const section = page.locator('[data-search-section="text"]');
+  const section = page.locator('[data-search-section="results"]');
   await expect(page.locator('.search-hint')).toContainText('نیم‌فاصله');
   await input.fill('اهل\u200cبیت');
   await completed(page);
@@ -49,7 +49,7 @@ test('an unaccented joined query finds an accented source with a one-letter spac
   const input = await openSearch(page);
   await input.fill('والله');
   await completed(page);
-  const row = page.locator('[data-search-section="text"] [data-item-id="hadith-kisa"][data-row-id="r00112"][data-language="ar"]');
+  const row = page.locator('[data-search-kind="text"][data-item-id="hadith-kisa"][data-row-id="r00112"][data-language="ar"]');
   await expect(row).toBeVisible();
   const marks = (await row.locator('.search-excerpt mark').allTextContents()).map(mark => normalizeSearch(mark).replace(/ /g, ''));
   expect(marks.some(mark => mark.includes('والله'))).toBe(true);
@@ -62,7 +62,7 @@ test('long result shows distant matched terms and their original marked spelling
   const input = await openSearch(page);
   await input.fill('الهی ربی');
   await completed(page);
-  const row = page.locator('[data-search-section="text"] [data-item-id="ziyarat-rsvl-sly-allh"][data-row-id="r00003"][data-language="ar"]');
+  const row = page.locator('[data-search-kind="text"][data-item-id="ziyarat-rsvl-sly-allh"][data-row-id="r00003"][data-language="ar"]');
   await expect(row).toBeVisible();
   await expect(row.locator('.search-match-count')).toHaveText('۲ واژه');
   await expect(row.locator('.search-matched-terms')).toContainText('الهی');
@@ -74,10 +74,12 @@ test('long result shows distant matched terms and their original marked spelling
 });
 
 test('a joined query opens an ordinary-spaced source occurrence without reader highlighting', async ({ page }) => {
-  const input = await openSearch(page);
+  await page.goto('./#/item/ziyarat-ashura');
+  await page.getByRole('button', { name: 'جست‌وجو' }).click();
+  const input = page.getByRole('searchbox', { name: 'جست‌وجو در این مطلب' });
   await input.fill('اهلبیت');
   await completed(page);
-  const row = page.locator('[data-search-section="text"] [data-item-id="ziyarat-ashura"][data-row-id="r00005"][data-language="fa"]');
+  const row = page.locator('[data-search-kind="text"][data-item-id="ziyarat-ashura"][data-row-id="r00005"][data-language="fa"]');
   await expect(row).toBeVisible();
   const marks = (await row.locator('.search-excerpt mark').allTextContents()).map(mark => normalizeSearch(mark).replace(/ /g, ''));
   expect(marks.some(mark => mark.includes('اهلبیت'))).toBe(true);

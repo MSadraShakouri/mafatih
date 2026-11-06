@@ -14,12 +14,12 @@ test('live search shows TOC results before delayed text shards at both deploymen
   await page.getByRole('button', { name: 'جست‌وجو' }).click();
   const query = page.getByRole('searchbox', { name: 'جست‌وجو در فهرست و متن' });
   await query.fill('کمیل');
-  const contents = page.locator('[data-search-section="toc"]');
-  await expect(contents.locator('[data-item-id="dua-kumayl"]')).toBeVisible();
+  const contents = page.locator('[data-search-kind="toc"][data-item-id="dua-kumayl"]');
+  await expect(contents).toBeVisible();
   await expect(page.getByRole('status')).toContainText('در حال جست‌وجو');
-  await expect(contents.locator('[data-item-id="dua-kumayl"] mark')).toContainText('کمیل');
-  await expect(contents.locator('[data-item-id="dua-kumayl"] .featured-mark')).toBeVisible();
-  await expect(page.locator('[data-search-section="text"]')).toBeVisible();
+  await expect(contents.locator('mark')).toContainText('کمیل');
+  await expect(contents.locator('.featured-mark')).toBeVisible();
+  await expect(page.locator('[data-search-section="results"]')).toBeVisible();
   expect(foreign).toEqual([]);
 });
 
@@ -27,7 +27,7 @@ test('searching a reader shares the index, limits results to that item, and open
   await page.goto('./#/item/dua-kumayl');
   await page.getByRole('button', { name: 'جست‌وجو' }).click();
   await page.getByRole('searchbox', { name: 'جست‌وجو در این مطلب' }).fill('الهی ربی');
-  const result = page.locator('[data-search-section="text"] [data-item-id="dua-kumayl"][data-row-id="r00076"][data-language="ar"]');
+  const result = page.locator('[data-search-kind="text"][data-item-id="dua-kumayl"][data-row-id="r00076"][data-language="ar"]');
   await expect(result).toBeVisible();
   await expect(result.locator('mark').first()).toBeVisible();
   await result.locator('a').click();
@@ -43,7 +43,7 @@ test('long-row search links open at the matching line, not just at the start of 
   await page.goto('./#/item/namaz-hnvt-myt');
   await page.getByRole('button', { name: 'جست‌وجو' }).click();
   await page.getByRole('searchbox', { name: 'جست‌وجو در این مطلب' }).fill('جماعت');
-  const result = page.locator('[data-search-section="text"] [data-row-id="r00002"][data-language="fa"]');
+  const result = page.locator('[data-search-kind="text"][data-row-id="r00002"][data-language="fa"]');
   await expect(result).toBeVisible();
   await result.locator('a').click();
   await expect(page).toHaveURL(/row=r00002&lang=fa&offset=/);
@@ -72,15 +72,15 @@ test('rapid query changes discard stale display updates and language filters aff
   const input = page.getByRole('searchbox', { name: 'جست‌وجو در این مطلب' });
   await input.fill('رحمان');
   await input.fill('الهی');
-  await expect(page.locator('[data-search-section="text"] [data-language="ar"]').first()).toBeVisible();
+  await expect(page.locator('[data-search-kind="text"][data-language="ar"]').first()).toBeVisible();
   await expect(page.getByRole('status')).toContainText('نتیجه', { timeout: 15000 });
-  const snippets = await page.locator('[data-search-section="text"] .search-excerpt').allTextContents();
+  const snippets = await page.locator('[data-search-kind="text"] .search-excerpt').allTextContents();
   expect(snippets.length).toBeGreaterThan(0);
   for (const text of snippets) expect(normalizeSearch(text).replace(/ /g, '')).toContain('الهی');
   await page.getByRole('checkbox', { name: 'عربی' }).uncheck();
-  await expect(page.locator('[data-search-section="text"] [data-language="ar"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="text"][data-language="ar"]')).toHaveCount(0);
   await expect(page.getByRole('status')).toContainText('نتیجه', { timeout: 15000 });
-  await expect(page.locator('[data-search-section="text"] [data-language="ar"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="text"][data-language="ar"]')).toHaveCount(0);
   await expect(input).toHaveValue('الهی');
 });
 
@@ -104,5 +104,5 @@ test('a failed search shard offers a retry and rebuilds the worker', async ({ pa
   await page.getByRole('button', { name: 'تلاش دوباره' }).click();
   await expect(page.getByRole('searchbox', { name: 'جست‌وجو در فهرست و متن' })).toBeFocused();
   await expect(page.getByRole('status')).toContainText('نتیجه', { timeout: 15000 });
-  await expect(page.locator('[data-search-section="text"] li').first()).toBeVisible();
+  await expect(page.locator('[data-search-kind="text"]').first()).toBeVisible();
 });

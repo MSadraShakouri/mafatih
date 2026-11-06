@@ -6,6 +6,8 @@ The current split is good enough for now. I've checked redistribution and will d
 
 ## Main menu and search
 
+> Later decision: the earlier TOC-first and word-count-first ideas below are preserved as discussion history. The user subsequently chose a unified relevance-ranked list favoring exact words and nearby ordered sequences, including skipped/mistyped terms and compact sequences across adjacent rows in one item/language. See [search behavior and tests](docs/search-behavior.md) for the implemented tradeoffs.
+
 ### 1. A search pill on the main menu
 
 **My idea:** Pulling down on the main menu opens a search pill right there, not a separate screen. The regular table of contents should still be easy to browse without making the menu crowded.

@@ -23,13 +23,19 @@ for(const id of c.nav.default_order){
   write(`items/${id}.json`,{id,legacy_id:item.legacy_id,title,category:item.category,...(item.quran?{quran:item.quran}:{}),tags,
     alignment_claim:item.legacy_alignment,ar_fa_reviewed:Boolean(item.review?.ar_fa),sources:item.sources??{},excluded_audio_rows:excludedAudioRows,rows,english:links,
     reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});
-  // Each field is a separate search result: words are never counted across
-  // unrelated rows or languages. The canonical corpus is not modified.
-  for(const row of rows){
+  // Each source field remains a separate OR result. Link only an immediately
+  // neighboring source row in the same language, never across an excluded
+  // audio row or an empty field; local phrase ranking can follow this link.
+  for(let position=0;position<item.rows.length;position+=1){
+    const row=item.rows[position]!;if(row.kind==='audio-reciter')continue;
     for(const language of ['ar','fa'] as const){
-      const value=row[language];if(!value)continue;
+      const value=text(c,row[language]);if(!value)continue;
+      const following=item.rows[position+1];
+      const nextText=following&&following.kind!=='audio-reciter'?text(c,following[language]):'';
+      const next=following&&nextText&&normalizeSearch(nextText)?`row:${id}:${following.id}:${language}`:undefined;
       textSearchRecords.push({key:`row:${id}:${row.id}:${language}`,section:'text',item:id,row:row.id,
-        language,text:value,normalized:normalizeSearch(value),featured:featured.has(id),order:textSearchRecords.length});
+        language,text:value,normalized:normalizeSearch(value),featured:featured.has(id),order:textSearchRecords.length,
+        ...(next?{next}:{})});
     }
   }
 }
@@ -81,9 +87,9 @@ const prioritized=[
 const shards:string[]=[];
 for(let start=0;start<prioritized.length;start+=800){
   const shard=`search/${String(shards.length).padStart(3,'0')}.json`;
-  shards.push(shard);write(shard,{version:3,records:prioritized.slice(start,start+800)});
+  shards.push(shard);write(shard,{version:4,records:prioritized.slice(start,start+800)});
 }
-const searchIndex:SearchIndex={version:3,normalization:'nfkd-search-v2',records:tocSearchRecords,shards};
+const searchIndex:SearchIndex={version:4,normalization:'nfkd-search-v2',records:tocSearchRecords,shards};
 write('search-index.json',searchIndex);
 write('manifest.json',{format_version:c.meta.format_version,normalization:'nfkd-search-v2',
   counts:{items:c.items.size,rows:checked.stats.rows,english_documents:c.english.size,english_paragraphs:checked.stats.paragraphs},

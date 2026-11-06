@@ -4,11 +4,13 @@ This documents the current **development implementation**, not a claim that all 
 
 ## Query words and results
 
-- Search folds accents/diacritics, normalizes Arabic/Persian yeh and kaf and digits, and ignores tatweel and zero-width joining/non-joining characters. A half-space **inside** a query word does not create another term: `اهل‌بیت` and `اهلبیت` are one normalized term. A normal space or punctuation separates terms: `اهل بیت` is two terms. Repeated identical normalized terms count once.
-- Terms are independent **OR** searches inside a single TOC title or Arabic/Persian row field. Any one term is enough; a substring inside a word is a match. Thus a short word or a multiword query containing a common short word can legitimately return many results. A query is not treated as a required phrase.
-- The TOC and text sections are separate, TOC first. In each section the order is: more distinct matching terms, then featured star, then Arabic text, then direct normalized matches ahead of the joined/spaced fallback, then original order. Stars never outrank a result matching more terms.
-- The search panel lists matching normalized terms for a multiword hit. Its excerpt can show up to eight separate first-match contexts, joined with ellipses, so distant terms in one long row do not silently disappear from the explanation. The original source is displayed, including marks; opening a result scrolls to a match without highlighting the reader.
-- The same worker and per-word cache serve global and current-item search. Arabic and Persian filters affect text results, not TOC titles. English search is not yet implemented.
+- Search folds accents/diacritics, normalizes Arabic/Persian yeh and kaf and digits, and ignores tatweel and zero-width joining/non-joining characters. A half-space **inside** a query word does not create another term: `اهل‌بیت` and `اهلبیت` are one normalized term. A normal space or punctuation separates terms: `اهل بیت` is two terms. Repeated normalized terms count once as OR terms, but their repetitions are retained when checking query order.
+- Terms remain independent **OR** searches inside a single TOC title or Arabic/Persian row field. Any one term is enough; a substring inside a word is a match. Thus a short word or a multiword query containing a common short word can legitimately return many results. A query is not a required phrase.
+- TOC and text share **one relevance-ranked list**. Complete normalized words and compact, ordered sequences receive the strongest boost. An ordered sequence can skip a query term and a nearby source word: for example, `الهی اشتباه البلا` can still favor a nearby `الهی عظم البلاء`. This is not character-level fuzzy matching or spell correction; a single misspelled term can still return no results.
+- The current local sequence score adds 6 for a complete normalized word, 4 for the existing accepted joined/spaced equivalent, or 3 for a substring; each unmatched query or source word inside the sequence subtracts 2. Long scattered gaps do not acquire the same boost. This is a provisional, testable relevance heuristic, not a claim of semantic understanding. Ties use sequence length, whole-word count, distinct-term coverage, TOC, featured star, Arabic, direct versus joined/spaced, then source order. A star or TOC title does not automatically beat a clearly more relevant text result.
+- A compact sequence can continue through **immediately neighboring source rows of the same item and language**. The generated index links only immediate neighbors with text, never across an excluded audio row or an empty language field. It does not aggregate scattered words across the whole item, and one query word is not joined across a row boundary. Adjacent rows can nonetheless be unrelated: this is a discoverability heuristic, not proof that they form a passage. The hit stays anchored to the first matching row.
+- The panel shows the first 30 combined results and can show more. Each result is labeled as TOC or Arabic/Persian text. Multiword hits list their found terms; a long source row can show up to eight separate contexts, and a cross-row match can show up to eight continuation rows. The original text and marks are displayed unchanged. Opening the result scrolls to a match without leaving a reader highlight.
+- The same worker and per-word cache serve global and current-item search. TOC records arrive before text shards, and sequence scores are calculated in batches; provisional hits have a valid single-term lower-bound score and may reorder as stronger text or scores arrive. The search stays in progress until both scans and ranking finish. Arabic and Persian filters affect text results, not TOC titles. English search is not yet implemented.
 
 ## Joined and spaced spellings
 
@@ -35,11 +37,11 @@ node --import tsx scripts/probe-search.ts 'کمیل' 'الهی ربی' 'اهل�
 node --import tsx scripts/probe-search.ts
 ```
 
-The probe reports query terms, separate TOC/text counts, the distribution of how many words each text result matched, and a few source-derived examples. Counts depend on the corpus revision and are not permanent correctness targets.
+The probe reports query terms, TOC/text counts, the distribution of how many words each anchor row matched, and the top combined results with relevance scores and any continuation row IDs. Counts depend on the corpus revision and are not permanent correctness targets.
 
 ```bash
 npm run check
 npm run test:browser
 ```
 
-The search tests compare unaccented queries and deterministic sampled fragments against an independent full-corpus oracle, check ordering and filters, and exercise browser loading, typing, highlights, and navigation at root and Pages bases. They do not replace actual Android-device checks. An index made with the old `nfkd-search-v1` rules is rejected by the current worker; rebuild the data and web assets together rather than mixing versions.
+The tests compare unaccented queries and deterministic sampled fragments against an independent full-corpus OR oracle, and compare 10,000 seeded short sequence cases with an exhaustive alignment oracle. Real-corpus and browser tests cover unified ordering, split rows, typos in a multiword query, filters, incremental loading, highlights, navigation, and retry at root and Pages bases. They do not replace actual Android-device checks. The worker requires index and shards version 4 with `nfkd-search-v2`; older versions are rejected. Rebuild the data and web assets together rather than mixing versions.

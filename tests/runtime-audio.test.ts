@@ -61,3 +61,36 @@ test('web build publishes retired paragraph redirects without restoring retracte
   const item=JSON.parse(fs.readFileSync('generated/web-data/items/ziyarat-zkrmsajd-mazmh-mdynh.json','utf8')) as {english:Array<{document:string}>};
   assert.ok(!item.english.some(l=>l.document==='tr142-rajab-daily-dua-4'));
 });
+
+test('row adjacency metadata follows immediate source rows only, without crossing languages, gaps or audio rows',()=>{
+  const c=loadCorpus();
+  const index=JSON.parse(fs.readFileSync('generated/web-data/search-index.json','utf8')) as SearchIndex;
+  assert.equal(index.version,4);
+  const shards=index.shards.map(path=>JSON.parse(fs.readFileSync(`generated/web-data/${path}`,'utf8')) as SearchShard);
+  assert.ok(shards.every(shard=>shard.version===4));
+  const records=[...index.records,...shards.flatMap(shard=>shard.records)];
+  const byKey=new Map(records.map(r=>[r.key,r]));
+  for(const toc of index.records)assert.equal(toc.next,undefined);
+  for(const [id,item] of c.items)for(let i=0;i<item.rows.length;i+=1){
+    const row=item.rows[i]!;if(row.kind==='audio-reciter')continue;
+    for(const lang of ['ar','fa'] as const){
+      const value=text(c,row[lang]);if(!value)continue;
+      const current=byKey.get(`row:${id}:${row.id}:${lang}`)!;assert.ok(current);
+      const following=item.rows[i+1];
+      const nextText=following&&following.kind!=='audio-reciter'?text(c,following[lang]):'';
+      const expected=following&&nextText&&normalizeSearch(nextText)?`row:${id}:${following.id}:${lang}`:undefined;
+      assert.equal(current.next,expected,`${id}/${row.id}/${lang}`);
+      if(current.next){const next=byKey.get(current.next);assert.ok(next);assert.equal(next.item,id);assert.equal(next.language,lang);}
+    }
+  }
+  assert.equal(byKey.get('row:dua-azm-al-bala:r00002:ar')?.next,'row:dua-azm-al-bala:r00003:ar');
+  assert.equal(byKey.get('row:dua-frj-zman-ajl:r00003:ar')?.next,'row:dua-frj-zman-ajl:r00004:ar');
+});
+
+test('local diagnostic probe reports the combined ranking and real cross-row continuation',()=>{
+  const output=execFileSync(process.execPath,['--import','tsx','scripts/probe-search.ts','عظم البلاء و برح الخفاء'],{encoding:'utf8'});
+  assert.match(output,/Top combined results:/);
+  const first=output.split('Top combined results:')[1]!.trimStart().split('\n')[0]!;
+  assert.match(first,/dua-azm-al-bala\/r00002/);
+  assert.match(first,/r00003/);
+});

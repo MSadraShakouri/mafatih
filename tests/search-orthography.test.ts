@@ -78,8 +78,11 @@ test('joined words match a half-space and conservative ordinary-space forms, wit
   assert.deepEqual(search(records, 'اهلبیت'), expected);
   assert.deepEqual(search(records, 'اهل\u200cبیت'), expected);
   // An actual space or comma in the QUERY is deliberately two OR words.
-  assert.deepEqual(search(records, 'اهل بیت'), records.map(item => item.key));
-  assert.deepEqual(search(records, 'اهل،بیت'), records.map(item => item.key));
+  // All hits remain, although the real ordered phrase now ranks first.
+  const spaced = search(records, 'اهل بیت');
+  assert.deepEqual([...spaced].sort(), records.map(item => item.key).sort());
+  assert.equal(spaced[0], 'ordinary-space');
+  assert.deepEqual(search(records, 'اهل،بیت'), spaced);
 });
 
 test('short complete source words and common vocatives can form joined queries', () => {

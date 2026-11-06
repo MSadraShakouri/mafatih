@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { normalizeSearch } from '../../src/normalize.js';
 
 async function openSearch(page: import('@playwright/test').Page) {
   await page.goto('./');
@@ -9,50 +10,52 @@ async function complete(page: import('@playwright/test').Page) {
   await expect(page.getByRole('status')).toContainText('نتیجه', { timeout: 20000 });
 }
 
-test('visible multiword results stay grouped and prioritize word-count, star, then Arabic', async ({ page }) => {
+test('ordered exact text wins over weak TOC and split rows show matching source excerpts', async ({ page }) => {
   const input = await openSearch(page);
-  await input.fill('الهی ربی');
+  await input.fill('عظم البلاء و برح الخفاء');
   await complete(page);
   const sections = page.locator('[data-search-results] > section');
-  await expect(sections).toHaveCount(2);
-  await expect(sections.nth(0)).toHaveAttribute('data-search-section', 'toc');
-  await expect(sections.nth(1)).toHaveAttribute('data-search-section', 'text');
-  const ranks = await sections.nth(1).locator('li').evaluateAll(rows => rows.map(row => ({
-    count: row.querySelector('.search-match-count')?.textContent?.includes('۲') ? 2 : 1,
-    featured: Boolean(row.querySelector('.featured-mark')),
-    language: row.getAttribute('data-language'),
-  })));
-  expect(ranks.some(row => row.count === 2)).toBe(true);
-  expect(ranks.some(row => row.count === 1)).toBe(true); // OR, not AND
-  for (let i = 1; i < ranks.length; i += 1) {
-    expect(ranks[i - 1]!.count).toBeGreaterThanOrEqual(ranks[i]!.count);
-    if (ranks[i - 1]!.count === ranks[i]!.count && !ranks[i - 1]!.featured) expect(ranks[i]!.featured).toBe(false);
-    if (ranks[i - 1]!.count === ranks[i]!.count && ranks[i - 1]!.featured === ranks[i]!.featured && ranks[i - 1]!.language === 'fa') {
-      expect(ranks[i]!.language).not.toBe('ar');
-    }
-  }
+  await expect(sections).toHaveCount(1);
+  await expect(sections).toHaveAttribute('data-search-section', 'results');
+  const first = sections.locator('li').first();
+  await expect(first).toHaveAttribute('data-search-kind', 'text');
+  await expect(first).toHaveAttribute('data-item-id', 'dua-azm-al-bala');
+  await expect(first).toHaveAttribute('data-row-id', 'r00002');
+  await expect(first.locator('.search-kind')).toHaveText('متن عربی');
+  await expect(first.locator('.search-match-count')).toHaveText('۵ واژه');
+  const continuation = first.locator('[data-continuation-row="r00003"]');
+  await expect(continuation).toBeVisible();
+  const marks = (await continuation.locator('mark').allTextContents()).map(normalizeSearch);
+  expect(marks.some(mark => mark.includes('برح'))).toBe(true);
+  expect(marks.some(mark => mark.includes('الخفاء'))).toBe(true);
+  await first.locator('a').click();
+  await expect(page).toHaveURL(/#\/item\/dua-azm-al-bala\?row=r00002&lang=ar&offset=/);
+  await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-anchor-row', 'r00002');
+  await expect(page.locator('article mark')).toHaveCount(0);
 });
 
-test('switching both language filters reuses results without changing the TOC section', async ({ page }) => {
+test('switching both language filters retains TOC counts in the unified list', async ({ page }) => {
   const input = await openSearch(page);
   await input.fill('الله');
   await complete(page);
-  const tocHeading = await page.locator('[data-search-section="toc"] h2').textContent();
+  const counts = page.locator('.search-counts');
+  const label = (await counts.textContent())!.match(/فهرست: [۰-۹]+/)![0];
   const arabic = page.getByRole('checkbox', { name: 'عربی' });
   const persian = page.getByRole('checkbox', { name: 'فارسی' });
   await arabic.uncheck();
   await complete(page);
-  await expect(page.locator('[data-search-section="toc"] h2')).toHaveText(tocHeading!);
-  await expect(page.locator('[data-search-section="text"] [data-language="ar"]')).toHaveCount(0);
-  await expect(page.locator('[data-search-section="text"] [data-language="fa"]').first()).toBeVisible();
+  await expect(counts).toContainText(label);
+  await expect(page.locator('[data-search-kind="text"][data-language="ar"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="text"][data-language="fa"]').first()).toBeVisible();
   await persian.uncheck();
   await complete(page);
-  await expect(page.locator('[data-search-section="toc"] h2')).toHaveText(tocHeading!);
-  await expect(page.locator('[data-search-section="text"] li')).toHaveCount(0);
+  await expect(counts).toContainText(label);
+  await expect(page.locator('[data-search-kind="text"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="toc"]').first()).toBeVisible();
   await arabic.check();
   await complete(page);
-  await expect(page.locator('[data-search-section="text"] [data-language="fa"]')).toHaveCount(0);
-  await expect(page.locator('[data-search-section="text"] [data-language="ar"]').first()).toBeVisible();
+  await expect(page.locator('[data-search-kind="text"][data-language="fa"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="text"][data-language="ar"]').first()).toBeVisible();
 });
 
 test('typing and replacing an unaccented multiword query while shards load never shows stale results', async ({ page, context }) => {
@@ -65,7 +68,7 @@ test('typing and replacing an unaccented multiword query while shards load never
   await input.fill('کمیل');
   await complete(page);
   await expect(input).toHaveValue('کمیل');
-  await expect(page.locator('[data-search-section="text"] li')).toHaveCount(5);
-  await expect(page.locator('[data-search-section="text"] [data-item-id="amal-fzylt-msjd-kvfh"][data-row-id="r00003"]')).toHaveCount(0);
-  await expect(page.locator('[data-search-section="toc"] [data-item-id="dua-kumayl"]')).toBeVisible();
+  await expect(page.locator('[data-search-kind="text"]')).toHaveCount(5);
+  await expect(page.locator('[data-search-kind="text"][data-item-id="amal-fzylt-msjd-kvfh"][data-row-id="r00003"]')).toHaveCount(0);
+  await expect(page.locator('[data-search-kind="toc"][data-item-id="dua-kumayl"]')).toBeVisible();
 });

@@ -111,41 +111,54 @@ function runCases(records: SearchRecord[], cases: Case[]): void {
       if (matches.length) expected[record.section].push({ key: record.key, words: matches.map(match => match.word),
         direct: matches.filter(match => match.kind === 'direct').length, featured: record.featured, language: record.language, order: record.order });
     }
-    const compare = (a: Expected, b: Expected): number =>
-      b.words.length - a.words.length || Number(b.featured) - Number(a.featured) ||
-      Number(b.language === 'ar') - Number(a.language === 'ar') || b.direct - a.direct || a.order - b.order;
-    expected.toc.sort(compare); expected.text.sort(compare);
     const request: SearchRequest = { id, query: example.query, languages, ...(example.item ? { item: example.item } : {}),
-      tocLimit: records.length, textLimit: records.length };
+      tocLimit: records.length, textLimit: records.length, resultLimit: records.length };
     let result = engine.begin(request);
     while (!result.complete) result = engine.advance(Math.max(1, records.length));
     assert.equal(result.id, id);
     for (const section of ['toc', 'text'] as const) {
       const actual = result[section];
+      const expectedByKey = new Map(expected[section].map(hit => [hit.key, hit]));
       assert.equal(section === 'toc' ? result.tocTotal : result.textTotal, expected[section].length,
         `${example.query}: ${section} total`);
       assert.equal(actual.length, expected[section].length, `${example.query}: ${section} length`);
+      assert.equal(new Set(actual.map(hit => hit.record.key)).size, actual.length, `${example.query}: duplicate ${section} hit`);
       for (let i = 0; i < actual.length; i += 1) {
-        const want = expected[section][i]!;
         const got = actual[i]!;
-        assert.equal(got.record.key, want.key, `${example.query}: ${section} rank ${i}`);
+        const want = expectedByKey.get(got.record.key);
+        assert.ok(want, `${example.query}: unexpected ${section} hit ${got.record.key}`);
         assert.deepEqual(got.matchedWords, want.words, `${example.query}: ${want.key} matched terms`);
         assert.equal(got.directMatches, want.direct, `${example.query}: ${want.key} direct terms`);
-        // Sample actual displayed hits: every reported word must map to the
-        // unchanged original, whether the source contains marks or spaces.
+        assert.ok(got.relevance.score > 0, `${example.query}: matched hit ${want.key} has no relevance score`);
+        // Every sampled anchor term still maps to unchanged original text.
         if (i < 10) for (const word of got.matchedWords) {
           const spans = findOriginalMatches(got.record.text, [word]);
           assert.ok(spans.length, `${example.query}: missing highlight in ${want.key} for ${word}`);
           assert.ok(spans.every(span => span.start >= 0 && span.end <= got.record.text.length && span.start < span.end));
         }
       }
+      assert.deepEqual(result.results.filter(hit => hit.record.section === section).map(hit => hit.record.key),
+        actual.map(hit => hit.record.key), `${example.query}: unified order for ${section}`);
     }
+    // Recompute the public comparator independently. Scoring itself is also
+    // checked against an exhaustive alignment oracle in search-relevance-oracle.
+    const ranked = [...result.results].sort((a, b) => {
+      const coverage = (hit: typeof a) => Math.max(hit.matchedWords.length, Math.min(referenceWords.length, hit.relevance.matchedSequenceWords));
+      return b.relevance.score - a.relevance.score || b.relevance.matchedSequenceWords - a.relevance.matchedSequenceWords ||
+        b.relevance.exactSequenceWords - a.relevance.exactSequenceWords || coverage(b) - coverage(a) ||
+        Number(b.record.section === 'toc') - Number(a.record.section === 'toc') ||
+        Number(b.record.featured) - Number(a.record.featured) || Number(b.record.language === 'ar') - Number(a.record.language === 'ar') ||
+        b.directMatches - a.directMatches || a.record.order - b.record.order;
+    });
+    assert.deepEqual(result.results.map(hit => hit.record.key), ranked.map(hit => hit.record.key), `${example.query}: combined ranking`);
   }
 }
 
 const actualExamples: Case[] = [
   { query: 'بسم الله الرحمن الرحیم' }, { query: 'لا اله الا الله' },
   { query: 'الهی ربی' }, { query: 'الهی ربی', item: 'dua-kumayl' },
+  { query: 'الهی عظم البلا' }, { query: 'عظم البلاء و برح الخفاء' }, { query: 'یا رب' },
+  { query: 'الهی غلط البلا و برح الخفا' },
   { query: 'الهی ربی', item: 'dua-kumayl', languages: ['ar'] },
   { query: 'الله', languages: ['ar'] }, { query: 'الله', languages: ['fa'] },
   { query: 'اللهم صل علی محمد و ال محمد' }, { query: 'یا الله' },
@@ -159,7 +172,7 @@ const actualExamples: Case[] = [
   { query: 'الفبایناموجود' }, { query: '' },
 ];
 
-test('diacritic-free real-corpus searches match an independent oracle for every hit and rank', () => {
+test('diacritic-free real-corpus OR hits match an independent oracle and the unified comparator', () => {
   const records = corpusRecords();
   assert.ok(records.length > 21000);
   runCases(records, actualExamples);
