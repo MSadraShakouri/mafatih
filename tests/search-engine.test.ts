@@ -68,8 +68,14 @@ test('unfinished and completed word work survives query, item, and language chan
   assert.deepEqual(changed.text.map(x => x.record.key), ['b']);
   assert.deepEqual(engine.progress('کتاب'), { cursor: 2, complete: false });
   engine.advance(2);
+  // The in-item search finishes only that scope; the interrupted global scan
+  // is retained rather than silently marked complete.
+  assert.deepEqual(engine.progress('کتاب', 'i1'), { cursor: 2, complete: true });
+  assert.deepEqual(engine.progress('کتاب'), { cursor: 2, complete: false });
+  engine.begin(request('کتاب', { id: 3, languages: ['fa'] }));
+  engine.advance(2);
   assert.deepEqual(engine.progress('کتاب'), { cursor: 4, complete: true });
-  const reused = engine.begin(request('کتاب', { id: 3, languages: ['fa'], item: 'i2' }));
+  const reused = engine.begin(request('کتاب', { id: 4, languages: ['fa'], item: 'i2' }));
   assert.equal(reused.complete, true);
   assert.deepEqual(reused.text.map(x => x.record.key), ['c']);
   assert.deepEqual(engine.progress('کتاب'), { cursor: 4, complete: true });

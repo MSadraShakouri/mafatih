@@ -80,3 +80,28 @@ test('incremental ranking produces the same final results as an all-at-once run'
     assert.deepEqual(run(11), run(records.length), query);
   }
 });
+
+test('single-possible-term shortcut preserves joined scoring and never collapses repeated terms', () => {
+  const joined = row('one', ['اهل', 'بیتش']);
+  const single = scoreSequence([{ record: joined }], ['غلط', 'اهلبیت', 'ناموجود']);
+  assert.deepEqual(single.relevance, { score: 4, matchedSequenceWords: 1, exactSequenceWords: 0 });
+  const twice = row('two', ['اهل', 'بیتش', 'اهل', 'بیتش']);
+  const repeated = scoreSequence([{ record: twice }], ['اهلبیت', 'اهلبیت']);
+  assert.deepEqual(repeated.relevance, { score: 8, matchedSequenceWords: 2, exactSequenceWords: 0 });
+  const cross = scoreSequence([{ record: row('a', ['alpha']) }, { record: row('b', ['beta']) }], ['alpha', 'typo', 'beta']);
+  assert.deepEqual(cross.relevance, { score: 10, matchedSequenceWords: 2, exactSequenceWords: 2 });
+  assert.equal(cross.endPart, 1);
+});
+
+test('multiple joined terms in one source keep their positions, order and repeated occurrences', () => {
+  const both = row('one', ['یا', 'اهل', 'بیتش', 'و', 'می', 'روم']);
+  const result = scoreSequence([{ record: both }], ['یا', 'اهلبیت', 'و', 'میروم']);
+  assert.deepEqual(result.relevance, { score: 20, matchedSequenceWords: 4, exactSequenceWords: 2 });
+  const reversed = scoreSequence([{ record: both }], ['میروم', 'اهلبیت']);
+  assert.equal(reversed.relevance.matchedSequenceWords, 1);
+  const second = row('two', ['و', 'می', 'روم']);
+  const split = scoreSequence([{ record: row('first', ['یا', 'اهل', 'بیتش']) }, { record: second }],
+    ['یا', 'اهلبیت', 'و', 'میروم']);
+  assert.equal(split.relevance.score, 20);
+  assert.equal(split.endPart, 1);
+});

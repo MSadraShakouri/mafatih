@@ -58,7 +58,7 @@ test('switching both language filters retains TOC counts in the unified list', a
   await expect(page.locator('[data-search-kind="text"][data-language="ar"]').first()).toBeVisible();
 });
 
-test('typing and replacing an unaccented multiword query while shards load never shows stale results', async ({ page, context }) => {
+test('typing and replacing an unaccented multiword query while shards load settles on the latest results', async ({ page, context }) => {
   await context.route('**/data/search/*.json', async route => {
     await new Promise(resolve => setTimeout(resolve, 100));
     await route.continue();

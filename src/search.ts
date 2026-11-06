@@ -1,6 +1,7 @@
 import { normalizeSearch } from './normalize.js';
+import { TopK } from './search-top-k.js';
 import { findOriginalMatches } from './search-text.js';
-import { mightJoin, normalizedTokens, scoreSequence, type Relevance, type SequencePart } from './search-relevance.js';
+import { compactNormalized, mightJoin, normalizedTokens, scoreSequence, type Relevance, type SequencePart } from './search-relevance.js';
 
 export type SearchLanguage = 'ar' | 'fa';
 export type SearchSection = 'toc' | 'text';
@@ -70,20 +71,32 @@ export interface SearchRequest {
   resultLimit?: number;
 }
 
+const CHECKED = 1, POSSIBLE = 2, DIRECT = 4, SPACED = 8;
+
+/** Counts are diagnostics, not elapsed-time guarantees. */
+export interface WordWork {
+  visited: number;
+  examined: number;
+  reused: number;
+  prefixRejected: number;
+}
 interface WordScan {
   word: string;
-  cursor: number;
-  matches: number[];
+  cursor: number; // global source-record cursor
+  itemCursors: Map<string, number>;
+  flags: Uint8Array; // checked, conservative compact-prefix candidate, direct/spaced
+  parent?: WordScan;
+  matches: number[]; // kept in global source-record order across scopes
   spacedMatches: Set<number>;
   used: number;
+  work: WordWork;
 }
 interface ScoredRecord { relevance: Relevance; parts: SearchRecord[] }
-interface ActiveSearch {
+interface ScoreState { scores: Map<number, ScoredRecord>; waiting: Map<string, Set<number>> }
+interface ActiveSearch extends ScoreState {
   request: SearchRequest;
   words: string[];
   sequence: string[];
-  scores: Map<number, ScoredRecord>;
-  waiting: Map<string, Set<number>>;
   rankingPending: boolean;
 }
 
@@ -92,17 +105,36 @@ export function searchWords(query: string): string[] {
   return [...new Set(normalizeSearch(query).split(' ').filter(Boolean))];
 }
 
-const compactCache = new WeakMap<SearchRecord, string>();
 function matchKind(record: SearchRecord, word: string): 'direct' | 'spaced' | undefined {
   if (record.normalized.includes(word)) return 'direct';
   if (word.length < 3) return undefined;
-  let compact = compactCache.get(record);
-  if (compact === undefined) { compact = record.normalized.replace(/ /g, ''); compactCache.set(record, compact); }
-  // This is only a rejection filter: the original-text matcher still checks
+  // These are only rejection filters: the original-text matcher still checks
   // horizontal gaps, word boundaries, and partial-final-word safeguards.
-  if (compact.includes(word) && mightJoin(normalizedTokens(record), word) &&
+  if (compactNormalized(record).includes(word) && mightJoin(normalizedTokens(record), word) &&
       findOriginalMatches(record.text, [word], 1).length) return 'spaced';
   return undefined;
+}
+
+/** A conservative compact-prefix candidate can be useful to a later, longer word. */
+function probe(record: SearchRecord, word: string): number {
+  if (record.normalized.includes(word)) return CHECKED | POSSIBLE | DIRECT;
+  // Removing spaces cannot create a new single-code-point occurrence.
+  if (word.length === 1 || (word.length === 2 && word.codePointAt(0)! > 0xffff) ||
+      !compactNormalized(record).includes(word)) return CHECKED;
+  const kind = word.length >= 3 && mightJoin(normalizedTokens(record), word) &&
+    findOriginalMatches(record.text, [word], 1).length > 0;
+  return CHECKED | POSSIBLE | (kind ? SPACED : 0);
+}
+
+/** Item-first and global scans can discover matches out of global record order. */
+function insertOrdered(values: number[], value: number): void {
+  if (!values.length || values[values.length - 1]! < value) { values.push(value); return; }
+  let left = 0, right = values.length;
+  while (left < right) {
+    const middle = (left + right) >>> 1;
+    if (values[middle]! < value) left = middle + 1; else right = middle;
+  }
+  if (values[left] !== value) values.splice(left, 0, value);
 }
 
 /** A valid one-term lower bound while the stronger sequence score is pending. */
@@ -121,83 +153,137 @@ function provisionalScore(record: SearchRecord, words: string[]): ScoredRecord {
 /** Incremental per-word OR scans and cached local relevance are shared by global/item search. */
 export class IncrementalSearch {
   private readonly cache = new Map<string, WordScan>();
-  private readonly records: SearchRecord[];
+  private readonly records: SearchRecord[] = [];
   private readonly indices = new Map<string, number>();
+  private readonly itemIndices = new Map<string, number[]>();
+  private readonly scoreCache = new Map<string, ScoreState>();
   private active: ActiveSearch | undefined;
   private clock = 0;
   private loading: boolean;
 
   constructor(records: SearchRecord[], private readonly maxCachedWords = 32, moreRecordsComing = false) {
-    this.records = [...records];
-    this.records.forEach((record, index) => this.indices.set(record.key, index));
     this.loading = moreRecordsComing;
+    this.appendRecords(records);
   }
 
-  /** Appending shards keeps scan cursors; only scores waiting for these rows are invalidated. */
+  /** Append shards without discarding any checked words, scope cursors or relevance work. */
   appendRecords(records: SearchRecord[]): void {
     for (const record of records) {
-      this.indices.set(record.key, this.records.length);
+      const index = this.records.length;
+      this.indices.set(record.key, index);
       this.records.push(record);
-    }
-    if (this.active) for (const record of records) {
-      const waiting = this.active.waiting.get(record.key);
-      if (waiting) {
-        for (const index of waiting) this.active.scores.delete(index);
-        this.active.rankingPending = true;
-        this.active.waiting.delete(record.key);
+      if (record.item) {
+        const item = this.itemIndices.get(record.item) ?? [];
+        item.push(index); this.itemIndices.set(record.item, item);
       }
+    }
+    for (const record of records) for (const state of this.scoreCache.values()) {
+      const waiting = state.waiting.get(record.key);
+      if (!waiting) continue;
+      for (const index of waiting) state.scores.delete(index);
+      if (state.scores === this.active?.scores) this.active.rankingPending = true;
+      state.waiting.delete(record.key);
     }
   }
   finishLoading(): void { this.loading = false; }
-  /** True while either a word scan or incremental relevance calculation remains. */
+
+  private scopeSize(item?: string): number {
+    return item ? (this.itemIndices.get(item)?.length ?? 0) : this.records.length;
+  }
+  private scopeCursor(scan: WordScan, item?: string): number {
+    return item ? (scan.itemCursors.get(item) ?? 0) : scan.cursor;
+  }
+  private setScopeCursor(scan: WordScan, item: string | undefined, cursor: number): void {
+    if (item) scan.itemCursors.set(item, cursor); else scan.cursor = cursor;
+  }
+  /** True while either a word scan in the active scope or relevance work remains. */
   hasUnscannedRecords(): boolean {
-    return Boolean(this.active && (this.active.rankingPending ||
-      this.active.words.some(word => this.cache.get(word)!.cursor < this.records.length)));
+    if (!this.active) return false;
+    const item = this.active.request.item;
+    return this.active.rankingPending || this.active.words.some(word =>
+      this.scopeCursor(this.cache.get(word)!, item) < this.scopeSize(item));
   }
 
   begin(request: SearchRequest): SearchSnapshot {
     const sequence = normalizeSearch(request.query).split(' ').filter(Boolean);
     const words = [...new Set(sequence)];
-    const sameSequence = this.active && this.active.sequence.length === sequence.length &&
-      this.active.sequence.every((word, index) => word === sequence[index]);
-    this.active = { request, words, sequence,
-      scores: sameSequence ? this.active!.scores : new Map(),
-      waiting: sameSequence ? this.active!.waiting : new Map(),
-      rankingPending: sameSequence ? this.active!.rankingPending : false };
+    const scoreKey = JSON.stringify(sequence);
+    let scoreState = this.scoreCache.get(scoreKey);
+    if (!scoreState) scoreState = { scores: new Map(), waiting: new Map() };
+    this.scoreCache.delete(scoreKey); this.scoreCache.set(scoreKey, scoreState);
+    this.active = { request, words, sequence, ...scoreState, rankingPending: false };
+    this.trimScoreCache(scoreState);
     for (const word of words) {
       let scan = this.cache.get(word);
       if (!scan) {
-        scan = { word, cursor: 0, matches: [], spacedMatches: new Set(), used: 0 };
+        // A checked prefix carries a conservative compact candidate flag, not
+        // merely its confirmed hits. Unknown parent records remain searchable.
+        let parent: WordScan | undefined;
+        for (const prior of this.cache.values()) {
+          if (word.startsWith(prior.word) && word !== prior.word && (!parent || prior.word.length > parent.word.length)) parent = prior;
+        }
+        scan = { word, cursor: 0, itemCursors: new Map(), flags: new Uint8Array(), parent,
+          matches: [], spacedMatches: new Set(), used: 0,
+          work: { visited: 0, examined: 0, reused: 0, prefixRejected: 0 } };
         this.cache.set(word, scan);
       }
       scan.used = ++this.clock;
+      // A completed global scan already covers every currently loaded item row.
+      if (request.item && scan.cursor === this.records.length) scan.itemCursors.set(request.item, this.scopeSize(request.item));
     }
     this.trimCache(new Set(words));
-    // Cached word hits can number in the tens of thousands. Return an early
-    // provisional page rather than blocking a new query while ranking them all.
+    // Cached hits can number in the tens of thousands. Return a provisional
+    // page rather than blocking a new query while ranking them all.
     return this.snapshot(120);
   }
 
   advance(batchSize = 500): SearchSnapshot {
     if (!Number.isInteger(batchSize) || batchSize <= 0) throw new Error('Invalid search batch size');
     if (!this.active) throw new Error('Start a search first');
+    const item = this.active.request.item;
+    const scoped = item ? (this.itemIndices.get(item) ?? []) : undefined;
+    const size = this.scopeSize(item);
     for (const word of this.active.words) {
       const scan = this.cache.get(word)!;
-      const end = Math.min(this.records.length, scan.cursor + batchSize);
-      for (; scan.cursor < end; scan.cursor += 1) {
-        const kind = matchKind(this.records[scan.cursor]!, word);
-        if (kind) {
-          scan.matches.push(scan.cursor);
-          if (kind === 'spaced') scan.spacedMatches.add(scan.cursor);
+      let cursor = this.scopeCursor(scan, item), examined = 0, visited = 0;
+      // Even cheap prefix rejections must yield periodically; otherwise a
+      // selective word can scan the entire corpus before its first update.
+      while (cursor < size && examined < batchSize && visited < batchSize * 2) {
+        const index = scoped ? scoped[cursor]! : cursor;
+        cursor += 1; visited += 1; scan.work.visited += 1;
+        if (index >= scan.flags.length) {
+          let capacity = Math.max(32, scan.flags.length);
+          while (capacity <= index) capacity *= 2;
+          const flags = new Uint8Array(capacity); flags.set(scan.flags); scan.flags = flags;
+        }
+        if (scan.flags[index]! & CHECKED) { scan.work.reused += 1; continue; }
+        const previous = scan.parent?.flags[index] ?? 0;
+        if ((previous & CHECKED) && !(previous & POSSIBLE)) {
+          scan.flags[index] = CHECKED; scan.work.prefixRejected += 1; continue;
+        }
+        const flags = probe(this.records[index]!, word);
+        scan.flags[index] = flags; scan.work.examined += 1; examined += 1;
+        if (flags & (DIRECT | SPACED)) {
+          insertOrdered(scan.matches, index);
+          if (flags & SPACED) scan.spacedMatches.add(index);
         }
       }
+      this.setScopeCursor(scan, item, cursor);
     }
     return this.snapshot(batchSize);
   }
 
-  progress(word: string): { cursor: number; complete: boolean } | undefined {
+  progress(word: string, item?: string): { cursor: number; complete: boolean } | undefined {
     const scan = this.cache.get(word);
-    return scan && { cursor: scan.cursor, complete: scan.cursor === this.records.length };
+    if (!scan) return undefined;
+    const cursor = this.scopeCursor(scan, item);
+    return { cursor, complete: cursor === this.scopeSize(item) };
+  }
+
+  /** Work counters are provided for repeatable diagnostics. */
+  wordWork(word: string): WordWork | undefined {
+    const work = this.cache.get(word)?.work;
+    return work && { ...work };
   }
 
   private trimCache(active: Set<string>): void {
@@ -208,6 +294,18 @@ export class IncrementalSearch {
       }
       if (!oldest) break;
       this.cache.delete(oldest.word);
+      // Do not retain an unbounded chain of evicted prefix flags.
+      for (const scan of this.cache.values()) if (scan.parent === oldest) scan.parent = undefined;
+    }
+  }
+
+  private trimScoreCache(active: ScoreState): void {
+    let total = 0;
+    for (const state of this.scoreCache.values()) total += state.scores.size;
+    for (const [key, state] of this.scoreCache) {
+      if (this.scoreCache.size <= 3 && total <= 40000) break;
+      if (state.scores === active.scores) continue;
+      this.scoreCache.delete(key); total -= state.scores.size;
     }
   }
 
@@ -264,22 +362,10 @@ export class IncrementalSearch {
         if (!scan.spacedMatches.has(index)) existing.direct += 1;
       }
     }
-    type Candidate = { hit: SearchHit; parts: SearchRecord[]; coverage: number };
-    const candidates: Candidate[] = [];
-    let tocTotal = 0, textTotal = 0, rankingPending = false;
-    for (const [index, info] of matched) {
-      const record = this.records[index]!;
-      let scored = active.scores.get(index);
-      if (!scored && scoreBudget > 0) { scored = this.score(index, active); scoreBudget -= 1; }
-      if (!scored) { rankingPending = true; scored = provisionalScore(record, info.words); }
-      const coverage = Math.max(info.words.length, Math.min(words.length, scored.relevance.matchedSequenceWords));
-      const hit: SearchHit = { record, matchedWords: info.words, directMatches: info.direct, relevance: scored.relevance };
-      candidates.push({ hit, parts: scored.parts, coverage });
-      if (record.section === 'toc') tocTotal += 1; else textTotal += 1;
-    }
-    // Relevance competes across both kinds. Type and stars are tie-breakers,
-    // not blanket preferences over a clearly more relevant result.
-    candidates.sort((a, b) =>
+    type Candidate = { hit: SearchHit; parts: SearchRecord[]; coverage: number; ordinal: number };
+    // The final ordinal preserves stable source/term order when every public
+    // comparator field ties, including item-first scans discovered earlier.
+    const compare = (a: Candidate, b: Candidate): number =>
       b.hit.relevance.score - a.hit.relevance.score ||
       b.hit.relevance.matchedSequenceWords - a.hit.relevance.matchedSequenceWords ||
       b.hit.relevance.exactSequenceWords - a.hit.relevance.exactSequenceWords ||
@@ -288,7 +374,25 @@ export class IncrementalSearch {
       Number(b.hit.record.featured) - Number(a.hit.record.featured) ||
       Number(b.hit.record.language === 'ar') - Number(a.hit.record.language === 'ar') ||
       b.hit.directMatches - a.hit.directMatches ||
-      a.hit.record.order - b.hit.record.order);
+      a.hit.record.order - b.hit.record.order || a.ordinal - b.ordinal;
+    const resultLimit = request.resultLimit ?? request.tocLimit + request.textLimit;
+    const best = new TopK<Candidate>(resultLimit, matched.size, compare);
+    const bestToc = new TopK<Candidate>(request.tocLimit, matched.size, compare);
+    const bestText = new TopK<Candidate>(request.textLimit, matched.size, compare);
+    let tocTotal = 0, textTotal = 0, rankingPending = false, ordinal = 0;
+    for (const [index, info] of matched) {
+      const record = this.records[index]!;
+      let scored = active.scores.get(index);
+      if (!scored && scoreBudget > 0) { scored = this.score(index, active); scoreBudget -= 1; }
+      if (!scored) { rankingPending = true; scored = provisionalScore(record, info.words); }
+      const coverage = Math.max(info.words.length, Math.min(words.length, scored.relevance.matchedSequenceWords));
+      const hit: SearchHit = { record, matchedWords: info.words, directMatches: info.direct, relevance: scored.relevance };
+      const candidate = { hit, parts: scored.parts, coverage, ordinal: ordinal++ };
+      best.add(candidate);
+      if (record.section === 'toc') { tocTotal += 1; bestToc.add(candidate); }
+      else { textTotal += 1; bestText.add(candidate); }
+    }
+    const candidates = best.sorted(), toc = bestToc.sorted(), text = bestText.sorted();
     const materialized = new Map<Candidate, SearchHit>();
     const materialize = (candidate: Candidate): SearchHit => {
       const cached = materialized.get(candidate);
@@ -301,17 +405,16 @@ export class IncrementalSearch {
       materialized.set(candidate, hit);
       return hit;
     };
-    const toc = candidates.filter(candidate => candidate.hit.record.section === 'toc');
-    const text = candidates.filter(candidate => candidate.hit.record.section === 'text');
-    const resultLimit = request.resultLimit ?? request.tocLimit + request.textLimit;
     active.rankingPending = rankingPending;
+    this.trimScoreCache(active);
     return {
       id: request.id,
-      complete: words.length === 0 || (!this.loading && !rankingPending && words.every(word => this.cache.get(word)!.cursor === this.records.length)),
-      results: candidates.slice(0, Math.max(0, resultLimit)).map(materialize),
-      resultsTotal: candidates.length,
-      toc: toc.slice(0, Math.max(0, request.tocLimit)).map(materialize),
-      text: text.slice(0, Math.max(0, request.textLimit)).map(materialize),
+      complete: words.length === 0 || (!this.loading && !rankingPending && words.every(word =>
+        this.scopeCursor(this.cache.get(word)!, request.item) === this.scopeSize(request.item))),
+      results: candidates.map(materialize),
+      resultsTotal: matched.size,
+      toc: toc.map(materialize),
+      text: text.map(materialize),
       tocTotal, textTotal,
     };
   }

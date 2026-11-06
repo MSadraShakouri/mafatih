@@ -20,6 +20,14 @@ const JOINED = 4;
 const SUBSTRING = 3;
 const NO_PATH = -1_000_000;
 const tokenCache = new WeakMap<SearchRecord, string[]>();
+const compactCache = new WeakMap<SearchRecord, string>();
+
+/** Compact search text is a conservative prefilter, never the final matcher. */
+export function compactNormalized(record: SearchRecord): string {
+  let compact = compactCache.get(record);
+  if (compact === undefined) { compact = record.normalized.replace(/ /g, ''); compactCache.set(record, compact); }
+  return compact;
+}
 
 /** Search-only tokens are shared by matching and relevance; source text is untouched. */
 export function normalizedTokens(record: SearchRecord): string[] {
@@ -55,17 +63,17 @@ function spacedMatches(record: SearchRecord, tokens: string[], words: string[], 
   const found: SpacedMatch[] = [];
   if (tokens.length < 2) return found;
   const compact = tokens.join('');
-  for (const word of words) {
-    if (!compact.includes(word) || !mightJoin(tokens, word)) continue;
-    for (const span of findOriginalWordMatches(record.text, [word], Number.MAX_SAFE_INTEGER)) {
-      const fragment = normalizeSearch(record.text.slice(span.start, span.end));
-      if (!fragment.includes(' ')) continue; // direct matches are handled separately
-      const prefix = normalizeSearch(record.text.slice(0, span.start));
-      const first = prefix ? prefix.split(' ').length : 0;
-      const last = first + fragment.split(' ').length - 1;
-      // Do not accidentally use an occurrence past the bounded continuation window.
-      if (first >= 0 && last < tokens.length) found.push({ word, start: offset + first, end: offset + last });
-    }
+  const candidates = words.filter(word => compact.includes(word) && mightJoin(tokens, word));
+  if (!candidates.length) return found;
+  // Fold the original text once for all candidate words, not once per word.
+  for (const span of findOriginalWordMatches(record.text, candidates, Number.MAX_SAFE_INTEGER)) {
+    const fragment = normalizeSearch(record.text.slice(span.start, span.end));
+    if (!fragment.includes(' ')) continue; // direct matches are handled separately
+    const prefix = normalizeSearch(record.text.slice(0, span.start));
+    const first = prefix ? prefix.split(' ').length : 0;
+    const last = first + fragment.split(' ').length - 1;
+    // Do not accidentally use an occurrence past the bounded continuation window.
+    if (first >= 0 && last < tokens.length) found.push({ word: span.word, start: offset + first, end: offset + last });
   }
   return found;
 }
@@ -125,6 +133,27 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
     return { relevance: { score, matchedSequenceWords: score ? 1 : 0, exactSequenceWords: score === WHOLE ? 1 : 0 }, endPart: 0 };
   }
 
+  // Most hits in a broad OR search contain only a common single term. Before
+  // building alignment rows, reject impossible terms using compact strings as
+  // a *superset*. Full continuation rows can admit extra terms but cannot hide
+  // a match in their bounded prefixes. Repeated query positions still count
+  // separately, and every actual join remains verified by the original matcher.
+  const possible = new Set<string>();
+  const possibleByPart: string[][] = [];
+  for (const source of parts) {
+    const compact = compactNormalized(source.record);
+    const present: string[] = [];
+    for (const word of unique) if (compact.includes(word)) { present.push(word); possible.add(word); }
+    possibleByPart.push(present);
+  }
+  let positions = 0, onlyWord = '';
+  for (const word of query) if (possible.has(word)) { positions += 1; onlyWord = word; }
+  if (!positions) return empty;
+  const first = parts[0]!;
+  if (positions === 1 && (first.maxTokens === undefined || first.maxTokens >= normalizedTokens(first.record).length)) {
+    return scoreSequence([first], [onlyWord]);
+  }
+
   const tokens: SourceToken[] = [];
   const spaced: SpacedMatch[] = [];
   for (const [part, source] of parts.entries()) {
@@ -132,7 +161,7 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
     const values = source.maxTokens === undefined || source.maxTokens >= all.length ? all : all.slice(0, source.maxTokens);
     const offset = tokens.length;
     tokens.push(...values.map(value => ({ value, part })));
-    spaced.push(...spacedMatches(source.record, values, unique, offset));
+    spaced.push(...spacedMatches(source.record, values, possibleByPart[part]!, offset));
   }
   if (!tokens.length) return empty;
 
@@ -149,7 +178,10 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
   // Looking at a full continuation row can only admit extra columns, never
   // remove a match from its bounded prefix.
   const present = new Set<string>();
-  for (const word of unique) if (parts.some(part => part.record.normalized.includes(word))) present.add(word);
+  for (let i = 0; i < parts.length; i += 1) {
+    const text = parts[i]!.record.normalized;
+    for (const word of possibleByPart[i]!) if (text.includes(word)) present.add(word);
+  }
   for (const event of spaced) present.add(event.word);
   const activeQuery = query.map((word, index) => ({ word, index })).filter(entry => present.has(entry.word));
   if (activeQuery.length < 2) {

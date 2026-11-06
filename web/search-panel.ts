@@ -1,4 +1,5 @@
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
+import { normalizeSearch } from '../src/normalize.js';
 import { findOriginalWordMatches, utf16ToCodePointOffset, wholeWordRanges, type TextRange } from '../src/search-text.js';
 import type { Catalog, Title } from './data.js';
 import { scrollToReadingAnchor } from './reader-anchor.js';
@@ -144,6 +145,8 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
   let pointerDown = false;
   let destroyed = false;
   let lastAnnouncement = '';
+  let lastBaseKey: string | undefined;
+  let lastRequestKey: string | undefined;
   let requestedFocus: number | undefined;
   const rangeCache = new Map<string, { matches: TextRange[]; words: TextRange[]; focuses: TextRange[] }>();
 
@@ -177,6 +180,10 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
     window.clearTimeout(pendingTimer);
     pendingTimer = undefined;
     latest = undefined;
+    lastBaseKey = undefined;
+    lastRequestKey = undefined;
+    delete results.dataset.searchPrevious;
+    results.removeAttribute('aria-busy');
     requestedFocus = undefined;
   }
 
@@ -305,6 +312,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
     if (snapshot.resultsTotal > resultLimit) {
       const more = document.createElement('button');
       more.type = 'button';
+      more.dataset.searchMore = '';
       more.textContent = 'نمایش بیشتر';
       more.addEventListener('click', () => {
         requestedFocus = snapshot.results.length;
@@ -321,6 +329,8 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
     if (!latest || destroyed || panel.hidden || pointerDown || (results.contains(document.activeElement) && requestedFocus === undefined)) return;
     const snapshot = latest;
     latest = undefined;
+    delete results.dataset.searchPrevious;
+    results.setAttribute('aria-busy', snapshot.complete ? 'false' : 'true');
     // Keep the first visible result in place as incremental results are sorted.
     const visible = window.scrollY > 0 ? [...results.querySelectorAll<HTMLElement>('[data-result-key]')]
       .find(element => element.getBoundingClientRect().bottom > 0 && element.getBoundingClientRect().top < window.innerHeight) : undefined;
@@ -340,49 +350,78 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
   }
 
   function queue(snapshot: SearchSnapshot): void {
+    // Do not replace useful previous hits with an empty provisional snapshot.
+    // A completed zero-result search must still replace them.
+    if (results.dataset.searchPrevious === 'true' && !snapshot.complete && !snapshot.results.length) return;
     latest = snapshot;
     if (pendingTimer === undefined) pendingTimer = window.setTimeout(flush, 80);
   }
 
   function run(reset: boolean): void {
     if (destroyed || panel.hidden) return;
-    window.clearTimeout(pendingTimer);
-    pendingTimer = undefined;
-    latest = undefined;
-    if (reset) {
-      resultLimit = 30;
-      requestedFocus = undefined;
-      results.replaceChildren(); // Do not show stale results under a new query/scope.
-    }
     const query = input.value;
+    const languages = [...toggles].filter(([, toggle]) => toggle.checked).map(([language]) => language);
     if (!query.trim()) {
+      window.clearTimeout(pendingTimer);
+      pendingTimer = undefined;
+      latest = undefined;
+      lastBaseKey = undefined;
+      lastRequestKey = undefined;
       client.cancel();
       if (contents) contents.hidden = false;
       results.hidden = true;
       results.replaceChildren();
+      delete results.dataset.searchPrevious;
+      results.removeAttribute('aria-busy');
       announce('');
       return;
     }
+    const baseKey = JSON.stringify([normalizeSearch(query), languages, item ?? null]);
+    // A trailing/repeated space or a removed mark may change the input without
+    // changing any search term. Preserve the ongoing work and displayed page.
+    if (reset && baseKey === lastBaseKey) return;
+    if (reset) { resultLimit = 30; requestedFocus = undefined; }
+    const requestKey = JSON.stringify([baseKey, resultLimit]);
+    if (!reset && requestKey === lastRequestKey) return;
+    window.clearTimeout(pendingTimer);
+    pendingTimer = undefined;
+    latest = undefined;
+    const previousHits = Boolean(results.querySelector('[data-result-key]'));
+    if (previousHits && (baseKey !== lastBaseKey || results.dataset.searchPrevious === 'true')) {
+      results.dataset.searchPrevious = 'true';
+      // "Show more" belongs to the old query; do not apply it to the new one.
+      const more = results.querySelector<HTMLButtonElement>('[data-search-more]');
+      if (more) more.disabled = true;
+    } else delete results.dataset.searchPrevious;
+    lastBaseKey = baseKey;
+    lastRequestKey = requestKey;
+    results.querySelector('[data-search-retry]')?.remove();
     if (contents) contents.hidden = true;
     results.hidden = false;
-    announce('در حال جست‌وجو…');
-    client.search({ query, languages: [...toggles].filter(([, toggle]) => toggle.checked).map(([language]) => language),
-      ...(item ? { item } : {}), resultLimit, tocLimit: 0, textLimit: 0 }, queue, () => {
-      // Discard snapshots already queued by the failed worker: otherwise one
-      // could replace the retry control or leave an unfinished status visible.
+    results.setAttribute('aria-busy', 'true');
+    announce(results.dataset.searchPrevious === 'true'
+      ? 'در حال جست‌وجو… نتایج پیشین نمایش داده می‌شوند.' : 'در حال جست‌وجو…');
+    client.search({ query, languages, ...(item ? { item } : {}), resultLimit, tocLimit: 0, textLimit: 0 }, queue, () => {
+      // Discard snapshots already queued by the failed worker; keep any shown
+      // hits visible and make retry explicit instead of flashing an empty page.
       window.clearTimeout(pendingTimer);
       pendingTimer = undefined;
       latest = undefined;
+      lastBaseKey = undefined;
+      lastRequestKey = undefined;
       requestedFocus = undefined;
+      results.setAttribute('aria-busy', 'false');
       announce('بارگذاری جست‌وجو ناموفق بود. دوباره تلاش کنید.');
       const retry = document.createElement('button');
       retry.type = 'button';
+      retry.dataset.searchRetry = '';
       retry.textContent = 'تلاش دوباره';
       retry.addEventListener('click', () => {
         input.focus();
         run(true);
       });
-      results.replaceChildren(retry);
+      if (results.querySelector('[data-result-key]')) results.append(retry);
+      else results.replaceChildren(retry);
     });
   }
 

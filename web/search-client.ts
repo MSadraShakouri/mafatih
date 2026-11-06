@@ -10,6 +10,8 @@ export class SearchClient {
   private activeId = 0;
   private onResult: ((snapshot: SearchSnapshot) => void) | undefined;
   private onError: (() => void) | undefined;
+  private pending: Extract<SearchWorkerRequest, { type: 'search' }> | undefined;
+  private sendTimer: ReturnType<typeof setTimeout> | undefined;
 
   constructor(private readonly base: URL) {}
 
@@ -18,8 +20,15 @@ export class SearchClient {
     this.onResult = onResult;
     this.onError = onError;
     try {
-      const worker = this.getWorker();
-      worker.postMessage({ type: 'search', request: { ...query, id: this.activeId } } satisfies SearchWorkerRequest);
+      this.getWorker(); // Start loading immediately; only rapid query messages are coalesced.
+      this.pending = { type: 'search', request: { ...query, id: this.activeId } };
+      if (this.sendTimer === undefined) this.sendTimer = setTimeout(() => {
+        this.sendTimer = undefined;
+        const pending = this.pending;
+        this.pending = undefined;
+        if (!pending || !this.worker) return;
+        try { this.worker.postMessage(pending); } catch { this.fail(); }
+      }, 30);
     } catch {
       this.fail();
     }
@@ -29,6 +38,9 @@ export class SearchClient {
     this.activeId = ++this.nextId;
     this.onResult = undefined;
     this.onError = undefined;
+    if (this.sendTimer !== undefined) clearTimeout(this.sendTimer);
+    this.sendTimer = undefined;
+    this.pending = undefined;
     this.worker?.postMessage({ type: 'cancel' } satisfies SearchWorkerRequest);
   }
 
@@ -52,6 +64,9 @@ export class SearchClient {
     this.activeId = ++this.nextId;
     this.onResult = undefined;
     this.onError = undefined;
+    if (this.sendTimer !== undefined) clearTimeout(this.sendTimer);
+    this.sendTimer = undefined;
+    this.pending = undefined;
     this.worker?.terminate();
     this.worker = undefined;
     onError?.();

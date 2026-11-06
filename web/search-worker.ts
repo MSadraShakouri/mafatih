@@ -1,5 +1,5 @@
 import { IncrementalSearch, type SearchIndex, type SearchRequest, type SearchShard } from '../src/search.js';
-import type { SearchWorkerRequest, SearchWorkerResponse } from './search-protocol.js';
+import { searchBatchSize, type SearchWorkerRequest, type SearchWorkerResponse } from './search-protocol.js';
 
 // A dedicated worker keeps index loading, folding, sorting and scanning off the
 // UI thread. It owns one engine across global and current-item search panels.
@@ -13,14 +13,16 @@ let active: SearchRequest | undefined;
 let started = false;
 let failed = false;
 let scheduled = false;
+let batchSize = 450;
 
 function sendSnapshot(): void {
   if (!engine || !active || failed) return;
-  worker.postMessage({ type: 'snapshot', snapshot: engine.advance(600) });
+  // Yield between modest batches so a newer query can replace unfinished work.
+  worker.postMessage({ type: 'snapshot', snapshot: engine.advance(batchSize) });
 }
 
-function schedule(): void {
-  if (!engine || !active || scheduled || failed) return;
+function schedule(force = false): void {
+  if (!engine || !active || scheduled || failed || (!force && !engine.hasUnscannedRecords())) return;
   scheduled = true;
   setTimeout(() => {
     scheduled = false;
@@ -68,7 +70,7 @@ async function load(indexUrl: string): Promise<void> {
     await Promise.all(Array.from({ length: Math.min(3, index.shards.length) }, () => loadShards()));
     engine.finishLoading();
     // Completion must be reported even if all loaded records were already scanned.
-    schedule();
+    schedule(true);
   } catch (error: unknown) {
     failed = true;
     if (active) worker.postMessage({ type: 'error', id: active.id, message: String(error) });
@@ -83,6 +85,7 @@ worker.addEventListener('message', (event) => {
     active = undefined; // Keep the partial/complete word cache for later.
   } else {
     active = message.request;
+    batchSize = searchBatchSize(active.query);
     if (failed) {
       worker.postMessage({ type: 'error', id: active.id, message: 'Search index failed to load.' });
     } else if (engine) {

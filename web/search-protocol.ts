@@ -1,4 +1,10 @@
+import { normalizeSearch } from '../src/normalize.js';
 import type { SearchRequest, SearchSnapshot } from '../src/search.js';
+
+/** Bound more expensive multi-position scoring more tightly between worker yields. */
+export function searchBatchSize(query: string): number {
+  return normalizeSearch(query).split(' ').filter(Boolean).length === 1 ? 600 : 450;
+}
 
 export type SearchWorkerRequest =
   | { type: 'init'; indexUrl: string }
