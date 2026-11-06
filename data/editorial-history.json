@@ -87,6 +87,14 @@
     "treasures-record-splitting": {
       "url": "https://raw.githubusercontent.com/KazTronics/AhlulBayt_Treasures/a59bd5f8fe078532622a08ea60c19d164fb425cb/duas_data.jsonl",
       "description": "Each separated paragraph equals all English translation rows of one unique differently numbered pinned upstream record after whitespace folding (SHA-256 e9bc183509323dd85b0a32c43901ca23eaabe660e68abe37bcb314dcba37e65f). Proposed links have multiple matching Arabic source clauses but are not reviewed translation, alignment or rights decisions."
+    },
+    "linebreak-ai-assisted-2026-11-06": {
+      "url": "https://github.com/MSadraShakouri/mafatih/tree/87d20cff548c376f9d133f0d19e0bb349dbe2591/data",
+      "description": "Pre-edit repository snapshot, not an independent source edition. An AI assistant assessed individual line-break contexts at the user’s request; these occurrence-specific formatting edits are unreviewed and do not verify wording, translation, alignment, or rights."
+    },
+    "ashura-duplicate-semicolon-crosscheck": {
+      "url": "https://yase135.ir/4224/",
+      "description": "An independently published presentation of this Ashura phrase shows one semicolon after لِقِتالِكَ; it is a cross-check for the duplicated punctuation only, not proof of the legacy edition, transcription, translation, or rights. An AI assistant made the formatting change and it remains unreviewed. The preceding repository snapshot is 87d20cff548c376f9d133f0d19e0bb349dbe2591."
     }
   },
   "metadata_corrections": [
@@ -785,6 +793,2139 @@
       "replacement": "t1395df75b998b8d27589a401",
       "evidence": "seventh-ali-ziyarat-review",
       "reason": "Restore ورحمة الله وبركاته where a parenthesized honorific was substituted into recitation; the adjacent Persian also renders mercy and blessings."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00003",
+      "language": "ar",
+      "previous": "te0e7777f5db99ab41714c6c9",
+      "replacement": "t6f9453dc54407f05880a3474",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00003",
+      "language": "fa",
+      "previous": "t60076147e2b6fa32542540d8",
+      "replacement": "taa7b5d8cbd88a0f6f851802a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00022",
+      "language": "ar",
+      "previous": "t20a4c6ee3107ce9d429caed1",
+      "replacement": "tced80a710fb37ac1dfa5dcd4",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00028",
+      "language": "ar",
+      "previous": "ted9b7f0ccef16ae3c9698e17",
+      "replacement": "ta596169c7f53ed23ec876f0c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00028",
+      "language": "fa",
+      "previous": "t5593a583499c165335add343",
+      "replacement": "te0bd059449727568da62e923",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00032",
+      "language": "ar",
+      "previous": "tde68d9305999646e43c7c70f",
+      "replacement": "t0817fe73589cd93087f26c70",
+      "evidence": "ashura-duplicate-semicolon-crosscheck",
+      "reason": "AI-assisted, unreviewed: remove the in-row line break and one adjacent duplicated semicolon; the exact previous text is retained. No recited words or row IDs changed."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00037",
+      "language": "ar",
+      "previous": "t76746704d4d294f8f590b615",
+      "replacement": "t6c5b559197ea46dbd8bffe6f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00037",
+      "language": "fa",
+      "previous": "t0665fe8b4b63dfff7dbd34ac",
+      "replacement": "tc39275522a387c25a5535ed3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00050",
+      "language": "ar",
+      "previous": "t9aadb6365427f247cce86259",
+      "replacement": "t8f9a271ad376fd36f5784c80",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-ashura",
+      "row": "r00050",
+      "language": "fa",
+      "previous": "t1ba1174f9e4a8f7267d4eba4",
+      "replacement": "tb8339e82594fe28cb59adab7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00008",
+      "language": "ar",
+      "previous": "tb542d1c9e8db746d4c0f9550",
+      "replacement": "t3f58ad1d7319c23f1a7e261f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00017",
+      "language": "ar",
+      "previous": "t734fc3b47e05571f91c7d223",
+      "replacement": "tc11ebf7375e59ece4a8835bc",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00017",
+      "language": "fa",
+      "previous": "t8da16bf618eb9facbe1c2aad",
+      "replacement": "t75e30edad0b6e53f34b162fb",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00021",
+      "language": "ar",
+      "previous": "tb551a9e35204d1fcc6427176",
+      "replacement": "te63a4db5ff6303aa402e522e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00021",
+      "language": "fa",
+      "previous": "t19ea7a006e893a239f6eaba5",
+      "replacement": "t27e4e277a9358e1ca9e28c25",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00024",
+      "language": "ar",
+      "previous": "t653b2d7130618d2265f982fc",
+      "replacement": "t16533ced2a89540c617ffbe3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00024",
+      "language": "fa",
+      "previous": "t6412044397c8f1678031ea18",
+      "replacement": "tc636d740527060151189eeaa",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00032",
+      "language": "ar",
+      "previous": "tc8001e05d85589b2238caf05",
+      "replacement": "t90628b184cf1d5d863e1907f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00032",
+      "language": "fa",
+      "previous": "t1debab3e70aac171f716a65f",
+      "replacement": "ta798d02ab12a0392c1b55059",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00055",
+      "language": "ar",
+      "previous": "t0bd6f600b6e9a957eb723a5b",
+      "replacement": "t96015e10d21e708d556c836b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00055",
+      "language": "fa",
+      "previous": "t63649d4fb99d569e96f8076e",
+      "replacement": "t23c5747bfd27ea643950782a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00066",
+      "language": "ar",
+      "previous": "t4ddf925234150bd885238be7",
+      "replacement": "t85222d83b116f43d3f2c2789",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00066",
+      "language": "fa",
+      "previous": "t8782603fe3e649d4d46710c6",
+      "replacement": "tfcd62bedd4197614d3692cf4",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00079",
+      "language": "ar",
+      "previous": "t0a8695b577f0eaf005075e14",
+      "replacement": "t1b0f6406f2bd6eef974025a5",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00079",
+      "language": "fa",
+      "previous": "ta9cdb0af84fe726f887765a5",
+      "replacement": "t8ea12bfab6f1eb5738b85813",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00087",
+      "language": "ar",
+      "previous": "tcde082bb5999a2c767f9b70f",
+      "replacement": "t029fc5359e882a6ef817c717",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00087",
+      "language": "fa",
+      "previous": "tcb421195cc2dd1414e0957b7",
+      "replacement": "t77f3edcf49f878e914d695b3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00109",
+      "language": "ar",
+      "previous": "tf003151fcfed01ee9ea4047f",
+      "replacement": "t982bc7fd04f28005d0ccae3c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00109",
+      "language": "fa",
+      "previous": "tfc94dcf7e0e1b85dd28698a6",
+      "replacement": "t34f0139fcbb5426a4416efe1",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00118",
+      "language": "ar",
+      "previous": "t5a015bfda1a278ac2bb5c8d2",
+      "replacement": "t9883010ac88eafbd15860515",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00118",
+      "language": "fa",
+      "previous": "t299e3f8373c6549a6a618e9d",
+      "replacement": "t596b65dabd9bdb8f77b741c9",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00127",
+      "language": "ar",
+      "previous": "tbb55ef9b35b3c00de7bad6ca",
+      "replacement": "t3efc68ab957106d57fc08346",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00127",
+      "language": "fa",
+      "previous": "t0ad73552173f4061facd9b0d",
+      "replacement": "te0dfb7ebfc7facf45c70dea1",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00136",
+      "language": "ar",
+      "previous": "t6ca64fc19a2b165f7e39b6eb",
+      "replacement": "t347670899716055c989c0db2",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00136",
+      "language": "fa",
+      "previous": "tc5a78100daa5a7595e49fab5",
+      "replacement": "tf1b195bebdfff8a9cf43ed4e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00144",
+      "language": "ar",
+      "previous": "t1240c8fdd55c3650cd36117f",
+      "replacement": "t3c45139f38785893e8d6c56e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00144",
+      "language": "fa",
+      "previous": "tff51d3e730b15cf2be52c8ee",
+      "replacement": "tafbf4164d08105f936b1f605",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00151",
+      "language": "ar",
+      "previous": "t4021eb998929c210bb3f3d9d",
+      "replacement": "t4562299538f667958aa0f7b5",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00151",
+      "language": "fa",
+      "previous": "t725d3e57774e445f98e79a70",
+      "replacement": "t7db45ec1c60b1a1b8be56fe8",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00166",
+      "language": "ar",
+      "previous": "t9df6694e8585b8c525869da7",
+      "replacement": "tbbceb1573dd5e08ae43ac6b4",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00166",
+      "language": "fa",
+      "previous": "t786f0ecc1f054c9a12e2f230",
+      "replacement": "ta771570e372c2342665e6478",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00173",
+      "language": "ar",
+      "previous": "t54707e70cf68fa51b2258d31",
+      "replacement": "tbcb76b642e8ebc9db87c7586",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00173",
+      "language": "fa",
+      "previous": "t4aa2b520bb35f21c44b6e935",
+      "replacement": "tb40acf04fd75acf0be6c7ffb",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00181",
+      "language": "ar",
+      "previous": "t9418d4f36f5b9a94ac0f59ab",
+      "replacement": "t4cdb2e085663ab1fd3ae2a7a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00181",
+      "language": "fa",
+      "previous": "td2589392deb3a223ec538ffb",
+      "replacement": "te84c15934c7dd70326994090",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00189",
+      "language": "ar",
+      "previous": "t1510f99a5141e96a0a68c667",
+      "replacement": "t6cc3fc5421dc869109e2652b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00189",
+      "language": "fa",
+      "previous": "t61d661c8702797db37e8ae70",
+      "replacement": "t881dd8c330eb31e0571a2952",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00196",
+      "language": "ar",
+      "previous": "tb586188cbe04908ca5718d10",
+      "replacement": "tf81dca5a7a10ced27a51311e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00196",
+      "language": "fa",
+      "previous": "tbd4521d717637f358efe7f77",
+      "replacement": "t80ff89fc22ad95bd7044fa79",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00204",
+      "language": "ar",
+      "previous": "t80b01c7c7c31088b5d0667ec",
+      "replacement": "t95ce624a2deb293ff699b36d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00204",
+      "language": "fa",
+      "previous": "t10a771fb8712463caa3738fa",
+      "replacement": "tcdd6fbce9518aba0ed62a5b1",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00205",
+      "language": "ar",
+      "previous": "tb2319bcb1ea0bdafbff4680c",
+      "replacement": "t77b3a52ccb0a9933093323ad",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00205",
+      "language": "fa",
+      "previous": "tb15f4ef20248d77f6d559a3b",
+      "replacement": "t4bc6527809459fad307ef195",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00210",
+      "language": "ar",
+      "previous": "tebe7d5b2d7d16f42d8292f89",
+      "replacement": "t6cabb08f5cb01324690c7fa0",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00210",
+      "language": "fa",
+      "previous": "t9e761c66f8715aaddc8ec42a",
+      "replacement": "t95e4c272503824ba8142d7a9",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00217",
+      "language": "ar",
+      "previous": "t3e5d255752ffc2b9b1d56e6e",
+      "replacement": "t028db5b05ea92134e8d8b56f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-abvhmzh-smaly",
+      "row": "r00217",
+      "language": "fa",
+      "previous": "t76c437ffd28dcf5f6165b174",
+      "replacement": "t59506847a6d3a228a1423779",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00126",
+      "language": "ar",
+      "previous": "t71b995af506327cd908ab676",
+      "replacement": "tb20cb111118ed53aa44ee771",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00200",
+      "language": "ar",
+      "previous": "tb2a6a1a293a5736d6649fae1",
+      "replacement": "tdf9643a28f53fcd49daa3f5b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00282",
+      "language": "ar",
+      "previous": "t5db099072400a1c749c77dab",
+      "replacement": "tac425fad0cdbc4917370d296",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00282",
+      "language": "fa",
+      "previous": "t92d499d40cbebd80c6c9a7ad",
+      "replacement": "t17d38c2fc8a87e219e73daba",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00321",
+      "language": "ar",
+      "previous": "t4ab473e37fb2dc0c863b8c46",
+      "replacement": "t26cb3caab73932ceecb9b5d7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00321",
+      "language": "fa",
+      "previous": "td82c76f0503b9f72d03349e7",
+      "replacement": "tc27d378937a2c7bcfa5cddae",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00364",
+      "language": "ar",
+      "previous": "t470b27c28a4a76d9479ae304",
+      "replacement": "t01d29679d01dc6d6b3626b87",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00364",
+      "language": "fa",
+      "previous": "t6e11a44f46b06cffdb7dcad1",
+      "replacement": "t10c216d0a93775d24f1ae152",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00399",
+      "language": "ar",
+      "previous": "ta76100217a43c4d751c77e8c",
+      "replacement": "tfd4986de2064b00917b880d4",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00437",
+      "language": "ar",
+      "previous": "ta5a9859386b71f1ed3a8d2e3",
+      "replacement": "ta787511080cf6d2eca5b7a8f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00471",
+      "language": "fa",
+      "previous": "t7410e2596781a2340ed11fee",
+      "replacement": "tf2ca036c9837d9b39c67a33f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00581",
+      "language": "ar",
+      "previous": "t55a5e609e7e35d205787aa5f",
+      "replacement": "tc8371b405db4c7b6b8ec1a9f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00650",
+      "language": "ar",
+      "previous": "t155486255b3ea93aa81009f3",
+      "replacement": "t92bbeeda067f95b419833a93",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00650",
+      "language": "fa",
+      "previous": "tfce995afe94bcf41b29a0153",
+      "replacement": "t235b7000eac60c0ff6336756",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00687",
+      "language": "ar",
+      "previous": "t873b04426f0f80453e989abc",
+      "replacement": "t782e3839b6515297251ab787",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00687",
+      "language": "fa",
+      "previous": "te2f60f848888e8a82fc0bee3",
+      "replacement": "t2cdfae7668e645a1ca7df630",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00751",
+      "language": "ar",
+      "previous": "t59b7432b2469d59a98fb1648",
+      "replacement": "t9f4e67c5c03b7ee79ca89291",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00751",
+      "language": "fa",
+      "previous": "ta487ccef19143c244be02b7e",
+      "replacement": "t11effda55cbbd02968a2b3b4",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00785",
+      "language": "ar",
+      "previous": "td44c81e8612662ef5dc34cfb",
+      "replacement": "tb9ce5a341072dcee32a16812",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00785",
+      "language": "fa",
+      "previous": "t3667f69aba1ae3d62e949d55",
+      "replacement": "tfe81a18bd81eb5e10bf28dcf",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00822",
+      "language": "ar",
+      "previous": "tb00620f8c12e5f70db58c7a5",
+      "replacement": "t92140acae9ed5b9272527b36",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00822",
+      "language": "fa",
+      "previous": "t380142adab8929bebd0ddc02",
+      "replacement": "t8b3acd29b377bd77ebd99d41",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00861",
+      "language": "ar",
+      "previous": "t4dfc0dde868ce92ab7001fee",
+      "replacement": "t5b490b88c50f653ab93c44df",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00861",
+      "language": "fa",
+      "previous": "t1474fffe416ce07aaf0be7bb",
+      "replacement": "t119922a42f100eacdeee917b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00896",
+      "language": "ar",
+      "previous": "t81728f4c161ad6368cc228f9",
+      "replacement": "t138e1f24d951c6c24776b7dd",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00896",
+      "language": "fa",
+      "previous": "tcb3ae0611f1b092f0767bb9e",
+      "replacement": "tae1041414d92a117d9ed152b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00936",
+      "language": "ar",
+      "previous": "t25fa058d6a78819ad4e98dc4",
+      "replacement": "t3bd117cb2174e25a6ebe4a37",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00936",
+      "language": "fa",
+      "previous": "t5e9e517f03da408a496a148d",
+      "replacement": "tbc1e9c14b132cc104083bf23",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00973",
+      "language": "ar",
+      "previous": "t1edc18f1726d54a3b82df83d",
+      "replacement": "tfe8e08a8c7a2b28b5899f73a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r00973",
+      "language": "fa",
+      "previous": "te906399f5640c3a2910d3e8b",
+      "replacement": "t99bf8bd8ae4ee37e816a5a56",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r01001",
+      "language": "ar",
+      "previous": "t6a6fa222f4f68994cfeb0cc3",
+      "replacement": "tdcfb2f5e8913381fb4a7590e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r01038",
+      "language": "ar",
+      "previous": "t07ff5061bec95dba6fb4c0cf",
+      "replacement": "tc0a12aa0401c5f218de59bc1",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-kabir",
+      "row": "r01038",
+      "language": "fa",
+      "previous": "t2956d569942b72f26d692d92",
+      "replacement": "t915d557a70bba45138616db3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00032",
+      "language": "ar",
+      "previous": "t9438b36fe6cf12ffd4bb3ed0",
+      "replacement": "t0f91efe3970fe6f73bfd1103",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00054",
+      "language": "ar",
+      "previous": "t7ae3d1f54c2b80b77be86151",
+      "replacement": "t19d0e1c6c654e03e830831e3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00054",
+      "language": "fa",
+      "previous": "t3eb6c780019587bf803ab3e9",
+      "replacement": "tc54faf00c97b943050c0c105",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00074",
+      "language": "ar",
+      "previous": "tc888ef76e9b79fe310f86f82",
+      "replacement": "ta80ca676af3cb0e0087d616b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00074",
+      "language": "fa",
+      "previous": "tee1a55a48e86d87dd7eb61be",
+      "replacement": "t99369a39c8decdda89b0cac0",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00141",
+      "language": "ar",
+      "previous": "tff08b44f7889bf7544d6f8de",
+      "replacement": "t542710755771490dc5bdbd04",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00141",
+      "language": "fa",
+      "previous": "teef9646e20ab804208748b15",
+      "replacement": "t3fade726cd1baff795dff302",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00144",
+      "language": "ar",
+      "previous": "tadb2542a76ebfbfba14e9a73",
+      "replacement": "t3831e1dbdb496a72b95a70b5",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00144",
+      "language": "fa",
+      "previous": "td8eb608c539841d9e3d6ff66",
+      "replacement": "tb374cb58f3c8c3129d427f7f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00180",
+      "language": "ar",
+      "previous": "t19bb6a3c70ef7d8562dc1fbc",
+      "replacement": "ta50fe1a531a3ac85a7b11cf7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00180",
+      "language": "fa",
+      "previous": "t836f9eceb07b7f9d12e47725",
+      "replacement": "t318c9371f9636bffcb7c4dcd",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00202",
+      "language": "ar",
+      "previous": "t3d8558bd84bba97795d4e13b",
+      "replacement": "tdce38c15f312f5aa55abbfbd",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00202",
+      "language": "fa",
+      "previous": "ta42423bda2258436a935b5d8",
+      "replacement": "t1cef5392513696ee6c64c587",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00220",
+      "language": "ar",
+      "previous": "t7edc781da4c8f4037009f236",
+      "replacement": "t1370c12203ce7601aaf0e41a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00220",
+      "language": "fa",
+      "previous": "t6e75635ef80165b1fef4a2be",
+      "replacement": "tdb1f0e46566f810364d25c84",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00260",
+      "language": "ar",
+      "previous": "t5e8810eef5c188440d7f0fc9",
+      "replacement": "t15985912d6e05f0da732b4aa",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00260",
+      "language": "fa",
+      "previous": "t80bc52982c349344c317ca91",
+      "replacement": "t9d33a2bf591f8657c6a2ceaa",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00282",
+      "language": "ar",
+      "previous": "t5c297b019f9ebca13ac447ca",
+      "replacement": "t8e6231b02ff803447a9687cc",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00282",
+      "language": "fa",
+      "previous": "t4722525d833f0b806468a834",
+      "replacement": "tc389c584af905651f6811287",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00300",
+      "language": "ar",
+      "previous": "tffae0041ff603bed6689f057",
+      "replacement": "tc645c70908adac68f75a37f0",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-jawshan-sagheer",
+      "row": "r00300",
+      "language": "fa",
+      "previous": "t4d03074e782f13abfe4559cd",
+      "replacement": "t5037a30b2142e066b1ca0ca7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00022",
+      "language": "ar",
+      "previous": "t89ba9ba9ad2f92d29b56831c",
+      "replacement": "tdb45319ea843152115c743dd",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00022",
+      "language": "fa",
+      "previous": "t3ecf4169baeee384f28bda7c",
+      "replacement": "td5f1768bbd4a3f1cb466a58c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00036",
+      "language": "ar",
+      "previous": "t08f90259ef4f3710a26f8070",
+      "replacement": "t73a06db93213877096d6fed0",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00036",
+      "language": "fa",
+      "previous": "t6d75ac27436073b576304c8e",
+      "replacement": "t3799ca301a18e10b631a4af3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00051",
+      "language": "ar",
+      "previous": "t39a590b96ef2ddd66243ed14",
+      "replacement": "t3825ff6a80869ef352400e08",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00051",
+      "language": "fa",
+      "previous": "ta9447023f494c81b7a50edc5",
+      "replacement": "td9f30fc3da9d2523836a0330",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00068",
+      "language": "ar",
+      "previous": "tfd5126f47ca5d8d1f4e68fb9",
+      "replacement": "tb4285bdc239687bd130f5344",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00068",
+      "language": "fa",
+      "previous": "t0f06663f95e7dcacdf39313d",
+      "replacement": "t582d4b371c739f43a06db25a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00082",
+      "language": "ar",
+      "previous": "te979e5ba3cd408b40e9c0897",
+      "replacement": "t5ee234fef0846cb55e537ac1",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00082",
+      "language": "fa",
+      "previous": "t9b56f5673628185d9d95a017",
+      "replacement": "t517a15a671a2d10ef0900493",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00105",
+      "language": "ar",
+      "previous": "t46d0d6bcfccbcef0ac7e489f",
+      "replacement": "tfe090ee8c2a4a5643c89dc8b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00105",
+      "language": "fa",
+      "previous": "t5ae565b1adb7168a8b4aeaa5",
+      "replacement": "t15c152a1c6e2b0af0962050e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00125",
+      "language": "ar",
+      "previous": "ta05ce0972e2bc2c763aa082b",
+      "replacement": "t465bc9dbde6a016b70bcfbaa",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00150",
+      "language": "ar",
+      "previous": "tabb96917c2fb3395069a4071",
+      "replacement": "t337ecf73350292af5783c162",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00150",
+      "language": "fa",
+      "previous": "t28a81c44d092e588a2ed438f",
+      "replacement": "ta42634cef5546b66d54b8fb3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00169",
+      "language": "ar",
+      "previous": "t39547a8870a902b18d2f5ba4",
+      "replacement": "t50e4cd982dc9f04576883e87",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00187",
+      "language": "ar",
+      "previous": "tf1d20ada100c1502e02548f3",
+      "replacement": "t11d8a88919bef5ea333ee327",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00187",
+      "language": "fa",
+      "previous": "t240a1aafcddd3d33d3c7503f",
+      "replacement": "t5876ff65bbb96ed7afe7d825",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00209",
+      "language": "ar",
+      "previous": "t2565548c5991f0f0682ba908",
+      "replacement": "t0c55e36446a416c9a5a55d4d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-nudba",
+      "row": "r00209",
+      "language": "fa",
+      "previous": "t2afa4e8cac73baca31c4ddc4",
+      "replacement": "t8f84aa8477ce1f9ef29f9f69",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00030",
+      "language": "fa",
+      "previous": "ta1fd1372f34f8fa9d1de4cde",
+      "replacement": "te6fa9ed9357d11d95430b05f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00031",
+      "language": "ar",
+      "previous": "tf67b5f9e5c79c3cb8fdeaaff",
+      "replacement": "tdffb6a812c15b24893732b21",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00054",
+      "language": "ar",
+      "previous": "tf41a37796f66caf2b2d9c524",
+      "replacement": "tb5b63704ec69e3e84410f2c5",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00054",
+      "language": "fa",
+      "previous": "tfe1795cddabdcf1e4aeb3186",
+      "replacement": "t0f54ec6ab0bfac7f9addf588",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00074",
+      "language": "ar",
+      "previous": "tc76095693a51d4975a231654",
+      "replacement": "t02b060bbf57e3a4ee557cd2c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00074",
+      "language": "fa",
+      "previous": "t85b4b612c7bb760856423360",
+      "replacement": "tb5eb942facfc01cd41dca4ee",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00096",
+      "language": "ar",
+      "previous": "t69d493aba053af4a5984e399",
+      "replacement": "tf075aeeb7815ea37f7454370",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00117",
+      "language": "ar",
+      "previous": "t57a8e2f3dd22c93e9bb54e09",
+      "replacement": "t606f4e329de484e5e17caa6f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00117",
+      "language": "fa",
+      "previous": "t49c26dfc17fc7fbff7f2ecbf",
+      "replacement": "t4797d84512dd5ef64082d296",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00139",
+      "language": "fa",
+      "previous": "t3f4b0012acbd5d850068b06f",
+      "replacement": "t09797df194681e3eef832f45",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00140",
+      "language": "ar",
+      "previous": "tace2f339e410e00643953bb3",
+      "replacement": "t00a014814681136a6a7fc944",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00160",
+      "language": "ar",
+      "previous": "t00456d4170333c6acac0a8eb",
+      "replacement": "t8f7e5a27c88baa62944e9e63",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00177",
+      "language": "ar",
+      "previous": "ta08431464f853e63bf42c5f6",
+      "replacement": "td8c60bd15feb14c5788416d7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00177",
+      "language": "fa",
+      "previous": "tb392e2c11c7f8bb0c8105a57",
+      "replacement": "t7517955fdb443d17b3c01c52",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00198",
+      "language": "ar",
+      "previous": "t37bd500af358fea944575876",
+      "replacement": "tc66f04ab03a880801dfa7268",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00198",
+      "language": "fa",
+      "previous": "tf3691b9439565ca03d8c2c76",
+      "replacement": "t865aa904bc48a946267c90bf",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00224",
+      "language": "ar",
+      "previous": "t01ef105be8f65121b77e01aa",
+      "replacement": "t73755764482d837e7dd71001",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-kumayl",
+      "row": "r00224",
+      "language": "fa",
+      "previous": "tf11cea89d6210e51b6fe7f6b",
+      "replacement": "t16522c44b3df1906c374b227",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00024",
+      "language": "ar",
+      "previous": "t101374165ad4149a592e8fce",
+      "replacement": "tb78c1fd0186613f132abcdf7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00024",
+      "language": "fa",
+      "previous": "tb06d98646a74013b04f664d7",
+      "replacement": "t1dffca516d6e625f2901041d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00031",
+      "language": "ar",
+      "previous": "t204f7e02efc164c841b1e8dd",
+      "replacement": "t6548a84ea8a84936493a3147",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00031",
+      "language": "fa",
+      "previous": "t14418234880b86253063d7c3",
+      "replacement": "ta1ecbe6bbb48db0f2dabdd6e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00039",
+      "language": "ar",
+      "previous": "tab647b07e78d6684b6e7eedf",
+      "replacement": "t3bb27090c4b4429cde7166ce",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00039",
+      "language": "fa",
+      "previous": "td3360890f20e714281bf3a6f",
+      "replacement": "td6d9227738ecd7ebc7360785",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00049",
+      "language": "ar",
+      "previous": "t9d25ef4086319e3f0e3f21ed",
+      "replacement": "t0a4c7f38d5458932cc38df4d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00049",
+      "language": "fa",
+      "previous": "t55829c14b90047bfdd0b0964",
+      "replacement": "tbf21ef9761c3f27c3f13cfaa",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00055",
+      "language": "ar",
+      "previous": "ta3663b036833e969c96d951f",
+      "replacement": "t0d3b1a09a69c9a47cfcfa76b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00055",
+      "language": "fa",
+      "previous": "tbf18fc4b452a13d658d4ae06",
+      "replacement": "t6e29401bb2a52c961668a8dc",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00060",
+      "language": "ar",
+      "previous": "t0bd43b49b7402eeac9afa06c",
+      "replacement": "td562f3dd01eed4652489a6c2",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00060",
+      "language": "fa",
+      "previous": "t2deed3e3a2f9d6ffb8af0571",
+      "replacement": "t0bce33c70f45d13d08206e55",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00075",
+      "language": "ar",
+      "previous": "t112f74e6c39c7572924ae9b4",
+      "replacement": "t286e2e1fb07d58d4d31cc478",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00075",
+      "language": "fa",
+      "previous": "t3b8a58061e1a250307ab3f2b",
+      "replacement": "tecbe41bfae7f6c4fcc1810e7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00080",
+      "language": "ar",
+      "previous": "td498d3ed75fa9d0f0be8d533",
+      "replacement": "t4e2e00647ba35379a662eec3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-iftitah",
+      "row": "r00080",
+      "language": "fa",
+      "previous": "t6e74fe601d929d78ff4305ba",
+      "replacement": "ted603e207ea4265af5e441c7",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00021",
+      "language": "ar",
+      "previous": "t3d0b69c41282cdd22875cf18",
+      "replacement": "t9193a1f03908d6a6659d1416",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00021",
+      "language": "fa",
+      "previous": "tb596967f00bf5b0d1f9d5540",
+      "replacement": "t21a0727833a625972b384064",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00029",
+      "language": "ar",
+      "previous": "tcbd7e0f6c37d76152b210464",
+      "replacement": "t850275342d12defa7e560b51",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00029",
+      "language": "fa",
+      "previous": "t30e01c8b7e8438090eee4ac0",
+      "replacement": "t1973bc823b22f2546e1d5727",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00044",
+      "language": "ar",
+      "previous": "t009aa8a76a6a11fec4276b31",
+      "replacement": "tfea42e0fe44f30d24db195df",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00044",
+      "language": "fa",
+      "previous": "t2e238e3ce48c4e1af912377e",
+      "replacement": "tdcdb1adfb817aadaf6dd8cdd",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00059",
+      "language": "ar",
+      "previous": "t016f148ff5c57347f5337422",
+      "replacement": "tca263d91b855b6c7fa8bd2db",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00059",
+      "language": "fa",
+      "previous": "te308fe85c0325d1594e9cfca",
+      "replacement": "tfde3a4ca905fe6c83933b22c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00068",
+      "language": "ar",
+      "previous": "t9ce33293067d278c43a33392",
+      "replacement": "tc29c4518a030c6e2d73f1a4d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00068",
+      "language": "fa",
+      "previous": "t0396ef12ac6f5c064c44e923",
+      "replacement": "t9efd30e1fcddeab857efe104",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00087",
+      "language": "ar",
+      "previous": "t598aa4a2c4e67fae97e95208",
+      "replacement": "ta320dc84c51543750b81b28e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mujir",
+      "row": "r00087",
+      "language": "fa",
+      "previous": "t52fdc37f0a7ab1784c4f6fff",
+      "replacement": "tff58bfb8236ed5f8e9c041ad",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00038",
+      "language": "ar",
+      "previous": "t36026346b75d90b40bf14476",
+      "replacement": "td6e1e42afc620080cd4ec187",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00038",
+      "language": "fa",
+      "previous": "t2ca281438cc338ca532dd16e",
+      "replacement": "tfd470e506bee0b0bd6ca45f6",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00055",
+      "language": "fa",
+      "previous": "tef6af67def9e1bcc0703e95a",
+      "replacement": "td1beb79523f5c36f0dc50b31",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00056",
+      "language": "ar",
+      "previous": "tf2998fdcf0302ef4882ee072",
+      "replacement": "te01df86b32ca76ed910823dd",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00096",
+      "language": "ar",
+      "previous": "t2eaa047b2ee43fa3847255db",
+      "replacement": "t7715d75afed4cf48f1c3ad09",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00096",
+      "language": "fa",
+      "previous": "t4d228dd709032b2c19ea2def",
+      "replacement": "t5634c35554fafb15347061e1",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00109",
+      "language": "ar",
+      "previous": "t589feb98f3aec69d4d5c48c1",
+      "replacement": "t976d43c413992e0e9718ef33",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00109",
+      "language": "fa",
+      "previous": "t063a34f5fd1a82f41e33ee8b",
+      "replacement": "tfc2ae65385ff7c40ee552a43",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-samat",
+      "row": "r00118",
+      "language": "ar",
+      "previous": "tadf9d3682a133a5811083c7a",
+      "replacement": "t433bc57353c5c67b42a4193e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-aymh-alyhm",
+      "row": "r00032",
+      "language": "ar",
+      "previous": "t0f3b1335c4a0cffb9daa7658",
+      "replacement": "t6f1417d775dbea98cc161211",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-aymh-alyhm",
+      "row": "r00032",
+      "language": "fa",
+      "previous": "t4eff372d0fe913049faaef19",
+      "replacement": "tfb23bcaf31fdd043dcce4549",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-aymh-alyhm",
+      "row": "r00051",
+      "language": "ar",
+      "previous": "tbba15f0eb30685324a792465",
+      "replacement": "t2b448472a2f4b77ac86a4670",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-aymh-alyhm",
+      "row": "r00068",
+      "language": "ar",
+      "previous": "te9c6ffb0e44981f4b390a3b8",
+      "replacement": "t8038417258ceb998ecf697b3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-aymh-alyhm",
+      "row": "r00068",
+      "language": "fa",
+      "previous": "tb2aff9b5ccd716e296588b27",
+      "replacement": "t5a48bd5720f4ec5e7cc5905b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-aymh-alyhm",
+      "row": "r00109",
+      "language": "ar",
+      "previous": "t4106a2f3e75551e4bd4917cb",
+      "replacement": "tf93a216fd86be28e76112425",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-aymh-alyhm",
+      "row": "r00109",
+      "language": "fa",
+      "previous": "taa62bd9eed2ff7fa000f862d",
+      "replacement": "tb80230a6f7fc1734123c2bfb",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mashlul",
+      "row": "r00098",
+      "language": "ar",
+      "previous": "t67078c18f9643bfd75359c67",
+      "replacement": "tca2bc28297d1f6379ffb61f5",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mashlul",
+      "row": "r00134",
+      "language": "ar",
+      "previous": "tb795373ebf963f2a4a4c9463",
+      "replacement": "t3704a15b702be113390efcac",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mashlul",
+      "row": "r00134",
+      "language": "fa",
+      "previous": "ta324e6872c673aaef342c5df",
+      "replacement": "te5ef77302403af5dbc0ca59a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mashlul",
+      "row": "r00192",
+      "language": "ar",
+      "previous": "tbfff3198761135cb747ea622",
+      "replacement": "t6840f0f0ea70a408ef3f0757",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mashlul",
+      "row": "r00192",
+      "language": "fa",
+      "previous": "t09bda17b313ccd9963c6fe04",
+      "replacement": "t7a9ec6126c4f30247c93ae49",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mashlul",
+      "row": "r00209",
+      "language": "ar",
+      "previous": "tf03e83f7bd0cf1fb7c130d91",
+      "replacement": "t634dc2e82a1a47442876fffc",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-mashlul",
+      "row": "r00209",
+      "language": "fa",
+      "previous": "t28c90f8fdfc050ba11805740",
+      "replacement": "t9561d75598a16f3ec57ce557",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sahar",
+      "row": "r00018",
+      "language": "ar",
+      "previous": "tb0d807fd67ed265911a0f053",
+      "replacement": "t8bdb1ef6cb46259ed8f77acb",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sahar",
+      "row": "r00018",
+      "language": "fa",
+      "previous": "tbe036c93cedb612a23f73341",
+      "replacement": "t8981b8b71c94837db5c8a667",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sahar",
+      "row": "r00035",
+      "language": "fa",
+      "previous": "tb2c3610f545d24c3a02525b0",
+      "replacement": "t4c19669a9e01a5a05e592aaf",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sahar",
+      "row": "r00042",
+      "language": "ar",
+      "previous": "t571b61591550d41a152f2fd2",
+      "replacement": "t677cefe2026f84ad2fe5a209",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sahar",
+      "row": "r00067",
+      "language": "ar",
+      "previous": "t41f0c3f3caceb84755b97e2d",
+      "replacement": "t674b811f758d8705d7da9f24",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sahar",
+      "row": "r00067",
+      "language": "fa",
+      "previous": "t780d189a19258083297f4b0c",
+      "replacement": "t616d971dc4476897c2a8bdac",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00048",
+      "language": "ar",
+      "previous": "t80a909810bfac444194eafc7",
+      "replacement": "t6e9067cbc4b456b77d5f601e",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00048",
+      "language": "fa",
+      "previous": "t634ac11cde158c34daf1bff4",
+      "replacement": "td85eddc99e92dc4d773b566d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00115",
+      "language": "ar",
+      "previous": "tfebc617266ad3dcdd247a367",
+      "replacement": "t45d5d305e7c32348d68b4d75",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00115",
+      "language": "fa",
+      "previous": "t888f82eda39b2c54e4e9cdee",
+      "replacement": "td85eddc99e92dc4d773b566d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00140",
+      "language": "ar",
+      "previous": "t47d6d3a6fef496333e77e1e4",
+      "replacement": "t5f089883cab37c5e7a88a55c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-tawassul",
+      "row": "r00140",
+      "language": "fa",
+      "previous": "t3f24ed36b1c6adff035c1ec9",
+      "replacement": "t867c033871a57c60c9f186d5",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sbah-amyr-almvmnyn",
+      "row": "r00019",
+      "language": "ar",
+      "previous": "t3ab768427cc43a457c44c2a3",
+      "replacement": "tedf33c3eb4c8eadf9b188b0a",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sbah-amyr-almvmnyn",
+      "row": "r00019",
+      "language": "fa",
+      "previous": "tba87a70da161c9f6419d4d99",
+      "replacement": "t6a69ceb0ad9ad64d4be77851",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-sbah-amyr-almvmnyn",
+      "row": "r00100",
+      "language": "ar",
+      "previous": "te7afcdc64e19fa093c1c6146",
+      "replacement": "taa7a3557d1c73dc02870063b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-jamea-kabira",
+      "row": "r00065",
+      "language": "fa",
+      "previous": "t905edeb7f39dbfaaee256753",
+      "replacement": "t608a9c9a4d067aac299864ba",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-jamea-kabira",
+      "row": "r00262",
+      "language": "fa",
+      "previous": "t2477b7f16f986c3abe382351",
+      "replacement": "t9f061a0143e67cf0083e1a3b",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-esteghase",
+      "row": "r00029",
+      "language": "ar",
+      "previous": "tfa9bf3ca3640f68f85b244ee",
+      "replacement": "t3bec9b58f331d3e33c8b49df",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-esteghase",
+      "row": "r00029",
+      "language": "fa",
+      "previous": "t19659e7a2ffe9daf157f7514",
+      "replacement": "taf685d9333e818964d1945a2",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-shshm-raz",
+      "row": "r00004",
+      "language": "ar",
+      "previous": "tb75529d67b34d9bccf056b09",
+      "replacement": "tfc7dad9a85ee280d9004618c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 2 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-amin-allah",
+      "row": "r00015",
+      "language": "ar",
+      "previous": "t48dadf409e96926ba3a62fe8",
+      "replacement": "t620068ebab2532359b01892d",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-amin-allah",
+      "row": "r00015",
+      "language": "fa",
+      "previous": "t3abc3f5bbdaa6de9a44b128e",
+      "replacement": "t67342a60a58cabc5bf7432fb",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-jamea-sagheera",
+      "row": "r00005",
+      "language": "ar",
+      "previous": "td529767c1e3864417e2e6c91",
+      "replacement": "tf7ac147a559af99fbf2d6fc2",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-jamea-sagheera",
+      "row": "r00005",
+      "language": "fa",
+      "previous": "tf85b3440be16c15eba510ad2",
+      "replacement": "ta21f20eb82c5c7e90c950ef4",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-chhardhm-raz",
+      "row": "r00029",
+      "language": "ar",
+      "previous": "t3f604f0f9c3f1580d6eee5a7",
+      "replacement": "t3994ee3e4a70735aac3b1775",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "monajat-mnajat-hshtm-raz",
+      "row": "r00028",
+      "language": "ar",
+      "previous": "t61f5e79c1c8ef4b6057b5d6b",
+      "replacement": "t6a42ee82187e356459ecef14",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-warith",
+      "row": "r00134",
+      "language": "ar",
+      "previous": "tb4af3baf7e36e726bd46f2c6",
+      "replacement": "t1e3fdac4b1f9367dd4ed2ac3",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-with-one-space); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "namaz-taqyb-sbh-nql",
+      "row": "r00001",
+      "language": "ar",
+      "previous": "t1ec871c1184812db637246fd",
+      "replacement": "t87bc0fac150c384ab716c490",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "namaz-taqyb-sbh-nql",
+      "row": "r00002",
+      "language": "fa",
+      "previous": "td17c63abc7ae1a7b00c21ea3",
+      "replacement": "td21bad7dbf95533b1ea7a266",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-adylh",
+      "row": "r00019",
+      "language": "fa",
+      "previous": "t345a2f34ce1a38d57429659b",
+      "replacement": "tb7c427789b857cf0a1f4e507",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "amal-aamal-stvn",
+      "row": "r00004",
+      "language": "fa",
+      "previous": "tff896a9f130da8d9ebe364da",
+      "replacement": "t4e750257bb6670ba562a993c",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "amal-adab-byt-alkhla",
+      "row": "r00008",
+      "language": "fa",
+      "previous": "t70a3b476dd19dfed81e1a2ef",
+      "replacement": "tb9c3db6db98aca4cdc0ea7d5",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "amal-syghh-aqd-akhvt",
+      "row": "r00005",
+      "language": "fa",
+      "previous": "tbb9442020763924b516a735d",
+      "replacement": "t68b98a2c1bcd3c9e5d5bbd35",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "dua-dvm-daahay-vqt",
+      "row": "r00002",
+      "language": "fa",
+      "previous": "td56e9cd1af2463b8e672db2f",
+      "replacement": "t25114984a0766f073ffabe7f",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "item-avl-adayh-sbh",
+      "row": "r00032",
+      "language": "fa",
+      "previous": "t4ce4f5a859261db4fe51a3f0",
+      "replacement": "t646322dfb4b19cef240da3f8",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "namaz-rqah-hajt",
+      "row": "r00002",
+      "language": "fa",
+      "previous": "tb08a9786de89e61993256e01",
+      "replacement": "tbaec405c499a2470915f7027",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
+    },
+    {
+      "item": "ziyarat-mkhts-mhmd-tqy",
+      "row": "r00007",
+      "language": "fa",
+      "previous": "t3e38dcbe00c788e19c906b50",
+      "replacement": "t490deef702763ee0bb64fec8",
+      "evidence": "linebreak-ai-assisted-2026-11-06",
+      "reason": "AI-assisted, unreviewed: join 1 selected in-row line break(s) (join-without-space-before-closing-mark); preserve wording, punctuation, and row ID."
     }
   ],
   "row_insertions": [

@@ -113,10 +113,23 @@ test('generated reader, search, navigation and English data use the corrected ca
   const englishFiles = new Map<string, BuiltEnglish>();
   let rows = 0, english = 0, titles = 0, navigation = 0;
   for (const edit of changes) {
-    const location = edit.location; const expected = text(c, edit.replacement);
+    const location = edit.location; let expected = text(c, edit.replacement);
     if (location.kind === 'item-row') {
       const source = c.items.get(location.item)!.rows.find(row => row.id === location.row)!;
       if (source.kind === 'audio-reciter') continue;
+      // Later occurrence-level corrections can legitimately follow a
+      // punctuation edit. Resolve the documented chain rather than asserting
+      // that a historical replacement is still the current field.
+      let previous: string | null = edit.replacement;
+      const visited = new Set<string | null>();
+      while (previous !== source[location.language]) {
+        assert.ok(!visited.has(previous), 'cyclic row-correction chain'); visited.add(previous);
+        const next = (c.editorial.row_corrections ?? []).find(entry => entry.item === location.item &&
+          entry.row === location.row && entry.language === location.language && entry.previous === previous);
+        assert.ok(next, `missing later correction for ${location.item}/${location.row}/${location.language}`);
+        previous = next.replacement;
+      }
+      expected = text(c, previous);
       let item = itemFiles.get(location.item);
       if (!item) {
         item = JSON.parse(fs.readFileSync(`generated/web-data/items/${location.item}.json`, 'utf8')) as BuiltItem;
