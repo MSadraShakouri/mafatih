@@ -2,8 +2,8 @@ import { cpSync, existsSync, mkdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Vite's public directory contains only the generated runtime data, never
-// generated audits, edit working copies, SQLite databases, or review files.
+// Optional standalone staging helper. The Vite app now resolves runtime
+// data directly and does not consume this directory.
 export function stageWebData(sourcePath: string, stagePath: string): void {
   const source = path.resolve(sourcePath);
   const stage = path.resolve(stagePath);
@@ -17,7 +17,12 @@ export function stageWebData(sourcePath: string, stagePath: string): void {
   rmSync(stage, { recursive: true, force: true });
   mkdirSync(stage, { recursive: true });
   cpSync(source, path.join(stage, 'data'), { recursive: true });
-  console.log(`Staged runtime data in ${stage}/data`);
+  // Search remains in source and build:data, but is deliberately not wired
+  // into this reader/menu release. Avoid staging unused generated shards;
+  // restoring the search UI must also include them in the Vite runtime output.
+  rmSync(path.join(stage, 'data', 'search-index.json'), { force: true });
+  rmSync(path.join(stage, 'data', 'search'), { recursive: true, force: true });
+  console.log(`Staged reader/menu runtime data in ${stage}/data (search deferred)`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

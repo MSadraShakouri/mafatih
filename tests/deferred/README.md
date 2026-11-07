@@ -1,0 +1,3 @@
+# Deferred search UI browser tests
+
+These are the previously passing search UI browser tests, retained for the next integration. The current app deliberately exposes only disabled search placeholders, so these tests are not in the active Playwright `testDir` and cannot pass against the current UI until search is reconnected. The search engine, client, worker, search panel and all search unit tests are retained separately; `npm test` still exercises the engine. Runtime staging intentionally omits generated search shards for now. Do not delete these tests or interpret their exclusion as proof that the new UI has passed search integration tests.

@@ -12,11 +12,13 @@ test('the real catalog and an item load without requests to another origin', asy
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
   await expect(page.locator('main[data-screen="library"]')).toBeVisible();
 
-  const firstItem = page.locator('a[data-item-id]').first();
-  const id = await firstItem.getAttribute('data-item-id');
-  expect(id).toBeTruthy();
+  await page.getByRole('link', { name: 'فهرست مفاتیح' }).click();
+  await page.getByRole('link', { name: 'ادعیه', exact: true }).click();
+  await page.getByRole('link', { name: 'فصل ششم: بیان بعضی از دعاهای مشهور' }).click();
+  const firstItem = page.locator('a[data-item-id="dua-kumayl"]');
+  await expect(firstItem).toBeVisible();
   await firstItem.click();
-  await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', id!);
+  await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', 'dua-kumayl');
   await expect(page.locator('article [data-row-id]').first()).toBeVisible();
   await expect(page.locator('article p').first()).toBeVisible();
   expect(otherOrigins).toEqual([]);

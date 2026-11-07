@@ -1,4 +1,4 @@
-// The browser consumes resolved build:data output, not Node's corpus loader or
+// The browser consumes resolved runtime data, not Node's corpus loader or
 // the canonical text pool. These interfaces cover only fields used so far.
 export interface Title {
   fa: string;
@@ -9,6 +9,8 @@ export interface Title {
 export interface CatalogItem {
   id: string;
   title: Title;
+  /** Imported category is a provisional navigation aid, not a reviewed claim. */
+  category?: string;
   featured: boolean;
 }
 
@@ -21,6 +23,8 @@ export interface TocNode {
 export interface Catalog {
   items: CatalogItem[];
   toc: TocNode[];
+  /** Editorial featured order, distinct from personal bookmarks. */
+  featured?: string[];
 }
 
 export interface ItemRow {

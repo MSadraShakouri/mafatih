@@ -1,51 +1,106 @@
-/* Plain reader and provisional controls; the final header is not designed here. */
+/* All four fonts are bundled; no external font or icon requests are made. */
+@font-face {font-family:'Mafatih Amiri';src:url('./fonts/Amiri-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face {font-family:'Mafatih Noto Naskh';src:url('./fonts/NotoNaskhArabic-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face {font-family:'Mafatih Scheherazade';src:url('./fonts/ScheherazadeNew-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face {font-family:'Vazirmatn';src:url('./fonts/Vazirmatn.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
 :root {
-  color-scheme: light dark;
-  font-family: system-ui, sans-serif;
-  line-height: 1.7;
+  color-scheme:light;
+  --workspace:#eae5dc;--paper:#faf6ef;--header-bg:#0f4c3a;--header-text:#fffaf0;--header-active:rgba(255,255,255,.12);
+  --surface:#fffdf9;--soft:#f3ede3;--text:#211e19;--muted:#655f56;--translation:#504d45;--primary:#0f4c3a;--primary-soft:#e3ede5;
+  --gold:#b8925a;--gold-ink:#765529;--border:#e1d9cc;--shadow:rgba(37,29,20,.08);
 }
-
-body { margin: 0; }
-
-main {
-  max-inline-size: 70rem;
-  margin-inline: auto;
-  padding: 1rem;
+:root[data-theme='dark'] {
+  color-scheme:dark;
+  --workspace:#0a100d;--paper:#101915;--header-bg:#284739;--header-text:#f5ede0;--header-active:rgba(255,255,255,.10);
+  --surface:#17221c;--soft:#1d2a23;--text:#f2eadc;--muted:#b8b1a3;--translation:#d0c9bc;--primary:#99cbb2;--primary-soft:#213b2e;
+  --gold:#d4af7a;--gold-ink:#e0bd89;--border:#304039;--shadow:rgba(0,0,0,.24);
 }
-
-ul, ol { padding-inline-start: 1.5rem; }
-li { margin-block: 0.25rem; }
-a { color: inherit; }
-button, input { font: inherit; }
-button, input[type='search'] { min-block-size: 2.75rem; }
-button { cursor: pointer; }
-button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid Highlight; outline-offset: 2px; }
-
-.reader-row { margin-block: 1.5rem; }
-.reader-row p { margin-block: 0.5rem; white-space: pre-wrap; }
-.reader-row .ar {
-  font-family: serif;
-  font-size: 1.5rem;
-  line-height: 2;
-  text-align: justify;
-  text-align-last: start;
+*,*::before,*::after {box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html {min-height:100%;scroll-behavior:auto;touch-action:pan-x pan-y;overscroll-behavior-y:contain}
+body {margin:0;min-height:100vh;background:var(--workspace);color:var(--text);font-family:'Vazirmatn',system-ui,sans-serif;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+body,body * {-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+button,input {font:inherit;color:inherit}
+button,a {cursor:pointer}
+button:focus:not(:focus-visible),a:focus:not(:focus-visible) {outline:0}
+button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:2px solid var(--gold);outline-offset:2px}
+[hidden] {display:none!important}
+#app {max-width:760px;min-height:100vh;margin-inline:auto;background:var(--paper);box-shadow:0 12px 70px var(--shadow)}
+.app-header {position:sticky;top:0;z-index:5;background:var(--header-bg);color:var(--header-text);border-bottom:1px solid transparent}
+.header-inner {height:48px;display:flex;align-items:center;padding-inline:8px}
+.header-side {display:flex;align-items:center;min-width:0;flex:0 0 auto}
+.header-side.end {justify-content:flex-end}
+/* Reserve equal side widths so a Back button cannot move a library title. */
+.library-header .header-side,.settings-header .header-side {width:44px;flex:0 0 44px}
+.header-title {min-width:0;flex:1;text-align:center}
+.header-title h1 {overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:18px;font-weight:650;line-height:1.5;margin:0;letter-spacing:-.01em}
+.icon-button {width:44px;height:44px;flex:0 0 44px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:transparent;color:inherit;padding:0}
+.icon-button svg,.symbol svg {width:16px;height:16px;display:block}
+.icon-button:active {background:var(--header-active)}
+.inline-message {padding:9px clamp(20px,5.5vw,56px);font-size:12px;color:var(--muted);background:var(--soft);border-top:1px solid var(--border);line-height:1.8}
+.content {padding:0 clamp(20px,5.5vw,56px) 64px}
+.reader {padding-top:27px}
+.reader-row {margin:0 0 33px}
+.reader-row:last-child {margin-bottom:0}
+.reader p,.size-preview p {margin:0;direction:rtl;unicode-bidi:plaintext;text-align:justify;text-align-last:start;overflow-wrap:break-word;white-space:pre-wrap;text-wrap:pretty}
+.reader [data-text-role='arabic'],.size-preview .ar {font-family:var(--reader-arabic-family,'Mafatih Scheherazade'),'Mafatih Noto Naskh',serif;font-size:calc(25.3px * var(--reader-arabic-scale,1));line-height:2.06;color:var(--text);font-feature-settings:'liga' 1,'calt' 1}
+.reader [data-text-role='translation'],.size-preview .fa {font-family:'Vazirmatn',system-ui,sans-serif;font-size:calc(16.5px * var(--reader-translation-scale,1));line-height:1.95;color:var(--translation);font-weight:400}
+.reader .ar + .fa {margin-top:5px}
+.reader-row:is([data-kind='instruction'],[data-kind='note']) {border-inline-start:2px solid var(--gold);padding-inline-start:15px;margin-block:8px 38px}
+.reader-kind-label {display:block;color:var(--gold-ink);font-size:11px;font-weight:650;margin:0 0 7px}
+.reader [data-text-role='explanation'],.size-preview .explanation {font-family:'Vazirmatn',system-ui,sans-serif;font-size:calc(14.3px * var(--reader-explanation-scale,1));color:var(--text);line-height:1.9}
+.library {padding-top:20px}
+.library-list {display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.library-item {display:flex;align-items:center;gap:12px;width:100%;min-height:54px;border:1px solid var(--border);border-radius:10px;background:var(--surface);text-align:start;text-decoration:none;padding:10px 14px;color:var(--text)}
+.library-item:active {background:var(--soft)}
+.library-name {min-width:0;flex:1;font-size:14px;font-weight:600;line-height:1.8;overflow-wrap:anywhere}
+.library-item.bookmark-entry {background:var(--soft)}
+.bookmark-entry > .symbol {color:var(--primary);flex:0 0 auto}
+.library-empty {color:var(--muted);font-size:13px;line-height:1.8;margin:5px 0 0}
+.library-search {max-width:440px;margin:0 auto 23px}
+.library-search input {display:block;width:100%;min-height:52px;padding:0 15px;background:var(--surface);border:1px solid var(--border);border-radius:11px;color:var(--muted);font-size:15px;direction:rtl;opacity:1;-webkit-text-fill-color:var(--muted)}
+.library-search input::placeholder {color:var(--muted);opacity:1}
+.home-screen .library-list,.toc-screen .library-list {max-width:440px;margin-inline:auto}
+.toc-screen .library-item {position:relative;justify-content:center;min-height:64px;padding:11px 15px;text-align:center}
+.toc-screen .library-name {text-align:center;font-size:19px;font-weight:500;line-height:1.65}
+.toc-screen .item-arrow {display:none}
+.item-arrow {color:var(--muted);flex:0 0 auto}
+.settings {padding-top:24px}
+.settings-section {margin:0 0 30px}
+.section-title {margin:0 0 9px;font-size:13px;font-weight:700;color:var(--muted);line-height:1.7}
+.size-controls,.font-options {border-block-start:1px solid var(--border)}
+.size-group {border-block-end:1px solid var(--border)}
+.size-line {display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:67px;cursor:pointer}
+.size-name {display:inline-flex;align-items:center;gap:4px;min-height:44px;min-width:0;border:0;background:transparent;padding:0;color:var(--text);font-size:14px;font-weight:600;text-align:start}
+.size-name[aria-expanded='true'] {color:var(--primary)}
+.size-name:active {opacity:.7}
+.size-chevron {display:inline-flex;margin-inline-start:2px;opacity:.6}
+.size-chevron svg {display:block;width:13px;height:13px;transform:rotate(90deg)}
+.size-name[aria-expanded='true'] .size-chevron svg {transform:rotate(-90deg)}
+.stepper {display:grid;grid-template-columns:44px 58px 44px;align-items:center;direction:ltr;border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;flex-shrink:0}
+.step-button {display:grid;place-items:center;width:44px;height:44px;background:transparent;border:0;padding:0;color:var(--primary)}
+.step-button:active:not(:disabled) {background:var(--primary-soft)}
+.step-button:disabled {color:var(--muted);opacity:.4;cursor:default;pointer-events:none}
+.step-button svg {width:16px;height:16px;display:block}
+.step-value {text-align:center;white-space:nowrap;font-size:13px;font-weight:650;color:var(--text);font-variant-numeric:tabular-nums}
+.size-preview {background:var(--soft);border-inline-start:2px solid var(--gold);border-radius:7px;padding:10px 14px;margin:0 0 14px;overflow-wrap:anywhere}
+.preview-caption {display:block;font-size:11px;font-weight:600;color:var(--muted);margin:0 0 3px}
+.font-options {border-block-end:1px solid var(--border)}
+.font-option {position:relative;display:flex;align-items:center;gap:11px;min-height:59px;cursor:pointer;border-block-end:1px solid var(--border);padding:7px 0}
+.font-option:last-child {border-block-end:0}
+.font-option:active {color:var(--primary)}
+.font-option input {position:absolute;width:1px;height:1px;margin:0;opacity:0}
+.radio-mark {width:18px;height:18px;border:1.5px solid var(--muted);border-radius:50%;flex:0 0 18px;display:grid;place-items:center}
+.font-option input:checked + .radio-mark {border-color:var(--primary)}
+.font-option input:checked + .radio-mark::after {content:'';width:8px;height:8px;border-radius:50%;background:var(--primary)}
+.font-name {font-size:13px;font-weight:600;flex:0 1 112px;line-height:1.7}
+.font-example {margin-inline-start:auto;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;direction:rtl;text-align:end;color:var(--translation);font-size:21px;line-height:1.9;min-width:0}
+.theme-wrap {display:flex;align-items:center;justify-content:space-between;gap:12px;border-block:1px solid var(--border);min-height:69px}
+.theme-label {font-size:14px;font-weight:600}
+.theme-options {display:flex;align-items:center;gap:2px;background:var(--soft);border:1px solid var(--border);padding:3px;border-radius:9px}
+.theme-choice {border:0;background:transparent;color:var(--muted);border-radius:6px;min-height:44px;padding:0 12px;font-size:11px;font-weight:600}
+.theme-choice[aria-pressed='true'] {background:var(--surface);color:var(--primary);box-shadow:0 1px 3px var(--shadow)}
+@media(max-width:360px) {
+ .header-inner {padding-inline:4px}.header-title h1 {font-size:16px}.content {padding-inline:18px}
+ .font-name {flex-basis:96px;font-size:12px}.theme-choice {padding-inline:9px}
 }
-
-.reader-tools { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.search-panel { margin-block: 1rem; }
-.search-panel[hidden], [data-search-results][hidden], [data-contents][hidden] { display: none; }
-.search-panel form > label { display: block; }
-.search-panel input[type='search'] { box-sizing: border-box; inline-size: min(100%, 34rem); }
-.search-panel fieldset { border: 0; padding: 0; margin-block: 0.5rem; }
-.search-panel fieldset label { display: inline-flex; align-items: center; gap: 0.25rem; margin-inline-end: 1.25rem; }
-.search-panel input[type='checkbox'] { inline-size: 1.2rem; block-size: 1.2rem; }
-.search-status { min-block-size: 1.7em; }
-[data-search-section] { margin-block: 1.5rem; }
-[data-search-section] h2 { font-size: 1.15rem; }
-.search-hit { display: block; text-align: start; inline-size: 100%; padding-block: 0.3rem; }
-button.search-hit { background: transparent; color: inherit; border: 0; cursor: pointer; text-decoration: underline; }
-.search-hit-title { font-weight: 700; }
-.search-kind, .search-context, .search-excerpt, .search-match-count, .search-matched-terms, .search-continuation-label { display: block; }
-.search-kind, .search-context, .search-match-count, .search-matched-terms, .search-continuation-label, .search-counts, .search-hint { font-size: 0.9em; }
-.search-excerpt { white-space: pre-wrap; line-height: 1.9; }
-mark { background: #ffdf7a; color: #1a1a1a; }
+@media(prefers-reduced-motion:reduce) {*{scroll-behavior:auto!important;transition:none!important}}

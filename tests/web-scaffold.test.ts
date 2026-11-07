@@ -4,18 +4,22 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { DataClient } from '../web/data.js';
-import { itemHref, parseRoute } from '../web/routes.js';
+import { itemHref, parseRoute, settingsHref, topicHref } from '../web/routes.js';
 import { stageWebData } from '../scripts/stage-web.js';
 
 test('hash routes are stable and reject paths outside item identifiers', () => {
   assert.deepEqual(parseRoute(''), { kind: 'library' });
   assert.deepEqual(parseRoute('#/'), { kind: 'library' });
+  assert.deepEqual(parseRoute('#/contents'), { kind: 'contents' });
+  assert.deepEqual(parseRoute(topicHref('dua', '0.4.1.6')), { kind: 'contents', topic: 'dua', sourcePath: '0.4.1.6' });
+  assert.deepEqual(parseRoute(settingsHref('dua-kumayl')), { kind: 'settings', id: 'dua-kumayl' });
+  assert.deepEqual(parseRoute('#/bookmarks'), { kind: 'bookmarks' });
   assert.deepEqual(parseRoute('#/item/dua-kumayl'), { kind: 'item', id: 'dua-kumayl' });
   assert.equal(itemHref('dua-kumayl'), '#/item/dua-kumayl');
   const anchor = { row: 'r00076', language: 'ar' as const, offset: 12 };
   assert.equal(itemHref('dua-kumayl', anchor), '#/item/dua-kumayl?row=r00076&lang=ar&offset=12');
   assert.deepEqual(parseRoute(itemHref('dua-kumayl', anchor)), { kind: 'item', id: 'dua-kumayl', anchor });
-  for (const hash of ['#/item/../secret', '#/item/%2e%2e', '#/item/a/b', '#/other',
+  for (const hash of ['#/item/../secret', '#/item/%2e%2e', '#/item/a/b', '#/other', '#/contents/featured/0', '#/contents/dua/../2', '#/settings/../secret',
     '#/item/dua-kumayl?row=..&lang=ar&offset=0', '#/item/dua-kumayl?row=r1&lang=en&offset=0',
     '#/item/dua-kumayl?row=r1&lang=ar&offset=-1', '#/item/dua-kumayl?row=r1&lang=ar&offset=1&offset=2']) {
     assert.deepEqual(parseRoute(hash), { kind: 'not-found' });
@@ -60,9 +64,15 @@ test('web staging contains only runtime data and refuses overlapping directories
     mkdirSync(path.join(source, 'items'), { recursive: true });
     writeFileSync(path.join(source, 'manifest.json'), '{}');
     writeFileSync(path.join(source, 'items', 'sample.json'), '{"id":"sample"}');
+    mkdirSync(path.join(source, 'search'));
+    writeFileSync(path.join(source, 'search', '000.json'), '{"records":[]}');
+    writeFileSync(path.join(source, 'search-index.json'), '{"version":4}');
     writeFileSync(path.join(root, 'private-review.txt'), 'not for the web');
     stageWebData(source, stage);
     assert.equal(readFileSync(path.join(stage, 'data', 'items', 'sample.json'), 'utf8'), '{"id":"sample"}');
+    assert.equal(existsSync(path.join(stage, 'data', 'search')), false);
+    assert.equal(existsSync(path.join(stage, 'data', 'search-index.json')), false);
+    assert.equal(existsSync(path.join(source, 'search', '000.json')), true);
     assert.equal(existsSync(path.join(stage, 'private-review.txt')), false);
     assert.throws(() => stageWebData(source, source), /must not overlap/);
     assert.throws(() => stageWebData(source, path.join(source, 'nested')), /must not overlap/);

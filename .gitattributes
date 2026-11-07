@@ -1,2 +1,6 @@
 # Preserve CRLF exactly even when the Windows Gradle launcher is added by git am.
 /android/gradlew.bat binary
+
+# Upstream license notices must survive checkout and ordinary git am exactly,
+# including CRLF and trailing spaces. They remain readable text files.
+/web/fonts/licenses/*-OFL.txt binary

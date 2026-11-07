@@ -54,8 +54,8 @@ Follow [CONTENT_POLICY.md](CONTENT_POLICY.md): **no AI translation of Arabic tex
 
 ## 5. Build the website and app
 
-- [ ] Finish the Persian-first library, search, navigation and item pages. Keep visible search and play/pause in the header when its design is decided. English UI comes later; display the correct English title/coverage and use Persian fallback for a missing needed explanation.
-- [ ] Offer reader styles, font size and all three planned font families, with suitable licenses and offline files. Arabic/Persian and later English need their proper directions. Select Persian or English translations rather than normally showing both full translations simultaneously.
+- [ ] Refine the Persian-first library and item pages, review provisional topic classification and long titles, and design/reconnect search. The current search, bookmark and auto-scroll controls are placeholders. English UI comes later; display the correct English title/coverage and use Persian fallback for a missing needed explanation.
+- [ ] Extend the current reader typography and settings with additional styles and review shaping/accessibility on devices. Three Arabic fonts, independent sizes and local licenses are in the current baseline. Arabic/Persian and later English need their proper directions. Select Persian or English translations rather than normally showing both full translations simultaneously.
 - [ ] Use reviewed alignment groups where available. For unreviewed or incomplete passages, show the full sources honestly instead of making a false line-by-line pairing.
 - [ ] Complete shared settings, bookmarks, accessible auto-scroll, offline website caching and backup/export. The starter Android shell bundles the website build; device/offline validation and a finished APK remain to do.
 - [ ] Keep data editing and review agent-friendly and text-based, with reversible changes, provenance entry and conflict handling. No visual data-editing tool is requested. Keep canonical data independent from website/app presentation.

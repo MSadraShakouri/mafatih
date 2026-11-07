@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import { ItemSchema, Key, RowSchema } from './schema.js';
+import { ItemSchema, Key, RowFieldsSchema } from './schema.js';
 import type { Corpus } from './corpus.js';
 import { text } from './corpus.js';
 import { intern } from './editor.js';
 
-export const EditableRowSchema=RowSchema.innerType().extend({ar:z.string().nullable(),fa:z.string().nullable()}).strict()
+export const EditableRowSchema=RowFieldsSchema.extend({ar:z.string().nullable(),fa:z.string().nullable()}).strict()
   .refine(x=>Boolean(x.ar)||Boolean(x.fa),'both language sides cannot be empty');
 export const EditableItemSchema=ItemSchema.extend({id:Key,title:z.object({fa:z.string().nullable(),ar:z.string().nullable(),en:z.string().nullable()}).strict(),
   tags:z.array(z.string()),legacy_missing_english_title:z.string().optional(),rows:z.array(EditableRowSchema).min(1)}).strict();

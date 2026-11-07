@@ -1,18 +1,10 @@
 import { expect, test } from '@playwright/test';
 
-test('corrected Arabic punctuation is shown and search still opens the matching row without a reader highlight', async ({ page }) => {
+test('corrected Arabic punctuation is shown in the reader', async ({ page }) => {
   await page.goto('./#/item/amal-aaddt-lkl-hvl');
   const row = page.locator('[data-row-id="r00008"] p[lang="ar"]');
   await expect(row).toContainText('تَصْدیقاً؛');
   await expect(row).not.toContainText('تَصْدیقاً ؛');
-  await page.getByRole('button', { name: 'جست‌وجو' }).click();
-  await page.getByRole('searchbox', { name: 'جست‌وجو در این مطلب' }).fill('تصدیقا');
-  const hit = page.locator('[data-search-kind="text"][data-item-id="amal-aaddt-lkl-hvl"][data-row-id="r00008"][data-language="ar"]');
-  await expect(hit).toBeVisible();
-  await expect(hit.locator('mark').first()).toBeVisible();
-  await hit.locator('a').click();
-  await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-anchor-row', 'r00008');
-  await expect(page.locator('article mark')).toHaveCount(0);
 });
 
 test('Persian reader text and generated English paragraphs use corrected punctuation', async ({ page }) => {

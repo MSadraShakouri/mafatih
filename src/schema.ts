@@ -13,14 +13,17 @@ const ISODate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(value => {
 const Review = z.object({ reviewer: z.string().trim().min(1), date: ISODate, note: z.string().optional() }).strict();
 const LangSources = z.object({ ar: z.array(Key).optional(), fa: z.array(Key).optional() }).strict();
 
-export const RowSchema = z.object({
+// Share the unrefined fields with the readable editing schema. Zod 4 keeps
+// refinements on the object rather than wrapping it in an effects type.
+export const RowFieldsSchema = z.object({
   id: Key,
   ar: Ref,
   fa: Ref,
   // Do not infer a note merely from an empty Arabic side.
   kind: z.enum(['unknown', 'recitation', 'note', 'heading', 'instruction', 'quotation', 'audio-reciter', 'other']).optional(),
   sources: LangSources.optional()
-}).strict().refine(x => x.ar !== null || x.fa !== null, 'both language sides are empty');
+}).strict();
+export const RowSchema = RowFieldsSchema.refine(x => x.ar !== null || x.fa !== null, 'both language sides are empty');
 
 export const ItemSchema = z.object({
   legacy_id: z.string().min(1).nullable(),
