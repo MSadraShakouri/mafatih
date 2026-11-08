@@ -130,7 +130,7 @@ export const EditorialHistorySchema = z.object({
   // Previous values remain in the pool; no human review is claimed by this
   // purely mechanical, occurrence-specific whitespace correction.
   punctuation_normalizations:z.array(z.object({
-    rule:z.literal('closing-punctuation-v1'),date:ISODate,changes:z.array(PunctuationEditSchema).min(1)
+    rule:z.enum(['closing-punctuation-v1','quran-verse-marker-spacing-v1']),date:ISODate,changes:z.array(PunctuationEditSchema).min(1)
   }).strict()).optional(),
   quran_number_evidence:Key.optional()
 }).strict();

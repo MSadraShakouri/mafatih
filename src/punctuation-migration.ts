@@ -3,6 +3,7 @@ import { text } from './corpus.js';
 import { intern } from './editor.js';
 import { normalizeSearch } from './normalize.js';
 import { normalizePunctuationSpacing } from './punctuation.js';
+import { normalizeQuranMarkerSpacing } from './quran-markers.js';
 import { punctuationLocationKey } from './punctuation-history.js';
 import { PunctuationEditSchema, type NavNode, type PunctuationEdit, type PunctuationLocation } from './schema.js';
 import { textId } from './text-ids.js';
@@ -57,17 +58,32 @@ function targets(c: Corpus): Target[] {
   return result;
 }
 
+type FormattingRule = 'closing-punctuation-v1' | 'quran-verse-marker-spacing-v1';
+function eligible(rule: FormattingRule, location: PunctuationLocation): boolean {
+  return rule === 'closing-punctuation-v1' || (location.kind === 'item-row' && location.language === 'ar');
+}
+function normalizer(rule: FormattingRule): (value: string) => string {
+  return rule === 'quran-verse-marker-spacing-v1' ? normalizeQuranMarkerSpacing : normalizePunctuationSpacing;
+}
+
 /** A dry run: no corpus values or references are changed. */
-export function planPunctuationNormalization(c: Corpus): PunctuationEdit[] {
+function planFormatting(c: Corpus, rule: FormattingRule): PunctuationEdit[] {
   const changes: PunctuationEdit[] = [];
   for (const target of targets(c)) {
+    if (!eligible(rule, target.location)) continue;
     const previous = target.get();
     if (previous === null) continue;
     const value = text(c, previous);
-    const normalized = normalizePunctuationSpacing(value);
+    const normalized = normalizer(rule)(value);
     if (normalized !== value) changes.push({ location: target.location, previous, replacement: textId(normalized) });
   }
   return changes;
+}
+export function planPunctuationNormalization(c: Corpus): PunctuationEdit[] {
+  return planFormatting(c, 'closing-punctuation-v1');
+}
+export function planQuranMarkerSpacing(c: Corpus): PunctuationEdit[] {
+  return planFormatting(c, 'quran-verse-marker-spacing-v1');
 }
 
 function assertUnreviewed(c: Corpus, loc: PunctuationLocation): void {
@@ -98,7 +114,7 @@ function assertUnreviewed(c: Corpus, loc: PunctuationLocation): void {
  * and atomically commit the returned files and pooled IDs. No reviewed text or
  * alignment is silently invalidated. Historical originals remain referenced.
  */
-export function applyPunctuationNormalization(c: Corpus, plan: PunctuationEdit[], date: string): {
+function applyFormatting(c: Corpus, plan: PunctuationEdit[], date: string, rule: FormattingRule): {
   files: Set<string>; previous: string[]; replacement: string[];
 } {
   const parsedDate = new Date(`${date}T00:00:00Z`);
@@ -118,8 +134,9 @@ export function applyPunctuationNormalization(c: Corpus, plan: PunctuationEdit[]
     visited.add(key);
     const target = byKey.get(key);
     if (!target || target.get() !== edit.previous) throw new Error(`Stale punctuation plan: ${label}`);
+    if (!eligible(rule, edit.location)) throw new Error(`Invalid formatting scope: ${label}`);
     const oldValue = text(c, edit.previous);
-    const value = normalizePunctuationSpacing(oldValue);
+    const value = normalizer(rule)(oldValue);
     if (value === oldValue || textId(value) !== edit.replacement || normalizeSearch(value) !== normalizeSearch(oldValue)) {
       throw new Error(`Invalid punctuation-only edit: ${label}`);
     }
@@ -138,7 +155,15 @@ export function applyPunctuationNormalization(c: Corpus, plan: PunctuationEdit[]
     target.set(edit.replacement);
     files.add(target.file);
   }
-  (c.editorial.punctuation_normalizations ??= []).push({ rule: 'closing-punctuation-v1', date,
+  (c.editorial.punctuation_normalizations ??= []).push({ rule, date,
     changes: prepared.map(({ edit }) => edit) });
   return { files, previous: prepared.map(({ edit }) => edit.previous), replacement: prepared.map(({ edit }) => edit.replacement) };
 }
+
+export function applyPunctuationNormalization(c: Corpus, plan: PunctuationEdit[], date: string): {
+  files: Set<string>; previous: string[]; replacement: string[];
+} { return applyFormatting(c, plan, date, 'closing-punctuation-v1'); }
+
+export function applyQuranMarkerSpacing(c: Corpus, plan: PunctuationEdit[], date: string): {
+  files: Set<string>; previous: string[]; replacement: string[];
+} { return applyFormatting(c, plan, date, 'quran-verse-marker-spacing-v1'); }

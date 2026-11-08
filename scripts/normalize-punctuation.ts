@@ -1,22 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadCorpus, validateCorpus } from '../src/corpus.js';
-import { commit, pretty } from '../src/editor.js';
+import { commit, preserveKeyOrder, pretty } from '../src/editor.js';
 import { applyPunctuationNormalization, planPunctuationNormalization } from '../src/punctuation-migration.js';
-
-// Zod's parsed object order follows the schema. Keep existing JSON key order
-// so a tiny punctuation edit does not rewrite unrelated historical metadata.
-function preserveKeyOrder(original: unknown, updated: unknown): unknown {
-  if (Array.isArray(original) && Array.isArray(updated)) return updated.map((value, index) => preserveKeyOrder(original[index], value));
-  if (original && updated && typeof original === 'object' && typeof updated === 'object' && !Array.isArray(original) && !Array.isArray(updated)) {
-    const before = original as Record<string, unknown>, after = updated as Record<string, unknown>;
-    const result: Record<string, unknown> = Object.create(null) as Record<string, unknown>;
-    for (const key of Object.keys(before)) if (Object.hasOwn(after, key)) result[key] = preserveKeyOrder(before[key], after[key]);
-    for (const key of Object.keys(after)) if (!Object.hasOwn(result, key)) result[key] = after[key];
-    return result;
-  }
-  return updated;
-}
 
 const args = process.argv.slice(2);
 if (args.length > 1 || args.some(arg => !['--apply', '--check', '--help'].includes(arg))) {

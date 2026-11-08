@@ -18,6 +18,19 @@ export function referencedTexts(c:Corpus):Set<string>{
   return refs;
 }
 export function pretty(x:unknown):string{return JSON.stringify(x,null,2)+'\n';}
+/** Keep untouched object key order when a parsed schema object is written. */
+export function preserveKeyOrder(original: unknown, updated: unknown): unknown {
+  if (Array.isArray(original) && Array.isArray(updated)) return updated.map((value, index) => preserveKeyOrder(original[index], value));
+  if (original && updated && typeof original === 'object' && typeof updated === 'object' && !Array.isArray(original) && !Array.isArray(updated)) {
+    const before = original as Record<string, unknown>, after = updated as Record<string, unknown>;
+    const result: Record<string, unknown> = Object.create(null) as Record<string, unknown>;
+    for (const key of Object.keys(before)) if (Object.hasOwn(after, key)) result[key] = preserveKeyOrder(before[key], after[key]);
+    for (const key of Object.keys(after)) if (!Object.hasOwn(result, key)) result[key] = after[key];
+    return result;
+  }
+  return updated;
+}
+
 /** Stage all writes, then rename. Roll back best-effort if a write fails. */
 export function commit(c:Corpus,changes:Map<string,string|null>,oldIds:(string|null|undefined)[],newIds:(string|null|undefined)[]):void{
   const refs=referencedTexts(c);const shards=new Set<string>();
@@ -25,8 +38,10 @@ export function commit(c:Corpus,changes:Map<string,string|null>,oldIds:(string|n
   for(const id of oldIds)if(id){shards.add(id.slice(1,3));if(!refs.has(id)){c.texts.delete(id);c.textShards.delete(id);}}
   for(const shard of shards){
     const values:Record<string,string>={};for(const [id,value] of c.texts)if(id.slice(1,3)===shard)values[id]=value;
-    const sorted=Object.fromEntries(Object.entries(values).sort(([a],[b])=>a.localeCompare(b,'en')));
-    changes.set(path.join(c.root,'texts',shard+'.json'),Object.keys(sorted).length?pretty(sorted):null);
+    const file=path.join(c.root,'texts',shard+'.json');
+    const original=fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')) as unknown:{};
+    // Preserve existing shard order; append new IDs without reordering unrelated pooled values.
+    changes.set(file,Object.keys(values).length?pretty(preserveKeyOrder(original,values)):null);
   }
   const before=new Map<string,Buffer|null>();const temps:string[]=[];
   try{

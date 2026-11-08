@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { loadCorpus, validateCorpus } from '../src/corpus.js';
 import { normalizeSearch } from '../src/normalize.js';
 import { normalizePunctuationSpacing } from '../src/punctuation.js';
+import { normalizeQuranMarkerSpacing } from '../src/quran-markers.js';
 import { planPunctuationNormalization } from '../src/punctuation-migration.js';
 
 test('current multilingual content is normalized without rewriting historical claims', () => {
@@ -22,7 +23,7 @@ test('each recorded punctuation edit retains its exact previous and corrected te
     const replacement = corpus.texts.get(change.replacement);
     assert.notEqual(previous, undefined); assert.notEqual(replacement, undefined);
     assert.notEqual(previous, replacement);
-    assert.equal(normalizePunctuationSpacing(previous!), replacement);
+    assert.equal(batch.rule === 'closing-punctuation-v1' ? normalizePunctuationSpacing(previous!) : normalizeQuranMarkerSpacing(previous!), replacement);
     assert.equal(normalizeSearch(previous!), normalizeSearch(replacement!));
     assert.equal(previous!.replace(/[\p{Zs}\t]/gu, ''), replacement!.replace(/[\p{Zs}\t]/gu, ''));
   }

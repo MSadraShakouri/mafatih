@@ -1,4 +1,6 @@
 import type { TextRange } from '../src/search-text.js';
+import { verseMarkerRanges } from '../src/quran-markers.js';
+export { verseMarkerRanges } from '../src/quran-markers.js';
 
 export type DisplayLanguage = 'ar' | 'fa' | 'en' | 'ui';
 const persian = '۰۱۲۳۴۵۶۷۸۹', arabicIndic = '٠١٢٣٤٥٦٧٨٩';
@@ -7,11 +9,6 @@ const persian = '۰۱۲۳۴۵۶۷۸۹', arabicIndic = '٠١٢٣٤٥٦٧٨٩';
 export function displayDigits(value: string, language: DisplayLanguage): string {
   if (language === 'en' || (language === 'ui' && /[A-Za-z]/u.test(value) && !/[\p{Script=Arabic}]/u.test(value))) return value;
   return value.replace(/[0-9٠-٩]/gu, digit => persian[arabicIndic.includes(digit) ? arabicIndic.indexOf(digit) : Number(digit)]!);
-}
-
-/** Numeric ayah endings only; ornate brackets around Quran quotations are not numbers. */
-export function verseMarkerRanges(text: string): TextRange[] {
-  return [...text.matchAll(/﴿[0-9٠-٩۰-۹]+﴾/gu)].map(match => ({ start: match.index!, end: match.index! + match[0].length }));
 }
 
 /**

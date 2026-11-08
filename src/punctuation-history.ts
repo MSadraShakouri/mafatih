@@ -1,6 +1,7 @@
 import type { Corpus } from './corpus.js';
 import { normalizeSearch } from './normalize.js';
 import { normalizePunctuationSpacing } from './punctuation.js';
+import { normalizeQuranMarkerSpacing } from './quran-markers.js';
 import type { PunctuationLocation } from './schema.js';
 
 export function punctuationLocationKey(loc: PunctuationLocation): string {
@@ -40,8 +41,10 @@ export function validatePunctuationHistory(c: Corpus): string[] {
       if (!locationStillRecognizable(c, edit.location)) errors.push(`punctuation history: missing occurrence ${label}`);
       const before = c.texts.get(edit.previous), after = c.texts.get(edit.replacement);
       // Generic corpus reference validation reports missing pooled IDs too.
-      if (before === undefined || after === undefined || before === after ||
-          normalizePunctuationSpacing(before) !== after || normalizeSearch(before) !== normalizeSearch(after)) {
+      const correctScope = batch.rule !== 'quran-verse-marker-spacing-v1' || (edit.location.kind === 'item-row' && edit.location.language === 'ar');
+      const normalize = batch.rule === 'quran-verse-marker-spacing-v1' ? normalizeQuranMarkerSpacing : normalizePunctuationSpacing;
+      if (!correctScope || before === undefined || after === undefined || before === after ||
+          normalize(before) !== after || normalizeSearch(before) !== normalizeSearch(after)) {
         errors.push(`invalid punctuation history in batch ${batchIndex}: ${label}`);
       }
     }
