@@ -41,7 +41,7 @@ test('Vite dev serves only resolved data and invalidates it after source changes
   server = await createServer({
     configFile: path.resolve('vite.config.ts'),
     logLevel: 'silent',
-    server: { host: '127.0.0.1', port: 0, strictPort: true },
+    server: { host: '127.0.0.1', port: 0, strictPort: false },
   });
   await server.listen();
   const address = server.httpServer?.address();
@@ -56,7 +56,11 @@ test('Vite dev serves only resolved data and invalidates it after source changes
   const before = await catalog();
   assert.ok(before.featured.length > 1);
   assert.equal((await fetch(`${base}data/english/dua-kumayl.json`)).status, 200);
-  assert.equal((await fetch(`${base}data/search-index.json`)).status, 404);
+  const search = await fetch(`${base}data/search-index.json`);
+  assert.equal(search.status, 200);
+  const index = await search.json() as { version: number; shards: string[] };
+  assert.equal(index.version, 4); assert.ok(index.shards.length > 0);
+  assert.equal((await fetch(`${base}data/${index.shards[0]}`)).status, 200);
   assert.equal((await fetch(`${base}data/navigation.json`)).status, 404);
   assert.equal((await fetch(`${base}data/catalog.json`, { method: 'HEAD' })).status, 200);
   assert.equal((await fetch(`${base}data/catalog.json`, { method: 'POST' })).status, 405);

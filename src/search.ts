@@ -1,4 +1,5 @@
 import { normalizeSearch } from './normalize.js';
+import { wordVariants, safeAliasPrefix } from './lam-aliases.js';
 import { TopK } from './search-top-k.js';
 import { findOriginalMatches } from './search-text.js';
 import { compactNormalized, mightJoin, normalizedTokens, scoreSequence, type Relevance, type SequencePart } from './search-relevance.js';
@@ -111,24 +112,29 @@ export function searchWords(query: string): string[] {
 }
 
 function matchKind(record: SearchRecord, word: string): 'direct' | 'spaced' | undefined {
-  if (record.normalized.includes(word)) return 'direct';
-  if (word.length < 3) return undefined;
+  const variants = wordVariants(word);
+  if (variants.some(variant => record.normalized.includes(variant))) return 'direct';
   // These are only rejection filters: the original-text matcher still checks
   // horizontal gaps, word boundaries, and partial-final-word safeguards.
-  if (compactNormalized(record).includes(word) && mightJoin(normalizedTokens(record), word) &&
-      findOriginalMatches(record.text, [word], 1).length) return 'spaced';
+  for (const variant of variants) if (variant.length >= 3 && compactNormalized(record).includes(variant) &&
+      mightJoin(normalizedTokens(record), variant) && findOriginalMatches(record.text, [variant], 1).length) return 'spaced';
   return undefined;
 }
 
 /** A conservative compact-prefix candidate can be useful to a later, longer word. */
 function probe(record: SearchRecord, word: string): number {
-  if (record.normalized.includes(word)) return CHECKED | POSSIBLE | DIRECT;
-  // Removing spaces cannot create a new single-code-point occurrence.
-  if (word.length === 1 || (word.length === 2 && word.codePointAt(0)! > 0xffff) ||
-      !compactNormalized(record).includes(word)) return CHECKED;
-  const kind = word.length >= 3 && mightJoin(normalizedTokens(record), word) &&
-    findOriginalMatches(record.text, [word], 1).length > 0;
-  return CHECKED | POSSIBLE | (kind ? SPACED : 0);
+  const variants = wordVariants(word);
+  if (variants.some(variant => record.normalized.includes(variant))) return CHECKED | POSSIBLE | DIRECT;
+  let possible = false, spaced = false;
+  for (const variant of variants) {
+    // Removing spaces cannot create a new single-code-point occurrence.
+    if (variant.length === 1 || (variant.length === 2 && variant.codePointAt(0)! > 0xffff) ||
+        !compactNormalized(record).includes(variant)) continue;
+    possible = true;
+    if (variant.length >= 3 && mightJoin(normalizedTokens(record), variant) &&
+        findOriginalMatches(record.text, [variant], 1).length > 0) spaced = true;
+  }
+  return CHECKED | (possible ? POSSIBLE : 0) | (spaced ? SPACED : 0);
 }
 
 /** Item-first and global scans can discover matches out of global record order. */
@@ -146,11 +152,11 @@ function insertOrdered(values: number[], value: number): void {
 function provisionalScore(record: SearchRecord, words: string[]): ScoredRecord {
   let score = 0;
   for (const word of words) {
-    const text = record.normalized;
-    if (text === word || text.startsWith(`${word} `) || text.endsWith(` ${word}`) || text.includes(` ${word} `)) {
+    const text = record.normalized; const variants = wordVariants(word);
+    if (variants.some(variant => text === variant || text.startsWith(`${variant} `) || text.endsWith(` ${variant}`) || text.includes(` ${variant} `))) {
       score = 6; break;
     }
-    score = Math.max(score, text.includes(word) ? 3 : 4); // the cache already verified a spaced match
+    score = Math.max(score, variants.some(variant => text.includes(variant)) ? 3 : 4); // the cache already verified a spaced match
   }
   return { relevance: { score, matchedSequenceWords: score ? 1 : 0, exactSequenceWords: score === 6 ? 1 : 0 }, parts: [record] };
 }
@@ -225,7 +231,7 @@ export class IncrementalSearch {
         // merely its confirmed hits. Unknown parent records remain searchable.
         let parent: WordScan | undefined;
         for (const prior of this.cache.values()) {
-          if (word.startsWith(prior.word) && word !== prior.word && (!parent || prior.word.length > parent.word.length)) parent = prior;
+          if (word.startsWith(prior.word) && word !== prior.word && safeAliasPrefix(prior.word, word) && (!parent || prior.word.length > parent.word.length)) parent = prior;
         }
         scan = { word, cursor: 0, itemCursors: new Map(), flags: new Uint8Array(), parent,
           matches: [], spacedMatches: new Set(), used: 0,

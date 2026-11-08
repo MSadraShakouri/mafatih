@@ -5,8 +5,8 @@ import { runtimeData } from './scripts/vite-data.js';
 // the root of Capacitor's local Android origin. Data URLs use the same base.
 export default defineConfig({
   base: './',
-  // Only the resolved runtime data is exposed; search and private artifacts
-  // are not part of the currently disabled search UI.
+  // Only resolved runtime content and search assets are exposed; private
+  // review artifacts are never copied to the public build.
   publicDir: false,
   plugins: [runtimeData()],
   server: { host: '0.0.0.0', allowedHosts: ['.e2b.app'] },

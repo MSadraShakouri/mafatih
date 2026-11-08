@@ -3,6 +3,10 @@ import { App as CapacitorApp } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
 import { DataClient } from './data.js';
 import { attachLegalNotices } from './legal-notices.js';
+import { attachGlobalSearch } from './global-search.js';
+import { attachInTextSearch, type InTextSearch } from './intext-search.js';
+import { SearchClient } from './search-client.js';
+import { createSearchSession } from './search-common.js';
 import { nativeBackAction } from './native-back.js';
 import { scrollToReadingAnchor } from './reader-anchor.js';
 import { captureVisibleReaderPosition, keepReaderPositionOnResize, restoreVisibleReaderPosition, type VisibleReaderPosition } from './reader-position.js';
@@ -18,6 +22,8 @@ const app: HTMLElement = root;
 // Relative base works at a Pages subdirectory and in Capacitor's local origin.
 const base = new URL(import.meta.env.BASE_URL, document.baseURI);
 const data = new DataClient(base);
+const searchClient = new SearchClient(base);
+const searchSession = createSearchSession();
 let storage: Storage | undefined;
 try { storage = window.localStorage; } catch { /* in-memory fallback */ }
 const preferences = createReaderPreferencesStore(storage);
@@ -27,19 +33,24 @@ attachLegalNotices();
 let renderId = 0;
 let reader: HTMLElement | undefined;
 let disposeReader: (() => void) | undefined;
+let disposeGlobalSearch: (() => void) | undefined;
+let inTextSearch: InTextSearch | undefined;
 let saved: { id: string; position: VisibleReaderPosition | undefined; scroll: number } | undefined;
 let lastRequested: Route | undefined;
 let lastKey = '';
+let lastRouteHash = '';
 let serial = 0;
 const HISTORY_KEY = '__mafatihNavigation';
-type NavigationState = { id: number; parent?: string };
+type NavigationState = { id: number; parent?: string; readerSearch?: boolean };
 
-function navigationState(parent?: string): Record<string, unknown> {
+function navigationState(parent?: string, readerSearch = false): Record<string, unknown> {
   const old = history.state && typeof history.state === 'object' ? history.state as Record<string, unknown> : {};
-  return { ...old, [HISTORY_KEY]: { id: ++serial, ...(parent === undefined ? {} : { parent }) } satisfies NavigationState };
+  return { ...old, [HISTORY_KEY]: { id: ++serial, ...(parent === undefined ? {} : { parent }),
+    ...(readerSearch ? { readerSearch: true } : {}) } satisfies NavigationState };
 }
 function navigate(hash: string): void {
   if (hash === window.location.hash) return;
+  if (lastRequested?.kind === 'library' && searchSession.libraryQuery.trim()) searchSession.libraryScroll = window.scrollY;
   const parent = window.location.hash || '#/';
   history.pushState(navigationState(parent), '', hash);
   routeChanged();
@@ -52,8 +63,27 @@ function back(fallback: string): void {
     routeChanged();
   }
 }
+function closeReaderSearch(): void {
+  if (!inTextSearch?.isOpen()) return;
+  inTextSearch.close();
+  const state = history.state?.[HISTORY_KEY] as NavigationState | undefined;
+  if (state?.readerSearch) history.back();
+}
+function toggleReaderSearch(id: string): void {
+  if (!reader || reader.dataset.itemId !== id || !inTextSearch) return;
+  if (inTextSearch.isOpen()) { closeReaderSearch(); return; }
+  // A same-URL history entry lets browser/Android Back close the search first,
+  // without tearing down the reader or changing its hash/reading position.
+  try {
+    history.pushState(navigationState(window.location.hash || '#/', true), '', window.location.href);
+    const state = history.state?.[HISTORY_KEY] as NavigationState | undefined;
+    lastKey = `${window.location.hash}|${state?.id ?? 'external'}`;
+  } catch { /* Search still works without a history entry. */ }
+  inTextSearch.open(true);
+}
 const actions: RenderActions = {
   back,
+  toggleReaderSearch,
   openSettings: id => {
     if (reader && reader.dataset.itemId === id) {
       saved = { id, position: captureVisibleReaderPosition(reader), scroll: window.scrollY };
@@ -62,28 +92,64 @@ const actions: RenderActions = {
   },
 };
 
+let cancelLoadingNotice: (() => void) | undefined;
+
+/** Keep the current screen interactive while a slower destination prepares. */
+function loadingNotice(): () => void {
+  let notice: HTMLElement | undefined;
+  const timer = window.setTimeout(() => {
+    notice = document.createElement('div');
+    notice.className = 'navigation-loading';
+    notice.setAttribute('role', 'status');
+    notice.textContent = 'در حال آماده‌سازی…';
+    app.append(notice);
+  }, 350);
+  return () => { window.clearTimeout(timer); notice?.remove(); };
+}
+function replaceView(content: HTMLElement): void {
+  disposeGlobalSearch?.(); disposeGlobalSearch = undefined;
+  disposeReader?.(); disposeReader = undefined; reader = undefined; inTextSearch = undefined;
+  app.replaceChildren(content);
+}
+
 async function renderRoute(route: Route, from: Route | undefined): Promise<void> {
   const id = ++renderId;
-  disposeReader?.(); disposeReader = undefined; reader = undefined;
-  if (route.kind === 'not-found') { app.replaceChildren(renderMessage('این صفحه پیدا نشد.', true)); return; }
-  app.replaceChildren(renderMessage('در حال بارگذاری…'));
+  cancelLoadingNotice?.(); cancelLoadingNotice = undefined;
+  if (route.kind === 'not-found') { replaceView(renderMessage('این صفحه پیدا نشد.', true)); return; }
+  // Home, the topic chooser and bookmarks have static chrome and can appear
+  // immediately. Catalog loading and font warming happen in the background.
+  if (route.kind === 'library' || route.kind === 'bookmarks' || (route.kind === 'contents' && !route.topic)) {
+    saved = undefined;
+    const content = renderLibrary({ items: [], toc: [] }, route, actions);
+    replaceView(content);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    if (route.kind === 'library') {
+      disposeGlobalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession, navigate, from !== undefined);
+      // A reader visit can start font loading in parallel rather than after an item fetch.
+      void prepareReaderFont(preferences.get().font);
+    }
+    return;
+  }
+  const stopLoading = loadingNotice(); cancelLoadingNotice = stopLoading;
   try {
     const needsItem = route.kind === 'item' || route.kind === 'settings';
     const [catalog, item, example, instruction] = await Promise.all([
-      data.catalog(),
+      route.kind === 'contents' ? data.catalog() : Promise.resolve(undefined),
       needsItem ? data.item(route.id) : Promise.resolve(undefined),
       route.kind === 'settings' ? data.item('dua-kumayl').catch(() => undefined) : Promise.resolve(undefined),
       route.kind === 'settings' ? data.item('amal-aamal-asr-jmah').catch(() => undefined) : Promise.resolve(undefined),
+      // Start the selected reader font at the same time as the item, not after it.
+      route.kind === 'item' ? prepareReaderFont(preferences.get().font) : Promise.resolve(),
     ]);
-    if (item && route.kind === 'item') await prepareReaderFont(preferences.get().font);
-    if (id !== renderId) return;
+    if (id !== renderId) { stopLoading(); return; }
+    stopLoading(); cancelLoadingNotice = undefined;
     if (route.kind === 'settings' && item) {
-      app.replaceChildren(renderReaderSettings(item, example, instruction, preferences, theme, actions));
+      replaceView(renderReaderSettings(item, example, instruction, preferences, theme, actions));
       window.scrollTo({ top: 0, behavior: 'auto' });
     } else if (route.kind === 'item' && item) {
       const content = renderItem(item, actions);
       applyReaderPreferences(content, preferences.get());
-      app.replaceChildren(content); reader = content;
+      replaceView(content); reader = content;
       if (saved && saved.id === item.id && from?.kind === 'settings') {
         window.scrollTo({ top: saved.scroll, behavior: 'auto' });
         restoreVisibleReaderPosition(content, saved.position);
@@ -92,15 +158,18 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
         requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, route.anchor!); });
       } else window.scrollTo({ top: 0, behavior: 'auto' });
       const keeper = keepReaderPositionOnResize(content);
-      disposeReader = () => keeper.dispose();
-    } else if (route.kind === 'library' || route.kind === 'contents' || route.kind === 'bookmarks') {
+      inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch);
+      const attachedSearch = inTextSearch;
+      disposeReader = () => { attachedSearch.dispose(); keeper.dispose(); };
+    } else if (route.kind === 'contents' && catalog) {
       saved = undefined;
-      app.replaceChildren(renderLibrary(catalog, route, actions));
+      replaceView(renderLibrary(catalog, route, actions));
       window.scrollTo({ top: 0, behavior: 'auto' });
     }
   } catch (error: unknown) {
     console.error('Unable to load the requested data', error);
-    if (id === renderId) app.replaceChildren(renderMessage('داده بارگذاری نشد.', true));
+    stopLoading();
+    if (id === renderId) { cancelLoadingNotice = undefined; replaceView(renderMessage('داده بارگذاری نشد.', true)); }
   }
 }
 
@@ -112,7 +181,14 @@ function routeChanged(): void {
   if (key === lastKey) return;
   lastKey = key;
   const route = parseRoute(window.location.hash);
-  const from = lastRequested; lastRequested = route;
+  const from = lastRequested, previousHash = lastRouteHash;
+  lastRequested = route; lastRouteHash = window.location.hash;
+  // Traversing the search-only history entry must not reconstruct the reader.
+  if (previousHash === window.location.hash && from?.kind === 'item' && route.kind === 'item' &&
+      from.id === route.id && reader?.dataset.itemId === route.id && inTextSearch) {
+    if (state?.readerSearch) inTextSearch.open(false); else inTextSearch.close();
+    return;
+  }
   void renderRoute(route, from);
 }
 
@@ -141,6 +217,15 @@ window.addEventListener('hashchange', routeChanged);
 // separate from the UI so direct links still have an explicit fallback.
 if (Capacitor.isNativePlatform()) {
   void CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+    // Give the keyboard the first Back in both global and in-text search.
+    // Android may consume Back in the IME before this callback; if it reaches
+    // the app, blur the active editable before changing routes or minimizing.
+    const focused = document.activeElement;
+    if ((focused instanceof HTMLInputElement && ['search', 'text', 'email', 'url', 'tel', 'number', 'password'].includes(focused.type)) ||
+        focused instanceof HTMLTextAreaElement || (focused instanceof HTMLElement && focused.isContentEditable)) {
+      focused.blur(); return;
+    }
+    if (inTextSearch?.isOpen()) { closeReaderSearch(); return; }
     const parent = (history.state?.[HISTORY_KEY] as NavigationState | undefined)?.parent;
     const action = nativeBackAction(parseRoute(window.location.hash), canGoBack, Boolean(parent));
     if (action.kind === 'history') history.back();
@@ -149,7 +234,9 @@ if (Capacitor.isNativePlatform()) {
     } else void CapacitorApp.minimizeApp();
   }).catch(error => console.error('Unable to register Android Back', error));
 }
-document.addEventListener('selectstart', event => event.preventDefault());
+document.addEventListener('selectstart', event => {
+  if (!(event.target instanceof Element && event.target.closest('input, textarea'))) event.preventDefault();
+});
 document.addEventListener('dragstart', event => event.preventDefault());
 document.addEventListener('gesturestart', event => event.preventDefault(), { passive: false });
 document.addEventListener('gesturechange', event => event.preventDefault(), { passive: false });

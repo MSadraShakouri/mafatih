@@ -1,4 +1,5 @@
 import { normalizeSearch } from './normalize.js';
+import { wordVariants } from './lam-aliases.js';
 import { findOriginalWordMatches } from './search-text.js';
 import type { SearchRecord } from './search.js';
 
@@ -63,17 +64,26 @@ function spacedMatches(record: SearchRecord, tokens: string[], words: string[], 
   const found: SpacedMatch[] = [];
   if (tokens.length < 2) return found;
   const compact = tokens.join('');
-  const candidates = words.filter(word => compact.includes(word) && mightJoin(tokens, word));
-  if (!candidates.length) return found;
-  // Fold the original text once for all candidate words, not once per word.
-  for (const span of findOriginalWordMatches(record.text, candidates, Number.MAX_SAFE_INTEGER)) {
+  // Map each actual source spelling back to the typed query word(s).
+  // Alternatives do not become extra logical words in the relevance score.
+  const owners = new Map<string, string[]>();
+  for (const word of words) for (const variant of wordVariants(word)) {
+    if (!compact.includes(variant) || !mightJoin(tokens, variant)) continue;
+    const list = owners.get(variant) ?? [];
+    list.push(word); owners.set(variant, list);
+  }
+  if (!owners.size) return found;
+  // Fold the original text once for all candidate spellings, not once per word.
+  for (const span of findOriginalWordMatches(record.text, [...owners.keys()], Number.MAX_SAFE_INTEGER)) {
     const fragment = normalizeSearch(record.text.slice(span.start, span.end));
     if (!fragment.includes(' ')) continue; // direct matches are handled separately
     const prefix = normalizeSearch(record.text.slice(0, span.start));
     const first = prefix ? prefix.split(' ').length : 0;
     const last = first + fragment.split(' ').length - 1;
     // Do not accidentally use an occurrence past the bounded continuation window.
-    if (first >= 0 && last < tokens.length) found.push({ word: span.word, start: offset + first, end: offset + last });
+    if (first >= 0 && last < tokens.length) for (const word of owners.get(span.word) ?? []) {
+      found.push({ word, start: offset + first, end: offset + last });
+    }
   }
   return found;
 }
@@ -122,10 +132,10 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
   if (query.length === 1) {
     const record = parts[0]!.record; const word = query[0]!;
     let score = 0;
-    if (hasWholeWord(record.normalized, word)) score = WHOLE;
+    if (wordVariants(word).some(variant => hasWholeWord(record.normalized, variant))) score = WHOLE;
     else {
-      if (record.normalized.includes(word)) score = SUBSTRING;
-      if (Array.from(word).length >= 3) {
+      if (wordVariants(word).some(variant => record.normalized.includes(variant))) score = SUBSTRING;
+      if (wordVariants(word).some(variant => Array.from(variant).length >= 3)) {
         const tokens = normalizedTokens(record);
         if (spacedMatches(record, tokens, [word], 0).length) score = JOINED;
       }
@@ -143,7 +153,7 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
   for (const source of parts) {
     const compact = compactNormalized(source.record);
     const present: string[] = [];
-    for (const word of unique) if (compact.includes(word)) { present.push(word); possible.add(word); }
+    for (const word of unique) if (wordVariants(word).some(variant => compact.includes(variant))) { present.push(word); possible.add(word); }
     possibleByPart.push(present);
   }
   let positions = 0, onlyWord = '';
@@ -180,7 +190,7 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
   const present = new Set<string>();
   for (let i = 0; i < parts.length; i += 1) {
     const text = parts[i]!.record.normalized;
-    for (const word of possibleByPart[i]!) if (text.includes(word)) present.add(word);
+    for (const word of possibleByPart[i]!) if (wordVariants(word).some(variant => text.includes(variant))) present.add(word);
   }
   for (const event of spaced) present.add(event.word);
   const activeQuery = query.map((word, index) => ({ word, index })).filter(entry => present.has(entry.word));
@@ -188,7 +198,7 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
     let score = 0;
     for (const token of tokens) {
       if (token.part !== 0) break;
-      for (const word of unique) if (token.value.includes(word)) score = Math.max(score, token.value === word ? WHOLE : SUBSTRING);
+      for (const word of unique) for (const variant of wordVariants(word)) if (token.value.includes(variant)) score = Math.max(score, token.value === variant ? WHOLE : SUBSTRING);
     }
     for (const event of spaced) if (tokens[event.start]?.part === 0) score = Math.max(score, JOINED);
     return { relevance: { score, matchedSequenceWords: score ? 1 : 0, exactSequenceWords: score === WHOLE ? 1 : 0 }, endPart: 0 };
@@ -217,8 +227,9 @@ export function scoreSequence(parts: SequencePart[], query: string[]): ScoredSeq
         s = left; count = current.count[j - 1]!; exact = current.exact[j - 1]!; start = current.start[j - 1]!; end = current.end[j - 1]!;
       }
       const word = activeQuery[j - 1]!.word;
-      if (source.value.includes(word)) {
-        const whole = source.value === word;
+      const variants = wordVariants(word);
+      if (variants.some(variant => source.value.includes(variant))) {
+        const whole = variants.some(variant => source.value === variant);
         const weight = whole ? WHOLE : SUBSTRING;
         const beforeCount = previous.count[j - 1]!;
         const candidate = previous.score[j - 1]! - GAP * queryGap + weight;

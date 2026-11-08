@@ -17,12 +17,7 @@ export function stageWebData(sourcePath: string, stagePath: string): void {
   rmSync(stage, { recursive: true, force: true });
   mkdirSync(stage, { recursive: true });
   cpSync(source, path.join(stage, 'data'), { recursive: true });
-  // Search remains in source and build:data, but is deliberately not wired
-  // into this reader/menu release. Avoid staging unused generated shards;
-  // restoring the search UI must also include them in the Vite runtime output.
-  rmSync(path.join(stage, 'data', 'search-index.json'), { force: true });
-  rmSync(path.join(stage, 'data', 'search'), { recursive: true, force: true });
-  console.log(`Staged reader/menu runtime data in ${stage}/data (search deferred)`);
+  console.log(`Staged reader and search runtime data in ${stage}/data`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

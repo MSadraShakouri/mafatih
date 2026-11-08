@@ -29,7 +29,19 @@ test('Capacitor backButton listener drives history, direct-link fallbacks, and r
   await expect(page.locator('main[data-screen="reader"]')).toBeVisible();
   await page.waitForFunction(() => typeof (window as unknown as { __testBack?: unknown }).__testBack === 'function');
   const press = (canGoBack: boolean) => page.evaluate(value => (window as unknown as { __testBack: (e: { canGoBack: boolean }) => void }).__testBack({ canGoBack: value }), canGoBack);
+  await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();
+  const query = page.getByRole('searchbox', { name: 'جست‌وجو در این متن' });
+  await expect(query).toBeFocused();
+  await press(true); await expect(query).not.toBeFocused(); await expect(query).toBeVisible();
+  await press(true); await expect(page.getByRole('button', { name: 'جست‌وجو در متن' })).toBeVisible();
+  await expect.poll(() => page.evaluate(() => Boolean(history.state?.__mafatihNavigation?.readerSearch))).toBe(false);
   await press(true); await expect(page.locator('.library-name')).toHaveText(['فهرست مفاتیح', 'نشان‌های من']);
+  const global = page.getByRole('searchbox', { name: 'جست‌وجو در فهرست و متن' });
+  await global.fill('الله'); await expect(global).toBeFocused();
+  await press(false); await expect(global).not.toBeFocused();
+  await expect(global).toHaveValue('الله');
+  await expect.poll(() => page.evaluate(() => (window as unknown as { __nativeCalls: string[] }).__nativeCalls)).toEqual([]);
+  await global.fill(''); await global.blur();
   await press(false);
   await expect.poll(() => page.evaluate(() => (window as unknown as { __nativeCalls: string[] }).__nativeCalls)).toEqual(['minimizeApp']);
 

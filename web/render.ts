@@ -14,6 +14,7 @@ export function titleText(title: Title, fallback: string): { text: string; lang:
 export interface RenderActions {
   back(fallback: string): void;
   openSettings(itemId: string): void;
+  toggleReaderSearch(itemId: string): void;
 }
 
 function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
@@ -60,7 +61,9 @@ export function makeHeader(title: string, mode: 'library' | 'reader' | 'settings
   if (mode === 'reader' && options.itemId) {
     right.append(iconButton('bookmark', 'نشان شخصی', unavailable, true));
     left.append(iconButton('scroll', 'پیمایش خودکار', unavailable, true));
-    left.append(iconButton('search', 'جست‌وجو در متن', unavailable, true));
+    const search = iconButton('search', 'جست‌وجو در متن', () => actions.toggleReaderSearch(options.itemId!));
+    search.dataset.readerSearch = '';
+    left.append(search);
     left.append(iconButton('settings', 'تنظیمات متن', () => actions.openSettings(options.itemId!)));
   } else if (options.backFallback) {
     right.append(iconButton('back', mode === 'settings' ? 'بازگشت به دعا' : 'بازگشت به فهرست',
@@ -88,16 +91,9 @@ function menuLink(title: string, href: string, id: string, bookmark = false): HT
   return link;
 }
 
-/** The search shell deliberately does not import or instantiate the search engine. */
-function searchPlaceholder(): HTMLElement {
-  const wrap = element('div', 'library-search');
-  const input = element('input');
-  input.type = 'search';
-  input.disabled = true;
-  input.placeholder = 'جست‌وجو در فهرست و متن — به‌زودی';
-  input.setAttribute('aria-label', 'جست‌وجو در فهرست و متن — به‌زودی');
-  wrap.append(input);
-  return wrap;
+/** Search attaches here only on the home screen; its worker remains lazy. */
+function searchSlot(): HTMLElement {
+  return element('div', 'library-search-slot');
 }
 
 export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'library' | 'contents' | 'bookmarks' }>, actions: RenderActions): HTMLElement {
@@ -121,7 +117,7 @@ export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'l
   list.setAttribute('aria-label', 'فهرست');
   list.dataset.contents = '';
   if (home) {
-    content.append(searchPlaceholder());
+    content.append(searchSlot());
     list.append(menuLink('فهرست مفاتیح', '#/contents', '__contents__'));
     // One personal bookmark entry is always last. It is not a featured list.
     list.append(menuLink('نشان‌های من', '#/bookmarks', '__bookmarks__', true));
@@ -151,7 +147,10 @@ export function renderItem(item: ReaderItem, actions: RenderActions): HTMLElemen
   main.dataset.screen = 'reader';
   main.dataset.itemId = item.id;
   const title = titleText(item.title, item.id);
-  main.append(makeHeader(title.text, 'reader', actions, { itemId: item.id }));
+  const header = makeHeader(title.text, 'reader', actions, { itemId: item.id });
+  const heading = header.querySelector('h1');
+  if (heading) { heading.lang = title.lang; heading.dir = title.dir; }
+  main.append(header);
   const content = element('div', 'content');
   const article = element('article', 'reader');
   article.setAttribute('aria-label', title.text);

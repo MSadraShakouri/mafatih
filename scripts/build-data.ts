@@ -7,7 +7,7 @@ import type { SearchIndex, SearchRecord } from '../src/search.js';
 import type { NavNode } from '../src/schema.js';
 
 export interface BuildDataOptions {
-  /** The standalone search builder keeps this on; the current UI does not use it. */
+  /** Include the search index and shards (default true). */
   includeSearch?: boolean;
   root?: string;
   /** Preserve validation warnings when the caller is building the app. */
@@ -33,10 +33,17 @@ export function buildData(options: BuildDataOptions = {}): void {
     // Source-page audio menus accidentally imported as Persian text remain in
     // canonical data/history but are not prayer rows or searchable content.
     const excludedAudioRows=item.rows.filter(r=>r.kind==='audio-reciter').length;
-    const rows=item.rows.filter(r=>r.kind!=='audio-reciter').map(r=>({id:r.id,ar:text(c,r.ar),fa:text(c,r.fa),...(r.kind?{kind:r.kind}:{}),...(r.sources?{sources:r.sources}:{})}));
+    // Record adjacency before filtering audio: local in-text search must not
+    // join across an excluded source row. The canonical data stays unchanged.
+    const rows=item.rows.flatMap((r,position)=>{
+      if(r.kind==='audio-reciter')return [];
+      const following=item.rows[position+1];
+      return [{id:r.id,ar:text(c,r.ar),fa:text(c,r.fa),...(r.kind?{kind:r.kind}:{}),...(r.sources?{sources:r.sources}:{}),
+        ...(following&&following.kind!=='audio-reciter'?{searchNext:following.id}:{})}];
+    });
     catalog.push({id,title,category:item.category,...(item.quran?{quran:item.quran}:{}),tags,featured:featured.has(id),row_count:rows.length,
       excluded_audio_rows:excludedAudioRows,alignment_claim:item.legacy_alignment, titles_reviewed:Boolean(item.review?.titles),english:links});
-    write(`items/${id}.json`,{id,legacy_id:item.legacy_id,title,category:item.category,...(item.quran?{quran:item.quran}:{}),tags,
+    write(`items/${id}.json`,{id,legacy_id:item.legacy_id,title,featured:featured.has(id),category:item.category,...(item.quran?{quran:item.quran}:{}),tags,
       alignment_claim:item.legacy_alignment,ar_fa_reviewed:Boolean(item.review?.ar_fa),sources:item.sources??{},excluded_audio_rows:excludedAudioRows,rows,english:links,
       reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});
     // Each source field remains a separate OR result. Link only an immediately

@@ -2,9 +2,11 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { loadCorpus, text } from '../src/corpus.js';
 import { normalizeSearch } from '../src/normalize.js';
+import { approvedLamPairs, wordVariants } from '../src/lam-aliases.js';
 import { IncrementalSearch, searchWords, type SearchLanguage, type SearchRecord, type SearchRequest } from '../src/search.js';
 import { findOriginalMatches } from '../src/search-text.js';
 import type { NavNode } from '../src/schema.js';
+import { protectedLamPairs } from './fixtures/search-protected-lam.js';
 
 /** An independent, deliberately simple test oracle built from original text. */
 interface ReferenceText { simple: string; groups: string[][] }
@@ -107,7 +109,10 @@ function runCases(records: SearchRecord[], cases: Case[]): void {
       if (example.item && record.item !== example.item) continue;
       if (record.section === 'text' && !languages.includes(record.language as SearchLanguage)) continue;
       const value = referenceByText.get(record.text)!;
-      const matches = referenceWords.map(word => ({ word, kind: referenceMatch(value, word) })).filter(match => match.kind);
+      const matches = referenceWords.map(word => {
+        const kinds = wordVariants(word).map(variant => referenceMatch(value, variant));
+        return { word, kind: kinds.includes('direct') ? 'direct' : kinds.includes('spaced') ? 'spaced' : undefined };
+      }).filter(match => match.kind);
       if (matches.length) expected[record.section].push({ key: record.key, words: matches.map(match => match.word),
         direct: matches.filter(match => match.kind === 'direct').length, featured: record.featured, language: record.language, order: record.order });
     }
@@ -132,7 +137,7 @@ function runCases(records: SearchRecord[], cases: Case[]): void {
         assert.ok(got.relevance.score > 0, `${example.query}: matched hit ${want.key} has no relevance score`);
         // Every sampled anchor term still maps to unchanged original text.
         if (i < 10) for (const word of got.matchedWords) {
-          const spans = findOriginalMatches(got.record.text, [word]);
+          const spans = findOriginalMatches(got.record.text, [...wordVariants(word)]);
           assert.ok(spans.length, `${example.query}: missing highlight in ${want.key} for ${word}`);
           assert.ok(spans.every(span => span.start >= 0 && span.end <= got.record.text.length && span.start < span.end));
         }
@@ -207,4 +212,41 @@ test('seeded real-word fragments and changing query scopes remain consistent', (
       ...(i % 7 === 0 && source.item ? { item: source.item } : {}) });
   }
   runCases(sample, cases);
+});
+
+
+// This deliberately independent corpus check is slower than the normal suite.
+// It compares both directions of all approved aliases to the union of the two
+// unexpanded reference searches, not to the engine's own alias implementation.
+test('all approved lam pairs equal the old two-search union across the full corpus',
+  { skip: process.env.MAFATIH_FULL_LAM_ORACLE !== '1' }, () => {
+  assert.equal(approvedLamPairs.length, 58);
+  const records = corpusRecords();
+  const refs = records.map(record => referenceText(record.text));
+  const engine = new IncrementalSearch(records, 128);
+  let id = 0;
+  for (const { one, two } of approvedLamPairs) {
+    const expected = new Set(records.flatMap((record, i) =>
+      referenceMatch(refs[i]!, one) || referenceMatch(refs[i]!, two) ? [record.key] : []));
+    for (const query of [one, two]) {
+      let snapshot = engine.begin({ id: ++id, query, languages: ['ar', 'fa'],
+        tocLimit: 0, textLimit: 0, resultLimit: records.length });
+      while (!snapshot.complete) snapshot = engine.advance(5000);
+      const actual = new Set(snapshot.results.map(hit => hit.record.key));
+      assert.equal(actual.size, snapshot.results.length, `${query}: deduplicated`);
+      assert.deepEqual([...actual].filter(key => !expected.has(key)), [], `${query}: extra`);
+      assert.deepEqual([...expected].filter(key => !actual.has(key)), [], `${query}: missing`);
+      assert.ok(snapshot.results.every(hit => hit.matchedWords.length === 1 && hit.matchedWords[0] === query), `${query}: one logical term`);
+    }
+  }
+  // The explicit Allah-name candidates are not expanded in either direction.
+  assert.equal(protectedLamPairs.length, 24);
+  for (const query of ['اله', 'الله', ...protectedLamPairs.flatMap(pair => [pair.one, pair.two])]) {
+    const expected = new Set(records.flatMap((record, i) => referenceMatch(refs[i]!, query) ? [record.key] : []));
+    let snapshot = engine.begin({ id: ++id, query, languages: ['ar','fa'], tocLimit: 0, textLimit: 0, resultLimit: records.length });
+    while (!snapshot.complete) snapshot = engine.advance(5000);
+    const actual = new Set(snapshot.results.map(hit => hit.record.key));
+    assert.deepEqual([...actual].filter(key => !expected.has(key)), [], `${query}: protected extra`);
+    assert.deepEqual([...expected].filter(key => !actual.has(key)), [], `${query}: protected missing`);
+  }
 });

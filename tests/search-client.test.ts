@@ -79,3 +79,33 @@ test('worker batches are smaller for multiple sequence positions, including repe
   assert.equal(searchBatchSize('الله الله'), 450);
   assert.equal(searchBatchSize('   '), 450);
 });
+
+test('reader preparation starts only the item engine, not the full library index', async t => {
+  install(t);
+  const client = new SearchClient(new URL('https://example.test/'));
+  const item = { id: 'dua-kumayl', title: { ar: '', fa: '', en: '' }, rows: [{ id: 'r1', ar: 'يا رب', fa: '' }] };
+  client.prepareItem(item);
+  const worker = FakeWorker.instances[0]!;
+  assert.deepEqual(worker.sent.map(message => message.type), ['prepare-item']);
+  client.search({ ...request('رب'), item: item.id }, () => {}, () => assert.fail('unexpected error'));
+  await delay(80);
+  assert.deepEqual(worker.sent.map(message => message.type), ['prepare-item', 'search']);
+  client.prepareGlobal(); client.prepareGlobal();
+  assert.deepEqual(worker.sent.map(message => message.type), ['prepare-item', 'search', 'init']);
+  client.cancel();
+});
+
+test('a failed reader worker is rebuilt with the same prepared item on retry', async t => {
+  install(t);
+  const client = new SearchClient(new URL('https://example.test/'));
+  const item = { id: 'dua-kumayl', title: { ar: '', fa: '', en: '' }, rows: [] };
+  client.prepareItem(item);
+  let failures = 0;
+  client.search({ ...request('رب'), item: item.id }, () => {}, () => { failures++; });
+  FakeWorker.instances[0]!.emit('error', {});
+  assert.equal(failures, 1);
+  client.search({ ...request('رب'), item: item.id }, () => {}, () => assert.fail('unexpected retry error'));
+  await delay(80);
+  assert.deepEqual(FakeWorker.instances[1]!.sent.map(message => message.type), ['prepare-item', 'search']);
+  client.cancel();
+});

@@ -32,11 +32,14 @@ export interface ItemRow {
   ar: string;
   fa: string;
   kind?: string;
+  /** Next original source row, absent across an excluded audio row. */
+  searchNext?: string;
 }
 
 export interface ReaderItem {
   id: string;
   title: Title;
+  featured?: boolean;
   rows: ItemRow[];
 }
 
@@ -50,6 +53,7 @@ export type FetchJson = (url: URL) => Promise<Response>;
 
 export class DataClient {
   private catalogPromise: Promise<Catalog> | undefined;
+  private readonly items = new Map<string, Promise<ReaderItem>>();
 
   constructor(
     private readonly base: URL,
@@ -76,6 +80,15 @@ export class DataClient {
 
   item(id: string): Promise<ReaderItem> {
     if (!isItemId(id)) return Promise.reject(new Error('Invalid item ID'));
-    return this.read<ReaderItem>(`items/${id}.json`);
+    const cached = this.items.get(id);
+    if (cached) { this.items.delete(id); this.items.set(id, cached); return cached; }
+    const pending = this.read<ReaderItem>(`items/${id}.json`).catch((error: unknown) => {
+      if (this.items.get(id) === pending) this.items.delete(id);
+      throw error;
+    });
+    this.items.set(id, pending);
+    // Avoid keeping the whole book in memory while making Back/settings quick.
+    while (this.items.size > 8) this.items.delete(this.items.keys().next().value!);
+    return pending;
   }
 }

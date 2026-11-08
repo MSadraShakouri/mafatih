@@ -1,5 +1,6 @@
 import { normalizeSearch } from '../src/normalize.js';
 import type { SearchRequest, SearchSnapshot } from '../src/search.js';
+import type { ReaderItem } from './data.js';
 
 /** Bound more expensive multi-position scoring more tightly between worker yields. */
 export function searchBatchSize(query: string): number {
@@ -8,6 +9,7 @@ export function searchBatchSize(query: string): number {
 
 export type SearchWorkerRequest =
   | { type: 'init'; indexUrl: string }
+  | { type: 'prepare-item'; item: ReaderItem }
   | { type: 'search'; request: SearchRequest }
   | { type: 'cancel' };
 

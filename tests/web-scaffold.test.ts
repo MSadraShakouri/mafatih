@@ -40,6 +40,7 @@ test('the same client resolves local data at the site root and a Pages subpath',
     await client.catalog();
     await client.catalog(); // reusable promise, not a second request
     await client.item('dua-kumayl');
+    await client.item('dua-kumayl'); // recently visited items are cached
     await assert.rejects(client.item('../secret'), /Invalid item ID/);
     assert.deepEqual(calls, [`${base}data/catalog.json`, `${base}data/items/dua-kumayl.json`]);
   }
@@ -70,8 +71,8 @@ test('web staging contains only runtime data and refuses overlapping directories
     writeFileSync(path.join(root, 'private-review.txt'), 'not for the web');
     stageWebData(source, stage);
     assert.equal(readFileSync(path.join(stage, 'data', 'items', 'sample.json'), 'utf8'), '{"id":"sample"}');
-    assert.equal(existsSync(path.join(stage, 'data', 'search')), false);
-    assert.equal(existsSync(path.join(stage, 'data', 'search-index.json')), false);
+    assert.equal(readFileSync(path.join(stage, 'data', 'search', '000.json'), 'utf8'), '{"records":[]}');
+    assert.equal(readFileSync(path.join(stage, 'data', 'search-index.json'), 'utf8'), '{"version":4}');
     assert.equal(existsSync(path.join(source, 'search', '000.json')), true);
     assert.equal(existsSync(path.join(stage, 'private-review.txt')), false);
     assert.throws(() => stageWebData(source, source), /must not overlap/);

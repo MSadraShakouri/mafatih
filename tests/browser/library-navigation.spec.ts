@@ -3,14 +3,14 @@ import { expect, test } from '@playwright/test';
 const homeNames = ['فهرست مفاتیح', 'نشان‌های من'];
 const topicNames = ['ادعیه', 'اعمال', 'زیارات', 'نمازها و تعقیبات', 'قرآن', 'سایر مطالب', 'فهرست منتخب'];
 
-test('home and topic screens use stationary centered headers; placeholder features remain visible', async ({ page }) => {
+test('home and topic screens use stationary centered headers; search loads lazily', async ({ page }) => {
   const searchRequests: string[] = [], workers: string[] = [];
   page.on('request', request => { if (/\/data\/search(?:\/|-index)/.test(request.url())) searchRequests.push(request.url()); });
   page.on('worker', worker => workers.push(worker.url()));
   await page.setViewportSize({ width: 390, height: 844 }); await page.goto('./');
   await expect(page.locator('.library-name')).toHaveText(homeNames);
-  const search = page.getByRole('searchbox', { name: 'جست‌وجو در فهرست و متن — به‌زودی' });
-  await expect(search).toBeVisible(); await expect(search).toBeDisabled(); await expect(search).not.toBeFocused();
+  const search = page.getByRole('searchbox', { name: 'جست‌وجو در فهرست و متن' });
+  await expect(search).toBeVisible(); await expect(search).toBeEnabled(); await expect(search).not.toBeFocused();
   await expect(page.locator('header button')).toHaveCount(0);
   const center = async () => page.locator('header h1').evaluate(e => { const r = e.getBoundingClientRect(); return r.x + r.width / 2; });
   const homeCenter = await center(); expect(homeCenter).toBeCloseTo(195, 1);
@@ -41,11 +41,12 @@ test('real prayer, Quran, other, and featured entries navigate without simulated
   await page.getByRole('link', { name: 'فصل ششم: بیان بعضی از دعاهای مشهور' }).click();
   await page.getByRole('link', { name: 'دعای کمیل بن زیاد' }).click();
   await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', 'dua-kumayl');
-  for (const label of ['نشان شخصی', 'پیمایش خودکار', 'جست‌وجو در متن']) {
+  for (const label of ['نشان شخصی', 'پیمایش خودکار']) {
     const control = page.getByRole('button', { name: label }); await expect(control).toBeVisible(); await expect(control).toHaveAttribute('aria-disabled', 'true');
   }
+  await expect(page.getByRole('button', { name: 'جست‌وجو در متن' })).not.toHaveAttribute('aria-disabled', 'true');
   await page.getByRole('button', { name: 'نشان شخصی' }).click({ force: true });
-  await expect(page.getByRole('status')).toContainText('هنوز فعال نشده است');
+  await expect(page.locator('.inline-message')).toContainText('هنوز فعال نشده است');
   await page.evaluate(() => history.back());
   await expect(page.getByRole('link', { name: 'دعای کمیل بن زیاد' })).toBeVisible();
   await page.goto('./#/contents/quran');
