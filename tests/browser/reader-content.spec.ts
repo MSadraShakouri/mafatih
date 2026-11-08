@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 for (const item of ['dua-kumayl', 'item-mqdmh', 'ziyarat-warith']) {
-  test(`reader keeps every runtime row and its exact text in source order: ${item}`, async ({ page, request }) => {
+  test(`reader keeps every runtime row and source order with display-only digit localization: ${item}`, async ({ page, request }) => {
     const response = await request.get(`./data/items/${item}.json`);
     expect(response.ok()).toBe(true);
     const data = await response.json() as { rows: { id: string; ar: string; fa: string; kind?: string }[] };
@@ -13,6 +13,9 @@ for (const item of ['dua-kumayl', 'item-mqdmh', 'ziyarat-warith']) {
       fa: element.querySelector('p[lang="fa"]')?.textContent ?? '',
       kind: (element as HTMLElement).dataset.kind,
     })));
-    expect(rendered).toEqual(data.rows.map(({ id, ar, fa, kind }) => ({ id, ar, fa, kind })));
+    const display = (text: string) => text.replace(/[0-9٠-٩]/gu, digit => '۰۱۲۳۴۵۶۷۸۹'['٠١٢٣٤٥٦٧٨٩'.includes(digit) ? '٠١٢٣٤٥٦٧٨٩'.indexOf(digit) : Number(digit)]!);
+    expect(rendered).toEqual(data.rows.map(({ id, ar, fa, kind }) => ({ id, ar: display(ar), fa: display(fa), kind })));
+    // Runtime/canonical strings are not rewritten by display.
+    expect(await response.json()).toEqual(data);
   });
 }

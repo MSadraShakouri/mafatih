@@ -1,4 +1,4 @@
-import { codePointToUtf16Offset, utf16ToCodePointOffset } from './text-offset.js';
+import { codePointToUtf16Offset, textOffset, textRange, utf16ToCodePointOffset } from './text-offset.js';
 
 /** A visual position in one actual row field, not an inferred translation pair. */
 export interface VisibleReaderPosition {
@@ -32,32 +32,31 @@ function codePointBoundary(text: string, offset: number): number {
   return position;
 }
 
-function rangeRect(node: Text, offset: number): DOMRect | undefined {
-  const range = document.createRange();
-  const position = codePointBoundary(node.data, offset);
-  range.setStart(node, position);
-  range.collapse(true);
+function rangeRect(paragraph: HTMLElement, offset: number): DOMRect | undefined {
+  const text = paragraph.textContent ?? '';
+  const position = codePointBoundary(text, offset);
+  let range = textRange(paragraph, position);
+  if (!range) return undefined;
   let rect = range.getBoundingClientRect();
-  if (!rect.height && node.length) {
-    const next = position < node.length ? position + (node.data.codePointAt(position)! > 0xffff ? 2 : 1) : position;
-    const previous = Array.from(node.data.slice(0, position)).at(-1);
-    const start = position < node.length ? position : position - (previous?.length ?? 0);
-    range.setStart(node, start);
-    range.setEnd(node, next);
-    rect = range.getBoundingClientRect();
+  if (!rect.height && text.length) {
+    const next = position < text.length ? position + (text.codePointAt(position)! > 0xffff ? 2 : 1) : position;
+    const previous = Array.from(text.slice(0, position)).at(-1);
+    const start = position < text.length ? position : position - (previous?.length ?? 0);
+    range = textRange(paragraph, start, next);
+    if (range) rect = range.getBoundingClientRect();
   }
   return rect.height ? rect : undefined;
 }
 
 /** Fallback for browsers without a caret-from-point API. */
-function closestLineOffset(node: Text, targetY: number): number {
-  const points = Array.from(node.data);
+function closestLineOffset(paragraph: HTMLElement, targetY: number): number {
+  const points = Array.from(paragraph.textContent ?? '');
   const offsets = [0];
   for (const point of points) offsets.push(offsets[offsets.length - 1]! + point.length);
   let low = 0, high = points.length;
   while (low < high) {
     const middle = Math.floor((low + high) / 2);
-    const rect = rangeRect(node, offsets[middle]!);
+    const rect = rangeRect(paragraph, offsets[middle]!);
     if (rect && rect.bottom < targetY) low = middle + 1;
     else high = middle;
   }
@@ -83,10 +82,10 @@ export function captureVisibleReaderPosition(main: HTMLElement): VisibleReaderPo
     const box = paragraph.getBoundingClientRect();
     if (box.top >= window.innerHeight) break;
     if (box.height <= 0) continue;
-    const node = paragraph.firstChild;
+    const text = paragraph.textContent ?? '';
     const row = paragraph.closest<HTMLElement>('[data-row-id]')?.dataset.rowId;
     const language = paragraph.lang;
-    if (!(node instanceof Text) || !row || (language !== 'ar' && language !== 'fa')) continue;
+    if (!text || !row || (language !== 'ar' && language !== 'fa')) continue;
     const x = Math.max(1, Math.min(window.innerWidth - 1, box.right - 8));
     const y = Math.max(1, Math.min(window.innerHeight - 1, Math.max(box.top + 1, targetY)));
     const caretDocument = document as unknown as CaretDocument;
@@ -94,10 +93,11 @@ export function captureVisibleReaderPosition(main: HTMLElement): VisibleReaderPo
     const range = caret ? null : caretDocument.caretRangeFromPoint?.(x, y);
     const caretNode = caret?.offsetNode ?? range?.startContainer;
     const caretOffset = caret?.offset ?? range?.startOffset;
-    const offset = codePointBoundary(node.data, caretNode === node && caretOffset !== undefined ? caretOffset : closestLineOffset(node, y));
-    const rect = rangeRect(node, offset);
+    const nestedOffset = caretNode && caretOffset !== undefined ? textOffset(paragraph, caretNode, caretOffset) : undefined;
+    const offset = codePointBoundary(text, nestedOffset ?? closestLineOffset(paragraph, y));
+    const rect = rangeRect(paragraph, offset);
     if (!rect) continue;
-    return { row, language, offset: utf16ToCodePointOffset(node.data, offset), viewportTop: rect.top };
+    return { row, language, offset: utf16ToCodePointOffset(text, offset), viewportTop: rect.top };
   }
   return undefined;
 }
@@ -107,9 +107,8 @@ export function restoreVisibleReaderPosition(main: HTMLElement, position: Visibl
   if (!position || !main.isConnected) return;
   const row = [...main.querySelectorAll<HTMLElement>('[data-row-id]')].find(element => element.dataset.rowId === position.row);
   const paragraph = row?.querySelector<HTMLParagraphElement>(`p[lang="${position.language}"]`);
-  const node = paragraph?.firstChild;
-  if (!(node instanceof Text)) return;
-  const rect = rangeRect(node, codePointToUtf16Offset(node.data, position.offset));
+  if (!paragraph) return;
+  const rect = rangeRect(paragraph, codePointToUtf16Offset(paragraph.textContent ?? '', position.offset));
   if (rect) {
     const desiredTop = Math.min(position.viewportTop, Math.max(0, window.innerHeight - 32));
     window.scrollBy({ top: rect.top - desiredTop, behavior: 'auto' });

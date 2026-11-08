@@ -22,6 +22,8 @@ body,body * {-webkit-user-select:none;user-select:none;-webkit-touch-callout:non
 button,input {font:inherit;color:inherit}
 /* Source Arabic, including reader and search snippets, is bold; Persian is unchanged. */
 [lang='ar'] {font-weight:700}
+/* Numeric end-of-ayah markers alone remain normal weight. */
+.quran-verse-marker {font-weight:400}
 button,a {cursor:pointer}
 button:focus:not(:focus-visible),a:focus:not(:focus-visible) {outline:0}
 button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:2px solid var(--gold);outline-offset:2px}

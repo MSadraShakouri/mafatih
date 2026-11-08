@@ -241,23 +241,24 @@ test('outside clicks dismiss overlays without swallowing header and input action
   await openReader(page);
   const input = page.getByRole('searchbox', { name: readerInput });
   await page.locator('.result-head span').click(); await expect(page.locator('.result-popover')).toBeVisible();
-  await input.click(); await expect(page.locator('.result-popover')).toBeHidden();
+  await input.click(); await expect(page.locator('.result-popover')).toBeVisible();
   await expect(input).toBeFocused();
-  await page.waitForTimeout(400); await expect(page.locator('.result-popover')).toBeHidden();
+  await page.waitForTimeout(400); await expect(page.locator('.result-popover')).toBeVisible();
   await input.fill('رحمت'); await expect(page.locator('.result-popover')).toBeVisible({ timeout: 40_000 });
   await page.getByRole('button', { name: 'نشان شخصی' }).click({ force: true });
-  await expect(page.locator('.result-popover')).toBeHidden();
+  await expect(page.locator('.result-popover')).toBeVisible();
   await expect(page.locator('.inline-message')).toContainText('هنوز فعال نشده است');
   expect((await page.locator('.app-header').boundingBox())!.height).toBe(49);
   await page.waitForTimeout(2500);
-  await page.locator('.result-reopen').click(); await expect(page.locator('.result-popover')).toBeVisible();
+  await expect(page.locator('.result-popover')).toBeVisible();
   await page.getByRole('button', { name: 'گزینه‌های زبان' }).click();
   await expect(page.locator('.filter-menu')).toBeVisible(); await expect(page.locator('.result-popover')).toBeHidden();
   await page.locator('article.reader').click({ position: { x: 8, y: 470 }, force: true });
   await expect(page.locator('.filter-menu')).toBeHidden(); await expect(page.locator('.result-reopen')).toBeVisible();
   await page.locator('.result-reopen').click(); await expect(page.locator('.result-popover')).toBeVisible();
   await page.getByRole('button', { name: 'پاک کردن جست‌وجو' }).click();
-  await expect(input).toHaveValue(''); await expect(page.locator('.result-popover')).toBeHidden();
+  await expect(input).toHaveValue(''); await expect(page.locator('.result-popover')).toBeVisible();
+  await expect(page.locator('.result-empty')).toContainText('واژه‌ای بنویسید');
 });
 
 test('dark mode retains the chosen gold marks and IME composition is not submitted', async ({ page }) => {

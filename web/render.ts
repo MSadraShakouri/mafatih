@@ -1,3 +1,4 @@
+import { appendDisplayText, displayDigits } from './display-text.js';
 import type { Catalog, ReaderItem, Title } from './data.js';
 import { ICONS, type IconName } from './icons.js';
 import { itemHref, settingsHref, topicHref, type Route } from './routes.js';
@@ -5,8 +6,8 @@ import { readerBlocks, readerTextRole } from './reader-blocks.js';
 import { TOPICS, topicNodeTitle, topicNodes } from './topic-navigation.js';
 
 export function titleText(title: Title, fallback: string): { text: string; lang: string; dir: 'rtl' | 'ltr' } {
-  if (title.fa) return { text: title.fa, lang: 'fa', dir: 'rtl' };
-  if (title.ar) return { text: title.ar, lang: 'ar', dir: 'rtl' };
+  if (title.fa) return { text: displayDigits(title.fa, 'fa'), lang: 'fa', dir: 'rtl' };
+  if (title.ar) return { text: displayDigits(title.ar, 'ar'), lang: 'ar', dir: 'rtl' };
   if (title.en) return { text: title.en, lang: 'en', dir: 'ltr' };
   return { text: fallback, lang: 'en', dir: 'ltr' };
 }
@@ -70,8 +71,8 @@ export function makeHeader(title: string, mode: 'library' | 'reader' | 'settings
       () => actions.back(options.backFallback!)));
   }
   const titleBox = element('div', 'header-title');
-  const heading = element('h1', '', title);
-  heading.title = title;
+  const heading = element('h1', '', displayDigits(title, 'ui'));
+  heading.title = displayDigits(title, 'ui');
   titleBox.append(heading);
   inner.append(right, titleBox, left);
   header.append(inner, status);
@@ -86,7 +87,7 @@ function menuLink(title: string, href: string, id: string, bookmark = false): HT
     link.classList.add('bookmark-entry');
     link.append(icon('bookmark'));
   }
-  link.append(element('span', 'library-name', title));
+  link.append(element('span', 'library-name', displayDigits(title, 'ui')));
   const arrow = icon('next'); arrow.classList.add('item-arrow'); link.append(arrow);
   return link;
 }
@@ -154,10 +155,11 @@ export function renderItem(item: ReaderItem, actions: RenderActions): HTMLElemen
     }
     for (const [language, value] of [['ar', row.ar], ['fa', row.fa]] as const) {
       if (!value) continue;
-      const paragraph = element('p', language, value);
+      const paragraph = element('p', language);
+      appendDisplayText(paragraph, value, language);
       paragraph.lang = language; paragraph.dir = 'rtl';
       paragraph.dataset.textRole = readerTextRole(row, language);
-      // Source text remains text, never markup or a synthesized translation.
+      // Marker spans and Persian digits are display only; source wording and offsets remain intact.
       block.append(paragraph);
     }
     article.append(block);

@@ -1,4 +1,4 @@
-import { codePointToUtf16Offset } from './text-offset.js';
+import { codePointToUtf16Offset, textRange } from './text-offset.js';
 import type { ReadingAnchor } from './routes.js';
 
 /** Go to the actual matched line, leaving the reader text completely unmarked. */
@@ -7,12 +7,9 @@ export function scrollToReadingAnchor(main: HTMLElement, anchor: ReadingAnchor):
     .find(element => element.dataset.rowId === anchor.row);
   const paragraph = row?.querySelector<HTMLParagraphElement>(`p[lang="${anchor.language}"]`);
   if (!paragraph) return false;
-  const first = paragraph.firstChild;
-  if (first?.nodeType === Node.TEXT_NODE) {
-    const range = document.createRange();
-    const offset = codePointToUtf16Offset(first.textContent ?? '', anchor.offset);
-    range.setStart(first, offset);
-    range.collapse(true);
+  const offset = codePointToUtf16Offset(paragraph.textContent ?? '', anchor.offset);
+  const range = textRange(paragraph, offset);
+  if (range) {
     const bounds = range.getBoundingClientRect();
     if (bounds.height || bounds.width) {
       // Keep the actual matched line below the sticky 48px reader header.

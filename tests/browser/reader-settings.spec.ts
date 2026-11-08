@@ -17,18 +17,23 @@ async function visibleLine(page: Page): Promise<LineMarker> {
     const box = paragraph.getBoundingClientRect();
     const caret = document.caretPositionFromPoint(Math.max(1, Math.min(innerWidth - 1, box.right - 8)),
       Math.max(1, Math.min(innerHeight - 1, Math.max(box.top + 1, targetY))));
-    if (!caret || caret.offsetNode !== paragraph.firstChild) throw Error('Reference caret did not hit reader text');
+    if (!caret || !paragraph.contains(caret.offsetNode)) throw Error('Reference caret did not hit reader text');
+    const prefix = document.createRange(); prefix.selectNodeContents(paragraph); prefix.setEnd(caret.offsetNode, caret.offset);
     const range = document.createRange(); range.setStart(caret.offsetNode, caret.offset); range.collapse(true);
     return { row: paragraph.closest<HTMLElement>('[data-row-id]')!.dataset.rowId!, language: paragraph.lang,
-      offset: caret.offset, top: range.getBoundingClientRect().top };
+      offset: prefix.toString().length, top: range.getBoundingClientRect().top };
   });
 }
 async function lineTop(page: Page, marker: LineMarker): Promise<number> {
   return page.evaluate(({ row, language, offset }) => {
     const paragraph = [...document.querySelectorAll<HTMLElement>('article [data-row-id]')]
       .find(element => element.dataset.rowId === row)?.querySelector<HTMLParagraphElement>(`p[lang="${language}"]`);
-    if (!paragraph?.firstChild) throw Error('Reference line was removed');
-    const range = document.createRange(); range.setStart(paragraph.firstChild, offset); range.collapse(true);
+    if (!paragraph) throw Error('Reference line was removed');
+    const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+    let remaining = offset, node: Text | null;
+    while ((node = walker.nextNode() as Text | null) && remaining > node.length) remaining -= node.length;
+    if (!node) throw Error('Reference offset was removed');
+    const range = document.createRange(); range.setStart(node, remaining); range.collapse(true);
     return range.getBoundingClientRect().top;
   }, marker);
 }

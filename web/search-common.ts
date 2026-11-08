@@ -1,3 +1,4 @@
+import { appendDisplayText, displayDigits } from './display-text.js';
 import type { SearchHit, SearchLanguage } from '../src/search.js';
 import { expandedWords } from '../src/lam-aliases.js';
 import { findOriginalWordMatches, utf16ToCodePointOffset, type TextRange } from '../src/search-text.js';
@@ -16,7 +17,7 @@ export const createSearchSession = (): SearchSession => ({
   languages: new Set<SearchLanguage>(['ar']), libraryQuery: '', libraryScroll: 0, libraryLimit: 50, readerItem: '', readerQuery: '',
 });
 
-export const digits = (number: number): string => String(number).replace(/[0-9]/g, d => '۰۱۲۳۴۵۶۷۸۹'[Number(d)]!);
+export const digits = (number: number): string => displayDigits(String(number), 'ui');
 export const element = <K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] => {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -25,15 +26,8 @@ export const element = <K extends keyof HTMLElementTagNameMap>(tag: K, className
 };
 
 export function markText(parent: HTMLElement, text: string, ranges: readonly TextRange[], start = 0, end = text.length): void {
-  let cursor = start;
-  for (const range of ranges) {
-    const left = Math.max(range.start, start), right = Math.min(range.end, end);
-    if (right <= left) continue;
-    if (left > cursor) parent.append(document.createTextNode(text.slice(cursor, left)));
-    parent.append(element('mark', '', text.slice(left, right)));
-    cursor = right;
-  }
-  if (cursor < end) parent.append(document.createTextNode(text.slice(cursor, end)));
+  const language = parent.lang === 'ar' || parent.lang === 'fa' || parent.lang === 'en' ? parent.lang : 'ui';
+  appendDisplayText(parent, text, language, ranges, start, end);
 }
 
 /** An exact source substring, including its Arabic combining marks, not a whole-word highlight. */

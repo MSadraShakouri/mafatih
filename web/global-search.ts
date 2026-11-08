@@ -1,3 +1,4 @@
+import { localizeSearchInput } from './display-text.js';
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
 import { normalizeSearch } from '../src/normalize.js';
 import { utf16ToCodePointOffset } from '../src/search-text.js';
@@ -255,10 +256,12 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     });
   }
   input.addEventListener('focus', () => { ensureCatalog(); client.prepareGlobal(); });
-  input.addEventListener('input', () => {
+  input.addEventListener('input', event => {
+    if (!(event as InputEvent).isComposing) localizeSearchInput(input);
     if (normalizeSearch(input.value) !== normalizeSearch(session.libraryQuery)) limit = PAGE_SIZE;
     needsRestore = false; run();
   });
+  input.addEventListener('compositionend', () => { localizeSearchInput(input); run(); });
   clear.addEventListener('click', () => { input.value = ''; session.libraryScroll = 0; needsRestore = false; limit = PAGE_SIZE; run(); });
   more.addEventListener('click', () => { if (!searching && !searchFailed) { focusIndex = currentCount; limit += PAGE_SIZE; run(); } });
   retry.addEventListener('click', () => { catalogFailed = false; searchFailed = false; ensureCatalog(); requestKey = ''; run(); });

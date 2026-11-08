@@ -1,3 +1,4 @@
+import { appendDisplayText, displayDigits } from './display-text.js';
 import type { ReaderItem } from './data.js';
 import { ICONS } from './icons.js';
 import { makeHeader, type RenderActions } from './render.js';
@@ -15,7 +16,7 @@ const FONT_FAMILIES: Record<ReaderFont, string> = {
 const FONT_NAMES: Record<ReaderFont, string> = {
   amiri: 'امیری', 'noto-naskh': 'نوتو نسخ عربی', scheherazade: 'شهرزاد نو',
 };
-const digits = (n: number): string => String(n).replace(/[0-9]/g, digit => '۰۱۲۳۴۵۶۷۸۹'[Number(digit)]!);
+const digits = (n: number): string => displayDigits(String(n), 'ui');
 type SizeKey = 'arabicSize' | 'translationSize' | 'explanationSize';
 const labels: Record<SizeKey, string> = { arabicSize: 'متن عربی', translationSize: 'ترجمهٔ فارسی', explanationSize: 'توضیحات' };
 
@@ -95,8 +96,9 @@ export function renderReaderSettings(item: ReaderItem, example: ReaderItem | und
     const preview = el('div', 'size-preview'); preview.id = `size-preview-${key}`; preview.hidden = true;
     preview.append(el('span', 'preview-caption', `پیش‌نمایش ${labels[key]}`));
     const text = key === 'arabicSize' ? sampleRow?.ar || '' : key === 'translationSize' ? sampleRow?.fa || '' : instructionExample;
-    const paragraph = el('p', key === 'arabicSize' ? 'ar' : key === 'translationSize' ? 'fa' : 'explanation', text);
-    paragraph.dir = 'rtl'; paragraph.lang = key === 'arabicSize' ? 'ar' : 'fa'; preview.append(paragraph);
+    const paragraph = el('p', key === 'arabicSize' ? 'ar' : key === 'translationSize' ? 'fa' : 'explanation');
+    paragraph.dir = 'rtl'; paragraph.lang = key === 'arabicSize' ? 'ar' : 'fa';
+    appendDisplayText(paragraph, text, paragraph.lang as 'ar' | 'fa'); preview.append(paragraph);
     stepper.append(minus, output, plus); line.append(name, stepper); group.append(line, preview); controls.append(group);
     all.set(key, { name, minus, plus, output, preview, group });
   }
@@ -110,7 +112,7 @@ export function renderReaderSettings(item: ReaderItem, example: ReaderItem | und
     input.setAttribute('aria-label', FONT_NAMES[font]);
     const mark = el('span', 'radio-mark'); mark.setAttribute('aria-hidden', 'true');
     const fontName = el('span', 'font-name', FONT_NAMES[font]);
-    const sample = el('span', 'font-example', fontExample); sample.lang = 'ar'; sample.dir = 'rtl'; sample.style.fontFamily = `"${FONT_FAMILIES[font]}"`;
+    const sample = el('span', 'font-example'); appendDisplayText(sample, fontExample, 'ar'); sample.lang = 'ar'; sample.dir = 'rtl'; sample.style.fontFamily = `"${FONT_FAMILIES[font]}"`;
     input.addEventListener('change', () => {
       if (!input.checked) return;
       const next = store.update({ font });

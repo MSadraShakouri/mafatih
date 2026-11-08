@@ -1,3 +1,5 @@
+import { localizeSearchInput } from './display-text.js';
+import { textRange } from './text-offset.js';
 import type { ReaderItem } from './data.js';
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
 import { normalizeSearch } from '../src/normalize.js';
@@ -125,11 +127,13 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     const record = hit.record;
     const block = [...main.querySelectorAll<HTMLElement>('[data-row-id]')].find(node => node.dataset.rowId === record.row);
     const paragraph = block?.querySelector<HTMLParagraphElement>(`p[lang="${record.language}"]`);
-    const node = paragraph?.firstChild;
-    if (!paragraph || !node || node.nodeType !== Node.TEXT_NODE) return;
-    const text = node.textContent ?? '', start = Math.max(0, Math.min(text.length, range?.start ?? 0));
+    if (!paragraph) return;
+    // Display digits are one-for-one with the source, but verse markers may
+    // split the DOM into multiple text nodes. Source UTF-16 offsets still map.
+    const text = record.text, start = Math.max(0, Math.min(text.length, range?.start ?? 0));
     const end = Math.max(start, Math.min(text.length, range?.end ?? start));
-    const selection = document.createRange(); selection.setStart(node, start); selection.setEnd(node, end);
+    const selection = textRange(paragraph, start, end);
+    if (!selection) return;
     const top = window.scrollY + selection.getBoundingClientRect().top - header.getBoundingClientRect().bottom - 15;
     window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
     main.dataset.anchorRow = record.row; main.dataset.anchorOffset = String(utf16ToCodePointOffset(text, start));
@@ -241,10 +245,12 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
       live.textContent = 'بارگذاری جست‌وجو ناموفق بود.'; renderResults(); visibility();
     });
   }
-  input.addEventListener('input', () => {
+  input.addEventListener('input', event => {
+    if (!(event as InputEvent).isComposing) localizeSearchInput(input);
     if (normalizeSearch(input.value) !== normalizeSearch(session.readerQuery)) limit = PAGE_SIZE;
     listOpen = true; menuOpen = false; run();
   });
+  input.addEventListener('compositionend', () => { localizeSearchInput(input); run(); });
   input.addEventListener('focus', () => {
     if (!listOpen && !menuOpen && !errorOpen) { listOpen = true; visibility(); }
   });
