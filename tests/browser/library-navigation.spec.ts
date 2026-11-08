@@ -23,6 +23,8 @@ test('home and topic screens use stationary centered headers; search loads lazil
     expect((await node.boundingBox())!.height).toBeGreaterThanOrEqual(44);
   }
   await page.getByRole('link', { name: 'ادعیه', exact: true }).click();
+  // Topic data is loaded asynchronously; don't measure a detached old header.
+  await expect(page.getByRole('heading', { name: 'ادعیه', exact: true })).toBeVisible();
   expect(await center()).toBeCloseTo(homeCenter, 1);
   await page.getByRole('button', { name: 'بازگشت به فهرست' }).click();
   await expect(page.locator('.library-name')).toHaveText(topicNames);

@@ -5,9 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <title>مفاتیح</title>
+    <script>
+      // Match the theme store before the first paint, including a saved override.
+      (() => {
+        let mode = 'auto';
+        try { mode = localStorage.getItem('mafatih.theme.v1') || 'auto'; } catch {}
+        document.documentElement.dataset.theme = mode === 'light' || mode === 'dark'
+          ? mode : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      })();
+    </script>
+    <link rel="stylesheet" href="/web/style.css" />
   </head>
   <body>
-    <div id="app"><p role="status">در حال بارگذاری…</p></div>
+    <!-- This is the actual home UI, also cloned for later home navigations. -->
+    <div id="app"><main data-screen="library">
+      <header class="app-header library-header">
+        <div class="header-inner">
+          <div class="header-side start"></div>
+          <div class="header-title"><h1 title="مفاتیح الجنان">مفاتیح الجنان</h1></div>
+          <div class="header-side end"></div>
+        </div>
+        <div class="inline-message" role="status" hidden></div>
+      </header>
+      <div class="content library home-screen">
+        <div class="library-search-slot">
+          <section class="library-search search-widget" aria-label="جست‌وجو در مفاتیح">
+            <form class="search-form" role="search">
+              <div class="library-search-pill">
+                <input type="search" dir="rtl" autocomplete="off" maxlength="300" placeholder="جست‌وجو در فهرست و متن" aria-label="جست‌وجو در فهرست و متن" />
+                <button class="search-clear" type="button" aria-label="پاک کردن جست‌وجو" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg></button>
+              </div>
+            </form>
+          </section>
+        </div>
+        <nav class="library-list" aria-label="فهرست" data-contents>
+          <a class="library-item" href="#/contents" data-menu-id="__contents__"><span class="library-name">فهرست مفاتیح</span><span class="symbol item-arrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg></span></a>
+          <a class="library-item bookmark-entry" href="#/bookmarks" data-menu-id="__bookmarks__"><span class="symbol"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" /></svg></span><span class="library-name">نشان‌های من</span><span class="symbol item-arrow"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg></span></a>
+        </nav>
+      </div>
+    </main></div>
     <script type="module" src="/web/main.ts"></script>
   </body>
 </html>

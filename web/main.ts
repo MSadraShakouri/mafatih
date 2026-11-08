@@ -1,4 +1,3 @@
-import './style.css';
 import { App as CapacitorApp } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
 import { DataClient } from './data.js';
@@ -19,6 +18,14 @@ import { createThemeStore } from './theme.js';
 const root = document.getElementById('app');
 if (!root) throw new Error('Missing app root');
 const app: HTMLElement = root;
+// The HTML contains the real home shell before any JavaScript runs. Preserve
+// its node on first boot, then clone the same source for later home visits.
+const initialHome = app.querySelector<HTMLElement>('main[data-screen="library"]');
+if (!initialHome) throw new Error('Missing prebuilt home shell');
+const prebuiltHome: HTMLElement = initialHome;
+const homeTemplate = prebuiltHome.cloneNode(true) as HTMLElement;
+const homeTemplateInput = homeTemplate.querySelector<HTMLInputElement>('input');
+if (homeTemplateInput) homeTemplateInput.value = '';
 // Relative base works at a Pages subdirectory and in Capacitor's local origin.
 const base = new URL(import.meta.env.BASE_URL, document.baseURI);
 const data = new DataClient(base);
@@ -120,13 +127,16 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
   // immediately. Catalog loading and font warming happen in the background.
   if (route.kind === 'library' || route.kind === 'bookmarks' || (route.kind === 'contents' && !route.topic)) {
     saved = undefined;
-    const content = renderLibrary({ items: [], toc: [] }, route, actions);
-    replaceView(content);
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    const content = route.kind === 'library'
+      ? (prebuiltHome.parentElement === app ? prebuiltHome : homeTemplate.cloneNode(true) as HTMLElement)
+      : renderLibrary({ items: [], toc: [] }, route, actions);
+    const sameHome = route.kind === 'library' && content === app.firstElementChild && Boolean(globalSearch);
+    if (content !== app.firstElementChild) replaceView(content);
+    // A slow route can be cancelled before the home was replaced. Keep its
+    // existing scroll/DOM instead of resetting it on that history return.
+    if (!sameHome) window.scrollTo({ top: 0, behavior: 'auto' });
     if (route.kind === 'library') {
-      globalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession, navigate, from !== undefined);
-      // A reader visit can start font loading in parallel rather than after an item fetch.
-      void prepareReaderFont(preferences.get().font);
+      if (!globalSearch) globalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession, navigate, from !== undefined);
     }
     return;
   }

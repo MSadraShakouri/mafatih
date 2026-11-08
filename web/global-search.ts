@@ -36,15 +36,13 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     tocTargets.set(path, target); return target;
   }
 
-  const root = el('section', 'library-search search-widget');
-  root.setAttribute('aria-label', 'جست‌وجو در مفاتیح');
-  const form = el('form', 'search-form'); form.setAttribute('role', 'search');
-  const pill = el('div', 'library-search-pill');
-  const input = el('input'); input.type = 'search'; input.dir = 'rtl'; input.autocomplete = 'off'; input.maxLength = 300;
-  input.placeholder = 'جست‌وجو در فهرست و متن'; input.setAttribute('aria-label', input.placeholder); input.value = session.libraryQuery;
-  const clear = el('button', 'search-clear'); clear.type = 'button'; clear.setAttribute('aria-label', 'پاک کردن جست‌وجو');
-  clear.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>';
-  pill.append(input, clear); form.append(pill); root.append(form);
+  // Hydrate the actual prebuilt search field; never replace what was painted
+  // (or discard a query typed while the module was still loading).
+  const root = slot.querySelector<HTMLElement>('.library-search')!;
+  const form = root.querySelector<HTMLFormElement>('.search-form')!;
+  const input = form.querySelector<HTMLInputElement>('input')!;
+  const clear = form.querySelector<HTMLButtonElement>('.search-clear')!;
+  input.value = session.libraryQuery || input.value;
   const tools = el('div', 'search-tools');
   const group = el('div', 'search-languages'); group.setAttribute('role', 'group'); group.setAttribute('aria-label', 'زبان متن');
   const toggles = new Map<SearchLanguage, HTMLButtonElement>();
@@ -70,7 +68,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   failure.append(el('strong', '', 'بارگذاری جست‌وجو ناموفق بود.'));
   const retry = el('button', 'search-more', 'تلاش دوباره'); retry.type = 'button'; failure.append(retry);
   const more = el('button', 'search-more', 'نمایش بیشتر'); more.type = 'button'; more.hidden = true;
-  results.append(list, empty, failure, more); root.append(results); slot.replaceChildren(root);
+  results.append(list, empty, failure, more); root.append(results);
 
   let limit = session.libraryLimit, destroyed = false, pointerDown = false, searching = false, searchFailed = false;
   let pointerFallback = 0;
@@ -231,6 +229,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   function run(): void {
     if (destroyed) return;
     const query = input.value, active = Boolean(query.trim());
+    if (active) ensureCatalog();
     session.libraryQuery = query; session.libraryLimit = limit;
     root.dataset.active = String(active); clear.hidden = !active; toolbar.hidden = !active;
     if (contents) contents.hidden = active;
@@ -278,7 +277,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   document.addEventListener('pointerup', onUp); document.addEventListener('pointercancel', onUp);
   document.addEventListener('click', releasePointer, true);
   results.addEventListener('focusout', () => window.setTimeout(() => { if (pending && timer === undefined) flush(); }, 0));
-  ensureCatalog(); run();
+  run();
   return {
     close(): boolean {
       if (!input.value.trim()) return false;

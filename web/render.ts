@@ -91,12 +91,7 @@ function menuLink(title: string, href: string, id: string, bookmark = false): HT
   return link;
 }
 
-/** Search attaches here only on the home screen; its worker remains lazy. */
-function searchSlot(): HTMLElement {
-  return element('div', 'library-search-slot');
-}
-
-export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'library' | 'contents' | 'bookmarks' }>, actions: RenderActions): HTMLElement {
+export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'contents' | 'bookmarks' }>, actions: RenderActions): HTMLElement {
   const main = element('main');
   main.dataset.screen = 'library';
   let title = 'مفاتیح الجنان';
@@ -111,17 +106,11 @@ export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'l
     }
   }
   main.append(makeHeader(title, 'library', actions, { backFallback }));
-  const home = route.kind === 'library';
-  const content = element('div', `content library ${home ? 'home-screen' : route.kind === 'contents' ? 'toc-screen' : 'bookmarks-screen'}`);
+  const content = element('div', `content library ${route.kind === 'contents' ? 'toc-screen' : 'bookmarks-screen'}`);
   const list = element('nav', 'library-list');
   list.setAttribute('aria-label', 'فهرست');
   list.dataset.contents = '';
-  if (home) {
-    content.append(searchSlot());
-    list.append(menuLink('فهرست مفاتیح', '#/contents', '__contents__'));
-    // One personal bookmark entry is always last. It is not a featured list.
-    list.append(menuLink('نشان‌های من', '#/bookmarks', '__bookmarks__', true));
-  } else if (route.kind === 'bookmarks') {
+  if (route.kind === 'bookmarks') {
     content.append(element('p', 'library-empty', 'نشان‌های شخصی هنوز فعال نشده‌اند.'));
   } else if (route.kind === 'contents' && !route.topic) {
     for (const topic of TOPICS) list.append(menuLink(topic.label, topicHref(topic.id), `__topic_${topic.id}__`));
