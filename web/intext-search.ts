@@ -80,7 +80,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   let pending: SearchSnapshot | undefined, timer: number | undefined, pointerInResults = false;
   let baseKey = '', requestKey = '', requestedFocus: number | undefined;
   let seekSerial = 0, flashTimer = 0;
-  let pointerStart: { target: EventTarget | null; listVisible: boolean; menuVisible: boolean; errorVisible: boolean } | undefined;
+  let pointerStart: { reopenHidden: boolean } | undefined;
   let fallbackTimer = 0;
   const stripes = new Map<string, boolean>();
 
@@ -88,7 +88,9 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     results.hidden = !(open && listOpen);
     menu.hidden = !(open && menuOpen);
     error.hidden = !(open && errorOpen);
-    reopen.hidden = !(open && !listOpen && !menuOpen && !errorOpen);
+    // Keep the touched header target stationary until its click is delivered.
+    // The overlay itself is dismissed immediately on pointerdown.
+    reopen.hidden = !open || (pointerStart ? pointerStart.reopenHidden : (listOpen || menuOpen || errorOpen));
     reopen.setAttribute('aria-expanded', String(!results.hidden));
     filter.setAttribute('aria-expanded', String(!menu.hidden));
     clear.hidden = !input.value;
@@ -168,9 +170,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
       .find(node => node.getBoundingClientRect().bottom > results.getBoundingClientRect().top) : undefined;
     const key = visible?.dataset.resultKey, top = visible?.getBoundingClientRect().top;
     const nodes: KeyedNode[] = [];
-    for (const [index, entry] of display.entries()) {
-      if (entry.previous && !display[index - 1]?.previous) nodes.push({ key: '__previous__', signature: 'previous',
-        create: () => el('li', 'search-previous-heading', 'نتایج پیشین') });
+    for (const entry of display) {
       nodes.push({ key: `hit:${entry.hit.record.key}`, signature: hitSignature(entry.hit),
         create: () => resultRow(entry.hit), update: node => markPrevious(node, entry.previous) });
     }
@@ -248,7 +248,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   input.addEventListener('focus', () => {
     if (!listOpen && !menuOpen && !errorOpen) { listOpen = true; visibility(); }
   });
-  clear.addEventListener('click', () => { input.value = ''; listOpen = false; menuOpen = false; limit = PAGE_SIZE; run(); });
+  clear.addEventListener('click', () => { input.value = ''; listOpen = true; menuOpen = false; limit = PAGE_SIZE; run(); });
   more.addEventListener('click', () => { if (!searching && !errorOpen) { requestedFocus = currentCount; limit += PAGE_SIZE; run(); } });
   installSearchKeyboard(form, input, () => {
     if (input.value) { input.value = ''; listOpen = false; menuOpen = false; limit = PAGE_SIZE; run(); }
@@ -270,38 +270,37 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   retry.addEventListener('click', () => { errorOpen = false; listOpen = true; requestKey = ''; run(); });
 
   const contains = (node: Node, target: EventTarget | null): boolean => target instanceof Node && node.contains(target);
-  const onPointerDown = (event: PointerEvent): void => {
-    if (!open) return;
-    // Freeze streamed updates until the eventual click so controls cannot move
-    // beneath a finger between pointerup and the synthesized mobile click.
-    pointerInResults = true;
-    pointerStart = { target: event.target, listVisible: !results.hidden, menuVisible: !menu.hidden, errorVisible: !error.hidden };
-  };
-  function dismissOutside(target: EventTarget | null, before?: typeof pointerStart): void {
+  function dismissOutside(target: EventTarget | null): void {
     if (!open || destroyed) return;
-    // The click that enabled search began before the overlay existed.
-    if (!before && contains(search, target)) return;
-    const focusReopened = target === input && before?.listVisible === false;
-    if (!focusReopened && !contains(results, target) && !contains(reopen, target) && !contains(filter, target)) listOpen = false;
+    // The search row is part of the interaction, not an outside touch.
+    if (!contains(row, target) && !contains(results, target)) listOpen = false;
     if (!contains(menu, target) && !contains(filter, target)) menuOpen = false;
     if (!contains(error, target)) errorOpen = false;
     visibility();
   }
+  const onPointerDown = (event: PointerEvent): void => {
+    if (!open) return;
+    // Freeze streaming and header geometry, not overlay dismissal. In mobile
+    // WebViews click may arrive well after pointerup at the original position.
+    pointerInResults = true;
+    pointerStart = { reopenHidden: reopen.hidden };
+    dismissOutside(event.target);
+  };
   function releasePointer(): void {
-    pointerInResults = false;
+    pointerInResults = false; pointerStart = undefined; visibility();
     if (pending && timer === undefined) timer = window.setTimeout(flush, 0);
   }
   const onClick = (event: MouseEvent): void => {
     clearTimeout(fallbackTimer);
-    dismissOutside(event.target, pointerStart); pointerStart = undefined; releasePointer();
+    // Keyboard / assistive-technology clicks may have no preceding pointer.
+    if (!pointerStart && !contains(search, event.target)) dismissOutside(event.target);
+    releasePointer();
   };
   const onPointerUp = (): void => {
     const before = pointerStart;
     if (!before) { releasePointer(); return; }
     clearTimeout(fallbackTimer);
-    fallbackTimer = window.setTimeout(() => {
-      if (pointerStart === before) { dismissOutside(before.target, before); pointerStart = undefined; releasePointer(); }
-    }, 500);
+    fallbackTimer = window.setTimeout(() => { if (pointerStart === before) releasePointer(); }, 500);
   };
   document.addEventListener('pointerdown', onPointerDown, { capture: true, passive: true });
   document.addEventListener('pointerup', onPointerUp, { capture: true, passive: true });

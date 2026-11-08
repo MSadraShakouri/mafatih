@@ -72,7 +72,7 @@ async function readerComplete(page: Page): Promise<void> {
 }
 
 for (const scope of ['global', 'reader'] as const) {
-  test(`${scope}: empty partials keep existing DOM and new hits stream above labelled previous results`, async ({ page }) => {
+  test(`${scope}: empty partials keep existing DOM and new hits stream above retained results without labels`, async ({ page }) => {
     await instrument(page);
     await page.goto(scope === 'global' ? './' : './#/item/dua-kumayl');
     if (scope === 'reader') await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();
@@ -98,6 +98,7 @@ for (const scope of ['global', 'reader'] as const) {
     await page.waitForTimeout(220);
     expect(await page.evaluate(() => (window as any).__oldNode.isConnected)).toBe(true);
     await expect(page.locator(`${selector}[data-previous="true"]`).first()).toBeVisible();
+    await expect(page.locator('.search-previous-heading, [aria-description="نتیجهٔ جست‌وجوی قبلی"]')).toHaveCount(0);
     const newKey = await page.evaluate(reader => (window as any).__searchControl.injectFuture(reader), scope === 'reader');
     await expect.poll(() => page.locator(`${selector}[data-previous="false"]`).count()).toBeGreaterThan(0);
     const newRow = page.locator(`${selector}[data-previous="false"]`).first();

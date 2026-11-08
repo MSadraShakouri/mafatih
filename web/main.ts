@@ -3,7 +3,7 @@ import { App as CapacitorApp } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
 import { DataClient } from './data.js';
 import { attachLegalNotices } from './legal-notices.js';
-import { attachGlobalSearch } from './global-search.js';
+import { attachGlobalSearch, type GlobalSearch } from './global-search.js';
 import { attachInTextSearch, type InTextSearch } from './intext-search.js';
 import { SearchClient } from './search-client.js';
 import { createSearchSession } from './search-common.js';
@@ -33,7 +33,7 @@ attachLegalNotices();
 let renderId = 0;
 let reader: HTMLElement | undefined;
 let disposeReader: (() => void) | undefined;
-let disposeGlobalSearch: (() => void) | undefined;
+let globalSearch: GlobalSearch | undefined;
 let inTextSearch: InTextSearch | undefined;
 let saved: { id: string; position: VisibleReaderPosition | undefined; scroll: number } | undefined;
 let lastRequested: Route | undefined;
@@ -107,7 +107,7 @@ function loadingNotice(): () => void {
   return () => { window.clearTimeout(timer); notice?.remove(); };
 }
 function replaceView(content: HTMLElement): void {
-  disposeGlobalSearch?.(); disposeGlobalSearch = undefined;
+  globalSearch?.dispose(); globalSearch = undefined;
   disposeReader?.(); disposeReader = undefined; reader = undefined; inTextSearch = undefined;
   app.replaceChildren(content);
 }
@@ -124,7 +124,7 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
     replaceView(content);
     window.scrollTo({ top: 0, behavior: 'auto' });
     if (route.kind === 'library') {
-      disposeGlobalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession, navigate, from !== undefined);
+      globalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession, navigate, from !== undefined);
       // A reader visit can start font loading in parallel rather than after an item fetch.
       void prepareReaderFont(preferences.get().font);
     }
@@ -213,25 +213,33 @@ try {
 } catch { /* history may be restricted in unusual embeds */ }
 window.addEventListener('popstate', routeChanged);
 window.addEventListener('hashchange', routeChanged);
-// Satr uses the same Capacitor App backButton event. The decision is kept
-// separate from the UI so direct links still have an explicit fallback.
+// Like Satr, Android owns the first Back while its IME is open. A focused
+// input is NOT proof that the keyboard is still up: WebView often keeps focus
+// after the IME consumes Back. The callback closes the topmost app layer.
 if (Capacitor.isNativePlatform()) {
-  void CapacitorApp.addListener('backButton', ({ canGoBack }) => {
-    // Give the keyboard the first Back in both global and in-text search.
-    // Android may consume Back in the IME before this callback; if it reaches
-    // the app, blur the active editable before changing routes or minimizing.
-    const focused = document.activeElement;
-    if ((focused instanceof HTMLInputElement && ['search', 'text', 'email', 'url', 'tel', 'number', 'password'].includes(focused.type)) ||
-        focused instanceof HTMLTextAreaElement || (focused instanceof HTMLElement && focused.isContentEditable)) {
-      focused.blur(); return;
+  let exitArmedAt = 0, exitTimer = 0;
+  let exitNotice: HTMLElement | undefined;
+  const clearExit = (): void => {
+    exitArmedAt = 0; window.clearTimeout(exitTimer); exitNotice?.remove(); exitNotice = undefined;
+  };
+  const atRoot = (): void => {
+    if (exitArmedAt && Date.now() - exitArmedAt < 5000) {
+      clearExit(); void CapacitorApp.minimizeApp(); return;
     }
-    if (inTextSearch?.isOpen()) { closeReaderSearch(); return; }
+    clearExit(); exitArmedAt = Date.now();
+    exitNotice = document.createElement('div'); exitNotice.className = 'navigation-loading';
+    exitNotice.setAttribute('role', 'status'); exitNotice.textContent = 'برای خروج دوباره بازگشت را فشار دهید.';
+    app.append(exitNotice); exitTimer = window.setTimeout(clearExit, 5000);
+  };
+  void CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+    if (inTextSearch?.isOpen()) { clearExit(); closeReaderSearch(); return; }
+    if (globalSearch?.close()) { clearExit(); return; }
     const parent = (history.state?.[HISTORY_KEY] as NavigationState | undefined)?.parent;
     const action = nativeBackAction(parseRoute(window.location.hash), canGoBack, Boolean(parent));
+    if (action.kind === 'minimize') { atRoot(); return; }
+    clearExit();
     if (action.kind === 'history') history.back();
-    else if (action.kind === 'replace') {
-      history.replaceState(navigationState(), '', action.href); routeChanged();
-    } else void CapacitorApp.minimizeApp();
+    else { history.replaceState(navigationState(), '', action.href); routeChanged(); }
   }).catch(error => console.error('Unable to register Android Back', error));
 }
 document.addEventListener('selectstart', event => {

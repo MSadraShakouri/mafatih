@@ -17,14 +17,14 @@ test('the reader opens an empty results panel immediately, outside taps dismiss 
   await page.locator('.result-reopen').click(); await expect(page.locator('.result-popover')).toBeVisible();
   await input.fill('الهم');
   await expect(page.locator('.result-row').first()).toBeVisible({ timeout: 40_000 });
-  // An input click is also outside the results panel.
-  await input.click(); await expect(page.locator('.result-popover')).toBeHidden();
+  // Touching the search row keeps the results open.
+  await input.click(); await expect(page.locator('.result-popover')).toBeVisible();
   await expect(input).toBeFocused();
   await input.press('Enter');
   await expect(input).not.toBeFocused(); await expect(page.locator('.result-popover')).toBeVisible();
   await expect(page.locator('.result-row').first()).toBeVisible();
   // Some Android IMEs emit submit rather than an Enter keydown.
-  await input.click(); await expect(page.locator('.result-popover')).toBeHidden();
+  await input.click(); await expect(page.locator('.result-popover')).toBeVisible();
   await page.locator('.query-shell').evaluate(form => form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true })));
   await expect(page.locator('.result-popover')).toBeVisible();
 });
@@ -98,4 +98,33 @@ test('slow navigation leaves the current screen intact instead of replacing it w
   release();
   await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', 'dua-kumayl');
   await expect(page.locator('.navigation-loading')).toHaveCount(0);
+});
+
+test.describe('touch-down dismissal', () => {
+  test.use({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } });
+  test('outside touch hides immediately; the row and delayed clear keep their target', async ({ page }) => {
+    await page.goto('./#/item/dua-kumayl');
+    await page.getByRole('button', { name: 'جست‌وجو در متن' }).tap();
+    const input = page.getByRole('searchbox', { name: readerInput });
+    const panel = page.locator('.result-popover');
+    await input.fill('الهم'); await expect(page.locator('.result-row').first()).toBeVisible({ timeout: 40_000 });
+    await input.tap(); await expect(panel).toBeVisible();
+    const client = await page.context().newCDPSession(page);
+    // Real Chromium touchStart, without the corresponding touchEnd yet.
+    await client.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: 5, y: 700 }] });
+    await expect(panel).toBeHidden();
+    await client.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await expect(page.locator('.result-reopen')).toBeVisible();
+    await page.locator('.result-reopen').tap(); await expect(panel).toBeVisible();
+    const clear = page.getByRole('button', { name: 'پاک کردن جست‌وجو' });
+    const box = await clear.boundingBox(); expect(box).not.toBeNull();
+    await client.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: box!.x + box!.width / 2, y: box!.y + box!.height / 2 }] });
+    await expect(panel).toBeVisible();
+    expect(await clear.boundingBox()).toEqual(box);
+    await page.waitForTimeout(350); // Android can delay the synthesized click.
+    await client.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await expect(input).toHaveValue(''); await expect(panel).toBeVisible();
+    await expect(page.locator('.result-empty')).toContainText('واژه‌ای بنویسید');
+    await client.detach();
+  });
 });

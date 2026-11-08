@@ -14,12 +14,17 @@ import {
 
 const PAGE_SIZE = 50;
 
+export interface GlobalSearch {
+  close(): boolean;
+  dispose(): void;
+}
+
 /** The home shell is usable while its catalog and search worker prepare. */
 export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<Catalog>, client: SearchClient,
-  session: SearchSession, navigate: (href: string) => void, restoreScroll = false): () => void {
+  session: SearchSession, navigate: (href: string) => void, restoreScroll = false): GlobalSearch {
   const slot = main.querySelector<HTMLElement>('.library-search-slot');
   const contents = main.querySelector<HTMLElement>('[data-contents]');
-  if (!slot) return () => {};
+  if (!slot) return { close: () => false, dispose: () => {} };
   const names = new Map<string, ReturnType<typeof titleText>>();
   let catalog: Catalog | undefined, catalogLoading = false, catalogFailed = false;
   const tocTargets = new Map<string, string>();
@@ -152,8 +157,6 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     const key = visible?.dataset.resultKey, top = visible?.getBoundingClientRect().top;
     const nodes: KeyedNode[] = [];
     for (const [index, entry] of display.entries()) {
-      if (entry.previous && !display[index - 1]?.previous) nodes.push({ key: '__previous__', signature: 'previous',
-        create: () => el('li', 'search-previous-heading', 'نتایج پیشین') });
       const prior = display[index - 1]?.previous === entry.previous ? display[index - 1]?.hit : undefined;
       const next = display[index + 1]?.previous === entry.previous ? display[index + 1]?.hit : undefined;
       const signature = JSON.stringify([hitSignature(entry.hit), entry.multi, prior?.record.item, next?.record.item]);
@@ -276,11 +279,18 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   document.addEventListener('click', releasePointer, true);
   results.addEventListener('focusout', () => window.setTimeout(() => { if (pending && timer === undefined) flush(); }, 0));
   ensureCatalog(); run();
-  return () => {
+  return {
+    close(): boolean {
+      if (!input.value.trim()) return false;
+      input.value = ''; input.blur(); session.libraryScroll = 0; needsRestore = false; limit = PAGE_SIZE; run();
+      return true;
+    },
+    dispose(): void {
     destroyed = true; session.libraryQuery = input.value; resetQueue(); client.cancel(); stopKeyboard(); clearTimeout(pointerFallback);
     window.removeEventListener('resize', resize); document.fonts?.removeEventListener('loadingdone', resize);
     document.removeEventListener('pointerup', onUp); document.removeEventListener('pointercancel', onUp);
     document.removeEventListener('click', releasePointer, true);
     if (measureFrame) cancelAnimationFrame(measureFrame);
+    },
   };
 }

@@ -1,6 +1,6 @@
 import type { SearchHit } from '../src/search.js';
 
-/** A retained hit is visibly labelled as belonging to the previous search. */
+/** A retained hit keeps its original target while a new query is streaming. */
 export interface DisplayHit {
   hit: SearchHit;
   multi: boolean;
@@ -68,7 +68,4 @@ export function hitSignature(hit: SearchHit): string {
 
 export function markPrevious(node: HTMLElement, previous: boolean): void {
   node.dataset.previous = String(previous);
-  const button = node.querySelector('button');
-  if (previous) button?.setAttribute('aria-description', 'نتیجهٔ جست‌وجوی قبلی');
-  else button?.removeAttribute('aria-description');
 }
