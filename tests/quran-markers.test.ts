@@ -141,3 +141,32 @@ test('CLI previews, checks, applies once with pooled history, and refuses review
     assert.equal(fs.readFileSync(path.join(reviewed, 'items/sample.json'), 'utf8'), reviewedBefore);
   } finally { fs.rmSync(root, { recursive: true, force: true }); fs.rmSync(reviewed, { recursive: true, force: true }); }
 });
+
+test('the current corpus has no unspaced numeric Arabic markers and preserves the five audited changes', () => {
+  const c = loadCorpus();
+  const batches = (c.editorial.punctuation_normalizations ?? []).filter(batch => batch.rule === 'quran-verse-marker-spacing-v1');
+  assert.ok(batches.length >= 1);
+  const edits = batches.flatMap(batch => batch.changes);
+  const audit = new Set(['sura-jumua/r00001', 'sura-mulk/r00002', 'sura-rahman/r00003', 'sura-svrh-alvaqah/r00003', 'sura-yasin/r00003']);
+  for (const edit of edits) {
+    const location = edit.location;
+    if (location.kind !== 'item-row') throw Error('unexpected history scope');
+    const key = `${location.item}/${location.row}`;
+    if (!audit.has(key)) continue;
+    const before = c.texts.get(edit.previous)!, after = c.texts.get(edit.replacement)!;
+    assert.equal(normalizeQuranMarkerSpacing(before), after);
+    assert.equal(before.replace(/\s/gu, ''), after.replace(/\s/gu, ''));
+    assert.equal(c.items.get(location.item)!.rows.find(row => row.id === location.row)?.ar, edit.replacement);
+    audit.delete(key);
+  }
+  assert.equal(audit.size, 0);
+  assert.deepEqual(planQuranMarkerSpacing(c), []);
+  let numeric = 0, quotes = 0, ornaments = 0;
+  for (const item of c.items.values()) for (const row of item.rows) {
+    const value = row.ar ? c.texts.get(row.ar)! : '';
+    numeric += verseMarkerRanges(value).length;
+    quotes += [...value.matchAll(/﴿(?![0-9٠-٩۰-۹]+﴾)/gu)].length;
+    ornaments += [...value.matchAll(/۞/gu)].length;
+  }
+  assert.ok(numeric >= 946); assert.ok(quotes >= 2); assert.ok(ornaments >= 15);
+});

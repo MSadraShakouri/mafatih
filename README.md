@@ -87,7 +87,7 @@ npm run edit:english -- apply generated/edit/dua-kumayl.english.json
 npm run validate
 ```
 
-Working copies are ignored build files, not canonical source. Existing row and paragraph IDs must remain stable. Reviewed span hashes cause stale reviews to fail validation; changing reviewed text requires explicit review invalidation. The documented `normalize:punctuation` command previews or applies the explicitly requested punctuation-spacing correction across current content while retaining exact previous values and refusing affected reviews. The line-break guard, reversible corrections and marker-move history are described in **[docs/line-break-review.md](docs/line-break-review.md)**. Adding items, English documents, sources and individual text edits are documented in **[docs/editing.md](docs/editing.md)**.
+Working copies are ignored build files, not canonical source. Existing row and paragraph IDs must remain stable. Reviewed span hashes cause stale reviews to fail validation; changing reviewed text requires explicit review invalidation. The documented `normalize:punctuation` command previews or applies the explicitly requested punctuation-spacing correction across current content while retaining exact previous values and refusing affected reviews. The separate [Quran marker spacing audit](docs/quran-marker-spacing.md) records five reversible whitespace fixes and refuses stale plans or affected reviews. The line-break guard, reversible corrections and marker-move history are described in **[docs/line-break-review.md](docs/line-break-review.md)**. Adding items, English documents, sources and individual text edits are documented in **[docs/editing.md](docs/editing.md)**.
 
 ## Website and Capacitor integration
 

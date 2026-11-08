@@ -47,6 +47,10 @@ npm run normalize:punctuation -- --apply  # apply only after reviewing the summa
 
 Each change is copy-on-write and adds the exact old/new text IDs and occurrence address to `punctuation_normalizations` in `data/editorial-history.json`. The old values remain in the pool, so the operation is auditable and reversible; a navigation path records its position at the time of correction. Repeating the command on normalized content is a no-op. The command refuses to change reviewed titles, text, documents or affected alignment spans; it never automatically removes or marks reviews. Review those cases separately rather than forcing the command. Punctuation-only changes can shift older character-offset links within a row, even though item, row and paragraph IDs remain stable. This is not a content, translation or rights review.
 
+## Quran end-of-ayah spacing
+
+The separate `normalize:quran-markers` rule checks only numeric `﴿…﴾` markers in Arabic item rows. It adds a missing preceding space without touching quotation brackets, ornaments, wording or stored digits. A dry run prints a plan hash; `--apply` requires the reviewed hash and refuses stale plans or affected reviews. Exact old/new IDs and occurrence addresses are retained in punctuation history. See [the five-occurrence audit, scope, review safeguards and commands](quran-marker-spacing.md).
+
 ## Line breaks
 
 The guard reports new or stale physical separators in active content; it does not change text. Review individual contexts and follow **[line-break review](line-break-review.md)** before changing an exception or editing a field that contains one. `npm run check:line-breaks -- --list` shows any retained locations, reasons and review states. The existing correction and marker-move history preserves the earlier exact values.
