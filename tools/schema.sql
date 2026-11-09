@@ -1,6 +1,7 @@
 -- SQLite is a generated output, never the source of truth. All text is interned.
 PRAGMA foreign_keys = ON;
-PRAGMA user_version = 1;
+-- Version 2 adds page-numbering series, endpoint presence and page history.
+PRAGMA user_version = 2;
 CREATE TABLE corpus_meta (key TEXT PRIMARY KEY, value TEXT NOT NULL) STRICT;
 CREATE TABLE text_value (id TEXT PRIMARY KEY, value TEXT NOT NULL UNIQUE) STRICT;
 CREATE TABLE claim (id TEXT PRIMARY KEY, text_id TEXT NOT NULL REFERENCES text_value(id)) STRICT;
@@ -134,12 +135,44 @@ CREATE TABLE punctuation_correction (
   replacement_text_id TEXT NOT NULL REFERENCES text_value(id),
   PRIMARY KEY(batch_position,position)
 ) STRICT;
+-- Page-history paths are historical TOC positions, not stable node IDs.
+-- Presence bits distinguish an absent optional field from an explicit NULL.
+CREATE TABLE navigation_page_batch (
+  position INTEGER PRIMARY KEY, method TEXT NOT NULL CHECK(method IN ('heading-trailing-footers-v1','legacy-unmapped-v1')),
+  edit_date TEXT, evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), source_sha256 TEXT,
+  CHECK(method != 'heading-trailing-footers-v1' OR (edit_date IS NOT NULL AND source_sha256 IS NOT NULL))
+) STRICT;
+CREATE TABLE navigation_page_correction (
+  batch_position INTEGER NOT NULL REFERENCES navigation_page_batch(position), position INTEGER NOT NULL CHECK(position >= 0),
+  path_json TEXT NOT NULL, title_text_id TEXT NOT NULL REFERENCES text_value(id), item_id TEXT REFERENCES item(id), source_level INTEGER,
+  previous_start INTEGER, previous_end INTEGER, previous_end_present INTEGER NOT NULL CHECK(previous_end_present IN (0,1)),
+  previous_series TEXT CHECK(previous_series IS NULL OR previous_series IN ('front-matter','main')),
+  previous_series_present INTEGER NOT NULL CHECK(previous_series_present IN (0,1)),
+  replacement_start INTEGER, replacement_end INTEGER, replacement_end_present INTEGER NOT NULL CHECK(replacement_end_present IN (0,1)),
+  replacement_series TEXT CHECK(replacement_series IS NULL OR replacement_series IN ('front-matter','main')),
+  observation_kind TEXT NOT NULL CHECK(observation_kind IN ('source-heading','mixed-series-root','unnumbered-metadata',
+    'unpaginated-after-book','not-in-edition','legacy-unmapped')),
+  source_heading INTEGER, previous_footer INTEGER, next_footer INTEGER, last_text_footer INTEGER, subtree_footer INTEGER, descendant_max_end INTEGER,
+  PRIMARY KEY(batch_position,position),
+  CHECK(previous_end_present = 1 OR previous_end IS NULL), CHECK(previous_series_present = 1 OR previous_series IS NULL),
+  CHECK(replacement_end_present = 1 OR replacement_end IS NULL),
+  CHECK(replacement_start IS NULL OR (replacement_start > 0 AND replacement_series IS NOT NULL)),
+  CHECK(replacement_end IS NULL OR (replacement_end > 0 AND replacement_start IS NOT NULL AND replacement_end >= replacement_start)),
+  CHECK(source_heading IS NULL OR source_heading > 0), CHECK(previous_footer IS NULL OR previous_footer > 0),
+  CHECK(next_footer IS NULL OR next_footer > 0), CHECK(last_text_footer IS NULL OR last_text_footer > 0),
+  CHECK(subtree_footer IS NULL OR subtree_footer > 0), CHECK(descendant_max_end IS NULL OR descendant_max_end > 0)
+) STRICT;
 CREATE TABLE default_order (position INTEGER PRIMARY KEY, item_id TEXT NOT NULL UNIQUE REFERENCES item(id)) STRICT;
 CREATE TABLE featured (position INTEGER PRIMARY KEY, item_id TEXT NOT NULL UNIQUE REFERENCES item(id)) STRICT;
 CREATE TABLE navigation_node (
   id INTEGER PRIMARY KEY, parent_id INTEGER REFERENCES navigation_node(id), position INTEGER NOT NULL,
   title_text_id TEXT NOT NULL REFERENCES text_value(id), item_id TEXT REFERENCES item(id),
-  source_level INTEGER, source_page INTEGER, source_page_end INTEGER
+  source_level INTEGER, source_page INTEGER, source_page_end INTEGER,
+  source_page_series TEXT CHECK(source_page_series IS NULL OR source_page_series IN ('front-matter','main')),
+  source_page_end_present INTEGER NOT NULL CHECK(source_page_end_present IN (0,1)),
+  CHECK(source_page IS NULL OR (source_page > 0 AND source_page_series IS NOT NULL)),
+  CHECK(source_page_end IS NULL OR (source_page_end > 0 AND source_page IS NOT NULL AND source_page_end >= source_page)),
+  CHECK(source_page_end_present = 1 OR source_page_end IS NULL)
 ) STRICT;
 CREATE TABLE alignment_group (
   item_id TEXT NOT NULL REFERENCES item(id), group_id TEXT NOT NULL, method TEXT NOT NULL,

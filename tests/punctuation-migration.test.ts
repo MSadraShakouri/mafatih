@@ -25,7 +25,7 @@ function fixture(): Corpus {
     display_title: { en: english, ar: null }, coverage: 'unknown', paragraphs: [{ id: 'p1', text: english }],
   })]]);
   corpus.nav = NavigationSchema.parse({ default_order: ['sample'], featured: [], toc: [{
-    title, source_level: 1, source_page: null, item: 'sample', children: [],
+    title, source_level: 1, source_page: null, source_page_series: null, item: 'sample', children: [],
   }] });
   corpus.alignments = new Map();
   corpus.claims = { c000000000000000000000000: ar }; // An unrelated historical claim shares this text.

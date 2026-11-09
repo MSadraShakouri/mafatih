@@ -9,6 +9,8 @@ import type { NavNode } from '../src/schema.js';
 export interface BuildDataOptions {
   /** Include the search index and shards (default true). */
   includeSearch?: boolean;
+  /** Explicitly export page history for local analysis; never a default runtime asset. */
+  includePageHistory?: boolean;
   root?: string;
   /** Preserve validation warnings when the caller is building the app. */
   onWarning?: (warning: string) => void;
@@ -18,6 +20,7 @@ export interface BuildDataOptions {
 }
 
 export function buildData(options: BuildDataOptions = {}): void {
+  if(options.includePageHistory&&!options.write)throw new Error('Page history requires an explicit local-analysis output sink.');
   const c=loadCorpus(options.root);const checked=validateCorpus(c);
   if(checked.errors.length)throw new Error(`Structural validation failed:\n${checked.errors.join('\n')}`);
   if(options.onWarning) for(const warning of checked.warnings) options.onWarning(warning);
@@ -80,7 +83,8 @@ export function buildData(options: BuildDataOptions = {}): void {
       paragraphs:doc.paragraphs.map(p=>({id:p.id,text:text(c,p.text),source_claim:claim(c,p.source_claim),sources:p.sources??[]}))});
   }
   function node(n:NavNode):unknown{return {title:text(c,n.title),item:n.item,source_level:n.source_level,
-    source_page:n.source_page,...('source_page_end' in n?{source_page_end:n.source_page_end}:{}),children:n.children.map(node)};}
+    source_page:n.source_page,source_page_series:n.source_page_series,
+    ...('source_page_end' in n?{source_page_end:n.source_page_end}:{}),children:n.children.map(node)};}
   const resolvedSources=Object.fromEntries(Object.entries(c.sources.sources).map(([id,s])=>[id,{
     name:text(c,s.name),author:text(c,s.author),edition:text(c,s.edition),url:s.url??null,
     license:{status:s.license.status,name:text(c,s.license.name),url:s.license.url??null,
@@ -90,6 +94,14 @@ export function buildData(options: BuildDataOptions = {}): void {
   write('sources.json',{sources:resolvedSources});
   writeText('legacy-attribution.md','# Historical attribution and rights claims (unverified)\n\n> The following is preserved from the original dataset. Claims of permission, public-domain status and attribution have not been independently verified.\n\n'+fs.readFileSync(path.join(c.root,'legacy-attribution.md'),'utf8'));
   write('catalog.json',{format_version:c.meta.format_version,items:catalog,featured:c.nav.featured,toc:c.nav.toc.map(node)});
+  // Do not expose editorial history as a default runtime asset. An explicit
+  // local-analysis build can request it separately from the reader catalog.
+  if(options.includePageHistory){
+    const pageBatches=c.editorial.navigation_page_corrections??[];
+    const pageEvidence=Object.fromEntries([...new Set(pageBatches.map(batch=>batch.evidence))]
+      .map(id=>[id,c.editorial.evidence[id]]));
+    write('navigation-page-history.json',{evidence:pageEvidence,navigation_page_corrections:pageBatches});
+  }
   const tocSearchRecords:SearchRecord[]=[];const shards:string[]=[];
   function indexToc(nodes:NavNode[],parents:string[],path:number[]=[]):void{
     nodes.forEach((n,i)=>{

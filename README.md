@@ -35,8 +35,8 @@ data/
   items/<slug>.json        item metadata and ordered AR/FA row references
   english/<id>.json        English paragraph occurrences and provenance claims
   relations.json           item ↔ English links, once, with review state
-  editorial-history.json   recorded row, title, document and link changes with evidence
-  navigation.json          curated order, featured shelf and original TOC
+  editorial-history.json   recorded row, title, document, link and source-page changes with evidence
+  navigation.json          curated order, featured shelf and TOC with edition-specific page metadata
   claims.json              original source / attribution claims (unverified)
   sources.json             comparison-source records; permissions unverified
   legacy-attribution.md    the original credits and their claims
@@ -57,7 +57,7 @@ The filename is the item's or document's stable ID. Text IDs are hashes of **exa
 
 ## One source of truth, generated outputs
 
-Exact content values are stored once in the text pool; rows and paragraphs reference them. Intentional repeated recitations remain separate occurrences without duplicating the pooled value. Editorial history retains references to previous values for provenance.
+Exact content values are stored once in the text pool; rows and paragraphs reference them. Intentional repeated recitations remain separate occurrences without duplicating the pooled value. Editorial history retains references to previous values for provenance. Edition-specific TOC page ranges, their numbering-series reset, unknowns and reversible source comparison are documented in [source-page metadata](docs/source-pages.md); they are not a content or rights review.
 
 `generated/`, `reports/`, `dist/`, `node_modules/`, databases, APKs and Capacitor's copied web assets are ignored. Catalogs, counts, search indexes, audit reports, review pages and SQLite files are build artifacts—not source-controlled duplicates. `npm run check:repository` also flags common build outputs accidentally staged in Git; it cannot recognize every possible duplicate file.
 
@@ -99,7 +99,7 @@ Rows explicitly classified `audio-reciter` remain in canonical data/SQLite but a
 
 ## Legacy importer
 
-The shipped `data/` is already imported and curated; do not run the importer over it. `tools/import_legacy.py` is included only to reproduce a **baseline** in a new, empty destination. It requires the original checkout (or an explicit commit SHA) and checks that imported source wording and order round-trip. The baseline will not include the later chapter-number annotations, proposed links, title corrections or any future reviews. Do not substitute it for the delivered canonical data.
+The shipped `data/` is already imported and curated; do not run the importer over it. `tools/import_legacy.py` is included only to reproduce a **baseline** in a new, empty destination. It requires the original checkout (or an explicit commit SHA) and checks that imported source wording, order and historical page fields round-trip. Unqualified legacy page numbers are preserved in editorial history and remain unknown in current navigation until checked. The baseline will not include the later source-page comparison, chapter-number annotations, proposed links, title corrections or any future reviews. Do not substitute it for the delivered canonical data.
 
 ```sh
 python3 tools/import_legacy.py --source /path/to/original-checkout --destination /tmp/mafatih-baseline

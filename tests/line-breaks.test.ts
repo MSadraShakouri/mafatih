@@ -40,8 +40,8 @@ function fixture(): Corpus {
     paragraphs: [{ id: 'p1', text: paragraph }],
   }));
   c.nav = NavigationSchema.parse({ default_order: ['sample'], featured: [], toc: [{
-    title: nav, source_level: 1, source_page: null, item: 'sample', children: [{
-      title, source_level: 2, source_page: null, item: null, children: [],
+    title: nav, source_level: 1, source_page: null, source_page_series: null, item: 'sample', children: [{
+      title, source_level: 2, source_page: null, source_page_series: null, item: null, children: [],
     }],
   }] });
   c.sources = SourcesSchema.parse({ sources: { sample: {

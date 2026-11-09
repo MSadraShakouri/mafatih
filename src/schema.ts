@@ -6,6 +6,7 @@ export const TextId = z.string().regex(/^t[0-9a-f]{24}$/);
 export const ClaimId = z.string().regex(/^c[0-9a-f]{24}$/);
 export const Key = z.string().regex(/^[a-z0-9][a-z0-9-]*$/);
 const Ref = TextId.nullable();
+const Hash = z.string().regex(/^[0-9a-f]{64}$/);
 const ISODate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(value => {
   const date = new Date(value+'T00:00:00Z');
   return Number.isFinite(date.getTime()) && date.toISOString().slice(0,10) === value;
@@ -66,14 +67,36 @@ export const LinkSchema = z.object({
 }).strict();
 export const RelationsSchema = z.object({ english_links: z.array(LinkSchema) }).strict();
 
+export const SourcePageSeriesSchema = z.enum(['front-matter', 'main']);
+export type SourcePageSeries = z.infer<typeof SourcePageSeriesSchema>;
+const PositivePage = z.number().int().positive();
+
+/** Also used by validateCorpus for in-memory edits that have not been reparsed. */
+export function sourcePageIssues(value: {
+  source_page: unknown; source_page_end?: unknown; source_page_series?: unknown;
+}): string[] {
+  const { source_page: start, source_page_end: end, source_page_series: series } = value;
+  const positive = (number: unknown): number is number => typeof number === 'number' && Number.isSafeInteger(number) && number > 0;
+  const errors: string[] = [];
+  if (start !== null && !positive(start)) errors.push('source_page must be a positive integer or null');
+  if (end != null && !positive(end)) errors.push('source_page_end must be a positive integer or null');
+  if (series !== null && series !== 'front-matter' && series !== 'main') errors.push('source_page_series must be front-matter, main, or null');
+  if (start !== null && series == null) errors.push('source_page requires a source_page_series');
+  if (end != null && start == null) errors.push('source_page_end requires a source_page');
+  if (positive(start) && positive(end) && end < start) errors.push('source_page_end precedes source_page');
+  return errors;
+}
 export interface NavNode {
   title: string; source_level: number | null; source_page: number | null;
-  source_page_end?: number | null; item: string | null; children: NavNode[];
+  source_page_series: SourcePageSeries | null; source_page_end?: number | null; item: string | null; children: NavNode[];
 }
 export const NavNodeSchema: z.ZodType<NavNode> = z.lazy(() => z.object({
-  title: TextId, source_level: z.number().int().min(1).nullable(), source_page: z.number().int().nullable(),
-  source_page_end: z.number().int().nullable().optional(), item: Key.nullable(), children: z.array(NavNodeSchema)
-}).strict());
+  title: TextId, source_level: z.number().int().min(1).nullable(), source_page: PositivePage.nullable(),
+  source_page_series: SourcePageSeriesSchema.nullable(), source_page_end: PositivePage.nullable().optional(),
+  item: Key.nullable(), children: z.array(NavNodeSchema)
+}).strict().superRefine((node, ctx) => {
+  for (const message of sourcePageIssues(node)) ctx.addIssue({code:z.ZodIssueCode.custom,message});
+}));
 export const NavigationSchema = z.object({ default_order: z.array(Key), featured: z.array(Key), toc: z.array(NavNodeSchema) }).strict();
 
 // The original source claims remain claims. Do not mark permission verified
@@ -107,6 +130,33 @@ export const PunctuationEditSchema = z.object({location:PunctuationLocationSchem
 export type PunctuationLocation = z.infer<typeof PunctuationLocationSchema>;
 export type PunctuationEdit = z.infer<typeof PunctuationEditSchema>;
 
+// Historical starts/ends can legitimately contain zero or a reversed range.
+// Optional keys preserve the distinction between a missing field and null.
+const PreviousPageSnapshotSchema = z.object({
+  start:z.number().int().nullable(), end:z.number().int().nullable().optional(),
+  series:SourcePageSeriesSchema.nullable().optional()
+}).strict();
+const ReplacementPageSnapshotSchema = z.object({
+  start:PositivePage.nullable(), end:PositivePage.nullable().optional(), series:SourcePageSeriesSchema.nullable()
+}).strict().superRefine((page,ctx) => {
+  for (const message of sourcePageIssues({source_page:page.start,source_page_end:page.end,source_page_series:page.series}))
+    ctx.addIssue({code:z.ZodIssueCode.custom,message});
+});
+const NavigationPageObservationSchema = z.object({
+  kind:z.enum(['source-heading','mixed-series-root','unnumbered-metadata','unpaginated-after-book','not-in-edition','legacy-unmapped']),
+  heading:PositivePage.nullable(), previous_footer:PositivePage.nullable(), next_footer:PositivePage.nullable(),
+  last_text_footer:PositivePage.nullable(), subtree_footer:PositivePage.nullable(), descendant_max_end:PositivePage.nullable()
+}).strict();
+const NavigationPageCorrectionBatchSchema = z.object({
+  method:z.enum(['heading-trailing-footers-v1','legacy-unmapped-v1']), date:ISODate.nullable(), evidence:Key,
+  source_sha256:Hash.nullable(), changes:z.array(z.object({
+    // Paths describe the TOC at edit time, not permanent navigation IDs.
+    path:z.array(z.number().int().nonnegative()).min(1), title:TextId, item:Key.nullable(),
+    source_level:z.number().int().min(1).nullable(), previous:PreviousPageSnapshotSchema,
+    replacement:ReplacementPageSnapshotSchema, observation:NavigationPageObservationSchema
+  }).strict()).min(1)
+}).strict();
+
 export const EditorialHistorySchema = z.object({
   evidence: z.record(Key,z.object({url:z.string().url(),description:z.string().min(1)}).strict()),
   metadata_corrections:z.array(z.object({item:Key,field:z.enum(['title.ar','title.en']),previous:TextId.nullable(),replacement:TextId.nullable(),source_document:Key,evidence:Key}).strict()),
@@ -132,6 +182,7 @@ export const EditorialHistorySchema = z.object({
   punctuation_normalizations:z.array(z.object({
     rule:z.enum(['closing-punctuation-v1','quran-verse-marker-spacing-v1']),date:ISODate,changes:z.array(PunctuationEditSchema).min(1)
   }).strict()).optional(),
+  navigation_page_corrections:z.array(NavigationPageCorrectionBatchSchema).optional(),
   quran_number_evidence:Key.optional()
 }).strict();
 export const CorpusMetaSchema = z.object({
@@ -140,7 +191,6 @@ export const CorpusMetaSchema = z.object({
   review_policy:z.string()
 }).strict();
 
-const Hash = z.string().regex(/^[0-9a-f]{64}$/);
 const Bound = z.object({row:Key,start:z.number().int().nonnegative(),end:z.number().int().positive(),sha256:Hash}).strict();
 const EnBound = z.object({document:Key,paragraph:Key,start:z.number().int().nonnegative(),end:z.number().int().positive(),sha256:Hash}).strict();
 export const AlignmentFileSchema = z.object({

@@ -62,6 +62,7 @@ test('Vite dev serves only resolved data and invalidates it after source changes
   assert.equal(index.version, 4); assert.ok(index.shards.length > 0);
   assert.equal((await fetch(`${base}data/${index.shards[0]}`)).status, 200);
   assert.equal((await fetch(`${base}data/navigation.json`)).status, 404);
+  assert.equal((await fetch(`${base}data/navigation-page-history.json`)).status, 404);
   assert.equal((await fetch(`${base}data/catalog.json`, { method: 'HEAD' })).status, 200);
   assert.equal((await fetch(`${base}data/catalog.json`, { method: 'POST' })).status, 405);
 

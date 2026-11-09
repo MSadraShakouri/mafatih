@@ -59,6 +59,16 @@ try:
    con.execute('INSERT INTO punctuation_normalization VALUES (?,?,?)',(batch_pos,batch['rule'],batch['date']))
    for pos,e in enumerate(batch['changes']):con.execute('INSERT INTO punctuation_correction VALUES (?,?,?,?,?)',
     (batch_pos,pos,compact(e['location']),e['previous'],e['replacement']))
+  for batch_pos,batch in enumerate(editorial.get('navigation_page_corrections',[])):
+   con.execute('INSERT INTO navigation_page_batch VALUES (?,?,?,?,?)',
+    (batch_pos,batch['method'],batch['date'],batch['evidence'],batch['source_sha256']))
+   for pos,e in enumerate(batch['changes']):
+    before=e['previous'];after=e['replacement'];o=e['observation']
+    con.execute('INSERT INTO navigation_page_correction VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+     (batch_pos,pos,compact(e['path']),e['title'],e['item'],e['source_level'],
+      before['start'],before.get('end'),int('end' in before),before.get('series'),int('series' in before),
+      after['start'],after.get('end'),int('end' in after),after['series'],o['kind'],o['heading'],
+      o['previous_footer'],o['next_footer'],o['last_text_footer'],o['subtree_footer'],o['descendant_max_end']))
   nav=load(DATA/'navigation.json')
   for pos,id in enumerate(nav['default_order']):con.execute('INSERT INTO default_order VALUES (?,?)',(pos,id))
   for pos,id in enumerate(nav['featured']):con.execute('INSERT INTO featured VALUES (?,?)',(pos,id))
@@ -66,8 +76,9 @@ try:
   def add_nodes(nodes,parent=None):
    global next_id
    for pos,n in enumerate(nodes):
-    next_id+=1;id=next_id;con.execute('INSERT INTO navigation_node VALUES (?,?,?,?,?,?,?,?)',
-      (id,parent,pos,n['title'],n['item'],n['source_level'],n.get('source_page'),n.get('source_page_end')))
+    next_id+=1;id=next_id;con.execute('INSERT INTO navigation_node VALUES (?,?,?,?,?,?,?,?,?,?)',
+      (id,parent,pos,n['title'],n['item'],n['source_level'],n['source_page'],n.get('source_page_end'),
+       n['source_page_series'],int('source_page_end' in n)))
     add_nodes(n['children'],id)
   add_nodes(nav['toc'])
   for f in sorted((DATA/'alignments').glob('*.json')):

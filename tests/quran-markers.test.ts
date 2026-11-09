@@ -107,7 +107,7 @@ function dataDirectory(reviewed: boolean): string {
   for (const [shard, values] of shards) write(`texts/${shard}.json`, values);
   write('corpus.json', loadCorpus().meta); write('claims.json', {}); write('sources.json', { sources: {} });
   write('relations.json', { english_links: [] }); write('editorial-history.json', { evidence: {}, metadata_corrections: [] });
-  write('navigation.json', { default_order: ['sample'], featured: [], toc: [{ title: ids[0], source_level: 1, source_page: null, item: 'sample', children: [] }] });
+  write('navigation.json', { default_order: ['sample'], featured: [], toc: [{ title: ids[0], source_level: 1, source_page: null, source_page_series: null, item: 'sample', children: [] }] });
   write('items/sample.json', { legacy_id: null, title: { fa: ids[0], ar: null, en: null }, category: 'dua', tags: [], legacy_alignment: null,
     ...(reviewed ? { review: { text: { reviewer: 'human', date: '2026-11-01' } } } : {}),
     rows: [{ id: 'r1', ar: ids[1], fa: ids[2] }] });

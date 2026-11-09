@@ -13,7 +13,7 @@ if(d.legacy_alignment!==null)throw new Error('New items must use legacy_alignmen
 const prev=new Set(c.texts.keys());const item=internItem(c,d);const title=item.title.fa??item.title.ar??item.title.en;
 if(!title||!c.texts.get(title))throw new Error('A nonempty title is required for navigation.');
 c.items.set(d.id,item);c.nav.default_order.push(d.id);if(args.includes('--featured'))c.nav.featured.push(d.id);
-const leaf:NavNode={title,source_level:null,source_page:null,item:d.id,children:[]};
+const leaf:NavNode={title,source_level:null,source_page:null,source_page_series:null,item:d.id,children:[]};
 if(parentArg){let children=c.nav.toc;let parent:NavNode|undefined;for(const part of parentArg.split('/')){if(!/^\d+$/.test(part))throw new Error('Parent must use zero-based numeric indexes.');parent=children[Number(part)];if(!parent)throw new Error('Parent path does not exist.');children=parent.children;}children.push(leaf);}else c.nav.toc.push(leaf);
 const result=validateCorpus(c);if(result.errors.length)throw new Error(`Refusing invalid item:\n${result.errors.join('\n')}`);
 const changes=new Map<string,string|null>();changes.set(path.join(c.root,'items',d.id+'.json'),pretty(item));changes.set(path.join(c.root,'navigation.json'),pretty(c.nav));

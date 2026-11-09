@@ -117,18 +117,35 @@ def main() -> None:
             rel.append({'item':slug,'document':eid,'kind':'legacy-primary-only'})
     rel.sort(key=lambda x:(x['item'],x['document'],x['kind']))
     dump(dest/'relations.json',{'english_links':rel})
-    def nav_node(n):
-        result={'title':intern(n['title']), 'source_level':n['level'],
-                'source_page':n.get('page'), 'item':n.get('item_id'),
-                'children':[nav_node(c) for c in n.get('children',[])]}
-        if 'page_end' in n:result['source_page_end']=n['page_end']
+    # The old page values do not establish an edition/numbering series and can
+    # be zero or reversed. Quarantine them exactly instead of inventing printed
+    # page numbers. Occurrence paths are the positions at import time.
+    page_changes=[]
+    def nav_node(n,path):
+        title=intern(n['title']); previous={'start':n.get('page')}; replacement={'start':None}
+        if 'page_end' in n:previous['end']=n['page_end'];replacement['end']=None
+        replacement['series']=None
+        observation={'kind':'legacy-unmapped','heading':None,'previous_footer':None,'next_footer':None,
+                     'last_text_footer':None,'subtree_footer':None,'descendant_max_end':None}
+        page_changes.append({'path':path,'title':title,'item':n.get('item_id'),'source_level':n['level'],
+                             'previous':previous,'replacement':replacement,'observation':observation})
+        result={'title':title, 'source_level':n['level'], 'source_page':None, 'source_page_series':None,
+                'item':n.get('item_id'), 'children':[nav_node(c,path+[i]) for i,c in enumerate(n.get('children',[]))]}
+        if 'page_end' in n:result['source_page_end']=None
         return result
     navigation={'default_order':original_order,'featured':idx['stars'],
-                'toc':[nav_node(n) for n in idx['toc']]}
+                'toc':[nav_node(n,[i]) for i,n in enumerate(idx['toc'])]}
     dump(dest/'navigation.json',navigation)
     dump(dest/'claims.json',{k:statements[k] for k in sorted(statements)})
     dump(dest/'sources.json',{'sources':{}})
-    dump(dest/'editorial-history.json',{'evidence':{},'metadata_corrections':[]})
+    editorial={'evidence':{},'metadata_corrections':[]}
+    if page_changes:
+        evidence='legacy-navigation-unmapped'
+        editorial['evidence'][evidence]={'url':args.repository,
+          'description':f'Raw navigation page fields from legacy import commit {commit}. Their edition, numbering series and parser semantics are unverified; retained exactly in history rather than interpreted as printed page numbers.'}
+        editorial['navigation_page_corrections']=[{'method':'legacy-unmapped-v1','date':None,'evidence':evidence,
+                                                   'source_sha256':None,'changes':page_changes}]
+    dump(dest/'editorial-history.json',editorial)
     shards={}
     for key,value in textpool.items():shards.setdefault(key[1:3],{})[key]=value
     for shard,mapping in shards.items():dump(dest/'texts'/f'{shard}.json',{k:mapping[k] for k in sorted(mapping)})
@@ -159,17 +176,20 @@ def main() -> None:
             c=m[field+'_claim']; assert (None if c is None else resolve(statements[c]))==pr.get(field),(ident,field)
         if pr.get('para_sources') is not None:
             assert [resolve(statements[x['source_claim']]) for x in v['paragraphs']]==pr['para_sources'],ident
-    def unnav(n):
-        x={'title':resolve(n['title']),'level':n['source_level'],'page':n['source_page'],
-           'item_id':n['item'],'children':[unnav(c) for c in n['children']]}
-        if 'source_page_end' in n:x['page_end']=n['source_page_end']
+    prior_pages={tuple(e['path']):e['previous'] for e in page_changes}
+    def unnav(n,path):
+        prior=prior_pages[tuple(path)]
+        x={'title':resolve(n['title']),'level':n['source_level'],'page':prior['start'],
+           'item_id':n['item'],'children':[unnav(c,path+[i]) for i,c in enumerate(n['children'])]}
+        if 'end' in prior:x['page_end']=prior['end']
         return x
-    assert [unnav(n) for n in navigation['toc']]==idx['toc']
+    assert [unnav(n,[i]) for i,n in enumerate(navigation['toc'])]==idx['toc']
     print('ROUND-TRIP PASS:')
     print(f"  {len(items)} items, {sum(len(x['rows']) for x in items.values())} ordered AR/FA rows")
     print(f"  {len(ens)} English documents, {sum(len(x['paras']) for x in ens.values())} ordered paragraphs")
     print(f"  {len(rel)} imported document-to-item relationships, {len(statements)} provenance statements")
     print(f"  {len(textpool)} unique source strings; exact repeats stored as references")
-    print(f"  {len(shards)} deterministic text-pool shards; full original navigation preserved")
+    print(f"  {len(shards)} deterministic text-pool shards; original navigation and page fields preserved in data/history")
+    print('  Unqualified legacy page numbers are unknown in navigation until independently checked.')
 
 if __name__=='__main__':main()

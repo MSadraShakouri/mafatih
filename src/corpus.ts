@@ -3,12 +3,13 @@ import path from 'node:path';
 import { z } from 'zod';
 import {
   AlignmentFileSchema, ClaimId, CorpusMetaSchema, EditorialHistorySchema, EnglishDocumentSchema, ItemSchema,
-  Key, NavigationSchema, RelationsSchema, SourcesSchema, TextId,
+  Key, NavigationSchema, RelationsSchema, SourcesSchema, TextId, sourcePageIssues,
   type AlignmentFile, type EnglishDocument, type Item, type NavNode, type Relations, type Sources
 } from './schema.js';
 import { claimId, codePoints, sha256, slicePoints, textId } from './text-ids.js';
 import { validatePunctuationHistory } from './punctuation-history.js';
 import { validateLineBreakMarkerHistory } from './line-break-history.js';
+import { validateSourcePageHistory } from './source-page-history.js';
 
 type Metadata=z.infer<typeof CorpusMetaSchema>;
 type Navigation=z.infer<typeof NavigationSchema>;
@@ -152,6 +153,7 @@ export function validateCorpus(c:Corpus):ValidationResult {
   }
   for(const error of validatePunctuationHistory(c))fail(error);
   for(const error of validateLineBreakMarkerHistory(c))fail(error);
+  for(const error of validateSourcePageHistory(c))fail(error);
   const historyEvidence=(id:string)=>{if(!(id in c.editorial.evidence))fail(`editorial history: missing evidence ${id}`);};
   const historyRow=(item:string,row:string)=>{
     const it=c.items.get(item);if(!it)fail(`editorial history: missing item ${item}`);
@@ -196,11 +198,10 @@ export function validateCorpus(c:Corpus):ValidationResult {
   const order=new Set<string>();for(const id of c.nav.default_order){if(!c.items.has(id))fail(`order: missing ${id}`);if(order.has(id))fail(`order: duplicate ${id}`);order.add(id);}
   for(const id of c.items.keys())if(!order.has(id))fail(`order: missing item ${id}`);
   const featured=new Set<string>();for(const id of c.nav.featured){if(!c.items.has(id))fail(`featured: missing ${id}`);if(featured.has(id))fail(`featured: duplicate ${id}`);featured.add(id);}
-  let tocNodes=0,badPages=0; const tocItems=new Set<string>();
+  let tocNodes=0; const tocItems=new Set<string>();
   walkNavigation(c.nav.toc,n=>{tocNodes++;if(n.item){if(!c.items.has(n.item))fail(`TOC: missing ${n.item}`);tocItems.add(n.item);}
-    if(n.source_page!==null && n.source_page_end!=null && n.source_page_end<n.source_page)badPages++;
+    for(const issue of sourcePageIssues(n))fail(`TOC ${n.item??n.title}: ${issue}`);
   });
-  if(badPages)warnings.push(`${badPages} source TOC page range(s) end before they start; retained for review.`);
   const notInToc=[...c.items.keys()].filter(id=>!tocItems.has(id));
   if(notInToc.length)warnings.push(`${notInToc.length} item(s) not present in the TOC.`);
   let reviewedGroups=0;

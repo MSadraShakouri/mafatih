@@ -23,7 +23,7 @@ function makeData(reviewed = false): { root: string; previous: string } {
   write('claims.json', {}); write('sources.json', { sources: {} });
   write('relations.json', { english_links: [] });
   write('editorial-history.json', { evidence: {}, metadata_corrections: [] });
-  write('navigation.json', { default_order: ['sample'], featured: [], toc: [{ title: ids[0], source_level: 1, source_page: null, item: 'sample', children: [], source_page_end: null }] });
+  write('navigation.json', { default_order: ['sample'], featured: [], toc: [{ title: ids[0], source_level: 1, source_page: null, source_page_series: null, item: 'sample', children: [], source_page_end: null }] });
   write('items/sample.json', { legacy_id: null, title: { fa: ids[0], ar: null, en: null }, category: 'dua', tags: [], legacy_alignment: null,
     ...(reviewed ? { review: { text: { reviewer: 'human', date: '2026-11-01' } } } : {}), rows: [{ id: 'r1', fa: ids[1], ar: null }] });
   write('english/sample-en.json', { source_metadata: { title: null, title_ar: null, section: null, chapter: null,
