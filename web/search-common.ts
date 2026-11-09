@@ -86,13 +86,62 @@ export const foundCount = (hit: SearchHit): number => new Set([
   ...hit.matchedWords, ...(hit.continuation ?? []).flatMap(part => part.matchedWords),
 ]).size;
 
-/** Touching any other target dismisses the keyboard without cancelling the tap. */
-export function dismissKeyboardOnOutsideTouch(input: HTMLInputElement): () => void {
+// Allow ordinary finger jitter when deciding whether a completed touch was a tap.
+export const TOUCH_TAP_SLOP = 12;
+
+/** Dismiss the keyboard on an outside tap or a real touch scroll, without consuming the tap. */
+export function dismissKeyboardOnOutsideTouch(input: HTMLInputElement,
+  onScroll?: (target: EventTarget | null) => void): () => void {
+  let start: { id: number; x: number; y: number; target: EventTarget | null; moved: boolean; dragged: boolean } | undefined;
+  const findTouch = (touches: TouchList, id: number): Touch | undefined =>
+    Array.from(touches).find(touch => touch.identifier === id);
   const onTouch = (event: TouchEvent): void => {
-    if (document.activeElement === input && event.target !== input) input.blur();
+    if (start || event.target === input || (document.activeElement !== input && !onScroll)) return;
+    const touch = event.changedTouches[0];
+    if (touch) start = { id: touch.identifier, x: touch.clientX, y: touch.clientY, target: event.target, moved: false, dragged: false };
   };
+  const onMove = (event: TouchEvent): void => {
+    if (!start) return;
+    const touch = findTouch(event.changedTouches, start.id);
+    if (!touch) return;
+    const dx = touch.clientX - start.x, dy = touch.clientY - start.y;
+    if (dx || dy) start.moved = true;
+    if (Math.hypot(dx, dy) > TOUCH_TAP_SLOP) start.dragged = true;
+  };
+  const onTouchScroll = (event: Event): void => {
+    if (!start?.moved) return;
+    const scroller = event.target, target = start.target;
+    // Only a scroller containing the touched target can represent this drag.
+    if (scroller instanceof Element && (!(target instanceof Node) || !scroller.contains(target))) return;
+    if (!(scroller instanceof Element) && !(scroller instanceof Document)) return;
+    start = undefined;
+    onScroll?.(target);
+    if (document.activeElement === input) input.blur();
+  };
+  const onEnd = (event: TouchEvent): void => {
+    if (!start) return;
+    const touch = findTouch(event.changedTouches, start.id);
+    if (!touch) return;
+    const wasTap = !start.dragged && Math.hypot(touch.clientX - start.x, touch.clientY - start.y) <= TOUCH_TAP_SLOP;
+    start = undefined;
+    if (wasTap && document.activeElement === input) input.blur();
+  };
+  const onCancel = (event: TouchEvent): void => {
+    if (start && (!event.changedTouches.length || findTouch(event.changedTouches, start.id))) start = undefined;
+  };
+  // A touchstart may turn into Android Back. Wait for an outside tap or an
+  // actual scroll; cancellation alone does not dismiss anything. Capturing
+  // scroll observes both the document and a scrollable results panel.
   document.addEventListener('touchstart', onTouch, { passive: true });
-  return () => document.removeEventListener('touchstart', onTouch);
+  document.addEventListener('touchmove', onMove, { passive: true });
+  document.addEventListener('touchend', onEnd, { passive: true });
+  document.addEventListener('touchcancel', onCancel, { passive: true });
+  document.addEventListener('scroll', onTouchScroll, { capture: true, passive: true });
+  return () => {
+    document.removeEventListener('touchstart', onTouch); document.removeEventListener('touchmove', onMove);
+    document.removeEventListener('touchend', onEnd); document.removeEventListener('touchcancel', onCancel);
+    document.removeEventListener('scroll', onTouchScroll, true);
+  };
 }
 
 /** Enter / native Search reveals the results and closes the keyboard, without interrupting IME composition. */

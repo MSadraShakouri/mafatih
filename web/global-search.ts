@@ -17,15 +17,17 @@ const PAGE_SIZE = 50;
 
 export interface GlobalSearch {
   close(): boolean;
+  restore(query: string): void;
   dispose(): void;
 }
 
 /** The home shell is usable while its catalog and search worker prepare. */
 export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<Catalog>, client: SearchClient,
-  session: SearchSession, navigate: (href: string) => void, restoreScroll = false): GlobalSearch {
+  session: SearchSession, navigate: (href: string) => void, onState: (query: string, active: boolean) => void,
+  restoreScroll = false): GlobalSearch {
   const slot = main.querySelector<HTMLElement>('.library-search-slot');
   const contents = main.querySelector<HTMLElement>('[data-contents]');
-  if (!slot) return { close: () => false, dispose: () => {} };
+  if (!slot) return { close: () => false, restore: () => {}, dispose: () => {} };
   const names = new Map<string, ReturnType<typeof titleText>>();
   let catalog: Catalog | undefined, catalogLoading = false, catalogFailed = false;
   const tocTargets = new Map<string, string>();
@@ -231,6 +233,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     if (destroyed) return;
     const query = input.value, active = Boolean(query.trim());
     if (active) ensureCatalog();
+    onState(query, active || document.activeElement === input);
     session.libraryQuery = query; session.libraryLimit = limit;
     root.dataset.active = String(active); clear.hidden = !active; toolbar.hidden = !active;
     if (contents) contents.hidden = active;
@@ -255,7 +258,8 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
       resetQueue(); requestKey = ''; searching = false; searchFailed = true; renderDisplay();
     });
   }
-  input.addEventListener('focus', () => { ensureCatalog(); client.prepareGlobal(); });
+  input.addEventListener('focus', () => { onState(input.value, true); ensureCatalog(); client.prepareGlobal(); });
+  input.addEventListener('blur', () => { if (!input.value.trim()) onState(input.value, false); });
   input.addEventListener('input', event => {
     if (!(event as InputEvent).isComposing) localizeSearchInput(input);
     if (normalizeSearch(input.value) !== normalizeSearch(session.libraryQuery)) limit = PAGE_SIZE;
@@ -283,9 +287,13 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   run();
   return {
     close(): boolean {
-      if (!input.value.trim()) return false;
+      if (!input.value.trim() && document.activeElement !== input) return false;
       input.value = ''; input.blur(); session.libraryScroll = 0; needsRestore = false; limit = PAGE_SIZE; run();
       return true;
+    },
+    restore(query): void {
+      if (input.value === query) return;
+      input.value = query; needsRestore = false; limit = PAGE_SIZE; run();
     },
     dispose(): void {
     destroyed = true; session.libraryQuery = input.value; resetQueue(); client.cancel(); stopKeyboard(); clearTimeout(pointerFallback);

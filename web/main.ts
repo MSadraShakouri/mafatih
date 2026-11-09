@@ -46,14 +46,50 @@ let saved: { id: string; position: VisibleReaderPosition | undefined; scroll: nu
 let lastRequested: Route | undefined;
 let lastKey = '';
 let lastRouteHash = '';
+let lastState: NavigationState | undefined;
 let serial = 0;
 const HISTORY_KEY = '__mafatihNavigation';
-type NavigationState = { id: number; parent?: string; readerSearch?: boolean };
+const native = Capacitor.isNativePlatform();
+type NavigationState = { id: number; parent?: string; backGuard?: boolean; readerSearch?: boolean;
+  globalSearch?: boolean; globalQuery?: string };
 
-function navigationState(parent?: string, readerSearch = false): Record<string, unknown> {
+function navigationState(parent?: string): Record<string, unknown> {
   const old = history.state && typeof history.state === 'object' ? history.state as Record<string, unknown> : {};
-  return { ...old, [HISTORY_KEY]: { id: ++serial, ...(parent === undefined ? {} : { parent }),
-    ...(readerSearch ? { readerSearch: true } : {}) } satisfies NavigationState };
+  return { ...old, [HISTORY_KEY]: { id: ++serial, ...(parent === undefined ? {} : { parent }) } satisfies NavigationState };
+}
+function rememberEntry(): void {
+  lastState = history.state?.[HISTORY_KEY] as NavigationState | undefined;
+  lastKey = `${window.location.hash}|${lastState?.id ?? 'external'}`;
+}
+/** Like Satr, install a browser Back guard on interaction, before opening find.
+ * Android's App plugin handles Back directly and must not create this entry. */
+function ensureBrowserGuard(): void {
+  if (native) return;
+  const state = history.state?.[HISTORY_KEY] as NavigationState | undefined;
+  if (state?.backGuard) return;
+  try {
+    const guard: NavigationState = { id: ++serial, ...(state?.parent ? { parent: state.parent } : {}), backGuard: true };
+    history.pushState({ ...(history.state ?? {}), [HISTORY_KEY]: guard }, '', window.location.href);
+    rememberEntry();
+  } catch { /* Search and normal links remain usable if history is restricted. */ }
+}
+function updateBrowserGuard(change: (state: NavigationState) => void): void {
+  if (native) return;
+  const state = history.state?.[HISTORY_KEY] as NavigationState | undefined;
+  if (!state?.backGuard) return;
+  try {
+    const next = { ...state }; change(next);
+    history.replaceState({ ...history.state, [HISTORY_KEY]: next }, '', window.location.href);
+    rememberEntry();
+  } catch { /* The UI still closes if history is restricted. */ }
+}
+function recordGlobalSearch(query: string, active: boolean): void {
+  if (native || lastRequested?.kind !== 'library') return;
+  if (active) ensureBrowserGuard();
+  updateBrowserGuard(state => {
+    if (active) { state.globalSearch = true; state.globalQuery = query; }
+    else { delete state.globalSearch; delete state.globalQuery; }
+  });
 }
 function navigate(hash: string): void {
   if (hash === window.location.hash) return;
@@ -73,19 +109,15 @@ function back(fallback: string): void {
 function closeReaderSearch(): void {
   if (!inTextSearch?.isOpen()) return;
   inTextSearch.close();
-  const state = history.state?.[HISTORY_KEY] as NavigationState | undefined;
-  if (state?.readerSearch) history.back();
+  // Closing the bar is a UI action, not a second Back navigation. Keep the
+  // guard itself in place so the next Back follows the underlying route.
+  updateBrowserGuard(state => { delete state.readerSearch; });
 }
 function toggleReaderSearch(id: string): void {
   if (!reader || reader.dataset.itemId !== id || !inTextSearch) return;
   if (inTextSearch.isOpen()) { closeReaderSearch(); return; }
-  // A same-URL history entry lets browser/Android Back close the search first,
-  // without tearing down the reader or changing its hash/reading position.
-  try {
-    history.pushState(navigationState(window.location.hash || '#/', true), '', window.location.href);
-    const state = history.state?.[HISTORY_KEY] as NavigationState | undefined;
-    lastKey = `${window.location.hash}|${state?.id ?? 'external'}`;
-  } catch { /* Search still works without a history entry. */ }
+  ensureBrowserGuard();
+  updateBrowserGuard(state => { state.readerSearch = true; });
   inTextSearch.open(true);
 }
 const actions: RenderActions = {
@@ -136,7 +168,8 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
     // existing scroll/DOM instead of resetting it on that history return.
     if (!sameHome) window.scrollTo({ top: 0, behavior: 'auto' });
     if (route.kind === 'library') {
-      if (!globalSearch) globalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession, navigate, from !== undefined);
+      if (!globalSearch) globalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession,
+        navigate, recordGlobalSearch, from !== undefined);
     }
     return;
   }
@@ -191,14 +224,28 @@ function routeChanged(): void {
   if (key === lastKey) return;
   lastKey = key;
   const route = parseRoute(window.location.hash);
-  const from = lastRequested, previousHash = lastRouteHash;
-  lastRequested = route; lastRouteHash = window.location.hash;
-  // Traversing the search-only history entry must not reconstruct the reader.
-  if (previousHash === window.location.hash && from?.kind === 'item' && route.kind === 'item' &&
-      from.id === route.id && reader?.dataset.itemId === route.id && inTextSearch) {
-    if (state?.readerSearch) inTextSearch.open(false); else inTextSearch.close();
-    return;
+  const from = lastRequested, previousHash = lastRouteHash, previousState = lastState;
+  lastRequested = route; lastRouteHash = window.location.hash; lastState = state;
+  if (previousHash === window.location.hash && previousState?.backGuard && !state?.backGuard) {
+    // The guard was popped. Like Satr, close the topmost UI layer first;
+    // only step through to the previous route when there was none to close.
+    if (inTextSearch?.isOpen()) { inTextSearch.close(); return; }
+    if (globalSearch?.close()) return;
+    history.back(); return;
   }
+  if (previousHash === window.location.hash && state?.backGuard) {
+    // Forward can restore a search without remounting the reader.
+    if (from?.kind === 'item' && route.kind === 'item' && from.id === route.id &&
+        reader?.dataset.itemId === route.id && inTextSearch) {
+      if (state.readerSearch) inTextSearch.open(false); else inTextSearch.close();
+      return;
+    }
+    if (from?.kind === 'library' && route.kind === 'library' && globalSearch) {
+      if (state.globalSearch) globalSearch.restore(state.globalQuery ?? '');
+      return;
+    }
+  }
+  if (route.kind === 'library' && state?.globalSearch) searchSession.libraryQuery = state.globalQuery ?? '';
   void renderRoute(route, from);
 }
 
@@ -221,12 +268,17 @@ try {
     history.pushState(navigationState('#/'), '', initial);
   }
 } catch { /* history may be restricted in unusual embeds */ }
+if (!native) {
+  // Chrome can skip entries made before interaction. Install the guard from
+  // a real tap/key, as Satr does; repeat when a route has no guard yet.
+  window.addEventListener('pointerdown', ensureBrowserGuard, { capture: true });
+  window.addEventListener('keydown', ensureBrowserGuard, { capture: true });
+}
 window.addEventListener('popstate', routeChanged);
 window.addEventListener('hashchange', routeChanged);
-// Like Satr, Android owns the first Back while its IME is open. A focused
-// input is NOT proof that the keyboard is still up: WebView often keeps focus
-// after the IME consumes Back. The callback closes the topmost app layer.
-if (Capacitor.isNativePlatform()) {
+// The native callback closes one app layer. In particular, closing find does
+// not also traverse WebView history. Focus alone does not establish IME state.
+if (native) {
   let exitArmedAt = 0, exitTimer = 0;
   let exitNotice: HTMLElement | undefined;
   const clearExit = (): void => {

@@ -8,7 +8,7 @@ import { SearchClient } from './search-client.js';
 import { hitSignature, markPrevious, mergeSearchHits, reconcileRows, type DisplayHit, type KeyedNode } from './search-results.js';
 import {
   appendCompactExcerpt, digits, dismissKeyboardOnOutsideTouch, element as el, installSearchKeyboard,
-  originalMatches, type SearchSession,
+  originalMatches, TOUCH_TAP_SLOP, type SearchSession,
 } from './search-common.js';
 
 const PAGE_SIZE = 50;
@@ -82,7 +82,9 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   let pending: SearchSnapshot | undefined, timer: number | undefined, pointerInResults = false;
   let baseKey = '', requestKey = '', requestedFocus: number | undefined;
   let seekSerial = 0, flashTimer = 0;
-  let pointerStart: { reopenHidden: boolean } | undefined;
+  let pointerStart: { reopenHidden: boolean; touch?: {
+    target: EventTarget | null; id: number; x: number; y: number; dragged: boolean;
+  } } | undefined;
   let fallbackTimer = 0;
   const stripes = new Map<string, boolean>();
 
@@ -91,7 +93,6 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     menu.hidden = !(open && menuOpen);
     error.hidden = !(open && errorOpen);
     // Keep the touched header target stationary until its click is delivered.
-    // The overlay itself is dismissed immediately on pointerdown.
     reopen.hidden = !open || (pointerStart ? pointerStart.reopenHidden : (listOpen || menuOpen || errorOpen));
     reopen.setAttribute('aria-expanded', String(!results.hidden));
     filter.setAttribute('aria-expanded', String(!menu.hidden));
@@ -113,7 +114,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   window.addEventListener('resize', geometry, { passive: true });
   window.visualViewport?.addEventListener('resize', geometry, { passive: true });
   window.visualViewport?.addEventListener('scroll', geometry, { passive: true });
-  const stopKeyboard = dismissKeyboardOnOutsideTouch(input);
+  const stopKeyboard = dismissKeyboardOnOutsideTouch(input, target => dismissOutside(target));
 
   function clearFlash(): void {
     const highlights = (CSS as typeof CSS & { highlights?: Map<string, unknown> }).highlights;
@@ -286,11 +287,19 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   }
   const onPointerDown = (event: PointerEvent): void => {
     if (!open) return;
-    // Freeze streaming and header geometry, not overlay dismissal. In mobile
-    // WebViews click may arrive well after pointerup at the original position.
+    // Freeze streaming and header geometry until the click is delivered.
     pointerInResults = true;
-    pointerStart = { reopenHidden: reopen.hidden };
-    dismissOutside(event.target);
+    pointerStart = { reopenHidden: reopen.hidden,
+      ...(event.pointerType === 'touch' ? { touch: { target: event.target, id: event.pointerId,
+        x: event.clientX, y: event.clientY, dragged: false } } : {}) };
+    // Android may claim a touch as Back and cancel it. Do not dismiss on
+    // touch-down and briefly hide the results during that gesture.
+    if (event.pointerType !== 'touch') dismissOutside(event.target);
+  };
+  const onPointerMove = (event: PointerEvent): void => {
+    const touch = pointerStart?.touch;
+    if (touch && event.pointerId === touch.id &&
+        Math.hypot(event.clientX - touch.x, event.clientY - touch.y) > TOUCH_TAP_SLOP) touch.dragged = true;
   };
   function releasePointer(): void {
     pointerInResults = false; pointerStart = undefined; visibility();
@@ -302,15 +311,25 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     if (!pointerStart && !contains(search, event.target)) dismissOutside(event.target);
     releasePointer();
   };
-  const onPointerUp = (): void => {
+  const onPointerUp = (event: PointerEvent): void => {
     const before = pointerStart;
     if (!before) { releasePointer(); return; }
+    if (before.touch && event.pointerId === before.touch.id) {
+      const touch = before.touch;
+      const wasTap = !touch.dragged && Math.hypot(event.clientX - touch.x, event.clientY - touch.y) <= TOUCH_TAP_SLOP;
+      if (!wasTap) { releasePointer(); return; }
+      delete before.touch; dismissOutside(touch.target);
+    }
     clearTimeout(fallbackTimer);
     fallbackTimer = window.setTimeout(() => { if (pointerStart === before) releasePointer(); }, 500);
   };
+  const onPointerCancel = (): void => {
+    clearTimeout(fallbackTimer); releasePointer();
+  };
   document.addEventListener('pointerdown', onPointerDown, { capture: true, passive: true });
+  document.addEventListener('pointermove', onPointerMove, { capture: true, passive: true });
   document.addEventListener('pointerup', onPointerUp, { capture: true, passive: true });
-  document.addEventListener('pointercancel', onPointerUp, { capture: true, passive: true });
+  document.addEventListener('pointercancel', onPointerCancel, { capture: true, passive: true });
   document.addEventListener('click', onClick);
   results.addEventListener('focusout', () => window.setTimeout(() => { if (pending && timer === undefined) flush(); }, 0));
 
@@ -323,7 +342,15 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     search.setAttribute('aria-label', 'بستن جست‌وجو'); search.title = 'بستن جست‌وجو'; search.setAttribute('aria-pressed', 'true');
     normal.replaceWith(row); header.classList.add('infile-active');
     client.prepareItem(item);
-    run(); visibility(); if (focus) input.focus({ preventScroll: true });
+    run(); visibility();
+    if (focus) {
+      input.focus({ preventScroll: true });
+      // When reopening with the caret still at the start, prepare to append.
+      // Preserve deliberate mid-text carets and non-collapsed selections.
+      if (input.value && input.selectionStart === 0 && input.selectionEnd === 0) {
+        const end = input.value.length; input.setSelectionRange(end, end);
+      }
+    }
   }
   function close(): void {
     if (!open) return;
@@ -343,8 +370,9 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
       close(); destroyed = true; resetQueue(); clearTimeout(fallbackTimer); stopKeyboard(); observer?.disconnect();
       window.removeEventListener('scroll', geometry); window.removeEventListener('resize', geometry);
       window.visualViewport?.removeEventListener('resize', geometry); window.visualViewport?.removeEventListener('scroll', geometry);
-      document.removeEventListener('pointerdown', onPointerDown, true); document.removeEventListener('pointerup', onPointerUp, true);
-      document.removeEventListener('pointercancel', onPointerUp, true); document.removeEventListener('click', onClick);
+      document.removeEventListener('pointerdown', onPointerDown, true); document.removeEventListener('pointermove', onPointerMove, true);
+      document.removeEventListener('pointerup', onPointerUp, true); document.removeEventListener('pointercancel', onPointerCancel, true);
+      document.removeEventListener('click', onClick);
       popovers.remove(); live.remove();
     },
   };

@@ -100,9 +100,9 @@ test('slow navigation leaves the current screen intact instead of replacing it w
   await expect(page.locator('.navigation-loading')).toHaveCount(0);
 });
 
-test.describe('touch-down dismissal', () => {
+test.describe('touch dismissal', () => {
   test.use({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } });
-  test('outside touch hides immediately; the row and delayed clear keep their target', async ({ page }) => {
+  test('completed outside tap hides results; the row and delayed clear keep their target', async ({ page }) => {
     await page.goto('./#/item/dua-kumayl');
     await page.getByRole('button', { name: 'جست‌وجو در متن' }).tap();
     const input = page.getByRole('searchbox', { name: readerInput });
@@ -110,10 +110,11 @@ test.describe('touch-down dismissal', () => {
     await input.fill('الهم'); await expect(page.locator('.result-row').first()).toBeVisible({ timeout: 40_000 });
     await input.tap(); await expect(panel).toBeVisible();
     const client = await page.context().newCDPSession(page);
-    // Real Chromium touchStart, without the corresponding touchEnd yet.
+    // At touch-down it is not yet known whether this will be Back or a tap.
     await client.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: 5, y: 700 }] });
-    await expect(panel).toBeHidden();
+    await expect(panel).toBeVisible(); await expect(input).toBeFocused();
     await client.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await expect(panel).toBeHidden(); await expect(input).not.toBeFocused();
     await expect(page.locator('.result-reopen')).toBeVisible();
     await page.locator('.result-reopen').tap(); await expect(panel).toBeVisible();
     const clear = page.getByRole('button', { name: 'پاک کردن جست‌وجو' });
@@ -126,5 +127,32 @@ test.describe('touch-down dismissal', () => {
     await expect(input).toHaveValue(''); await expect(panel).toBeVisible();
     await expect(page.locator('.result-empty')).toContainText('واژه‌ای بنویسید');
     await client.detach();
+  });
+});
+
+test.describe('reopening in-text search', () => {
+  test.use({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } });
+  test('the header icon moves only a collapsed start caret to the end', async ({ page }) => {
+    await page.goto('./#/item/dua-kumayl');
+    const open = page.getByRole('button', { name: 'جست‌وجو در متن' });
+    const close = page.getByRole('button', { name: 'بستن جست‌وجو' });
+    await open.tap();
+    const input = page.getByRole('searchbox', { name: readerInput });
+    await input.fill('الهم');
+    await expect(page.locator('.result-row').first()).toBeVisible({ timeout: 40_000 });
+    const selection = () => input.evaluate(node => [(node as HTMLInputElement).selectionStart, (node as HTMLInputElement).selectionEnd]);
+    const reopen = async () => { await close.tap(); await open.tap(); await expect(input).toBeFocused(); };
+
+    await input.evaluate(node => (node as HTMLInputElement).setSelectionRange(0, 0));
+    await reopen();
+    expect(await selection()).toEqual([4, 4]);
+    await expect(input).toHaveValue('الهم');
+
+    // An intentional insertion point or selection remains the user's choice.
+    for (const [start, end] of [[2, 2], [0, 2], [1, 3]] as const) {
+      await input.evaluate((node, range) => (node as HTMLInputElement).setSelectionRange(range[0]!, range[1]!), [start, end]);
+      await reopen();
+      expect(await selection()).toEqual([start, end]);
+    }
   });
 });
