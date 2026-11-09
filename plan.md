@@ -6,7 +6,7 @@ The current split is good enough for now. I've checked redistribution and will d
 
 ## Main menu and search
 
-> Later decision: the earlier TOC-first and word-count-first ideas below are preserved as discussion history. The user subsequently chose a unified relevance-ranked list favoring exact words and nearby ordered sequences, including skipped/mistyped terms and compact sequences across adjacent rows in one item/language. See [search behavior and tests](docs/search-behavior.md) for the implemented tradeoffs.
+> Current search decision: results are ordered by the number of distinct query words matched, then featured-star status, then relevance. The earlier TOC-first and relevance-first ideas below are discussion history. The backend works well but the search UI still needs substantial work. See [search behavior and tests](docs/search-behavior.md) for the implemented tradeoffs.
 
 ### 1. A search pill on the main menu
 
@@ -60,13 +60,15 @@ Normalize text **for searching only**. Keep a way to map matches back to the ori
 
 ## Reading and layout
 
+> First reader pass: the three fonts and independent size controls below are now bundled/implemented in a plain Persian-first reader. The header and the other layout ideas remain open. See [reader status](docs/web-android.md#reader-typography-and-position).
+
 ### 9. Arabic fonts
 
 **My idea:** Look into good Arabic fonts and offer a choice.
 
 **AI feedback:** Three worth trying are **Amiri**, a traditional reading face [1](https://github.com/aliftype/amiri); **Noto Naskh Arabic** [1](https://github.com/notofonts/arabic/releases); and **Scheherazade New**, which has broad Arabic-script coverage [1](https://software.sil.org/scheherazade/). Amiri also has a Quran variant, but its smaller character set means it should be tested separately rather than assumed suitable for every prayer [2](https://github.com/aliftype/amiri/blob/main/NEWS.md). ==Apps use different stuff, go see what they use, I think it'll be more permissive than it appears because nobody is suing anyone over fonts==
 
-The checked versions use the SIL Open Font License 1.1. If a font is bundled, include its copyright and license notice and check the license for the exact version. Scheherazade has reserved font names that matter for modified versions. The original license files are here: [Amiri](https://raw.githubusercontent.com/aliftype/amiri/main/OFL.txt), [Noto](https://raw.githubusercontent.com/notofonts/arabic/main/OFL.txt), [Scheherazade](https://raw.githubusercontent.com/silnrsi/font-scheherazade/master/OFL.txt). No font needs to be picked yet. Compare real passages on phones and browsers, especially vowel marks, Quranic marks, Persian letters, ligatures, clipping and correct shaping. Make sure the chosen fonts or fallbacks work offline.
+The bundled versions use the SIL Open Font License 1.1; their exact notices, sources and hashes are in the [font manifest](web/fonts/README.md). Scheherazade has reserved font names that matter for modified versions. The original license files are also available upstream: [Amiri](https://raw.githubusercontent.com/aliftype/amiri/main/OFL.txt), [Noto](https://raw.githubusercontent.com/notofonts/arabic/main/OFL.txt), [Scheherazade](https://raw.githubusercontent.com/silnrsi/font-scheherazade/master/OFL.txt). Compare real passages on phones and browsers, especially vowel marks, Quranic marks, Persian letters, ligatures, clipping and correct shaping. A website still needs an offline cache; bundled Android assets need real-device verification.
 
 ### 10. Separate text sizes
 
@@ -93,6 +95,10 @@ The checked versions use the SIL Open Font License 1.1. If a font is bundled, in
 **My idea:** Double-tap the header to go to the top. Long-press it to search within the current document. There should also be a search button.
 
 **AI feedback:** The document search can use the same word-by-word search idea, limited to the current item. A visible button helps when the long-press isn't obvious or practical. Make sure header gestures don't interfere with selecting text or scrolling, and that a header double-tap can't also toggle auto-scroll. ==No text selection is planned and I advise against it, it won't have any benefits==
+
+**Deferred: long header titles.** The current Persian catalog includes a 129-grapheme title for `dua-yamn-thl-hady`. Address this item and long titles later; no display solution has been selected yet. One possibility to consider is curated short variants of item/file names for display while retaining the full original titles and stable identifiers. Do not change the current long-title behavior or canonical content just to implement this note.
+
+**Current preview direction:** Use Lucide icons at 16px, and put a personal item bookmark in the reader header where the Back button was. Personal bookmarks are distinct from featured stars. Return from the reader to the library using device/browser Back, with a reliable library fallback for direct links. The settings screen's Back control returns to the reader. The real Android handling still needs implementation and verification; do not assume system Back already provides this behavior.
 
 ### 14. Pause auto-scroll while touching the screen
 
