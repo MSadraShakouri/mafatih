@@ -82,3 +82,52 @@ test('web staging contains only runtime data and refuses overlapping directories
     rmSync(root, { recursive: true, force: true });
   }
 });
+
+test('TOC warm-up is cancellable, retryable, shared, and does not erase a newer request', async () => {
+  const calls: { signal: AbortSignal | null | undefined; resolve: (value: Response) => void }[] = [];
+  const client = new DataClient(new URL('https://example.test/'), (_url, init) => new Promise<Response>((resolve, reject) => {
+    const signal = init?.signal;
+    signal?.addEventListener('abort', () => reject(new DOMException('Cancelled', 'AbortError')), { once: true });
+    calls.push({ signal, resolve });
+  }));
+  const first = client.warmCatalog();
+  assert.equal(calls.length, 1);
+  const cancelled = assert.rejects(first, { name: 'AbortError' });
+  client.cancelCatalogWarmup();
+  assert.equal(calls[0]?.signal?.aborted, true);
+
+  // Start a replacement before the first rejection settles: the old failure
+  // must not erase the new promise. A topic/search promotes it to required.
+  const second = client.warmCatalog();
+  assert.equal(calls.length, 2);
+  await cancelled;
+  assert.equal(client.catalog(), second);
+  client.cancelCatalogWarmup();
+  assert.equal(calls[1]?.signal?.aborted, false);
+  calls[1]!.resolve(new Response('{"items":[],"toc":[]}'));
+  assert.deepEqual(await second, { items: [], toc: [] });
+  client.cancelCatalogWarmup();
+  assert.deepEqual(await client.catalog(), { items: [], toc: [] });
+  assert.equal(calls.length, 2);
+});
+
+test('a completed TOC warm-up stays cached after leaving the chooser', async () => {
+  let calls = 0;
+  const client = new DataClient(new URL('https://example.test/'), async () => {
+    calls++; return new Response('{"items":[],"toc":[]}');
+  });
+  await client.warmCatalog();
+  client.cancelCatalogWarmup();
+  await client.catalog();
+  assert.equal(calls, 1);
+});
+
+test('a failed speculative TOC load can be retried when the topic is chosen', async () => {
+  let calls = 0;
+  const client = new DataClient(new URL('https://example.test/'), async () => {
+    calls++; return calls === 1 ? new Response('', { status: 503 }) : new Response('{"items":[],"toc":[]}');
+  });
+  await assert.rejects(client.warmCatalog(), /503/);
+  assert.deepEqual(await client.catalog(), { items: [], toc: [] });
+  assert.equal(calls, 2);
+});

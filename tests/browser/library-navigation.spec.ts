@@ -85,3 +85,76 @@ test('layout stays within viewport at phone and desktop widths', async ({ page }
     for (const link of await page.locator('.library-item').all()) expect((await link.boundingBox())!.height).toBeGreaterThanOrEqual(44);
   }
 });
+
+test('entering the TOC starts its catalog before Quran is chosen, without preloading search indexes', async ({ page, context }) => {
+  let release!: () => void, catalogRequests = 0;
+  const gate = new Promise<void>(resolve => { release = resolve; });
+  const searchRequests: string[] = [];
+  page.on('request', request => { if (/\/data\/search(?:\/|-index)/.test(request.url())) searchRequests.push(request.url()); });
+  await context.route('**/data/catalog.json', async route => {
+    catalogRequests++; await gate; await route.continue().catch(() => {});
+  });
+  try {
+    await page.goto('./');
+    await page.waitForTimeout(300);
+    expect(catalogRequests).toBe(0);
+    await page.getByRole('link', { name: 'فهرست مفاتیح' }).click();
+    await expect.poll(() => catalogRequests, { timeout: 2000 }).toBe(1);
+    release();
+    await page.getByRole('link', { name: 'قرآن', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'قرآن', exact: true })).toBeVisible();
+    await expect(page.locator('.toc-screen a[data-item-id="sura-yasin"]')).toHaveText('سوره یس');
+    expect(catalogRequests).toBe(1);
+    expect(searchRequests).toEqual([]);
+  } finally { release(); }
+});
+
+test('leaving the TOC cancels an unused catalog warm-up, and returning retries', async ({ page, context }) => {
+  let release!: () => void, requests = 0, aborted = 0;
+  const gate = new Promise<void>(resolve => { release = resolve; });
+  page.on('requestfailed', request => { if (request.url().endsWith('/data/catalog.json')) aborted++; });
+  await context.route('**/data/catalog.json', async route => {
+    requests++; if (requests === 1) await gate;
+    await route.continue().catch(() => {});
+  });
+  try {
+    await page.goto('./');
+    await page.getByRole('link', { name: 'فهرست مفاتیح' }).click();
+    await expect.poll(() => requests).toBe(1);
+    await page.evaluate(() => { location.hash = '#/'; });
+    await expect(page.getByRole('link', { name: 'فهرست مفاتیح' })).toBeVisible();
+    await expect.poll(() => aborted).toBe(1);
+    await page.getByRole('link', { name: 'فهرست مفاتیح' }).click();
+    await expect.poll(() => requests).toBe(2);
+    await page.getByRole('link', { name: 'قرآن', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'قرآن', exact: true })).toBeVisible();
+    release();
+    await expect(page.locator('body')).not.toContainText('داده بارگذاری نشد.');
+  } finally { release(); }
+});
+
+test('a catalog error is visible and navigation can retry', async ({ page, context }) => {
+  await context.route('**/data/catalog.json', route => route.abort());
+  await page.goto('./#/contents/quran');
+  await expect(page.getByRole('status')).toContainText('داده بارگذاری نشد.');
+  await context.unroute('**/data/catalog.json');
+  await page.getByRole('link', { name: 'بازگشت به فهرست' }).click();
+  await page.getByRole('link', { name: 'فهرست مفاتیح' }).click();
+  await page.getByRole('link', { name: 'قرآن', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'قرآن', exact: true })).toBeVisible();
+});
+
+test('the completed catalog remains available to search after visiting the TOC', async ({ page }) => {
+  let catalogs = 0;
+  page.on('request', request => { if (request.url().endsWith('/data/catalog.json')) catalogs++; });
+  await page.goto('./');
+  const loaded = page.waitForResponse(response => response.url().endsWith('/data/catalog.json') && response.ok());
+  await page.getByRole('link', { name: 'فهرست مفاتیح' }).click();
+  await loaded;
+  await page.getByRole('link', { name: 'قرآن', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'قرآن', exact: true })).toBeVisible();
+  await page.evaluate(() => { location.hash = '#/'; });
+  await page.getByRole('searchbox', { name: 'جست‌وجو در فهرست و متن' }).click();
+  await page.waitForTimeout(200);
+  expect(catalogs).toBe(1);
+});

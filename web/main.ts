@@ -154,9 +154,10 @@ function replaceView(content: HTMLElement): void {
 async function renderRoute(route: Route, from: Route | undefined): Promise<void> {
   const id = ++renderId;
   cancelLoadingNotice?.(); cancelLoadingNotice = undefined;
+  if (route.kind !== 'contents') data.cancelCatalogWarmup();
   if (route.kind === 'not-found') { replaceView(renderMessage('این صفحه پیدا نشد.', true)); return; }
-  // Home, the topic chooser and bookmarks have static chrome and can appear
-  // immediately. Catalog loading and font warming happen in the background.
+  // Home, the topic chooser and bookmarks have static chrome and appear
+  // immediately. The TOC catalog can begin while the user chooses a topic.
   if (route.kind === 'library' || route.kind === 'bookmarks' || (route.kind === 'contents' && !route.topic)) {
     saved = undefined;
     const content = route.kind === 'library'
@@ -167,6 +168,7 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
     // A slow route can be cancelled before the home was replaced. Keep its
     // existing scroll/DOM instead of resetting it on that history return.
     if (!sameHome) window.scrollTo({ top: 0, behavior: 'auto' });
+    if (route.kind === 'contents') void data.warmCatalog().catch(() => { /* A topic can retry. */ });
     if (route.kind === 'library') {
       if (!globalSearch) globalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession,
         navigate, recordGlobalSearch, from !== undefined);
