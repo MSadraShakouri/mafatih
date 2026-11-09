@@ -109,6 +109,26 @@ test('entering the TOC starts its catalog before Quran is chosen, without preloa
   } finally { release(); }
 });
 
+test('a slow catalog keeps the TOC chooser usable without a loading message', async ({ page, context }) => {
+  let release!: () => void, requests = 0;
+  const gate = new Promise<void>(resolve => { release = resolve; });
+  await context.route('**/data/catalog.json', async route => {
+    requests++; await gate; await route.continue().catch(() => {});
+  });
+  try {
+    await page.goto('./');
+    await page.getByRole('link', { name: 'فهرست مفاتیح' }).click();
+    await expect.poll(() => requests).toBe(1);
+    await page.getByRole('link', { name: 'قرآن', exact: true }).click();
+    await page.waitForTimeout(550); // Beyond the former 350 ms notice delay.
+    await expect(page.getByRole('link', { name: 'قرآن', exact: true })).toBeVisible();
+    await expect(page.locator('#app')).not.toContainText('در حال آماده‌سازی', { timeout: 1000 });
+    release();
+    await expect(page.getByRole('heading', { name: 'قرآن', exact: true })).toBeVisible();
+    await expect(page.locator('#app')).not.toContainText('در حال آماده‌سازی');
+  } finally { release(); }
+});
+
 test('leaving the TOC cancels an unused catalog warm-up, and returning retries', async ({ page, context }) => {
   let release!: () => void, requests = 0, aborted = 0;
   const gate = new Promise<void>(resolve => { release = resolve; });

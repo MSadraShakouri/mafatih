@@ -181,14 +181,14 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     }
     reconcileRows(list, nodes);
     const query = input.value.trim(), valid = Boolean(normalizeSearch(query));
-    const label = !query ? 'جست‌وجو در متن' : searching ? 'در حال جست‌وجو…' : `${digits(total)} نتیجه`;
+    const label = !query || searching ? 'جست‌وجو در متن' : `${digits(total)} نتیجه`;
     if (headText.textContent !== label) headText.textContent = label;
     results.setAttribute('aria-busy', String(searching && !errorOpen));
-    empty.hidden = display.length > 0;
+    empty.hidden = display.length > 0 || searching;
     if (!empty.hidden) empty.textContent = !query ? 'برای جست‌وجو، واژه‌ای بنویسید.'
       : !valid ? 'برای جست‌وجو، دست‌کم یک واژه یا عدد بنویسید.'
         : !session.languages.size ? 'برای جست‌وجوی متن، عربی یا فارسی را روشن کنید.'
-          : searching ? 'در حال جست‌وجو…' : 'نتیجه‌ای پیدا نشد.';
+          : 'نتیجه‌ای پیدا نشد.';
     more.hidden = total <= currentCount || currentCount === 0;
     more.disabled = searching || errorOpen;
     results.scrollTop = scroll;
@@ -238,7 +238,8 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     if (changed) { currentCount = 0; total = 0; requestedFocus = undefined; resetSeek(); }
     baseKey = nextBase; requestKey = nextRequest; errorOpen = false; searching = true;
     if (changed) display = previous.map(entry => ({ ...entry, previous: true }));
-    if (live.textContent !== 'در حال جست‌وجو…') live.textContent = 'در حال جست‌وجو…';
+    // Do not leave a previous completed search's announcement in the live region.
+    live.textContent = '';
     renderResults(); visibility();
     client.search({ query, languages: [...session.languages], item: item.id, tocLimit: 0, textLimit: limit, resultLimit: 0 }, queue, () => {
       if (!open || destroyed) return;

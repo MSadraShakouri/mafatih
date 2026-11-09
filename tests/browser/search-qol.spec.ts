@@ -85,19 +85,25 @@ test('home is usable before a delayed catalog and reader search does not downloa
   expect(searchData).toEqual([]);
 });
 
-test('slow navigation leaves the current screen intact instead of replacing it with a loader', async ({ page, context }) => {
-  let release!: () => void;
+test('slow navigation leaves the current screen usable without a loading message', async ({ page, context }) => {
+  let release!: () => void, requests = 0;
   const gate = new Promise<void>(resolve => { release = resolve; });
-  await context.route('**/data/items/dua-kumayl.json', async route => { await gate; await route.continue(); });
-  await page.goto('./');
-  await expect(page.locator('main[data-screen="library"]')).toBeVisible();
-  await page.evaluate(() => { location.hash = '#/item/dua-kumayl'; });
-  await expect(page.locator('.navigation-loading')).toBeVisible({ timeout: 3000 });
-  await expect(page.locator('main[data-screen="library"]')).toBeVisible();
-  await expect(page.getByRole('link', { name: 'فهرست مفاتیح' })).toBeVisible();
-  release();
-  await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', 'dua-kumayl');
-  await expect(page.locator('.navigation-loading')).toHaveCount(0);
+  await context.route('**/data/items/dua-kumayl.json', async route => {
+    requests++; await gate; await route.continue().catch(() => {});
+  });
+  try {
+    await page.goto('./');
+    await expect(page.locator('main[data-screen="library"]')).toBeVisible();
+    await page.evaluate(() => { location.hash = '#/item/dua-kumayl'; });
+    await expect.poll(() => requests).toBe(1);
+    await page.waitForTimeout(550); // Beyond the former 350 ms notice delay.
+    await expect(page.locator('main[data-screen="library"]')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'فهرست مفاتیح' })).toBeVisible();
+    await expect(page.locator('#app')).not.toContainText('در حال آماده‌سازی', { timeout: 1000 });
+    release();
+    await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', 'dua-kumayl');
+    await expect(page.locator('#app')).not.toContainText('در حال آماده‌سازی');
+  } finally { release(); }
 });
 
 test.describe('touch dismissal', () => {

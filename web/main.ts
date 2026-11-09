@@ -131,20 +131,6 @@ const actions: RenderActions = {
   },
 };
 
-let cancelLoadingNotice: (() => void) | undefined;
-
-/** Keep the current screen interactive while a slower destination prepares. */
-function loadingNotice(): () => void {
-  let notice: HTMLElement | undefined;
-  const timer = window.setTimeout(() => {
-    notice = document.createElement('div');
-    notice.className = 'navigation-loading';
-    notice.setAttribute('role', 'status');
-    notice.textContent = 'در حال آماده‌سازی…';
-    app.append(notice);
-  }, 350);
-  return () => { window.clearTimeout(timer); notice?.remove(); };
-}
 function replaceView(content: HTMLElement): void {
   globalSearch?.dispose(); globalSearch = undefined;
   disposeReader?.(); disposeReader = undefined; reader = undefined; inTextSearch = undefined;
@@ -153,7 +139,6 @@ function replaceView(content: HTMLElement): void {
 
 async function renderRoute(route: Route, from: Route | undefined): Promise<void> {
   const id = ++renderId;
-  cancelLoadingNotice?.(); cancelLoadingNotice = undefined;
   if (route.kind !== 'contents') data.cancelCatalogWarmup();
   if (route.kind === 'not-found') { replaceView(renderMessage('این صفحه پیدا نشد.', true)); return; }
   // Home, the topic chooser and bookmarks have static chrome and appear
@@ -175,7 +160,6 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
     }
     return;
   }
-  const stopLoading = loadingNotice(); cancelLoadingNotice = stopLoading;
   try {
     const needsItem = route.kind === 'item' || route.kind === 'settings';
     const [catalog, item, example, instruction] = await Promise.all([
@@ -186,8 +170,7 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
       // Start the selected reader font at the same time as the item, not after it.
       route.kind === 'item' ? prepareReaderFont(preferences.get().font) : Promise.resolve(),
     ]);
-    if (id !== renderId) { stopLoading(); return; }
-    stopLoading(); cancelLoadingNotice = undefined;
+    if (id !== renderId) return;
     if (route.kind === 'settings' && item) {
       replaceView(renderReaderSettings(item, example, instruction, preferences, theme, actions));
       window.scrollTo({ top: 0, behavior: 'auto' });
@@ -213,8 +196,7 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
     }
   } catch (error: unknown) {
     console.error('Unable to load the requested data', error);
-    stopLoading();
-    if (id === renderId) { cancelLoadingNotice = undefined; replaceView(renderMessage('داده بارگذاری نشد.', true)); }
+    if (id === renderId) replaceView(renderMessage('داده بارگذاری نشد.', true));
   }
 }
 

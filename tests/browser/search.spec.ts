@@ -108,7 +108,7 @@ test('reader header keeps bookmark and icon positions, reader DOM and one-line o
   await input.fill('الهم'); await expect(page.locator('.result-row').first()).toBeVisible({ timeout: 40_000 });
   await expect(page.locator('.result-reopen')).toBeHidden();
   await expect(page.locator('.search-header-row')).not.toContainText('نتیجه');
-  await expect(page.locator('.result-head')).not.toContainText('در حال', { timeout: 40_000 });
+  await expect(page.locator('.result-popover')).toHaveAttribute('aria-busy', 'false', { timeout: 40_000 });
   const snippet = page.locator('.result-snippet.ar').first(), mark = snippet.locator('mark').first();
   await expect(mark).toContainText('اَللّٰهُمَّ');
   await expect.poll(() => mark.evaluate(node => getComputedStyle(node).backgroundColor)).toBe('rgb(243, 228, 188)');
@@ -164,7 +164,7 @@ test('in-text filters default to Arabic, show an honest empty panel, and Persian
 test('continuation excerpts keep the separator, original marks and same-line ellipsis', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 700 });
   await openReader(page, 'شیء قوت');
-  await expect(page.locator('.result-head')).not.toContainText('در حال', { timeout: 40_000 });
+  await expect(page.locator('.result-popover')).toHaveAttribute('aria-busy', 'false', { timeout: 40_000 });
   const snippet = page.locator('.result-row[data-row-id="r00012"] .result-snippet');
   await expect(snippet).toContainText(' · ');
   expect(await snippet.evaluate(node => ({ width: node.clientWidth, full: node.scrollWidth,
@@ -271,7 +271,7 @@ test('dark mode retains the chosen gold marks and IME composition is not submitt
       new KeyboardEvent('keydown', { key: 'Enter', isComposing: true, bubbles: true, cancelable: true }));
   });
   await expect(input).toBeFocused();
-  await expect(page.locator('.result-head')).not.toContainText('در حال', { timeout: 40_000 });
+  await expect(page.locator('.result-popover')).toHaveAttribute('aria-busy', 'false', { timeout: 40_000 });
   await expect.poll(() => page.locator('.result-snippet mark').first().evaluate(node => getComputedStyle(node).backgroundColor))
     .toBe('rgb(105, 87, 53)');
   await input.press('Enter'); await expect(input).not.toBeFocused();

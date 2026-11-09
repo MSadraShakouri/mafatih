@@ -96,6 +96,8 @@ for (const scope of ['global', 'reader'] as const) {
     await expect.poll(() => page.evaluate(() => (window as any).__searchControl.pending.length)).toBe(1);
     await expect(page.locator(panel)).toHaveAttribute('aria-busy', 'true');
     await page.waitForTimeout(220);
+    // Retained results and streaming still work, without a visible or live-region loading message.
+    await expect(page.locator('body')).not.toContainText('در حال جست‌وجو', { timeout: 1000 });
     expect(await page.evaluate(() => (window as any).__oldNode.isConnected)).toBe(true);
     await expect(page.locator(`${selector}[data-previous="true"]`).first()).toBeVisible();
     await expect(page.locator('.search-previous-heading, [aria-description="نتیجهٔ جست‌وجوی قبلی"]')).toHaveCount(0);

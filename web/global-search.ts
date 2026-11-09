@@ -165,19 +165,19 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
         create: () => resultRow(entry.hit, entry.multi, prior, next), update: node => markPrevious(node, entry.previous) });
     }
     reconcileRows(list, nodes);
-    const active = Boolean(input.value.trim());
+    const active = Boolean(input.value.trim()), valid = Boolean(normalizeSearch(input.value));
     results.hidden = !active;
     const failed = searchFailed || catalogFailed;
+    const pendingResults = searching || (active && valid && !catalog);
     results.setAttribute('aria-busy', String(searching && !failed));
     const statusText = failed ? 'بارگذاری جست‌وجو ناموفق بود.'
-      : searching ? 'در حال جست‌وجو…' : active ? `${digits(total)} نتیجه` : '';
+      : pendingResults ? '' : active ? `${digits(total)} نتیجه` : '';
     if (status.textContent !== statusText) status.textContent = statusText;
     failure.hidden = !failed || !active;
-    empty.hidden = !active || display.length > 0 || failed;
+    empty.hidden = !active || display.length > 0 || failed || pendingResults;
     empty.replaceChildren();
     if (!empty.hidden) {
-      if (searching || !catalog) empty.append(el('span', '', 'در حال جست‌وجو…'));
-      else if (!normalizeSearch(input.value)) empty.append(el('span', '', 'برای جست‌وجو، دست‌کم یک واژه یا عدد بنویسید.'));
+      if (!valid) empty.append(el('span', '', 'برای جست‌وجو، دست‌کم یک واژه یا عدد بنویسید.'));
       else empty.append(el('strong', '', 'نتیجه‌ای پیدا نشد.'), el('span', '',
         !session.languages.size ? 'برای جست‌وجوی متن، عربی یا فارسی را روشن کنید.' : 'واژهٔ دیگری را بنویسید.'));
     }
