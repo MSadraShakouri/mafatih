@@ -198,20 +198,21 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
       const content = renderItem(item, actions);
       applyReaderPreferences(content, preferences.get());
       replaceView(content); reader = content;
-      let snapshot: AutoScrollSnapshot | undefined;
+      let snapshot: AutoScrollSnapshot | undefined, restored = false;
       if (saved && saved.id === item.id && from?.kind === 'settings') {
         window.scrollTo({ top: saved.scroll, behavior: 'auto' });
         restoreVisibleReaderPosition(content, saved.position);
-        snapshot = saved.autoScroll; saved = undefined;
-      } else if (route.anchor) {
-        requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, route.anchor!); });
-      } else window.scrollTo({ top: 0, behavior: 'auto' });
+        snapshot = saved.autoScroll; saved = undefined; restored = true;
+      } else if (!route.anchor) window.scrollTo({ top: 0, behavior: 'auto' });
       const keeper = keepReaderPositionOnResize(content);
       autoScroll = scrollModule!.attachAutoScroll(content, scrollSettings, snapshot,
         snapshot !== undefined && snapshot.settingsRevision !== scrollSettings.get().revision, appActive);
       const attachedScroll = autoScroll;
+      if (route.anchor && !restored) {
+        requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, route.anchor!, attachedScroll); });
+      }
       inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch,
-        open => attachedScroll.setSearchOpen(open));
+        open => attachedScroll.setSearchOpen(open), attachedScroll);
       const attachedSearch = inTextSearch;
       disposeReader = () => { attachedSearch.dispose(); keeper.dispose(); attachedScroll.dispose(); };
     } else if (route.kind === 'contents' && catalog) {

@@ -211,7 +211,12 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   function queue(snapshot: SearchSnapshot): void {
     if (destroyed) return;
     pending = snapshot;
-    if (timer === undefined) timer = window.setTimeout(flush, 80);
+    // Show the first current hits and the finished answer promptly; coalesce
+    // subsequent intermediate churn. flush still respects touches, focus and
+    // catalog readiness.
+    if (snapshot.complete || (currentCount === 0 && snapshot.results.length > 0)) {
+      window.clearTimeout(timer); timer = undefined; flush();
+    } else if (timer === undefined) timer = window.setTimeout(flush, 80);
   }
   function resetQueue(): void { window.clearTimeout(timer); timer = undefined; pending = undefined; }
   function ensureCatalog(): void {

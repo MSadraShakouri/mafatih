@@ -1,5 +1,6 @@
 import { localizeSearchInput } from './display-text.js';
 import { textRange } from './text-offset.js';
+import { scrollRangeToPointer, type ReadingPointer } from './reader-anchor.js';
 import type { ReaderItem } from './data.js';
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
 import { normalizeSearch } from '../src/normalize.js';
@@ -26,7 +27,8 @@ export interface InTextSearch {
 
 /** Keep the reader DOM and its scroll position intact while replacing its 49px header. */
 export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: SearchClient,
-  session: SearchSession, requestClose: () => void, onOpenChange: (open: boolean) => void): InTextSearch {
+  session: SearchSession, requestClose: () => void, onOpenChange: (open: boolean) => void,
+  pointer: ReadingPointer): InTextSearch {
   const header = main.querySelector<HTMLElement>('.reader-header')!;
   const normal = header.querySelector<HTMLElement>('.header-inner')!;
   const bookmark = normal.querySelector<HTMLButtonElement>('.header-side.start .icon-button')!;
@@ -136,8 +138,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     const end = Math.max(start, Math.min(text.length, range?.end ?? start));
     const selection = textRange(paragraph, start, end);
     if (!selection) return;
-    const top = window.scrollY + selection.getBoundingClientRect().top - header.getBoundingClientRect().bottom - 15;
-    window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+    if (!scrollRangeToPointer(selection, pointer)) paragraph.scrollIntoView({ block: 'start', behavior: 'auto' });
     main.dataset.anchorRow = record.row; main.dataset.anchorOffset = String(utf16ToCodePointOffset(text, start));
     clearTimeout(flashTimer); clearFlash();
     const highlights = (CSS as typeof CSS & { highlights?: Map<string, unknown> }).highlights;
@@ -219,7 +220,11 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   function queue(snapshot: SearchSnapshot): void {
     if (!open || destroyed) return;
     pending = snapshot;
-    if (timer === undefined) timer = window.setTimeout(flush, 80);
+    // First current hits and finished answers need no extra throttle; the
+    // normal guards still hold updates while a result is touched or focused.
+    if (snapshot.complete || (currentCount === 0 && snapshot.text.length > 0)) {
+      window.clearTimeout(timer); timer = undefined; flush();
+    } else if (timer === undefined) timer = window.setTimeout(flush, 80);
   }
   function resetQueue(): void { window.clearTimeout(timer); timer = undefined; pending = undefined; }
   function run(): void {

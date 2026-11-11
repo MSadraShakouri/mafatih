@@ -86,6 +86,8 @@ interface WordScan {
   cursor: number; // global source-record cursor
   itemCursors: Map<string, number>;
   flags: Uint8Array; // checked, conservative compact-prefix candidate, direct/spaced
+  /** Lazily built bitset of conservative candidates, including unconfirmed joins. */
+  possible?: Uint32Array;
   parent?: WordScan;
   matches: number[]; // kept in global source-record order across scopes
   spacedMatches: Set<number>;
@@ -146,6 +148,41 @@ function insertOrdered(values: number[], value: number): void {
     if (values[middle]! < value) left = middle + 1; else right = middle;
   }
   if (values[left] !== value) values.splice(left, 0, value);
+}
+
+/** Build an index only when another word can actually reuse this prefix. */
+function candidateBits(scan: WordScan): Uint32Array {
+  if (!scan.possible) {
+    const bits = new Uint32Array(Math.ceil(scan.flags.length / 32));
+    for (let index = 0; index < scan.flags.length; index += 1) {
+      if (scan.flags[index]! & POSSIBLE) bits[index >>> 5]! |= 1 << (index & 31);
+    }
+    scan.possible = bits;
+  }
+  return scan.possible;
+}
+
+/** A scan may keep growing after another word starts using its prefix. */
+function recordCandidate(scan: WordScan, index: number): void {
+  if (!scan.possible) return;
+  const word = index >>> 5;
+  if (word >= scan.possible.length) {
+    const bits = new Uint32Array(Math.ceil(scan.flags.length / 32)); bits.set(scan.possible); scan.possible = bits;
+  }
+  scan.possible[word]! |= 1 << (index & 31);
+}
+
+/** Find the next set bit within the parent's known global scan prefix. */
+function nextCandidate(bits: Uint32Array, start: number, end: number): number {
+  let word = start >>> 5;
+  const limit = Math.min(bits.length, Math.ceil(end / 32));
+  if (word >= limit) return end;
+  let mask = bits[word]! & (0xffffffff << (start & 31));
+  while (true) {
+    if (mask) return Math.min(end, word * 32 + 31 - Math.clz32(mask & -mask));
+    if (++word >= limit) return end;
+    mask = bits[word]!;
+  }
 }
 
 /** A valid one-term lower bound while the stronger sequence score is pending. */
@@ -257,9 +294,17 @@ export class IncrementalSearch {
     for (const word of this.active.words) {
       const scan = this.cache.get(word)!;
       let cursor = this.scopeCursor(scan, item), examined = 0, visited = 0;
-      // Even cheap prefix rejections must yield periodically; otherwise a
-      // selective word can scan the entire corpus before its first update.
+      const parent = scan.parent;
+      const candidates = parent && !scoped && cursor < parent.cursor ? candidateBits(parent) : undefined;
+      // Candidate probes and individual checks remain bounded. For the known
+      // global prefix, jump gaps in a *conservative* candidate bitset;
+      // unknown/new records still take the ordinary path.
       while (cursor < size && examined < batchSize && visited < batchSize * 2) {
+        if (parent && candidates && cursor < parent.cursor) {
+          const next = nextCandidate(candidates, cursor, Math.min(size, parent.cursor));
+          if (next > cursor) { scan.work.prefixRejected += next - cursor; cursor = next; }
+          if (cursor === size) break;
+        }
         const index = scoped ? scoped[cursor]! : cursor;
         cursor += 1; visited += 1; scan.work.visited += 1;
         if (index >= scan.flags.length) {
@@ -268,12 +313,15 @@ export class IncrementalSearch {
           const flags = new Uint8Array(capacity); flags.set(scan.flags); scan.flags = flags;
         }
         if (scan.flags[index]! & CHECKED) { scan.work.reused += 1; continue; }
-        const previous = scan.parent?.flags[index] ?? 0;
-        if ((previous & CHECKED) && !(previous & POSSIBLE)) {
+        const previous = parent?.flags[index] ?? 0;
+        // Gaps skipped by the parent have no individual flag, but its global
+        // cursor proves they were rejected. This also protects item-first scans.
+        if (parent && ((previous & CHECKED) || index < parent.cursor) && !(previous & POSSIBLE)) {
           scan.flags[index] = CHECKED; scan.work.prefixRejected += 1; continue;
         }
         const flags = probe(this.records[index]!, word);
         scan.flags[index] = flags; scan.work.examined += 1; examined += 1;
+        if (scan.possible && (flags & POSSIBLE)) recordCandidate(scan, index);
         if (flags & (DIRECT | SPACED)) {
           insertOrdered(scan.matches, index);
           if (flags & SPACED) scan.spacedMatches.add(index);

@@ -94,7 +94,10 @@ test('returning from settings and resizing preserves the same visible line of a 
   await page.setViewportSize({ width: 390, height: 600 });
   await page.goto('./#/item/namaz-hnvt-myt?row=r00002&lang=fa&offset=600');
   await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-anchor-row', 'r00002');
-  const marker = await visibleLine(page); expect(marker.row).toBe('r00002'); expect(marker.offset).toBeGreaterThan(400);
+  // The linked match is centered at the pointer; the reference line near the
+  // header is consequently earlier in the same long row than the anchor.
+  const marker = await visibleLine(page); expect(marker.row).toBe('r00002');
+  expect(marker.offset).toBeGreaterThan(200); expect(marker.offset).toBeLessThan(600);
   await open(page); await select(page, 'ترجمهٔ فارسی');
   await plus(page, 'ترجمهٔ فارسی').evaluate(button => { for (let i = 0; i < 12; i++) (button as HTMLButtonElement).click(); });
   await page.getByText('امیری', { exact: true }).click(); await back(page);
@@ -119,20 +122,22 @@ test('position restoration works without caret-from-point APIs', async ({ page }
   expect(Math.abs(await lineTop(page, marker) - marker.top)).toBeLessThan(3);
 });
 
-test('a saved font loads before a deep link is positioned below the header', async ({ page, context }) => {
+test('a saved font loads before a deep link is positioned at the reading pointer', async ({ page, context }) => {
   await page.setViewportSize({ width: 390, height: 600 });
   await context.route('**/*NotoNaskhArabic-Regular*.ttf', async route => { await new Promise(resolve => setTimeout(resolve, 400)); await route.continue(); });
   await page.addInitScript(() => localStorage.setItem('mafatih.reader.preferences.v1', JSON.stringify({ font: 'noto-naskh', arabicSize: 165, translationSize: 100, explanationSize: 100 })));
   await page.goto('./#/item/amal-ttmh-aamal-mbas?row=r00009&lang=ar&offset=600');
   const reader = page.locator('main[data-screen="reader"]');
   await expect(reader).toHaveAttribute('data-anchor-row', 'r00009'); await expect(reader).toHaveAttribute('data-reader-font', 'noto-naskh');
-  const top = await page.evaluate(() => {
+  const position = await page.evaluate(() => {
     const paragraph = document.querySelector('[data-row-id="r00009"] p[lang="ar"]')!;
     const utf16 = Array.from(paragraph.textContent!).slice(0, 600).join('').length;
     const range = document.createRange(); range.setStart(paragraph.firstChild!, utf16); range.collapse(true);
-    return range.getBoundingClientRect().top;
+    const line = range.getBoundingClientRect(), marker = document.querySelector('#current-marker')!.getBoundingClientRect();
+    return { line: line.top + line.height / 2, pointer: marker.top + marker.height / 2 };
   });
-  expect(top).toBeGreaterThanOrEqual(48); expect(top).toBeLessThan(120);
+  expect(position.pointer).toBeGreaterThan(48);
+  expect(Math.abs(position.line - position.pointer)).toBeLessThan(2);
   await expect(page.locator('article mark')).toHaveCount(0);
 });
 

@@ -3,6 +3,7 @@ import {
   MAX_SCROLL_SPEED, MIN_SCROLL_SPEED, nextScrollSpeed, type ScrollSettingsStore,
 } from './scroll-settings.js';
 import { scrollSpeedText } from './scroll-settings-ui.js';
+import type { ReadingPointer } from './reader-anchor.js';
 
 // This is the selected standalone reader's scrolling/gesture behavior, mounted
 // on one real item. It does not rewrite or wrap any source text.
@@ -52,7 +53,7 @@ export interface AutoScrollSnapshot {
   error: number;
   settingsRevision: number;
 }
-export interface AutoScrollController {
+export interface AutoScrollController extends ReadingPointer {
   toggle(): void;
   /** Opening search is an explicit stop; closing it does not restart scrolling. */
   setSearchOpen(open: boolean): void;
@@ -600,6 +601,8 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
   refreshSpeed(); refreshPlay(); setPhase(state.playing ? 'auto' : 'paused'); setMarkers(); ensureFrame();
 
   return {
+    readingPosition: () => state.anchor,
+    setReadingPosition: y => { if (!disposed) moveMarker(y); },
     toggle: () => { setPlaying(!state.playing); if (!state.smart) showDock(); },
     setSearchOpen: open => {
       if (open) { setPlaying(false); state.searchOpen = true; hideMarkers(); hideDock(); }

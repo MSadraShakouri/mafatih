@@ -30,6 +30,56 @@ test('extending a word checks a safe prefix superset, including previously uncon
   assert.ok(work.examined <= 2, JSON.stringify(work));
 });
 
+test('a completed selective prefix skips known negatives without losing a possible spaced match', () => {
+  const records = [record('r0', 'اهل بیتش'), record('r1', 'اهلبیت'),
+    ...Array.from({ length: 5000 }, (_, n) => record(`r${n + 2}`, 'متن دیگری'))];
+  const engine = new IncrementalSearch(records);
+  assert.deepEqual(finish(engine, 'اهلبی').results.map(hit => hit.record.key), ['r1']);
+  let result = engine.begin(request('اهلبیت')), batches = 0;
+  while (!result.complete && batches++ < 500) result = engine.advance(25);
+  assert.ok(result.complete);
+  assert.deepEqual(new Set(result.results.map(hit => hit.record.key)), new Set(['r0', 'r1']));
+  const work = engine.wordWork('اهلبیت')!;
+  assert.ok(work.prefixRejected >= 5000, JSON.stringify(work));
+  assert.ok(work.visited <= 4, `already-rejected records must not be individually revisited: ${JSON.stringify(work)}`);
+  assert.ok(batches <= 2, `a selective completed prefix should not require ${batches} worker batches`);
+});
+
+test('sparse prefix candidates survive bit boundaries and chained extensions', () => {
+  const positions = [0, 30, 31, 32, 33, 62, 63, 64, 127, 511, 1023];
+  const records = Array.from({ length: 1100 }, (_, n) => record(`r${n}`,
+    positions.includes(n) ? 'اهلبیتش' : 'متن دیگر', { item: n % 2 ? 'odd' : 'even' }));
+  const engine = new IncrementalSearch(records);
+  finish(engine, 'اهلبی');
+  const longer = finish(engine, 'اهلبیت');
+  const expected = positions.map(n => `r${n}`).sort();
+  assert.deepEqual(longer.results.map(hit => hit.record.key).sort(), expected);
+  assert.ok(engine.wordWork('اهلبیت')!.visited <= positions.length);
+  // The intermediate scan has implicit negative gaps, yet it is itself a
+  // safe prefix for both a scoped and a global grandchild search.
+  const local = finish(engine, 'اهلبیتش', { item: 'odd' });
+  assert.deepEqual(local.results.map(hit => hit.record.key).sort(), positions.filter(n => n % 2).map(n => `r${n}`).sort());
+  const global = finish(engine, 'اهلبیتش');
+  assert.deepEqual(global.results.map(hit => hit.record.key).sort(), expected);
+});
+
+test('a prefix index stays correct as the parent advances and more shards arrive', () => {
+  const make = (n: number) => record(`r${n}`, n % 33 === 0 ? 'alphabet' : n % 5 ? 'alpha' : 'other',
+    { item: n % 2 ? 'odd' : 'even' });
+  const records = Array.from({ length: 260 }, (_, n) => make(n));
+  const engine = new IncrementalSearch(records.slice(0, 100), 32, true);
+  engine.begin(request('alpha')); engine.advance(5);
+  // Both terms remain active; the parent's candidate bitset must grow while
+  // the child is using it, even after it crosses allocation boundaries.
+  engine.begin(request('alpha alphabet'));
+  for (let i = 0; i < 12; i += 1) engine.advance(3);
+  engine.appendRecords(records.slice(100)); engine.finishLoading();
+  const actual = finish(engine, 'alphabet');
+  const fresh = finish(new IncrementalSearch(records), 'alphabet');
+  assert.deepEqual(actual.results.map(hit => hit.record.key), fresh.results.map(hit => hit.record.key));
+  assert.equal(actual.resultsTotal, fresh.resultsTotal);
+});
+
 test('an unfinished prefix and newly arriving shards do not hide longer joined matches', () => {
   const engine = new IncrementalSearch([record('r0', 'اهلبا یت'), record('r1', 'اهل بیتش')], 32, true);
   engine.begin(request('اهلبی'));
@@ -148,15 +198,19 @@ test('single supplementary characters preserve exact prefix-candidate behavior',
 });
 
 test('prefix-pruned work yields in bounded batches rather than blocking on every retained candidate', () => {
-  const records = Array.from({ length: 20 }, (_, n) => record(`r${n}`, n === 19 ? 'اهل بیتش' : 'اهلبا یت'));
+  // Every record is a conservative prefix candidate, including the last
+  // unconfirmed spaced match. Skipping rejected gaps must not remove the
+  // per-batch limit on real candidate probes.
+  const records = Array.from({ length: 20 }, (_, n) => record(`r${n}`, n === 19 ? 'اهل بیتش' : 'اهلبیت'));
   const engine = new IncrementalSearch(records);
   finish(engine, 'اهلبی');
   engine.begin(request('اهلبیت'));
   const partial = engine.advance(2);
   assert.equal(partial.complete, false);
   assert.ok(engine.progress('اهلبیت')!.cursor <= 4);
+  assert.ok(engine.wordWork('اهلبیت')!.examined <= 2);
   assert.equal(engine.hasUnscannedRecords(), true);
   let result = partial;
   while (!result.complete) result = engine.advance(2);
-  assert.deepEqual(result.results.map(hit => hit.record.key), ['r19']);
+  assert.deepEqual(new Set(result.results.map(hit => hit.record.key)), new Set(records.map(item => item.key)));
 });

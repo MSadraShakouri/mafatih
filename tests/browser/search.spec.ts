@@ -217,6 +217,10 @@ test('approved short-B aliases find unchanged full-corpus source in both scopes'
 test('Persian in-text result jumps to the matched line inside a long original row', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 600 });
   await page.goto('./#/item/namaz-hnvt-myt');
+  await expect(page.locator('#current-marker')).toBeVisible();
+  const selected = await page.locator('#current-marker').evaluate(element => {
+    const box = element.getBoundingClientRect(); return box.top + box.height / 2;
+  });
   await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();
   await page.getByRole('button', { name: 'گزینه‌های زبان' }).click();
   await page.getByRole('button', { name: persian }).click();
@@ -230,10 +234,12 @@ test('Persian in-text result jumps to the matched line inside a long original ro
     const offset = Number(main.dataset.anchorOffset), paragraph = main.querySelector('[data-row-id="r00002"] p[lang="fa"]')!;
     const text = paragraph.textContent!, range = document.createRange();
     range.setStart(paragraph.firstChild!, Array.from(text).slice(0, offset).join('').length); range.collapse(true);
-    return { offset, top: range.getBoundingClientRect().top, paragraphTop: paragraph.getBoundingClientRect().top };
+    const box = range.getBoundingClientRect();
+    return { offset, line: box.top + box.height / 2, paragraphTop: paragraph.getBoundingClientRect().top };
   });
-  expect(position.offset).toBeGreaterThan(500); expect(position.top).toBeGreaterThanOrEqual(0);
-  expect(position.top).toBeLessThan(120); expect(position.paragraphTop).toBeLessThan(-100);
+  expect(position.offset).toBeGreaterThan(500);
+  expect(Math.abs(position.line - selected)).toBeLessThan(2);
+  expect(position.paragraphTop).toBeLessThan(position.line - 100);
   await expect(page.locator('article mark')).toHaveCount(0);
 });
 

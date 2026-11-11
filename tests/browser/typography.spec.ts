@@ -52,6 +52,24 @@ test('anchors, search matches and reading position work across multiple marker n
   await expect(reader).toHaveAttribute('data-anchor-offset', String(initialAnchor));
   await expect(paragraph.locator('.quran-verse-marker')).toHaveText(['﴿۱۲﴾', '﴿۳۴﴾']);
   expect(await page.evaluate(() => scrollY)).toBeGreaterThan(100);
+  const lineAt = (offset: number) => page.evaluate(offset => {
+    const paragraph = document.querySelector<HTMLElement>('[data-row-id="r00003"] p[lang="ar"]')!;
+    let remaining = Array.from(paragraph.textContent ?? '').slice(0, offset).join('').length;
+    const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+    let node: Text | null;
+    while ((node = walker.nextNode() as Text | null)) {
+      if (remaining <= node.length) {
+        const range = document.createRange(); range.setStart(node, remaining); range.collapse(true);
+        const rect = range.getBoundingClientRect(); return rect.top + rect.height / 2;
+      }
+      remaining -= node.length;
+    }
+    throw Error('Original offset not found in the displayed text nodes');
+  }, offset);
+  const markerCenter = () => page.locator('#current-marker').evaluate(element => {
+    const box = element.getBoundingClientRect(); return box.top + box.height / 2;
+  });
+  expect(Math.abs((await lineAt(initialAnchor)) - (await markerCenter()))).toBeLessThan(2);
   const visible = await page.evaluate(() => {
     const paragraph = document.querySelector<HTMLElement>('[data-row-id="r00003"] p[lang="ar"]')!;
     const box = paragraph.getBoundingClientRect(), y = Math.min(120, Math.max(32, innerHeight * .2));
@@ -81,12 +99,14 @@ test('anchors, search matches and reading position work across multiple marker n
   }, visible)).toBeLessThan(3);
   // Search is executed against the original text; the highlight can be after
   // a marker span and an astral character, not just the first text node.
+  const chosen = await markerCenter();
   await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();
   const field = page.getByRole('searchbox', { name: 'جست‌وجو در این متن' });
   await field.fill('ادامه');
   const hit = page.locator('.result-row[data-row-id="r00003"]');
   await expect(hit).toBeVisible(); await hit.locator('button').click();
   await expect(reader).toHaveAttribute('data-anchor-offset', String(target));
+  expect(Math.abs((await lineAt(target)) - chosen)).toBeLessThan(2);
   const selection = await page.evaluate(() => {
     const highlights = (CSS as any).highlights;
     const highlight = highlights?.get('active-search-match');
