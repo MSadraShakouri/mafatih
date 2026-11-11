@@ -54,10 +54,10 @@ Follow [CONTENT_POLICY.md](CONTENT_POLICY.md): **no AI translation of Arabic tex
 
 ## 5. Build the website and app
 
-- [ ] Refine the Persian-first library and item pages, review provisional topic classification and long titles, and design/reconnect search. The current search, bookmark and auto-scroll controls are placeholders. English UI comes later; display the correct English title/coverage and use Persian fallback for a missing needed explanation.
+- [ ] Refine the Persian-first library, item pages and active global/in-text search; review provisional topic classification and long titles. English UI comes later; display the correct English title/coverage and use Persian fallback for a missing needed explanation.
 - [ ] Extend the current reader typography and settings with additional styles and review shaping/accessibility on devices. Three Arabic fonts, independent sizes and local licenses are in the current baseline. Arabic/Persian and later English need their proper directions. Select Persian or English translations rather than normally showing both full translations simultaneously.
 - [ ] Use reviewed alignment groups where available. For unreviewed or incomplete passages, show the full sources honestly instead of making a false line-by-line pairing.
-- [ ] Complete shared settings, bookmarks, accessible auto-scroll, offline website caching and backup/export. The starter Android shell bundles the website build; device/offline validation and a finished APK remain to do.
+- [ ] Extend shared settings, local whole-item bookmarks and accessible auto-scroll; validate gestures, lifecycle and offline operation on devices. Website offline caching and backup/export remain to do. The starter Android shell bundles the website build; a finished APK remains to do.
 - [ ] Keep data editing and review agent-friendly and text-based, with reversible changes, provenance entry and conflict handling. No visual data-editing tool is requested. Keep canonical data independent from website/app presentation.
 
 ## 6. Keep the repository healthy

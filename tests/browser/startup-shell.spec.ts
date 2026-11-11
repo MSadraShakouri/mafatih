@@ -39,6 +39,17 @@ test('the prebuilt shell applies system dark and a saved light override before t
   }
 });
 
+test('the idle home defers the auto-scroll controller until a reader is opened', async ({ page }) => {
+  const requested: string[] = [];
+  page.on('request', request => { if (/\/assets\/auto-scroll-[^/]+\.js/.test(request.url())) requested.push(request.url()); });
+  await page.goto('./'); await expect(page.locator('main[data-screen="library"]')).toBeVisible();
+  await page.waitForTimeout(300); expect(requested).toEqual([]);
+  await page.evaluate(() => { location.hash = '#/item/dua-kumayl'; });
+  await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', 'dua-kumayl');
+  await expect.poll(() => requested.length).toBe(1);
+  await expect(page.locator('#current-marker')).toBeVisible();
+});
+
 test('the idle home avoids fetching the catalog and search shards until needed', async ({ page }) => {
   const requested: string[] = [];
   page.on('request', request => { if (/\/data\/(?:catalog\.json|search(?:\/|-index))/.test(request.url())) requested.push(request.url()); });

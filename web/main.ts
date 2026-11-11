@@ -1,5 +1,8 @@
 import { App as CapacitorApp } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
+import type { AutoScrollController, AutoScrollSnapshot } from './auto-scroll.js';
+import { createBookmarkStore } from './bookmarks.js';
+import { createScrollSettings } from './scroll-settings.js';
 import { DataClient } from './data.js';
 import { attachLegalNotices } from './legal-notices.js';
 import { attachGlobalSearch, type GlobalSearch } from './global-search.js';
@@ -34,15 +37,20 @@ const searchSession = createSearchSession();
 let storage: Storage | undefined;
 try { storage = window.localStorage; } catch { /* in-memory fallback */ }
 const preferences = createReaderPreferencesStore(storage);
+const scrollSettings = createScrollSettings(storage);
+const bookmarks = createBookmarkStore(storage);
 const theme = createThemeStore(storage);
 attachLegalNotices();
 
 let renderId = 0;
 let reader: HTMLElement | undefined;
+let autoScroll: AutoScrollController | undefined;
+let appActive = true;
 let disposeReader: (() => void) | undefined;
 let globalSearch: GlobalSearch | undefined;
 let inTextSearch: InTextSearch | undefined;
-let saved: { id: string; position: VisibleReaderPosition | undefined; scroll: number } | undefined;
+let saved: { id: string; position: VisibleReaderPosition | undefined; scroll: number;
+  autoScroll?: AutoScrollSnapshot } | undefined;
 let lastRequested: Route | undefined;
 let lastKey = '';
 let lastRouteHash = '';
@@ -123,17 +131,15 @@ function toggleReaderSearch(id: string): void {
 const actions: RenderActions = {
   back,
   toggleReaderSearch,
-  openSettings: id => {
-    if (reader && reader.dataset.itemId === id) {
-      saved = { id, position: captureVisibleReaderPosition(reader), scroll: window.scrollY };
-    }
-    navigate(settingsHref(id));
-  },
+  toggleAutoScroll: id => { if (reader?.dataset.itemId === id) autoScroll?.toggle(); },
+  isBookmarked: id => bookmarks.has(id),
+  toggleBookmark: id => ({ selected: bookmarks.toggle(id), persisted: bookmarks.lastWritePersistent() }),
+  openSettings: id => navigate(settingsHref(id)),
 };
 
 function replaceView(content: HTMLElement): void {
   globalSearch?.dispose(); globalSearch = undefined;
-  disposeReader?.(); disposeReader = undefined; reader = undefined; inTextSearch = undefined;
+  disposeReader?.(); disposeReader = undefined; reader = undefined; autoScroll = undefined; inTextSearch = undefined;
   app.replaceChildren(content);
 }
 
@@ -145,15 +151,27 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
   // immediately. The TOC catalog can begin while the user chooses a topic.
   if (route.kind === 'library' || route.kind === 'bookmarks' || (route.kind === 'contents' && !route.topic)) {
     saved = undefined;
+    const bookmarkIds = route.kind === 'bookmarks' ? bookmarks.items() : [];
     const content = route.kind === 'library'
       ? (prebuiltHome.parentElement === app ? prebuiltHome : homeTemplate.cloneNode(true) as HTMLElement)
-      : renderLibrary({ items: [], toc: [] }, route, actions);
+      : renderLibrary({ items: [], toc: [] }, route, actions, bookmarkIds);
     const sameHome = route.kind === 'library' && content === app.firstElementChild && Boolean(globalSearch);
     if (content !== app.firstElementChild) replaceView(content);
     // A slow route can be cancelled before the home was replaced. Keep its
     // existing scroll/DOM instead of resetting it on that history return.
     if (!sameHome) window.scrollTo({ top: 0, behavior: 'auto' });
     if (route.kind === 'contents') void data.warmCatalog().catch(() => { /* A topic can retry. */ });
+    if (route.kind === 'bookmarks' && bookmarkIds.length) {
+      // The saved IDs can be shown immediately even if catalog loading fails;
+      // resolve the current titles without persisting stale copies of them.
+      void data.catalog().then(catalog => {
+        if (id !== renderId) return;
+        const resolved = renderLibrary(catalog, route, actions, bookmarkIds);
+        const currentList = content.querySelector('.library-list');
+        const resolvedList = resolved.querySelector('.library-list');
+        if (currentList && resolvedList) currentList.replaceWith(resolvedList);
+      }).catch(() => { /* Keep the saved links usable and retry on the next visit. */ });
+    }
     if (route.kind === 'library') {
       if (!globalSearch) globalSearch = attachGlobalSearch(content, () => data.catalog(), searchClient, searchSession,
         navigate, recordGlobalSearch, from !== undefined);
@@ -162,33 +180,40 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
   }
   try {
     const needsItem = route.kind === 'item' || route.kind === 'settings';
-    const [catalog, item, example, instruction] = await Promise.all([
+    const [catalog, item, example, instruction, scrollModule] = await Promise.all([
       route.kind === 'contents' ? data.catalog() : Promise.resolve(undefined),
       needsItem ? data.item(route.id) : Promise.resolve(undefined),
       route.kind === 'settings' ? data.item('dua-kumayl').catch(() => undefined) : Promise.resolve(undefined),
       route.kind === 'settings' ? data.item('amal-aamal-asr-jmah').catch(() => undefined) : Promise.resolve(undefined),
-      // Start the selected reader font at the same time as the item, not after it.
+      // Keep the home light, but load the controller and font in parallel with
+      // the item so neither becomes an extra serial wait before reading.
+      route.kind === 'item' ? import('./auto-scroll.js') : Promise.resolve(undefined),
       route.kind === 'item' ? prepareReaderFont(preferences.get().font) : Promise.resolve(),
     ]);
     if (id !== renderId) return;
     if (route.kind === 'settings' && item) {
-      replaceView(renderReaderSettings(item, example, instruction, preferences, theme, actions));
+      replaceView(renderReaderSettings(item, example, instruction, preferences, theme, actions, scrollSettings));
       window.scrollTo({ top: 0, behavior: 'auto' });
     } else if (route.kind === 'item' && item) {
       const content = renderItem(item, actions);
       applyReaderPreferences(content, preferences.get());
       replaceView(content); reader = content;
+      let snapshot: AutoScrollSnapshot | undefined;
       if (saved && saved.id === item.id && from?.kind === 'settings') {
         window.scrollTo({ top: saved.scroll, behavior: 'auto' });
         restoreVisibleReaderPosition(content, saved.position);
-        saved = undefined;
+        snapshot = saved.autoScroll; saved = undefined;
       } else if (route.anchor) {
         requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, route.anchor!); });
       } else window.scrollTo({ top: 0, behavior: 'auto' });
       const keeper = keepReaderPositionOnResize(content);
-      inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch);
+      autoScroll = scrollModule!.attachAutoScroll(content, scrollSettings, snapshot,
+        snapshot !== undefined && snapshot.settingsRevision !== scrollSettings.get().revision, appActive);
+      const attachedScroll = autoScroll;
+      inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch,
+        open => attachedScroll.setSearchOpen(open));
       const attachedSearch = inTextSearch;
-      disposeReader = () => { attachedSearch.dispose(); keeper.dispose(); };
+      disposeReader = () => { attachedSearch.dispose(); keeper.dispose(); attachedScroll.dispose(); };
     } else if (route.kind === 'contents' && catalog) {
       saved = undefined;
       replaceView(renderLibrary(catalog, route, actions));
@@ -229,6 +254,15 @@ function routeChanged(): void {
       return;
     }
   }
+  // Stop the old reader immediately, not when an asynchronous destination
+  // finishes loading. Settings alone preserves the reading/playback snapshot.
+  if (reader) {
+    if (from?.kind === 'item' && route.kind === 'settings' && reader.dataset.itemId === route.id) {
+      const snapshot = autoScroll?.snapshotForSettings();
+      saved = { id: route.id, position: captureVisibleReaderPosition(reader), scroll: window.scrollY,
+        ...(snapshot ? { autoScroll: snapshot } : {}) };
+    } else autoScroll?.suspendForNavigation();
+  }
   if (route.kind === 'library' && state?.globalSearch) searchSession.libraryQuery = state.globalQuery ?? '';
   void renderRoute(route, from);
 }
@@ -263,6 +297,11 @@ window.addEventListener('hashchange', routeChanged);
 // The native callback closes one app layer. In particular, closing find does
 // not also traverse WebView history. Focus alone does not establish IME state.
 if (native) {
+  // Android may background the activity without a browser visibility event.
+  // Keep the play choice but never accrue time while the activity is away.
+  void CapacitorApp.addListener('appStateChange', ({ isActive }) => {
+    appActive = isActive; autoScroll?.setAppActive(isActive);
+  }).catch(error => console.error('Unable to register Android activity state', error));
   let exitArmedAt = 0, exitTimer = 0;
   let exitNotice: HTMLElement | undefined;
   const clearExit = (): void => {

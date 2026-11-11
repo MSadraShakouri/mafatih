@@ -99,7 +99,7 @@ test('reader header keeps bookmark and icon positions, reader DOM and one-line o
   await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();
   const input = page.getByRole('searchbox', { name: readerInput });
   await expect(input).toBeFocused();
-  await expect(page.getByRole('button', { name: 'نشان شخصی' })).toHaveAttribute('aria-disabled', 'true');
+  await expect(page.getByRole('button', { name: 'نشان شخصی' })).toHaveAttribute('aria-pressed', 'false');
   const activeHeader = await page.locator('.app-header').boundingBox();
   const activeSearch = await page.getByRole('button', { name: 'بستن جست‌وجو' }).boundingBox();
   expect(normalHeader!.height).toBe(49); expect(activeHeader!.height).toBe(49);
@@ -245,9 +245,9 @@ test('outside clicks dismiss overlays without swallowing header and input action
   await expect(input).toBeFocused();
   await page.waitForTimeout(400); await expect(page.locator('.result-popover')).toBeVisible();
   await input.fill('رحمت'); await expect(page.locator('.result-popover')).toBeVisible({ timeout: 40_000 });
-  await page.getByRole('button', { name: 'نشان شخصی' }).click({ force: true });
+  await page.getByRole('button', { name: 'نشان شخصی' }).click();
   await expect(page.locator('.result-popover')).toBeVisible();
-  await expect(page.locator('.inline-message')).toContainText('هنوز فعال نشده است');
+  await expect(page.getByRole('button', { name: 'نشان شخصی' })).toHaveAttribute('aria-pressed', 'true');
   expect((await page.locator('.app-header').boundingBox())!.height).toBe(49);
   await page.waitForTimeout(2500);
   await expect(page.locator('.result-popover')).toBeVisible();

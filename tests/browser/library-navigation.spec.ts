@@ -32,7 +32,7 @@ test('home and topic screens use stationary centered headers; search loads lazil
   await expect(page.locator('.library-name')).toHaveText(homeNames);
   expect(await center()).toBeCloseTo(homeCenter, 1);
   await page.getByRole('link', { name: 'نشان‌های من' }).click();
-  await expect(page.locator('.library-empty')).toContainText('هنوز فعال نشده‌اند');
+  await expect(page.locator('.library-empty')).toContainText('هنوز نشانی ذخیره نکرده‌اید');
   expect(await center()).toBeCloseTo(homeCenter, 1);
   expect(searchRequests).toEqual([]); expect(workers).toEqual([]);
 });
@@ -43,12 +43,11 @@ test('real prayer, Quran, other, and featured entries navigate without simulated
   await page.getByRole('link', { name: 'فصل ششم: بیان بعضی از دعاهای مشهور' }).click();
   await page.getByRole('link', { name: 'دعای کمیل بن زیاد' }).click();
   await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-item-id', 'dua-kumayl');
-  for (const label of ['نشان شخصی', 'پیمایش خودکار']) {
-    const control = page.getByRole('button', { name: label }); await expect(control).toBeVisible(); await expect(control).toHaveAttribute('aria-disabled', 'true');
-  }
+  const bookmark = page.getByRole('button', { name: 'نشان شخصی' });
+  await expect(bookmark).toBeVisible(); await expect(bookmark).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.getByRole('button', { name: 'شروع پیمایش خودکار' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'جست‌وجو در متن' })).not.toHaveAttribute('aria-disabled', 'true');
-  await page.getByRole('button', { name: 'نشان شخصی' }).click({ force: true });
-  await expect(page.locator('.inline-message')).toContainText('هنوز فعال نشده است');
+  await bookmark.click(); await expect(bookmark).toHaveAttribute('aria-pressed', 'true');
   await page.evaluate(() => history.back());
   await expect(page.getByRole('link', { name: 'دعای کمیل بن زیاد' })).toBeVisible();
   await page.goto('./#/contents/quran');

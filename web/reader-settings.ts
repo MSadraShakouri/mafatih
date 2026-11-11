@@ -7,6 +7,8 @@ import {
   MAX_SIZE, MIN_SIZE, nextSize, type ReaderFont, type ReaderPreferences, type ReaderPreferencesStore,
 } from './reader-preferences.js';
 import type { ThemeMode, ThemeStore } from './theme.js';
+import type { ScrollSettingsStore } from './scroll-settings.js';
+import { renderScrollSettings } from './scroll-settings-ui.js';
 
 const FONT_FAMILIES: Record<ReaderFont, string> = {
   amiri: 'Mafatih Amiri',
@@ -40,7 +42,7 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text 
 
 /** Samples come from the existing loaded corpus, never invented devotional text. */
 export function renderReaderSettings(item: ReaderItem, example: ReaderItem | undefined, instruction: ReaderItem | undefined,
-  store: ReaderPreferencesStore, theme: ThemeStore, actions: RenderActions): HTMLElement {
+  store: ReaderPreferencesStore, theme: ThemeStore, actions: RenderActions, scroll: ScrollSettingsStore): HTMLElement {
   const main = el('main'); main.dataset.screen = 'settings'; main.dataset.itemId = item.id;
   applyReaderPreferences(main, store.get());
   main.append(makeHeader('تنظیمات خواندن', 'settings', actions, { backFallback: itemHref(item.id) }));
@@ -123,6 +125,7 @@ export function renderReaderSettings(item: ReaderItem, example: ReaderItem | und
     label.append(input, mark, fontName, sample); options.append(label);
   }
   fontSection.append(options); content.append(fontSection);
+  content.append(renderScrollSettings(scroll));
 
   const themeSection = el('section', 'settings-section');
   const wrap = el('div', 'theme-wrap'); wrap.append(el('span', 'theme-label', 'رنگ صفحه'));

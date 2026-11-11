@@ -26,7 +26,7 @@ export interface InTextSearch {
 
 /** Keep the reader DOM and its scroll position intact while replacing its 49px header. */
 export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: SearchClient,
-  session: SearchSession, requestClose: () => void): InTextSearch {
+  session: SearchSession, requestClose: () => void, onOpenChange: (open: boolean) => void): InTextSearch {
   const header = main.querySelector<HTMLElement>('.reader-header')!;
   const normal = header.querySelector<HTMLElement>('.header-inner')!;
   const bookmark = normal.querySelector<HTMLButtonElement>('.header-side.start .icon-button')!;
@@ -73,7 +73,8 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   error.append(el('span', '', 'بارگذاری جست‌وجو ناموفق بود.'));
   const retry = el('button', 'search-retry', 'تلاش دوباره'); retry.type = 'button'; error.append(retry);
   popovers.append(results, menu, error);
-  const live = el('div', 'visually-hidden'); live.setAttribute('role', 'status'); live.setAttribute('aria-live', 'polite');
+  const live = el('div', 'visually-hidden'); live.dataset.readerSearchStatus = '';
+  live.setAttribute('role', 'status'); live.setAttribute('aria-live', 'polite');
   main.append(popovers, live);
 
   let open = false, destroyed = false, listOpen = false, menuOpen = false, errorOpen = false, searching = false;
@@ -336,6 +337,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
 
   function enter(focus = false): void {
     if (destroyed || open) return;
+    onOpenChange(true);
     open = true; listOpen = true; menuOpen = false; errorOpen = false; limit = PAGE_SIZE;
     input.value = session.readerQuery;
     if (inlineMessage) inlineMessage.hidden = true;
@@ -363,6 +365,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     search.setAttribute('aria-label', 'جست‌وجو در متن'); search.title = 'جست‌وجو در متن'; search.removeAttribute('aria-pressed');
     row.replaceWith(normal); header.classList.remove('infile-active');
     if (inlineMessage) inlineMessage.hidden = true;
+    onOpenChange(false);
     live.textContent = 'جست‌وجو بسته شد'; visibility();
   }
   return {

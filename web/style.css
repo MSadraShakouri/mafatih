@@ -41,6 +41,7 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .icon-button {width:44px;height:44px;flex:0 0 44px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:transparent;color:inherit;padding:0}
 .icon-button svg,.symbol svg {width:16px;height:16px;display:block}
 .icon-button:active {background:var(--header-active)}
+.icon-button[data-bookmark][aria-pressed='true'] svg path {fill:currentColor}
 .inline-message {padding:9px clamp(20px,5.5vw,56px);font-size:12px;color:var(--muted);background:var(--soft);border-top:1px solid var(--border);line-height:1.8}
 .content {padding:0 clamp(20px,5.5vw,56px) 64px}
 .navigation-loading {position:fixed;z-index:60;bottom:16px;inset-inline-start:16px;padding:7px 11px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--muted);font-size:12px;box-shadow:0 4px 12px var(--shadow);pointer-events:none}
@@ -169,7 +170,7 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .query-clear svg {width:14px;height:14px}
 .language-picker {font-size:12px;font-weight:650}
 .result-reopen svg {width:16px;height:16px}
-.infile-active .inline-message {position:absolute;inset-inline:0;top:100%;z-index:30}
+.reader-header .inline-message {position:absolute;inset-inline:0;top:100%;z-index:30}
 ::highlight(active-search-match) {background:#f3d78e;color:inherit}
 :root[data-theme='dark']::highlight(active-search-match) {background:#6d5731;color:inherit}
 .result-popover {position:fixed;z-index:15;inset-inline:12px;top:calc(var(--search-header-bottom,49px) + 6px);max-width:580px;margin-inline:auto;max-height:min(270px,43dvh,max(0px,var(--search-available-height,360px)));overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 28px var(--shadow);padding:6px;scrollbar-width:thin}
@@ -197,3 +198,63 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .search-error-popover {display:grid;gap:8px;font-size:12px;line-height:1.8}
 .search-retry {min-height:44px;border:1px solid var(--border);border-radius:9px;background:var(--soft);color:var(--primary)}
 @media(max-width:360px) {.search-header-row {padding-inline:4px}}
+
+/* Auto-scroll uses the selected S7 marker and C guide without reflowing text. */
+:root {--live:#0e5c47;--ghost:#7a5825;--guide-ink:15,92,68}
+:root[data-theme='dark'] {--live:#b3e5c8;--ghost:#f0d19b;--guide-ink:179,229,200}
+main[data-screen='reader'] {position:relative}
+main[data-screen='reader'] .reader-header {z-index:24}
+main[data-screen='reader'][data-phase='auto'] > .content,
+main[data-screen='reader'][data-phase='holding'] > .content {touch-action:none}
+main[data-screen='reader'] > .content {position:relative;isolation:isolate}
+main[data-screen='reader'] > .content > .reader {position:relative;z-index:1}
+#guide-layer {position:fixed;top:0;right:max(0px,calc((100vw - 760px)/2));width:min(100vw,760px);height:19px;z-index:0;pointer-events:none;will-change:transform}
+#guide-layer::before {content:'';position:absolute;right:0;top:50%;width:100%;height:32px;transform:translateY(-50%);background:linear-gradient(to left,rgba(var(--guide-ink),.22),rgba(var(--guide-ink),.075) 48%,rgba(var(--guide-ink),0) 100%);opacity:0;pointer-events:none;transition:opacity .12s ease}
+main[data-phase='paused'] #guide-layer::before {opacity:.8}
+main[data-phase='paused'] #guide-layer[data-dragging='true']::before {opacity:1}
+.marker {position:fixed;top:0;right:max(0px,calc((100vw - 760px)/2));z-index:20;width:19px;height:19px;direction:ltr;pointer-events:none;white-space:nowrap;will-change:transform}
+.ghost-layer {position:absolute;top:0;bottom:0;right:0;width:24px;overflow:hidden;pointer-events:none;z-index:9}
+.marker-current {z-index:22;color:var(--live)}
+.marker-current[data-adjustable='true'] {pointer-events:auto;touch-action:none;cursor:ns-resize}
+.marker-current[data-adjustable='true']::before {content:'';position:absolute;right:0;top:-22.5px;width:72px;height:64px;clip-path:inset(var(--grip-clip-top,0px) 0 var(--grip-clip-bottom,0px) 0)}
+.marker-current[data-adjustable='true'] .marker-glyph::before,.marker-current[data-adjustable='true'] .marker-glyph::after {content:'';position:absolute;left:50%;transform:translateX(-50%);border-left:3px solid transparent;border-right:3px solid transparent}
+.marker-current[data-adjustable='true'] .marker-glyph::before {top:calc(50% - 5.166667px - 7px);border-bottom:3px solid var(--live)}
+.marker-current[data-adjustable='true'] .marker-glyph::after {bottom:calc(50% - 5.166667px - 7px);border-top:3px solid var(--live)}
+.marker-current:focus-visible {outline:none}
+.marker-current:focus-visible .marker-glyph {outline:2px solid var(--gold);outline-offset:-2px;border-radius:2px}
+.marker-expected {position:absolute;right:0;z-index:1;color:var(--ghost)}
+.marker-expected-edge {z-index:21;color:var(--ghost)}
+.marker-glyph {position:absolute;top:50%;display:block;transform:translateY(-50%)}
+.marker-glyph svg {display:block;width:100%;height:100%;pointer-events:none}
+.marker-current .marker-glyph,.marker-expected .marker-glyph,.marker-expected-edge .marker-glyph {right:0;width:16.791666px;height:23.25px}
+.marker-edge {display:none;font:700 9px/1 system-ui,sans-serif;color:var(--ghost);background:var(--paper)}
+.marker-expected-edge[data-edge] .marker-edge {display:block;position:absolute;right:4px;top:50%;transform:translateY(-50%)}
+.speed-dock {position:fixed;z-index:18;top:58px;left:max(10px,calc((100vw - 760px)/2 + 10px));direction:ltr;display:flex;align-items:center;gap:2px;min-height:48px;padding:3px;touch-action:none;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 25px rgba(30,35,25,.15),0 1px 4px var(--shadow)}
+.speed-button {display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:10px;background:transparent;color:var(--primary);padding:0}
+.speed-button:active:not(:disabled) {background:var(--primary-soft)}
+.speed-button:disabled {opacity:.35;cursor:default}
+.speed-button svg {width:16px;height:16px}
+.speed-middle {min-width:66px;text-align:center;direction:rtl;line-height:1.25}
+.speed-title {display:block;color:var(--muted);font-size:10px;font-weight:600}
+.speed-value {display:block;color:var(--text);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+/* Smart mode disables only the settings speed stepper, not the manual dock. */
+.setting-line {min-height:73px;border-block:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.setting-copy {min-width:0}
+.setting-name {font-size:14px;font-weight:650;line-height:1.8}
+.setting-note {margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.9;max-width:480px}
+.settings-speed-line {border-top:0;min-height:69px}
+.settings-stepper {display:grid;grid-template-columns:44px minmax(54px,auto) 44px;align-items:center;direction:ltr;border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;flex:0 0 auto}
+.settings-step-button {display:grid;place-items:center;width:44px;height:44px;background:transparent;border:0;padding:0;color:var(--primary)}
+.settings-step-button:active:not(:disabled) {background:var(--primary-soft)}
+.settings-step-button:disabled {opacity:.35;cursor:default}
+.settings-step-button svg {width:16px;height:16px}
+.settings-speed-value {text-align:center;color:var(--text);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.scroll-settings[data-scroll-smart='true'] .settings-speed-line .setting-copy,
+.scroll-settings[data-scroll-smart='true'] .settings-stepper {opacity:.55}
+.scroll-settings[data-scroll-smart='true'] .settings-step-button:disabled {opacity:1}
+.switch-button {flex:0 0 52px;width:52px;height:44px;padding:0;border:0;background:transparent;display:grid;place-items:center}
+.switch-track {position:relative;width:43px;height:25px;border-radius:30px;background:#aea99e;border:1px solid rgba(0,0,0,.09);transition:background .16s ease}
+.switch-track::after {content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:white;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:transform .16s ease}
+.switch-button[aria-checked='true'] .switch-track {background:#0f674d}
+.switch-button[aria-checked='true'] .switch-track::after {transform:translateX(18px)}
+@media(prefers-reduced-motion:reduce) {#guide-layer::before,.switch-track,.switch-track::after {transition:none}}

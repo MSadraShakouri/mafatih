@@ -16,6 +16,9 @@ export interface RenderActions {
   back(fallback: string): void;
   openSettings(itemId: string): void;
   toggleReaderSearch(itemId: string): void;
+  toggleAutoScroll(itemId: string): void;
+  isBookmarked(itemId: string): boolean;
+  toggleBookmark(itemId: string): { selected: boolean; persisted: boolean };
 }
 
 function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
@@ -31,12 +34,11 @@ function icon(name: IconName): HTMLSpanElement {
   return symbol;
 }
 
-function iconButton(name: IconName, label: string, action: () => void, unavailable = false): HTMLButtonElement {
+function iconButton(name: IconName, label: string, action: () => void): HTMLButtonElement {
   const button = element('button', 'icon-button');
   button.type = 'button';
   button.setAttribute('aria-label', label);
-  button.title = unavailable ? `${label} — به‌زودی` : label;
-  if (unavailable) { button.setAttribute('aria-disabled', 'true'); button.setAttribute('aria-description', 'هنوز فعال نشده است'); }
+  button.title = label;
   button.append(icon(name));
   button.addEventListener('click', action);
   return button;
@@ -52,16 +54,24 @@ export function makeHeader(title: string, mode: 'library' | 'reader' | 'settings
   const status = element('div', 'inline-message');
   status.hidden = true;
   status.setAttribute('role', 'status');
-  let timer: number | undefined;
-  const unavailable = (): void => {
-    window.clearTimeout(timer);
-    status.textContent = 'این امکان هنوز فعال نشده است.';
-    status.hidden = false;
-    timer = window.setTimeout(() => { status.hidden = true; }, 2400);
-  };
   if (mode === 'reader' && options.itemId) {
-    right.append(iconButton('bookmark', 'نشان شخصی', unavailable, true));
-    left.append(iconButton('scroll', 'پیمایش خودکار', unavailable, true));
+    const id = options.itemId;
+    let noticeTimer = 0;
+    const bookmark = iconButton('bookmark', 'نشان شخصی', () => {
+      const result = actions.toggleBookmark(id);
+      bookmark.setAttribute('aria-pressed', String(result.selected));
+      window.clearTimeout(noticeTimer);
+      if (!result.persisted) {
+        status.textContent = 'ذخیرهٔ دائمی در دسترس نیست؛ تغییر نشان فقط در این نشست نگه داشته می‌شود.';
+        status.hidden = false;
+        noticeTimer = window.setTimeout(() => { status.hidden = true; }, 4000);
+      } else status.hidden = true;
+    });
+    bookmark.dataset.bookmark = '';
+    bookmark.setAttribute('aria-pressed', String(actions.isBookmarked(id)));
+    right.append(bookmark);
+    const play = iconButton('scroll', 'شروع پیمایش خودکار', () => actions.toggleAutoScroll(options.itemId!));
+    play.id = 'play'; play.setAttribute('aria-pressed', 'false'); left.append(play);
     const search = iconButton('search', 'جست‌وجو در متن', () => actions.toggleReaderSearch(options.itemId!));
     search.dataset.readerSearch = '';
     left.append(search);
@@ -92,7 +102,8 @@ function menuLink(title: string, href: string, id: string, bookmark = false): HT
   return link;
 }
 
-export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'contents' | 'bookmarks' }>, actions: RenderActions): HTMLElement {
+export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'contents' | 'bookmarks' }>,
+  actions: RenderActions, bookmarkIds: readonly string[] = []): HTMLElement {
   const main = element('main');
   main.dataset.screen = 'library';
   let title = 'مفاتیح الجنان';
@@ -112,7 +123,16 @@ export function renderLibrary(catalog: Catalog, route: Extract<Route, { kind: 'c
   list.setAttribute('aria-label', 'فهرست');
   list.dataset.contents = '';
   if (route.kind === 'bookmarks') {
-    content.append(element('p', 'library-empty', 'نشان‌های شخصی هنوز فعال نشده‌اند.'));
+    if (!bookmarkIds.length) content.append(element('p', 'library-empty', 'هنوز نشانی ذخیره نکرده‌اید.'));
+    for (const id of bookmarkIds) {
+      const item = catalog.items.find(entry => entry.id === id);
+      const title = item ? titleText(item.title, id) : { text: id, lang: 'en', dir: 'ltr' as const };
+      const link = menuLink(title.text, itemHref(id), id, true);
+      link.dataset.itemId = id;
+      const name = link.querySelector<HTMLElement>('.library-name')!;
+      name.lang = title.lang; name.dir = title.dir;
+      list.append(link);
+    }
   } else if (route.kind === 'contents' && !route.topic) {
     for (const topic of TOPICS) list.append(menuLink(topic.label, topicHref(topic.id), `__topic_${topic.id}__`));
   } else if (route.kind === 'contents' && route.topic) {

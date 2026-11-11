@@ -54,7 +54,7 @@ for (const scope of ['global', 'reader'] as const) {
     const input = page.getByRole('searchbox', { name: scope === 'global' ? 'جست‌وجو در فهرست و متن' : 'جست‌وجو در این متن' });
     const panel = page.locator(scope === 'global' ? '.search-results' : '.result-popover');
     const empty = page.locator(scope === 'global' ? '.search-empty:visible' : '.result-empty:visible');
-    const status = page.locator(scope === 'global' ? '.search-results-count' : 'main .visually-hidden[role="status"]');
+    const status = page.locator(scope === 'global' ? '.search-results-count' : '[data-reader-search-status]');
     const rows = page.locator(scope === 'global' ? '.search-result' : '.result-row');
 
     await page.evaluate(() => { (window as any).__silentSearch.hold = true; });
