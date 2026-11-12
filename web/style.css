@@ -173,7 +173,10 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .reader-header .inline-message {position:absolute;inset-inline:0;top:100%;z-index:30}
 ::highlight(active-search-match) {background:#f3d78e;color:inherit}
 :root[data-theme='dark']::highlight(active-search-match) {background:#6d5731;color:inherit}
-.result-popover {position:fixed;z-index:15;inset-inline:12px;top:calc(var(--search-header-bottom,49px) + 6px);max-width:580px;margin-inline:auto;max-height:min(270px,43dvh,max(0px,var(--search-available-height,360px)));overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 28px var(--shadow);padding:6px;scrollbar-width:thin}
+/* Keep result actions above the pointer's wide grip, while leaving its glyph reachable at the right edge. */
+.result-popover {position:fixed;z-index:23;inset-inline:12px;top:calc(var(--search-header-bottom,49px) + 6px);max-width:580px;margin-inline:auto;max-height:min(270px,43dvh,max(0px,var(--search-available-height,360px)));overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 28px var(--shadow);padding:6px;scrollbar-width:thin}
+/* Shift the narrow panel without reducing its width to make room for the marker. */
+@media(max-width:627px) {.result-popover {left:0;right:24px}}
 .result-head {display:flex;align-items:center;justify-content:space-between;padding:1px 5px 4px 7px;min-height:34px;color:var(--muted);font-size:11px;font-weight:650}
 .result-head button {border:0;background:transparent;color:var(--muted);height:34px;width:34px;min-width:34px;flex-basis:34px;display:grid;place-items:center;border-radius:7px}
 .result-head svg {width:15px;height:15px}

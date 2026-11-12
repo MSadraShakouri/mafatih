@@ -1,7 +1,7 @@
 import { codePointToUtf16Offset, textRange } from './text-offset.js';
 import type { ReadingAnchor } from './routes.js';
 
-/** The reader controller owns the marker even while search temporarily hides it. */
+/** The reader controller owns the marker in both reading and in-text search. */
 export interface ReadingPointer {
   readingPosition(): number;
   setReadingPosition(y: number): void;

@@ -62,13 +62,14 @@ test('an in-text result moves to the chosen pointer while leaving search open an
   const hit = page.locator('.result-row[data-row-id="r00028"][data-language="ar"]');
   await expect(hit).toBeVisible({ timeout: 40_000 }); await hit.locator('button').click();
   await expect(reader(page)).toHaveAttribute('data-anchor-row', 'r00028');
-  await expect(input).toBeVisible(); await expect(page.locator('.result-popover')).toBeHidden();
-  await expect(page.locator('#current-marker')).toBeHidden();
-  await expect(page.locator('#guide-layer')).toBeHidden();
+  await expect(input).toBeVisible(); await expect(input).toHaveValue('الهم');
+  await expect(page.locator('.result-popover')).toBeHidden();
+  await expect(page.locator('#current-marker')).toBeVisible();
+  await expect(page.locator('#guide-layer')).toBeVisible();
   const flash = () => page.evaluate(() => Boolean((CSS as any).highlights?.has('active-search-match')));
   expect(await flash()).toBe(true);
   await expect.poll(flash, { timeout: 4000 }).toBe(false);
-  await expect(page.locator('#current-marker')).toBeHidden();
+  await expect(page.locator('#current-marker')).toBeVisible();
   const result = await anchorLine(page, 'ar');
   console.log(`In-text matched line ${result.line.toFixed(1)}px; chosen pointer ${chosen.toFixed(1)}px`);
   expect(Math.abs(result.line - chosen), 'match should move to the chosen pointer position').toBeLessThan(2);

@@ -133,7 +133,10 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
   const isBodyTarget = (target: EventTarget | null): boolean => !state.searchOpen && target instanceof Element && content.contains(target);
   const isDockTarget = (target: EventTarget | null): boolean => target instanceof Element && !!target.closest('#speed-dock');
   const isControl = (target: EventTarget | null): boolean => target instanceof Element && !!target.closest('button, input, select, textarea, #speed-dock, #current-marker');
-  const readyForMotion = (): boolean => !disposed && !state.suspended && !state.searchOpen && !document.hidden && state.intersecting && state.appActive;
+  // Searching blocks automatic motion, but the paused reading pointer remains
+  // visible and adjustable while the reader itself is active.
+  const readyForPointer = (): boolean => !disposed && !state.suspended && !document.hidden && state.intersecting && state.appActive;
+  const readyForMotion = (): boolean => !state.searchOpen && readyForPointer();
   const effectiveY = (): number => scrollY() + (state.blend?.offset || 0);
   function announce(message: string): void {
     window.clearTimeout(announceTimer); announcer.textContent = '';
@@ -193,7 +196,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     }
   }
   function setMarkers(): void {
-    if (!readyForMotion()) { hideMarkers(); return; }
+    if (!readyForPointer()) { hideMarkers(); return; }
     const { top, bottom } = markerBounds(), here = clamp(state.anchor, top, bottom);
     state.anchor = here;
     const adjustable = !state.playing;
@@ -238,7 +241,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     if (currentMarker.hasPointerCapture(id)) currentMarker.releasePointerCapture(id);
   }
   function onMarkerDown(event: PointerEvent): void {
-    if (state.playing || !readyForMotion() || (event.pointerType === 'mouse' && event.button !== 0)) return;
+    if (state.playing || !readyForPointer() || (event.pointerType === 'mouse' && event.button !== 0)) return;
     event.preventDefault(); event.stopPropagation(); stopGuideAdjustment(); guide.dataset.dragging = 'true';
     markerDrag = { id: event.pointerId, startY: event.clientY, anchor: state.anchor };
     currentMarker.setPointerCapture(event.pointerId);
@@ -253,7 +256,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     event.preventDefault(); event.stopPropagation(); cancelMarkerDrag();
   }
   function onMarkerKey(event: KeyboardEvent): void {
-    if (state.playing || !readyForMotion()) return;
+    if (state.playing || !readyForPointer()) return;
     const { top, bottom } = markerBounds(); let y = state.anchor;
     if (event.key === 'ArrowUp' || event.key === 'ArrowRight') y -= 16;
     else if (event.key === 'ArrowDown' || event.key === 'ArrowLeft') y += 16;
@@ -605,7 +608,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     setReadingPosition: y => { if (!disposed) moveMarker(y); },
     toggle: () => { setPlaying(!state.playing); if (!state.smart) showDock(); },
     setSearchOpen: open => {
-      if (open) { setPlaying(false); state.searchOpen = true; hideMarkers(); hideDock(); }
+      if (open) { setPlaying(false); cancelMarkerDrag(); state.searchOpen = true; hideDock(); setMarkers(); }
       else { state.searchOpen = false; syncAtCurrent(); setMarkers(); }
     },
     snapshotForSettings: () => {
