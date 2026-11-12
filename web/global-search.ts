@@ -1,4 +1,5 @@
 import { localizeSearchInput } from './display-text.js';
+import { attachHomePullSearch } from './gestures.js';
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
 import { normalizeSearch } from '../src/normalize.js';
 import { utf16ToCodePointOffset } from '../src/search-text.js';
@@ -279,6 +280,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     else input.blur();
   }, () => { run(); });
   const stopKeyboard = dismissKeyboardOnOutsideTouch(input);
+  const stopPullSearch = attachHomePullSearch(main, input);
   const onDown = (): void => { pointerDown = true; };
   const releasePointer = (): void => {
     pointerDown = false; clearTimeout(pointerFallback);
@@ -301,7 +303,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
       input.value = query; needsRestore = false; limit = PAGE_SIZE; run();
     },
     dispose(): void {
-    destroyed = true; session.libraryQuery = input.value; resetQueue(); client.cancel(); stopKeyboard(); clearTimeout(pointerFallback);
+    destroyed = true; session.libraryQuery = input.value; resetQueue(); client.cancel(); stopKeyboard(); stopPullSearch(); clearTimeout(pointerFallback);
     window.removeEventListener('resize', resize); document.fonts?.removeEventListener('loadingdone', resize);
     document.removeEventListener('pointerup', onUp); document.removeEventListener('pointercancel', onUp);
     document.removeEventListener('click', releasePointer, true);

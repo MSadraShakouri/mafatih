@@ -29,6 +29,7 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible) {outline:0}
 button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:2px solid var(--gold);outline-offset:2px}
 [hidden] {display:none!important}
 #app {max-width:760px;min-height:100vh;margin-inline:auto;background:var(--paper);box-shadow:0 12px 70px var(--shadow)}
+#app[data-wide-reader='true'] {max-width:none}
 .app-header {position:sticky;top:0;z-index:5;background:var(--header-bg);color:var(--header-text);border-bottom:1px solid transparent}
 .header-inner {height:48px;display:flex;align-items:center;padding-inline:8px}
 .header-side {display:flex;align-items:center;min-width:0;flex:0 0 auto}
@@ -48,8 +49,20 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .reader {padding-top:27px}
 .reader-row {margin:0 0 33px}
 .reader-row:last-child {margin-bottom:0}
+/* Existing row elements remain in source order. Flex order presents all of a
+   band's Arabic fields first, then its Persian fields, each wrapping in view. */
+.reader-band {display:flex;flex-wrap:wrap;align-items:flex-start;column-gap:12px;margin:0 0 33px}
+.reader-band:last-child {margin-bottom:0}
+.reader-band > .reader-row {display:contents}
+.reader .reader-band > .reader-row p {flex:0 1 auto;width:max-content;min-width:0;max-width:100%;margin:0;text-align:start}
+.reader .reader-band > .reader-row p[lang='ar'] {order:0}
+.reader-band::before {content:'';flex:0 0 100%;height:5px;order:1}
+.reader .reader-band > .reader-row p[lang='fa'] {order:2}
+.reader.wide-measuring p[data-text-role='arabic'] {width:max-content;max-width:none;white-space:pre;text-wrap:nowrap;text-align:start;overflow-wrap:normal}
+
 .reader p,.size-preview p {margin:0;direction:rtl;unicode-bidi:plaintext;text-align:justify;text-align-last:start;overflow-wrap:break-word;white-space:pre-wrap;text-wrap:pretty}
 .reader [data-text-role='arabic'],.size-preview .ar {font-family:var(--reader-arabic-family,'Mafatih Scheherazade'),'Mafatih Noto Naskh',serif;font-size:calc(25.3px * var(--reader-arabic-scale,1));line-height:2.06;color:var(--text);font-feature-settings:'liga' 1,'calt' 1}
+main[data-wide-active='true'] .reader [data-text-role='arabic'] {font-kerning:normal}
 .reader [data-text-role='translation'],.size-preview .fa {font-family:'Vazirmatn',system-ui,sans-serif;font-size:calc(16.5px * var(--reader-translation-scale,1));line-height:1.95;color:var(--translation);font-weight:400}
 .reader .ar + .fa {margin-top:5px}
 .reader-row:is([data-kind='instruction'],[data-kind='note']) {border-inline-start:2px solid var(--gold);padding-inline-start:15px;margin-block:8px 38px}
@@ -99,6 +112,8 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .font-option input:checked + .radio-mark::after {content:'';width:8px;height:8px;border-radius:50%;background:var(--primary)}
 .font-name {font-size:13px;font-weight:600;flex:0 1 112px;line-height:1.7}
 .font-example {margin-inline-start:auto;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;direction:rtl;text-align:end;color:var(--translation);font-size:21px;line-height:1.9;min-width:0}
+.layout-option {min-height:48px}
+.layout-name {font-size:13px;font-weight:600;line-height:1.8}
 .theme-wrap {display:flex;align-items:center;justify-content:space-between;gap:12px;border-block:1px solid var(--border);min-height:69px}
 .theme-label {font-size:14px;font-weight:600}
 .theme-options {display:flex;align-items:center;gap:2px;background:var(--soft);border:1px solid var(--border);padding:3px;border-radius:9px}
@@ -233,6 +248,10 @@ main[data-phase='paused'] #guide-layer[data-dragging='true']::before {opacity:1}
 .marker-edge {display:none;font:700 9px/1 system-ui,sans-serif;color:var(--ghost);background:var(--paper)}
 .marker-expected-edge[data-edge] .marker-edge {display:block;position:absolute;right:4px;top:50%;transform:translateY(-50%)}
 .speed-dock {position:fixed;z-index:18;top:58px;left:max(10px,calc((100vw - 760px)/2 + 10px));direction:ltr;display:flex;align-items:center;gap:2px;min-height:48px;padding:3px;touch-action:none;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 25px rgba(30,35,25,.15),0 1px 4px var(--shadow)}
+main[data-wide-active='true'] #guide-layer {right:0;width:100vw}
+main[data-wide-active='true'] .marker {right:0}
+main[data-wide-active='true'] .speed-dock {left:10px}
+main[data-wide-active='true'] .filter-menu,main[data-wide-active='true'] .search-error-popover {left:12px}
 .speed-button {display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:10px;background:transparent;color:var(--primary);padding:0}
 .speed-button:active:not(:disabled) {background:var(--primary-soft)}
 .speed-button:disabled {opacity:.35;cursor:default}

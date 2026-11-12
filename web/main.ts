@@ -6,13 +6,14 @@ import { createScrollSettings } from './scroll-settings.js';
 import { DataClient } from './data.js';
 import { attachLegalNotices } from './legal-notices.js';
 import { attachGlobalSearch, type GlobalSearch } from './global-search.js';
+import { attachReaderHeaderGestures } from './gestures.js';
 import { attachInTextSearch, type InTextSearch } from './intext-search.js';
 import { SearchClient } from './search-client.js';
 import { createSearchSession } from './search-common.js';
 import { nativeBackAction } from './native-back.js';
 import { scrollToReadingAnchor } from './reader-anchor.js';
 import { captureVisibleReaderPosition, keepReaderPositionOnResize, restoreVisibleReaderPosition, type VisibleReaderPosition } from './reader-position.js';
-import { createReaderPreferencesStore } from './reader-preferences.js';
+import { createReaderPreferencesStore, type ReaderPreferences } from './reader-preferences.js';
 import { applyReaderPreferences, prepareReaderFont, renderReaderSettings } from './reader-settings.js';
 import { renderItem, renderLibrary, renderMessage, type RenderActions } from './render.js';
 import { itemHref, parseRoute, settingsHref, type Route } from './routes.js';
@@ -121,12 +122,17 @@ function closeReaderSearch(): void {
   // guard itself in place so the next Back follows the underlying route.
   updateBrowserGuard(state => { delete state.readerSearch; });
 }
+function openReaderSearch(id: string): void {
+  if (!reader || reader.dataset.itemId !== id || !inTextSearch) return;
+  if (!inTextSearch.isOpen()) {
+    ensureBrowserGuard();
+    updateBrowserGuard(state => { state.readerSearch = true; });
+  }
+  inTextSearch.open(true);
+}
 function toggleReaderSearch(id: string): void {
   if (!reader || reader.dataset.itemId !== id || !inTextSearch) return;
-  if (inTextSearch.isOpen()) { closeReaderSearch(); return; }
-  ensureBrowserGuard();
-  updateBrowserGuard(state => { state.readerSearch = true; });
-  inTextSearch.open(true);
+  if (inTextSearch.isOpen()) closeReaderSearch(); else openReaderSearch(id);
 }
 const actions: RenderActions = {
   back,
@@ -140,7 +146,18 @@ const actions: RenderActions = {
 function replaceView(content: HTMLElement): void {
   globalSearch?.dispose(); globalSearch = undefined;
   disposeReader?.(); disposeReader = undefined; reader = undefined; autoScroll = undefined; inTextSearch = undefined;
+  app.dataset.wideReader = String(content.dataset.wideActive === 'true');
   app.replaceChildren(content);
+}
+
+function prepareReaderLayoutFont(selected: ReaderPreferences): Promise<boolean | void> {
+  const preferred = prepareReaderFont(selected.font);
+  if (selected.wideLayout === 'normal') return preferred;
+  return preferred.then(async loaded => {
+    // If the chosen file failed, load the actual Arabic fallback before
+    // grouping, not after measuring widths against a temporary serif.
+    if (!loaded && selected.font !== 'noto-naskh') await prepareReaderFont('noto-naskh');
+  });
 }
 
 async function renderRoute(route: Route, from: Route | undefined): Promise<void> {
@@ -180,7 +197,8 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
   }
   try {
     const needsItem = route.kind === 'item' || route.kind === 'settings';
-    const [catalog, item, example, instruction, scrollModule] = await Promise.all([
+    const readerPreferences = preferences.get();
+    const [catalog, item, example, instruction, scrollModule, , initialWideModule] = await Promise.all([
       route.kind === 'contents' ? data.catalog() : Promise.resolve(undefined),
       needsItem ? data.item(route.id) : Promise.resolve(undefined),
       route.kind === 'settings' ? data.item('dua-kumayl').catch(() => undefined) : Promise.resolve(undefined),
@@ -188,23 +206,40 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
       // Keep the home light, but load the controller and font in parallel with
       // the item so neither becomes an extra serial wait before reading.
       route.kind === 'item' ? import('./auto-scroll.js') : Promise.resolve(undefined),
-      route.kind === 'item' ? prepareReaderFont(preferences.get().font) : Promise.resolve(),
+      route.kind === 'item' ? prepareReaderLayoutFont(readerPreferences) : Promise.resolve(),
+      // The default reader never pays to download or parse the optional layout.
+      route.kind === 'item' && readerPreferences.wideLayout !== 'normal'
+        ? import('./wide-reader.js') : Promise.resolve(undefined),
     ]);
     if (id !== renderId) return;
     if (route.kind === 'settings' && item) {
       replaceView(renderReaderSettings(item, example, instruction, preferences, theme, actions, scrollSettings));
       window.scrollTo({ top: 0, behavior: 'auto' });
     } else if (route.kind === 'item' && item) {
+      // Settings can remain visible while a slow return is in flight. If the
+      // user changes its font or enables grouping then, prepare the new choice
+      // before measuring or mounting instead of using stale startup resources.
+      let prepared = readerPreferences, current = preferences.get(), wideModule = initialWideModule;
+      while (prepared.font !== current.font || (prepared.wideLayout === 'normal' && current.wideLayout !== 'normal')) {
+        prepared = current;
+        const [, selectedModule] = await Promise.all([
+          prepareReaderLayoutFont(prepared),
+          prepared.wideLayout !== 'normal' ? import('./wide-reader.js') : Promise.resolve(undefined),
+        ]);
+        if (id !== renderId) return;
+        wideModule = selectedModule; current = preferences.get();
+      }
       const content = renderItem(item, actions);
-      applyReaderPreferences(content, preferences.get());
+      applyReaderPreferences(content, current);
       replaceView(content); reader = content;
+      const wideLayout = wideModule?.attachWideReaderLayout(content, current.wideLayout, item);
       let snapshot: AutoScrollSnapshot | undefined, restored = false;
       if (saved && saved.id === item.id && from?.kind === 'settings') {
         window.scrollTo({ top: saved.scroll, behavior: 'auto' });
         restoreVisibleReaderPosition(content, saved.position);
         snapshot = saved.autoScroll; saved = undefined; restored = true;
       } else if (!route.anchor) window.scrollTo({ top: 0, behavior: 'auto' });
-      const keeper = keepReaderPositionOnResize(content);
+      const keeper = keepReaderPositionOnResize(content, wideLayout?.reflow);
       autoScroll = scrollModule!.attachAutoScroll(content, scrollSettings, snapshot,
         snapshot !== undefined && snapshot.settingsRevision !== scrollSettings.get().revision, appActive);
       const attachedScroll = autoScroll;
@@ -214,7 +249,8 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
       inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch,
         open => attachedScroll.setSearchOpen(open), attachedScroll);
       const attachedSearch = inTextSearch;
-      disposeReader = () => { attachedSearch.dispose(); keeper.dispose(); attachedScroll.dispose(); };
+      const stopHeaderGestures = attachReaderHeaderGestures(content, () => openReaderSearch(item.id));
+      disposeReader = () => { stopHeaderGestures(); attachedSearch.dispose(); keeper.dispose(); wideLayout?.dispose(); attachedScroll.dispose(); };
     } else if (route.kind === 'contents' && catalog) {
       saved = undefined;
       replaceView(renderLibrary(catalog, route, actions));

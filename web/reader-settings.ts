@@ -4,7 +4,7 @@ import { ICONS } from './icons.js';
 import { makeHeader, type RenderActions } from './render.js';
 import { itemHref } from './routes.js';
 import {
-  MAX_SIZE, MIN_SIZE, nextSize, type ReaderFont, type ReaderPreferences, type ReaderPreferencesStore,
+  MAX_SIZE, MIN_SIZE, nextSize, type ReaderFont, type ReaderPreferences, type ReaderPreferencesStore, type WideLayout,
 } from './reader-preferences.js';
 import type { ThemeMode, ThemeStore } from './theme.js';
 import type { ScrollSettingsStore } from './scroll-settings.js';
@@ -22,13 +22,21 @@ const digits = (n: number): string => displayDigits(String(n), 'ui');
 type SizeKey = 'arabicSize' | 'translationSize' | 'explanationSize';
 const labels: Record<SizeKey, string> = { arabicSize: 'متن عربی', translationSize: 'ترجمهٔ فارسی', explanationSize: 'توضیحات' };
 
-export async function prepareReaderFont(font: ReaderFont): Promise<void> {
-  try { if (document.fonts) await document.fonts.load(`400 1rem "${FONT_FAMILIES[font]}"`); }
-  catch { /* system serif is still usable if a bundled file cannot load */ }
+export async function prepareReaderFont(font: ReaderFont): Promise<boolean> {
+  try {
+    if (!document.fonts) return false;
+    const faces = await document.fonts.load(`400 1rem "${FONT_FAMILIES[font]}"`);
+    return faces.length > 0 && faces.every(face => face.status === 'loaded');
+  } catch {
+    // System serif is still usable if a bundled file cannot load.
+    return false;
+  }
 }
 
 export function applyReaderPreferences(main: HTMLElement, preferences: ReaderPreferences): void {
   main.dataset.readerFont = preferences.font;
+  main.dataset.wideLayout = preferences.wideLayout;
+  main.dataset.wideActive = String(main.dataset.screen === 'reader' && preferences.wideLayout !== 'normal');
   main.style.setProperty('--reader-arabic-family', `"${FONT_FAMILIES[preferences.font]}"`);
   main.style.setProperty('--reader-arabic-scale', String(preferences.arabicSize / 100));
   main.style.setProperty('--reader-translation-scale', String(preferences.translationSize / 100));
@@ -125,6 +133,27 @@ export function renderReaderSettings(item: ReaderItem, example: ReaderItem | und
     label.append(input, mark, fontName, sample); options.append(label);
   }
   fontSection.append(options); content.append(fontSection);
+
+  const layoutSection = el('section', 'settings-section');
+  layoutSection.append(el('h2', 'section-title', 'چیدمان متن'));
+  const layoutOptions = el('div', 'font-options layout-options');
+  layoutOptions.setAttribute('role', 'radiogroup'); layoutOptions.setAttribute('aria-label', 'چیدمان متن');
+  const layouts: readonly [WideLayout, string][] = [
+    ['normal', 'چیدمان معمولی'], ['wide-0', 'کنار هم، بدون طول اضافه'],
+    ['wide-25', 'کنار هم، تا ۲۵٪ طول اضافه'], ['wide-50', 'کنار هم، تا ۵۰٪ طول اضافه'],
+  ];
+  for (const [value, title] of layouts) {
+    const label = el('label', 'font-option layout-option');
+    const input = el('input'); input.type = 'radio'; input.name = 'reader-layout'; input.value = value;
+    input.checked = store.get().wideLayout === value; input.setAttribute('aria-label', title);
+    const mark = el('span', 'radio-mark'); mark.setAttribute('aria-hidden', 'true');
+    const name = el('span', 'layout-name', title);
+    input.addEventListener('change', () => { if (input.checked) store.update({ wideLayout: value }); });
+    label.append(input, mark, name); layoutOptions.append(label);
+  }
+  layoutSection.append(layoutOptions);
+  layoutSection.append(el('p', 'setting-note', 'در حالت کنار هم، ردیف‌های کوتاه بر پایهٔ طول عربی و عرض صفحه گروه‌بندی می‌شوند. طول اضافه فقط حد گروه‌بندی است؛ متن از صفحه بیرون نمی‌رود.'));
+  content.append(layoutSection);
   content.append(renderScrollSettings(scroll));
 
   const themeSection = el('section', 'settings-section');

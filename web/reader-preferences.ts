@@ -1,12 +1,16 @@
 export const READER_PREFERENCES_KEY = 'mafatih.reader.preferences.v1';
 export const FONT_IDS = ['scheherazade', 'amiri', 'noto-naskh'] as const;
 export type ReaderFont = typeof FONT_IDS[number];
+export const WIDE_LAYOUTS = ['normal', 'wide-0', 'wide-25', 'wide-50'] as const;
+export type WideLayout = typeof WIDE_LAYOUTS[number];
 
 export interface ReaderPreferences {
   font: ReaderFont;
   arabicSize: number;
   translationSize: number;
   explanationSize: number;
+  /** Normal is off; each other choice permits the indicated extra Arabic width. */
+  wideLayout: WideLayout;
 }
 
 /** 32 reversible proportional steps on either side of 100%, from 25% to 400%. */
@@ -16,7 +20,7 @@ export const SIZE_LEVELS: readonly number[] = Object.freeze(
 export const MIN_SIZE = SIZE_LEVELS[0]!;
 export const MAX_SIZE = SIZE_LEVELS[SIZE_LEVELS.length - 1]!;
 export const DEFAULT_READER_PREFERENCES: Readonly<ReaderPreferences> = Object.freeze({
-  font: 'scheherazade', arabicSize: 100, translationSize: 100, explanationSize: 100,
+  font: 'scheherazade', arabicSize: 100, translationSize: 100, explanationSize: 100, wideLayout: 'normal',
 });
 
 export interface PreferenceStorage {
@@ -50,6 +54,8 @@ export function normalizeReaderPreferences(value: unknown): ReaderPreferences {
     arabicSize: validSize(input.arabicSize),
     translationSize: validSize(input.translationSize),
     explanationSize: validSize(input.explanationSize),
+    wideLayout: typeof input.wideLayout === 'string' && (WIDE_LAYOUTS as readonly string[]).includes(input.wideLayout)
+      ? input.wideLayout as WideLayout : DEFAULT_READER_PREFERENCES.wideLayout,
   };
 }
 

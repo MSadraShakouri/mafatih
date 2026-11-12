@@ -341,7 +341,8 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   results.addEventListener('focusout', () => window.setTimeout(() => { if (pending && timer === undefined) flush(); }, 0));
 
   function enter(focus = false): void {
-    if (destroyed || open) return;
+    if (destroyed) return;
+    if (open) { if (focus) input.focus({ preventScroll: true }); return; }
     onOpenChange(true);
     open = true; listOpen = true; menuOpen = false; errorOpen = false; limit = PAGE_SIZE;
     input.value = session.readerQuery;

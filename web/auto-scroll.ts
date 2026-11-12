@@ -43,7 +43,7 @@ interface State {
   playing: boolean; smart: boolean; speed: number; phase: Phase;
   expected: number; elapsed: number; target: number; commandedY: number; anchor: number;
   hold: Hold | null; blend: Blend | null; tapGuardUntil: number; flingGuardUntil: number;
-  lastFrame: number | null; intersecting: boolean; appActive: boolean; suspended: boolean; searchOpen: boolean;
+  lastFrame: number | null; intersecting: boolean; appActive: boolean; suspended: boolean;
 }
 
 export interface AutoScrollSnapshot {
@@ -92,7 +92,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     elapsed: snapshot && !resetReference ? snapshot.elapsed : 0,
     target: actual, commandedY: actual, anchor: initialAnchor, hold: null, blend: null,
     tapGuardUntil: 0, flingGuardUntil: 0, lastFrame: clock(), intersecting: true,
-    appActive, suspended: false, searchOpen: false,
+    appActive, suspended: false,
   };
 
   const guide = document.createElement('div'); guide.id = 'guide-layer'; guide.dataset.dragging = 'false';
@@ -130,13 +130,13 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
   const listeners = new AbortController(), signal = listeners.signal;
   let observer: IntersectionObserver | undefined;
 
-  const isBodyTarget = (target: EventTarget | null): boolean => !state.searchOpen && target instanceof Element && content.contains(target);
+  const isBodyTarget = (target: EventTarget | null): boolean => target instanceof Element && content.contains(target);
   const isDockTarget = (target: EventTarget | null): boolean => target instanceof Element && !!target.closest('#speed-dock');
   const isControl = (target: EventTarget | null): boolean => target instanceof Element && !!target.closest('button, input, select, textarea, #speed-dock, #current-marker');
-  // Searching blocks automatic motion, but the paused reading pointer remains
-  // visible and adjustable while the reader itself is active.
+  // Opening search pauses once, but an intentional body double tap can
+  // restart motion without closing the search or moving the reading pointer.
   const readyForPointer = (): boolean => !disposed && !state.suspended && !document.hidden && state.intersecting && state.appActive;
-  const readyForMotion = (): boolean => !state.searchOpen && readyForPointer();
+  const readyForMotion = (): boolean => readyForPointer();
   const effectiveY = (): number => scrollY() + (state.blend?.offset || 0);
   function announce(message: string): void {
     window.clearTimeout(announceTimer); announcer.textContent = '';
@@ -406,7 +406,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     ensureFrame();
   }
   function beginWheel(event: WheelEvent): void {
-    if (state.searchOpen || isControl(event.target)) return;
+    if (isControl(event.target)) return;
     if (state.flingGuardUntil) clearNativeTakeover(); if (!state.smart) showDock();
     if (!state.playing || !readyForMotion() || state.blend || state.phase !== 'auto') return;
     beginPress('reader', clock()); if (state.hold) state.hold.fromWheel = true;
@@ -425,7 +425,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     touchCount = readingTouches.length; return readingTouches;
   }
   function onTouchStart(event: TouchEvent): void {
-    if (state.searchOpen || state.suspended) return;
+    if (state.suspended) return;
     lastTouchTime = clock(); const before = touchCount; syncTouchCounts(event);
     const started = Array.from(event.changedTouches).filter(point => !isDockTarget(point.target));
     if (!started.length) { lastTap = null; state.tapGuardUntil = 0; if (!state.smart) showDock(); return; }
@@ -456,7 +456,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     }
   }
   function onTouchEnd(event: TouchEvent): void {
-    if (state.searchOpen || state.suspended) return;
+    if (state.suspended) return;
     lastTouchTime = clock(); const readingTouches = syncTouchCounts(event);
     const changed = Array.from(event.changedTouches), ended = changed.filter(point => !isDockTarget(point.target));
     if (changed.length !== ended.length && !state.smart) showDock(); if (!ended.length) return;
@@ -485,7 +485,7 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     }
   }
   function onPointerDown(event: PointerEvent): void {
-    if (event.pointerType === 'touch' || event.button !== 0 || clock() - lastTouchTime < 800 || state.searchOpen || state.suspended) return;
+    if (event.pointerType === 'touch' || event.button !== 0 || clock() - lastTouchTime < 800 || state.suspended) return;
     if (isDockTarget(event.target)) { dockPointerDown = true; lastTap = null; state.tapGuardUntil = 0; if (!state.smart) showDock(); return; }
     mouseDown = true; const body = isBodyTarget(event.target) && !isControl(event.target), now = clock();
     mouseCandidate = body ? { x: event.clientX, y: event.clientY, start: now, distance: 0, dragScroll: scrollY(), dragY: event.clientY, lastY: event.clientY, controlled: false } : null;
@@ -608,8 +608,8 @@ export function attachAutoScroll(main: HTMLElement, settings: ScrollSettingsStor
     setReadingPosition: y => { if (!disposed) moveMarker(y); },
     toggle: () => { setPlaying(!state.playing); if (!state.smart) showDock(); },
     setSearchOpen: open => {
-      if (open) { setPlaying(false); cancelMarkerDrag(); state.searchOpen = true; hideDock(); setMarkers(); }
-      else { state.searchOpen = false; syncAtCurrent(); setMarkers(); }
+      if (open) { setPlaying(false); cancelMarkerDrag(); hideDock(); setMarkers(); }
+      else { syncAtCurrent(); setMarkers(); }
     },
     snapshotForSettings: () => {
       if (state.blend) flushBlend(false);

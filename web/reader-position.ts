@@ -63,16 +63,43 @@ function closestLineOffset(paragraph: HTMLElement, targetY: number): number {
   return offsets[Math.min(low, points.length)]!;
 }
 
+/** In a visual band source-order paragraph bottoms are not monotonic. Search
+ * top-level blocks instead, then choose the topmost visible line inside a band. */
+function wideVisibleParagraphs(main: HTMLElement, targetY: number): HTMLParagraphElement[] {
+  const article = main.querySelector<HTMLElement>('article.reader');
+  if (!article) return [];
+  const blocks = article.children;
+  let low = 0, high = blocks.length;
+  while (low < high) {
+    const middle = Math.floor((low + high) / 2);
+    if (blocks[middle]!.getBoundingClientRect().bottom <= targetY) low = middle + 1;
+    else high = middle;
+  }
+  const result: { paragraph: HTMLParagraphElement; box: DOMRect }[] = [];
+  for (let index = low; index < blocks.length; index++) {
+    const block = blocks[index]!;
+    if (block.getBoundingClientRect().top >= innerHeight) break;
+    for (const paragraph of block.querySelectorAll<HTMLParagraphElement>('p[lang="ar"], p[lang="fa"]')) {
+      const box = paragraph.getBoundingClientRect();
+      if (box.height > 0 && box.bottom > targetY && box.top < innerHeight) result.push({ paragraph, box });
+    }
+  }
+  result.sort((a, b) => Math.max(0, a.box.top - targetY) - Math.max(0, b.box.top - targetY) ||
+    a.box.top - b.box.top || b.box.right - a.box.right);
+  return result.map(item => item.paragraph);
+}
+
 /** Capture the visible line, including an offset inside a long row. */
 export function captureVisibleReaderPosition(main: HTMLElement): VisibleReaderPosition | undefined {
   // At the very top, staying at the top is less surprising than scrolling the
   // header out of view to keep the first paragraph at an exact pixel.
   if (window.scrollY <= 1) return undefined;
   const targetY = Math.min(120, Math.max(32, window.innerHeight * 0.2));
-  const paragraphs = readerParagraphs(main);
-  // The plain reader flows in source order, so paragraph bottoms are ordered.
+  const wide = main.dataset.wideActive === 'true';
+  const paragraphs = wide ? wideVisibleParagraphs(main, targetY) : readerParagraphs(main);
+  // Only the ungrouped reader has source-ordered paragraph bottoms.
   let low = 0, high = paragraphs.length;
-  while (low < high) {
+  if (!wide) while (low < high) {
     const middle = Math.floor((low + high) / 2);
     if (paragraphs[middle]!.getBoundingClientRect().bottom <= targetY) low = middle + 1;
     else high = middle;
@@ -116,7 +143,7 @@ export function restoreVisibleReaderPosition(main: HTMLElement, position: Visibl
 }
 
 /** Keep the last visible line across viewport-width/orientation changes. */
-export function keepReaderPositionOnResize(main: HTMLElement): { refresh(): void; dispose(): void } {
+export function keepReaderPositionOnResize(main: HTMLElement, reflow?: () => void): { refresh(): void; dispose(): void } {
   let position = captureVisibleReaderPosition(main);
   let previousWidth = window.innerWidth;
   let pending = 0;
@@ -132,6 +159,7 @@ export function keepReaderPositionOnResize(main: HTMLElement): { refresh(): void
     // a finger is scrolling. They do not rewrap text; don't fight that scroll.
     if (!widthChanged) return;
     if (pending) { cancelAnimationFrame(pending); pending = 0; }
+    reflow?.();
     restoreVisibleReaderPosition(main, position);
     refresh();
   };

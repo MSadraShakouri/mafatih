@@ -10,7 +10,7 @@ import {
 test('reader preferences validate stored fonts and independently bound each size', () => {
   assert.deepEqual(normalizeReaderPreferences({
     font: 'noto-naskh', arabicSize: 154, translationSize: -20, explanationSize: 900,
-  }), { font: 'noto-naskh', arabicSize: 154, translationSize: 25, explanationSize: 400 });
+  }), { font: 'noto-naskh', arabicSize: 154, translationSize: 25, explanationSize: 400, wideLayout: 'normal' });
   assert.deepEqual(normalizeReaderPreferences({
     font: 'bad; background: red', arabicSize: '150', translationSize: null, explanationSize: Infinity,
   }), DEFAULT_READER_PREFERENCES);
@@ -39,7 +39,7 @@ test('preferences persist, reset, and continue working when storage is denied', 
   first.update({ translationSize: 125, explanationSize: 160 });
   assert.ok(data.has(READER_PREFERENCES_KEY));
   const second = createReaderPreferencesStore(storage);
-  assert.deepEqual(second.get(), { font: 'scheherazade', arabicSize: 140, translationSize: 125, explanationSize: 160 });
+  assert.deepEqual(second.get(), { font: 'scheherazade', arabicSize: 140, translationSize: 125, explanationSize: 160, wideLayout: 'normal' });
   const copy = second.get(); copy.arabicSize = 900;
   assert.equal(second.get().arabicSize, 140);
   assert.deepEqual(second.reset(), DEFAULT_READER_PREFERENCES);
@@ -65,4 +65,19 @@ test('display blocks retain occurrence order and classify only explicit explanat
   assert.equal(readerTextRole(rows[1]!, 'fa'), 'translation');
   assert.equal(readerTextRole(rows[2]!, 'fa'), 'explanation');
   assert.equal(readerTextRole(rows[3]!, 'fa'), 'explanation');
+});
+
+test('wide layout is opt-in and 0, 25, 50 percent are separate validated persistent choices', () => {
+  assert.equal((DEFAULT_READER_PREFERENCES as unknown as { wideLayout: string }).wideLayout, 'normal');
+  const memory = new Map<string, string>();
+  const storage = { getItem: (key: string) => memory.get(key) ?? null, setItem: (key: string, value: string) => { memory.set(key, value); } };
+  for (const mode of ['normal', 'wide-0', 'wide-25', 'wide-50']) {
+    const prefs = normalizeReaderPreferences({ wideLayout: mode }) as unknown as { wideLayout: string };
+    assert.equal(prefs.wideLayout, mode);
+    memory.set(READER_PREFERENCES_KEY, JSON.stringify({ wideLayout: mode }));
+    assert.equal((createReaderPreferencesStore(storage).get() as unknown as { wideLayout: string }).wideLayout, mode);
+  }
+  for (const invalid of [undefined, null, 'wide', 0, 'wide-75', '<style>']) {
+    assert.equal((normalizeReaderPreferences({ wideLayout: invalid }) as unknown as { wideLayout: string }).wideLayout, 'normal');
+  }
 });
