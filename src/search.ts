@@ -407,9 +407,24 @@ export class IncrementalSearch {
     if (!this.active) throw new Error('Start a search first');
     const active = this.active;
     const { request, words } = active;
+    // With no discovered hits in any scope there is nothing to merge or rank.
+    // Keep loading/cursor and cache bookkeeping identical to an ordinary page.
+    if (words.every(word => this.cache.get(word)!.matches.length === 0)) {
+      active.rankingPending = false;
+      this.trimScoreCache(active);
+      return {
+        id: request.id,
+        complete: words.length === 0 || (!this.loading && words.every(word =>
+          this.scopeCursor(this.cache.get(word)!, request.item) === this.scopeSize(request.item))),
+        results: [], resultsTotal: 0, toc: [], text: [], tocTotal: 0, textTotal: 0,
+      };
+    }
     const languages = new Set(request.languages);
-    const matched = new Map<number, { words: string[]; direct: number }>();
-    for (const word of words) {
+    // A single logical word already has a unique, source-ordered match list.
+    // Only multi-word OR searches need a map to merge terms by record.
+    const single = words.length === 1 ? this.cache.get(words[0]!) : undefined;
+    const matched = single ? undefined : new Map<number, { words: string[]; direct: number }>();
+    if (matched) for (const word of words) {
       const scan = this.cache.get(word)!;
       for (const index of scan.matches) {
         const record = this.records[index]!;
@@ -439,16 +454,20 @@ export class IncrementalSearch {
       b.hit.directMatches - a.hit.directMatches ||
       a.hit.record.order - b.hit.record.order || a.ordinal - b.ordinal;
     const resultLimit = request.resultLimit ?? request.tocLimit + request.textLimit;
-    const best = new TopK<Candidate>(resultLimit, matched.size, compare);
-    const bestToc = new TopK<Candidate>(request.tocLimit, matched.size, compare);
-    const bestText = new TopK<Candidate>(request.textLimit, matched.size, compare);
-    let tocTotal = 0, textTotal = 0, rankingPending = false, ordinal = 0;
-    for (const [index, info] of matched) {
+    // For one word, the unfiltered list is a safe upper bound for TopK even
+    // when the current language or item scope excludes some records.
+    const maxPossible = single ? single.matches.length : matched!.size;
+    const best = new TopK<Candidate>(resultLimit, maxPossible, compare);
+    const bestToc = new TopK<Candidate>(request.tocLimit, maxPossible, compare);
+    const bestText = new TopK<Candidate>(request.textLimit, maxPossible, compare);
+    let resultsTotal = 0, tocTotal = 0, textTotal = 0, rankingPending = false, ordinal = 0;
+    const consider = (index: number, matchedWords: string[], directMatches: number): void => {
       const record = this.records[index]!;
+      resultsTotal += 1;
       let scored = active.scores.get(index);
       if (!scored && scoreBudget > 0) { scored = this.score(index, active); scoreBudget -= 1; }
-      if (!scored) { rankingPending = true; scored = provisionalScore(record, info.words); }
-      const coverage = Math.max(info.words.length, Math.min(words.length, scored.relevance.matchedSequenceWords));
+      if (!scored) { rankingPending = true; scored = provisionalScore(record, matchedWords); }
+      const coverage = Math.max(matchedWords.length, Math.min(words.length, scored.relevance.matchedSequenceWords));
       // Only scored continuations can contribute additional UI terms. Cache
       // their distinct terms per scored query; materialize row excerpts only for
       // the selected top results, as before. Newly loaded adjacent rows already
@@ -457,22 +476,31 @@ export class IncrementalSearch {
         const continuation = scored.parts.slice(1);
         scored.continuationWords = words.filter(word => continuation.some(part => Boolean(matchKind(part, word))));
       }
-      let matchedWordCount = info.words.length;
+      let matchedWordCount = matchedWords.length;
       if (scored.continuationWords) {
-        for (const word of scored.continuationWords) if (!info.words.includes(word)) matchedWordCount += 1;
+        for (const word of scored.continuationWords) if (!matchedWords.includes(word)) matchedWordCount += 1;
       }
-      const hit: SearchHit = { record, matchedWords: info.words, directMatches: info.direct, relevance: scored.relevance };
+      const hit: SearchHit = { record, matchedWords, directMatches, relevance: scored.relevance };
       const candidate = { hit, parts: scored.parts, matchedWordCount, coverage, ordinal: ordinal++ };
       best.add(candidate);
       if (record.section === 'toc') { tocTotal += 1; bestToc.add(candidate); }
       else { textTotal += 1; bestText.add(candidate); }
-    }
+    };
+    if (single) for (const index of single.matches) {
+      const record = this.records[index]!;
+      if (request.item && record.item !== request.item) continue;
+      if (record.section === 'text' && !languages.has(record.language as SearchLanguage)) continue;
+      consider(index, words, Number(!single.spacedMatches.has(index)));
+    } else for (const [index, info] of matched!) consider(index, info.words, info.direct);
     const candidates = best.sorted(), toc = bestToc.sorted(), text = bestText.sorted();
     const materialized = new Map<Candidate, SearchHit>();
     const materialize = (candidate: Candidate): SearchHit => {
       const cached = materialized.get(candidate);
       if (cached) return cached;
       const hit = candidate.hit;
+      // The temporary one-word array is shared while ranking, but public hits
+      // retain independent arrays just as they did with the merge map.
+      if (single) hit.matchedWords = [...hit.matchedWords];
       if (candidate.parts.length > 1) {
         hit.continuation = candidate.parts.slice(1).map(part => ({ row: part.row!, text: part.text,
           matchedWords: words.filter(word => Boolean(matchKind(part, word))) }));
@@ -487,7 +515,7 @@ export class IncrementalSearch {
       complete: words.length === 0 || (!this.loading && !rankingPending && words.every(word =>
         this.scopeCursor(this.cache.get(word)!, request.item) === this.scopeSize(request.item))),
       results: candidates.map(materialize),
-      resultsTotal: matched.size,
+      resultsTotal,
       toc: toc.map(materialize),
       text: text.map(materialize),
       tocTotal, textTotal,

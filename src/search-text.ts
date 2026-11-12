@@ -5,6 +5,19 @@ export interface TextRange { start: number; end: number }
 export interface WordMatch extends TextRange { word: string }
 interface MappedText { value: string; offsets: TextRange[] }
 
+// Offset mapping repeatedly asks for the lowercase length of the same source
+// characters. Cache only that length, not text or matches, and bound memory.
+// Whole-string lowercasing below still handles contextual forms exactly as before.
+const lowercaseLengths = new Map<string, number>();
+const MAX_LOWERCASE_LENGTHS = 1024;
+function lowercaseLength(character: string): number {
+  const cached = lowercaseLengths.get(character);
+  if (cached !== undefined) return cached;
+  const length = character.toLocaleLowerCase('en-US').length;
+  if (lowercaseLengths.size < MAX_LOWERCASE_LENGTHS) lowercaseLengths.set(character, length);
+  return length;
+}
+
 function searchCharacter(character: string): string {
   if (/[\p{M}\u0640\u200c\u200d]/u.test(character)) return '';
   if (/[كک]/u.test(character)) return 'ک';
@@ -43,7 +56,7 @@ export function foldWithOffsets(input: string): MappedText | undefined {
   let decomposedOffset = 0;
   for (const character of decomposed) {
     const bounds = decomposedOffsets[decomposedOffset]!;
-    const length = character.toLocaleLowerCase('en-US').length;
+    const length = lowercaseLength(character);
     for (let i = 0; i < length; i += 1) lowerOffsets.push(bounds);
     decomposedOffset += character.length;
   }
