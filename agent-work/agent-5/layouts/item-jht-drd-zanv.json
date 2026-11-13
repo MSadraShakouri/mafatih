@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "item-jht-drd-zanv",
   "author": "agent-5",
-  "plan_sha256": "145f35f3aefa823e9a7d53046094ae71f9c2a6e4c77c5fbb583fba0e62d3799e",
+  "plan_sha256": "cfa6c7ff9c302502a8f063a5c3c87e0bd2e015012aba2e9702d638380a865781",
   "rows": [
     {
       "row": "r00001",
@@ -38,17 +38,25 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 1
+          },
+          "kind": "instruction"
         },
         {
           "ar": {
             "source": "ar",
-            "part": 1
+            "part": 2
           },
           "fa": {
             "source": "fa",

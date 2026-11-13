@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-iftitah",
   "author": "agent-5",
-  "plan_sha256": "acbecda0ec515418e4435b16850c0604f953d24c77d05d20f7c55d5537e196fb",
+  "plan_sha256": "2bea78f6685bf1da56a6f77110aab9d34a07a4a52c5b075f0e7eca9da2476acf",
   "rows": [
     {
       "row": "r00001",
@@ -375,9 +375,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -1361,9 +1369,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
