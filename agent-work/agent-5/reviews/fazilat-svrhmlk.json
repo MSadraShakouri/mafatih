@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhmlk",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "434ab8fdc2f759282a58c229430a3f1f19a81dfa6fd8656bda3c658d2199ea97",
+  "layout_sha256": "6bb91b3d423161ba0af6af249cac2a4fa12c834c14966d171f726d45e474e285",
+  "result_item_sha256": "334ceb19db6fb025c57259c113d28cc88ff6df22b3330d5aedfca9ccd7d279bc",
+  "result_record_sha256": "9c400b801cf7d95abecc33a4f2bf627e8cf1fd7b31e7be86e9e32331e3bdfd9c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhmlk",
+    "item_sha256": "18ded11a1582ff7ad545f57121330206b24c583601e17e40a864aef5e70bca8d",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "5da7888cf4928c711ff22a20bb7b8e9ed4c2fb0c3e1300a8b6e493001d31e1c8",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, pre-existing mid-sentence row edge left untouched."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cut at sentence end between the two narrations; both remain notes."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Two note rows separate the first narration from the second narration at a sentence boundary; no cross-row merge attempted."
+  }
+}

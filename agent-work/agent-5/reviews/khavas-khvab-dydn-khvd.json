@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-khvab-dydn-khvd",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "c504df2dece813ecb41943d3a23c189f762ee9e555556fab4e5119cae128d154",
+  "layout_sha256": "2b44edbc5e84ce076bf42834d8a2aad445c4d2f17a500a17420a18fde209561a",
+  "result_item_sha256": "d22d126109762159a2f11c1927246673efbf7322da513f5e3cc98e2ff90821f3",
+  "result_record_sha256": "66746b27c405427879632aa630d2c2a8dff7b22ccd0eafcd2786fe771074bc80",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-khvab-dydn-khvd",
+    "item_sha256": "f0352edfa4fa1ca60439197987be439625daeb18e7e66622d9a5c0f089eca268",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "6cbf8043e5b1a96d233c6cbf7df07978b9d6786ddf8b5693e5475e410cdf8dc6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cut at sentence end; second piece is classified instruction because its content directs the practice and continues in the next row."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single instruction piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Note then instruction reads in order; the instruction continues into the next row without a merge."
+  }
+}

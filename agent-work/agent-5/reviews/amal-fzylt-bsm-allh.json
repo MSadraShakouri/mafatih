@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-fzylt-bsm-allh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "2eae9aa9451c37eacdcc87311213a7c161b20cf3a13128689f8bde8f655e8731",
+  "layout_sha256": "4be5f12f358b9a90abc323730d67f5abcd04f3286bf08a83e314ca2fcf1ddca8",
+  "result_item_sha256": "50571676692093fed36c18632db818fb74fe24084b83bcf4451430e8bff6eb36",
+  "result_record_sha256": "63d23aa5e7e1328f0838707736ff234ae2df2a4ac7711a8f33b62abd735613bc",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-fzylt-bsm-allh",
+    "item_sha256": "05c9cc0beee30a4869a9962fe1e44336f2908798854a9091f63e97d688a6c282",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "7396fc6dbc5350780b08b578dc7d870b29dc18f70a5a630a6b213bbee946d40c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cut 0..lead-in end moves Persian framing text to the Persian destination; the Arabic formula follows and stays in the Arabic destination."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece; translation accompanies the Arabic formula row."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Two note pieces plus a separate trailing numeral heading; boundaries fall at sentence end."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece; framing narration that ends by directing what to say, so instruction is defensible."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Leading Arabic formula moved to the Arabic destination; trailing Persian narration kept as note. No invented translation."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Reading order keeps the Persian lead-in, then the paired Arabic formula with its translation; the trailing numeral heading is separated correctly."
+  }
+}

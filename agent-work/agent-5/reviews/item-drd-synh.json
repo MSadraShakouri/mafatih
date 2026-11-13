@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-drd-synh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "c139987f60c4752eeaff0a087340c83447b5a18bcce6b2b9d5a4de12746349f1",
+  "layout_sha256": "37e93492ba0b7ddea168418ab8f38132bec4daf48a8d1fa1214fde0e3270d775",
+  "result_item_sha256": "fd7d023465b14cbff19ebae68a13e6e6a082dbcc61d0a95d272c303739975d16",
+  "result_record_sha256": "eb487416248e9107e67f9235858ef224343ab993ec1c2da89910199ef2bda09f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-drd-synh",
+    "item_sha256": "b614e3c5c3591036c893ad390bd601e18e2e9a291d37e4815c72621b5a91af7e",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "a87c53cc12c7a8610f30dcfd6ab7fd58e552bfeb6c681959535422d5e117fd25",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split at the sentence end between the first report and the second report; each piece stands alone."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Two note rows reflect the two separate statements in the source field."
+  }
+}
