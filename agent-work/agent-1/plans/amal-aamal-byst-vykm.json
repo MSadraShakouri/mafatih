@@ -1,0 +1,87 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-byst-vykm",
+  "item_sha256": "6deeabf8e944b6f8ccf244622cebad313e7db61506da29e6d2acb967fb9a2e07",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "c71f5b07e47035dfa6bc5a66291d8cb6e06ff329244930f924c45e70b15dfdd4",
+      "checked": true,
+      "cuts": [
+        456
+      ],
+      "kinds": [
+        "note",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "2169896ec911698da181d32856fecb97b298af964a37860436e8c5af027dd65d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "5f66c9c8cc29edb243f29bff29fe37d2e561c9152103ac2337fb20ab5dcdb3e9",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "dbf593b47508748c29ab196b33b6085a69fd2f2cf593a08fa0080cf67cbe67fe",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "88ea98c5829925203bdd96485219b96b2eaa065a972568f848a11f4a9d4d0bf2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "2680919fa81bc4bf7dd721d4c407e9f1f4184e637634810aa847da802f829a0d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian exposition is stored in the ar field and ends with a short Arabic saying; the exact pieces are separated here and the Persian piece moves to the fa field."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in and the Arabic saying are stored together; kept as one piece so no one-word fragment row is created, and the existing fa piece is its translation."
+    }
+  ]
+}
