@@ -1,5 +1,7 @@
 # Text-only split planning for AI agents
 
+> For the current six-agent Arabic/Persian-only project, use [the dedicated instructions and coverage/review tools](split-agent-instructions.md). The older general workflow below permits partial plans and English, so it does not by itself satisfy that project's scope or coverage requirements.
+
 This tool is designed for an AI service or other program to operate; manual line-by-line splitting is not required. It uses local files only, makes **no AI or network calls**, and requires no graphical interface.
 
 **Hard rule:** do not use AI to translate Arabic text, or devotional Arabic through Persian. Split and align existing text only. Explanatory prose may be translated from Persian under [CONTENT_POLICY.md](../CONTENT_POLICY.md), with provenance. Never invent a missing devotional English translation.

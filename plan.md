@@ -172,3 +172,54 @@ For example, at 20 pixels/second over 10 seconds, the expected position advances
 - **Test smart speed before tuning it.** Try positive and negative corrections, no movement, a very short or zero time interval, explicit pause versus touch-hold, multiple fingers, swipe momentum, backgrounding and reflow. A simple hold shouldn't train the speed.
 - **Keep the open questions open.** Which languages are on by default? How much should a star affect ranking? What time interval should smart speed use? How much overflow feels good? Does a bookmark save an item or a position? These can be decided after trying things.
 - **Keep the content rules.** Don't use AI to translate Arabic prayers, verses or other Arabic text, including indirectly through Persian; use a properly sourced, permissioned human translation or leave it missing. AI can help translate Persian explanatory prose under `CONTENT_POLICY.md`, with source details and human review. Existing provenance claims aren't proof, and uncertain material shouldn't be silently discarded. Keep generated search files out of Git.
+
+## Arabic and Persian: splitting and independent checks
+
+This is the current content-work plan, separate from the display-only grouped reader. Preserve the earlier notes in this file; the earlier suggestion that the current split is good enough is superseded for this project. The agent-facing procedure belongs in [the separate splitting instructions](docs/split-agent-instructions.md).
+
+### Scope and rules
+
+- [ ] Work on the existing Arabic and Persian item rows only. Do not generate translations, work on English, rewrite wording, normalize letters or diacritics, remove repetitions, invent missing text, or treat matching row numbers as proof of translation alignment.
+- [ ] Split at sensible sentences, clauses and other meaningful boundaries, taking the existing manually split material as a style reference without assuming it is correct. Every nonempty Arabic and Persian source occurrence, including explanatory and already classified rows, must be accounted for; the two languages may need different numbers of pieces.
+- [ ] No physical newline or paragraph separator belongs inside a resulting text piece. Treat one in a current source as a boundary and record its exact type and position separately, so the original can be reconstructed. Do not silently restore or reinterpret old line breaks removed by earlier edits; those originals and the question of their intent require separate review.
+- [ ] Punctuation is the only permitted textual correction. Keep it separate from splitting: record the exact source occurrence and original/proposed values, show the change and reason, and require independent review. A split by itself preserves all text, spaces, punctuation, diacritics, markers, order and repetition exactly.
+- [ ] Classify explanatory and instructional passages, and review existing labels. Do not assume an Arabic-empty row is an explanation; preserve reciter labels, headings and quotations and flag mixed or uncertain cases. Where a field mixes explanation and recitation, propose boundaries and roles for the pieces rather than silently assigning one role to the whole field.
+- [ ] Arabic and Persian embedded in the same field need a later decision: split them or introduce a representation such as an Arabic span. Record examples for discussion; do not invent a markup convention, move text between fields, or change its search offsets now.
+
+### Before assigning six agents
+
+- [x] Inventory all item rows and Arabic/Persian occurrences, their lengths, current kinds, physical separators and legacy labels. Report known counts separately from the unknown amount that still needs semantic splitting/review. The `manual-v1` label is an old alignment assertion, not a completion or quality certificate.
+- [x] Create six disjoint, reproducible, roughly workload-balanced **item** partitions, pinned to the source snapshot. Include every item exactly once. Do not have agents concurrently edit the shared interned text shards or canonical files.
+- [x] Provide a text/JSON splitting tool and an independent verification tool. They check complete occurrence coverage, source hashes, exact reconstruction and order, Unicode/grapheme-safe cuts, all separator kinds, repeated passages, proposed role tags and separately recorded punctuation proposals. Results are unreviewed; automated checks cannot judge meaning or certify explanatory tags. A review template and whole-batch audit check recorded decisions and assigned identities without claiming the agents actually performed the work.
+- [x] Test the tools with deliberately damaged, incomplete, stale and reordered proposals, plus newline, punctuation, combining-mark, shared-text, mixed-kind and uneven-language cases. Keep the original corpus unchanged. Agents may propose tool improvements separately; choose one tested common version before the full round.
+- [x] Run the project gate and corpus validator: `npm run check` passed 242 tests with 3 skipped, plus typechecks, repository and line-break guards and web build; `npm run validate` passed structural validation. These do not certify the content or rights.
+- [ ] Run a small representative **semantic** pilot and independent review, settle ambiguous examples and correct the instructions/tools before allocating the full workload. The technical dry run below is not that pilot. Keep working plans and review reports as durable private files outside canonical `data/`.
+
+### Prepared snapshot and findings
+
+The tools are `src/split-agent.ts`, `src/split-agent-batch.ts` and `scripts/split-agent.ts`; their command-by-command use, private work layout and decision schema are in [the agent instructions](docs/split-agent-instructions.md). They never apply a split. The coordinator's prepared private files are `../mafatih-split-preflight/inventory.json`, `assignments.json`, `assignments-check.json`, `tool-info.json` and `initial-audit.json`. Recreate these with the documented commands if only the source patch is moved elsewhere; never assume a snapshot or tool version still matches.
+
+- Snapshot fingerprint: `5a7213e7185863d49836ce5a94c9456099e459a70eb4326596e8e20939cbb69b`. A separate raw-JSON/Python count agreed with the tool. There are **686 items, 11,820 rows and 21,181 AR/FA field occurrences**, including 28 reciter rows. Of the rows, 9,361 have both fields, 90 only Arabic and 2,369 only Persian. Counts include labels, not just runtime prayer text.
+- Existing row kinds: 11,696 `unknown`, 63 `note`, 33 `instruction`, 28 `audio-reciter`. `manual-v1` occurs on 54 items / 5,485 rows / 10,797 field occurrences, but does not establish completed splitting or review. No reviewed alignment group is recorded. The actual number of needed semantic cuts and corrected tags is unknown.
+- There are zero current physical separators in scoped row fields. Editorial history nevertheless contains earlier breaks in 314 distinct fields and records 19 marker moves involving 27 fields. History has 315 old-break correction records; some overlap, so their 327 counted breaks are not 327 distinct original breaks. The documented earlier join pass involved 326 original LF occurrences. Export and templates now surface these prior values/moves as mandatory review flags without restoring them.
+- There are 20,588 distinct referenced pooled text IDs; 244 occur more than once, and 100 are used by multiple items. Shared text must remain occurrence-specific and copy-on-write in any eventual migration. The initial batch audit correctly reports 686 missing proposals/reviews and zero completed records: **no content agent was started**.
+- Known cases to flag, not settled classifications: mixed Persian/Arabic in `dua-iftitah/r00012/ar` and `dua-jawshan-sagheer/r00002/ar`; Arabic stored in `item-abvhmzh-smaly/r00220/fa`; and Persian explanation text in Arabic fields including `dua-jawshan-kabir/r00010/ar` and `ziyarat-warith/r00148/ar`. See `docs/explanation-classifications.md`; other cases may exist.
+
+| Author group | Independent reviewer | Items | AR/FA fields | Estimated weight |
+|---|---|---:|---:|---:|
+| agent-1 | agent-2 | 112 | 4,274 | 885,678 |
+| agent-2 | agent-3 | 114 | 3,552 | 885,691 |
+| agent-3 | agent-4 | 115 | 3,188 | 885,676 |
+| agent-4 | agent-5 | 115 | 3,240 | 885,652 |
+| agent-5 | agent-6 | 115 | 3,607 | 885,718 |
+| agent-6 | agent-1 | 115 | 3,320 | 885,706 |
+
+The estimate is code points + 100 per field + 300 per item, not measured semantic effort: group field counts and character counts still differ. Rebalance only after the pilot and regenerate/verify the assignments. The pinned tool-info includes source/instruction/test hashes, Node and Unicode/ICU versions. A no-cut technical dry run successfully compiled and structurally verified templates and incomplete review templates for **all 686 items / 21,181 fields**: all fields remained unchecked, and 341 history flags were carried through. Eight representative real items were also inspected mechanically, including Jawshan, Kumayl, mixed/mislabeled passages and history. An end-to-end CLI dry run rejected an incorrectly assigned author and reviewer. These checks do not replace a semantic pilot or independent review.
+
+### Work and review rounds
+
+- [ ] First pass: agents produce complete per-item split and classification proposals for their own assigned partitions, including explicit no-cut and uncertain decisions. Flag suspected mixed-language fields and punctuation suggestions without silently changing them.
+- [ ] Second pass: rotate partitions so a different agent checks the first agent's exact-text/structural report, split quality, missed or excessive splits and explanation/instruction classifications. Record author, reviewer, source and proposal fingerprints, findings, disagreements and resolution; agents do not approve their own work.
+- [ ] Independently audit the material already split, including old explanatory labels and unclassified passages. Allocate enough review capacity for this work; it is not finished merely because an item has a legacy label. Flag mistaken pairing, language, kind and segmentation without claiming automatic or scholarly approval.
+- [ ] Adjudicate disagreements, rerun the mechanical checks, and keep uncertain material visible for further review. Do not publish or mark rights, translations or alignments as reviewed without the appropriate evidence and authorized review.
+- [ ] Only after accepted plans and a separately reviewed migration design, consider applying changes to canonical data. A future application must be atomic and reversible, copy-on-write for shared text, retain original values and history, and report/migrate affected row IDs, bookmarks, links, source references and reviewed spans. The existing generic editor is not a safe one-to-many migration. No bulk application is authorized by this plan alone.
