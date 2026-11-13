@@ -4,7 +4,7 @@
   "item": "amal-sayr-aamal-rjb",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "1ddc0b41e38f0ccac48b4aa4c61a6ca15e107ce86a9b39b5a1743e7967c7509a",
   "layout_sha256": "e05a4c25a08c0d157669293a44520d6e8d949c2910e81ffee21595a92117dfdf",
   "result_item_sha256": "3a6d68f5915229bd11d2c86a0a9ed1b989500675140315a5ab675c2ddc78e95f",
@@ -406,6 +406,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Numbered Rajab acts split into instruction and note pieces at sentence ends; each Arabic supplication pairs clause-for-clause with its Persian rendering, and the Persian narration sentences that sit in ar fields stay there with the mixed-language finding rather than being duplicated."
+    "note": "18 of 35 rows are split and 17 kept whole. 9 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 40 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

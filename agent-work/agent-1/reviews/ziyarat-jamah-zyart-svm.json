@@ -1,0 +1,131 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-jamah-zyart-svm",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "2940e8726c96e013780513d76ca023da3cf12d454d6718ca77c9facabef6add4",
+  "layout_sha256": "feef47e6363e525d5dc34fd37b47c0a57b93d352ce935c891d9b9b7b914f7e4f",
+  "result_item_sha256": "b5ec03f3ac9a42f368129c30408b16f6393107fac99aeff735593f8a48bb83a0",
+  "result_record_sha256": "6762b245213f71bb0a599e1231fc53f9d906cfa97174b5a458b3fdbbbeb73076",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-jamah-zyart-svm",
+    "item_sha256": "6a1602bdd43b5f6a39d8160bc4d49a418e60d8d01e3115faeb4ae9f85fbcf93e",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "2e1e4f262fb3238060597ac988aa01627046c0184aa0267d05ec432d1d88ea0d",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 heading + 1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 15 pieces (15 devotional recitation); 15 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 15 pieces (15 devotional recitation); 15 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (5 devotional recitation); 5 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (5 devotional recitation); 5 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 18 pieces (18 devotional recitation); 18 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 18 pieces (18 devotional recitation); 18 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 18 pieces (18 devotional recitation); 18 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 18 pieces (18 devotional recitation); 18 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (3 devotional recitation); 3 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (3 devotional recitation); 3 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (1 heading + 2 explanatory note + 1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (1 heading + 2 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00007/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00008/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "8 of 8 rows are split and 0 kept whole. 1 piece that the source stores in the other language's field move to that language's slot, matching the recorded findings, 9 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

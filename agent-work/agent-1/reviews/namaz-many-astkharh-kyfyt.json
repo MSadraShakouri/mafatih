@@ -1,0 +1,42 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-many-astkharh-kyfyt",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "3f94b3df313c615be25067f3dc13a13d690bf70dc59b0eb49ced80844df8fc59",
+  "layout_sha256": "7efd235af57012946800fdaf95310fc649ecc4fa2bda2a1c13a4663ea670e966",
+  "result_item_sha256": "1ecd122e47e6781c530a17fd2a58db13ad758a48c19fe343dfdcfd2ffb6fb3e4",
+  "result_record_sha256": "060238eb1c001f5f91631fe6d479cef914c2a8dbc23c8a49a7090ba58e15e42a",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-many-astkharh-kyfyt",
+    "item_sha256": "6854e1ea8baf346fd50147dcf5e985977f2cd99e8306ff4edc3312c7f52ba546",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "bff8c6addd48049a08b6a3e19a821cdbc6283e9e95290ee7d2a7570d4dcd335d",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (2 explanatory note + 1 ritual instruction + 1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00001/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "1 of 1 rows are split and 0 kept whole. 1 piece that the source stores in the other language's field move to that language's slot, matching the recorded findings, 4 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

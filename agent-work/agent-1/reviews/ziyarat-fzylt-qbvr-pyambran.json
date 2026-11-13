@@ -1,0 +1,49 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-fzylt-qbvr-pyambran",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "0554e4eef73ff754ea7786a73e6bffb81e35aaf6a2da08436fd7bf171a648b3d",
+  "layout_sha256": "cadd868404a1f22466426be169256d16dfa5a5c8565e24e814a6220b061511fc",
+  "result_item_sha256": "71414f601ee822bb3be5127fc8c37a96b77893ce15c7e088efd108a3dcf0246a",
+  "result_record_sha256": "ec8af4f1b042c1cc3ef3b86e921711927d74e08ae4b6a6dad233ac1dc7229cbb",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-fzylt-qbvr-pyambran",
+    "item_sha256": "0f0a277324584c7f798ce61400bab8963913a5a3d122d171ff43560e0fb8c727",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "18a59018486cf69c65b68ae37d1a8289d9170f34a449ffbe2ef3a4b337bf4c32",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (1 heading + 3 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (2 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00001/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "2 of 2 rows are split and 0 kept whole. 6 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

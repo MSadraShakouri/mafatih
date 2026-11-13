@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-takhyr-ajl",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "a2ea9391e6df995d3cc26eb0433e3a1f1caa440f2f4d114a16439e1403351295",
+  "layout_sha256": "73f6f27b4858768ee96f0594ab75ccd6e2c77719a09363fd131eb63cf6211113",
+  "result_item_sha256": "13b1c38635c9ea6380b21b6ff77978de321fd35db02f3831a2dae156e8a27760",
+  "result_record_sha256": "795a9b86d84478c13ef2277d17260f37196f0f5ec0698e4ec9fb3d778213aafa",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-takhyr-ajl",
+    "item_sha256": "a88715988966ce5bf71d078ff61a27c51ef43b67372447c89cb8b99259b24097",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "d4d9d6275752825bd86065cd6cf35edbe283f455d2980d001ad346310f300eaa",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "0 of 2 rows are split and 2 kept whole. 2 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

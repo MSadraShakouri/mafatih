@@ -1,0 +1,42 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-vrm-bdn",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "d3f1f409b75a257d49fd0d116e070a5df5a6b0a7e58a5bf81db8bccbf827f072",
+  "layout_sha256": "f74fee28e0cda1d296ab61135500e1daf02e7237fd338588887b0d57c50b3e52",
+  "result_item_sha256": "db70056d71d916c4859794cba150229130a8aa8b4db367561280ddd3eb65ecfd",
+  "result_record_sha256": "1861cc67415466112bf2f1a9532bc79e265bcdddac68b0a607cd608cfa582f80",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-vrm-bdn",
+    "item_sha256": "9b71bf745fe8ba1678c382501063b92f1833ec82b15b50ada2d8b4e8aa45b35d",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "dacbe3ce9e91e607dcd4ca6cb4b5ee033e7a43fc60e6b9a5158f9747561cb9df",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (1 heading + 2 ritual instruction + 1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00001/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "1 of 1 rows are split and 0 kept whole. 1 piece that the source stores in the other language's field move to that language's slot, matching the recorded findings, 4 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

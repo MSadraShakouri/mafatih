@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "monajat-adayh-alvsayl-aly",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "ea89e58b6eceef174082d177254c0be6c51fe0b0cb389ea057a11b70cb768b02",
+  "layout_sha256": "7411daec8bd5781f1aad13ee003608ccdb5052516c248680e214f77ce373a294",
+  "result_item_sha256": "ee6f9773548dcd32c3e3c74e18bc7fb43258c02adda359492533ef1dbdf9f697",
+  "result_record_sha256": "539c14ab3b732025967fdad89c28c1a22ab5453139af395bf6cfc1ac7e70ca76",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "monajat-adayh-alvsayl-aly",
+    "item_sha256": "05f27e132cb904ae2dde926cf6ab192b97705177971b8dd019caebf458650b6f",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "6f301f3fe37b19a3afb8b060a4930434f6bcb4ba82335c3044a2364925ae3d8f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (3 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "1 of 2 rows are split and 1 kept whole. 4 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

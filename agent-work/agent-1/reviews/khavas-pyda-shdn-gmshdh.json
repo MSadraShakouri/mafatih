@@ -1,0 +1,59 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-pyda-shdn-gmshdh",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "9c512720a1f0a7306b1a3311e90e73a6c685e91d1eb360e5508137f86a70db06",
+  "layout_sha256": "3ce412f9f69c2cc29dbcf4c68b5a8089f80a7514bbd133ae9a9ee9aa4862a567",
+  "result_item_sha256": "10fc441b91755e31a5aa2a1fc60554b40f059a0039f9ac779b53135b996d9c20",
+  "result_record_sha256": "dad4a9ede9789fe65a8adb4dedb978f6e6e7fb807148b96022b6a0bfaf5662aa",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-pyda-shdn-gmshdh",
+    "item_sha256": "c070d6c676bf22f307ecb84e3037fec7e7c7fe516569a6b7acdf4b698e694468",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "1ab0b9ec642fa1b24ce484f46ed5e78c0468c2c96e965b7f9c1d96234f3e856b",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (2 ritual instruction + 1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 ritual instruction + 1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00001/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00002/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00002/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "2 of 2 rows are split and 0 kept whole. 2 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 5 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sura-khvas-hmd-vbazy",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "ebe88d1131a7d29477eca53bf66f5ad8b423c738ea5e357679f1f12e6f928f09",
+  "layout_sha256": "5c8f87f9d618db071d0bddeac1bdc5c3ab98de57c897378d03a456feb6d3927b",
+  "result_item_sha256": "ad2bd8a7b2537cf2e1671174e1d1ae1bced7c7336add1f433d0dcfc300408e8d",
+  "result_record_sha256": "14eb2956adf508051adf9b18747003b479b06b8ad0463698844988dfec84f290",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sura-khvas-hmd-vbazy",
+    "item_sha256": "7500815e3128eaa535d628476ad4f9395d24315516b4cdcdbdd863651110e8b7",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "bde2a63e7a692491288d965dcfc1252b325fcaf4b897575d2b1f0d2cc0ad0dd8",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "1 of 1 rows are split and 0 kept whole. 4 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

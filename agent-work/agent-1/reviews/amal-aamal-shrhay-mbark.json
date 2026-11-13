@@ -4,7 +4,7 @@
   "item": "amal-aamal-shrhay-mbark",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "517ed7d83546c5eb2d2fd3b2b194d1773788c3e48b67e6752c55a1045f8526d4",
   "layout_sha256": "44bbe24b5ca745fc39e2f36f3bc18b02abb88512d5513a0c19463094ff7ed78b",
   "result_item_sha256": "5e7ab543b93cb75627023b254f46b9e47a2de7acbff32d966b33a1d0bc21282e",
@@ -23,14 +23,14 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Three pieces: the section heading, the practice instruction, and the hadith citation that begins at its own boundary; order and boundaries match the source."
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (1 heading + 1 ritual instruction + 1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Three pieces: continuation of the citation, the second practice, and its reward clause; the row already began mid-sentence and this split follows the natural clause boundaries."
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (2 explanatory note + 1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
       }
     ],
     "punctuation": [],
@@ -38,6 +38,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Single-language rows; each piece appears once in order with a matching kind, and no Arabic/Persian pairing is asserted."
+    "note": "2 of 2 rows are split and 0 kept whole. 6 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

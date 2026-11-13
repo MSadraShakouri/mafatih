@@ -4,7 +4,7 @@
   "item": "amal-aamal-ayd-nvrvz",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "fd40e34f3352657282d74d9c5819689ab0228d7aa5ba40a8a99ff3073cb543aa",
   "layout_sha256": "4a3e1787879cf166beeb60457f2217b02a2c192f7875e1433e6274cf5bb18563",
   "result_item_sha256": "80341107aaa2ada19df76fe2eeac8157197034e73bda3807c1758734f9eadf30",
@@ -115,6 +115,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian heading, note and step-by-step instructions split at sentence ends; the Arabic-Persian Nowruz supplication pairs clause-for-clause; the short Arabic line living in the Persian field moves to the ar slot with no invented Persian, and the closing instructions keep their order."
+    "note": "7 of 7 rows are split and 0 kept whole. 3 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 16 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

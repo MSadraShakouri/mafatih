@@ -4,7 +4,7 @@
   "item": "dua-dhm-zkr-sy",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "6f4513dd3b8a018ff6b947ee6a3ce6f969b6e9f0c95b15466f29dd0a6a2bd18c",
   "layout_sha256": "a0ef595e78558744f4a37c08f373103540b2fc36383ac8a1767598980e8be1eb",
   "result_item_sha256": "f7a131942e977cc800f209470d3c50a7a896a56a2279f407d2952388a1c0640c",
@@ -84,6 +84,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian framing notes split at sentence ends; the Persian notes that live in ar fields stay there with the mixed-language finding, and each Arabic supplication pairs clause-for-clause with its Persian rendering, including the sentence that continues into r00004."
+    "note": "2 of 4 rows are split and 2 kept whole. 2 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 3 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

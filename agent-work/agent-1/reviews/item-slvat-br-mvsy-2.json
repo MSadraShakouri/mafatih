@@ -1,0 +1,63 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-slvat-br-mvsy-2",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "3ddec2ab27b41fc518eef04680460d689f50344ce3bf69aa39117ed8869ac771",
+  "layout_sha256": "b63a920a88bd6bd1e6eea54acf7aa8b2810feb736da79b9735438ee6c0e0d018",
+  "result_item_sha256": "4008aa8b9736f633441df20c4958eb790ea5701392a806f6b560682489d32658",
+  "result_record_sha256": "8e1d6188c2f675ba7f4b4f3ea96488217edf568106778359a86fcf54ef46113e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-slvat-br-mvsy-2",
+    "item_sha256": "5416985e8da925f18a4fc176b38ee3a260b2df80af44f42940fe369f0d112b6d",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "32177d4c8d07a1c74a79e6c95008b156f552ce44bd60795299f35f7be50ec2fd",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 7 pieces (7 devotional recitation); 7 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 7 pieces (7 devotional recitation); 7 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 6 pieces (6 devotional recitation); 5 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 6 pieces (6 devotional recitation); 5 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded other at r00002/ar is accurate: the languages' row boundaries cross, so these pieces stay unpaired rather than being matched by position, and nothing was invented."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "2 of 2 rows are split and 0 kept whole. 2 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

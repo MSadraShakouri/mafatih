@@ -4,7 +4,7 @@
   "item": "amal-aamal-mabyn-altlvayn",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "f500f9b4160e8e9a73409ef8b8c9838614ce5a0577b66854f0e080f9207d605e",
   "layout_sha256": "cbf59db0dd64205c84c6be698f3212c3ecccbe2a5811dfcef2e376e80e82687e",
   "result_item_sha256": "69ed30c8ad0dec2313f165a82d30938d266fc7e9465d37298d13c88fae675726",
@@ -167,6 +167,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Mixed rows: each Persian instruction sentence that sits in the Arabic field is moved into the fa slot as instruction, the Arabic phrases that sit in the Persian field move to the ar slot as recitation, and the rest pair clause-for-clause; repeated Persian lines left unpaired where the Arabic repeats more times. Order preserved."
+    "note": "9 of 9 rows are split and 0 kept whole. 5 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 16 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

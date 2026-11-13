@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-saat-7",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "062d71beb8767ca0afd4b1bdf634cb967e26e14c0bddc22a078b41e3fb246b12",
+  "layout_sha256": "1d2665fa8a7bc93b1cc7022a51ac1b29d2bfe882da477dae1abe879088afeb60",
+  "result_item_sha256": "e0739a719aa7e14099ba712dcffba40065896000d338e7b2bcfbe8e311f5b314",
+  "result_record_sha256": "6ceacf31d4da25cd2ab72f53a966b8e3e59722f2d3b679cd30ecf4f6ce87ef94",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-saat-7",
+    "item_sha256": "46e8cf7e0bedf6d44489a4f5a0ac3bffe6099487e11a0a7b05811181aa53e10c",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "0b1b340a75c82a0e16b4bc2fcc60d8dca8176f45828176026e1bb13d28557b21",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 heading + 1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 13 pieces (13 devotional recitation); 13 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 13 pieces (13 devotional recitation); 13 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "2 of 2 rows are split and 0 kept whole. 2 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

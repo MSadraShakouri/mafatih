@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-hjab-mvsy-bn",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "c3f13094473adf8ae1088cdb43516eb2873efd071e2c425a8740b2cfb9486327",
+  "layout_sha256": "f083c372ec6b8e30a4ee477e10dddf3b2725e8589be3752d927d6263b9dada2a",
+  "result_item_sha256": "5e37214998f8990e7aeb4bcb5e86c6873c975dda043ebaadc892609285253214",
+  "result_record_sha256": "a8bb3fd4cb8213d8c828035ecd9efc69ba25029989f5c590d74b2ba8e84a37c0",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-hjab-mvsy-bn",
+    "item_sha256": "90ecb47435588cd3e9eb29f9c6d7eefad68900382f168492f78f34a7dc775232",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "14bcfe85a59f364bf16013cf8ca0542eb6f07d956dcbd7cd9effcd538dd66c24",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 11 pieces (11 devotional recitation); 11 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 11 pieces (11 devotional recitation); 11 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "1 of 1 rows are split and 0 kept whole. and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

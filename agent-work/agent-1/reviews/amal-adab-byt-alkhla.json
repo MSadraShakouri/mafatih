@@ -4,7 +4,7 @@
   "item": "amal-adab-byt-alkhla",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "66f9c2315da57ee57089d577beb4dbc9f861680866b16dd5b0d5f43c792c136e",
   "layout_sha256": "1b041af266e849c5cb1e4e0309ad242839c04c4ba6f3d99202c788a3ec002155",
   "result_item_sha256": "8aa678f52b5f20c01f10932f85825aaab41e17e7a906f34b67156c4a9635db31",
@@ -196,6 +196,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Etiquette instructions split at sentence ends; where the Persian instruction lives in the ar field it moves to the fa slot as instruction, the Arabic phrases that live in the Persian field move to the ar slot as recitation, and the rest pair clause-for-clause. The solitary Arabic phrase with no Persian counterpart is left unpaired instead of inventing a rendering."
+    "note": "8 of 11 rows are split and 3 kept whole. 7 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 13 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

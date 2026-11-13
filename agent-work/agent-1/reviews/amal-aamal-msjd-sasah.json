@@ -4,7 +4,7 @@
   "item": "amal-aamal-msjd-sasah",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "1a8313a2e1d089ec3c64e4f624c5e6e56abe7987e56b661b08ba6745ec2cdef4",
   "layout_sha256": "ce011d3ef91b861874aa1888f18534beb5def91fb4349e45551d489f7844e601",
   "result_item_sha256": "e28d17549646628466ccf7ced0138e2956d245f4ba35730a958a1eb066ea21ef",
@@ -51,6 +51,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian narrative split at sentence ends into note pieces; the Arabic supplication embedded in the Persian field moves to the ar slot as quotation and the surrounding Persian is left unpaired rather than invented."
+    "note": "3 of 3 rows are split and 0 kept whole. 1 piece that the source stores in the other language's field move to that language's slot, matching the recorded findings, 12 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

@@ -4,7 +4,7 @@
   "item": "amal-adab-msjd-rftn",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "456ad39730835957b35658aa6516e547e720bc1b781e253467c77f97227f85f4",
   "layout_sha256": "56f7f2e64300dcf6c96a04609b78428212f673c6f271172e55329d296eb2cfc1",
   "result_item_sha256": "3e761232721904e299a685a2ea00a1ef1dcf3baa3bc3f85a9999171e8fe74c96",
@@ -82,6 +82,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The Persian walking instruction and entry etiquette that sit in ar fields move to the fa slot as instruction, while the Arabic supplications stay in the ar slot paired clause-for-clause with their Persian renderings, including the sentence that continues from r00002 into r00003."
+    "note": "3 of 3 rows are split and 0 kept whole. 3 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 3 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

@@ -4,7 +4,7 @@
   "item": "amal-aamal-akhr-rmzan",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "e0fdb8c312386c5d8b548d0a7a955081fdb02f52b94ce36b752bba88d3aad9ea",
   "layout_sha256": "637d257e79dc9447b41029fa2004cfc07b1c0017ce2c9f6aefa204efe05df096",
   "result_item_sha256": "f2e1ff9e6619860126e8a7d68566b877fee6b84715c467842feb3b86c4ef5618",
@@ -221,6 +221,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian headings, notes and instructions that sit in the Arabic field are moved into the fa slot with their kinds, while Arabic supplication text stays in the ar slot paired with its Persian rendering; the numbered order of the night's acts is preserved."
+    "note": "12 of 15 rows are split and 3 kept whole. 7 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 23 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }

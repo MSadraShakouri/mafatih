@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhzlzal",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "141b3f8f5ad0b245b7310472a7addc938eb3e43109b70f35221b578453f42591",
+  "layout_sha256": "52498bda3bbfacb8dcb57aa1464d0aa31f4f0884a3a6bdb625c4524d03a93567",
+  "result_item_sha256": "a63dbd7bbf5889957a882564cffa1ca26696476e60f7707b1a4d75b8870198c1",
+  "result_record_sha256": "2d7a2499b79fcd5d95b4cd8621477e88f17e900d165730b46e94b26cb9901de9",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhzlzal",
+    "item_sha256": "f8183f9292d3b7f47d34da3bffa836090650ccfdab4eb9254f4ed31357bc9bdf",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "a5abe521e51efbaa61ba6f1e76037f31ddab6a26443d633d383362e1fc9db6ad",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (2 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "1 of 1 rows are split and 0 kept whole. 2 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

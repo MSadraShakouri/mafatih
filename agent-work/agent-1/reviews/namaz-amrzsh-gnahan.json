@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-amrzsh-gnahan",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "plan_sha256": "03fc0ce691a1ac969539507c954886304735c78f2c4e176b773cfffa7c93d869",
+  "layout_sha256": "7599de9b372a69dc11d34da4fd78890479c6f29f52b43ef6785bdd15d94d469e",
+  "result_item_sha256": "81decf536251abb4426c0b9fb80e9242ab98babb3c89770a4a09a4a71445a0dd",
+  "result_record_sha256": "4712f3a5397425a73177c9c365613214911bc90749a32c8b719c4e4cee7bc52b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-amrzsh-gnahan",
+    "item_sha256": "907a38fa000aeb0d168ccd1480ffcc09c8039f49722825ed45f70b811ea1c5d7",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "a5189f195198f6b695b44c50d35e1d5585b8d273dd0992c6ef9f82a04ccf286c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (1 heading + 3 explanatory note + 1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00002/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "1 of 3 rows are split and 2 kept whole. 1 piece that the source stores in the other language's field move to that language's slot, matching the recorded findings, 7 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+  }
+}

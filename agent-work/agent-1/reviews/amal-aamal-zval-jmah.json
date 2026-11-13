@@ -4,7 +4,7 @@
   "item": "amal-aamal-zval-jmah",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
   "plan_sha256": "8379c6315bbddf80d8f377a0898290a84c809837727c57fb964506522b74a75d",
   "layout_sha256": "dfed01e185fe2448da045527862b5c617a555bfc06cf4423990ca325d24eb057",
   "result_item_sha256": "d2f8e36de983272948acfbf0cab72321d5b3884f9af55ba728a3203f4d9ecdaf",
@@ -203,6 +203,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Numbered Friday acts split into instruction and note pieces at sentence ends; each Arabic supplication pairs clause-for-clause with its Persian rendering, and the one Persian sentence that exists only in an ar field stays where it is with the mixed-language finding rather than being invented into a second field."
+    "note": "10 of 18 rows are split and 8 kept whole. 2 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 24 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
   }
 }
