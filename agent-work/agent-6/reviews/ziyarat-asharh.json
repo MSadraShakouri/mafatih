@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-asharh",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "ac35cf43f29dc196d7e691fc4c817721679837457d7f0261928cb59581e24c6e",
+  "layout_sha256": "a1ef1744f7782d2cabd89df5b9ff2ec3bedee529051c7d29b67fdd53d9d0ccef",
+  "result_item_sha256": "8e9ce684fdaa583d626f67f660a7d97b8ff56c87233d6ce345be968c16ceeddf",
+  "result_record_sha256": "1f89906d78d9c55f2c99985db22ffb4b9fe4730ba6f4349add6d36f1567371c1",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-asharh",
+    "item_sha256": "d7d78014cebf484a211d1c52eb29e285ec9663f4b6cc02de6c75abd0558d0e17",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "0966c9cf5eb6501f837226efbe5cb8b1793c3438627a4d7b0a73f39bb695d13d",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Read every output row in full; pairing and kinds are right."
+  }
+}

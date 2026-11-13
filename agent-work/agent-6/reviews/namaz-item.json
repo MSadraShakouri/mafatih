@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-item",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "8355b1915cee759383b9e10b8fa00bfb2a3ad81c6f8cbe894322c88236b6c1b3",
+  "layout_sha256": "c2f0a308e3181609f282060f712abb0925b3861ee62bc02af376d2df33f7de4d",
+  "result_item_sha256": "1222c93c040cf9fc506888f52d7ed9b403b9bc5816f082f346f309000e23f6b8",
+  "result_record_sha256": "d1fbb200e2b58d9bd02c8ca660d0176276f1f40d8a2d0a4aa64ff5740b2b0e8c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-item",
+    "item_sha256": "f635ad0997585aad21fd204f68a3070a5b47859605d0f667bd70ef93fd51d388",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "95ca928f5ec9013c842e5b0cc739629b7988874763254a20a26c30e5b2f11285",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The last sentence of this field is a transition that announces the next prayer and is unrelated to the narration before it; cut before that sentence."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Both rows are Persian only; nothing to pair."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-ram-shdn-asb",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "9d18508c40bc8fbab9a436d6e790ad13797d932dee24ea56c6b03b9134b82426",
+  "layout_sha256": "79cb54d5dd1697c97ae6614ecc8365a31b3895a0d26ce10e6ae95d3bc14514a4",
+  "result_item_sha256": "5208361d6e0341c267243c03fe28066374befb9539b9b3314aa3f6cccf615282",
+  "result_record_sha256": "074c1929b2836f6bddf8127fd3e9700beafda3e6070822422a623fc0e134de13",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-ram-shdn-asb",
+    "item_sha256": "abf398debb71ff7e6e6b304e055961a372ab14717616022386df42ad6bc59485",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "44681f223630469352fd3f05192259b1c3bc534ef34de2d09b049766b3556847",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The cut and both kinds are right, but output piece 1 (the Arabic Quran quotation from the fa field) is placed in the fa slot; it belongs in the ar slot, unpaired."
+  }
+}

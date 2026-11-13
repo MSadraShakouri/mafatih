@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-aymny-dzd",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "8fe67819d58f8c2af596b9a0916907a8dd0471a2c46290e235c4408c412633b0",
+  "layout_sha256": "4b5a550dcde08f163f673e1770fac153738a69a968e81d6ee2c6c3353d88bb2d",
+  "result_item_sha256": "870bee091ebcf1789b370c947a6efceedfef936c23a5e611ddb56f68350b276a",
+  "result_record_sha256": "2b4bf04e1bfe1a915c67e70e096c7eafa5371e6d99119a73a258322fa3bae35d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-aymny-dzd",
+    "item_sha256": "f0ed6dda0f88a39809ee29cc3554489a14eba020eda888b8823684528966630e",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "cbdfb84e3a2d70fb051129361070dab24d9a221df63d945e5b8bda291427b9e4",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Read in full. One short instruction sentence with a parenthesised Quran phrase inside it; keeping it whole is acceptable."
+  }
+}

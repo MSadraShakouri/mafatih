@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-kyfyt-hsyn-abas",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "f066bfdf6c9bb62870081891cdc90fc6a9cca1647570fadf79994913e5886d3f",
+  "layout_sha256": "219506fe0a3c23b06a3c9f96d5e07015f6ca7b6a61fa65039d7dd3e959d7838b",
+  "result_item_sha256": "eb80fab7ae8a11dceb34a587d42a83d861137419b405e1993c4d4f6657376d72",
+  "result_record_sha256": "8527c040de256971d348fc37464a89d4c2c7fac2fa3c0e6fe1bdbc9274f66fe9",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-kyfyt-hsyn-abas",
+    "item_sha256": "827ce3461024ca083d5324aeb6f748297aa0ee4f7014507e6e5ee86a6561c157",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "5bf89c195652bda2f8e078f5575db5834a049ba2a34d3d11d3c7892f97df487b",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Read every output row in full; pairing and kinds are right."
+  }
+}

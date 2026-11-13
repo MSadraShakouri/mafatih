@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhaadyat",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "a1da53c441aa556444a97ac9f4deae8548bb52a327344f494a3ea7e5a527da0c",
+  "layout_sha256": "2ed0d57d34e0727e5ce588e8c1d176a3e1c8e15ab924d7aa242dbe62a769cce2",
+  "result_item_sha256": "17bbd1ed4e87120b3f2501424545f1e6cfdab8da9d9386995fa4ae234751d5ed",
+  "result_record_sha256": "30b474d763d5e9566766b1dd6c90233a098d4a0d131ffbd72dc3336626953465",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhaadyat",
+    "item_sha256": "7e54e18625a7ad4fa26ad1aa8ec50ddb32d71e2a5d40c8c0709df187c2df5bc3",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "7a05c3836e255791ec14308b5158f80128c882935f5bfcea4f6b3275a406c911",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Read every output row in full; pairing and kinds are right."
+  }
+}

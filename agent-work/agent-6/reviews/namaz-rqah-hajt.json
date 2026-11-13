@@ -1,0 +1,70 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-rqah-hajt",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "9389ad27738afb906556ab4cc7cc1c3b13406706507c99e07259d27641cb9ce5",
+  "layout_sha256": "752f09cbe39ed1bb148151ec5b920fce8117f7f8db70f012411ff2420baf5fc2",
+  "result_item_sha256": "cd3d70dba30352c86443a323bb06470422cb41c6e43ca8121695c32ebc692956",
+  "result_record_sha256": "bdf77526001e547b9c6a4fc36e95cbba8a48081df7186e0011954b143a568dac",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-rqah-hajt",
+    "item_sha256": "4cc57ead678066e19077b8ba8240c1a6e6d072583e4aaca3c7fd214d7066e061",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "2a7d5dc0cbbbaf22df6215e4c45f047cb2f61f947105b9fd7ed75ce377032e12",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The field holds an author remark (first sentence) and then the instruction with its source; cut at that sentence boundary and classify the first piece as note."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The basmala is fused with the first clause; cut after the basmala."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The translation of the basmala is fused with the first clause; cut after it. The recorded earlier line break in this field supports a boundary here."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "About seven clauses in one row; cut at clause boundaries."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "About seven clauses in one row; cut at clause boundaries to match the Arabic."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Checked the output: the field has no physical separator and no earlier separator is restored. Whether the earlier break position should also be a cut is judged in the split decision for this source."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "Rows 2 and 3 pair multi-clause blocks; redo the pairing clause by clause after splitting."
+  }
+}

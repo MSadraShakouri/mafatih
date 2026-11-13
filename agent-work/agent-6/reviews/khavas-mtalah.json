@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-mtalah",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "4efebfbbc75fc71dffef08acf6c431fa2b959efe09e212505f579ab0bfc0db03",
+  "layout_sha256": "74f6d3cd9e1948ec5250ff053359529957a155229d836046b031d0b4ae39639f",
+  "result_item_sha256": "5ba8a0ffbd715f3e137300f7cadc5b59e61b7fee6085c487bb7e3b28ed4410cd",
+  "result_record_sha256": "b79863cc22122488340ae117d594f430cccbfa4e5ed55eafbc36f00cc0985a6f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-mtalah",
+    "item_sha256": "6c1386d13852fc7ce960cd3fa7e9746daf95b13d12796771b5642dc3180efb91",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "669d5c09698c8aba5cd7afe7c015b4f6c384ab711a88b2bd3d31d2c402582f4b",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Under-split: this row holds two sentences and about five clauses; cut at the sentence boundary at least, and pair clause by clause."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Under-split: this row holds two sentences and about five clauses; cut at the sentence boundary at least, and pair clause by clause."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "Output row 2 pairs a two-sentence Arabic block with its whole translation; redo the pairing after splitting. Row 1 is fine."
+  }
+}
