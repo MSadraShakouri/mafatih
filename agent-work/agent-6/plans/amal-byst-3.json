@@ -1,0 +1,140 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-byst-3",
+  "item_sha256": "a64e124200c2a86caefbcc5d62bb8b7d921292f8218e14c817b0dcd4c27455e8",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "df42b620c9b4aab62ea24d5491e0cac43b843dbac7198bf9f95db616843f1459",
+      "checked": true,
+      "cuts": [
+        22,
+        74,
+        111,
+        136,
+        224,
+        253,
+        279,
+        314,
+        349,
+        384,
+        469,
+        530,
+        594
+      ],
+      "kinds": [
+        "heading",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "471297c262da94e469d8a1b93d6cadef273ab9206a0609222a30b83d62f5c0cb",
+      "checked": true,
+      "cuts": [
+        56,
+        86,
+        105,
+        157,
+        177,
+        196,
+        223,
+        250,
+        277,
+        342,
+        396,
+        447
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "9dc48df8acdda4e146c7600185d97a139a4b2b683d19c3e66c11c3f41e83e637",
+      "checked": true,
+      "cuts": [
+        13,
+        43,
+        69,
+        120,
+        160,
+        188,
+        285
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "feb63527164537fab3495c1df6c8bf9d4d63a088c308ddd9d132f7523db6b844",
+      "checked": true,
+      "cuts": [
+        8,
+        54,
+        74,
+        117,
+        152,
+        182,
+        261
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-22) of this ar field is Persian-language text (heading); the layout places it in the fa field. Wording unchanged."
+    }
+  ]
+}
