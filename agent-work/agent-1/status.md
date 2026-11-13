@@ -6,50 +6,102 @@ Branch in use: `arena/411fca58-mafatih` (the platform-assigned session branch).
 
 ## Authored (plan + canonical layout, structurally verified)
 
-56 of 112 items. Each plan has every source occurrence `checked: true`, one kind per
-text piece, and a layout whose pieces cover each source field exactly once in order.
-All 32 plans were re-verified against the revision-2 base with unchanged fingerprints.
+112 of 112 items — the assignment is finished. Every plan marks each source
+occurrence `checked: true`, gives one kind per text piece, and every layout places
+each source piece exactly once, in order, with the text unchanged. Arabic and
+Persian pieces are paired in one output row only when the source row aligns them
+(the corpus stores most translations row-for-row); where the languages' row
+boundaries cross, the pieces stay unpaired rather than being matched by position.
+Persian headings, notes and ritual instructions that the source stores in the
+Arabic field are moved into the Persian slot with their own kind; Arabic phrases
+stored in the Persian field move the other way. Nothing is translated, merged,
+re-ordered or invented.
 
-- fazilat-svrhtvhyd, khavas-aymny-dzd, item-asharh-2, item-asharh-4, namaz-vsyt,
-  namaz-afv-astghfar, khavas-ayza-tqvyt-hafzh, khavas-hrz-rza-alyh,
-  amal-taqybat-mshtrkh, khavas-dvay-tngy-nfs, khavas-pysh-khvab, dua-ya-mn-kbs,
-  dua-zhyr, item-slvat-br-hsn-2, amal-aamal-syzdhm-rmzan, item-slvat-br-aly-2,
-  item-slvat-br-aly, ziyarat-fzylt-amamzadgan, namaz-hajt, amal-sjdh-mvsy-kazm,
-  namaz-nmazhay-ayam-hfth, khavas-rvyt-jhvd-trsa, khavas-ayza-khvas-svr,
-  khavas-hrz-hady-alyh, dua-daa-dfa-shr, dua-saat-4, item-rqah-aljyb,
-  item-slvat-br-mhmd-2, item-slvat-br-mhmd, namaz-jvad-alyh-alslam, amal-byst-7,
-  ziyarat-amyralmvmnyn-alyh-alslam, item-zahrshdn-qbr-an, item-adab-srdab-mthr,
-  namaz-grsnh, khavas-zman-ghybt, namaz-zyad-shdn-rvzy, ziyarat-vdaa-an,
-  namaz-sahb-alzman-alyh, khavas-hjab-jafr-sadq, item-ayza-rfa-mrz,
-  amal-aamal-byst-vykm, dua-hjt-alyh-alslam, item-klam-abn-btvth, dua-shshm-zkr-dv,
-  item-namh-yvshya-bn, dua-zman-ajl-allh, amal-fzylt-asfnd, namaz-hdys-nfs,
-  namaz-baqr-alyh-alslam, ziyarat-zhra-alyha-alslam, ziyarat-fzylt-hmzh-alyh,
-  amal-slvaty-fzylt-bsyary, sura-kawthar, amal-shybh-hzly, namaz-naflh-sbh
+Authoring is incremental and reversible: each item was written through
+`split-agent.ts split` → `verify` → `six-agent.ts apply`, so every recorded split
+has a plan, a canonical layout and a row-split record, and `validate` re-checks the
+whole corpus after each batch.
 
-Recorded issues (14): twelve `mixed-language` — `khavas-aymny-dzd/r00001/fa` (truncated
-Quran quotation keeps a Persian connector, so it stays in `fa`), `khavas-rvyt-jhvd-trsa/r00003/fa`
-(Arabic dhikr continuation plus Persian explanation in one field; split without joining
-rows), `khavas-hrz-hady-alyh/r00001/ar` (Persian heading stored in `ar`; piece moves to
-`fa`, original location stays mapped), `ziyarat-amyralmvmnyn-alyh-alslam/r00002/fa` (Arabic
-ziyarat stored in `fa` without a Persian counterpart in that row; piece moves to `ar`),
-`item-adab-srdab-mthr/r00004/fa` (Arabic prayer fragment inside a Persian instruction) and
-`ziyarat-vdaa-an/r00001/fa` (short Arabic farewell phrase inside a Persian instruction),
-`amal-aamal-byst-vykm/r00001/ar` and `/r00002/ar` (Persian exposition in the `ar` field with a
-short Arabic saying), `item-namh-yvshya-bn/r00002/fa`, `/r00004/fa`, `/r00005/fa` (Arabic
-basmala and dhikrs quoted inside Persian reports) and `ziyarat-fzylt-hmzh-alyh/r00003/fa`
-(Arabic exclamation leading into a Persian poem) —
-plus `ziyarat-amyralmvmnyn-alyh-alslam/r00003/fa` `historical-line-break` (old value had a
-physical break that is neither restored nor dropped) and `other` (its single Persian piece
-translates both the moved `r00002` Arabic piece and `r00003`; the layout can attach it once).
+## Recorded issues (147 across 43 items)
 
-## Applied to canonical data
+Totals by kind: `mixed-language` 81, `historical-line-break` 56,
+`historical-marker-move` 6, `uncertain-classification` 3, `other` 1.
 
-All 56 authored items are applied on this branch, with their row-split mappings and
-new pooled text values. `npm run validate`, `npm run check:line-breaks` and the full
-`npm run check` gate pass on the resulting data (263 tests, 260 pass, 0 fail, 3 skipped).
+- amal-aamal-byst-vykm — mixed-language×2
+- amal-aamal-lylh-alrghayb — mixed-language×2
+- amal-aamal-rmzan — mixed-language×1
+- amal-aamal-shbhay-qdr — mixed-language×2
+- amal-byan-ankh-aashvra — mixed-language×2
+- amal-fzylt-aamal-nymh — mixed-language×7
+- amal-mkhtsr-rmzan — mixed-language×6
+- dua-adylh — historical-line-break×2, mixed-language×1
+- dua-esteghase — historical-line-break×2, mixed-language×1
+- dua-jawshan-kabir — mixed-language×1, historical-line-break×39, historical-marker-move×6
+- dua-sahar — historical-line-break×6
+- dua-syfy-sghyr-marvf — uncertain-classification×1
+- dua-tjrbh-shdh-mhfvz — historical-line-break×1
+- item-adab-srdab-mthr — mixed-language×1
+- item-astghfary-sbb-zyady — mixed-language×2
+- item-drd-dndan — mixed-language×3
+- item-mqdmh-adab-sfr — historical-line-break×1
+- item-namh-yvshya-bn — mixed-language×3
+- khavas-adab-dfn-myt — mixed-language×2
+- khavas-aymny-dzd — mixed-language×1
+- khavas-hrz-hady-alyh — mixed-language×1
+- khavas-rvyt-jhvd-trsa — mixed-language×1
+- namaz-aaraby — mixed-language×1
+- namaz-adab-kyfyt — mixed-language×6
+- namaz-adab-zhr — historical-line-break×1
+- namaz-amyralmvmnyn-alyh-alslam — mixed-language×2
+- namaz-chharm-adayh-qbl — mixed-language×5
+- namaz-slman — mixed-language×2
+- namaz-taqybat-mkhtsh-sbh — mixed-language×2
+- namaz-zman-alyh-alslam — mixed-language×1
+- sahifa-jmah — uncertain-classification×2
+- ziyarat-amdn-zyn-alaabdyn — mixed-language×1
+- ziyarat-amin-allah — historical-line-break×2, mixed-language×1
+- ziyarat-amyralmvmnyn-alyh-alslam — mixed-language×1, historical-line-break×1, other×1
+- ziyarat-avl-rjb-nymh — mixed-language×1
+- ziyarat-bad-amaman-alyhma — mixed-language×3
+- ziyarat-fzylt-hmzh-alyh — mixed-language×1
+- ziyarat-item-5 — historical-line-break×1, mixed-language×4
+- ziyarat-item-8 — mixed-language×3
+- ziyarat-item — mixed-language×3
+- ziyarat-jlalt-syd-mhmd — mixed-language×1
+- ziyarat-qbvr-mvmnan — mixed-language×3
+- ziyarat-vdaa-an — mixed-language×1
 
-## Environment
+Notes on the kinds:
+- `mixed-language` marks a piece whose words are written in the other language and
+  which the layout therefore places in that language's slot; the wording is
+  unchanged and the recorded finding tells the reviewer where it came from.
+- `historical-line-break` / `historical-marker-move` mark fields whose earlier
+  stored value differed by a physical separator or a moved Persian section number.
+  No separator is restored and no marker is moved again; the current text stands.
+- `uncertain-classification` marks three personal-name rows read as reciter labels
+  in the same position and form as the corpus's other reciter rows. That is agent
+  judgment, not a verified audio attribution.
+- `other` marks the one piece left unpaired because the language rows cross.
 
-`verify-tool-info` matches: Node `v22.22.3`, ICU `78.2`, Unicode `17.0` and the pinned
-source/dependency hashes. Registration binds this agent number to the session branch and
-the revision-2 base.
+## Gates run at 112 items
+
+- `npm run validate` — STRUCTURAL VALIDATION PASS (not a content/rights approval).
+- `npm run check:line-breaks` — passed, 0 exact retained breaks (0 pending, 0 reviewed).
+- `npm run check` — exit 0; 263 tests, 260 pass, 0 fail, 3 skipped.
+- `six-agent.ts audit-authored --base ffa01da9… --agent agent-1` — `complete`,
+  total_items 112, complete_items 112, findings [].
+
+## Independent review of the neighbour
+
+- Peer: agent-6, branch `arena/1a493a80-mafatih`, tip `b86e05b5…`, partial snapshot
+  `941c7ad3…` (32 items).
+- All 32 of those items were reviewed here: `agent-work/agent-1/reviews/*.json`,
+  each `verify-review` → `agent-review-records-complete`, layout `accept`, no
+  revisions requested. Records are agent assertions, not scholarly or rights approval.
+- No author-ready snapshot exists yet, so nothing from the peer has been merged. A
+  `review` message reporting this is in `coordination/agent-1-agent-6.jsonl`.
+
+## Not done here
+
+No APK was built, no publication or rights check is claimed, and no translation of
+Arabic devotional text was introduced.
