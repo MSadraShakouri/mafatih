@@ -1,0 +1,111 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "dua-mqatl-bn-slyman",
+  "item_sha256": "e0a36ea3159aec258288d49639835bb31b1ac76328d1aa1b5b6e2a70396822ce",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "f680321d1c598add94f38b638ef7d5272f63a64aec039900306014d14f78d681",
+      "checked": true,
+      "cuts": [
+        234
+      ],
+      "kinds": [
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "3d3db388bb250445ac1078eea74ab4deb9946b6228a4187a2ae34069e25dbe08",
+      "checked": true,
+      "cuts": [
+        41,
+        93,
+        181,
+        276,
+        385,
+        464,
+        516
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "f1a4e2ee0cb0500564811f355fcc2d7f1a21f5fc75a2d94b7db821d7a9409950",
+      "checked": true,
+      "cuts": [
+        44,
+        95,
+        175,
+        262,
+        366,
+        437,
+        488
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "ed30fb3448b1b84eb6cba696cb0b66b250097d2c192caf4488a802feac649a92",
+      "checked": true,
+      "cuts": [
+        20,
+        71
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "9cbc443004371d440d380fc1c5e110759db3bab6f1072fd16bd1fc9e232cb988",
+      "checked": true,
+      "cuts": [
+        16,
+        54
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "other",
+      "note": "The last ar part of this row and ar part 0 of r00003 are translated in crossed order by the last fa part here and fa part 0 of r00003; the four crossing pieces are left unpaired rather than paired by position."
+    }
+  ]
+}
