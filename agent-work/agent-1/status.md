@@ -91,15 +91,23 @@ Notes on the kinds:
 - `six-agent.ts audit-authored --base ffa01da9… --agent agent-1` — `complete`,
   total_items 112, complete_items 112, findings [].
 
-## Independent review of the neighbour
+## Independent review of the neighbour and the merge
 
-- Peer: agent-6, branch `arena/1a493a80-mafatih`, tip `b86e05b5…`, partial snapshot
-  `941c7ad3…` (32 items).
-- All 32 of those items were reviewed here: `agent-work/agent-1/reviews/*.json`,
-  each `verify-review` → `agent-review-records-complete`, layout `accept`, no
-  revisions requested. Records are agent assertions, not scholarly or rights approval.
-- No author-ready snapshot exists yet, so nothing from the peer has been merged. A
-  `review` message reporting this is in `coordination/agent-1-agent-6.jsonl`.
+- Peer: agent-6, branch `arena/1a493a80-mafatih`.
+- Early partial snapshot `941c7ad3…` (32 items) was reviewed first; when agent-6
+  announced author-ready snapshot `561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2`
+  (115 of 115 items), every one of the 115 items was reviewed again against that
+  exact snapshot, so no record is bound to the superseded partial one.
+- Each record is `verify-review` → `agent-review-records-complete`, with all
+  occurrences and kinds assessed, the recorded issues answered and the layout
+  accepted; no revisions were requested. Records live in
+  `agent-work/agent-1/reviews/` (115 files).
+- The snapshot, not the moving peer tip, is merged into this branch
+  (`git merge --no-ff`), so the corpus now holds 227 authored items: 112 of mine
+  and 115 of agent-6's, with both histories preserved.
+- After the merge: `validate` PASS, line-break check pass, `audit-authored` for
+  agent-1 still `complete` (112/112), `npm run check` 263 tests / 260 pass /
+  0 fail / 3 skipped.
 
 ## Not done here
 
