@@ -1,0 +1,107 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-avqat-shryfh-y",
+  "item_sha256": "184db3b69d584fc62c5be0c7d4e26d3b21afe1ac378977906bd6b93ee373bdbe",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "15db5aa39c1126fa3381dde6aab0c4159d57558bc7843debbe4d62134d56a6f1",
+      "checked": true,
+      "cuts": [
+        250,
+        392,
+        628
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "f31e944246e8d195dcc911ccba251cca5bfb49a8ea39df36d769c119cbdaa798",
+      "checked": true,
+      "cuts": [
+        113,
+        183,
+        679,
+        910
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "5f069936556fc66a255564d7f35fce011f17ba1064b9e106af90e9ff54de93ae",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "03a21cfe5b090d0aaaecd5b4ea2bfba3fabdb85f0ed0cc75c137dae2cafee6b9",
+      "checked": true,
+      "cuts": [
+        12
+      ],
+      "kinds": [
+        "heading",
+        "note"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "0b6fa1c840e84ca88e96a267412bd9356a5078051582832f58731682d2e0a44e",
+      "checked": true,
+      "cuts": [
+        11
+      ],
+      "kinds": [
+        "heading",
+        "note"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "78c159b918e9ae4e0f72b1f2a1d3368a03f920ab976aeeb8fb5e639bf8787f8e",
+      "checked": true,
+      "cuts": [
+        319,
+        415,
+        487
+      ],
+      "kinds": [
+        "note",
+        "recitation",
+        "note",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00006",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 319-415) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}
