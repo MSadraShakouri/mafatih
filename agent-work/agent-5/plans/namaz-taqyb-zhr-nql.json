@@ -1,0 +1,103 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-taqyb-zhr-nql",
+  "item_sha256": "bc7fa2bfd5fc052e58abd99b7ac0a2c3fd4c25bc419345676a386fed1cac1d2d",
+  "author": "agent-5",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "33ba20e65ed45506d8a269aa72df4dba9967547e5628d5d40ae04e9bc10946e1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "20b4e1336e27ce78515fc1ae00188f48ea5fb8dbd5781b9e410c1a6e7ab96f3c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "61c420317a94ec4d82f704844fd47629edbdc7b68e92481f71ae8041e3947d3b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "3836ac2cc6737dfe5257fd901f4183f77030cc30b8f35614c5dc9f2f917d8269",
+      "checked": true,
+      "cuts": [
+        18
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "6bee4c28cd13c9e69e873d08d6e6f215da20c0b1bc97ef425276af6c551ccbeb",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "646228541d73863402b1b9b771b0a51635dc0dfe02872e4c193c3902ee53b48d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "82cf80f36dfc8e5e676b5dd6aeed8aee1093e6d73e2e187e9d7c78d0833ebcfe",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier value carried physical separators; current field inspected and no old separator restored."
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier value carried physical separators; current field inspected and no old separator restored."
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Field interleaves an Arabic clause, a Persian instruction and a second Arabic supplication whose Persian rendering covers both Arabic parts; kept as one piece rather than splitting the shared translation."
+    }
+  ]
+}
