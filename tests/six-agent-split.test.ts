@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { loadCorpus, type Corpus } from '../src/corpus.js';
 import { intern } from '../src/editor.js';
 import { ItemSchema } from '../src/schema.js';
-import { createAgentTemplate, splitAgentPlan } from '../src/split-agent.js';
+import { createAgentTemplate, exportAgentInput, splitAgentPlan } from '../src/split-agent.js';
 import { compileCanonicalSplit, createCanonicalLayoutTemplate, restoreCanonicalItem, verifyCanonicalResult } from '../src/split-canonical.js';
 import { validateRowSplitRecords } from '../src/row-splits.js';
 import { resolveLegacyRowAnchor } from '../web/row-split-anchor.js';
@@ -71,6 +71,47 @@ test('physical rows preserve exact mixed and unequal language pieces, original r
     { row: item.rows[2]!.id, language: 'fa', offset: 0 });
   const newAnchor = { row: item.rows[1]!.id, language: 'ar' as const, offset: 3 };
   assert.deepEqual(resolveLegacyRowAnchor(mapping.rows, newAnchor), newAnchor);
+});
+
+test('retired-row break and marker hints follow every mapped descendant without inventing positions', () => {
+  const f=fixture(), compiled=compileCanonicalSplit(f.c,f.plan,f.layout), after=resultCorpus(f.c,compiled);
+  after.editorial=structuredClone(after.editorial);
+  const previous=intern(after,'Original first line.\nOriginal second line.');
+  (after.editorial.row_corrections ??= []).push({item:f.item,row:'old-one',language:'ar',previous,
+    replacement:f.arRef,evidence:'synthetic',reason:'Synthetic earlier line break.'});
+  (after.editorial.line_break_marker_moves ??= []).push({item:f.item,language:'ar',source_row:'old-one',destination_row:'old-shared',
+    marker:'1.',source_previous:f.arRef,source_replacement:f.arRef,destination_previous:f.arRef,destination_replacement:f.arRef,
+    evidence:'synthetic',reason:'Synthetic marker movement.'});
+  const mapped=compiled.record.rows.find(row=>row.original.id==='old-one')!.ar;
+  assert.equal(mapped.length,3);assert.equal(mapped[0]!.language,'fa','one original Arabic field moved to Persian');
+  const exported=exportAgentInput(after,f.item);
+  for(const segment of mapped){
+    const field=exported.rows.find(row=>row.id===segment.row)![segment.language]!;
+    assert.equal(field.historical_line_break_corrections.length,1);
+    assert.equal(field.historical_marker_moves.filter(move=>move.direction==='outgoing').length,1);
+    assert.equal(field.historical_line_break_corrections[0]!.previous_text,'Original first line.\nOriginal second line.');
+    assert.deepEqual(field.historical_line_break_corrections[0]!.inherited_from,
+      {row:'old-one',language:'ar',start:segment.start,end:segment.end});
+    assert.deepEqual(field.historical_marker_moves[0]!.inherited_from,
+      {row:'old-one',language:'ar',start:segment.start,end:segment.end});
+  }
+  const incoming=exported.rows.find(row=>row.id==='old-shared')!.ar!;
+  assert.ok(incoming.historical_marker_moves.some(move=>move.direction==='incoming'));
+  const plan=createAgentTemplate(after,f.item,'agent-2');
+  for(const segment of mapped){
+    assert.ok(plan.issues.some(issue=>issue.row===segment.row&&issue.language===segment.language&&issue.kind==='historical-line-break'));
+    assert.ok(plan.issues.some(issue=>issue.row===segment.row&&issue.language===segment.language&&issue.kind==='historical-marker-move'));
+  }
+  const omitted=structuredClone(plan), first=mapped[0]!;
+  omitted.issues=omitted.issues.filter(issue=>!(issue.row===first.row&&issue.language===first.language&&issue.kind==='historical-line-break'));
+  assert.throws(()=>splitAgentPlan(after,omitted),/historical|history/i);
+});
+
+test('post-split plans fingerprint the reversible history mapping even when current rows are unchanged', () => {
+  const f=fixture(), after=resultCorpus(f.c,compileCanonicalSplit(f.c,f.plan,f.layout));
+  const plan=createAgentTemplate(after,f.item,'agent-2');
+  after.rowSplits.get(f.item)!.author='agent-6';
+  assert.throws(()=>splitAgentPlan(after,plan),/fingerprint|stale/i);
 });
 
 test('no-cut/no-change source retains its row ID; classified changes remain reversible', () => {

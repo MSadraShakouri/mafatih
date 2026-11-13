@@ -3,6 +3,7 @@ import { text, type Corpus } from './corpus.js';
 import { BreakKind, breakPositions } from './line-breaks.js';
 import { Key, RowFieldsSchema, TextId } from './schema.js';
 import { codePoints, sha256, slicePoints, textId } from './text-ids.js';
+import { validateRowSplitRecords } from './row-splits.js';
 
 // These artifacts are proposals, not canonical edits or reviewed alignments.
 // Bump the protocol if a change makes old plans or reviews incompatible.
@@ -107,14 +108,19 @@ function itemFingerprint(c: Corpus, itemId: string, sources = sourcesFor(c, item
       row_insertions: (history.row_insertions ?? []).filter(e => e.item === itemId),
       row_classifications: (history.row_classifications ?? []).filter(e => e.item === itemId),
       metadata_corrections: history.metadata_corrections.filter(e => e.item === itemId), punctuation },
-    alignment: c.alignments.get(itemId) ?? null });
+    alignment: c.alignments.get(itemId) ?? null,
+    // Preserve existing unsplit fingerprints while binding any later plan to
+    // the exact reversible history that gives current rows their identity.
+    ...(c.rowSplits.has(itemId) ? { row_split_record: c.rowSplits.get(itemId) } : {}) });
 }
 
+type HistoricalOrigin = { row: string; language: Lang; start: number; end: number };
 type HistoryHint = {
   historical_line_break_corrections: Array<{ previous_ref: string; previous_text: string; previous_sha256: string;
-    previous_breaks: ReturnType<typeof breakPositions>; replacement_ref: string | null; evidence: string; reason: string }>;
+    previous_breaks: ReturnType<typeof breakPositions>; replacement_ref: string | null; evidence: string; reason: string;
+    inherited_from?: HistoricalOrigin }>;
   historical_marker_moves: Array<{ direction: 'incoming' | 'outgoing'; source_row: string; destination_row: string;
-    marker: string; evidence: string; reason: string }>;
+    marker: string; evidence: string; reason: string; inherited_from?: HistoricalOrigin }>;
 };
 /** Old breaks are evidence for review, never automatically restored into current text. */
 function historyHints(c: Corpus, itemId: string): Map<string, HistoryHint> {
@@ -140,7 +146,33 @@ function historyHints(c: Corpus, itemId: string): Map<string, HistoryHint> {
         destination_row: move.destination_row, marker: move.marker, evidence: move.evidence, reason: move.reason });
     }
   }
-  return hints;
+  const record = c.rowSplits.get(itemId);
+  if (!record) return hints;
+  const errors = validateRowSplitRecords(c, itemId);
+  if (errors.length) throw new Error(`Invalid row mapping for historical hints: ${errors.join('; ')}`);
+
+  // History events identify the complete OLD occurrence, not an exact point
+  // in its later descendants. Conservatively expose the full event on every
+  // mapped descendant, including a piece moved across languages. Segment
+  // bounds refer to the original field at split time, not necessarily the
+  // correction's replacement; previous_breaks refer to the still earlier
+  // previous_text and must never be treated as current-field offsets.
+  const mappedOrigins = new Set(record.rows.flatMap(entry =>
+    (['ar', 'fa'] as const).map(language => sourceKey({row:entry.original.id,language}))));
+  const inherited = new Map([...hints].filter(([key]) => !mappedOrigins.has(key)));
+  for (const entry of record.rows) for (const language of ['ar', 'fa'] as const) {
+    const origin = hints.get(sourceKey({row:entry.original.id,language}));
+    if (!origin) continue;
+    for (const segment of entry[language]) {
+      const key = sourceKey({row:segment.row,language:segment.language});
+      let target = inherited.get(key);
+      if (!target) { target = {historical_line_break_corrections:[],historical_marker_moves:[]}; inherited.set(key,target); }
+      const inherited_from = {row:entry.original.id,language,start:segment.start,end:segment.end};
+      target.historical_line_break_corrections.push(...origin.historical_line_break_corrections.map(event => ({...event,inherited_from})));
+      target.historical_marker_moves.push(...origin.historical_marker_moves.map(event => ({...event,inherited_from})));
+    }
+  }
+  return inherited;
 }
 
 type ItemMeasure = {
@@ -194,7 +226,7 @@ export function exportAgentInput(c: Corpus, itemId: string) {
     item_sources: item.sources ?? null,
     rows: item.rows.map(row => ({ id: row.id, kind: row.kind ?? 'unknown', sources: row.sources ?? null,
       ar: field(row.id, 'ar'), fa: field(row.id, 'fa') })),
-    warning: 'Existing Arabic/Persian only. Source fields may themselves contain mixed or mislabeled languages. No content, alignment, translation, rights or human review is certified.',
+    warning: 'Existing Arabic/Persian only. Source fields may themselves contain mixed or mislabeled languages. Inherited history concerns an entire original occurrence; earlier break offsets are not current-field offsets. No content, alignment, translation, rights or human review is certified.',
   };
 }
 

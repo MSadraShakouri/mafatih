@@ -6,6 +6,7 @@ import { validateCorpus } from '../src/corpus.js';
 import { gitCommit, gitFile, loadCorpusAtCommit } from '../src/git-corpus.js';
 import { AgentPartitionsSchema, AgentPlanSchema, verifyAgentPartitions } from '../src/split-agent.js';
 import { verifyCanonicalResult } from '../src/split-canonical.js';
+import { requireAgentBranch } from '../src/six-agent-branch.js';
 
 const usage='Usage: node --import tsx scripts/six-agent-snapshot.ts --base FULL_COMMIT --agent agent-N';
 function run(args:string[],options:SpawnSyncOptions={}):string {
@@ -19,7 +20,7 @@ function main():void {
   const baseSha=gitCommit(flags['--base']??''),who=flags['--agent'];
   if(!who||!/^agent-[1-6]$/.test(who))throw new Error(usage);
   const root=path.resolve(run(['rev-parse','--show-toplevel']));process.chdir(root);
-  const branch=run(['branch','--show-current']);if(branch!==`split-${who}`)throw new Error(`Must be on your own split-${who} branch`);
+  requireAgentBranch(root,who,baseSha);
   if(spawnSync('git',['diff','--quiet']).status!==0||spawnSync('git',['diff','--cached','--quiet']).status!==0)throw new Error('Commit your tracked changes before creating a snapshot; do not discard them');
   const head=run(['rev-parse','HEAD']);
   if(spawnSync('git',['merge-base','--is-ancestor',baseSha,head]).status!==0)throw new Error('The common preparation base is not an ancestor of your branch');

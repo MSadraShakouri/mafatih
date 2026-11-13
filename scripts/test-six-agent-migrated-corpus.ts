@@ -5,7 +5,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { loadCorpus, text, validateCorpus } from '../src/corpus.js';
 import { commit, pretty, preserveKeyOrder } from '../src/editor.js';
-import { createAgentTemplate, splitAgentPlan } from '../src/split-agent.js';
+import { createAgentTemplate, exportAgentInput, splitAgentPlan } from '../src/split-agent.js';
 import { compileCanonicalSplit, createCanonicalLayoutTemplate } from '../src/split-canonical.js';
 import { corpusBeforeRowSplits } from '../tests/helpers/row-split-history.js';
 
@@ -88,8 +88,28 @@ try {
   assert.ok(cuts>=20,`expected many synthetic cuts, got ${cuts}`);
   assert.ok(moved,'expected a synthetic Arabic-to-Persian field move');
   assert.ok(reclassifiedAudio,'expected a synthetic reclassification of an audio row');
-  assert.deepEqual(validateCorpus(loadCorpus(root)).errors,[]);
-  console.log(`Disposable fixture: ${original.items.size} mechanically classified items, ${cuts} synthetic cuts, one language-field move and one audio reclassification.`);
+  const migrated=loadCorpus(root);
+  assert.deepEqual(validateCorpus(migrated).errors,[]);
+  let inheritedFields=0,retiredHistoryFields=0;
+  for(const [id,record] of migrated.rowSplits){
+    const oldRows=new Map(exportAgentInput(original,id).rows.map(row=>[row.id,row]));
+    const newRows=new Map(exportAgentInput(migrated,id).rows.map(row=>[row.id,row]));
+    for(const entry of record.rows)for(const language of ['ar','fa'] as const){
+      const old=oldRows.get(entry.original.id)![language];
+      if(!old || (!old.historical_line_break_corrections.length&&!old.historical_marker_moves.length))continue;
+      for(const segment of entry[language]){
+        const field=newRows.get(segment.row)![segment.language]!;
+        const from=(x:{inherited_from?:{row:string;language:'ar'|'fa';start:number;end:number}})=>
+          x.inherited_from?.row===entry.original.id&&x.inherited_from.language===language&&
+          x.inherited_from.start===segment.start&&x.inherited_from.end===segment.end;
+        assert.equal(field.historical_line_break_corrections.filter(from).length,old.historical_line_break_corrections.length,`${id}/${segment.row}: lost break history`);
+        assert.equal(field.historical_marker_moves.filter(from).length,old.historical_marker_moves.length,`${id}/${segment.row}: lost marker history`);
+        inheritedFields++;if(segment.row!==entry.original.id)retiredHistoryFields++;
+      }
+    }
+  }
+  assert.ok(inheritedFields>0&&retiredHistoryFields>0,'expected history hints on actual retired-row descendants');
+  console.log(`Disposable fixture: ${original.items.size} mechanically classified items, ${cuts} synthetic cuts, one language-field move and one audio reclassification; ${inheritedFields} inherited history fields (${retiredHistoryFields} on retired-row descendants).`);
   const database=path.join(root,'synthetic.sqlite');
   const exported=spawnSync('python3',['tools/export_sqlite.py'],{stdio:'inherit',env:{...process.env,MAFATIH_DATA_ROOT:root,MAFATIH_SQLITE_OUT:database}});
   if(exported.status!==0)throw new Error(`Synthetic SQLite export failed: ${exported.status}`);

@@ -10,9 +10,12 @@ import { AgentPartitionsSchema, AgentPlanSchema, exportAgentInput, splitAgentPla
 import { CanonicalLayoutSchema, compileCanonicalSplit, createCanonicalLayoutTemplate, restoreCanonicalItem, verifyCanonicalResult } from '../src/split-canonical.js';
 import { CanonicalReviewSchema, createCanonicalReviewTemplate, verifyCanonicalReview } from '../src/six-agent-review.js';
 import { sha256 } from '../src/text-ids.js';
+import { checkedAgent, currentAgentBranch, discoverAgentPeer, neighbors, registerAgent, requireAgentBranch } from '../src/six-agent-branch.js';
 
 const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens a PR):
+  node --import tsx scripts/six-agent.ts register --agent agent-N --base COMMIT
   node --import tsx scripts/six-agent.ts configure --agent agent-N
+  node --import tsx scripts/six-agent.ts discover --agent agent-N --peer agent-M
   node --import tsx scripts/six-agent.ts layout PLAN --base COMMIT --output NEW_FILE
   node --import tsx scripts/six-agent.ts apply PLAN LAYOUT --base COMMIT --agent agent-N
   node --import tsx scripts/six-agent.ts inspect ITEM --base COMMIT --result AUTHOR_COMMIT --author agent-N
@@ -22,22 +25,15 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts audit-round --base COMMIT
   node --import tsx scripts/six-agent.ts audit-squashed --base COMMIT
   node --import tsx scripts/six-agent.ts message --from agent-N --to agent-M --kind TYPE --text TEXT [--commit COMMIT] [--item ID] [--reply-to ID]
-Use a full immutable 40-character commit; all outputs except apply are non-destructive.
-Only apply writes data/, and only on the checked-out assigned agent's own branch.`;
+Use a full immutable 40-character commit. Register, configure and message write only work metadata or local Git configuration.
+Only apply writes data/, and only on the registered assigned agent's checked-out own branch.`;
 const project=spawnSync('git',['rev-parse','--show-toplevel'],{encoding:'utf8'});
 if(project.status!==0)throw new Error('Run inside the project Git repository');
 const root=path.resolve(project.stdout.trim());process.chdir(root);
 const read=(file:string):unknown=>JSON.parse(fs.readFileSync(file,'utf8')) as unknown;
-const agent=(value:string|undefined):string=>{
-  if(!value||!/^agent-[1-6]$/.test(value))throw new Error('Use agent-1 through agent-6');return value;
-};
-const currentBranch=():string=>{
-  const result=spawnSync('git',['branch','--show-current'],{encoding:'utf8'});
-  if(result.status!==0)throw new Error('Could not determine own branch');return result.stdout.trim();
-};
-function requireOwnBranch(value:string):void {
-  if(currentBranch()!==`split-${value}`)throw new Error(`Switch to your own split-${value} branch without discarding work; refusing canonical write on ${currentBranch()||'detached HEAD'}`);
-}
+const agent=checkedAgent;
+const currentBranch=(who:string):string=>currentAgentBranch(who);
+function requireOwnBranch(value:string,base?:string):void {requireAgentBranch(root,value,base);}
 function output(value:unknown,destination:string|undefined):void {
   const body=JSON.stringify(value,null,2)+'\n';
   if(!destination){process.stdout.write(body);return;}
@@ -95,15 +91,14 @@ function parseArgs(args:string[]){
   const command=args.shift(),flags:Record<string,string>={},positional:string[]=[];
   for(let i=0;i<args.length;i++){
     const value=args[i]!;if(!value.startsWith('--')){positional.push(value);continue;}
-    if(!['--base','--output','--agent','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
+    if(!['--base','--output','--agent','--peer','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
     flags[value]=args[++i]!;
   }
   return {command,flags,positional};
 }
 function branchMessage(flags:Record<string,string>):void {
   const from=agent(flags['--from']),to=agent(flags['--to']);requireOwnBranch(from);
-  const a=Number(from.slice(-1)),b=Number(to.slice(-1));
-  if(!(Math.abs(a-b)===1||Math.abs(a-b)===5))throw new Error('Messages are only to your two ring neighbors');
+  if(!neighbors(from,to))throw new Error('Messages are only to your two ring neighbors');
   const kind=flags['--kind'],body=flags['--text'];
   if(!kind||!['ready','review','question','answer','resolved','acknowledgement','progress'].includes(kind)||!body?.trim()||body.length>2000)throw new Error('Invalid message kind or text');
   if(flags['--commit'])gitCommit(flags['--commit']);
@@ -122,7 +117,8 @@ function main():void {
   const {command,flags,positional}=parseArgs(process.argv.slice(2));
   if(!command||command==='--help'||command==='-h'){console.log(usage);return;}
   const specs:Record<string,{count:number;flags:string[]}>={
-    configure:{count:0,flags:['--agent']},layout:{count:1,flags:['--base','--output']},apply:{count:2,flags:['--base','--agent']},
+    register:{count:0,flags:['--agent','--base']},configure:{count:0,flags:['--agent']},
+    discover:{count:0,flags:['--agent','--peer']},layout:{count:1,flags:['--base','--output']},apply:{count:2,flags:['--base','--agent']},
     inspect:{count:1,flags:['--base','--result','--author']},
     'review-template':{count:1,flags:['--base','--result','--author','--reviewer','--output']},
     'verify-review':{count:2,flags:['--base','--result','--author']},
@@ -132,6 +128,8 @@ function main():void {
   };
   const spec=specs[command];
   if(!spec||positional.length!==spec.count||Object.keys(flags).some(x=>!spec.flags.includes(x)))throw new Error(usage);
+  if(command==='register'){output(registerAgent(root,flags['--agent'],flags['--base']),undefined);return;}
+  if(command==='discover'){output(discoverAgentPeer(root,flags['--agent'],flags['--peer']),undefined);return;}
   if(command==='message'){branchMessage(flags);return;}
   if(command==='configure'){
     const who=agent(flags['--agent']);requireOwnBranch(who);
@@ -147,7 +145,7 @@ function main():void {
       const result=spawnSync('git',['config','--local',key,value],{encoding:'utf8'});
       if(result.status!==0)throw new Error(`Could not configure ${key}: ${result.stderr.trim()}`);
     }
-    output({status:'safe-merge-drivers-configured',branch:currentBranch(),note:'Only immutable pooled additions and append-only messages are unioned; other conflicts remain for the agent.'},undefined);return;
+    output({status:'safe-merge-drivers-configured',branch:currentBranch(who),note:'Only immutable pooled additions and append-only messages are unioned; other conflicts remain for the agent.'},undefined);return;
   }
   const baseSha=gitCommit(flags['--base']??''),base=loadCorpusAtCommit(baseSha),manifestPath='docs/split-assignments/assignments.json';
   const manifestBody=gitFile(baseSha,manifestPath), manifest=AgentPartitionsSchema.parse(JSON.parse(manifestBody) as unknown);
@@ -185,7 +183,7 @@ function main():void {
     output(createCanonicalLayoutTemplate(base,splitAgentPlan(base,plan)),flags['--output']);return;
   }
   if(command==='apply'){
-    const who=agent(flags['--agent']);requireOwnBranch(who);
+    const who=agent(flags['--agent']);requireOwnBranch(who,baseSha);
     const plan=read(positional[0]!),layoutInput=read(positional[1]!);checkPlanForPublication(plan);
     const parsed=AgentPlanSchema.parse(plan),layout=CanonicalLayoutSchema.parse(layoutInput),group=groupFor(parsed.item);
     if(group.agent!==who||parsed.author!==who||layout.author!==who)throw new Error('Cannot apply a different agent’s assignment');
@@ -276,7 +274,7 @@ function main():void {
       note:'Inspect source and actual rows independently. Do not commit this text-bearing export.'},undefined);return;
   }
   if(command==='review-template'){
-    const reviewer=agent(flags['--reviewer']);requireOwnBranch(reviewer);
+    const reviewer=agent(flags['--reviewer']);requireOwnBranch(reviewer,baseSha);
     if(reviewer!==group.reviewer)throw new Error('Wrong independent reviewer');
     output(createCanonicalReviewTemplate(base,current,plan,layout,reviewer,resultSha),flags['--output']);return;
   }
