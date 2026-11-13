@@ -1,0 +1,217 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-msjd-zyd",
+  "item_sha256": "d58696eb62caee37c9f69020d9aec3b1b18192700c4936de8488ab6dbe3efa62",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "80a7e0370919d52a5c303c3677cfb594c95412b72789ded5d1224fa766113b04",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "45eb083806aa1a79a8e15ac6d45cd863d83f018066c0d5043409d9168a5f044b",
+      "checked": true,
+      "cuts": [
+        83,
+        326,
+        453
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "8b508fcfb87298a065317d099dcb41e4f4454b759ccc00963b5b49dae888e533",
+      "checked": true,
+      "cuts": [
+        91,
+        313,
+        440
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "ed059910b555bbee52f5a2a60e0006fd60cf653f69beab8b710be044cf653707",
+      "checked": true,
+      "cuts": [
+        108,
+        174
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "e5dc62d403ff0eed7bd82c65b218a84e5f5bf436846fe94f5584ede32291f1ad",
+      "checked": true,
+      "cuts": [
+        97,
+        169
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "9357032a09bf4eb1b488f22ba45cb7c6f4de213ba431686ef9494ef35466b558",
+      "checked": true,
+      "cuts": [
+        189,
+        367,
+        466
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "33ca837a40502d733a8b3799f3b37719919cbff8080d38f485a0d8eff861c450",
+      "checked": true,
+      "cuts": [
+        174,
+        374,
+        476
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "d105a9cfdcc5a6b95124718b1c8145c0ccd5aa1717b76d41a43c251eb6ee38ad",
+      "checked": true,
+      "cuts": [
+        38
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "1a4d972018dd3a182ad9ec849e2d56e6b55dd42d75e6c2ed85e009968ec6bb9c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "source_sha256": "cdc90ef8dc8e3a259bf46d56ab697bc87b9e9fa920d68b942b4227ee76ea8fa8",
+      "checked": true,
+      "cuts": [
+        49
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "3226d77b5acf0fb6e0efe1c784957ad32b8579527adaccd675429a38b0203784",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "source_sha256": "f83d8220644c1d11f7a33172e52dc42feed3529e924b6c07d7fe86c646f0c0cd",
+      "checked": true,
+      "cuts": [
+        33
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "e23e150eda111530c8b096728bec0c8737ea4cc37bd43208e22048dfbde6c877",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "fa",
+      "source_sha256": "9104a671c8a976d5fad9e3d4c5ac0d5b29431662b7034adb805e7729972eba9c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00005",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

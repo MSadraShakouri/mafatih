@@ -1,0 +1,159 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-mshtrkh-shaban",
+  "item_sha256": "0f400777bd06b9e4aa542af2b4d490c472ef85d06db313d474fc8915b9436a7c",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "340ad75622c104bbcdbbab09ef9df87f34d260d77839da1459bce9ec0a118057",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "heading"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "f4d3ae0e4b1f41c39e69e27836c0f4c1bdfd3696531ea8d4fc23ac9ef16b863e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "e4f1472d69d58ce76a6d1623c7bb5f79e69c1ed4ae283e70b14da02f119a74e2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "a7478d78d216a87ea9a0f1bffbc22fb8b7aeea33c73a24cad6b5ae666d43ecc8",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "ac8da70211e49a0d9a842339fde8f98584e0eeaf078ec5e04cd7819b32faa277",
+      "checked": true,
+      "cuts": [
+        31
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "45781dbe64634d548d1364c9b4eace1c26d2e3f8006d803aa356a3c307599930",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "6a76a2d722fbd640b5277573770c547b004654e43e9522166c71c6430f35d656",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "4a4b79c49fb96291122fd47b91e63e7ddd8d5cb33f5d05c8d8e2ad6d2ef3b44c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "7bd4030fc22d64dae8bc310a5e94b6c7be7981dd9071b535e7e4a9d63c1c9007",
+      "checked": true,
+      "cuts": [
+        255
+      ],
+      "kinds": [
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "ar",
+      "source_sha256": "5c711a04fee74e382643f645d46e7033e6fc87524c4cf9999ad8c9cff47f0ef9",
+      "checked": true,
+      "cuts": [
+        40
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "fa",
+      "source_sha256": "651acc00da4587c1a1adac67f970835896b825131b61da37dfbd41a9f5466718",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00009",
+      "language": "fa",
+      "source_sha256": "07a725ba3215a90dc2e8ae8261bd00b9631bea599baff2119110fd27d106377b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian instruction sits in the ar field; layout re-homes the whole row to the fa destination. No Arabic text is present."
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    },
+    {
+      "row": "r00008",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}
