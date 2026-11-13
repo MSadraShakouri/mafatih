@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-daa-hngam-dydn",
+  "item_sha256": "dd424019b1a0256341298b12c7dff11b5d97a621a27a2c6a69cbb47775cdb3f4",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "e1b214d050fd9eda77c2b4c0a8d7e6e65c67fa459967cd9e5af7d56bb1329388",
+      "checked": true,
+      "cuts": [
+        117
+      ],
+      "kinds": [
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "e9477067d2d2d9e2a1cf50a8e548fb13ad6d8c12e662b53f1ac33d353afdfc6e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "c18056496926de63c9bb696130c7aad4946b07b1209f5cbf4eef9b2a6c5e3f46",
+      "checked": true,
+      "cuts": [
+        38
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "04a343df76f4cd7deabe818a40cb0059508177d25a123b46418d2a91333fa34a",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 117-158) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}

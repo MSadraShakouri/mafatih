@@ -1,0 +1,35 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-khvas-angshtr-aqyq",
+  "item_sha256": "b464e510b3563b4458873d6c271c515548cd1dd071547c4960f2b0b424a93ca5",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "e7a901efd81832ec76ad1dccc688ed1c2b317f74329db1dc3954094dbcc40b06",
+      "checked": true,
+      "cuts": [
+        71,
+        295,
+        493
+      ],
+      "kinds": [
+        "note",
+        "instruction",
+        "recitation",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 2 (code points 295-493) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}
