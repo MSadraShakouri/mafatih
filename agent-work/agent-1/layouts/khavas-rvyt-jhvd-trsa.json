@@ -1,0 +1,59 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-v1",
+  "item": "khavas-rvyt-jhvd-trsa",
+  "author": "agent-1",
+  "plan_sha256": "dee8b32151d7d95225e4a96c073f04d69be97949eb82efd62a9529e3496c7d33",
+  "rows": [
+    {
+      "row": "r00001",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "instruction"
+        }
+      ]
+    },
+    {
+      "row": "r00002",
+      "checked": true,
+      "output": [
+        {
+          "ar": {
+            "source": "ar",
+            "part": 0
+          },
+          "fa": null,
+          "kind": "recitation"
+        }
+      ]
+    },
+    {
+      "row": "r00003",
+      "checked": true,
+      "output": [
+        {
+          "ar": {
+            "source": "fa",
+            "part": 0
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-aymny-dzd",
+  "item_sha256": "0140b04540c9694ae3354a03abea920b98d140da02c047fbeb11673581439a8c",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "637dc4cb9fe99e9ea9d5f55751041f7ace029cd39e7f01d819decc715f3bf5e4",
+      "checked": true,
+      "cuts": [
+        54
+      ],
+      "kinds": [
+        "instruction",
+        "quotation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Second piece is a truncated Quran quotation that retains the Persian connector between the two quoted spans; kept in the existing fa field and flagged instead of asserting a language move."
+    }
+  ]
+}

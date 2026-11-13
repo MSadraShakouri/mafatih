@@ -1,0 +1,51 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-rvyt-jhvd-trsa",
+  "item_sha256": "c28871f8196502c6d399badf8a2139cb35aa4d9d4246bc864e5671684fb35b6a",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "cd0859faf459f3b9bb90113c24ced2e19ab80bac40ce8869565597b77efef408",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "2d3bd67e695ee9d11c9f54eb7d35e916835b9eeb0571ca8a9cc8cf7e2f3073ab",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "eb2e3d49ff17b513415f2bcb2e305433c85d945a2f39a42e28b87916158cf857",
+      "checked": true,
+      "cuts": [
+        27
+      ],
+      "kinds": [
+        "recitation",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Existing fa field starts with the continuation of the Arabic dhikr from the previous row and ends with a Persian explanation; split here without joining rows."
+    }
+  ]
+}

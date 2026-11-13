@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-hrz-hady-alyh",
+  "item_sha256": "051fecba72dd867eb607d62186c7b3d589f8b38eccd345d8459f4590262a8774",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "17da500c88d58b64f04e220498a482ecf631827708d277da6dd88435f83fca58",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "heading"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "b485396f13eca750a18fc197932405bb2a797c1bb314de378268d17f96d15fab",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "a8d4d900fe86e17132f4ca12b90c75098388482b28bcbdceb658ff9d6af3e33d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian heading stored in the ar field; the exact piece moves to the fa field and its original location stays mapped in the row-split record."
+    }
+  ]
+}

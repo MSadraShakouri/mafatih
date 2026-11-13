@@ -1,0 +1,71 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "dua-tjrbh-shdh-mhfvz",
+  "item_sha256": "855021eddd0d162b14732370de368fe01b96bc72bf928cae2d7b4f5424515945",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "4231662d2c3445af3470cb35e2ac16c44ae25a95e02a493b12b302993ed20f9b",
+      "checked": true,
+      "cuts": [
+        28
+      ],
+      "kinds": [
+        "heading",
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "fdb98ce7566f0cf6598b407e232d0ac5fe32ccf83d9ea7da1b198913522f9a04",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "2bbb6797f6350dcbd7f2b962cd17be5136d1fed3b362b8f15527677d6c4c0d94",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "d0f11ad7e6bce455173f345a3769ff05636650bb1051d3434244058faa2ed374",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "c864c480145f22eb28467ea033a993279dc0b9131a86654a771555daa9db8832",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "An earlier stored value of this field contained one explicit in-row line break that was joined upstream. The current text is kept as one flow, no separator is restored, and the piece boundaries are sentence ends only."
+    }
+  ]
+}

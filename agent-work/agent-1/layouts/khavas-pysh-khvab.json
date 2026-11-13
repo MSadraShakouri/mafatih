@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-v1",
+  "item": "khavas-pysh-khvab",
+  "author": "agent-1",
+  "plan_sha256": "af3a6d2d3e5b576100b84e5f6410decf41874f9c7746635e1a165effa62915e9",
+  "rows": [
+    {
+      "row": "r00001",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "instruction"
+        }
+      ]
+    },
+    {
+      "row": "r00002",
+      "checked": true,
+      "output": [
+        {
+          "ar": {
+            "source": "fa",
+            "part": 0
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
+        }
+      ]
+    }
+  ]
+}
