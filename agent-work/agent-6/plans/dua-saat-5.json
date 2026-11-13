@@ -1,0 +1,104 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "dua-saat-5",
+  "item_sha256": "c34d9e8f6df8713142b22aa95ee0dd385ad16acecf9f1e6993456dea0abbe1df",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "d2a19ecec83210f45c3d0e4159005a5118167a676ddd8997a4b971eae5dd5bb1",
+      "checked": true,
+      "cuts": [
+        11,
+        103,
+        158,
+        191,
+        224
+      ],
+      "kinds": [
+        "heading",
+        "note",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "583e80737d01872800acd3a888796c9b29e947220ba99eb0710eca21ef047e7e",
+      "checked": true,
+      "cuts": [
+        42,
+        66,
+        94
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "059f24c012f4d132c3a9620bb7db549097601902fd18631106a060488ab84384",
+      "checked": true,
+      "cuts": [
+        39,
+        99,
+        127,
+        162,
+        280
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "ac188024d1336934020cf85c60fccd70feaba4cdb5a856e378958dc75e762cb3",
+      "checked": true,
+      "cuts": [
+        37,
+        101,
+        157,
+        193,
+        294
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-11) of this ar field is Persian-language text (heading); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 11-103) of this ar field is Persian-language text (note); the layout places it in the fa field. Wording unchanged."
+    }
+  ]
+}

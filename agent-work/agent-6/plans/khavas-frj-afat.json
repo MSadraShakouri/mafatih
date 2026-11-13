@@ -1,0 +1,154 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-frj-afat",
+  "item_sha256": "f126ec7eddfa4a6b1d77272f5113104dc16f8da895eb547b0612b0d31a89d8d0",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "c71699350697bf2f6274dbe74558d4c90f81325b6d9da5dc7085ad4b090d5d05",
+      "checked": true,
+      "cuts": [
+        248
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "4a3784b2ce1e003e32d7ebb4ee74e42cff0e5e91fc2b7b846382ff50723a6e56",
+      "checked": true,
+      "cuts": [
+        30,
+        63,
+        96,
+        129,
+        162,
+        186,
+        210,
+        234,
+        259,
+        311,
+        336,
+        361,
+        405,
+        445
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "7404f1a66bcfacb81d2aef0a45846c141308ca5aa31cc8185b0f47f53fa7e7eb",
+      "checked": true,
+      "cuts": [
+        36,
+        68,
+        104,
+        132,
+        162,
+        173,
+        190,
+        206,
+        226,
+        264,
+        288,
+        314,
+        332,
+        356
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "52b9895cecd2abcfb7031fdecb082e94faa853b73d9a02856f2962e7dc8cad4d",
+      "checked": true,
+      "cuts": [
+        40,
+        68
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "2fed05495dac3254459d7bd4aec2369face831bc440b7eccfc9befff16e40a4c",
+      "checked": true,
+      "cuts": [
+        52,
+        76
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "6be7656fcda6e1d48e76d964f744131b58bd2b7e41843d18022000ac29ad6885",
+      "checked": true,
+      "cuts": [
+        12,
+        47
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 12-47) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}

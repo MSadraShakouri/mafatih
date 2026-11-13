@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-fzylt-qbvr-pyambran",
+  "item_sha256": "0f0a277324584c7f798ce61400bab8963913a5a3d122d171ff43560e0fb8c727",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "853613e09c436d17392c7b4767a7d8b7e500d9dc774137b9bd86e80279bc1d19",
+      "checked": true,
+      "cuts": [
+        37,
+        366,
+        800
+      ],
+      "kinds": [
+        "heading",
+        "note",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "80566386c26c03dac483497c7838386bc292b559ebead2201c95fa8b7b4b65cb",
+      "checked": true,
+      "cuts": [
+        131
+      ],
+      "kinds": [
+        "note",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "The second fa piece contains a short quoted Arabic verse fragment embedded mid-sentence in the Persian prose; it is kept inside the note because the sentence continues on both sides of it."
+    }
+  ]
+}

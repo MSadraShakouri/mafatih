@@ -1,0 +1,35 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-many-astkharh-kyfyt",
+  "item_sha256": "6854e1ea8baf346fd50147dcf5e985977f2cd99e8306ff4edc3312c7f52ba546",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "72cf7d5584da433f5204c06e0ed634f16f6babfb33dec899be9dfdd09c7d3cc1",
+      "checked": true,
+      "cuts": [
+        108,
+        171,
+        203
+      ],
+      "kinds": [
+        "note",
+        "instruction",
+        "recitation",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 2 (code points 171-203) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-hsyn-alyh-alslam",
+  "item_sha256": "234354fb4099688e3e463cf2d3027877abf865b761d157a5ff2ab688946b62c2",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "5cb24532f745074794414778ef1f314b09d9c7b77e0effcf1c9d251aac2db7de",
+      "checked": true,
+      "cuts": [
+        377,
+        434,
+        485
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "recitation",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 377-434) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}

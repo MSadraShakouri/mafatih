@@ -1,0 +1,185 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-mrvr-amyr-alyh",
+  "item_sha256": "12237fc10df076d9a43a975798e1bc049b8538481b931f5880893f6b425aaa58",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "e3c04fc49e27427615e021c33fc40c5399dd0e01f0a9917a7b9f952d7c5dd5a2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "e830e56a62c5eb42a08eabae17db29027b94693a41923a3f812edc7cd0518502",
+      "checked": true,
+      "cuts": [
+        57,
+        164,
+        682
+      ],
+      "kinds": [
+        "note",
+        "instruction",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "7c52e4d380708dcf2b8a6d6c5f5725112ed1b2812753e4ab5c1b987cb152008b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "f66ba939fe18b43e1839287162c1b8e5ddec28cd8138ee53108b12dc0c4efd03",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "15e2b1ede4fc75d6897135a219a824af8a0d856f9d9e418e96a8657ca2004402",
+      "checked": true,
+      "cuts": [
+        25,
+        66,
+        97,
+        136,
+        181,
+        230
+      ],
+      "kinds": [
+        "note",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "7511b5089ba7e0f8a97b6a6528a7dcd7d4fe71ff4b76a73e8dd59a3667c197cf",
+      "checked": true,
+      "cuts": [
+        27,
+        40,
+        83,
+        134,
+        170
+      ],
+      "kinds": [
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "158bbef3e01b51e21f1c7f753b1cbf76aa3eeccbe4a2457c68513aa787602969",
+      "checked": true,
+      "cuts": [
+        15,
+        48,
+        75,
+        142,
+        174
+      ],
+      "kinds": [
+        "note",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "528a72136416f22b6604c26245c66bc4b899f771efe8370c6ed5447a4bcd687a",
+      "checked": true,
+      "cuts": [
+        23,
+        51,
+        124,
+        158
+      ],
+      "kinds": [
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "f7bb72b932da17012647669cec0836e0c2f2c731a322781ba23a24ea42d7eaea",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "4339f33ede5a03a4f9f9df907c4cd8c6dbde39078ac297b920ccb0ce717ca485",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "fa",
+      "source_sha256": "392eed7289d05d39b19d4ba7fd1df2645e5a080da0cca589a6fd1a22efacb75f",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-25) of this ar field is Persian-language text (note); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-15) of this ar field is Persian-language text (note); the layout places it in the fa field. Wording unchanged."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-hajt-3",
+  "item_sha256": "e12ec2deae572e1cf873902f1e61d89afde98ddf2d4ecc31aa56d2ec82581249",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "28c54cddda3675bf1ccd40411ec6d71910cbb029f0f645dfbd74ce93e9fb9b6e",
+      "checked": true,
+      "cuts": [
+        171
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "cd5ad922232dcedaed6bb96aa47054a398f3bff14c5e056527388330c3e502d6",
+      "checked": true,
+      "cuts": [
+        63,
+        74
+      ],
+      "kinds": [
+        "recitation",
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "55fa5729d05d5cdb30a2a5b08e2ca84bb1848b80aa424f003b05c1974aba24e9",
+      "checked": true,
+      "cuts": [
+        21,
+        51,
+        111,
+        179,
+        210,
+        242,
+        308,
+        432,
+        459
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "2dfab2d156fbfa2e0dd8afec6e5bfea7892ac1257163d201dff0dc1501f4087b",
+      "checked": true,
+      "cuts": [
+        130,
+        161,
+        203,
+        287,
+        321,
+        348,
+        402,
+        515,
+        535
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "aba4866845067d834112599aa4bd064083ebfc8028eb190794d4d3e7e865bdfa",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-63) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 2 (code points 74-92) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "other",
+      "note": "The first fa piece contains a bracketed explanatory gloss attributed in the source to a commentator, embedded inside the translation of the opening clause (which begins at the end of r00002); the gloss is kept with that clause because its brackets open and close mid-sentence."
+    }
+  ]
+}
