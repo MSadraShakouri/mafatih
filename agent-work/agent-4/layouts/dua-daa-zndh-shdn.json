@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-v1",
+  "item": "dua-daa-zndh-shdn",
+  "author": "agent-4",
+  "plan_sha256": "ac19dcfd112a81d3048ff6bd12de7f8b6d6bacebb207a2e3e5dc6730dfe1015e",
+  "rows": [
+    {
+      "row": "r00001",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "note"
+        }
+      ]
+    },
+    {
+      "row": "r00002",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 0
+          },
+          "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": null,
+          "kind": "recitation"
+        }
+      ]
+    }
+  ]
+}
