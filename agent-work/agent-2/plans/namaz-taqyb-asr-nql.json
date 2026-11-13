@@ -1,0 +1,96 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-taqyb-asr-nql",
+  "item_sha256": "da6a034f5f59c0f3454c382113d05be2db79e91d6bc750c82cd1dd71a9b93329",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "cb1144e94922f8627d1a13fd4d2c5e366477205148b7dd37303d9717430053dc",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "007d75aee763edfe73ff215cc464b05e1b1cdc91fc79eec09538c7cb931c8730",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "8867dec3f0939d38a817a412fd6b8d81e72d8f87fe388ef7393ed56abb1a1047",
+      "checked": true,
+      "cuts": [
+        11
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "62ecb315e5faa7c08598e0761127b26ffab44dec8259c37c23247dff4857a586",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "f4fe075217d0255edfb2b7113b8b2e7258099b64346b4f884585c38db769b998",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "a7b77c35b694108c48a19a673629d79ccfaf765b49046454e507de38897b7252",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "c043151acf0de9cd6258df51f2f33093898a0a5418800975108b2ed450c94025",
+      "checked": true,
+      "cuts": [
+        131,
+        281
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

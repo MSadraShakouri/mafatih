@@ -1,0 +1,90 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-hfz-khrab-dzd",
+  "item_sha256": "8eca0ee40dd684b23ae70d0825a671b848b75e5de84fe0b96672ff4db91b33c6",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "82099a9b7fc119e80d918c9bcddabbfa09c44012fb3d61766b3b668946c9e03c",
+      "checked": true,
+      "cuts": [
+        89
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "a4c9d84aa7f24fd746eb4dc7a1f7bcf224c30d8636609e8efc787909adcb6a1e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "db66125af4876354454b525ced7b486348949b7678319f8128a2389d28a07aad",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "d4b5a213846abf53996d2eb8cde3cee042b73aa3def04946cd88fb3c34bd94d3",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "8f6bc65cfeaaa384478bbe0be372bac45b3f753bd1fc343305bfcd8631620ccc",
+      "checked": true,
+      "cuts": [
+        65
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "56f99d9d28753357f6e9e6140350ec787b5be6c4dc10541039d84be968f11644",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian instruction prefix sits in the ar field; layout re-homes part 0 to the fa destination; the Quran verse stays in ar and pairs with the existing fa translation."
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian instruction prefix sits in the ar field; layout re-homes part 0 to the fa destination; the Quran verse stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

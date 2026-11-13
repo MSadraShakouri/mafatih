@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-aymny-drndgan",
+  "item_sha256": "32cc26fa520908e97e02316f42c7db7e173b7137d898ec772f3351650f44a4bd",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "e4f97231136a0c34d71b1ba6b7ace26eb92dde22c30f5ad59e7671ae79e699c6",
+      "checked": true,
+      "cuts": [
+        82,
+        204
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "53ae2addc3265c41ad12d4e6fcfd9110f7293d2ec365e20f0d5c28ef6d59fb7a",
+      "checked": true,
+      "cuts": [
+        145
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian instruction prefix (0..82cp) sits in the ar field; layout re-homes part 0 to the fa destination. Arabic verse quotation stays in ar."
+    }
+  ]
+}
