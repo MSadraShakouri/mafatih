@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-adab-srdab-mthr",
+  "item_sha256": "a8f2657de949ba35241e41d84184df9387c99da7f1f20eda10d3d547cc86a039",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "843ef03e4a6c0814b90e223e87298a48256f78182672f305c8540969e7faf505",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "d369dfadadc56b0ccd3e57f389bb2b4632c38c77d63c650e3049d6446ef35638",
+      "checked": true,
+      "cuts": [
+        714
+      ],
+      "kinds": [
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "2dada9ef5b9381f23b90d234f51c7ee60875279944984e7d8e23e05b23e1203f",
+      "checked": true,
+      "cuts": [
+        478
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "19500f8be938f1cfec4a84276c4d3c063ffcb3cf0d11ada2fff6cb42d794f45d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "This instruction contains an embedded Arabic prayer fragment inside the Persian sentence; the exact text is kept in one piece and no language move is asserted."
+    }
+  ]
+}
