@@ -1,0 +1,70 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-amyralmvmnyn-alyh-alslam",
+  "item_sha256": "0dae840bd435ee99f245cb11313c11f082cd110b6119a652b5795892bf44b401",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "5c10ee833fc5af516516ff32585354e6cc3cbdaa4bf1661d1d89e6c7fde13760",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "55b435fb1315ba4bad173ba004916089fbdd573dddacfb9bae268d4bff75b7bd",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "4bf60a6cfc058c2c94ccc5fdd92e8150a7c1e70c69fdcdf714e58244d10e5795",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "df64535b98332a1a475e00b80c25830d4d6b05d2d6ce83cc20db01110abca2df",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Arabic ziyarat text is stored in the fa field without a Persian counterpart in this row; the exact piece moves to the ar field."
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "The recorded earlier value for this occurrence had a physical line break after the opening clause; the current value has none and this split adds none, so the old break is neither restored nor silently dropped."
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "other",
+      "note": "The single Persian piece translates both the Arabic piece moved out of r00002 and the Arabic piece in this row; the row layout can attach it once, so the pairing is recorded rather than split by guesswork."
+    }
+  ]
+}
