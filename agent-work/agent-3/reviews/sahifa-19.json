@@ -1,0 +1,141 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sahifa-19",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "f03be077a57d71fd10c66a1a6999604bad00777bd0900ab3406469772ebd2237",
+  "layout_sha256": "dc9d52fbd5e312c06f76e4947b2aa9c712e89f765b664c14f57e5aaf94f120ba",
+  "result_item_sha256": "7eb9571b0c337bee0321762544acafa4a3eaa16f231ada747460d24359af926f",
+  "result_record_sha256": "238a89624064a99fd81f13b005c04e7e1a3204d534f065ae4c98afc4ed66a543",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sahifa-19",
+    "item_sha256": "5a119dc4215692c717908748470ce7ddddb427883e1abfee63c36802c5985165",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "933462cec02f0778c0f4ddd2ceef58be7c466dbf317a8689f059b37752cc2c6f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 84 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 50 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 167 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 155 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/3 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/3 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/3 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/3 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 136 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 264 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "4/5 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "4/5 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 144 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 103 code points reconstructed exactly; kinds recitation fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

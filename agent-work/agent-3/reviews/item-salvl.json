@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-salvl",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "d21ae4a9bc85bea0c41d3a48e90cbfd86b4a61296791ccec0acbfe1b36f74cbb",
+  "layout_sha256": "8f30a8b2cce2cc0f2c3ce46c94ff276c2fea3d6b50bd6259274317db786a52ce",
+  "result_item_sha256": "d4d131d30c43b38eb5d70a55e582d35b06aee54ffb889675bd0f8ae8b3a98848",
+  "result_record_sha256": "c541bf00fb1a9856d7b14d577208e5c3a56aca2c61b921979e103a96db2c83e2",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-salvl",
+    "item_sha256": "b7da50da55f1c80c56e0062c3621a2166e622d896fa0e5102040eeafff7242cd",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "2cf1317413f2576615b40e01edb7cf2246e5e4c738503c1c953844f41acebebb",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 337 code points reconstructed exactly; kinds instruction/recitation fit the text"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 152 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/3 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partially paired where piece counts differ (no invented translation): r00001: 1 paired + 0 ar-only + 1 fa-only"
+  }
+}

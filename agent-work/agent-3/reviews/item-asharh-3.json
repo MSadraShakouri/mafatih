@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-asharh-3",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "dcd0f811e0607790a737213d2c839692278c2a7db9543032e0f1c900c8b712ad",
+  "layout_sha256": "213d971db82609fc80c9d3f2a91e9ead1e8d40f988849e1e350a5349b7963889",
+  "result_item_sha256": "b930cd6167e40e1cf5941824be68343dda779c6ee5ef5d3aede6b45962faa535",
+  "result_record_sha256": "8dfee4445d5cc6cffe3ee8a1d472ffb68927bf4c1f14163c4a6ee099e3249778",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-asharh-3",
+    "item_sha256": "d19917209e03874d9e9d2f516b9496b9eb0fbff17a3bc9aa829406bfe491c6dc",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "b3f5bc19041453563cb94b3117250b8cc82bbe9e8b1795b167dba9c883ea7103",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 905 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 1100 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 345 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

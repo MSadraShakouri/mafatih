@@ -1,0 +1,91 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-vfat-fatmh-alyha",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "7b68caae9d57ba74e4f4c0fc44d63a74cb6235b33968d02b89cfcb2591113cef",
+  "layout_sha256": "50b5c9fcf708f07a32478ad83d75062bd8dbbb593aae355cded539e0345b5b01",
+  "result_item_sha256": "7bc312802a9e710411ed156c025f94d43be0e9536473b05bb00a8b8a43ebfad4",
+  "result_record_sha256": "54d9ea228c28a01f19e87dce529828757ac65847c44b0ff368ddd6a71f056a9f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-vfat-fatmh-alyha",
+    "item_sha256": "ed736f38f67d6339dee50907d7f89e5b13008922fc68fad0344240be7dcbca2c",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "0497b34084008cdeb6ba6e0eed27d136b761fce606eb923e8be0d0f5bb952346",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 307 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/3 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/3 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 138 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 131 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 103 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 364 code points reconstructed exactly; kinds instruction fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partially paired where piece counts differ (no invented translation): r00003: 1 paired + 0 ar-only + 1 fa-only"
+  }
+}

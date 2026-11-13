@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-astghash",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "f65ea4be18c10aca3c51f8feb679b147d10780d078d1b23c3af78543ffede844",
+  "layout_sha256": "b1cb2af84809552c322aadc996c611e5913e7b9d1e8a460622cfccf5aca02867",
+  "result_item_sha256": "0e0ff8084d1464b239914e77f666cb1765db594c509eef8934f2353bc75d8031",
+  "result_record_sha256": "443c7f2417de0064cb096f64bf1fb621cf5c1b892a8cb2fa296a58d7de83f594",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-astghash",
+    "item_sha256": "fd5007e712b396391ca0d2c2cc8904be28eb382096f45e5548495ca6b4bfee07",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "bd26a8606df58d8596e9e575dcd0036d75e70422deb59bbfa54de286e62faff2",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/3 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 51 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 42 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 56 code points reconstructed exactly; kinds instruction fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

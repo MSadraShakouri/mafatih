@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-jht-aymny-svkhtn",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "d3e3d1eb764e50f4449f61fe3218a55e6df791a08caecb451aea29284a55c8dd",
+  "layout_sha256": "308f3b53bfbcd3f7b10ca60bb79360afd0fbbb8efc250f06f1396f44e6884960",
+  "result_item_sha256": "2b66b42142634c38732c2289db54ab0dd7aa34db2240e0e9efe3490e6e77e9d1",
+  "result_record_sha256": "ecfefe1c28024d8eaa36fc2912dc3c61decf3d95fa023d8c083e1a22bb62a30a",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-jht-aymny-svkhtn",
+    "item_sha256": "5725e0e21f14548e3b288fdda6485a45a69ad575b99f070732280eb78ae7facd",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "d0cd19716c474733a53266eb031b5f84704d8f392d8719f7504f15964c80e0fb",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 75 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 23 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 228 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

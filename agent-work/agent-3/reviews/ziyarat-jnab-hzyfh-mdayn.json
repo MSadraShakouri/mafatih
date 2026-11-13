@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-jnab-hzyfh-mdayn",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "a9d28c4a053d23ee70441060f85ff4cefd0e972dbde730902d62993fde9afea4",
+  "layout_sha256": "8c634fb3021ff95fcb8c08d29c73a58ead7d42150c146a00df27c07ee1f6d98f",
+  "result_item_sha256": "25fda28eb5df80b157ee3e0d85ef7015a56010d2741ea1b87451beef9007ea2a",
+  "result_record_sha256": "6273ab975bd2b9627ec6a2630f30b1955c52f70dc68480f6fb6e21c811eff4fb",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-jnab-hzyfh-mdayn",
+    "item_sha256": "c67338ca4ec2a19f0cf0cb3c4b112beeee7aef901ac6bc4be76dad920c86fc7b",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "230de4ad6124f197bb48124a1e702f81eee61cb652d7707198e9eab34df73ff9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 361 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 930 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

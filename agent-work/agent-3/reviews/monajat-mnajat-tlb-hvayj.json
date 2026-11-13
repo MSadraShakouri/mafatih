@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "monajat-mnajat-tlb-hvayj",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "cca98a9a36989df168ed1128bc6c017660db3efe8562398c9dcd748ed08b85aa",
+  "layout_sha256": "835148a7bc74127be7128c39ebfc0ac4c8d8d8911152738e54f9e6925eecbddf",
+  "result_item_sha256": "1f4656fec85c55638fecea3652465bc36aefe092affd6376e10866ae9b896646",
+  "result_record_sha256": "9d2099c867103f74e75cd0f01b53739f9147cbdc1fd1ede0178ba1e11b5afdbd",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "monajat-mnajat-tlb-hvayj",
+    "item_sha256": "61f9cf8613f6702ff149dfcb435abfcdfd613a783a58c0520500174a22d19ceb",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "f8773c616ecdcf88a430f6ece4dab94ea89cd5b5032a6ded1763203ac321ca08",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 152 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 148 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "4 part(s), 752 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/4 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

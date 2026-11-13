@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-hjab-jvad-alyh",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "842a90f22bf8f10edd4405cd3079c9a11a822a87452a4f0691903c81f9b8e5db",
+  "layout_sha256": "840e10f92da502b0163a4a905b0062dca1569df8f2b72b0838737e88dfd8a986",
+  "result_item_sha256": "896ec9feb66a10fc71e4ed3115272458d0ca21f1acb8ceb538e003df4425272c",
+  "result_record_sha256": "b82dfc84dea08f79e42baf6c8832d87b8f6a2d6b7befa5c38938222f65d3e420",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-hjab-jvad-alyh",
+    "item_sha256": "d16de804c2105238eeed6eb5bc896baa04755cea2d732563764bc5b36dfeac33",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "0543c57af528a80ec77f6f997b2938bfc98510c0db25f2646e6d28a3324945cc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 332 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 258 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 378 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 222 code points reconstructed exactly; kinds recitation fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

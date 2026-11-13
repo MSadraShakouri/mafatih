@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-kyfyt-pyambran-alyhma",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "dad564319bfe065dbdc13efe5cc431cd39cfadc7594eb50295ba1711da2fd136",
+  "layout_sha256": "3c5d2043a4048f1880fa8d3d6831ed7613caf87973fe97a47a77b7c1c788a5fd",
+  "result_item_sha256": "583090d95724eac18de278a246947ba13716bed743a0ac0b67322439c0d35c95",
+  "result_record_sha256": "28f17940b5a5d20f0fbddb0dc47b408e932aa3b34823ddcd80c83244a02976cd",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-kyfyt-pyambran-alyhma",
+    "item_sha256": "442323b16ddc944593424f969b4b1d356ad0b981620759119e1dd863fa345896",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "28fe5b07496c7933df3087ba3684770e68145cee98829479a079772522fbb2bb",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 338 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 547 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

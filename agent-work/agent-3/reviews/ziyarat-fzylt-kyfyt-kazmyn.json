@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-fzylt-kyfyt-kazmyn",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "171f78d07080dcd8c250039c3889ca06343f6a3280a34814c768aa586c6d0c15",
+  "layout_sha256": "ce2216ddc8787cfefb0ee505793042efa969599e00c2dad189ae8516631ce87e",
+  "result_item_sha256": "6bc86d2792e258e1ecfa1e08a74d9c6d6d3519263244f302bdeb5d076e68349d",
+  "result_record_sha256": "c24277fb7caffb205cf0eb8fbef7ee8d87482512d193ac98a4ffbb3afa78ccd7",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-fzylt-kyfyt-kazmyn",
+    "item_sha256": "494f7fba3571e98d4263db919a310e34b6a372dc8bde3036c6691f8029c8ec72",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "d019e1e3ae1caf2a983b5c56870ee4dfc82edd098d5ca3b813e18cf19872f9c5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 169 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 62 code points reconstructed exactly; kinds heading fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3 part(s), 728 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 84 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

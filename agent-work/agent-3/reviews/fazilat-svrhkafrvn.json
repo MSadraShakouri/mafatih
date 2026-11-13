@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhkafrvn",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "ad9188c24ed7a0b2a0e648f8f9b97d5a6b0c47b7b036e975ab499bf3574897f2",
+  "layout_sha256": "c59266f17fb30b2a0748b96896006a0fd5d056e8730fcf80296f749fb9a03019",
+  "result_item_sha256": "086c679c3c2a9ba13635abff5951f8e583bf04c72aaf96d4c299f194cf652c9f",
+  "result_record_sha256": "14b038b4f2ab544ceddb71c56dd09f1ad831c774af3a0f4d02a3cd2d89488fdf",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhkafrvn",
+    "item_sha256": "f8b206fca78f3be41389a4678905c6e009b7fdb9f396d7c7151bcf8ddd299bf3",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "ee2df2f7b9f1458e5b5cbe2d4e7fa4e8edf34a930ee78e301aca2adca589f429",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 125 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

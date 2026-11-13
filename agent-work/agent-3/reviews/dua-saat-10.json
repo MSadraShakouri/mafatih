@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-saat-10",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "20a179d7389ea0adc4f238d987605ef4730e4d6536e6d06728af40a2a7cb1d0e",
+  "layout_sha256": "02ab0bb008fe302bdcee6a93561a6ea2c07a9c4e9baabfad60e644a2ebc6a1d1",
+  "result_item_sha256": "564d7fd6bf7a350ead75e65417482970aebd869f85a4d858928f5bf26758bb39",
+  "result_record_sha256": "00e0e8c154e45994d3b94692c1a436a3edcc4c1d0670e16757f82b98c219fab8",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-saat-10",
+    "item_sha256": "f6a502cc6f1daae071e76ff28ebbcd753995b84df8fc6a85d933db635d5368eb",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "e21f223aad0feebc579ca5ed6bf1dabb9282c8e05dd5ba35dcfcac70165c35fc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 116 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 483 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 400 code points reconstructed exactly; kinds recitation fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

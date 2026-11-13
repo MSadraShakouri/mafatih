@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-ayh-skhrh",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "10fe72a18394d6b5105414026f1b4bf99e20be87579615619cbbebf81738bef9",
+  "layout_sha256": "f34b8bead43cfd5d1342013f870c7330031236e77a33af94c56c3ff0f712e759",
+  "result_item_sha256": "e570861253d32f94f872b67e401811767ddf1bc12d5d31908167ca5584ee9630",
+  "result_record_sha256": "6c43c5cfed9f1a2b5536d92db9da3e0d69f209c12ced73e5eabf0e95aa69703e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-ayh-skhrh",
+    "item_sha256": "2cee07ff50c3766344304cd91813af33a114e41892339b36aaaa00381190870b",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "29a0166ed211ea1c0f498c9ebb850a4e2167a8ca821a5613297b2264c0d83ae0",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 15 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 358 code points reconstructed exactly; kinds quotation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 304 code points reconstructed exactly; kinds quotation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 162 code points reconstructed exactly; kinds quotation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 130 code points reconstructed exactly; kinds quotation fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

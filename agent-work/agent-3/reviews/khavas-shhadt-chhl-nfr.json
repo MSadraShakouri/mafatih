@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-shhadt-chhl-nfr",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "66aa11d2258d4be25d5d785365a6603cd3e75f1776523747d763c44a0c452028",
+  "layout_sha256": "0552236493f779ea44b81951a3269462bffe3a501ce13b18932fcfb363e4863b",
+  "result_item_sha256": "0033b769af1ee588d193a6a48aa821969e5f4fd057391985bb7a0c8a7023992a",
+  "result_record_sha256": "3ac17a90f31af8a2de6d1374f8060efe31bec64288285770269db2b4a0fd69eb",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-shhadt-chhl-nfr",
+    "item_sha256": "f1935779af2f5dd2e01f86bf8ed51e7d815830950ce16ba4c9fe6ff18197a8f0",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "b83a4e316eb5a8312870bda3b36f8ae831a2752c4ab79fa7af5a7e8a3408c6b1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 555 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

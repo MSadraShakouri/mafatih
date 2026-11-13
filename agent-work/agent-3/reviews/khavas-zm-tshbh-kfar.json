@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-zm-tshbh-kfar",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "1ba1f50d6831fb0d86bf2ad2f4b9e739c01333a4e2c322dba2ff0d35abe8de57",
+  "layout_sha256": "a0fe869089e25e58230f1d93cf07a3994dd41e379a2736c35bf28dbf78869703",
+  "result_item_sha256": "2443bc6a1ff234352a2d9c4c07ca5ae23c656ef25d6ac55ca4f39419247c2ad5",
+  "result_record_sha256": "0ed6d4cdfe1b25deb75972005414f0c480ef842b3dc3aaa993704cc93ee3bffe",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-zm-tshbh-kfar",
+    "item_sha256": "a8a3966d91b4fd2d53fc73bede3941e12577a78f0b52b87b2933cc0277a0f669",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "4b2074950f2a9407d1398ccf74008541809d772abaed799fc121909044ad01ee",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 152 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 277 code points reconstructed exactly; kinds quotation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 188 code points reconstructed exactly; kinds quotation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 271 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

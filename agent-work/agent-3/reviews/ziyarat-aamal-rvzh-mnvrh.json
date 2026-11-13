@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-aamal-rvzh-mnvrh",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "832f1be52b0ebaede780172b3f04591d25670324cdac5236c2379b3f5017bf3a",
+  "layout_sha256": "c5ca9e51e74a8a2200c3abdfa5b8150c673fcd3661d88a171fcca57560148bac",
+  "result_item_sha256": "4f863d2e44a3c457e04ef01966728d11b803ea90bcf60a66380cd32b5d4979c0",
+  "result_record_sha256": "6d1e75d11200abdadf9c008b4fe70f0d7948790f4f1971716802ecf1202980ab",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-aamal-rvzh-mnvrh",
+    "item_sha256": "72ac7743903fc08d76ea95b2216b6926ac502bcb4703e5ac55f857502b229907",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "bfe3d232e3dc0c873fe1d7095f762356b32d09efcb285bd57b9feedb7f99a4ba",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhjmah",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "e5e66960683fb33e8a25919507654fbed6eeb2ca98a8ce305e3b0eb2e8d513d2",
+  "layout_sha256": "be64bb248223b191466e1b15e320272ab5d6f6099fc641d268000df8aee44e06",
+  "result_item_sha256": "dcc29e69bcea89137363d52c48e59c1a20d7e7ca6ab93fe371bd88e670b57707",
+  "result_record_sha256": "3d3b1dc8690b1adaa783b4774ec8ae9eff3e369c685d837036b5451fbce482b5",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhjmah",
+    "item_sha256": "6c8d1c614ed09f5b2015d8f4439ff21e8768b8704237e3c342f28523a04587c5",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "86e3a39133640728483f8ee290d234abf2d8afb97650fe8f9f0a98910dc42fb6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 8 code points reconstructed exactly; kinds other fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 205 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

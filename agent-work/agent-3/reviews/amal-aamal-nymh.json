@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-nymh",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "58f69867519f62b9cfcb1619e4dc58286bc2169062f0d736a90e43be4799276a",
+  "layout_sha256": "78a349056eb1e16605b15cc6062d1f01cdcb72cd474c4b1cc5f0a7a72d90f831",
+  "result_item_sha256": "f1fe12197d3fd7e1e4e9b0caabf2602b6e36452949510c7bfab1022402ec7cf8",
+  "result_record_sha256": "3d5561dc02fe0ceaf1c8307108b7204b8319ff90560f590226589eaea50e0bc9",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-nymh",
+    "item_sha256": "a249957552294b17e8f4c44957e9561b0a94e4db04b557ad991e884bb5bcc9ba",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "9dcd27cc61e25d372b569cfd557c1ef02719d9985d56308f1740cf630d470f2e",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 48 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "6 part(s), 1078 code points reconstructed exactly; kinds instruction/note fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 53 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 366 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

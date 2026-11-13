@@ -1,0 +1,75 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-azkar-hdys-nfs",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "3e2e208cb841b108f6456b85bf8ee5d72bf38458133dff25604a8a0ed0c56849",
+  "layout_sha256": "492e8268435eaeadf9cd3931fb9e4402b7d07e4b2b6d7442ecb4c95fe400fb95",
+  "result_item_sha256": "08b7421b406a27939213dba1cd377a407749148674b57b8cf376d024c3f9ccbf",
+  "result_record_sha256": "987f0bfd870fd9834157efa56f3a81a831799302cd0e483eca2d32912c185e69",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-azkar-hdys-nfs",
+    "item_sha256": "0aebde6708c83cd8cba5a68e1dec98906d4adf6e7ed8591f0df95bd2b0b8c525",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "e0e7a437f0ea3f033c9d8e57daa030c1116df70e0fee34e8bc00224363096964",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 259 code points reconstructed exactly; kinds instruction/recitation fit the text"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 168 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 17 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 437 code points reconstructed exactly; kinds instruction/recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 167 code points reconstructed exactly; kinds recitation fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partially paired where piece counts differ (no invented translation): r00001: 1 paired + 0 ar-only + 1 fa-only; r00003: 1 paired + 0 ar-only + 1 fa-only"
+  }
+}

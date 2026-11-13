@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-bystm-vladt-zhra",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "22b7dc191e097a46200fe6da1683dd48eafd4e77aea8bab74ced48f7b951509a",
+  "layout_sha256": "c7fb8e6b868c08b93435bef7f9f7262c7df27e1845b9fd7c6702aafc975a45b1",
+  "result_item_sha256": "10805f39df61f8dd086d505971833425a11cd9ac76faf2fef31da06cab61347a",
+  "result_record_sha256": "aaf2d8c9a248bd8730bca82fdec15d2a50a96c0d55c3f6470c8a54d2dbc2006d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-bystm-vladt-zhra",
+    "item_sha256": "5a0551668ac340c2f194d7d589abf2b03a028b16a9ea639eedc3d2485d72a694",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "816509e5ac191e353c5066da102409f67863d56d615a04444f02f4db44d93653",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "4 part(s), 278 code points reconstructed exactly; kinds note/instruction fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

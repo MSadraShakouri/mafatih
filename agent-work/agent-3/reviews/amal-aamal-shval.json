@@ -1,0 +1,134 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-shval",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "2d89ffb82e26e53b06bb60078f8d344b4bd8fc77a8e5aa218b9d028134b499da",
+  "layout_sha256": "f557417c9c77c30f4a1584cbfc275d4f922d344698e168f916ec6db9ff38db2b",
+  "result_item_sha256": "e2106c33c74f42829542f7950455082b40bd3a645c3a13efe6f5c2e5d0b11b08",
+  "result_record_sha256": "8f49936e9dca7e21f4debb3c66980aadf080bccbd00737c932d96a8592cce344",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-shval",
+    "item_sha256": "3e73396d4566a80f9190db2c8e74cf7355a4d1452ae9896042311ebe5929d103",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "9a976b085696383944a45d8550b4ba7a1b6483e49490522fa3b14c1b6dfb53c9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 301 code points reconstructed exactly; kinds note/instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 56 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 196 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 168 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 82 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 206 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 176 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 148 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 63 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 171 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 157 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 43 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 36 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 33 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3 part(s), 278 code points reconstructed exactly; kinds instruction fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

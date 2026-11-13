@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-vjvh-tbrk-bny",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "d87c628947f21387027a5877b3118fece5589857267920faff92667cf6cbfd6b",
+  "layout_sha256": "c21b24f0c391471b47b33f5850b35d2a7e31faed81fdb915926f04cfdbc5b0ac",
+  "result_item_sha256": "70b3e066cc873cea0f6c8ed2d3319dc1610c4ecf5b959b14425c939ac4d795b4",
+  "result_record_sha256": "2e44658aa777ced8548191641b01188fc53076fcd6b1ad3df3715cc5d1751cb7",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-vjvh-tbrk-bny",
+    "item_sha256": "eb592327be8eb559e5f096486feb0d198b317cb7bb31b2dde51d540abd119369",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "d933a40a6bc182408606c83c1243971e4265fcf19bfcbe4a74ee133b6adf2e71",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3 part(s), 582 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 219 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 70 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

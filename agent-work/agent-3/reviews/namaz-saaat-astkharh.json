@@ -1,0 +1,49 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-saaat-astkharh",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "2cfc5cd27668cedb21816f0d5e083740f9607a5f4296c465e4ec7f366a0e2c05",
+  "layout_sha256": "78d88a802b3496d24e92083243e8ad0b47c30296f8cfa7615898b11d647e21a2",
+  "result_item_sha256": "7a358d1770c1f4228d4a38fb772c60cfa5696bf8c8fc8354828b9042580a2619",
+  "result_record_sha256": "4c2d97aab780736ed0d81a08535b42e200d3927c3d2a86e1c1f8bc8a534640e4",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-saaat-astkharh",
+    "item_sha256": "c341326d6824bb2b10b7de3f73a71fa616144bcd002020f220eaf95370b6a0ba",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "fe38cc8b72e07281bc5d2f5cac3a12f7362d6a1c53353e2118ed909a2229d5d9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 11 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "9 part(s), 709 code points reconstructed exactly; kinds note/instruction fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

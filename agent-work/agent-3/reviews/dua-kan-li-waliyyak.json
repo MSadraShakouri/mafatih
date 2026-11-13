@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-kan-li-waliyyak",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "f90604cb2eb0acddedc086f33da54e46bd92f1fb1fafb885a275e03a4ab6898e",
+  "layout_sha256": "5f705f5a4c11860447ae19897e6f823e79d5e22823edf7cd123c47ab208e03b1",
+  "result_item_sha256": "68095be088d469102bb8b2e7e71609c9efc57cbf78840ce5b36ce6443a275b97",
+  "result_record_sha256": "28cbbe435f3b24cc877828732ad15ba7991539af7a551f5be57c58ae21c88236",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-kan-li-waliyyak",
+    "item_sha256": "66a8f75ea0ba98202aa0beaa8795189c0d0002c873587be77b49143db1043f17",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "1789e7430966f83e29f1b100bd4ec9f6179d266f5e01927536142b8f9e2541cb",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "empty original field; nothing to split or classify"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 269 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 211 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "empty original field; nothing to split or classify"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

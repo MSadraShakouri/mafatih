@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-adab-mkhtsr-vtlqyn",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "3938e4adf9c9d3130f1024682467c0551940618d801abdf07e40004a36e9218b",
+  "layout_sha256": "c3d2d543a9d061932b367658df080b16633c4266c64e92acfd25de9d91820fe3",
+  "result_item_sha256": "d431ac3eaf7ed7b491c4060b145416f804503333b11602d4b69a89e188bf21c4",
+  "result_record_sha256": "9628035e98f9dbd357a47328d5d0a55d1a2cc1180a4312646b6016fd5e141621",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-adab-mkhtsr-vtlqyn",
+    "item_sha256": "87d2c650fb5df0858845f03aecc5d62c7cbc1b92ba872d348653d86c747d03a7",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "762c60d5b908e960a387d8a1fe7304760892ac39d976d96182b6163affa7f38c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 34 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 188 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 355 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 265 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 33 code points reconstructed exactly; kinds instruction fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

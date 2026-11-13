@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-tvl-amr",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "fcf9a9bc11ed84e2b6b06762fb8d6703589a889fb7e9b87e4a7d22767a0b389a",
+  "layout_sha256": "d009b3d551fde58741cb36f10c8543c52f71dc09d9e4b9dddb5ec7f82209b31f",
+  "result_item_sha256": "f6986b01e69212faa7f12ae480a107e26ab5ccd7125ac50c6dc13c7dce71ac16",
+  "result_record_sha256": "a2007debed347e89d089af57e44c02361828ad5e5dc5c24d8ac5866a118575e3",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-tvl-amr",
+    "item_sha256": "67bc906f6f3d66c7b18607086333b9338db18b7a983aa85022383816c7975d69",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "95967287be4c49c78bbd03c36c6e6fa1bb86af9af848fc6c702f8f87cb4dc67a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 164 code points reconstructed exactly; kinds note fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 452 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 392 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 233 code points reconstructed exactly; kinds instruction/note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-mjtby-alyh-alslam",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "7c20e18f37c0b0a9f1fb03c1e128c02a0f1a59234cc844743da10c7a15f63a27",
+  "layout_sha256": "c5207e338f13eb9e90d29de175a583f3cacac05afddac0b1359bc8907ffe60aa",
+  "result_item_sha256": "ab0e02bdd3f8b28c622888dd1273068e8a4af3c30b9059fb0b3d21c5b710a615",
+  "result_record_sha256": "b33451671a0844a43aef91e7aa04b87755a697fa6d51f91e06fa0711721b5274",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-mjtby-alyh-alslam",
+    "item_sha256": "47b12790cecc4513c3def96fbbb230580b0b055b5e878d6ac82d44e4b94b4728",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "2196eea2eefe375e55975383090081092fa0c69f461acf1152da4e83d754cc6a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 249 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 489 code points reconstructed exactly; kinds heading/recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 428 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 35 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 30 code points reconstructed exactly; kinds recitation fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partially paired where piece counts differ (no invented translation): r00002: 1 paired + 0 ar-only + 1 fa-only"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-sadq-alyh-alslam",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "cb525cc9bd417a84e147fb95a3d98d4037f637aa5b7818ffb61a6e741703e719",
+  "layout_sha256": "382dab9ebaeb9ef5955a387c5e301740d9852bac096a6d8130cf888a0b49d462",
+  "result_item_sha256": "d3ce10470e30e80a3b4243112603332daa4d6280179949730a8afd0bad1f79ea",
+  "result_record_sha256": "3f2a88f850b0b98d19185718ff9dc7a41d992627f722eba4dbcf173262fea09e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-sadq-alyh-alslam",
+    "item_sha256": "c2fbb8c3da7af8154330a411141a403bc982fa08f9c3ada106c0fbb7d128931a",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "ede78254d22bac75f7b6102a9b84016c63d02f9d1acc7e4c87a63bb3d7d7e025",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 136 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 331 code points reconstructed exactly; kinds heading/recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 186 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partially paired where piece counts differ (no invented translation): r00003: 1 paired + 0 ar-only + 1 fa-only"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sahifa-ykshnbh",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "67d1593c01a5eca81af6efd5bc2a2a80070783c20920b61e871a117ba905a173",
+  "layout_sha256": "1f4d09458e741de878209807cf1fe778edfd3f4e1d96fe37d09b9aafbfe4f4e3",
+  "result_item_sha256": "fb19f98ea4f23a9595c5b05ee779c634650f4c670ae4ed169f5b07560451b1df",
+  "result_record_sha256": "c0fba77abf8ccb387dc1da1ab45b212b8f96325e14929540f57bfa51bf423ff8",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sahifa-ykshnbh",
+    "item_sha256": "a36652df188c7fa8dfb668811ed09e0e5978c28c813c98eab222ea870531605f",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "e365f10bccdd48658b58019adf0ef32a7a240e591602730e42e6f7185c948956",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 10 code points reconstructed exactly; kinds other fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 12 code points reconstructed exactly; kinds other fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 36 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 48 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/5 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/5 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

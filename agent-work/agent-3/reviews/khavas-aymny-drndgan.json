@@ -1,0 +1,49 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-aymny-drndgan",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "b8f6ab0024b5561c348510b7d5040c68e8a9475981e0aa91e31d381a0deaba77",
+  "layout_sha256": "ae79b00998f5d340d682a14187a08175a919815a9392e407ed083ddd1fb9f059",
+  "result_item_sha256": "dee5140f8b0c9b9338edcc6d23fd0ed14b200cba82189640d8e6e00b2e977457",
+  "result_record_sha256": "c67f550e8b78db5c362c4d3c690ca010d83682884a6081034390cec0bf517cdf",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-aymny-drndgan",
+    "item_sha256": "32cc26fa520908e97e02316f42c7db7e173b7137d898ec772f3351650f44a4bd",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "0344be9fb5d9ed9ae5806b82a3fcc514d0ae2ce920a06e4b455a59cf79a3b608",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3 part(s), 322 code points reconstructed exactly; kinds instruction/recitation fit the text"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partially paired where piece counts differ (no invented translation): r00001: 2 paired + 0 ar-only + 1 fa-only"
+  }
+}

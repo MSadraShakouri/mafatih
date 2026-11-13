@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-fzylt-msvak",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "5cd8f0654b63d8774a335f49b377595335ed9da156ee615be1e87f27f51a8c0b",
+  "layout_sha256": "63fbd8eb2e43f055734cbd028145eb3f4cb5236f15b6bb60e25b7e515977d3a8",
+  "result_item_sha256": "193eea0ec1fb7e9a1f4e89f27f8e2c0da287e7c495e5c61027b25f312df6316e",
+  "result_record_sha256": "b9acf1194e59d8a74ad9d484680097df85aa46dbc7455fc52de9ee1be8220549",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-fzylt-msvak",
+    "item_sha256": "63d639195a273e49e3a9bd66e1013ddf3c266905da42a5068981f5d743a449ae",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "a9409471b97226d73875fc01ebc9cff7fbcdcebed92fd5b1487fc9c15bd86531",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 255 code points reconstructed exactly; kinds instruction fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

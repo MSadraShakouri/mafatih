@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-slvat-br-pyambr",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "61831f5cd7986df75dba19713c26d3cc24fcae4894e95054644373b8d2cebc8f",
+  "layout_sha256": "371ba6d49528b5810569795896ad9f4cc851cab780d5b2030ebc4451ecbca10a",
+  "result_item_sha256": "a53b2d2cc94809453bb0edacff1dc7070e6ebd7e44e167f1bad2251c4a7186c1",
+  "result_record_sha256": "5de40714b3fac069a14287ad6ec272074cc4b4af4518a5a67f73d5d32d88446a",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-slvat-br-pyambr",
+    "item_sha256": "35b4cd32fdb2f8e9a3552c849e1c62e93de0cca044253f4e35f5819b24e663e3",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "138ef049be835fe0ac4432fe352af5752c6d72c0b63cc56e68baeb2af0586435",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "6/7 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "5/7 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/4 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

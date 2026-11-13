@@ -1,0 +1,63 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-byst-6",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "65f200641895fd7395e64940cfe3afb9542f0d82a16d61d51876fc547f8e8a8d",
+  "layout_sha256": "855c315f0488cc9b2ad6598d1c9c50ee676e8e670b35b4a61b00764548340509",
+  "result_item_sha256": "5562b624ced11bc9dc4f0f325f21be6fc873b1756f19f09075a7d0b1ada03137",
+  "result_record_sha256": "a280f6ec45f2de3c3c5f6b799e201fc8dded5f443292300c7411413000b75196",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-byst-6",
+    "item_sha256": "ba6b1e8b9cc9b2ec284a684eec8bdda8e69770807d1fc482ec3e9c54a648248d",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "873b7867a432a99bee2bbf7baf85a744847f830853697db9f48797e50b6590c1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 158 code points reconstructed exactly; kinds heading/recitation fit the text"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 115 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partially paired where piece counts differ (no invented translation): r00001: 1 paired + 0 ar-only + 1 fa-only"
+  }
+}

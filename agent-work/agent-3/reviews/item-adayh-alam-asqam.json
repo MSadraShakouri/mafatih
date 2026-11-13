@@ -1,0 +1,70 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-adayh-alam-asqam",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "4a16407d0b025dea99c00f49352c534f39e98c658846c043d983e2f4907b403c",
+  "layout_sha256": "f6e360ceb405024410e42726c11e40f1627bc96c896874c3ffe40c612ce5e7cb",
+  "result_item_sha256": "8f2c23e2fc6b15f4091f3cf49cff202373368e5c4bd0f5193a27721c8fbe1373",
+  "result_record_sha256": "2b3fc7a6fe74ce904ee168235a6225d76e055612f1f4cd7b0e3f751ca1927f51",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-adayh-alam-asqam",
+    "item_sha256": "01127007e9e0f1cd137e431cb323882aaa82618c772730a0051fdcf5e9e9863d",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "acfe5195cabbf0fa89342ebd95f386aebd9343f449f5b9dcbc69044f838c074e",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s), 606 code points reconstructed exactly; kinds note/instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 226 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 203 code points reconstructed exactly; kinds recitation fit the text"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 33 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 555 code points reconstructed exactly; kinds note fit the text"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

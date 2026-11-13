@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "monajat-mnajat-shkr-khda",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "c439671b1d8ee8a3fd1fd9a88706ddaf4dbf4805966a80bb09f4eb66dbfef7d4",
+  "layout_sha256": "2105baf3e3b78ae72b15a34ff26796f17685dfeec35be45733449720e35788f4",
+  "result_item_sha256": "85126803c93c5f630c74acbc2f7455ef03bc6d38750d94393cf673c67e60b5e8",
+  "result_record_sha256": "07b6db3fdd815c56c863f9fd6152ff3b882cc737b06aa7fd88409100460731c4",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "monajat-mnajat-shkr-khda",
+    "item_sha256": "a12ee1ee414fa872c1fd17e5b2e47c33c2393b564022221cedfbf727b98a6c33",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "628a180084b2e71f985487aef74c5abc6875030eb690f926a867951be3c8b05b",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/4 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "4/5 cut(s) not after sentence punctuation (checked against context)"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "4/5 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}

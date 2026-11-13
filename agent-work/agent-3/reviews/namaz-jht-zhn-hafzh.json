@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-jht-zhn-hafzh",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "plan_sha256": "6dec37b415359e2528da4a4bccea2f60f1930afd09f13701ed390befb21facc3",
+  "layout_sha256": "eb77394abb42f43bf65357220267a3df1c805c6a7715a99bd44eed012fda22d9",
+  "result_item_sha256": "28176bc7c39aa36f5102fa4369751111eb7f4dde3165b2659ced73e02e604c35",
+  "result_record_sha256": "bf944b36105b8f982e11002db9127de80d498109c40352b3f9d223ef2f6df043",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-jht-zhn-hafzh",
+    "item_sha256": "a13a25fcb56b6edff4e2af6edf8d1478b6c60142be851f3533a499a3506a0d7b",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "8178aa116d75b483fe07442c5a9b0e69a7eb67c5df338b5d834ce3738e8197a8",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s), 325 code points reconstructed exactly; kinds instruction fit the text"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+  }
+}
