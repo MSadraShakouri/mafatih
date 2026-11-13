@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "khavas-tlqyn-myt",
   "author": "agent-5",
-  "plan_sha256": "e232694e3c3610db42ce81a56f314fbad595819c44630f4053d9a7598c66b10a",
+  "plan_sha256": "43ea6f55b897a8ad834f2e67348313b0ce864f4fca515a311dd1c5827ba8357a",
   "rows": [
     {
       "row": "r00001",
@@ -49,9 +49,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -187,9 +195,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
