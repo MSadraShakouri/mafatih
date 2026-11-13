@@ -13,18 +13,28 @@ import { textId } from '../src/text-ids.js';
 const project=process.cwd(), cli=path.join(project,'scripts/six-agent.ts'), snapshotCli=path.join(project,'scripts/six-agent-snapshot.ts');
 const planner=path.join(project,'scripts/split-agent.ts'),tsx=path.join(project,'node_modules/tsx/dist/loader.mjs');
 const driver=path.join(project,'scripts/merge-agent-files.mjs');
+const branch=(number:number)=>`arena/synthetic-session-${number}-mafatih`;
 function command(cwd:string,bin:string,args:string[]):string{
   const r=spawnSync(bin,args,{cwd,encoding:'utf8',maxBuffer:64*1024*1024});
   if(r.status!==0)throw new Error(`${bin} ${args.join(' ')}\n${r.stderr}\n${r.stdout}`);return r.stdout.trim();
 }
 function git(cwd:string,...args:string[]){return command(cwd,'git',args);}
+function pushOwn(cwd:string,branchName:string){
+  const r=spawnSync('git',['push','-q','origin',branchName],{cwd,encoding:'utf8',env:{...process.env,TEST_ALLOWED_REF:`refs/heads/${branchName}`}});
+  if(r.status!==0)throw new Error(`Synthetic own-branch push failed: ${r.stderr}`);
+}
 function node(cwd:string,script:string,...args:string[]){return command(cwd,process.execPath,['--import',tsx,script,...args]);}
 function put(root:string,file:string,data:unknown){const name=path.join(root,file);fs.mkdirSync(path.dirname(name),{recursive:true});fs.writeFileSync(name,typeof data==='string'?data:JSON.stringify(data,null,2)+'\n');}
 
-test('real CLI runs six parallel authored snapshots, peer merges, revision, independent reviews and final audit', {timeout:180_000}, () => {
-  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'mafatih-six-agent-e2e-'));
+test('real CLI runs six registered Arena branches, remote handoffs, revision, independent reviews and final audit', {timeout:180_000}, () => {
+  const container=fs.mkdtempSync(path.join(os.tmpdir(),'mafatih-six-agent-e2e-'));
+  const dir=path.join(container,'work'),remote=path.join(container,'remote.git');fs.mkdirSync(dir);
   try {
+    git(container,'init','--bare','-q',remote);
+    put(remote,'hooks/pre-receive','#!/bin/sh\nwhile read old new ref; do\n  test "$ref" = "$TEST_ALLOWED_REF" || { echo "not own session ref" >&2; exit 1; }\ndone\n');
+    fs.chmodSync(path.join(remote,'hooks/pre-receive'),0o755);
     git(dir,'init','-q');git(dir,'config','user.name','Synthetic Test');git(dir,'config','user.email','test@example.test');
+    git(dir,'remote','add','origin',remote);
     put(dir,'.gitattributes','/data/texts/*.json merge=mafatih-texts\n/coordination/*.jsonl merge=mafatih-messages\n');
     // A tiny synthetic repo, not a copy or second checkout of the project.
     put(dir,'scripts/merge-agent-files.mjs',`import ${JSON.stringify(pathToFileURL(driver).href)};\n`);
@@ -44,13 +54,17 @@ test('real CLI runs six parallel authored snapshots, peer merges, revision, inde
     }
     for(const [shard,values] of pools)put(dir,`data/texts/${shard}.json`,values);
     const baseline=loadCorpus(path.join(dir,'data')),manifest=createAgentPartitions(baseline);
-    put(dir,'docs/split-assignments/assignments.json',manifest);git(dir,'add','.');git(dir,'commit','-qm','synthetic common base');
-    const base=git(dir,'rev-parse','HEAD');
+    put(dir,'docs/split-assignments/assignments.json',manifest);
+    put(dir,'docs/split-assignments/launch.json',{protocol:'six-agent-parallel-ring-v2',preparation_revision:2});
+    git(dir,'add','.');git(dir,'commit','-qm','synthetic common base');
+    const base=git(dir,'rev-parse','HEAD');git(dir,'branch','-M','main');pushOwn(dir,'main');
     const snapshots:string[]=[],authorItems:string[]=[];
     for(let i=1;i<=6;i++){
       const who=`agent-${i}`,group=manifest.groups.find(g=>g.agent===who)!,item=group.items[0]!.item;
-      authorItems[i-1]=item;git(dir,'switch','-q','-c',`split-${who}`,base);
+      authorItems[i-1]=item;git(dir,'switch','-q','-c',branch(i),base);
+      node(dir,cli,'register','--agent',who,'--base',base);
       node(dir,cli,'configure','--agent',who);
+      git(dir,'add',`agent-work/${who}/registration.json`);git(dir,'commit','-qm',`register ${who}`);pushOwn(dir,branch(i));
       const planPath=`agent-work/${who}/plans/${item}.json`,layoutPath=`agent-work/${who}/layouts/${item}.json`;
       node(dir,planner,'template',item,'--author',who,'--manifest','docs/split-assignments/assignments.json','--base',base,'--output',planPath);
       const plan=JSON.parse(fs.readFileSync(path.join(dir,planPath),'utf8')) as ReturnType<typeof import('../src/split-agent.js').createAgentTemplate>;
@@ -63,6 +77,10 @@ test('real CLI runs six parallel authored snapshots, peer merges, revision, inde
         {ar:{source:'ar',part:1},fa:null,kind:'recitation'},
       ];put(dir,layoutPath,layout);
       if(i===1){
+        const otherAuthor=spawnSync(process.execPath,['--import',tsx,cli,'apply',planPath,layoutPath,'--base',base,'--agent','agent-2'],{cwd:dir,encoding:'utf8'});
+        assert.notEqual(otherAuthor.status,0);assert.match(otherAuthor.stderr,/register|branch/i);
+        const otherSnapshot=spawnSync(process.execPath,['--import',tsx,snapshotCli,'--base',base,'--agent','agent-2'],{cwd:dir,encoding:'utf8'});
+        assert.notEqual(otherSnapshot.status,0);assert.match(otherSnapshot.stderr,/register|branch/i);
         const metaFile=path.join(dir,'data/corpus.json'),saved=fs.readFileSync(metaFile,'utf8');
         const changed=JSON.parse(saved) as {review_policy:string};changed.review_policy='unexpected';fs.writeFileSync(metaFile,JSON.stringify(changed));
         const refused=spawnSync(process.execPath,['--import',tsx,cli,'apply',planPath,layoutPath,'--base',base,'--agent',who],{cwd:dir,encoding:'utf8'});
@@ -72,14 +90,26 @@ test('real CLI runs six parallel authored snapshots, peer merges, revision, inde
       git(dir,'add','.');git(dir,'commit','-qm',`authored ${who}`);
       const snap=JSON.parse(node(dir,snapshotCli,'--base',base,'--agent',who)) as {status:string;snapshot:string};
       assert.equal(snap.status,'author-ready');snapshots[i-1]=snap.snapshot;
+      const next=`agent-${i%6+1}`,pair=[who,next].sort().join('-');
+      node(dir,cli,'message','--from',who,'--to',next,'--kind','ready','--commit',snap.snapshot,'--text',`${snap.status}; base ${base}`);
+      git(dir,'add',`coordination/${pair}.jsonl`);git(dir,'commit','-qm',`publish ${who} snapshot`);pushOwn(dir,branch(i));
     }
-    // Each takes only its predecessor's independently pinned authored commit.
+    // Each discovers the predecessor's real remote branch, reads its notice,
+    // checks reachability and merges only the independently pinned snapshot.
     for(let i=1;i<=6;i++){
-      git(dir,'switch','-q',`split-agent-${i}`);
-      git(dir,'merge','-q','--no-ff','-m','peer snapshot',snapshots[(i+4)%6]!);
+      git(dir,'switch','-q',branch(i));
+      const who=`agent-${i}`,previous=i===1?6:i-1,peer=`agent-${previous}`;
+      const discovered=JSON.parse(node(dir,cli,'discover','--agent',who,'--peer',peer)) as {status:string;branch:string;tip:string};
+      assert.equal(discovered.status,'peer-found');assert.equal(discovered.branch,branch(previous));
+      const pair=[who,peer].sort().join('-'),body=git(dir,'show',`${discovered.tip}:coordination/${pair}.jsonl`);
+      const messages=body.split('\n').filter(Boolean).map(line=>JSON.parse(line) as {sender:string;recipient:string;kind:string;commit:string;text:string});
+      const notice=messages.find(m=>m.sender===peer&&m.recipient===who&&m.kind==='ready')!;
+      assert.equal(notice.commit,snapshots[previous-1]);assert.equal(notice.text,`author-ready; base ${base}`);
+      assert.equal(spawnSync('git',['merge-base','--is-ancestor',notice.commit,discovered.tip],{cwd:dir}).status,0);
+      git(dir,'merge','-q','--no-ff','-m','peer snapshot',notice.commit);
     }
     // Agent 2 revises its own item after it has already merged agent 1.
-    git(dir,'switch','-q','split-agent-2');const item=authorItems[1]!,planPath=`agent-work/agent-2/plans/${item}.json`,layoutPath=`agent-work/agent-2/layouts/${item}.json`;
+    git(dir,'switch','-q',branch(2));const item=authorItems[1]!,planPath=`agent-work/agent-2/plans/${item}.json`,layoutPath=`agent-work/agent-2/layouts/${item}.json`;
     const revised=JSON.parse(fs.readFileSync(path.join(dir,planPath),'utf8')) as ReturnType<typeof import('../src/split-agent.js').createAgentTemplate>;
     revised.sources.find(s=>s.language==='ar')!.cuts=[10];put(dir,planPath,revised);
     const layout=createCanonicalLayoutTemplate(baseline,splitAgentPlan(baseline,revised));layout.rows[0]!.checked=true;
@@ -92,11 +122,20 @@ test('real CLI runs six parallel authored snapshots, peer merges, revision, inde
     assert.equal(spawnSync('git',['merge-base','--is-ancestor',snapshots[0]!,second.snapshot],{cwd:dir}).status,1,'predecessor must not leak into authored snapshot ancestry');
     assert.equal(git(dir,'show',`${second.snapshot}:data/items/${authorItems[0]}.json`),git(dir,'show',`${base}:data/items/${authorItems[0]}.json`));
     snapshots[1]=second.snapshot;
-    git(dir,'switch','-q','split-agent-3');git(dir,'merge','-q','--no-ff','-m','revised predecessor',snapshots[1]!);
+    node(dir,cli,'message','--from','agent-2','--to','agent-3','--kind','ready','--commit',second.snapshot,'--text',`${second.status}; base ${base}`);
+    git(dir,'add','coordination/agent-2-agent-3.jsonl');git(dir,'commit','-qm','publish agent 2 revision');pushOwn(dir,branch(2));
+    git(dir,'switch','-q',branch(3));
+    const revisedPeer=JSON.parse(node(dir,cli,'discover','--agent','agent-3','--peer','agent-2')) as {tip:string;branch:string};
+    assert.equal(revisedPeer.branch,branch(2));
+    const notices=git(dir,'show',`${revisedPeer.tip}:coordination/agent-2-agent-3.jsonl`).split('\n').filter(Boolean)
+      .map(line=>JSON.parse(line) as {kind:string;commit:string}).filter(m=>m.kind==='ready');
+    assert.equal(notices.length,2);assert.ok(notices.some(m=>m.commit===second.snapshot));
+    assert.equal(spawnSync('git',['merge-base','--is-ancestor',second.snapshot,revisedPeer.tip],{cwd:dir}).status,0);
+    git(dir,'merge','-q','--no-ff','-m','revised predecessor',second.snapshot);
     // The next agent independently reviews each exact authored result.
     for(let i=1;i<=6;i++){
       const reviewer=`agent-${i}`,previous=i===1?6:i-1,author=`agent-${previous}`,source=authorItems[previous-1]!;
-      git(dir,'switch','-q',`split-${reviewer}`);
+      git(dir,'switch','-q',branch(i));
       const file=`agent-work/${reviewer}/reviews/${source}.json`,sourceCommit=snapshots[previous-1]!;
       node(dir,cli,'review-template',source,'--base',base,'--result',sourceCommit,'--author',author,'--reviewer',reviewer,'--output',file);
       const review=JSON.parse(fs.readFileSync(path.join(dir,file),'utf8')) as {semantic_review:{sources:Array<{split:string;kind:string}>;issues:Array<{decision:string;note:string}>};layout:{decision:string}};
@@ -104,12 +143,15 @@ test('real CLI runs six parallel authored snapshots, peer merges, revision, inde
       for(const issue of review.semantic_review.issues){issue.decision='addressed';issue.note='Synthetic test inspection';}
       review.layout.decision='accept';put(dir,file,review);
       node(dir,cli,'verify-review',source,file,'--base',base,'--result',sourceCommit,'--author',author);
-      git(dir,'add','.');git(dir,'commit','-qm',`review ${author}`);
+      git(dir,'add','.');git(dir,'commit','-qm',`review ${author}`);pushOwn(dir,branch(i));
     }
-    // One final integration from base; the assistants' branch tips are not
-    // assumed to contain every other participant's contribution.
+    // One final integration from base; verify every included branch tip was
+    // really published rather than assuming one branch contains the round.
     git(dir,'switch','-q','-c','integration',base);
-    for(let i=1;i<=6;i++)git(dir,'merge','-q','--no-ff','-m',`integrate ${i}`,`split-agent-${i}`);
+    for(let i=1;i<=6;i++){
+      assert.equal(git(dir,'ls-remote','--heads','origin',`refs/heads/${branch(i)}`).split('\t')[0],git(dir,'rev-parse',branch(i)));
+      git(dir,'merge','-q','--no-ff','-m',`integrate ${i}`,branch(i));
+    }
     const audit=JSON.parse(node(dir,cli,'audit-round','--base',base)) as {status:string;total_items:number;complete_items:number};
     assert.equal(audit.status,'complete');assert.equal(audit.total_items,6);assert.equal(audit.complete_items,6);
     // Global metadata and other canonical files must remain within the round's scope.
@@ -139,7 +181,7 @@ test('real CLI runs six parallel authored snapshots, peer merges, revision, inde
     git(dir,'read-tree','--reset','-u',integratedTree);
     git(dir,'commit','-qm','one synthetic squashed result');
     assert.equal(git(dir,'rev-parse','HEAD^'),base);
-    const fresh=path.join(dir,'fresh-synthetic-clone');
+    const fresh=path.join(container,'fresh-synthetic-clone');
     git(dir,'clone','-q','--no-local','--single-branch','--branch','squashed',dir,fresh);
     assert.notEqual(spawnSync('git',['cat-file','-e',snapshots[0]!],{cwd:fresh}).status,0,'author commit must be absent in a fresh squashed clone');
     const strict=spawnSync(process.execPath,['--import',tsx,cli,'audit-round','--base',base],{cwd:fresh,encoding:'utf8'});
@@ -152,5 +194,5 @@ test('real CLI runs six parallel authored snapshots, peer merges, revision, inde
     rejected.layout.decision='pending';fs.writeFileSync(freshReview,JSON.stringify(rejected));
     const inconsistent=spawnSync(process.execPath,['--import',tsx,cli,'audit-squashed','--base',base],{cwd:fresh,encoding:'utf8'});
     assert.notEqual(inconsistent.status,0);assert.match(inconsistent.stdout,/invalid-or-incomplete/);
-  } finally {fs.rmSync(dir,{recursive:true,force:true});}
+  } finally {fs.rmSync(container,{recursive:true,force:true});}
 });
