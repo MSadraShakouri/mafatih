@@ -1,0 +1,111 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-mknvn-vfzylt-an",
+  "item_sha256": "52bdf8ce746cd941c8333f55c973c5b016d6cbc099ab3e3b78caaedab7e238ca",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "0396ad0fc449d64ccc16d36eee120b8cc5b0e63aa43f2dd43f2ae93a0c60e3ed",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "05f552c9f3c83fdfad2033e0ba0624c894e4973250cfba4b85092e7936ac969b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "babcb5e03880563f5d686ceea5cee412564768082a7311ded659a0db36359f21",
+      "checked": true,
+      "cuts": [
+        154,
+        454
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "550d72a656967ae5cc1a7af13a631b621f73124b47ff185bb95ff3a2913bab44",
+      "checked": true,
+      "cuts": [
+        126,
+        377
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "b1f4e1691389a9e19e0e28b9337a67af62863f0b5c28f9b1f2a4ae4dd64688d1",
+      "checked": true,
+      "cuts": [
+        52
+      ],
+      "kinds": [
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "88030e4369670f3adb90074c73dd6c2bb5b3277a01c3cd61ef1561ce71b46a13",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "bc679adca10404b6cb1ddb4de2b5386e0fff1ee5b1659b2747b62f1bd1fb9a17",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "d999e9cac9a316b712e9c417609441bd56fbf6c7d209ac8848d5e9ee096b8e16",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian source-variant remark sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic variant stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

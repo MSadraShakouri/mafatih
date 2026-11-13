@@ -1,0 +1,130 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "sahifa-shnbh",
+  "item_sha256": "9b058e68605d373821912c896fc921b3a366014f1590b1f1de2396b0025dad72",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "5367f0da2b066413ceab6fb0e737053c94ab1677e2e979eea403f5e15b10e787",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "789e1c736d9c6660cdc0547679ff811a528060937e5b73662fffe11781ca9a75",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "26a0815a944eafeee3044b9ccc3836c89d4f042f622a70d58874e1160895f85b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "6f4e2264bd3fa5bb3eb4ccb2fcdc6838b1e4a6901a1b91631ff8f12b99fb934c",
+      "checked": true,
+      "cuts": [
+        179,
+        353
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "3c9e6ed177fb5a1e3dfcae354b2094a6f105115d2e48627e3b41d4511f57b8d1",
+      "checked": true,
+      "cuts": [
+        129,
+        289
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "f78b508348f14dd7da1c985cb1742da40808f13a744adf3fd1b69bfec72dcb1e",
+      "checked": true,
+      "cuts": [
+        220
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "1f1ce557a5416a4f2d9611bb5f964e58146576377ffc8e76c3e205db4f3c22b0",
+      "checked": true,
+      "cuts": [
+        181
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "7bad5508676ba657d12f5164d897b05549ab9964380532a33ab33c159dc7a10c",
+      "checked": true,
+      "cuts": [
+        139
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "a1f257608fa53d55146d6c2c92310c3e7319b0c78081aec5ac63a42316c2c53d",
+      "checked": true,
+      "cuts": [
+        174
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00005",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier source value contains physical separators. Inspect the exported history and current context; do not silently restore old separators."
+    }
+  ]
+}
