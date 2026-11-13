@@ -1,0 +1,81 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-adab-asha-taqyb",
+  "item_sha256": "f563e7ba3329e9ea900964151992624ee41ece8546a137322384881482c9b21c",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "beb9e8a224c908269880a946a978729cb0ee7f2becdf3744eda28335b049b4cc",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "6eddb7ca4e8382cdc1a8ce5172569f13020b1d8884fe9fda8926847585a33c4c",
+      "checked": true,
+      "cuts": [
+        234
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "ab8b3e3fb7a6c48f6b7acbe677b8e4a1ffc04fbe154287e06c43d5aa43cd710f",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "e59c38c1b067c528bcdcef1a1ff65c255ae1fcca33bbcfdfb3806f0cb30eeb38",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "70bb09d80cb6e0450e7c39126dc95da805475e50be49b29ecc91622010d96fd1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "c9bf6bc853d0c19c1257fdca8dffbed5ae0c696d128acc3a37834e9a29731d3d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Long Persian instruction block sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic supplication stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

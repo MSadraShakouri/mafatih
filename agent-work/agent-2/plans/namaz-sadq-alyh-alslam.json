@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-sadq-alyh-alslam",
+  "item_sha256": "c2fbb8c3da7af8154330a411141a403bc982fa08f9c3ada106c0fbb7d128931a",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "15998572c0ddf69e7d1fb6e1942e5139d9fb9fb2f669ebdc18c08cb160faff1c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "d5f5e4da1e116acad16ce71e5c2c7e47c9af75b9436d9a383c8286def04af321",
+      "checked": true,
+      "cuts": [
+        13
+      ],
+      "kinds": [
+        "heading",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "dbc5f1c28a1175181899d9fe11b9bfb1af1c45ccef2d6533021927f756cc5009",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "0a74f7944084dd12a8756f9122f8f0997ec4c8fe424a770eafffdc8cb3557bc6",
+      "checked": true,
+      "cuts": [
+        203
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Arabic supplication sits in the fa field after a Persian lead-in; layout re-homes part 1 to the ar destination. The physical row split also cuts the dua mid-phrase (یَا حَیُّ | مُحْيِىَ), so the fa translation in r00003 is split at the matching boundary and paired by meaning."
+    }
+  ]
+}

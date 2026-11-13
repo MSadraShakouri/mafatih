@@ -1,0 +1,55 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-saaat-astkharh",
+  "item_sha256": "c341326d6824bb2b10b7de3f73a71fa616144bcd002020f220eaf95370b6a0ba",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "177e574c14de83635ee213d87033c3de92bb15abf20f75e7dc57ccd7476ab6b1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "893d60b113af6d8b8e73a10278c1965dae5b366af48c84e3674373c6ccc02398",
+      "checked": true,
+      "cuts": [
+        206,
+        257,
+        345,
+        412,
+        467,
+        528,
+        587,
+        644
+      ],
+      "kinds": [
+        "note",
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian attribution prefix (11cp) sits in the ar field; layout re-homes it to the fa destination. No Arabic text is present."
+    }
+  ]
+}

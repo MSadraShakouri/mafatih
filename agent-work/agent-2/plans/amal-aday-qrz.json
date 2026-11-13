@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aday-qrz",
+  "item_sha256": "444225627d8b58b613321245e40e3487331d315504e45b1068efea55131356c1",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "e0942cbfbb3ead2c24bde01f32e03a12c33a55ab719dda8a8c32d55dd7ff9f37",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "f7eeca3372b52cb86286dbdb992e4a2530a487153fd8b01f27161ed4db379003",
+      "checked": true,
+      "cuts": [
+        53
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "2d1753abd1e5e5c2f8452f5c027ae0cb14c5de76b2f7594b80a7084ce39065ae",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "27035092acf7429e8aa40de1a8e5c083b80cc6140c82a6d82e9988b50ff6b8cf",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "a146b0171e6b2a7f17c06864cad140796239332e8a81b63660647233fc791f42",
+      "checked": true,
+      "cuts": [
+        33
+      ],
+      "kinds": [
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "c3acac9ca7e63387bf59d1e8433e74b942c415f8e84e6d90b1fa6cd32d7322bd",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian source-variant remark sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic variant stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

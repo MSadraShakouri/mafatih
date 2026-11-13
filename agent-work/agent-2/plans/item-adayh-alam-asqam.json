@@ -1,0 +1,71 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-adayh-alam-asqam",
+  "item_sha256": "01127007e9e0f1cd137e431cb323882aaa82618c772730a0051fdcf5e9e9863d",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "f9d9869238cb26165bab8a906a69aecb40fcbef6968d8cbd80ce88bc8a13e0f7",
+      "checked": true,
+      "cuts": [
+        555
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "5f23fe8428c8b0eb7eae7516a3791303e8c2570315a8faa76522ab344d37b78b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "1d00fa14401e491555b20e7bf4fc896aae26bea2d2eb62666a4658ad2f80ebb2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "73a79b0a84427143b14233d979a53b4b495e39df63fe3344a7e411a121498c48",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "719e370d4d6a0f8ccdd32527c69484773a9d4b605b6b63148ff19cf3c0553b46",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian remedy instruction sits in the ar field; layout re-homes it to the fa destination. No Arabic text is present."
+    }
+  ]
+}
