@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-shrhay-mbark",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "517ed7d83546c5eb2d2fd3b2b194d1773788c3e48b67e6752c55a1045f8526d4",
+  "layout_sha256": "44bbe24b5ca745fc39e2f36f3bc18b02abb88512d5513a0c19463094ff7ed78b",
+  "result_item_sha256": "5e7ab543b93cb75627023b254f46b9e47a2de7acbff32d966b33a1d0bc21282e",
+  "result_record_sha256": "07e8a46f80b3bff106311019c97b51a720c2316ffb143b9eb17348f1e0bb37a0",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-shrhay-mbark",
+    "item_sha256": "2c7ef918a7f0cb360f3472f41785e99023a097c65980152588b2ac1b10642d3b",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "5412ed91e520200c276a189bdfc1cbf95234e8f65dd30fdc0b19279c9117d9f0",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Three pieces: the section heading, the practice instruction, and the hadith citation that begins at its own boundary; order and boundaries match the source."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Three pieces: continuation of the citation, the second practice, and its reward clause; the row already began mid-sentence and this split follows the natural clause boundaries."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Single-language rows; each piece appears once in order with a matching kind, and no Arabic/Persian pairing is asserted."
+  }
+}

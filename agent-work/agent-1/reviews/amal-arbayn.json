@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-arbayn",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "a7bdda79e3103a7b132237f74aa5feabb9ec77a28459f6b56fae8d5b5a61cc5a",
+  "layout_sha256": "7e085493cbea688d9bb9548171c7dd8ec59cbd13592c88ee95f08c99833f3fd4",
+  "result_item_sha256": "a2fd074a1291107e7d0b26203372922f4fb8e2a995933a20516cf6713ec62f11",
+  "result_record_sha256": "bfbae2cefbbe520d0233d31f3735a2304ebe20d72ac2e37762b71d05f03aa167",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-arbayn",
+    "item_sha256": "53aebd03c0722ee1f337fa0313b337fab9847fd29295bd08e733223ba759d049",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "614e80989efe825dc7bae88492f47e2fb8420c12938ddda2eee019c6284d61b1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Date label, the day explanation and the citation lead-in are separate passages; heading/note/note fits how the reader treats explanatory prose."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The narration of the five signs and the bibliographic citation are separated at a real clause boundary; both remain explanatory note text and nothing is asserted as recited Arabic."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Single-language rows, each piece once in order with a matching kind; no pairing is claimed."
+  }
+}

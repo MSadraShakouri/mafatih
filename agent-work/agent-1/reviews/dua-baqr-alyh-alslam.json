@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-baqr-alyh-alslam",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "167d2e197eceee19cc491f3b0c4de856a9ef48544a9b3a0480791c5f7f507779",
+  "layout_sha256": "a4728d3a7448bb0b1dd6156aa99dfb2e0c9dbeda7dd55ecfcacfc61761921d01",
+  "result_item_sha256": "5c9dfdf21d15ded687e31eed4e298957281e163ce7c27afe70f1c003ab8e61b9",
+  "result_record_sha256": "d36c40a564fb24748de632094f1a3be6dccf4e8b61f7e0cb19bc7e1af0bbb2a1",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-baqr-alyh-alslam",
+    "item_sha256": "272c716f202b3b5d98cfe22d053b551bde9543c8f46d3c498c1d03b461d5fe86",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "33c404d7151ec73f457575e1e649853a768eb2d94cb75742e3b40182c1486c27",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Numbered label and the Arabic-account introduction are separate; heading plus note matches the existing section style."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic supplication kept whole in its own field; no cut and no invented Persian translation."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Short Arabic continuation of the same supplication, its own row already; recitation role is right."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Arabic-only rows stay Arabic-only; the layout does not pair them with the Persian introduction, which is correct because no Persian rendering of this supplication exists in the item."
+  }
+}
