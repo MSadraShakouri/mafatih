@@ -1,0 +1,68 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-rqah-hajt",
+  "item_sha256": "4cc57ead678066e19077b8ba8240c1a6e6d072583e4aaca3c7fd214d7066e061",
+  "author": "agent-5",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "72959aec79b8262dcd7ab03579f91e1319d2f801a923cfef733c98d7d17b6913",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "fc5f7eee7fbf8c21eecd66625c9f3858a090c065278417beb9b3e91f097d867b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "baec405c499a2470915f7027360c0ee4e61a322c1cf96991164bffa15431345d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "af82b29d9f697885e33985ba19aea328b02cf075d991f0d6260da6c0259d339f",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "7ae95d68499af3d0b72d942667122630acbc9cff0151ddc3ae57233460b033f6",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier value carried physical separators; current field inspected and no old separator restored."
+    }
+  ]
+}
