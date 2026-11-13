@@ -1,0 +1,70 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-v1",
+  "item": "namaz-khvf-zalm",
+  "author": "agent-3",
+  "plan_sha256": "538485e3a07d916d6439af0c7290384ce82bf7f84b9b592f4658487f74db60f5",
+  "rows": [
+    {
+      "row": "r00001",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "note"
+        }
+      ]
+    },
+    {
+      "row": "r00002",
+      "checked": true,
+      "output": [
+        {
+          "ar": {
+            "source": "ar",
+            "part": 0
+          },
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        }
+      ]
+    },
+    {
+      "row": "r00003",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        }
+      ]
+    }
+  ]
+}
