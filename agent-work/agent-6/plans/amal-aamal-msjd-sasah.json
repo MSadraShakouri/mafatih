@@ -1,0 +1,69 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-msjd-sasah",
+  "item_sha256": "14f678099e7484b1a9712cb4d8aca8da6361063eb345f8f94ddfb2991ea0765c",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "ed0c9f3af8085da5b6ee901be44d8a70659afda5940be4930cc910ad8b0a1a0d",
+      "checked": true,
+      "cuts": [
+        192,
+        262
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "343ee8f21419ebe0ecf3892ed5ec3fb1e1df2b513a27ee757de8a66de567d141",
+      "checked": true,
+      "cuts": [
+        256,
+        540,
+        774
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "65caf46a1daad4ba21c84b0d2c3e6e752a785e7dd0b49645ac6f56c102a70789",
+      "checked": true,
+      "cuts": [
+        210,
+        393,
+        453,
+        563
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "quotation",
+        "note",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 2 (code points 393-453) of this fa field is Arabic-language text (quotation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}

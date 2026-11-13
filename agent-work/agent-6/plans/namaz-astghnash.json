@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-astghnash",
+  "item_sha256": "ad5195de7eee0ed74bbadd7220fb25b9a677a4a3051d927c8e8a72c4b0afe5e6",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "609d539f0f05a54b554dab2d0cc353bedec2f35170ae07ac00c8c3907f713145",
+      "checked": true,
+      "cuts": [
+        68
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "6335472ed24f4356a0caeef1768c57bec9dbd7f29b9336dbc600797373645bbf",
+      "checked": true,
+      "cuts": [
+        34,
+        93,
+        135,
+        181
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "8f9edf258a7d426d2bc4d70589290850b6c9ae9d73e80b3a1ca89a0d9b456312",
+      "checked": true,
+      "cuts": [
+        22,
+        55,
+        98,
+        142
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "55ee0774732e0cf9110641c1f0d2fba0100e563024a7e7669b93882828622df9",
+      "checked": true,
+      "cuts": [
+        41,
+        82
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 41-82) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}

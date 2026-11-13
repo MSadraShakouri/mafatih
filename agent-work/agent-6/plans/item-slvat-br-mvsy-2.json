@@ -1,0 +1,106 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-slvat-br-mvsy-2",
+  "item_sha256": "5416985e8da925f18a4fc176b38ee3a260b2df80af44f42940fe369f0d112b6d",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "aa1557b05f440124908b8b1595a1e7a99fba59c9a0826ae38a1ff0f0e9afa761",
+      "checked": true,
+      "cuts": [
+        50,
+        72,
+        93,
+        116,
+        148,
+        209
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "2bb0419d235b311fdb0939632cec6e5129515bd9512cbf7fdf23d059f7ade312",
+      "checked": true,
+      "cuts": [
+        37,
+        51,
+        67,
+        81,
+        91,
+        151
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "3f0180616cb124e67dd676b4e2be32c1d010525d3bc66ed25eb75e1c2fce9aae",
+      "checked": true,
+      "cuts": [
+        22,
+        52,
+        138,
+        162,
+        251
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "1e88344e31f8551220c90da7bd2da375b6cf8156f474107f789893d040d68b15",
+      "checked": true,
+      "cuts": [
+        15,
+        48,
+        137,
+        157,
+        233
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "other",
+      "note": "Ar part 0 of this row completes the clause begun by the last ar part of r00001 and is already covered by the Persian paired there, while fa part 0 here renders the verb of that earlier Arabic clause; both are left unpaired rather than paired by position."
+    }
+  ]
+}

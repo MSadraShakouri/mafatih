@@ -1,0 +1,229 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-ayd-nvrvz",
+  "item_sha256": "d5ffad33259773fd11cd7f28ef2d5fd3e9f86c48c59e8d069fa60439724c370f",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "2e6ba03f6d001c427533260170106067e8250303e18903b4c4ea99aeeaf0bc63",
+      "checked": true,
+      "cuts": [
+        17,
+        89,
+        214,
+        326,
+        379,
+        434
+      ],
+      "kinds": [
+        "heading",
+        "note",
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "c88c56ce95c79b23322a9f5ab6844bf43e7211a0da6de69c238e1daa738dc184",
+      "checked": true,
+      "cuts": [
+        67
+      ],
+      "kinds": [
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "59d38a0ffd373ec9dffa4ae526bd32c69adbba416ce635a7616a03d9c6d6d6be",
+      "checked": true,
+      "cuts": [
+        81,
+        125,
+        149,
+        195,
+        242,
+        293,
+        382,
+        405,
+        458,
+        494,
+        560,
+        631,
+        659,
+        744
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "1c2220b2b62c9c805f89eeb99bb504e0734a7d3cfe40d9a5eb03ff684a992a98",
+      "checked": true,
+      "cuts": [
+        61,
+        91,
+        111,
+        151,
+        184,
+        223,
+        287,
+        313,
+        359,
+        388,
+        442,
+        520,
+        542,
+        628
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "7e4c720263062f4de2fc893b5f080201f6d3808bc28464f294f4aaabce9ff866",
+      "checked": true,
+      "cuts": [
+        37
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "de57e2ca701595813cfc192582d54214b9172d02d183b6a47cb78c6847b042be",
+      "checked": true,
+      "cuts": [
+        25
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "4afed80c145f5aa9ebc123911f30eaf25cadf8b3b19dcbf5f15fc545f8fbe1d8",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "source_sha256": "8dc1051df5e406d3a19f999e589163f5f4d13e9c314ebb720e8d5bf4feab6af6",
+      "checked": true,
+      "cuts": [
+        16,
+        58
+      ],
+      "kinds": [
+        "note",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "ae11da02993c63478e1e7c48b05b29731b935db8d3568c080e076debda7bdd33",
+      "checked": true,
+      "cuts": [
+        30
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "8bd43b1f8d061c81af2a73ef37360b38ef18a087a008e8cb2c59c034415695bb",
+      "checked": true,
+      "cuts": [
+        47,
+        64
+      ],
+      "kinds": [
+        "note",
+        "instruction",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00006",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier source value contains physical separators. Inspect the exported history and current context; do not silently restore old separators. Agent-6: The earlier physical break only detached the trailing ellipsis; no boundary is restored and the ellipsis stays with its clause."
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-25) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-16) of this ar field is Persian-language text (note); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 2 (code points 64-91) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}

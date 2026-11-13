@@ -1,0 +1,58 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-pyda-shdn-gmshdh",
+  "item_sha256": "c070d6c676bf22f307ecb84e3037fec7e7c7fe516569a6b7acdf4b698e694468",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "3521afbf2060039d3087cc8481dee4250488788229c9c6a882aaaa7e29305a74",
+      "checked": true,
+      "cuts": [
+        66,
+        110
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "92e31d0458e44857f76ee3af01a69996398514050cdb6ecadeb4347d42b777e5",
+      "checked": true,
+      "cuts": [
+        26
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 66-110) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-26) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "The last ar part cites the opening and the closing of a verse joined by a Persian connective word; it is kept whole as one recitation piece because cutting around the single Persian word would fragment the citation."
+    }
+  ]
+}

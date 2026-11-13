@@ -1,0 +1,131 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-item-4",
+  "item_sha256": "27c54a9f8a9ab9b4007807e75292bc2d29011884e1a4905a3507a53dbfa8db24",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "49eed28f5c6b2e8660a0658a8a6817b0d7c202162155ed8c9dbec94ad22a8c18",
+      "checked": true,
+      "cuts": [
+        12
+      ],
+      "kinds": [
+        "heading",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "5544aeab48a879c8207043513e5b72b237154c3618c612fb10f934bc21091db7",
+      "checked": true,
+      "cuts": [
+        41,
+        67,
+        99,
+        151,
+        205,
+        282,
+        310,
+        336,
+        377,
+        426,
+        447
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "af965e0e2d2d20be97b59818b6e352b2cfe33cf9e9a78b3ea80345f0501ca40a",
+      "checked": true,
+      "cuts": [
+        23,
+        46,
+        75,
+        119,
+        179,
+        245,
+        275,
+        292,
+        331,
+        382,
+        394
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "ddc046cf5d0bd0bb158db1a0fbb7b48cd1175de0c7307872e05e6ea3be5fa556",
+      "checked": true,
+      "cuts": [
+        15,
+        64,
+        142
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "a5dbe84393bff02ea9186a32c722453fd14f5af1785a2706a36c3a37ba4dd004",
+      "checked": true,
+      "cuts": [
+        24,
+        60,
+        127
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier source value contains physical separators. Inspect the exported history and current context; do not silently restore old separators. Agent-6: The earlier break fell after the fifth clause, which coincides with the cut between fa parts 4 and 5; both parts translate one Arabic clause and are placed in the same output row. No separator restored."
+    }
+  ]
+}
