@@ -1,0 +1,82 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-byst-2",
+  "item_sha256": "938ff876e4d7d6fb96b07269da5271a9f7ae5374fd65c89fe6cc031942aacfbd",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "8e6fb05c7ececfc750bac0e5529ac9cfe4957d17e0ff9d5f914683c26f38a03b",
+      "checked": true,
+      "cuts": [
+        19,
+        455
+      ],
+      "kinds": [
+        "heading",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "9a3652e3b3f7ac8aeef59a19cfdf745a445f29478740c6448eb4e90592d3caf7",
+      "checked": true,
+      "cuts": [
+        349
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "bc4d631526af621b2175b175ec18ec551ece4881cb16154fa83a49db2e5dd371",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "7d7275e7253aaa83d981214a55b3290ae8a96791ac8057949aafb7767132f3ee",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "c910d8cbf7c3806f887a876480202cbe31708668c54870db566475362c49e072",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian heading prefix sits in the ar field; layout re-homes part 0 to the fa destination as a heading row."
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "uncertain-classification",
+      "note": "1cp comma-only row retained verbatim; looks like a source pagination artifact and needs human review."
+    }
+  ]
+}

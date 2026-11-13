@@ -1,0 +1,74 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-mjtby-alyh-alslam",
+  "item_sha256": "47b12790cecc4513c3def96fbbb230580b0b055b5e878d6ac82d44e4b94b4728",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "52898586f1eb4225d94ffaa543e3e09fb148372009f7c903abfba95ee62f9682",
+      "checked": true,
+      "cuts": [
+        121
+      ],
+      "kinds": [
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "e0b023d0fdce10ead2b5ef2d8b2b7461a4c2fe8f81c8d88cbf678f8d5fe09cd8",
+      "checked": true,
+      "cuts": [
+        13
+      ],
+      "kinds": [
+        "heading",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "56909b4fadb067b410f7c34bc61cb374e8c1c4bb63d57b4ba909c6f3c5ca599d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "376b2ceabdd4027f9e95315bff2458533e686d580b11a61e2f28975d198d90fd",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "652ba4fe46eb62eb4a309e76029b25bb7713866eb2ce6e45352964c4138a2332",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination as a heading row; the Arabic supplication stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

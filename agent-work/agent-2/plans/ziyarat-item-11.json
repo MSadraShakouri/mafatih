@@ -1,0 +1,71 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-item-11",
+  "item_sha256": "7eabb89a4b70a87f3d15e2dbb2aba34f6a1d1692f18603497c6e10803462e41a",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "e787ed2b7e21f524dc137021ae3e160d3119facc5e0127b764e739fd9b5a590a",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "heading"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "e66bf0b7dc6e632b8a491db1547e4b920f799ccb2332bf0cefd3add518535b22",
+      "checked": true,
+      "cuts": [
+        176
+      ],
+      "kinds": [
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "8c040e505aad84d3b521d008296338b26a02fcb048e4bd681c58ceb176245c8d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "ffc843e6e3b0feb102a895714091bb11a72ece5a236a837c74013e40889f9c77",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "bf757dce44ee27f3bec4eeed8f183130ed08234cbc893757a183bafc638bbca1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Arabic ziyarat opening sits at the end of the Persian narration in the fa field; layout re-homes part 1 to the ar destination. The physical rows cut the ziyarat mid-phrase, so the fa translation in r00003 pairs with the continuing Arabic piece."
+    }
+  ]
+}
