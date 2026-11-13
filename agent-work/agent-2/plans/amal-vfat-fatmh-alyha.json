@@ -1,0 +1,111 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-vfat-fatmh-alyha",
+  "item_sha256": "ed736f38f67d6339dee50907d7f89e5b13008922fc68fad0344240be7dcbca2c",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "e9c392a9d891fb9f615fc4d9b2e6e42100c360df194f2a0e9ea9f40aa17ef0a7",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "b2c23c0172d1fefb231220382ea2f9f430510f2f50bf5d60099276078b2d3f24",
+      "checked": true,
+      "cuts": [
+        55,
+        126
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "60b9a4e7c090b5fc8f2408c6ddc106c5808f0ba0ca8fe59d6a8ef397aecd2e4a",
+      "checked": true,
+      "cuts": [
+        35,
+        80
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "3cbc34742ed4741a981fdd68b344aae73e492212d91f7e3f16c445d484d3b1c2",
+      "checked": true,
+      "cuts": [
+        6
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "457192fd8fa3f21ffe9865b0e52ec92a7363d883b3cf1f94da70eafb747200ef",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "a3120e7e5f4fa8bd47ab9e2dbb9a4025a0fd6c2a6027daeb0bf6d78d78b86b19",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "0db08743ff857b7f47512be5ef19164d5e99dfd7fbff2d2d3234a2b068220685",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "5254a2e20b4a0b456bfda9c9d0bc8aad2bb28fd355df9b1c5a609c295dbca860",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic salawat stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

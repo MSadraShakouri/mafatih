@@ -1,0 +1,110 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-jht-khvab-dydn",
+  "item_sha256": "c9587a5b2fb714310d607e76e2768a856c3f02f9e0e75f7441500111802511b8",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "adcea06328f82185c135f8584f798246f6fcf4b799984d0a34ca5ca723ca3794",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "c176bc1e482429f99ded4408537e9bbd8df62e915afc5d0e08e75ebbe1073f38",
+      "checked": true,
+      "cuts": [
+        214
+      ],
+      "kinds": [
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "acd6a0b0f06f013b617b6732007d1f016477f509d844740c09a5c29b25ec2089",
+      "checked": true,
+      "cuts": [
+        262
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "06fb3ab6d808a5a8fedd9e633190fe033437be87826e144e3334a40ccefa42a6",
+      "checked": true,
+      "cuts": [
+        252
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "019ffe8ac76a73080088e4579f7ec7baaba09bb27e50a5b25e217811c69ec684",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "0734a4a30610c6a9373bb2574ae885a555f456cf4f2644b65dd4c233f2a51645",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "f486e63bc11590b34835861b8fe3fc30d86e5506242456280397bbcd3681332b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "c1dd7f653edf40e6d07d28bd134607b16cf1c9bf0dd5dc9aa4db77e4d2a8baa4",
+      "checked": true,
+      "cuts": [
+        55
+      ],
+      "kinds": [
+        "recitation",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00006",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Arabic supplication sits at the start of the fa field; layout re-homes part 0 to the ar destination; the Persian explanation stays in fa."
+    }
+  ]
+}
