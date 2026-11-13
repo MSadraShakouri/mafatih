@@ -1,0 +1,68 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-vdaa-an",
+  "item_sha256": "e6c38d82abf14e34537c922afb646166c4634afa02034a7f64f5f7c1ff9336f0",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "a5f937543bbd94b751777775606f8de41b2403aa91b70e2b34b2a3a1d71b8bfd",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "150bf4bfe18ce20b8409c08539d2d9a8dd10b1748939156fbd395e18a056d08c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "09fb8058ebb8490b1a436ab5f03de1241ea5bda63917ed0eb75ec0b9d740af6b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "27adf41f65bd649c6f80e25360ad1a2103c1606183a56ca410fc35059873a3a9",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "c7d5dad566e07efd8044240b012ce02b381fd80701caec5f964b6f5d58ab9eaf",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "The instruction quotes a short Arabic farewell phrase inside the Persian sentence; the exact text stays in one piece and no language move is asserted."
+    }
+  ]
+}
