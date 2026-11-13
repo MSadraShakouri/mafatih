@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-msjd-sasah",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "1a8313a2e1d089ec3c64e4f624c5e6e56abe7987e56b661b08ba6745ec2cdef4",
+  "layout_sha256": "ce011d3ef91b861874aa1888f18534beb5def91fb4349e45551d489f7844e601",
+  "result_item_sha256": "e28d17549646628466ccf7ced0138e2956d245f4ba35730a958a1eb066ea21ef",
+  "result_record_sha256": "f602b04b7414fe44284e651b772c6aabaa2f889871f57dd73dd3ba010bb1e3a6",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-msjd-sasah",
+    "item_sha256": "14f678099e7484b1a9712cb4d8aca8da6361063eb345f8f94ddfb2991ea0765c",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "fc7caa32e7927a907ec5b40302841f1a3a4bad8a8af49521c86bd73b7efd4ecf",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (3 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (4 explanatory note + 1 quotation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00003/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Persian narrative split at sentence ends into note pieces; the Arabic supplication embedded in the Persian field moves to the ar slot as quotation and the surrounding Persian is left unpaired rather than invented."
+  }
+}

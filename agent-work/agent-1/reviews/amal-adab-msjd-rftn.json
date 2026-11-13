@@ -1,0 +1,87 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-adab-msjd-rftn",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "456ad39730835957b35658aa6516e547e720bc1b781e253467c77f97227f85f4",
+  "layout_sha256": "56f7f2e64300dcf6c96a04609b78428212f673c6f271172e55329d296eb2cfc1",
+  "result_item_sha256": "3e761232721904e299a685a2ea00a1ef1dcf3baa3bc3f85a9999171e8fe74c96",
+  "result_record_sha256": "ae8e3feb627a9ebe57048a91f82ef34f1ad7b7bfc62bb9ed88124ca7447ab475",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-adab-msjd-rftn",
+    "item_sha256": "f0bdb99d2b9a09aa4fa2904f8bd2fec5415f58f2917889aeb597dc3f96ca03ef",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "02d16442f0518ae9be57365482327d7e148c68e5eee60435e27fe69f1aa23bdd",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 10 pieces (1 ritual instruction + 9 devotional recitation); 9 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 9 pieces (9 devotional recitation); 9 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 13 pieces (2 ritual instruction + 11 devotional recitation); 11 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 11 pieces (11 devotional recitation); 11 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 devotional recitation); 4 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 devotional recitation); 4 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00001/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00002/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00002/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "The Persian walking instruction and entry etiquette that sit in ar fields move to the fa slot as instruction, while the Arabic supplications stay in the ar slot paired clause-for-clause with their Persian renderings, including the sentence that continues from r00002 into r00003."
+  }
+}
