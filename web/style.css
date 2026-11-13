@@ -56,6 +56,16 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .reader-band > .reader-row {display:contents}
 .reader .reader-band > .reader-row p {flex:0 1 auto;width:max-content;min-width:0;max-width:100%;margin:0;text-align:start}
 .reader .reader-band > .reader-row p[lang='ar'] {order:0}
+/* Only a phrase crossing a line is fragmented. Its pieces join the Arabic
+   flex flow; Persian paragraphs remain separate items with the same 12px gap. */
+.reader .reader-band > .reader-row p[lang='ar'].wide-arabic-flow {display:contents}
+.reader .reader-band > .reader-row p[lang='ar'] > .wide-arabic-fragment {
+  display:block;order:0;flex:0 1 auto;width:max-content;min-width:0;max-width:100%;margin:0;
+  text-align:start;direction:rtl;unicode-bidi:plaintext;white-space:pre-wrap;overflow-wrap:break-word
+}
+/* Preserve line-end separators in DOM text and ranges without allocating
+   them a flex-item width when CSS would hang that whitespace at a line break. */
+.reader .wide-hanging-space {display:inline-block;width:0;white-space:nowrap;overflow:hidden}
 .reader-band::before {content:'';flex:0 0 100%;height:5px;order:1}
 .reader .reader-band > .reader-row p[lang='fa'] {order:2}
 .reader.wide-measuring p[data-text-role='arabic'] {width:max-content;max-width:none;white-space:pre;text-wrap:nowrap;text-align:start;overflow-wrap:normal}

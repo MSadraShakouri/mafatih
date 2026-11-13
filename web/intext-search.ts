@@ -28,7 +28,8 @@ export interface InTextSearch {
 /** Keep the reader DOM and its scroll position intact while replacing its 49px header. */
 export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: SearchClient,
   session: SearchSession, requestClose: () => void, onOpenChange: (open: boolean) => void,
-  pointer: ReadingPointer): InTextSearch {
+  pointer: ReadingPointer, prepareRow?: (row: string) => HTMLElement | undefined,
+  prepareIdleRow?: (row: string) => void): InTextSearch {
   const header = main.querySelector<HTMLElement>('.reader-header')!;
   const normal = header.querySelector<HTMLElement>('.header-inner')!;
   const bookmark = normal.querySelector<HTMLButtonElement>('.header-side.start .icon-button')!;
@@ -84,7 +85,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   let total = 0, currentCount = 0, limit = PAGE_SIZE;
   let pending: SearchSnapshot | undefined, timer: number | undefined, pointerInResults = false;
   let baseKey = '', requestKey = '', requestedFocus: number | undefined;
-  let seekSerial = 0, flashTimer = 0;
+  let seekSerial = 0, flashTimer = 0, idlePreparation: number | undefined, idleKey = '', idleGeneration = 0;
   let pointerStart: { reopenHidden: boolean; touch?: {
     target: EventTarget | null; id: number; x: number; y: number; dragged: boolean;
   } } | undefined;
@@ -92,6 +93,9 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   const stripes = new Map<string, boolean>();
 
   function visibility(): void {
+    // Once the list is hidden, speculative work is no longer useful even if
+    // it gets reopened before the browser dispatches the idle callback.
+    if ((!open || !listOpen) && idlePreparation !== undefined) cancelIdlePreparation();
     results.hidden = !(open && listOpen);
     menu.hidden = !(open && menuOpen);
     error.hidden = !(open && errorOpen);
@@ -125,11 +129,15 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   }
   function resetSeek(): void { seekSerial++; clearTimeout(flashTimer); clearFlash(); }
   async function seek(hit: SearchHit, range?: TextRange): Promise<void> {
+    cancelIdlePreparation();
     const serial = ++seekSerial;
     try { await document.fonts.ready; } catch { /* use the available fonts */ }
     if (serial !== seekSerial || !open || destroyed) return;
     const record = hit.record;
-    const block = [...main.querySelectorAll<HTMLElement>('[data-row-id]')].find(node => node.dataset.rowId === record.row);
+    // The grouped layout already retains its source rows. Reuse its prepared
+    // destination instead of traversing the entire reader a second time.
+    const block = (record.row ? prepareRow?.(record.row) : undefined) ??
+      [...main.querySelectorAll<HTMLElement>('[data-row-id]')].find(node => node.dataset.rowId === record.row);
     const paragraph = block?.querySelector<HTMLParagraphElement>(`p[lang="${record.language}"]`);
     if (!paragraph) return;
     // Display digits are one-for-one with the source, but verse markers may
@@ -214,6 +222,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     renderResults();
     if (snapshot.complete) live.textContent = total ? `${digits(total)} نتیجه` : 'نتیجه‌ای پیدا نشد';
     visibility();
+    scheduleIdlePreparation(snapshot);
   }
   function flush(): void {
     timer = undefined;
@@ -229,7 +238,34 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
       window.clearTimeout(timer); timer = undefined; flush();
     } else if (timer === undefined) timer = window.setTimeout(flush, 80);
   }
-  function resetQueue(): void { window.clearTimeout(timer); timer = undefined; pending = undefined; }
+  function cancelIdlePreparation(): void {
+    // A partial WebView may expose requestIdleCallback without its cancel
+    // counterpart, and a stale callback must not clear a newer request.
+    idleGeneration++;
+    if (idlePreparation !== undefined) window.cancelIdleCallback?.(idlePreparation);
+    idlePreparation = undefined; idleKey = '';
+  }
+  function scheduleIdlePreparation(snapshot: SearchSnapshot): void {
+    const destinations = [...new Set(snapshot.text.slice(0, 2).map(hit => hit.record.row).filter((id): id is string => !!id))];
+    if (!snapshot.complete || !prepareIdleRow || !destinations.length || !listOpen || !requestKey || idleKey === requestKey ||
+        typeof window.requestIdleCallback !== 'function') return;
+    cancelIdlePreparation();
+    const key = requestKey, generation = idleGeneration; idleKey = key; let next = 0;
+    // At most two completed results per request are prepared speculatively,
+    // one per idle period. A tap, new query, closed list or disposed reader
+    // invalidates the remaining work; a short idle budget defers it.
+    const attempt = (deadline: IdleDeadline): void => {
+      if (generation !== idleGeneration) return;
+      idlePreparation = undefined;
+      if (!open || destroyed || !listOpen || pointerInResults || requestKey !== key) return;
+      if (deadline.timeRemaining() >= 8) prepareIdleRow(destinations[next++]!);
+      if (next < destinations.length) idlePreparation = window.requestIdleCallback(attempt);
+    };
+    idlePreparation = window.requestIdleCallback(attempt);
+  }
+  function resetQueue(): void {
+    window.clearTimeout(timer); timer = undefined; pending = undefined; cancelIdlePreparation();
+  }
   function run(): void {
     if (!open || destroyed) return;
     const query = input.value; session.readerQuery = query; visibility();

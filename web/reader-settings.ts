@@ -152,7 +152,7 @@ export function renderReaderSettings(item: ReaderItem, example: ReaderItem | und
     label.append(input, mark, name); layoutOptions.append(label);
   }
   layoutSection.append(layoutOptions);
-  layoutSection.append(el('p', 'setting-note', 'در حالت کنار هم، ردیف‌های کوتاه بر پایهٔ طول عربی و عرض صفحه گروه‌بندی می‌شوند. طول اضافه فقط حد گروه‌بندی است؛ متن از صفحه بیرون نمی‌رود.'));
+  layoutSection.append(el('p', 'setting-note', 'در حالت کنار هم، ردیف‌های کوتاه بر پایهٔ طول عربی و عرض صفحه گروه‌بندی می‌شوند. طول اضافه فقط حد گروه‌بندی است؛ عبارت‌های عربی در عرض صفحه پیوسته جاری می‌شوند و هر ترجمه مستقل می‌ماند.'));
   content.append(layoutSection);
   content.append(renderScrollSettings(scroll));
 

@@ -235,19 +235,24 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
       const wideLayout = wideModule?.attachWideReaderLayout(content, current.wideLayout, item);
       let snapshot: AutoScrollSnapshot | undefined, restored = false;
       if (saved && saved.id === item.id && from?.kind === 'settings') {
+        if (saved.position) wideLayout?.prepareRow(saved.position.row);
         window.scrollTo({ top: saved.scroll, behavior: 'auto' });
         restoreVisibleReaderPosition(content, saved.position);
         snapshot = saved.autoScroll; saved = undefined; restored = true;
       } else if (!route.anchor) window.scrollTo({ top: 0, behavior: 'auto' });
-      const keeper = keepReaderPositionOnResize(content, wideLayout?.reflow);
+      const keeper = keepReaderPositionOnResize(content,
+        wideLayout ? position => wideLayout.reflow(position?.row) : undefined);
       autoScroll = scrollModule!.attachAutoScroll(content, scrollSettings, snapshot,
         snapshot !== undefined && snapshot.settingsRevision !== scrollSettings.get().revision, appActive);
       const attachedScroll = autoScroll;
       if (route.anchor && !restored) {
+        wideLayout?.prepareRow(route.anchor.row);
         requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, route.anchor!, attachedScroll); });
       }
       inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch,
-        open => attachedScroll.setSearchOpen(open), attachedScroll);
+        open => attachedScroll.setSearchOpen(open), attachedScroll,
+        wideLayout ? row => wideLayout.prepareRow(row, attachedScroll.readingPosition()) : undefined,
+        wideLayout ? row => { wideLayout.prepareRow(row, attachedScroll.readingPosition(), true); } : undefined);
       const attachedSearch = inTextSearch;
       const stopHeaderGestures = attachReaderHeaderGestures(content, () => openReaderSearch(item.id));
       disposeReader = () => { stopHeaderGestures(); attachedSearch.dispose(); keeper.dispose(); wideLayout?.dispose(); attachedScroll.dispose(); };

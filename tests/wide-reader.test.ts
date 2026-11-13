@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { planWideBands } from '../web/wide-reader.js';
+import { planWideArabicBreaks, planWideBands } from '../web/wide-reader.js';
 
 test('wide bands are greedy, consecutive, width-bounded, and never swallow boundary or oversized rows', () => {
   const widths = [40, 45, null, 150, 30, 30, 30, 10];
@@ -27,4 +27,33 @@ test('generated bands cover each selected index once, fit exactly, and cannot sk
       priorEnd = band.end;
     }
   }
+});
+
+test('Arabic fragments fill the remaining line only at real word boundaries', () => {
+  const texts = ['12345678901234', 'aa bbb cc', 'ok'];
+  const widths = texts.map(text => text.length);
+  const measure = (row: number, start: number, end: number) => texts[row]!.slice(start, end).length;
+  assert.deepEqual([...planWideArabicBreaks(widths, texts, [{ start: 0, end: 3 }], 20, measure, 2)], [[1, [{ offset: 3 }]]]);
+  const unbreakable = ['12345678901234', 'abcdef gh'];
+  assert.deepEqual([...planWideArabicBreaks(unbreakable.map(x => x.length), unbreakable,
+    [{ start: 0, end: 2 }], 20, (row, start, end) => unbreakable[row]!.slice(start, end).length, 2)], []);
+});
+
+test('line planning handles an oversized phrase and never cuts a no-break space or combining sequence', () => {
+  const texts = ['aaa bbb ccc ddd', 'ok', 'aa\u00a0bb cc', 'x'];
+  const widths = texts.map(text => text.length);
+  const measure = (row: number, start: number, end: number) => texts[row]!.slice(start, end).length;
+  assert.deepEqual([...planWideArabicBreaks(widths, texts, [{ start: 0, end: 2 }], 10, measure, 2)], [[0, [{ offset: 8 }]]]);
+  assert.deepEqual([...planWideArabicBreaks(widths, texts, [{ start: 2, end: 4 }], 7, measure, 1)], [[2, [{ offset: 6 }]]]);
+  const combined = ['123456', 'e\u0301 xx'];
+  assert.deepEqual([...planWideArabicBreaks(combined.map(text => text.length), combined, [{ start: 0, end: 2 }], 10,
+    (row, start, end) => combined[row]!.slice(start, end).length, 1)], [[1, [{ offset: 3 }]]]);
+});
+
+
+test('a word fits when its line-end separator hangs, without cutting the separator', () => {
+  const texts = ['123456789012345', 'abc def'];
+  const measure = (row: number, start: number, end: number) => texts[row]!.slice(start, end).length;
+  assert.deepEqual([...planWideArabicBreaks(texts.map(text => text.length), texts,
+    [{ start: 0, end: 2 }], 20, measure, 2)], [[1, [{ offset: 4, hangFrom: 3 }]]]);
 });

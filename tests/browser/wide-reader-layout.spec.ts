@@ -172,7 +172,14 @@ for (const [mode, allowance] of [['wide-0', 0], ['wide-25', .25], ['wide-50', .5
       }
       const detail = groups.map((group, index) => {
         const children = [...group.querySelectorAll<HTMLElement>(':scope > [data-row-id]')];
-        const arabic = children.map(child => child.querySelector<HTMLElement>('p[lang="ar"]')!.getBoundingClientRect());
+        // A phrase that crosses a line retains its paragraph and source text,
+        // but its visible boxes belong to the inline-flow fragments.
+        const arabic = children.flatMap(child => {
+          const paragraph = child.querySelector<HTMLElement>('p[lang="ar"]')!;
+          const pieces = paragraph.classList.contains('wide-arabic-flow')
+            ? [...paragraph.querySelectorAll<HTMLElement>(':scope > .wide-arabic-fragment')] : [paragraph];
+          return pieces.map(piece => piece.getBoundingClientRect());
+        });
         const persian = children.map(child => child.querySelector<HTMLElement>('p[lang="fa"]')?.getBoundingClientRect()).filter((box): box is DOMRect => !!box);
         return { count: children.length, gap: parseFloat(getComputedStyle(group).columnGap) || 0,
           natural: paragraphs[index]!.reduce((sum, p) => sum + p.getBoundingClientRect().width, 0),
@@ -440,11 +447,20 @@ test('repeat grouping reuses exact measurements and invalidates them when fonts 
   await expect(reader(page)).toHaveAttribute('data-wide-layout', 'wide-50');
   expect(await signature()).not.toEqual(initial);
   expect(await measurements()).toEqual(shaped);
+  // Additional fragment widths are needed only for groups a reader reaches.
+  // Once measured, the same visible groups reuse those widths on return.
+  await page.locator('[data-row-id="r00025"] p[lang="ar"]').scrollIntoViewIfNeeded();
+  await expect(page.locator('[data-row-id="r00026"] p[lang="ar"]')).toHaveClass(/wide-arabic-flow/u);
+  await page.waitForTimeout(80);
+  const withFragments = await measurements(); expect(withFragments).toBeGreaterThan(shaped);
+  await openSettings(page); await back(page);
+  await expect(reader(page)).toHaveAttribute('data-wide-layout', 'wide-50');
+  await page.waitForTimeout(80); expect(await measurements()).toEqual(withFragments);
   await openSettings(page); await page.evaluate(() => {
     document.fonts.dispatchEvent(new Event('loadingdone'));
   }); await back(page);
   await expect(reader(page)).toHaveAttribute('data-wide-layout', 'wide-50');
-  expect(await measurements() - shaped).toBeGreaterThan(1000);
+  expect(await measurements() - withFragments).toBeGreaterThan(1000);
 });
 
 for (const item of ['amal-aamal-an', 'amal-aamal-hfdhm-mvlvd']) {

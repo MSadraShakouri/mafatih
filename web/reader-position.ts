@@ -32,6 +32,14 @@ function codePointBoundary(text: string, offset: number): number {
   return position;
 }
 
+/** A fragmented Arabic paragraph has no principal box; its text still has one. */
+function paragraphRect(paragraph: HTMLElement): DOMRect {
+  const box = paragraph.getBoundingClientRect();
+  if (box.width || box.height) return box;
+  const range = document.createRange(); range.selectNodeContents(paragraph);
+  return range.getBoundingClientRect();
+}
+
 function rangeRect(paragraph: HTMLElement, offset: number): DOMRect | undefined {
   const text = paragraph.textContent ?? '';
   const position = codePointBoundary(text, offset);
@@ -80,7 +88,7 @@ function wideVisibleParagraphs(main: HTMLElement, targetY: number): HTMLParagrap
     const block = blocks[index]!;
     if (block.getBoundingClientRect().top >= innerHeight) break;
     for (const paragraph of block.querySelectorAll<HTMLParagraphElement>('p[lang="ar"], p[lang="fa"]')) {
-      const box = paragraph.getBoundingClientRect();
+      const box = paragraphRect(paragraph);
       if (box.height > 0 && box.bottom > targetY && box.top < innerHeight) result.push({ paragraph, box });
     }
   }
@@ -106,7 +114,7 @@ export function captureVisibleReaderPosition(main: HTMLElement): VisibleReaderPo
   }
   for (let index = low; index < paragraphs.length; index += 1) {
     const paragraph = paragraphs[index]!;
-    const box = paragraph.getBoundingClientRect();
+    const box = paragraphRect(paragraph);
     if (box.top >= window.innerHeight) break;
     if (box.height <= 0) continue;
     const text = paragraph.textContent ?? '';
@@ -143,7 +151,7 @@ export function restoreVisibleReaderPosition(main: HTMLElement, position: Visibl
 }
 
 /** Keep the last visible line across viewport-width/orientation changes. */
-export function keepReaderPositionOnResize(main: HTMLElement, reflow?: () => void): { refresh(): void; dispose(): void } {
+export function keepReaderPositionOnResize(main: HTMLElement, reflow?: (position: VisibleReaderPosition | undefined) => void): { refresh(): void; dispose(): void } {
   let position = captureVisibleReaderPosition(main);
   let previousWidth = window.innerWidth;
   let pending = 0;
@@ -159,7 +167,7 @@ export function keepReaderPositionOnResize(main: HTMLElement, reflow?: () => voi
     // a finger is scrolling. They do not rewrap text; don't fight that scroll.
     if (!widthChanged) return;
     if (pending) { cancelAnimationFrame(pending); pending = 0; }
-    reflow?.();
+    reflow?.(position);
     restoreVisibleReaderPosition(main, position);
     refresh();
   };

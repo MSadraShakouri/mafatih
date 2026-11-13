@@ -14,7 +14,10 @@ export function textPoint(root: Node, utf16Offset: number): { node: Text; offset
   let remaining = Math.max(0, utf16Offset), node: Text | null, last: Text | undefined;
   while ((node = walker.nextNode() as Text | null)) {
     last = node;
-    if (remaining <= node.length) return { node, offset: remaining };
+    // At an internal node boundary, the offset denotes the next character.
+    // Prefer its node so a match at the start of a wrapped fragment is aligned
+    // to that line, not to the end of the previous line.
+    if (remaining < node.length) return { node, offset: remaining };
     remaining -= node.length;
   }
   return last ? { node: last, offset: last.length } : undefined;
