@@ -6,7 +6,7 @@ Branch in use: `arena/411fca58-mafatih` (the platform-assigned session branch).
 
 ## Authored (plan + canonical layout, structurally verified)
 
-40 of 112 items. Each plan has every source occurrence `checked: true`, one kind per
+53 of 112 items. Each plan has every source occurrence `checked: true`, one kind per
 text piece, and a layout whose pieces cover each source field exactly once in order.
 All 32 plans were re-verified against the revision-2 base with unchanged fingerprints.
 
@@ -20,23 +20,31 @@ All 32 plans were re-verified against the revision-2 base with unchanged fingerp
   item-slvat-br-mhmd-2, item-slvat-br-mhmd, namaz-jvad-alyh-alslam, amal-byst-7,
   ziyarat-amyralmvmnyn-alyh-alslam, item-zahrshdn-qbr-an, item-adab-srdab-mthr,
   namaz-grsnh, khavas-zman-ghybt, namaz-zyad-shdn-rvzy, ziyarat-vdaa-an,
-  namaz-sahb-alzman-alyh, khavas-hjab-jafr-sadq
+  namaz-sahb-alzman-alyh, khavas-hjab-jafr-sadq, item-ayza-rfa-mrz,
+  amal-aamal-byst-vykm, dua-hjt-alyh-alslam, item-klam-abn-btvth, dua-shshm-zkr-dv,
+  item-namh-yvshya-bn, dua-zman-ajl-allh, amal-fzylt-asfnd, namaz-hdys-nfs,
+  namaz-baqr-alyh-alslam, ziyarat-zhra-alyha-alslam, ziyarat-fzylt-hmzh-alyh,
+  amal-slvaty-fzylt-bsyary
 
-Recorded issues (8): six `mixed-language` — `khavas-aymny-dzd/r00001/fa` (truncated
+Recorded issues (14): twelve `mixed-language` — `khavas-aymny-dzd/r00001/fa` (truncated
 Quran quotation keeps a Persian connector, so it stays in `fa`), `khavas-rvyt-jhvd-trsa/r00003/fa`
 (Arabic dhikr continuation plus Persian explanation in one field; split without joining
 rows), `khavas-hrz-hady-alyh/r00001/ar` (Persian heading stored in `ar`; piece moves to
 `fa`, original location stays mapped), `ziyarat-amyralmvmnyn-alyh-alslam/r00002/fa` (Arabic
 ziyarat stored in `fa` without a Persian counterpart in that row; piece moves to `ar`),
 `item-adab-srdab-mthr/r00004/fa` (Arabic prayer fragment inside a Persian instruction) and
-`ziyarat-vdaa-an/r00001/fa` (short Arabic farewell phrase inside a Persian instruction) —
+`ziyarat-vdaa-an/r00001/fa` (short Arabic farewell phrase inside a Persian instruction),
+`amal-aamal-byst-vykm/r00001/ar` and `/r00002/ar` (Persian exposition in the `ar` field with a
+short Arabic saying), `item-namh-yvshya-bn/r00002/fa`, `/r00004/fa`, `/r00005/fa` (Arabic
+basmala and dhikrs quoted inside Persian reports) and `ziyarat-fzylt-hmzh-alyh/r00003/fa`
+(Arabic exclamation leading into a Persian poem) —
 plus `ziyarat-amyralmvmnyn-alyh-alslam/r00003/fa` `historical-line-break` (old value had a
 physical break that is neither restored nor dropped) and `other` (its single Persian piece
 translates both the moved `r00002` Arabic piece and `r00003`; the layout can attach it once).
 
 ## Applied to canonical data
 
-All 40 authored items are applied on this branch, with their row-split mappings and
+All 53 authored items are applied on this branch, with their row-split mappings and
 new pooled text values. `npm run validate`, `npm run check:line-breaks` and the full
 `npm run check` gate pass on the resulting data (263 tests, 260 pass, 0 fail, 3 skipped).
 

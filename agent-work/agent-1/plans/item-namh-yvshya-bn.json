@@ -1,0 +1,90 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-namh-yvshya-bn",
+  "item_sha256": "97de130023384b56f7f774a6d702e7896abc518a8c9300f9a9ca2c80120ca50b",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "2f71b72554d4fc8c463fd18b436c6ef0e804b75581bdde5c7c14cc38daba708c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "e63298b462127107dc9437188d0733280bfedf04339fe0deb7086803ca366192",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "f210f1ad3cd71590340b06d829f96ff149f5fecd00a8f63f22446e096c50eb3e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "9fbf9dbd17162ea5fee5a14e776e323e49478c63b618c3e3c41f240d78db90a2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "e13e59a223a6adaaf97c77f11d8884457faba4e83129a594c812936f8bf74ba1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "56980ed93cbdcf6cb08777a0dac991a90335c7bbfcbae9e07db3873702f6c7f1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Persian rendering of the letter contains the Arabic basmala inside the sentence; the exact text stays in one piece."
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Persian report quotes an Arabic dhikr inside the sentence; kept in one piece without asserting a language move."
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Persian report quotes two more Arabic dhikrs inside the sentence; kept in one piece without asserting a language move."
+    }
+  ]
+}
