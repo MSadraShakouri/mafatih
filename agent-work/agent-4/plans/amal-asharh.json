@@ -1,0 +1,190 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-asharh",
+  "item_sha256": "419562db817461fc41d6266638ca062baa56f25647fdfa036c4a6199525dc155",
+  "author": "agent-4",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "1c5230890344e834c2889558cc4791c661bdb4d85e63f44c759d3c34a4fd9655",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "dec92beef037b03aec5b487430892ec8c7bd81ccfb66977ce42cb75d60c65aa0",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "3163db49bffa357b475c9f0a0bd523565984ecd8c9c8464017b783cffb0f5649",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "c63184aa12b25becd7f1ae3eda383566bd8204299d1469cbea5040861dbac0eb",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "01b885bdaa324ca411a748f08afc2d88b1db253ba339b06035653d4661406503",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "776b428edba964a18734ed23bd5d00283d3a0e803cd9a3c9ff5e70a6be297138",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "cc9936ffe095230b65a51ef05d42298ed29df3dbe591120076a45fd3c83881fc",
+      "checked": true,
+      "cuts": [
+        22
+      ],
+      "kinds": [
+        "note",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "5d7dc0653cfbb7ba47d301d491bd06e6b517a24f04f7afe981dac3b98ec4709e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "91d344dedb73ef51a7a6eb6a5b1276d7b508f434a4638d182df22ba871a56044",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "source_sha256": "17f367bbc64ce79092ccdf063dd5a76b0ad7f15e6342694701b19066a2f970d2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "d9279477a5ac8bc2ea6390292e5087af7110c09ed751c6791225a3b9f1f8a295",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "ar",
+      "source_sha256": "4e0ad483341ffba85daea24769679cacfe73879828e8ad32279ccf0bd2b37f83",
+      "checked": true,
+      "cuts": [
+        222
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "fa",
+      "source_sha256": "3fa7b1e15abc3961af0c235a74a8e52ac2eadf7063cbdb0a455c30d93b9df8c8",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00009",
+      "language": "ar",
+      "source_sha256": "d0c4e814954f29e2eca50f77935a883dad0c6d9ea8666b53fb942d37fb9f9cc5",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00009",
+      "language": "fa",
+      "source_sha256": "5da3337a668fb8d979255378837bdb0adeb31b234430572456c29392e77f755b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00010",
+      "language": "fa",
+      "source_sha256": "b8099462f614327fca5e2d3e8f114c954ac9ae2bec68022b68982c81a94d565b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00005",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Exact code-point cuts 22; moved parts to destination fields shown in the layout."
+    },
+    {
+      "row": "r00008",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Exact code-point cuts 222; moved parts to destination fields shown in the layout."
+    }
+  ]
+}

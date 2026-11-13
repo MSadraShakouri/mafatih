@@ -1,0 +1,140 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-ayza-hajt-sndhay",
+  "item_sha256": "61bbd8b48fdf870eb5815fd48ef04234cb0438cf51a5229694e439bc99e3461a",
+  "author": "agent-4",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "56f02ee6e0d5d0a8d745b591438ad159cf1e4cd460f37f225f789d8da47d4fe3",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "326de5f18ec3163dc914917a6e242f897ef0ef55460639f50ca8044d05377347",
+      "checked": true,
+      "cuts": [
+        196
+      ],
+      "kinds": [
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "715179575f795673634ba99a7001fc0fab7d01b25685947bc515f22158e93f7e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "1fe76381db990aae722c8225fcb4477cdc72e2336d157d1aa358e2d2acdfe778",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "c8bd1e061ca0055fc113fb7eb42c3512bf5ceab179b24fee52945560fb0a9618",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "e377ddf74a43183acce1c5da7e480b7b7d597b3cbaf7312a5969dfc7ade058ff",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "7a3db4c158a6349f4685b6165c15aec570a00dff3c3a2f7e88e9781f86f90489",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "source_sha256": "4b4eb2e472a57bf15f8d9737ad4e41c8a6964f71c5566ed82b168a5269bc767d",
+      "checked": true,
+      "cuts": [
+        203
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "fdabbc070cb519b8c96bc5b1ce10e82abec44053811c6e5d36bf83c8ea80b82d",
+      "checked": true,
+      "cuts": [
+        182
+      ],
+      "kinds": [
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "source_sha256": "a14debe8297b0c0855b89cc5f5c0807afec311408688696d536b743c74a2d0e2",
+      "checked": true,
+      "cuts": [
+        41
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "4a0494a197a9d4df2d81a90b66ea6d9383d31b623a60f7e7dff2644fdeff6a6e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00007",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Exact code-point cuts 41; moved parts to destination fields shown in the layout."
+    }
+  ]
+}
