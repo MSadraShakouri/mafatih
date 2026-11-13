@@ -155,6 +155,12 @@ For example, at 20 pixels/second over 10 seconds, the expected position advances
 
 **AI feedback:** Focus first on search, reading, navigation and auto-scroll. Leave room for backup, themes or syncing later, but don't make them prerequisites for the main experience.
 
+## Future ideas: recent items and suggestions
+
+- **Recently opened items:** Provide a way to return to items opened recently. The presentation and retention details can be decided later.
+- **Usage-based suggestions:** Consider suggesting items based on when they are usually read, including the day of the week and hour. Think through how to distinguish actually reading an item from merely showing or opening it; the detection and suggestion rules are not decided yet.
+- **Date-relevant suggestions:** Consider suggestions appropriate to the current date. This needs date calculations and more thought, including which calendars and dates to use; no behavior or algorithm is decided yet.
+
 ## More ideas from AI
 
 - **Build a little at a time.** One possible order: combined search and its index, opening an exact match, reading layout and fonts, basic auto-scroll, then experiments with smart speed and the pointers. This is only a suggestion.
