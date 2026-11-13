@@ -1,0 +1,74 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-item-3",
+  "item_sha256": "dd93e9771181950adba5697b16dad0254bfb80e47b7c31a04655b67bf209a06f",
+  "author": "agent-5",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "63c23648c27a88d99810372a154d2f7ce20c9dc9b8c658c516a77c46e1ca3e44",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "6a17b87730a586790f982302401eb58f4334eba24ab764ef3e2c26473a75210e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "03df181451d0b13101ea42b5c61c4cf3d32628cdd68e7730a4586852c768d602",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "e0d4ad8019158cfd9df15f84c938631ef0e122cd92aa4b4b1cc9f851aee8e85e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "d2608e818fc7c6beddb661bf23e45ca512f3165f062dcf3687d5d2d4025fe0be",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier value carried physical separators; current field inspected and no old separator restored."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Offsets around the embedded Persian connector between two Arabic ziyarat passages; left intact rather than cut mid-recitation."
+    }
+  ]
+}
