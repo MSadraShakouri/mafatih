@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-vrvz-ayd",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "9f813d907e65950822fe7543a8cdfc38273bc5f15f06232cce85b216f349e31b",
+  "layout_sha256": "ddd6f2f51160bf15543fcb5a6d79c2452b75720d1be4ab3bd74ed26d947919b9",
+  "result_item_sha256": "233eb21b3f73c15690c56fc66c9a6c29c5d2d7f682d0eaad3a060efd6c333d09",
+  "result_record_sha256": "337b8f945f48af46274d7f2645a051c40e5840a00c76615dbd0b725ff2d8f9b7",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-vrvz-ayd",
+    "item_sha256": "bedd9a930c2978ad626f1f53313c4e32c1064187bd74a319ad741ca2ce4a66d9",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "92778cbd3b4187db70fa01889a04834d51c4319cdd4ece6fd6009732caed3f47",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds heading, note); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds heading, note); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds note); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds note, heading, instruction); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds instruction); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

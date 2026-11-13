@@ -1,0 +1,92 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-nvzdhm-rmzan",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "83c072ea2233005acc8e73a145f8ea0b2338d14767948ae742f499b6ce28f8b1",
+  "layout_sha256": "11a708948f785a2859da82cabd9bd5b65bc15ebd73142f3c46ecda331da527cc",
+  "result_item_sha256": "746d694bf9e50e7b506f67d912c0658596d673b5be9fe88cd660900ed78bc642",
+  "result_record_sha256": "d428e815c1e3ef38682194f54a9c56220f942eb0cd2e8c31950d7676ce500c13",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-nvzdhm-rmzan",
+    "item_sha256": "2299946c6c8a89862ca6ff02fe2ac391faff4468d761614a70e026f26df00fec",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "4c41ef1fb487803a1606f6d9fb27fcbac576e9c3e20dc5e6eefbb6aaa6b5257a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds heading, instruction, recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds instruction, recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

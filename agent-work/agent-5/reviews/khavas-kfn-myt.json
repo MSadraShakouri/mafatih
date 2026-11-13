@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-kfn-myt",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "7a3bc92f6277901ac370a2242eab227897c3dbefcb5697b912829f16e1859507",
+  "layout_sha256": "2d645d3e885dc57ba73597c5422a104d001027379746c5976162741a9908535f",
+  "result_item_sha256": "97b8d6b688a89ec4e899d77fcd7d4c735e93c48e857dda4d16b093808cadbac4",
+  "result_record_sha256": "355380a4525c9d25983e96b8e5d4adf1f5c112af871f8fde6faa047cb9e02652",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-kfn-myt",
+    "item_sha256": "fbebd4a12656ab011f05feedcf670959d34b549e876e44309b55a8bec3b502be",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "30ec9a12a5dcdeaf86217ba92f67a5ad15979581561e44a46afb2f05a49eac00",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds instruction); boundaries fall after sentence punctuation and the parts stay in source order."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

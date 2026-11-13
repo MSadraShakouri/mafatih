@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-fzylt-ayh-alkrsy",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "51c2cd0def5491b94f4ad2fb1a454e8124775c05fe43f45f72b8a1a1aeccb96e",
+  "layout_sha256": "fa8250053dca6adc37e1fa9af3d36dcca7ffe8240ac36dc077421c33e8367286",
+  "result_item_sha256": "35b2a5abba22b83c2db576dcdbeec245cec01bb85c2732495521c12b99b4648b",
+  "result_record_sha256": "b5f84a1a705c356d78ca9d910c393d2a6e36d1c964e1916c836b7f7cd021afac",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-fzylt-ayh-alkrsy",
+    "item_sha256": "4273a2212765d08d88ff29186d9ed657d4bdbec692acd289b7d31c915582249c",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "fd7e1161171b0fff939fa4c10334b78b3e3a1eb225425c0e9cbabe2b98cf9fe8",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "No output piece references this source; nothing to judge."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 4 pieces (kinds note); boundaries fall after sentence punctuation and the parts stay in source order."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-ahkam-dfn-amvat",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "1d015688ec8921305b3af6007f272e08845ed1be67f11ca8d9c3ca9f58e3975c",
+  "layout_sha256": "88f9afc8e26381a864f1e56e6558746246a7e2bbe0f9d4348cccb52f7d351858",
+  "result_item_sha256": "c4242febeed404b7fb77b483880bbbdb7b6896db10f2674c297f170f10fe7c8c",
+  "result_record_sha256": "3eea10fbf9c9b8df8ddf177ba660d25d335009fd86ca3ee06f84d42b52183991",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-ahkam-dfn-amvat",
+    "item_sha256": "a7eceec19d2dfcf027af1f75e39b18626ef6940e8171baea6e7336338fc793fe",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "23c6b42aae459561b7499054108dacfaea79b14ebb3b311c84d894586ed18298",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

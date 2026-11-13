@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "nade-ali-sagheer",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "eadbbb7616fc6bf713a6e8e79e7c90892b7d4fa8c08adfeff07a68a0773b8577",
+  "layout_sha256": "65c945c7af036451916da365a90aba672af5d28dedf5220e9a571d9429c5e6ee",
+  "result_item_sha256": "c690621983caaf7ca8aa3d029d04dc211a6ffc7877fe7a8f71f46f2dbdfaf874",
+  "result_record_sha256": "140a58491006caa20de9bca5b6349fd975ee633582a4e0317e4ba36cf6af13de",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "nade-ali-sagheer",
+    "item_sha256": "abde8d53771bba421a91605523676202bc8e21374fc6e7407aa9bba414ce7c80",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "3e50edf5fc7dabfff609bbdd69016b43ffe2cf7cc8aa6957d08f64a67781b2f6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

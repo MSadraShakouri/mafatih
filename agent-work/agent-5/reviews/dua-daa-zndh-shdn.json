@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-daa-zndh-shdn",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "ac19dcfd112a81d3048ff6bd12de7f8b6d6bacebb207a2e3e5dc6730dfe1015e",
+  "layout_sha256": "ab7c581d8b00545d70a99580ab45b7c9a946707ac06a89f5105e4cc5dd6c206f",
+  "result_item_sha256": "bc9fae0e5f29a9ec360a2d617079b0503b4d6ffcb7a4e7000fb6a635ee05dae0",
+  "result_record_sha256": "cb4795e55f69ecec79a0f4e187b150ed1336f1a3671fb1b96e5b1f3a04ea95ce",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-daa-zndh-shdn",
+    "item_sha256": "a9c8e46ce9a331081dc0fa0b03ae9c3dd3c0a5c546d96967e436f348fcfd3e77",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "9bbee5dc174dd9887f73b3c07614229773210820c56ff6fb5dac1acd813e6b2c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

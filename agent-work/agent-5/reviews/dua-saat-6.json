@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-saat-6",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "a5ec6623bc04bffd2295e6f6ed55999d3f244b69243dd1d70e038e2abba10a15",
+  "layout_sha256": "3292f337d5bec02e82a0074bf80bffc457d5474f797d75e34e86efdff410d072",
+  "result_item_sha256": "7a7b12480a183c893402907c4263ac48e27ef01bf9ad04a81a593e0da21d926e",
+  "result_record_sha256": "52cf511e84e2794d117e8a685c8b10346d9eaca940210016785f88846c6e7c85",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-saat-6",
+    "item_sha256": "243e20b3e329b287c60c27b564bb5b4ee4cf6338d58705a27d7c8c03a1fc148e",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "27dc4438609dbdcd2a03544817f49895e7fc2d476e26103fc8f7982931f965a1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

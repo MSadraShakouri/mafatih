@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-ta-hfdhm",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "c5891a35adbe7c89e85bbb4a479adcbe3f98c7eadcec083363fc15d2f55a0d3b",
+  "layout_sha256": "a53e31f69a6e06e8e3b7421d67a70178ee5723375cdaa734d086e7fad534773f",
+  "result_item_sha256": "bc02424f28a684c0068f5636ab223f0c856ba9a3185c46c85de267d17b5180aa",
+  "result_record_sha256": "91239ef4d83e4aaa43a715c4f83035bb44e6e52a609b1333d0d8516c6333d408",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-ta-hfdhm",
+    "item_sha256": "e3b2006ac27237bcbd8c2fb980407c56ae61e50879d15979dfffb493d801dd7b",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "bd4362a79aace142ac21c80183ecc55a9360f013f4c21b19b11c4e86aa085e6e",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

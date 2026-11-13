@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-amamzadh-hmzh-alyh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "fade9fd196c3570ca7064bb6275a5b0c97b4d975ceeb2573af86b2878eaae088",
+  "layout_sha256": "d14bde9b860ce322a412a3632668506df79cbeb4941b89c0b3da3993ae008566",
+  "result_item_sha256": "f4a6a12115d3e8cda5574aee7180464bd7ccec2007316b4fe6c536d04a2398c7",
+  "result_record_sha256": "14df32e79624f52b38e21ea181bc23b5c583ea088f56bb7d24f2bbc18d1f12f6",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-amamzadh-hmzh-alyh",
+    "item_sha256": "006463e41b5b7088645c86dbedc742dccabebb613a1db925ff50b23ae195cb63",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "1a41323cc026ec43b707729e6da319f9b3f8c0ff1ec063fc5262091ed6e1e8e5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds note); boundaries fall after sentence punctuation and the parts stay in source order."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

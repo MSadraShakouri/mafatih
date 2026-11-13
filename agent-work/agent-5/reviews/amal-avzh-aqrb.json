@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-avzh-aqrb",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "f2be6d1f29e8a604830771ec4863b7a885e4002b4eca06b4332ab82d7b66d47a",
+  "layout_sha256": "1448176e2749160ca9b9142cac7dc91fc61fa1007be7146ac3be1b1ee62b5ebb",
+  "result_item_sha256": "9b42695e325db6b399972dfeccd8faddf2b472cd173c8a646866e055ed88c44c",
+  "result_record_sha256": "7938df54af0c28b3e1712d724c244a86002cb972780e487ba171c207d57d2893",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-avzh-aqrb",
+    "item_sha256": "d0a0536e712a2aa3ce4b7ba313fe3d53034b795aca8f7ad921cc6d0da2d4564b",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "8bd50c3526e3d40a1865790d7f53c1cef994a69ebc05e4a72d7a15c1802359bc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "No output piece references this source; nothing to judge."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

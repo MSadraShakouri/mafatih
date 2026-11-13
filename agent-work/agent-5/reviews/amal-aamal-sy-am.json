@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-sy-am",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "dec15e17297785d045052bde98f59dcbff71f730b51f3c3585095c2323a04713",
+  "layout_sha256": "ad8460bd3f0973e07ec509895056bc9b8bad28fbc6d00c51fdb30c931c2faac3",
+  "result_item_sha256": "ad0461188ee7b8df95f75f6a345bbedc58e3a4bb80db6534f0751ac1c9e64389",
+  "result_record_sha256": "92a0b5ca3282d794f38407f5c08a6fd41aee2c4f1e8fedf648666f6de82e659c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-sy-am",
+    "item_sha256": "5c7fdf4d7515cb9f261b3e82f452820694ce2e4d1aa65e05b4bc4002a90b7995",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "ebe43e87c2be4cb816302f0002691614d0c7e6532ee7e028ed1eba876ed2459c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 6 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 7 pieces (kinds heading, recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `recitation` paired with the other language in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

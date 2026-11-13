@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-rbya-alsany",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "90443e605cf49317d5ae6127b112c4a0339cbcdc5d6b13229d74fa1e5c19f645",
+  "layout_sha256": "c5d3aca493109e90591e3e9067bfe155f65362b9f4bc1dc98da894c4da2a14b8",
+  "result_item_sha256": "1b86acefecddff967603b26928edebc43df48d85925b8c2244b32a500237d288",
+  "result_record_sha256": "411f2eef6be0fef6f1992865880c08a5f0a28d0eaf21073fed0c65d13522b6e4",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-rbya-alsany",
+    "item_sha256": "d2bc0f541444bba78f98f455bde581cb79ce176510c34ba25ba6c38684cc56c6",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "f41fcb7e44921a4219d63970477b2390d0932eb0c5b89e7d5cd6df00266193b9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds note); boundaries fall after sentence punctuation and the parts stay in source order."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

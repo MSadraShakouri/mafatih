@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "monajat-mnajat-sfr",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "5f41c9216130f04703b2172ce8f474ce8c71d5a7a5b2c3e86f74a49e77ab0f23",
+  "layout_sha256": "993ef665f557e8ee8911296e59b6009b6ab6958907b1a9fe447bf57b6d9807b3",
+  "result_item_sha256": "7b33df03bc062ed9b640b46f6551ed8363ac342ee43fbd13731f1e5906d1ce30",
+  "result_record_sha256": "00a4ef3e8f38be73eeef085b9203c2dc2ab476ddfa3389c7a00ad435b219945d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "monajat-mnajat-sfr",
+    "item_sha256": "4792b01f5cd765f0c6c9b62142f76bbe3f817c6711aadd6761f1d7857fb548a1",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "ecaf34a587e5c6798f669b3ed8ea2a9e1fdb8f8f733cc882750a622a912b85e9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

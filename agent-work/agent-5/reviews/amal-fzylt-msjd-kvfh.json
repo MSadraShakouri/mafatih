@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-fzylt-msjd-kvfh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "35bdb018793c325e6fe4fc6691086859cf97dbbe46a33493f1317b625f6195de",
+  "layout_sha256": "5c52f4b85242b6469f389cdd5c427c66baafde3336f1f9b36f495ae2bb1ea643",
+  "result_item_sha256": "35658abfb40102ee024af9f85ce9e39b1defd76a73761770925c93d728b04772",
+  "result_record_sha256": "3f362a005f1ff5cd6f8d88df859566a8d5379fee8276e273965f5f95d746840b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-fzylt-msjd-kvfh",
+    "item_sha256": "8e11cfe3f36910f208253949a4c42a3b7eb344c9a69e462af6b6d095e5b1f3df",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "7ef88b56abff4f1599e2b3648ed6f7e4541493eed1b2282d4bf65a133cb962cc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds note); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds note); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

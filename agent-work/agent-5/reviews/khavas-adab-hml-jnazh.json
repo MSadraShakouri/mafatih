@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-adab-hml-jnazh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "2b3ef49a7b11033f74af03c538db3863a294407ff05a4a840bba7d18d9557033",
+  "layout_sha256": "e7be281e04bc9a822b945e59d201a93419969f95db688fdd102de6a3d3f592a9",
+  "result_item_sha256": "2cff4870a280ba5a56d8d3cb9c4292e73507e0e3a58979075d4d136c1430adf5",
+  "result_record_sha256": "a8f39e73b4f9371ccada441b37a1425c3bf3a0ecd50824c41ede4b9e074ebf2a",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-adab-hml-jnazh",
+    "item_sha256": "ac73879ba031a77eb61d52c9e4f7e2376313743ddf4c57fe38d26c04d0eb12f0",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "9b91ea7e1afb74c12fce8ed5453c33af796df57f8a5b58bfee497c0047a93bab",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

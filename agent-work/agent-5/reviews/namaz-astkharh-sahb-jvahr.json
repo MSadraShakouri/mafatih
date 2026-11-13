@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-astkharh-sahb-jvahr",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "a1b9d18f125ddab9f5899d7621db9a97e01cf1c77a23d188984ee8a1a9bde901",
+  "layout_sha256": "1bb5811dbe8fcc7cbd69adc5cf37598ee41b81546d204870cff9a545f73dba52",
+  "result_item_sha256": "c4e1532c5dbe2c3b78944c990f3ef84bae43057d1d9fd0d99a2919196838ffad",
+  "result_record_sha256": "d82012a9ea550dc580863142183a87a5637ce3f2b4f28206802c4f817264420b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-astkharh-sahb-jvahr",
+    "item_sha256": "f29dffcf176e42ec7a31df0e4530d1d2fbee0638b08794b171350267b9ee9f04",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "0b907efb986fb5416105b7a31105ce7beb0471052a2ee28b40af0692900e7d69",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds instruction, note); boundaries fall after sentence punctuation and the parts stay in source order."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

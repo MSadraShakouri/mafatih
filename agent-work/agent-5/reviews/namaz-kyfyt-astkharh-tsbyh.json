@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-kyfyt-astkharh-tsbyh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "d40d06e2de85858a4d60a86cd31118e0e6c3c07632058efeaa43e349efb861d6",
+  "layout_sha256": "76d625f4d96810fb5e1cf293142e8dcd6432718ad209fe367839dea47897e4bd",
+  "result_item_sha256": "27752c4767b1922dbec19da73ec3a97e76890f8bf260ab22010823569055bd53",
+  "result_record_sha256": "493c913f6c134631c52ce904b87e3a4b2e73f6fa6d59ea93429464f9a9944b95",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-kyfyt-astkharh-tsbyh",
+    "item_sha256": "90f0d9081d2bf993f66970dff2aa866117bc4b8e502fcfb1d461e9b21a100bd7",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "0818e28dbb6131bb10674a77f71d0199c096918e0eff49eeff362a34f28ea3a3",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-hdyh-masvmyn-alyhma",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "e10c71636b0bd30cd10eb77f2bda57939eae02f59d7fa00e298a86bc34799d2a",
+  "layout_sha256": "bd4b73e63c5434b78dbc4c01be4c1c8ebbb97eb36716caff4d8d6932e239c891",
+  "result_item_sha256": "1bb6f40f594c674a6da9b4855b134498058552d64185c96ffc1d19392561fbfa",
+  "result_record_sha256": "0a1e03800151ecf02233d63bb5f4acadb95a73b8ecac895c09df1c414d165e7c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-hdyh-masvmyn-alyhma",
+    "item_sha256": "8f62197437553d68cd8b0f0f94368a58046f8cb379be2f556ca6bb1ef9550f71",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "36316c62dcc503f06ecc6b589b5b47f8d86b1466a7d4a7311d56265abea280e7",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-anjam-daa-vst",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "76b6b9033d059e77bcf569d15a90182753a51c996863767817844e9de1cea34b",
+  "layout_sha256": "08739d1772bd1a08669d628de2793c1f03f520eb82dcb5bd519ee88af00a4d8a",
+  "result_item_sha256": "61d1302fe80cbe5458d71b4c9fe7d56bddad23ef020035797f4a8790dadcb1b8",
+  "result_record_sha256": "456b6ac81d75d29a1f936348fa82ed45f61d969ec1e649787c04f1ef8cf865f8",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-anjam-daa-vst",
+    "item_sha256": "3cefe761695136df405b1db1332549fe584098511aeab9bf20554e0f205af423",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "38553f9cb3f3f301cdafddc740bc7b98dc9036507a5b763884b74bbb269fc3e4",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `instruction` with no counterpart piece in the same output."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 3 pieces (kinds recitation); boundaries fall after sentence punctuation and the parts stay in source order."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

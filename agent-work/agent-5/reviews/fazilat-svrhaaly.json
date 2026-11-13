@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhaaly",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "c9df0f22491a60d7679546217868402ff92644531d77962e58f94f9b9affc84f",
+  "layout_sha256": "d614ed2cf060410b40404550f5aec74a6e1b4c735848bcba471fa99ae8b83c83",
+  "result_item_sha256": "99a77bf65a9dc7e6ac3e5e4ee94bdad67ecbc8261b23765082b99cbbb163916a",
+  "result_record_sha256": "618487c23e47053ec89d3823020c8d77cb9b60c7413e9eed67dabd19c817d373",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhaaly",
+    "item_sha256": "90eac461f2a9b7bf1b0a6541c4f19ab61d1e0d55c1093458f1a407638d48ac16",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "dd94e89b70a5ce8b300f81b34f5b7cec2c3b05b01382296efb5e762a0b35f893",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Single piece, kind `note` with no counterpart piece in the same output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-psr-shdn-hml",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "plan_sha256": "4335fbbdd04dd61e667d480c2390a04bd1b7857555bc536a843906d10d6ed9e9",
+  "layout_sha256": "e12e25cbd9f3cf902a24b840e128d99d42e3ad7fee7e2ac248a2ca7d1e6e685a",
+  "result_item_sha256": "d6cd0d6ff4e4889f610d41070edf64b92209cf350bb5f7ca60c4efbc31c8813e",
+  "result_record_sha256": "7ceddc22547ec52fe95bba448e21587294e089440345bf750929eedf1b841332",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-psr-shdn-hml",
+    "item_sha256": "69a99b236902eb3f9ff59745b5d66524365f9459756ea97a2e687edc8a779e9b",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "c5d6b697d8074f3518acacbfbb3795be60bffcca48cc4c3fe706527284b40344",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Split into 2 pieces (kinds instruction, note); boundaries fall after sentence punctuation and the parts stay in source order."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row order and kinds follow the content pattern I applied to my own 115 items: liturgical Arabic paired with its Persian rendering, Persian prose as note/instruction, reciter names as audio-reciter."
+  }
+}
