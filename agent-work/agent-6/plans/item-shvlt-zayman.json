@@ -1,0 +1,228 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-shvlt-zayman",
+  "item_sha256": "c4d9ec1e12e61cf10792bb4d0649a7943ad6cffe19cdbe39436cf0997a25fa77",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "a9ed38a7a5214cd07b3041808649855dbe2ae7ea8fbbbe1fece6a02e4301700e",
+      "checked": true,
+      "cuts": [
+        45,
+        80,
+        168,
+        248,
+        283,
+        338,
+        358
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "5f12a7a1f22f858915acaf59f91262d4851510db04698ef7f8c8a111c1182cd8",
+      "checked": true,
+      "cuts": [
+        51,
+        143,
+        212,
+        237,
+        289,
+        302
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "a74bbd901cb205659308724864df5fe2cc1ad0821719ef606e4bbafe51d05d0c",
+      "checked": true,
+      "cuts": [
+        67,
+        97
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "b75d73746161c0b7633d6a0507432aed2bd57c53a18f80b88741913cbc007072",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "36a97c23647cebb72c889aff223743d706cd59f0492bed15b03d0d42ce9b0433",
+      "checked": true,
+      "cuts": [
+        30
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "c4b27f954c7c7022f3a15e4b36b3782adafd399da1809cd9259e957a0b7d39c2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "f01c3c052da5aeab6299672abcadf80e38de461d0b5b7d7a8cad793c07176df6",
+      "checked": true,
+      "cuts": [
+        128
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "a939bebda4881bac9bee9d71fcfa65f7018552713be62f28a201b80fc773a7f6",
+      "checked": true,
+      "cuts": [
+        51
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "source_sha256": "5f178f87a632ba0ea8c21cd35530e9e7a6d9a29e4a1acf53f0c75d0db5d63cb8",
+      "checked": true,
+      "cuts": [
+        26,
+        46,
+        96,
+        123,
+        177,
+        204,
+        230,
+        259,
+        315
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "f16d13ed2d164887e339625d18416a5609c80b25aae83a9477b5f9ec91f5a6f2",
+      "checked": true,
+      "cuts": [
+        24,
+        42,
+        85,
+        112,
+        160,
+        183,
+        205,
+        231,
+        278
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-45) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-67) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 67-97) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 1 (code points 30-195) of this fa field is Arabic-language text (recitation); the layout places it in the ar field. Wording unchanged."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "The last ar part is an Arabic verse incipit and ending joined by a Persian connective word; it is kept whole as one recitation piece because cutting around the single Persian word would fragment the citation."
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "kind": "other",
+      "note": "Fa parts 0 to 2 of this row translate the Arabic verse that the source stores in the fa field of r00003; they are left as an unpaired Persian recitation row because pairing across original rows is not possible."
+    }
+  ]
+}
