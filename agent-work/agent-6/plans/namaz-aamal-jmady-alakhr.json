@@ -1,0 +1,174 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-aamal-jmady-alakhr",
+  "item_sha256": "20b6ace4bb54b306f9f07f69321dec8d7acc07682ede4e098c434e1d42ba7456",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "db15b8097105e25aae8ce8e699f146e2c39548687e754e765d9daed1369e84d9",
+      "checked": true,
+      "cuts": [
+        23
+      ],
+      "kinds": [
+        "heading",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "c431cc02b5a819e6621db212d48133937b8780c2ddf34d15b0413506c75aed02",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "7158fcd23b323e8327e31387c30ea59e641f6a3fc2d002613593bd8f10f1d321",
+      "checked": true,
+      "cuts": [
+        35
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "23fc606ca0a350f591b7dfb94ff124798824563dc1e38d1b16ddb3b51278fec3",
+      "checked": true,
+      "cuts": [
+        33
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "6b60f73f70e872cfbe5e0577c7bb557dd28f25d85a72237114e39d43fe51cd3f",
+      "checked": true,
+      "cuts": [
+        15
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "aea067fc9fa903fae0a66db8aa17daffc19190b3fccf889cf2ebd62331ff3ac4",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "cfa4792f24b09a386d7efaa44941af03ef67bc0aa6aad874cc0f864c6a4b8d6a",
+      "checked": true,
+      "cuts": [
+        21
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "449a8e0d4d15c1c1151b8d8819806bbcff3c1bd566feb62ba4fd4026414cb0ec",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "source_sha256": "d1d3f89b2ea426e55f0facc7a93e854a51945df98df0451a8e1d22f42df4a0b0",
+      "checked": true,
+      "cuts": [
+        37,
+        61,
+        96,
+        133
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "ae15134a6c3220bbf67f9708e5619f84c4561cea49f1046d4bf9ec3bc499746e",
+      "checked": true,
+      "cuts": [
+        20,
+        43,
+        73
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "148d8f2371a946ab5f76a0d77db4326849dd47c124bb7303acc31fae22394fbd",
+      "checked": true,
+      "cuts": [
+        35
+      ],
+      "kinds": [
+        "instruction",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-15) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-21) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-37) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    }
+  ]
+}
