@@ -1,0 +1,398 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-kyfyt-shb-pnj",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "bebe4408639802c379318c1b8ac6676f524312c7",
+  "plan_sha256": "1f4756a2a2afba6b498e67030c176b11e5958a2a52f4a6fb4cef9876357c94fd",
+  "layout_sha256": "03aba59862a7344e355e47411abfc4f51a8bddf7a0bd7915eb11d317ba882979",
+  "result_item_sha256": "72493c72e6ff921584c4e1f67ab754918d151775e13884fc8d358a8fcdbe5dc6",
+  "result_record_sha256": "b658b17decb7c7161b1f16e049d135d529d56ea468c09d999dbb4e051bda5ace",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-kyfyt-shb-pnj",
+    "item_sha256": "6a63edaa8a9602796be513de74286af07fdb376f5c200536cb9130ca3eaacbb3",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "e62e729fe840637206d135b9c0b2498f981989001f0fe3c93cb9cc172af3a749",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 182 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 156 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 160 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 12 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s) / 139 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 94 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s) / 284 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 223 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/3 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/2 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 9 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/5 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2/4 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 304 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "5/6 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 126 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 115 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s) / 121 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 97 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/6 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3/5 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 368 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 404 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s) / 77 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 49 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 54 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "3 part(s) / 204 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 57 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/4 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 86 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 199 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 225 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 164 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 304 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 299 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1/3 cut(s) verified against context (not all after sentence punctuation)"
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 62 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s) / 78 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 57 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s) / 212 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 198 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 7 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 170 code points reconstruct exactly; kinds fit"
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s) / 87 code points reconstruct exactly; kinds fit"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 3,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 4,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 5,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 6,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 7,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 8,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 9,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 10,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 11,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partial pairing where piece counts differ, no invented translation: r00004: 1p/0ar/1fa; r00005: 1p/0ar/1fa; r00006: 2p/0ar/1fa; r00008: 4p/0ar/1fa; r00012: 1p/0ar/1fa"
+  }
+}
