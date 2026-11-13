@@ -6,7 +6,7 @@ Branch in use: `arena/411fca58-mafatih` (the platform-assigned session branch).
 
 ## Authored (plan + canonical layout, structurally verified)
 
-53 of 112 items. Each plan has every source occurrence `checked: true`, one kind per
+56 of 112 items. Each plan has every source occurrence `checked: true`, one kind per
 text piece, and a layout whose pieces cover each source field exactly once in order.
 All 32 plans were re-verified against the revision-2 base with unchanged fingerprints.
 
@@ -24,7 +24,7 @@ All 32 plans were re-verified against the revision-2 base with unchanged fingerp
   amal-aamal-byst-vykm, dua-hjt-alyh-alslam, item-klam-abn-btvth, dua-shshm-zkr-dv,
   item-namh-yvshya-bn, dua-zman-ajl-allh, amal-fzylt-asfnd, namaz-hdys-nfs,
   namaz-baqr-alyh-alslam, ziyarat-zhra-alyha-alslam, ziyarat-fzylt-hmzh-alyh,
-  amal-slvaty-fzylt-bsyary
+  amal-slvaty-fzylt-bsyary, sura-kawthar, amal-shybh-hzly, namaz-naflh-sbh
 
 Recorded issues (14): twelve `mixed-language` — `khavas-aymny-dzd/r00001/fa` (truncated
 Quran quotation keeps a Persian connector, so it stays in `fa`), `khavas-rvyt-jhvd-trsa/r00003/fa`
@@ -44,7 +44,7 @@ translates both the moved `r00002` Arabic piece and `r00003`; the layout can att
 
 ## Applied to canonical data
 
-All 53 authored items are applied on this branch, with their row-split mappings and
+All 56 authored items are applied on this branch, with their row-split mappings and
 new pooled text values. `npm run validate`, `npm run check:line-breaks` and the full
 `npm run check` gate pass on the resulting data (263 tests, 260 pass, 0 fail, 3 skipped).
 
