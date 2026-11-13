@@ -1,0 +1,92 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-item-2",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "4cf7d569379a11d20584d88c5e892cce3a922ca107f7782295c00daf8131c073",
+  "layout_sha256": "6429bb325d8c4ce8c2ac3e7bf611b673d48ae8bf7ba1bba083a04e3c849851ed",
+  "result_item_sha256": "4387d4fbeddef7c6c5b2a703c4340caf422add43bc7b5d189a9614c1d47afc76",
+  "result_record_sha256": "201352d9243f31f9bdbc7525b43ddbd57d2b8f4bff1562d3068a5d3f189c8514",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-item-2",
+    "item_sha256": "be8fae7a1429a2deef944dd5e35495d9d36a099e15716f974ba93c34f39b9fae",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "f7551f2947a7c860d12f913ca509c8fce16f44ba2105768d1099875b22d11d3a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 543 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 459 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 367 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 546 code points and 15 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 330 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-jht-drd-zanv",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "cfa6c7ff9c302502a8f063a5c3c87e0bd2e015012aba2e9702d638380a865781",
+  "layout_sha256": "f641bd4605021aecb7f90c5778763a14ebddc57152c9feb11de720f4f398f84a",
+  "result_item_sha256": "e2409961b39bc50672ef578aeafa21cd803c66d1a13fc7578a8314c7a5d1f047",
+  "result_record_sha256": "b4fa0fc5caeb5abf6174e2e15826a3beda6a559d86d5105eff152096f21a5e7a",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-jht-drd-zanv",
+    "item_sha256": "7b9cc2b9a69a72e51d6b6087a38bea0b092834b8f6c6ea4ea27c0d3b63a8c24b",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "05de802cbbe7f0ad843339a88edbbeb422bb1a144b4641bc61559bbcdbff245a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 288 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "pending",
+        "note": ""
+      }
+    ]
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

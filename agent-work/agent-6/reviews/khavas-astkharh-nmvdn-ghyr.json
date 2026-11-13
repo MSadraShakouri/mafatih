@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-astkharh-nmvdn-ghyr",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "c8429a3f9380a6ded51260ed8fba61830ea0c2220e2d3b73d8bf48fdbff71f0b",
+  "layout_sha256": "2a2c993de8916ed69e3d3d988acc8c1247aabdb1eb6be61dfbf7e5568b798896",
+  "result_item_sha256": "8696f018eeb7df5adfce3bf87fb661630865ffc7dfde5bbf8267649264291364",
+  "result_record_sha256": "3574e72272f54130dd43029e4fcefc2cc4b88e34f5a844eb64ecb045e28986c1",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-astkharh-nmvdn-ghyr",
+    "item_sha256": "0ad27736c116de1101fac0717c83910f95dd70d8bafe8e21efab254f3840c3ba",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "32f14a979698e339edabc7d27f72da6a9ab8840ba4e17f8094ec91e0b90762c2",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 680 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 680 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

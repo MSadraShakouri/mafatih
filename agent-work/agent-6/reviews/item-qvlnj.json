@@ -1,0 +1,78 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-qvlnj",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "50e888c0209bde0b87e42845a864bfd68feb5547e730317e495d7ab28f3cbc41",
+  "layout_sha256": "d9bddb116637223497de93c8aac01ef64dda687838aab7e7c666bb397ca21526",
+  "result_item_sha256": "1fca2feef8fc5fa0f0a5c072dc31845bbdc28b9d4b7fbec91a6dbbf2c86057d8",
+  "result_record_sha256": "4e968d9f20cd19f268ac723d76a17943fbfd6d18f3fd7b32c698c9785c3b95a3",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-qvlnj",
+    "item_sha256": "561856dce1a7bdcfcd7941c7db61447ade2fe17a361c9cdc4189e59bc9f30b4d",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "51d5fb4b50357a3b9a46c5ac485d2e7317376d9f32d1cd8082cb4f11857c4654",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 639 code points and 17 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

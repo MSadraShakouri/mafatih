@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-daa-rfa-pshymany",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "a047166f899f3879f9f8277631c62e9ca1ac03a3e592581791729da4998ca025",
+  "layout_sha256": "d03e66a94a0979c5053d9b1f04d992da9c208ec6e9b59ac2a26065ccf32c8a79",
+  "result_item_sha256": "ff4fd819c5aae77f44b1c44d7389ea62be83b3547851ca8dc6c7a9e93e159e9d",
+  "result_record_sha256": "81293d1b87d3ea7caf9eabf05ad40280d11c5acc470aea578b9b0c22c3b807da",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-daa-rfa-pshymany",
+    "item_sha256": "d7e77b8034ae73b300a198fa2626dd999dbd17e38bdcbf252daf55e0e0a054a9",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "7857eb43bf2222b33e91585bc32d5b2ddd18e449966ed31364ef3bad2bbd0fcc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 324 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 254 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

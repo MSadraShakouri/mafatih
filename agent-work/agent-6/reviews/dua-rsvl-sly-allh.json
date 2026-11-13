@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-rsvl-sly-allh",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "2281528f240ea059730f0ba7a26e1897182b377a22f1f981de60a0cbaa1a2e16",
+  "layout_sha256": "2612db5e38d5156d60f57bd36acc18d605e09a035d2f429dda896806e25bac20",
+  "result_item_sha256": "9b228cbbddb596519b8a3a97a400496bbd49d3bb0bd194c4a5de965915346896",
+  "result_record_sha256": "abf9064a1a0da8ed8317fdb8e1b889d0d6705eb0c5eac10055687808c8e4d0d2",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-rsvl-sly-allh",
+    "item_sha256": "63e44749d664d655d2eaaca0220abebc68c71d39eec687f238b314c59a4895fa",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "caef6efa811604e505545aed71fbcc4d06fc78b1663bcedf88424b712ec4abca",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 283 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 291 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

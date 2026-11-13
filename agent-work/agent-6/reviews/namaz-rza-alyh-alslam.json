@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-rza-alyh-alslam",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "98de4e840bd9a50125f710033b9278182e698754f71961735a29bef6145961c6",
+  "layout_sha256": "161dec85b61c279edc7f7beaec9c1fa95ec6b4dd38695d282fd5aea6fc053fe8",
+  "result_item_sha256": "41614da42d7b130dbd1a37269c2260cf94c92321afaa477f2a0bf899f7411131",
+  "result_record_sha256": "fc30042d9116ea148d26bf4a302f33cfefa1ec4115169493338caf1437307166",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-rza-alyh-alslam",
+    "item_sha256": "5a2ae4af5d07fc5ca1e840a6538e69557b407b330b5c88be9841ff30d3c92dba",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "11fb33db11e84db9e198ba3f328790b21937307b9e8617e054f91c8bde080217",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 1 of 2 has 401 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 332 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

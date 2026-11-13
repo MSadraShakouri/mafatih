@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-slvat-br-hjj",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "433ca5b2a174f421a2805ac036aa799f7afdd556dfcb1f1e5f0d2683cf8d2cca",
+  "layout_sha256": "5ef488c7a5a4083d24e97b56764e697b1bba72598e285227b4f2b6ff7bff759b",
+  "result_item_sha256": "71f6b4831c93518d98f8bb0f95a4a917756e58fa425c848669524686d7d0d23b",
+  "result_record_sha256": "125bccd76cbdf7229c2edb77057b6bc6c1f3daf72b912173fe665d180eae731e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-slvat-br-hjj",
+    "item_sha256": "8dddbfb745b6616fe2fda76006601f4c991b7f36485f303ba1cdfeae917b2174",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "496f5a0ab2bbf414af4361d24cde0cd8ea8e0ec569875e13a1ac1221f71ba437",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 329 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

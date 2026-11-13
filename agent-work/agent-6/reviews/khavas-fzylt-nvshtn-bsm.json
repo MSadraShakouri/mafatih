@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-fzylt-nvshtn-bsm",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "ac8bca5638dc8b74949d76767a7572f12c60dc18f79683f5ad29eaac7442a0fa",
+  "layout_sha256": "683087d22f0d0aa9ee34d2442bb64afbe11125fd714a2437dda020b9fbd24a6a",
+  "result_item_sha256": "32f9a7fdf125fe040661170086780b5b0097da78f2717b76148e90ffcce10bbc",
+  "result_record_sha256": "a0aaa446ffab644b30a7a8f87a256382fb00b392afc8fc33be36be650ca584b3",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-fzylt-nvshtn-bsm",
+    "item_sha256": "ecf37596269810407c22b1ff482a954399eb50fb9192ac524b87aa4eb6276b52",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "a8182f1173b0384cd753c85cd8930ba32c687c29fcab1cfe43ff990dcc75a6d5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 412 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

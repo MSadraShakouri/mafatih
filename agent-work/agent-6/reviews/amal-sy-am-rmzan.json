@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-sy-am-rmzan",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "708691f491a2ac7a071462f84645aeb337b7a6e9c33fc6300b01f3ef6ecb64ae",
+  "layout_sha256": "05c0259abaced5ae31bf5a842dae36bf7b151c006a9b0a2e009c13cff02d67d1",
+  "result_item_sha256": "5c8574241c0bb671c4f3c96fa964a4b3dfd2663f2e3b02d37be93f91fd29e6ed",
+  "result_record_sha256": "c3cc4fd37aedfae8d8b1fd9833c78af74579af533c3cfad696c473d0f62d0406",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-sy-am-rmzan",
+    "item_sha256": "bc0d75be4126dbe0897e003eb1d5d58fa41cc8e2e5477e324ed1795bc43443c4",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "56af85d02776a41b5322dad66ff02822fe094e40dd5b32dcce8338ab97ce132d",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 346 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 231 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

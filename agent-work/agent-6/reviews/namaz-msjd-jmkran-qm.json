@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-msjd-jmkran-qm",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "9841e75ecbf82b88e6c10f6f62a44d717454bd827f72d42788910a8350651c7f",
+  "layout_sha256": "31f9633d551c290922dc0b6444f5f64ca1c2cdd26d8b7bed726bfdd40936cd6c",
+  "result_item_sha256": "e1cb516bb7ac6abf7d39338a9d6d5b35fb7302ca04396e91b967599b0bc58e81",
+  "result_record_sha256": "72c2a1bc6c3b17a168effecb9f0c4a90ba6fcaa86a23e62eacafe1838ac7487b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-msjd-jmkran-qm",
+    "item_sha256": "c7b7eee26d0ce89787fe0f6ea41a9cbc8061e2afa39df6792676b95072e93641",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "4a44300f6a6859143a4d10aa85d8126eb8262874c9513e4914039eb9d178249f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 2 has 919 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

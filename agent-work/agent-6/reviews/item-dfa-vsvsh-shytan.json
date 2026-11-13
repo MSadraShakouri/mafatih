@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-dfa-vsvsh-shytan",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "469be8819bbc93be2d4e31ffe738620cd6bf63ed8d748bc3f99ab17fed6dca17",
+  "layout_sha256": "801e55bf4b7911d2905cfd4060f2c5465492369be395564dfc3d02adccde87b5",
+  "result_item_sha256": "851fa020f694539b45aa6d5afe5d63f242698e9ca800220bb13622f31f594a28",
+  "result_record_sha256": "cb0aa1456e6acebdd5d86773c02a783e803e98052c7fc8f1052a0d6ac3f1295d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-dfa-vsvsh-shytan",
+    "item_sha256": "becfa923798a6ecc112b03b359c627adb164830549facb3ddf7752aa37b0f33c",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "44b7bd47f937103f2a2661d8ae4b638bc112d650ba43a33bd0f3c12fcb3f9c77",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 403 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

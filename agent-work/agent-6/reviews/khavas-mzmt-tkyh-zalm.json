@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-mzmt-tkyh-zalm",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "ac3ac48a59d1a590c5e8709154b431a1ddabc2aece1e3f4243c3295b5179fd58",
+  "layout_sha256": "2b3803f8ee0cf3dffc228b6836f3ecab810b6cd46595d6058a6ba298e3e3d7af",
+  "result_item_sha256": "1edfbc7318dbc61e12df46f2342e4f7674cb6de0b114b9bc55611c2df3a34134",
+  "result_record_sha256": "78617e3657f8c1c271c196ea5a9e23ee643cdbdf441db0e22b0a1b4412b4211f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-mzmt-tkyh-zalm",
+    "item_sha256": "d31ea5f533705cfcd4440735d1dc62196d53a8b4c5a5b081359b19b5d632bd5e",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "0d23aee2157c8c71bcf02607eb4aa49130442d65fb939ba65ef831dbd924c45c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 255 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

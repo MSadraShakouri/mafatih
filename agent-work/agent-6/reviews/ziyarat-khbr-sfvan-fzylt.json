@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-khbr-sfvan-fzylt",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "2ebbe584082268f70717050c2adabbc8a84d20255b77eb417776f19a5f7c9851",
+  "layout_sha256": "9a903af4409747aeedb321a95e327524d48343f86b5fa763d04e803c13deffe0",
+  "result_item_sha256": "85fe9c958ccfc342f3e89b2d217c05afa97e02d4a6fc1110c13c6852f9938970",
+  "result_record_sha256": "d13884d186584f97868fa7f0dde439b836ab5a1851199cf3e35a771699d1c9a4",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-khbr-sfvan-fzylt",
+    "item_sha256": "2470b7b6f11619ee4c9ca38dcb298d688dafdf0a1713678d531573747f4514ad",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "86cc99f4b6f3a43365e2efea8ad21779cb36c0af5f89b402fcc185dc64ee2f78",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 924 code points and 20 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 1082 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 459 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

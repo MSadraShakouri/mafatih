@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-kyfyt-adab-ghsl",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "d4740189d0c7618a158537d5e76d1759d87151aab3014d763594059a7ba2de76",
+  "layout_sha256": "c4478924edf758d4e4e94d5fc45a556b1dde6c1e85601da22d9f786652284d0a",
+  "result_item_sha256": "b1a6fd8395a075bac06f50a4dd39305d373997a93a61756e42cb9aab7e76b597",
+  "result_record_sha256": "888e45788392539cdde1e4e2db8231badeaa7cd6f20a18e75d460e31d216966c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-kyfyt-adab-ghsl",
+    "item_sha256": "1cff744d7740f0eb602d5874f031b564870a787465119cb74d23d0db23a5b197",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "0fc6e0acc14e862fab4e0eab1fa31780206cc159fe620a3845d1a10b1739acae",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 540 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

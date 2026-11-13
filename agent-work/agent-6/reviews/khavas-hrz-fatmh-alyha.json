@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-hrz-fatmh-alyha",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "3038ff0f85d8befa6460e7d4d33f8c0477591876ee81c1532dd5beff8ba18a6b",
+  "layout_sha256": "ee49f0d49b46923e80226be0f97b2f0f6b5aa38fad25a15aed0441e5423814d6",
+  "result_item_sha256": "fe5ef9b6882b1029f00c38c05f77d35168eea3851b50fdb0854de49dcdb6eb7e",
+  "result_record_sha256": "18002a3487248941ace904ab73b87caa848dbd5b9b4645c76bef949daf0032cd",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-hrz-fatmh-alyha",
+    "item_sha256": "c21be5e20527cf279b164b7e4595a554c0e7a972aa03e28511ae7b179dda49b2",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "cc5e7ef2fa15f2c3c0587cd6c170e98accc64997d7e74628b327b6bb11102fe5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 2 has 241 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}

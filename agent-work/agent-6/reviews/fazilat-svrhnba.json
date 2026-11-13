@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhnba",
+  "author": "agent-5",
+  "reviewer": "agent-6",
+  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "plan_sha256": "72d266257da2c8afd9e49d5d6ee677cf8d8a34a56a953e573328b187ab1e880a",
+  "layout_sha256": "2529a4b85ced85d9e380cd4a032def3ff6c416933f282d040ef48dd6f279e69a",
+  "result_item_sha256": "5bfc452b268a48168b96f75a331119f4633f47a2d2fe0866b891a9fa45d96437",
+  "result_record_sha256": "2a8184fecbf82788f6c57bc44cca1f6d9d1f43a658153fd3bfa432c7103d8bc6",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhnba",
+    "item_sha256": "4fe2af8fdb35b441f8c3bcd652bcef91502242e69b73d98dd694fbda5c815989",
+    "author": "agent-5",
+    "reviewer": "agent-6",
+    "preview_sha256": "0a3bf2d4ace83094fabcb9d2020b5334d1a026ff0e05e6ef137d291c3459c542",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "pending",
+        "note": "Under-split: piece 0 of 1 has 688 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "pending",
+    "note": ""
+  }
+}
