@@ -175,6 +175,8 @@ For example, at 20 pixels/second over 10 seconds, the expected position advances
 
 ## Arabic and Persian: splitting and independent checks
 
+> **Working draft for refinement, not a launch instruction:** The user is now defining a parallel six-agent ring, direct branch-local canonical edits, neighbor conflict communication and a final single-commit patch. See [the ring workflow draft](docs/six-agent-ring-workflow-draft.md). The pilot-first, proposal-only and no-canonical-edit wording below records the earlier preparation; it must be reconciled after the new workflow is agreed. Do not launch agents from these older instructions as if they already implement the new design.
+
 This is the current content-work plan, separate from the display-only grouped reader. Preserve the earlier notes in this file; the earlier suggestion that the current split is good enough is superseded for this project. The agent-facing procedure belongs in [the separate splitting instructions](docs/split-agent-instructions.md).
 
 ### Scope and rules
