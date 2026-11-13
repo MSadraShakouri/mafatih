@@ -1,0 +1,191 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-ayd-ftr",
+  "item_sha256": "2899153b036b357f34369d76b14c3832d3c3f86a4cd351629783daafd5f9e476",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "a879f68de52dfafeaa6c2ae0442c70e516106704c5bdbfa38f53a4831403ba93",
+      "checked": true,
+      "cuts": [
+        215
+      ],
+      "kinds": [
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "cfe2757da82131bfe553ae5633994f121442efbf87bb9e4038287670bdc60f8b",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "a2ca33bde13adf6af3644abb937e3f2909ff2242268b69fc09a4c94aef0ab7da",
+      "checked": true,
+      "cuts": [
+        49
+      ],
+      "kinds": [
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "8b3740ebb257a49df874d4a5bfe7afbd6562e6bb10f017ff5347df5e418624ab",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "a16caea3fc7ef3dccc4a15eae08c8765a3f52d7d21c81191670f173708081750",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "1f91e40b9759e83c329068b730ebccef6433218a3adab9a4cffdc2565ffc25cc",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "source_sha256": "24ce373ea8602db31665d17a94928c60bf12662e84e75a6678f7ebf06168a855",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "51b9b4e6bf1dd38fec65a0eddb6a206decd5864f650fc83c722e9f8dee5a6d87",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "ar",
+      "source_sha256": "bd6a65564b27ac319274ba492a74c2ab13128d8a8915148042a65231b5bd50fd",
+      "checked": true,
+      "cuts": [
+        72
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "fa",
+      "source_sha256": "8ed04dfd122c59d4da55a14c43a8b57562e06530613947deb580fb4189b3ca3c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00009",
+      "language": "fa",
+      "source_sha256": "b88207a1225d437b40ea57d4990adc7970711d6cbcc869ce1b99acd6d7f8f22c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00010",
+      "language": "fa",
+      "source_sha256": "f432977bb20aa2a6c5b8b57a3973a85e10303c0d7bee560d824873a068bf2986",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00011",
+      "language": "fa",
+      "source_sha256": "5f319b4919314fd0a095302448151468f0c0f97e3304be482db4b8e0cd5f57f5",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00012",
+      "language": "ar",
+      "source_sha256": "b773f8f7eba4655f94381d7cd83f0d511dbf8a2fb6c8b64ce7edef7fb9ae0939",
+      "checked": true,
+      "cuts": [
+        351,
+        540,
+        737
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00012",
+      "language": "fa",
+      "source_sha256": "ba7bf83bc3d01203f4bfcb3f0d05dc15d23d92ca9f117f15a0493cd7d05d0660",
+      "checked": true,
+      "cuts": [
+        265,
+        466,
+        603
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00008",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic supplication stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

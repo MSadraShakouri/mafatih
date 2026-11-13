@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-salvl",
+  "item_sha256": "b7da50da55f1c80c56e0062c3621a2166e622d896fa0e5102040eeafff7242cd",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "f1a844a15b8bc5e26f786975e461c6940f99fa816c2f8f3181b168ef5dfe5449",
+      "checked": true,
+      "cuts": [
+        197
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "20f030a6c470ebe4d4d3c54d2930ebfa18133c687318d5e28486386f197a97ab",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "23ee17fc470d94de5f309d67cf25029dfb930cccefa9b06f9449065467a53f80",
+      "checked": true,
+      "cuts": [
+        188,
+        406
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian remedy instruction sits in the ar field; layout re-homes part 0 to the fa destination; the Quran verse quotation stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-byst-6",
+  "item_sha256": "ba6b1e8b9cc9b2ec284a684eec8bdda8e69770807d1fc482ec3e9c54a648248d",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "140869be3a5aa03256a2bed33c6e924854a43febf13ca68d0674efd1ef1cb5e0",
+      "checked": true,
+      "cuts": [
+        20
+      ],
+      "kinds": [
+        "heading",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "5c034c0b711b6ec41c6a7765c4e71841998b6c21d842be87e87ec5de13db876c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "16cbc7930ebabc826598fa9db5b2ca89816ee12a16f5df456a9ae8ac0737cc47",
+      "checked": true,
+      "cuts": [
+        253
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "8b14b3da2cdc2232083df1c5689048f0468bd5adb7f028d422a5660eab9b44ea",
+      "checked": true,
+      "cuts": [
+        233
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian heading prefix sits in the ar field; layout re-homes part 0 to the fa destination as a heading row."
+    }
+  ]
+}

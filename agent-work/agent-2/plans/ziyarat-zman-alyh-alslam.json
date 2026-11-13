@@ -1,0 +1,138 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-zman-alyh-alslam",
+  "item_sha256": "9cfaa7767970aae79843e1f853bd54953f5edc530c210ef9c995e6388b2896e4",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "9ba1caf4b22e58bc5be7aa176e55ef32ba8b0f333922fabfb0e8ef7b2d53e1e0",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "491f70fe08b95104f1c6e3e174310a1b68a5635766ec0b41800b803e46b3aa8e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "59ec955270ff8554d62530493b27fef55d2b8e11b9c8cd4abb79ef4b97c8d94c",
+      "checked": true,
+      "cuts": [
+        221,
+        414,
+        603
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "296966136454ab847cf919a670e028f300eb0bec51b11d6424bb47df51b99f65",
+      "checked": true,
+      "cuts": [
+        175,
+        304,
+        439
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "d9de57ff9541a6583a59161749857eb05e24cfe254f5a16019b2fe0f0df0298f",
+      "checked": true,
+      "cuts": [
+        77,
+        325
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "b936c7a9350bcc97643128bba00796f2dbf1df5043a91b628bc63c04e3921511",
+      "checked": true,
+      "cuts": [
+        55,
+        229
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "d7949b34a546ed8a9c684ba857caf5f0e1f15d351d06b8adaa924af39e97865c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "b2133c863ec56dcbcf6ba695ea8b7a925fd86d4c40b5cc838ebd9de2f926f717",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "cdbec6382be8369f2f9ad791126f489b6098ae65a4ea8bc93f9922d9fcd7bc9e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian introduction sits in the ar field; layout re-homes the whole row to the fa destination. No Arabic text is present."
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Arabic verse couplet sits in the fa field; layout re-homes it to the ar destination; its Persian rendering follows in the next row."
+    }
+  ]
+}
