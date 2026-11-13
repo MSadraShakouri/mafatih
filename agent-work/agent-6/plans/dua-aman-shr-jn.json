@@ -1,0 +1,168 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "dua-aman-shr-jn",
+  "item_sha256": "26650aa36555411b4a0028c2d2b318397f03d31b51540373c169305fc7496bd7",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "3250765445cf40b0e14c8ad4db1e0bcbcf6fc1b0d6bbb24310d6e615d804bed7",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "7a9809cef0ece0a230ff89dd0fafdaa245b254f5247ea17c93d5f3024f80edbf",
+      "checked": true,
+      "cuts": [
+        29,
+        46,
+        64,
+        88,
+        156,
+        197,
+        228,
+        260,
+        291,
+        371,
+        405,
+        438,
+        453,
+        496,
+        543
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "bf69d24b34ceb6434fe8794b6ed76dd656e7391a566437ee951b4d74289320dd",
+      "checked": true,
+      "cuts": [
+        22,
+        32,
+        46,
+        60,
+        106,
+        137,
+        171,
+        192,
+        219,
+        277,
+        298,
+        325,
+        344,
+        374
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "25a5d9c95743a5d9612917db51d8d83b8f70a946debd9ebb632cd18ac4766148",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "d3be2d7e4f14443240c3985cd448963b45f3975d1fcd9d6c0cb37b597aa1d501",
+      "checked": true,
+      "cuts": [
+        25,
+        56,
+        85,
+        118,
+        156
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "3bfc0c18d740052b9d809cd33fc91e4340d42e83ba212f74ef5c188e7c056836",
+      "checked": true,
+      "cuts": [
+        23,
+        45,
+        71,
+        106
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "09ad0abbe5544ebddf2371fb86a396e7d900b40d01aef5341dfddf0319e86463",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 (code points 0-25) of this ar field is Persian-language text (instruction); the layout places it in the fa field. Wording unchanged."
+    }
+  ]
+}
