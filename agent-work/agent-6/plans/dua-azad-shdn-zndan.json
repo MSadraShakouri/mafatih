@@ -1,0 +1,133 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "dua-azad-shdn-zndan",
+  "item_sha256": "59e6b9b44ec0d3b217243c79acde9c8aca0fce1660d02949150a057f0fceaac7",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "ffc811193bc29088c08ebc0793a7c8420a21965c9c244d0679ffb4c72b95f629",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "audio-reciter"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "5414e93099225b2ce74d6112e637210ca20e3f71ee23a13830386124984d2b93",
+      "checked": true,
+      "cuts": [
+        35
+      ],
+      "kinds": [
+        "heading",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "9a1fff18d77f8a6a3f4a95852f7e8eac9d4aebda3d1676b388c66737b5b52193",
+      "checked": true,
+      "cuts": [
+        46,
+        85,
+        126,
+        163,
+        188,
+        213,
+        253,
+        295
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "234d388afb871a62b1d60400bd12108664f81a140f96bcb68d26a48d17d101d9",
+      "checked": true,
+      "cuts": [
+        36,
+        70,
+        105,
+        143,
+        162,
+        194,
+        228,
+        258
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "49420b21b86551a553fc32bba8bcdac7ef44db3ee62f8fb158ed221959c444d0",
+      "checked": true,
+      "cuts": [
+        64,
+        106,
+        149,
+        233
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "bcbc9c9ce90d76b896397b78759605677d2f046da44b07de5c84ccb1a0a7861a",
+      "checked": true,
+      "cuts": [
+        47,
+        85,
+        120,
+        170
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "kind": "uncertain-classification",
+      "note": "Name-only Persian row with no surrounding context; it has the shape of a reciter label and is classified audio-reciter, but it may be a stray source fragment."
+    }
+  ]
+}
