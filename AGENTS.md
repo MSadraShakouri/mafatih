@@ -20,7 +20,9 @@ For coding agents. Read this before working on the project. Mafatih is a Persian
 
 **`package.json` is frozen.** Do not change it, the lockfile, dependency versions or app version, and never create a release tag. If the requested work appears to require a dependency or version change, stop and ask the user instead of changing it yourself. Keep the app light; do not add a dependency for a small task the existing tools can handle.
 
-**Both co-author trailers belong on every commit.** Use accurate `Co-authored-by: Name <email>` trailers for the user and the agent. The identities for Mafatih have not been confirmed: ask the user for the exact names and emails before creating a commit. Do not invent an identity or silently copy Satr-specific addresses.
+**Both co-author trailers belong on every commit.** The confirmed identities for Mafatih are `Sadra Shakouri <sadra.shakouri@gmail.com>` and `Arena Agent <agent@arena.ai>`. Use both accurate `Co-authored-by:` trailers; if an identity changes or becomes uncertain, ask before creating a commit. Do not invent an identity or silently copy Satr-specific addresses.
+
+**Keep unrelated topics in separate commits.** Each commit should cover one focused topic; for example, do not combine gestures and text grouping in one commit. A requested round can still be delivered as one verified mailbox patch containing multiple focused commits.
 
 **Start from the user's actual base.** Use the existing checkout for the whole related task. Check the working tree, the named base and the pushed state before starting; do not assume an earlier patch was applied or pushed. Preserve unrelated changes, user files, unselected work and backups. Do not reset, clean, overwrite or stash them without permission. Never create another checkout, clone or worktree for convenience.
 
