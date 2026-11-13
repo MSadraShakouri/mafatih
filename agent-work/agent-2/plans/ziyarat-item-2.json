@@ -1,0 +1,186 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-item-2",
+  "item_sha256": "8d57959966efbdb05e96a5c0d506210d66263b1e63b98ba22d25553238723b28",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "b23291e095a5572a108b38735a6866372b9f7012054239e091e4530578fb78b2",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "39ca6fea0ddbeb023b2211e082484ebabdd52c2c6dc54727c9ac835462cf40f9",
+      "checked": true,
+      "cuts": [
+        132,
+        453
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "87def61961c6f86e5ebc41acedfd1dea2e26ee127e8ac917e09fa23561e16982",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "dc167574775f8d51c5f912203f4fe94bcd0c09896280744f6d74ea4beb93e26f",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "dab6c79daf1d8add38b6c77c43490279124847374bfeceea1345b363a16f6def",
+      "checked": true,
+      "cuts": [
+        275
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "4c378b796dc46cd203ccef09dc7b0b97b2886efb0c0541876469e01039b0a564",
+      "checked": true,
+      "cuts": [
+        154
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "93ad4ef0ea68136384b94184968b7665aa092dc74d4d7428a808df9e0c8b8845",
+      "checked": true,
+      "cuts": [
+        34,
+        236
+      ],
+      "kinds": [
+        "note",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "179244401eaccfe38229372e24a4c57741307fcdf7c5652277bfdc3ed7ffba18",
+      "checked": true,
+      "cuts": [
+        144
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "source_sha256": "d7c6fea557b36fc13749f4f90b0b04eb4b50d395d9007ca87478261d060fd94e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "source_sha256": "dbbc9e480bda09b7903bfe6237c85f29ea10618e35f2869cb23e78ddb3927f96",
+      "checked": true,
+      "cuts": [
+        408,
+        456,
+        524
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "80014d7a5e59e2319f62e31833ab2e9569a61744b4fc82bd9df52c291d9b9bf8",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "fa",
+      "source_sha256": "5dc53579c097514020b0364a7aaff5db80b1feab5b37ff05903771f75661a3d9",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00009",
+      "language": "fa",
+      "source_sha256": "16c7bb28ae706359a31cabf5285bc11d176537a20ec97c8b519f0e5e4fa33d8e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00005",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian narration lead-in sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic ziyarat stays in ar and pairs with the existing fa translation."
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian narration sits in the ar field; layout re-homes the whole row to the fa destination. No Arabic text is present."
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian narration sits in the ar field; layout re-homes parts 0-2 to the fa destination; the closing Arabic supplication stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}

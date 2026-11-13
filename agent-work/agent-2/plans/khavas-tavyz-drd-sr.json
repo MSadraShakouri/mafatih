@@ -1,0 +1,166 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-tavyz-drd-sr",
+  "item_sha256": "8435e7bc980c2846708702f46bff2b603d26cf5b405795d6f53510524d7ef3d0",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "9ae19024651cb41bf9202c9b9f16ffa7a2343d86122583a569be88c25c6644f1",
+      "checked": true,
+      "cuts": [
+        111
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "f6afb70f1a85e1b2d2cc839004c98113c90bfc3b0c27e9808b83696ec6f9fe83",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "0ea531676d2ef50322d173d86d4c9ac058e694255fa9ffeeddfe61bcf564da58",
+      "checked": true,
+      "cuts": [
+        247,
+        282
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "41517414faf80ae43f35a8036c0d909046dbf142249730515857ff1ee20b15cd",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "1280a38bfec5b2c341ee022ebf43092f77b30d02a4dd9abbd34eca7987f57cec",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "baa6e1d965e64f84055f8bccae990f365370a460b4f385a7ee092f2b9bb1b429",
+      "checked": true,
+      "cuts": [
+        240,
+        285
+      ],
+      "kinds": [
+        "note",
+        "instruction",
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "f41eea5633e42a3ed295c1c318246b5ae638c92c0c8eb446c35eb3c422bf0a36",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "quotation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "d8620e6819196d39c52b00a0b269f3a6187d25b2b001bdd7fc9804b2fd3f15dd",
+      "checked": true,
+      "cuts": [
+        377
+      ],
+      "kinds": [
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "ar",
+      "source_sha256": "e9e71f2f4a1e374517b862018bd1f31e7632c75bb876658907f20f7ef71e07bb",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "4582623eea908b456c40ae5b82566ae6902cf72cf2f2de8ed7fff984d9543bb1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "source_sha256": "811d0f4cc1d11aba8d5bc014a867838aa5a3a178e0d198b4a4bb291921666a29",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "e2928937708e06784e54960f279dc1912095890d06807528ebe43bdecfc3cf0e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian instruction sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian remedy instructions sit in the ar field; layout re-homes parts 0 and 1 to the fa destination; the Quran verse stays in ar and pairs with the existing fa translation."
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian narration and lead-in sit in the ar field; layout re-homes parts 0 and 1 to the fa destination; the Quran verse stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}
