@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-aqyqh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "e536f5ec3e43a3f20af61778014d8f1461bcba459fe3998e97249c32048303da",
+  "layout_sha256": "342fb740c544e3228c65f5e86559cd61b236e1294b91982b9152f494e8194942",
+  "result_item_sha256": "9ff8f8bcbabcb4b76108d61102277c26ab422ff54fbf47bb7e61bbcce14d98dd",
+  "result_record_sha256": "f2a6a109d767195e096d0cb5126f90be612e91ec59008bdebda543f8c875bb30",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-aqyqh",
+    "item_sha256": "0f73586764dd052e5a37dde09ab9e987db6bf17ed860ceb4283619d77e0a0c97",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "5eef5be37e3ad0cb57bc72599c645aa686f2d715debc706e0b895dcfd7eb99d9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut instruction piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: 1 code-point cut(s) 142; 2 pieces in source order (note/recitation)."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: 4 code-point cut(s) 61,104,426,503; 5 pieces in source order (recitation/instruction)."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 1 code-point cut(s) 160; 2 pieces in source order (recitation)."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut instruction piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

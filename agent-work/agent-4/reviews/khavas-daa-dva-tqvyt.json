@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-daa-dva-tqvyt",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "784379e8fe21977546cc3aaf2d3ebe5bf66dc96cef5b69e32f1436fd8d5d4722",
+  "layout_sha256": "02e1654ebe8aedcdb485c3dafc0cc780b1d5fc9c1bbd61fd691055ca88bde160",
+  "result_item_sha256": "846064d3246605ca27e257d3993b3a6657a48b5f0a2821c0da47b97723e41b53",
+  "result_record_sha256": "0ee86e0b63170f29b9eb797e25a4b8b17064ce559aafbbeeab01ac3ea3d6e09e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-daa-dva-tqvyt",
+    "item_sha256": "4596ffe5f607409806ff8a6dc2b9ac56a5133dae25b55a5615fb944ac44a057e",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "57702a76c0ac9ec1c0163a9484765f2098b014a658b4b4f3dadfef3b93759386",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: 1 code-point cut(s) 174; 2 pieces in source order (instruction)."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sura-khvas-svrh-tvhyd",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "266dc2df396a3f324956fe71f457d70eee73a4b60a5972178e9f5fea6881240c",
+  "layout_sha256": "68952d3815b18b96b189824d6fbcf3fe3355980221754fd10b4f41ded90c096c",
+  "result_item_sha256": "a9e534e955c7c7b2981ab6c9c7b70c542eb158a5e92ea81c6836121a8a079d42",
+  "result_record_sha256": "fc0cc78a8e40a8b1d18c60480da7142ab0217108844492c6ecec67a91b1804ef",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sura-khvas-svrh-tvhyd",
+    "item_sha256": "a2d5736cb5a866defe775b007921bd68bab6c365f5b56b13ecd24a7ca76525eb",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "f0ebd701acd9a3ba9f300961774e00708dbc6f7ae414a5dfa88429a2014fb613",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 2 code-point cut(s) 602,870; 3 pieces in source order (note)."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut instruction piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

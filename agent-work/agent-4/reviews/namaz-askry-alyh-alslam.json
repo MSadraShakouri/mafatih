@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-askry-alyh-alslam",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "803d759c637359c74d611d97cb775084ae145747b451bde59b51d1f0b9c6ac80",
+  "layout_sha256": "a67e6f79a7df5944235178b7e0da3c79e4d806d8db8278f1a679c3a7f73a8f91",
+  "result_item_sha256": "7d83e989c948fb1de51b964be21a2872a52961a1182979d6c0912859fde6a43e",
+  "result_record_sha256": "8c62fd7a9476ac11d7ae7db04b4ff41b9922bde062cabf9cb8163e623e689b2e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-askry-alyh-alslam",
+    "item_sha256": "92073822bcacf53c9551634acb7599ba877274eb1fc8958578070575acaa095a",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "31089088f720b78e6e72de28b946bbeafa2bd0b9779c3e5e35645bb9dba92fc6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Inspected historical-line-break at r00003/fa; exact published text and reversible mapping retained."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

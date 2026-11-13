@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-mvsy-bn-jafr",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "519b9bbd500e9e9bfef6c0af6e748f82b439a2ccba7c54117169fd84be844823",
+  "layout_sha256": "0eb2bfb4edba07e3a9be443eead03f1ba138b2ed89936e86895540b652cc0ecd",
+  "result_item_sha256": "18ee20c420d1a0be673b1df067cf89e4c4383b493ac0241b23367fae412cb27d",
+  "result_record_sha256": "906a27617cb0f83e6438a2b536ab344f25b8bd7a6b89c4bb97387770560ca08f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-mvsy-bn-jafr",
+    "item_sha256": "642d355a386c5408c85abe21be08dd025b83c13887587b731275d76770a2633c",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "20a8fa3e00f5971be7e0599988f4408119cf311716395242286c3547be807aab",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

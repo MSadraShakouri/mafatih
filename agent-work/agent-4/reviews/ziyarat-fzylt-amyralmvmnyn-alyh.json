@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-fzylt-amyralmvmnyn-alyh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "a196319c3eb4c31978df5c7e25414783f24cbf619f41c5da671c7554fbcedcaa",
+  "layout_sha256": "9aa30cc86e38371971809111da7f41e837e358d8297d01b0f04ac8a611ef425e",
+  "result_item_sha256": "4dbcddca544a395926242d810eabf9b64582cfa234f246a3d076d29fe17e3918",
+  "result_record_sha256": "b08c4cd6b41493010014d2b5270fa6ba63c7a0b98df72b4ef27bf93c9bc5664d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-fzylt-amyralmvmnyn-alyh",
+    "item_sha256": "a280cfafd372f04444b7138846de7fd17944401180bc1aac38cad96355dfe0db",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "13d69e3700bc37a27a1e9f89d036937c68ae008163ddd00e7a2e2b734dcb9b3c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 2 code-point cut(s) 532,854; 3 pieces in source order (note)."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: 2 code-point cut(s) 54,673; 3 pieces in source order (note)."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

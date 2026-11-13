@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-avzh-ahtlam",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "a9be7e7ae92f08cd5dbb58f0995dacb6c5dcf1184e30bf60fc1cf748e1e62319",
+  "layout_sha256": "666438a82862545705bf39f405cd675d7cd2d3c98e186c147dc28350ab61e1b6",
+  "result_item_sha256": "a99d9b9039a80b69d5f4e2f541360c269a13b83767ca6c2488e7e58f2de08bbd",
+  "result_record_sha256": "46aeb4309b7760445f879a4fd42540ed4e6d16ae7c9a1f3fdd949f6b5ac99900",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-avzh-ahtlam",
+    "item_sha256": "015427f1adff52587e3f1402e2f22140350fa827603edee85d498ed729c16f28",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "b546c5e94f147e714914138af5144d43317b0f7b66391e4dabf9314438f39f97",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut instruction piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

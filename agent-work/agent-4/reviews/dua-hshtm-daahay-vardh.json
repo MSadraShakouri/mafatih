@@ -1,0 +1,92 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-hshtm-daahay-vardh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "0e12ca6a74b29a26dc5a76a30a0cde856f8dfbbdf6ba86bc25934f50331eb3fd",
+  "layout_sha256": "99787b7cf7e7e20b38dfdc8916d0155975075480b8e43d7f93d86f88f41c5cc8",
+  "result_item_sha256": "326cbeec067e4c5991e1630c1bbd11bbb7e2f84a438be1d8523dc26519bc87e5",
+  "result_record_sha256": "0220b5bddc97f96f3a01e5fa3a9381c3bf3a2b4914d01895733701ffbbed884d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-hshtm-daahay-vardh",
+    "item_sha256": "b5670b54964bcd5c711aa19bbdf59981618d435446c0a50d5406f7703aa14295",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "28cd5b25bb7825fed8a1751feea3fb80674798ecfc158dbd485bf18fcf235df1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 2 code-point cut(s) 246,412; 3 pieces in source order (instruction/note)."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut instruction piece."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/ar: 1 code-point cut(s) 78; 2 pieces in source order (recitation/note)."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00005/fa: 1 code-point cut(s) 185; 2 pieces in source order (note/recitation)."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00006/fa: 2 code-point cut(s) 102,342; 3 pieces in source order (instruction/recitation/note)."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00007/fa: 1 code-point cut(s) 140; 2 pieces in source order (note/recitation)."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00008/fa: 1 code-point cut(s) 96; 2 pieces in source order (recitation/note)."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00009/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

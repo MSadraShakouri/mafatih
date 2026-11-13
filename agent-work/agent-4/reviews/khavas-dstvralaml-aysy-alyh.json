@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-dstvralaml-aysy-alyh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "1070c608a223dd65646c1fc562b0ee537f1b1074a718d72cf59d7340d65f64b7",
+  "layout_sha256": "f64beccaa15c0fabeb8ecca6c162ce7dcad48681a5131c9710746bbfb99b0999",
+  "result_item_sha256": "754bc74bfe7dc8603067cdab16aa0692192c89221a7602069eca451c3fe33b3d",
+  "result_record_sha256": "0edbf0ff11c4de801bd25064ee2d7438d5ade57a0636f7672a0ee626c59035b3",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-dstvralaml-aysy-alyh",
+    "item_sha256": "9416350c672c16eeb6e63b2fbbc0bff212903ad5b7ba67d30ce158bf751e401a",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "9c30a50f37b618450df0799b736410616bf9bf9d5a74ba1ac679756276ae9a58",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 1 code-point cut(s) 201; 2 pieces in source order (note)."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: 1 code-point cut(s) 114; 2 pieces in source order (note)."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-adab-mghrb-naflh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "dd924d7edbe446cb127be9045d1c6704813b78e1c240ece0e03699096753e2ee",
+  "layout_sha256": "b6acb86b3427760d1e27810072b971afdc67cf34c1cbcc862c720220690a0fdc",
+  "result_item_sha256": "f68751e40253521cc688528f8d0e7347b2a77a74db63c17bfc0802790f5bf2be",
+  "result_record_sha256": "53fa5fe3ecadd12686d2e35cdc390238a42138bb8b2e219bd2c53e9be3871f2b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-adab-mghrb-naflh",
+    "item_sha256": "4a00b36dc876280c81d9709a70044008b529393d29c4b26235e7b93eaf81ad2a",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "8ddc8a4b8258a9ff623ef824816f58eaec45dce78a840c68ba61bdbd0231c820",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: 2 code-point cut(s) 142,236; 3 pieces in source order (note/instruction/recitation)."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut instruction piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00005/ar: 1 code-point cut(s) 16; 2 pieces in source order (instruction/recitation)."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00005/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00006/ar: one uncut instruction piece."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00006/fa: one uncut instruction piece."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00007/ar: 1 code-point cut(s) 12; 2 pieces in source order (instruction/recitation)."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00007/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00008/fa: 2 code-point cut(s) 190,453; 3 pieces in source order (note)."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00009/fa: 2 code-point cut(s) 92,299; 3 pieces in source order (note/instruction)."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00010/fa: 2 code-point cut(s) 104,152; 3 pieces in source order (recitation/note)."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

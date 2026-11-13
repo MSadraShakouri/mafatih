@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-qnvt-hsyn-alyh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "638363136f0a2c4ccb4ed65763ea173c9f24d1ac2baa88b881a29722c938c974",
+  "layout_sha256": "dff9ad3a307416b2f01c63794fe4b3cdc481cdc403b48996eaddee164db2568a",
+  "result_item_sha256": "8eca19fa72bc1f6d82d78e92975d18c5c21f3f0a45e3c7948002efc71b5a27a9",
+  "result_record_sha256": "f3d5ad319f1f6cdcd72aad873cac1486cebb111bb2d86475e6167aa2e5d8863a",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-qnvt-hsyn-alyh",
+    "item_sha256": "f60b215db8a8bf16b834131368f70483e60c583ac3b179dffc84fd9b068dd00a",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "706cb4892a908bab14ea17bd5fafbc1b1af2f23b0dab7b80fb63f22c2d87ee8f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-tmjyd-hq-taaly",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "2f31211034715acba43981b411f39896898166f2090db4124ea1e6285a3c29b3",
+  "layout_sha256": "eccb82c3c4bc72f7c46d94ed7d2584ab7e6fcf8b0cfa2d2039859f6af0cdf57b",
+  "result_item_sha256": "86d821452ee8cbef0a183d1f355228fd9af0a9cf4c104f3bfa99356221b1802c",
+  "result_record_sha256": "dcd3dbb83f238e960b8ec587b95b973dee9e92bca92f519c0baa7c7daeac9e6c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-tmjyd-hq-taaly",
+    "item_sha256": "d6f4b8a086e959e886d73b9dfcaf8c4e088915fceabdf17aa572b5d500ccf95f",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "1b44a3721a3daa9524d1f349750add0d323f7306324a30d3c167166a54bf3657",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: 1 code-point cut(s) 6; 2 pieces in source order (note)."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

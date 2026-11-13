@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-zyn-alaabdyn-baqr",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "7cea572b88b54f63f0c5739953997606d4abbcc13efcb12639cc959c4ea91864",
+  "layout_sha256": "224e26fa72d9be38d1c7b811c52032c7064713c36dcf59001bd514817f2dbcca",
+  "result_item_sha256": "8b59b11ec1f6e76a1b580332d6ebcfd43836ac7e997e702dea4d8b44db4af96e",
+  "result_record_sha256": "b9480896a49c2ab05bdce9578fcb14f8195a1df4d6a0835990f2d8730ba03e5c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-zyn-alaabdyn-baqr",
+    "item_sha256": "13be29f0646e336316a0ad28d4e6980f80d251db78a3d405a740a4f72939cd31",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "516971d19ea3714b90b6deea872f2015794bba179421073a2252e7184eed1733",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 1 code-point cut(s) 88; 2 pieces in source order (note)."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

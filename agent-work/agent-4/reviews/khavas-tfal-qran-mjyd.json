@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-tfal-qran-mjyd",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "287ad98b430481fe382547744dcf371916a3e276524b6435cf3c8a586eb05e2c",
+  "layout_sha256": "d2f43846e102bbf4c524551a4a8b794a7e74d1cfc6c692f96610e83d7a9e8f1c",
+  "result_item_sha256": "6ba5da569856a0c089821b78c709764d1d48952204dff33d2bd12ba2b5ed4355",
+  "result_record_sha256": "61907704b51753c4edeb8ea92e1602f5aafece57541d1d55c8b69f617969aaf9",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-tfal-qran-mjyd",
+    "item_sha256": "b532b1f10def6b071f66fbb54ae03746796a029fb036c1e28f9cdc33af844aa8",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "881b238703e76941a45dd583b10c36530c4b2079d50090be279362c8a299715d",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: 1 code-point cut(s) 264; 2 pieces in source order (note/recitation)."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut instruction piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

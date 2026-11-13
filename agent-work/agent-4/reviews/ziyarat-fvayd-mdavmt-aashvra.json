@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-fvayd-mdavmt-aashvra",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "008fc87417a78223aa34aa9ed73f574d38075b1a5e9ed96babf2e6f4f5fd328b",
+  "layout_sha256": "a803ecfac9a84f42f581c67dccae134b9b781d840ddf89858ee04f88a5bc5542",
+  "result_item_sha256": "844ce400dce77a4e1d948940396e6d2ff2d594a656f9b882a1f1087fab063287",
+  "result_record_sha256": "749f62015d554f3132856bd26cfd3f4f48edebbee13104a20ba2658a3819aaed",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-fvayd-mdavmt-aashvra",
+    "item_sha256": "bdd57244e6a5c6ad4383ce74eccb6a783dd30668e01c77794018b5d7bfdc0e71",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "d3f2c4831459b6fbb560dc710e824e79f7c77f52fdab7918fbf5ce14e3dba53e",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 2 code-point cut(s) 300,302; 3 pieces in source order (note)."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 6 code-point cut(s) 161,706,851,885,917,950; 7 pieces in source order (note)."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

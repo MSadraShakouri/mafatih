@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-jamea",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "7b80b5b0adfbcd33ea4e3cb905d33cf89d6cdb9db9aca6273b64ff10080e11bc",
+  "layout_sha256": "e06f97fdec1b48e3e1174747523d7c3e08315d4f02c8e88afd61680fd07dd59f",
+  "result_item_sha256": "1ed3d49322430bb0ce5b96eb166a4a59f599726457cbbf1f3c0d895c95b3d21d",
+  "result_record_sha256": "efbeff4a6c45b99c1be3dd207dfd6ec9e98b4f6911196dc0240fe142c63dbcfb",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-jamea",
+    "item_sha256": "08e46af4b22b6f78edce027fdffc74abcf0b6c7cbb802cc44e44a56337b7110e",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "d0e5b6cbb79b3c8af34e8c7e97027e034774f80d4060ae3fb72378498020d19a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

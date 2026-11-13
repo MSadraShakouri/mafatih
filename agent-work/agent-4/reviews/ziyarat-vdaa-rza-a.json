@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-vdaa-rza-a",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "a896763658d9e7025a6aa082f35e21f64547c08c7e5ee7ec03c7953b4ca6f4c2",
+  "layout_sha256": "4549ad41d74fd73e7f6ff9439e855029d33cc97ff0afedc7374df9cd76ae93fd",
+  "result_item_sha256": "a583e443b0663cfa42f6c2841966173b00dec0e54e131983ab35fb599d1ed66f",
+  "result_record_sha256": "5f5b2d5aa36cd89682a1554cdc8f44b62cefbbdd13c4e8cb84eb73a76af49840",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-vdaa-rza-a",
+    "item_sha256": "c42644af5dbdac1fb578d16d5cbfe9ad86ce1ce4313041a642a56024aa790e10",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "4c5844925d35ce8c1d4796982ba9f1c5786ae819f4d34c510f337e0b9ab2d26a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 1 code-point cut(s) 160; 2 pieces in source order (instruction/note)."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 2 code-point cut(s) 42,94; 3 pieces in source order (note)."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

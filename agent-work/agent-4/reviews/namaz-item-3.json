@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-item-3",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "bfd84ccc74fc2c88be3b23799c218b0c1edde5c372c3edef1dc77e181fabb766",
+  "layout_sha256": "c50f6fc120edebee2795d6915cc09f1a9a282ca39a06db292f49c178474a11e1",
+  "result_item_sha256": "c0f08e1b330f4d6bb452a96daef7952be9c6dbfb0aeefd91b2fa465805db1782",
+  "result_record_sha256": "915622e0390a0c63e822c9e87a0c6d1f2dc74da6c0eaa2eaf2bfcd07d996c00e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-item-3",
+    "item_sha256": "5339bd69f2dffb3f51f595559fb1f2af27000c17d4539838043c156489e9559c",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "fa1abdeb3fe8bdad025b9cd6ae687e7267a9b4b36d1ea851a852c127332703cb",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: 1 code-point cut(s) 152; 2 pieces in source order (note/recitation)."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 1 code-point cut(s) 77; 2 pieces in source order (recitation)."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut instruction piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

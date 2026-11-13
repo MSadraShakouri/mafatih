@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-khvas-msbhat",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "93e1ec255e5584264409ca71330fc240c9a2bbbfa9f66e3197e8f7b95fb55aee",
+  "layout_sha256": "659bf098533d4c59201371b7b25322487a7c4af672401e4dc45610fcb61a2c78",
+  "result_item_sha256": "ecd411e1153935e0282e34e49126acf2803bf76fc3c3b5a387e00e57cdfd5913",
+  "result_record_sha256": "24d8870dcbe521e0ca826ae8b11032f4c23716811894510f601f85f322922d01",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-khvas-msbhat",
+    "item_sha256": "459f5bf5882ce4a3f614be31626ebfb4e6106aab39071d3d1f23c455c2ac3a9e",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "126c859a1153dcb6961c399526db766d9a7a9f8c523c8cc926afc2a6290c4fa9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "monajat-mnajat-kshf-zlm",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "62bfe576bac7ae03af654fe2e36281940dc6e0aa2accb45e3084eb63ee28a689",
+  "layout_sha256": "d3cd65e94fc91d158a0655cab47d666aca08cb812757532291d14d8923323483",
+  "result_item_sha256": "81aa8e6941c9b43e5afe7f3251005c5e59359ad9342b202bc8b5888186adf49f",
+  "result_record_sha256": "52c9a63aa173c7e2a03b9ae35c77015f204d1ad42d9c1fa61dce2ecd65749e49",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "monajat-mnajat-kshf-zlm",
+    "item_sha256": "906361febafcf485a29fd5ce6eda08ebef790050beb0dd96db5f1bbffde63584",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "6d3934498355e927bbba2e27a4c33c127e40afe1c5c419c4747264441decf22a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-rfa-asr-skhty",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "758331897927218ea4e3e1f718e15b0b7205a8134950bcebc0c4818126c6e118",
+  "layout_sha256": "663d63691df7ef19e678e585a3471f8c7d373c7c508c9184323b1045fa151840",
+  "result_item_sha256": "2f28248fd10555abba023a331acb91c342d862d04752a33b0185b6cb4902896e",
+  "result_record_sha256": "53b0a4395012faed82a0d4b5f88465e16e2ae3b96b5222cb7ef32ae32cb815e2",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-rfa-asr-skhty",
+    "item_sha256": "92e39f5b531fd2fc846f2797ff28f6ab7e66dec664af99ab6229447f19c53965",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "6484f6fab717b9b670eeaefc7edd4cc96097257561c8f7cdf17295a07a017450",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

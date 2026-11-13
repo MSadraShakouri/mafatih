@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-talym-frmvdn-pyghmbr",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "eb79692a03b169dda17fc28be3a264b420994fee9b4f9eeac931f3fa183a789e",
+  "layout_sha256": "831ea165f5239cf04a63a6817cf1b7f46fc7a9fe8ca98d093f70e1a42e1999a5",
+  "result_item_sha256": "ca875efb7e3fd2453524d67459625f753cab01b448b07356a0d280b4f39e5292",
+  "result_record_sha256": "417e64e755e052b197738f5af7c6ff3f4209656a6b1497f7b4d95ec77db7659d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-talym-frmvdn-pyghmbr",
+    "item_sha256": "638775b54dec5e943da822dde074771c52459ec117720efb576d7bf2d7557220",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "e69bb4df37e7057a365b642e333841111b59db49fadcb417d14abc66c4d17769",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

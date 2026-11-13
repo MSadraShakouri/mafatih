@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-taqyb-asha-nql",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "33c8202dfea3da129555a11d143225be30080a837082238c90f9eabfff86a564",
+  "layout_sha256": "dd663d7e7c1a032113b486c9381cdf233872ec7a0682610de8fc4ce4b06ac1f0",
+  "result_item_sha256": "dea37b72faeb04d0390c8a64dbc874b1262afc5a6748cd8e45a794aef70f10fb",
+  "result_record_sha256": "339381caa9c14e8070f6270345b499aeeb51d8b6db641bc0d925d342cb780d48",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-taqyb-asha-nql",
+    "item_sha256": "b998f3760d476bad5eefa460cdcbd5f626fd7860d10b2c1237978e5f82609ecd",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "fd281a6cb2c2714b61f48d60c7c2d17e04ded6c26d1e004e790242fd2872b663",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

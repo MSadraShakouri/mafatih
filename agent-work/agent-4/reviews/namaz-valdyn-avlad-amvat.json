@@ -1,0 +1,78 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-valdyn-avlad-amvat",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "19934eba2dc924077f8bdd5103ae7419d100b762437333fb97201df69b5e83be",
+  "layout_sha256": "410134c4e6348b571e2689874656702afd13fb66fca11db9f1783e838dc23243",
+  "result_item_sha256": "ea0a62772778dc8ad5198f2badfca905c9f252b892bb2eb6d949cbdfaf1bb98a",
+  "result_record_sha256": "34478e3eefd40ac0fb25fa8255b2bb4abc298fcfa278fc30af3f57f383b91c9b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-valdyn-avlad-amvat",
+    "item_sha256": "3ee0ac952f319827cada0ff7026815232db8530df8b4cd9d26c7bc9ebceaaff1",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "301ba425613e8d7e46e34c482a0a99af0a111541cadf4c1ef626393313b92aa2",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/ar: one uncut note piece."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 1 code-point cut(s) 36; 2 pieces in source order (instruction/recitation)."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

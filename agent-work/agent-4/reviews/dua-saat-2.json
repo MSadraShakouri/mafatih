@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-saat-2",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "c3c61d5f6a73cdf306d78c50ea551267dc25c9f52d716f5d8b65c9b1098c0e29",
+  "layout_sha256": "f18e085db574cf4018aa1ec1232a2f8c7cf9b5321b0661dada9649ee7ecde947",
+  "result_item_sha256": "60b5029581cca5aed1a7786b1665efad731567e98d2512dd85b22a39b21b3a4c",
+  "result_record_sha256": "b448571940566c2984311546ec038fd2ee5ff0b54596e3eade48e386056e7d05",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-saat-2",
+    "item_sha256": "07abbd921dfceca19bd5642ffaac14c3b7ec9b1ef2780d063296d12de134a973",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "da73456f03bf013b03212c9490057d3321544e8aa34dd43cc8b74a342f6018c0",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

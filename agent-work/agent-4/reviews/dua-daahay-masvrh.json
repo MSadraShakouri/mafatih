@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-daahay-masvrh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "374c19a11656822f169c7c2d760f28089b8db806d6bec023be0651ea7713ef76",
+  "layout_sha256": "6619f54e5852a67d5ba5586267a6c975d581e5afc4cf3e8ed2c0da0dd5cd0135",
+  "result_item_sha256": "a762d285fdfce63579cab1ab3d0c39e801337ba33399d33d954de455808c5f70",
+  "result_record_sha256": "8d1d6db5278c533c9bf9596d87e5c6753d7005503ff24cf5055f00eb81081f84",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-daahay-masvrh",
+    "item_sha256": "ef2445e86a12147cfb61bb1a9a7f18e48c2207cd217302d7aca5829cb3186414",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "4771c25680df41446dd7738aee1d22f9c3ff3f709a1d986ead31051e8d53a0a8",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

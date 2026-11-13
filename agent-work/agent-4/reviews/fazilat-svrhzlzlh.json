@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhzlzlh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "0bf272731896727c902cd8a91a4033b93279c40fcab9d54bfb6d02a3be77ea3e",
+  "layout_sha256": "fb82c59ffad5bd94431da9ed978dbf38a5422eee3e1c2262029e68d0e8ba0ae2",
+  "result_item_sha256": "161f451c2018a417199c661e9799d4cf84c67efba9666b9723780113a734bbfb",
+  "result_record_sha256": "b26a80c0c5032024c331b31bb13414ddf8a839a72a6beaa69b91d8fafa4e6994",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhzlzlh",
+    "item_sha256": "b6a800ece49fe43a374199739bff366ef76a6ef5ff776e80579a59cf67fac914",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "4bd2e97d2bd87a58f27756b7a467b31b887b7459d8585bea557e6c3161142af5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

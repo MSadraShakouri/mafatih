@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-hsn-askry-alyh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "156b9b929514e0466596ba2d933d7779a3aea71ff92e9fbef5b3b97fbd977f83",
+  "layout_sha256": "a910682d7cac4cd171a979fc3acfcc0f164049120bf821cb3ce44565dea6fa9a",
+  "result_item_sha256": "fcfee7fe02ad7e07ac4a0a3516889221e8770c9a808e70cb2788771acf92c03c",
+  "result_record_sha256": "e7b1f15461e204798d97c2727cab3ac958f139e3c40690308bc7822f494a3f93",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-hsn-askry-alyh",
+    "item_sha256": "424e97a199dc50df931976f6ac1bae27c2764eed11ca41cd29134d740b1c6f1b",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "90a533c1148ef3a156b867ec57d7117d2cdd51e5d95e641ea827018cd21a8e03",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 1 code-point cut(s) 56; 2 pieces in source order (note/instruction)."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

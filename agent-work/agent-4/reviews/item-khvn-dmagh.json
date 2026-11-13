@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-khvn-dmagh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "da991f191585804ae9af74adb3761b0f1e6994e99a567b091c2be59f7cd8259e",
+  "layout_sha256": "530871524e3de65736fef3bd2e52344c341a131c6cc0e940f3738d5fd48302af",
+  "result_item_sha256": "957f1bdc4d4c9823692b5fa59d6554f46cd470a42858ae6868d8f4efef252fed",
+  "result_record_sha256": "94d6531e4b382231d31ba54443e8e43afef8653675dfbf675653f021f1a4d0c7",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-khvn-dmagh",
+    "item_sha256": "158405c3ba9a4b6ef9170e49fe1605d3c5168443f84b3eeb1d3cc2fdaf7f7c91",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "614a34ec0d0721420041f0bbcd8ed1bb3ebe7ccf339a4e79953a46e3533ff8e9",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut instruction piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-item-10",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "dfe60f8958e965449a5b6c80f183d114ff939bf5bc9ec229ee553391c161b1e6",
+  "layout_sha256": "99ad4acdf97d231a7734e77c7a2321d3b4664e80b94c04a3ab06d1fb6190a4eb",
+  "result_item_sha256": "06c3c596c3735384dd9633478683fa1e96138499f88a0ec4df2e99e5695446cf",
+  "result_record_sha256": "a06348857bfe0b7925983ee3269e63c98d449b3590d7c879f01bec05ca7e168d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-item-10",
+    "item_sha256": "381bd6275067c1a3138108f8e6dd6edd3c7f20e60c063b2f2170a0d5d11ffb32",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "43afd5940c8ce73c63fb6dcc4cf57ef81146593daba13ecd8b6c2c3dcc91994c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 1 code-point cut(s) 199; 2 pieces in source order (note/instruction)."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-ayam-albyz-rjb",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "00e4b1e1d595c845bb396de122720af1e925bcf8ce7b27350f2f6e25baa85647",
+  "layout_sha256": "dab5a887d918e30de1af2bd0852e8860e7137e3233152535e39a25ca17421844",
+  "result_item_sha256": "d9471ec08dc7c2c5207270747282a00c8fabcc1af448e018bc989d408ed90828",
+  "result_record_sha256": "398986fdd969714840b408703ec029dd751d7a8835ff7aab3ef6aa637bfeb4ca",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-ayam-albyz-rjb",
+    "item_sha256": "10248a0b4e0e7d8276c217ac05f0decbb4dd7d196ea69a45c6502aff31f86310",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "bb542709db21118b9e307e5c8b4c3aed505a81da479605287028a0a55cb130a6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut note piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut note piece."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

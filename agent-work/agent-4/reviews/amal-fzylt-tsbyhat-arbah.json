@@ -1,0 +1,78 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-fzylt-tsbyhat-arbah",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "0166807c9ef1a6b344a63dcf95126550ba18b9747d021ea137acdda836819a97",
+  "layout_sha256": "c4f637bcafcee4c372d3478d892ea7c7f27e4330d5a789c437a76bccc5ffa4dc",
+  "result_item_sha256": "aa078f1019c8b51223fc60feb1f5b7f6fe1b3783bc1c56357a67a4a05d808462",
+  "result_record_sha256": "37fa2734465d1c84bdcc1098778f43e188f3d46c3146241c95936a7a4e29cc9f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-fzylt-tsbyhat-arbah",
+    "item_sha256": "fc6d32c7d3ba45bfe9889a89e2df5417edfa2c62848e39b8b92a34f0e291efa3",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "92c04be5bbdd3648e1fc97e50bba22daa60658491d38efbd47851d70c4cd7ae4",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: 3 code-point cut(s) 216,323,733; 4 pieces in source order (note/instruction)."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 5 code-point cut(s) 9,155,301,467,766; 6 pieces in source order (note/instruction)."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00005/fa: one uncut note piece."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00006/fa: one uncut note piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

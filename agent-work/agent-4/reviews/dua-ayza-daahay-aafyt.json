@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-ayza-daahay-aafyt",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "0fb5f7613e9c31b0f49cb110d3993aca86c0828307fcdbfb1b80d2974b7a71ed",
+  "layout_sha256": "68ec599a4194a08330a2b233b0c7ad1314359947e56a1ecfdc0b960756cbb09a",
+  "result_item_sha256": "19f7fae7b4a4a364171dd4b7f2c9155a7bd72e831b8b3fbf769df4bc1ad49152",
+  "result_record_sha256": "5c52ff4582183e50208320d0c60e7d17fe1ed4eb9ef047dd702a96d87b551966",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-ayza-daahay-aafyt",
+    "item_sha256": "58cc22c38bc660248902832be19ff57d5bb33f4bfa1fe05e49d520f414f117b6",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "8cac6d59f19d9843177b39912b10f5bcf7dee1a9a0be50ba94e506d5432a6cfd",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut instruction piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: 1 code-point cut(s) 120; 2 pieces in source order (instruction/recitation)."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

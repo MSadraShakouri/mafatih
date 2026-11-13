@@ -1,0 +1,78 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-fzylt-rza-alyh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "416f34522bfa3f533ee6a9bea2a710d447610cd76f53668fa8208689df5d02ee",
+  "layout_sha256": "f5492e9618da69d685657bf977ce9d345f4d01fa581abbf6e376f0f65f52769c",
+  "result_item_sha256": "d9ef8b081c3b081a7919694af534ee8052f72e481c8cc187be4b9b05b7ffb6be",
+  "result_record_sha256": "55028633a591afdc9aa1c11b071ad466e1ae059fa3c5e92f8027130dd74b0e02",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-fzylt-rza-alyh",
+    "item_sha256": "2bcd692e676ef7418e127aef835846cac78e27343a75920a97ecb3a06d5c9e41",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "e2d744913068eb4b18fb94596c1d8fd1c5da33816608370cd38a32899a9857f0",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: 2 code-point cut(s) 426,593; 3 pieces in source order (note)."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: 7 code-point cut(s) 8,10,61,63,246,659,924; 8 pieces in source order (note/recitation)."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00004/fa: 3 code-point cut(s) 200,534,849; 4 pieces in source order (note)."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00005/fa: 2 code-point cut(s) 629,1124; 3 pieces in source order (note)."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00006/fa: 4 code-point cut(s) 332,495,701,851; 5 pieces in source order (note)."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00007/fa: 5 code-point cut(s) 14,80,142,186,417; 6 pieces in source order (note)."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

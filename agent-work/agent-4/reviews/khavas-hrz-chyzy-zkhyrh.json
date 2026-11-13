@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-hrz-chyzy-zkhyrh",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "3ea2430c50d077751e97b5960b02a2a34331b9eef37d9c5f6f8f08eb90ae4c06",
+  "layout_sha256": "e64c06d81f9793f27a41e5a52b5b6fcca56529415661618d9e21784edb399932",
+  "result_item_sha256": "f4d996ce554a53e0c117b133f26de7d829309a607c81d58fcaee38ec04342327",
+  "result_record_sha256": "320fb98e80037c572e6b6ea9beb09c3a89d3d712c0c5b78b393c98b422c82d33",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-hrz-chyzy-zkhyrh",
+    "item_sha256": "ed020924c5eeef05e5b16bd69e83021dbae83c4af2a06de929c439c69cf9314b",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "6c37b606af167b296daaf381574438ab72c9fbe46d9654c597da1a7b96b4a7ed",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: 1 code-point cut(s) 208; 2 pieces in source order (note)."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut instruction piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-hady-alyh-alslam",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "plan_sha256": "27750622699636c5dc5b1566fb549f49a2a23862360def2fffa25def2102dec4",
+  "layout_sha256": "e7d22475334cebe3390181a9741d03e559722f123f0381e6d75422c29c0b1934",
+  "result_item_sha256": "627ce6b0b7e22b5b2a516849b2726997f3137625f9fe770f0b6f8e0fda07e98c",
+  "result_record_sha256": "c7c823ab068971f2aeec8dd7e27c33e09b55ce6f287185e0b2fde0cd9d081ad9",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-hady-alyh-alslam",
+    "item_sha256": "bd854bdf49bf4314fc5dc37a9eda38f4edcb4dd528075733424070260ebc0869",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "70142a0f958c350affae9f5a9495a864fa33b3f203aebf8f2706235fb90d0d78",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00001/fa: one uncut note piece."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00002/fa: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/ar: one uncut recitation piece."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Checked r00003/fa: one uncut recitation piece."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+  }
+}
