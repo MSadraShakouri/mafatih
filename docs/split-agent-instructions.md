@@ -1,129 +1,180 @@
-# Arabic/Persian splitting: instructions for the six agents
+# Six-agent Arabic/Persian work: start here
 
-Read `AGENTS.md`, `CONTENT_POLICY.md`, `docs/line-break-review.md` and this file. The overall checklist, findings and outstanding decisions are in `plan.md`, under **Arabic and Persian: splitting and independent checks**. This workflow is local and text/JSON-only; it does not call an AI service, open a visual editor or apply canonical splits.
+This is the **current executable workflow**, superseding the old proposal-only guide, serial chain, mandatory pilot and the historical ring draft. If the user says only “you are agent N, start,” take N from that message, read `AGENTS.md` and `CONTENT_POLICY.md`, and follow this document. Do not ask the user to copy a list or tell you the whole protocol.
 
-**Do not start the full round until the coordinator confirms the common tool version and runs a representative, independently reviewed pilot.** The assignments are a starting estimate, not proof that the workload is equally difficult.
+The user explicitly authorizes **each agent to push only its own branch**. Never push `main` or a peer's branch, force-push, create a PR, release or tag, or change a different repository. A pushed branch of this repository is public even without a PR. Do not commit generated text-bearing inputs/previews, third-party editions, secrets, raw source quotations in messages, or claims that permissions were verified. Do not translate Arabic devotional text, even through Persian. No APK builds.
 
-## Scope and absolute rules
+## 1. Preserve existing work; obtain the common base
 
-- Examine every existing **Arabic and Persian item-row field occurrence** in your assigned items. This includes reciter labels, previously classified rows, historically manually split material and passages that do not need another cut. A stored language label may itself be wrong.
-- Do not translate, create text, work on English, normalize Arabic/Persian letters or diacritics, delete repetitions, or move wording between language fields. Do not assume matching row numbers establish a translation alignment. AI must never translate an Arabic prayer, verse or quotation, even through Persian.
-- Propose cuts at meaningful sentences, clauses and related boundaries. Use existing manual examples as a style reference, **not** as evidence that their cuts or explanatory tags are correct. The two languages can need different numbers of pieces.
-- Preserve all source characters and their order, including spaces, diacritics, Quran markers and repeated passages. No physical newline or paragraph separator may occur inside a resulting text piece. The tool keeps each such separator as a separate, positioned token so that pieces **plus tokens** reconstruct the original exactly.
-- Punctuation is the sole permitted text-change proposal. Record it separately as described below; do not silently change a plan's source text. All punctuation proposals remain unapplied and independently reviewable.
-- Classify each proposed piece as `recitation`, `note`, `instruction`, `heading`, `quotation`, `audio-reciter`, `other` or `unknown`. Explanatory prose is generally a `note`; a direction is an `instruction`. Review existing classifications too. An empty Arabic side alone is not proof of an explanation. Preserve the distinction between a reciter label, heading, quotation, prayer and explanatory prose. If a field mixes kinds, propose meaningful pieces and roles; if uncertain, use `unknown` and raise an issue.
-- Flag Arabic and Persian mixed inside a field for later adjudication. **Do not** add `<ar>` markup, move text to another field or decide the final representation. For example, `dua-iftitah/r00012/ar` contains Persian instruction with an Arabic quotation; `dua-jawshan-sagheer/r00002/ar` also needs mixed-language/role inspection. `item-abvhmzh-smaly/r00220/fa` is a separately documented Arabic passage in an `fa` field. These are starting flags, not an exhaustive search or approval. See `docs/explanation-classifications.md`.
-- Treat shared text IDs as separate **occurrences**. Do not change `data/items`, `data/texts`, history, alignments or any other canonical file. Separate agents must never concurrently edit shared shards. Keep proposals and reviews in private files outside `data/`, not in an excluded cache or `/tmp`.
+If resuming a session, first report and preserve its current branch, status, commits and files. Do not reset, clean, stash, overwrite or throw away previous work. On `main`, create `split-agent-N` before editing; if already on your own differently named branch, rename it safely to `split-agent-N` if that name is free. If you cannot tell who owns the current branch, or a name is already occupied, stop and report. Commit your existing tracked work on your own branch before merging preparation; keep any text-bearing exports local. If unrelated or conflicting work cannot safely be committed, stop and report rather than discard it. All commits, including merge commits, need both `Co-authored-by:` trailers specified in `AGENTS.md`.
 
-## Common version, assignments and layout
-
-The coordinator saves and distributes one `tool-info.json` and one `assignments.json` for the current corpus. Before work, every agent runs `verify-tool-info` and `verify-partitions`; a changed source file, dependency, Node/ICU/Unicode version, corpus snapshot, item, history or reviewer assignment must be resolved by the coordinator—not silently bypassed. Tool-info pins the code and instructions plus Node and its Unicode/ICU version; it does not itself prove that a test passed. Run the documented tests on the agreed version.
+Wait until the user has applied **and pushed the preparation patch**. Fetch, find the exact commit that introduced the launch marker, and merge that commit into your own branch. Do not use the old draft-only base or wait for a pilot. These commands illustrate the process; set `N` to your actual number and inspect status before each mutating command:
 
 ```sh
-# From the repository root. Example private work directory next to the checkout.
-ROOT=../mafatih-split-preflight
-WORK="$ROOT/work"
-MANIFEST="$ROOT/assignments.json"
-TOOL="$ROOT/tool-info.json"
-
-# Coordinator: generate these only if they do not already exist.
-node --import tsx scripts/split-agent.ts tool-info --output "$TOOL"
-node --import tsx scripts/split-agent.ts inventory --output "$ROOT/inventory.json"
-node --import tsx scripts/split-agent.ts partition --output "$MANIFEST"
-node --import tsx scripts/split-agent.ts verify-partitions "$MANIFEST"
-
-# Each agent, before beginning or resuming:
-node --import tsx scripts/split-agent.ts verify-tool-info "$TOOL"
-node --import tsx scripts/split-agent.ts verify-partitions "$MANIFEST"
+N=3                       # replace with your own number, 1–6
+ME="agent-$N"
+PREV=$(( (N + 4) % 6 + 1 ))
+NEXT=$(( N % 6 + 1 ))
+git status --short --branch
+git fetch origin refs/heads/main:refs/remotes/origin/main
+BASE=$(git log -1 --diff-filter=A --format=%H refs/remotes/origin/main -- docs/split-assignments/launch.json)
+test -n "$BASE" && git show "$BASE:docs/split-assignments/launch.json"
+# Create/switch to split-agent-N as described above, preserving all work.
+# Merge $BASE into YOUR branch; resolve your own conflicts, retaining both.
 ```
 
-One whole item belongs to one author group. The reviewer listed for that group is a **different** agent: group 1→2, 2→3, 3→4, 4→5, 5→6, 6→1. The tool checks the stated identifiers and assignment, but cannot prove who operated an account or prevent impersonation. Each group has an estimated weight equal to its Arabic/Persian code points + 100 per field occurrence + 300 per item. Compare actual effort in the pilot and rebalance by producing a new agreed, checked manifest if necessary; no agent may switch silently.
-
-Use this exact layout so the coordinator can audit **all** assigned items:
-
-```text
-work/agent-N/inputs/ITEM.json       author export; useful reference
-work/agent-N/plans/ITEM.json        author plan, including all source occurrences
-work/agent-N/previews/ITEM.json     generated final preview of that plan
-work/agent-M/reviews/ITEM.json      different assigned reviewer's decisions
-```
-
-All commands print JSON unless `--output` is supplied. An output file must be **new**, outside canonical `data/` (including symlinks), and is created privately without overwriting another file. When revising a finalized proposal, preserve the old plan, preview, review and reports in a uniquely named private archive first; create the revised files in the layout above. A new preview fingerprint requires a fresh independent review. Never discard disagreements or previous versions.
-
-## Author: export, examine, propose
-
-Set the following variables to the **actual** item and author/reviewer from the manifest. For the prepared snapshot, `dua-kumayl` is an example in group 6, reviewed by group 1; confirm against your own manifest rather than assuming that will always remain true.
+Use a merge commit with the required trailers if histories diverged. If preparation is absent or you cannot fetch, report that and preserve your work. Do not guess the SHA. Save this exact full `BASE` **only if the file does not already exist**; on resume read it and require it to match:
 
 ```sh
-ITEM=dua-kumayl
-AUTHOR=agent-6
-REVIEWER=agent-1
-node --import tsx scripts/split-agent.ts export "$ITEM" --output "$WORK/$AUTHOR/inputs/$ITEM.json"
-node --import tsx scripts/split-agent.ts template "$ITEM" --author "$AUTHOR" --manifest "$MANIFEST" --output "$WORK/$AUTHOR/plans/$ITEM.json"
-# Inspect each source and edit this plan as described below.
-node --import tsx scripts/split-agent.ts split "$WORK/$AUTHOR/plans/$ITEM.json" --manifest "$MANIFEST" --output "$WORK/$AUTHOR/previews/$ITEM.json"
-node --import tsx scripts/split-agent.ts verify "$WORK/$AUTHOR/previews/$ITEM.json" --manifest "$MANIFEST"
+mkdir -p "agent-work/$ME"
+BASE_FILE="agent-work/$ME/base.txt"
+if test -e "$BASE_FILE"; then
+  test "$(cat "$BASE_FILE")" = "$BASE" || { echo 'Frozen base mismatch: preserve and report' >&2; exit 1; }
+else
+  (set -C; printf '%s\n' "$BASE" > "$BASE_FILE")
+fi
 ```
 
-The generated template lists every AR/FA occurrence in original row order. It starts with `checked: false`, no proposed cuts and `unknown` kinds; **this is not completed work**. Mark an occurrence `checked: true` only after actually inspecting it and its context. An empty `cuts` array is an explicit no-cut proposal. Work in manageable chunks for large items but keep the **complete single-item plan** and all occurrence entries intact. For example, this prints 40 rows starting at zero-based row 80 without altering the file:
+Never silently switch the baseline mid-round. The frozen baseline is what `--base "$BASE"` means below; reading it uses Git blobs in memory, not a second checkout.
+
+Install the existing locked dependencies if needed, without editing the package or lock file. Then run:
 
 ```sh
-node -e 'const f=require(process.argv[1]); console.log(JSON.stringify(f.rows.slice(80,120),null,2))' "$WORK/$AUTHOR/inputs/$ITEM.json"
+node --import tsx scripts/six-agent.ts configure --agent "$ME"
+node --import tsx scripts/split-agent.ts verify-tool-info docs/split-assignments/tool-info.json
+node --import tsx scripts/split-agent.ts verify-partitions docs/split-assignments/assignments.json --base "$BASE"
 ```
 
-Include neighboring rows when judging a boundary. Exported `historical_line_break_corrections` contain recorded older text, break offsets, references and evidence; `historical_marker_moves` identify recorded moves to or from neighboring rows. Corresponding `historical-line-break` and `historical-marker-move` issues are inserted automatically and cannot be silently removed from a valid plan. Inspect and review them, but do not restore old separators or move markers merely because history mentions them. Earlier AI-assisted joins are not evidence that the old formatting was accidental or intentional.
+Tool-info pins the source, dependencies, Node, ICU and Unicode version; if it differs, report the mismatch rather than bypassing it. The partition checks all **686 items / 21,181 original AR/FA occurrences**, including already split/classified material and reciter labels. Your complete list is `docs/split-assignments/agent-N.md`; do not switch or sample the assignment. A `manual-v1` flag is an old claim, not proof of current accuracy. The workload weights are estimates.
 
-For each source, specify either strictly increasing zero-based Unicode **code-point** `cuts`, or a `cut_after` array of exact, unique excerpts ending at the desired boundaries. If using `cut_after`, delete the template's `cuts` key; never provide both. Repeated excerpts require more context. A cut must be inside the source, on a grapheme boundary, and outside a protected `﴿…﴾` marker. Code-point offsets are not JavaScript UTF-16 indexes or UTF-8 byte offsets.
+## 2. What to do
 
-The tool adds boundaries for all physical separator kinds. List one `kinds` entry for each resulting **text** piece, not for the separate separator tokens. Review whitespace-only pieces and separator-only or empty sources instead of discarding them. The compiler shows an error if the piece count and kinds disagree.
+- Inspect every original Arabic and Persian occurrence in your assigned items, including no-cut passages, repeated occurrences, explanations, existing kinds and reciter labels. Look at surrounding context and historical break/marker hints; do not blindly restore old breaks or move markers.
+- Split into meaningful passages in the existing **manual-v1 row style**: a row may contain corresponding existing Arabic and Persian, or one language alone. Pair only when meaning and context warrant it—not because piece numbers happen to match. The languages may have different counts. Use `recitation`, `note`, `instruction`, `heading`, `quotation`, `audio-reciter` or `other` as appropriate; don't guess a classification to make a check pass.
+- Preserve every source character, diacritic, space, punctuation mark, protected Quran marker and repetition. Don't invent or remove text. A mixed/mislabeled field can be split and an exact piece placed in the correct language field; its original location remains mapped. If the language or boundary is genuinely uncertain, record it and request help instead of guessing.
+- Complete items and push batches incrementally. You can keep a partly completed plan and continue another time; a canonical item is applied only after its **entire original item** has been checked and laid out. Do not mislabel a partial item or unanswered finding complete.
+- Do not silently change punctuation. This round's apply tool rejects punctuation replacements, physical newline separators, pre-existing human-reviewed spans and other unsupported migrations; preserve and report those individual cases. The frozen current corpus has no physical separators in its scoped fields. Never bypass the guards with a manual bulk rewrite.
 
-A minimal illustrative shape follows. It omits other required occurrences, so it is **not** a valid complete plan; use the generated template. The placeholder values are not real IDs or hashes.
+## 3. Author an item and apply it to your own branch
 
-```json
-{
-  "format_version": 1,
-  "protocol": "ar-fa-split-preflight-v1",
-  "item": "example-item",
-  "item_sha256": "copy-the-item-fingerprint-from-the-template",
-  "author": "agent-1",
-  "sources": [
-    {"row": "example-row", "language": "ar", "source_sha256": "copy-the-source-hash", "checked": true, "cuts": [], "kinds": ["recitation"]},
-    {"row": "example-row", "language": "fa", "source_sha256": "copy-the-source-hash", "checked": true, "cuts": [], "kinds": ["recitation"]}
-  ],
-  "punctuation_suggestions": [],
-  "issues": []
-}
-```
-
-For a newly discovered concern, add an `issues` entry with `row`, `language`, `kind` (`mixed-language`, `ambiguous-boundary`, `uncertain-classification` or `other`) and a clear `note`. Keep the automatically generated historical issue entries too. Record suspected mixed-language cases even if you do not know how to represent them.
-
-A punctuation entry has `row`, `language`, `source_sha256`, the complete proposed `replacement` for that source, and a `reason`. Use at most one entry per occurrence. The compiler checks that only Unicode punctuation differs and that protected Quran markers remain intact; it emits exact code-point offsets and before/after punctuation edits. It does **not** apply the replacement. The reviewer checks each suggestion separately, including whether it should be rejected. If anything other than punctuation must change, flag it for a separate decision.
-
-## Different agent: independent review
-
-The assigned reviewer—not the author—reads the source, its context, the plan, the generated preview and historical hints. The reviewer checks **every** split and no-split decision, all kinds (including old labels), mixed-language flags and punctuation proposals. A structural pass cannot tell whether a cut, explanation tag, language or pairing is semantically correct.
+Choose `ITEM` from your assigned table. Use the exact paths shown, numeric **Unicode code-point** cuts rather than text quotations, and no punctuation replacements in a pushed plan. The template is an unchecked draft; it is not completed work.
 
 ```sh
-# The assigned reviewer creates a separate decision template.
-node --import tsx scripts/split-agent.ts review-template "$WORK/$AUTHOR/previews/$ITEM.json" --reviewer "$REVIEWER" --manifest "$MANIFEST" --output "$WORK/$REVIEWER/reviews/$ITEM.json"
-# Reviewer edits the new review file, not the author's plan or preview.
-node --import tsx scripts/split-agent.ts verify-review "$WORK/$AUTHOR/previews/$ITEM.json" "$WORK/$REVIEWER/reviews/$ITEM.json" --manifest "$MANIFEST"
+ITEM=the-assigned-item-id
+MANIFEST=docs/split-assignments/assignments.json
+PLAN="agent-work/$ME/plans/$ITEM.json"
+LAYOUT="agent-work/$ME/layouts/$ITEM.json"
+# Use a fresh unique name for private exports/previews; these directories are ignored.
+INPUT="agent-work/$ME/inputs/$ITEM-v1.json"
+PREVIEW="agent-work/$ME/previews/$ITEM-v1.json"
+node --import tsx scripts/split-agent.ts export "$ITEM" --base "$BASE" --output "$INPUT"
+node --import tsx scripts/split-agent.ts template "$ITEM" --base "$BASE" --author "$ME" --manifest "$MANIFEST" --output "$PLAN"
+# Inspect the input, then edit the plan: every source checked, cuts and one kind per piece.
+node --import tsx scripts/split-agent.ts split "$PLAN" --base "$BASE" --manifest "$MANIFEST" --output "$PREVIEW"
+node --import tsx scripts/split-agent.ts verify "$PREVIEW" --base "$BASE" --manifest "$MANIFEST"
+node --import tsx scripts/six-agent.ts layout "$PLAN" --base "$BASE" --output "$LAYOUT"
+# Inspect and edit every layout row, including its explicit pairings; set checked=true only after inspecting.
+node --import tsx scripts/six-agent.ts apply "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME"
+npm run validate
+npm run check:line-breaks
 ```
 
-For every source, set both `split` and `kind` to `accept`, `revise` or `uncertain` after independently checking them; `pending` means not yet checked. Explain every `revise` or `uncertain` finding in `note`, including the relevant part/offset and suggested action. Independently choose a `decision` for each punctuation suggestion (`accept`, `reject`, `revise`, `uncertain` or `pending`); rejection, revision and uncertainty need a note. For each issue, choose `addressed` or `escalate` and explain why; leave it `pending` if not yet checked. An actual mixed-language representation question is **escalated**, not treated as settled. The author and reviewer retain disagreements for adjudication.
+Every `--output` must be a **new** file; don't overwrite a prior export. For revisions, commit the prior work, edit your own plan/layout, and update the layout's `plan_sha256` to SHA-256 of compact `JSON.stringify` of the revised plan, or create a fresh template in ignored `scratch/` and use it to revise your layout. Avoid `cut_after` quotations and `punctuation_suggestions` in the committed plan. Add concise **ID/offset-based**, not text-bearing, issue notes.
 
-The reviewer verifies source references/hashes, occurrence coverage and ordering; exact slices and full reconstruction; Unicode and marker boundaries; explicit separator tokens; roles; punctuation logs; and the preview fingerprint. The review file covers every source, issue and punctuation suggestion and is tied to that exact preview. Fingerprints of whole JSON artifacts are SHA-256 of their compact `JSON.stringify` representation in stored property order, not the pretty-printed file bytes; text hashes are SHA-256 of exact UTF-8 text. Checked flags, accepted classifications and reviewer identity are **assertions**, not machine-verified meaning.
+A layout's `rows` follow the original row order. Each `output` row has `ar` and `fa`, each either `null` or `{ "source": "ar" | "fa", "part": 0 }`, plus one `kind`. Parts are zero-based within the original field, must appear **exactly once and in source order**, and the output kind must match each included part. `source` names the original field; the containing `ar`/`fa` key is the destination field. For example, a Persian instruction formerly in the Arabic field may be `fa: {"source":"ar","part":0}` with `kind: "instruction"`, followed by the Arabic and its existing Persian in a later output row. Unpair uncertain portions; do not invent a translation. The generated layout is a starting draft, not evidence that pairings are right.
 
-## Coordinator: coverage and adjudication
+The tool checks a frozen item fingerprint, author assignment, complete occurrence coverage, Unicode/marker boundaries, source-order reconstruction, row roles and shared-text copy-on-write. It writes your `data/items/ITEM.json`, a reversible `data/row-splits/ITEM.json` and any necessary `data/texts/*.json` additions. It preserves original references and historical row identities and supports old row/language/offset reading links. It refuses to overwrite unrelated or non-reconstructible prior item work; preserve and reconcile such work, don't force it. Mechanical checks do not establish correct meaning or rights.
+
+Review `git status` and the actual diff. Stage and commit only your own plans/layouts, changed assigned items, their split records and the affected text shards; never `git add` ignored inputs/previews or an unrelated user's file. Use the two co-author trailers. Push only your own branch with `git push -u origin "HEAD:refs/heads/split-$ME"` (never force). If a push is rejected or branch ownership is unclear, stop and preserve/report the state.
+
+## 4. Parallel ring, two communication files, and independent review
+
+| Agent | Reviews and merges predecessor | Reviewed by successor | Pair files |
+|---|---|---|---|
+| 1 | 6 | 2 | `agent-1-agent-6`, `agent-1-agent-2` |
+| 2 | 1 | 3 | `agent-1-agent-2`, `agent-2-agent-3` |
+| 3 | 2 | 4 | `agent-2-agent-3`, `agent-3-agent-4` |
+| 4 | 3 | 5 | `agent-3-agent-4`, `agent-4-agent-5` |
+| 5 | 4 | 6 | `agent-4-agent-5`, `agent-5-agent-6` |
+| 6 | 5 | 1 | `agent-5-agent-6`, `agent-1-agent-6` |
+
+Each listed file is `coordination/<pair>.jsonl`. Each agent uses exactly its two pairwise files. The files are **branch copies**, not a live shared filesystem: write messages on your own branch, commit and push; fetch the neighbor's branch and `git show` the same pair file at its tip to read replies. Never edit the peer's branch. Messages are grow-only records; use IDs/offsets and no text passages. Merges may sort records by ID, so use `reply_to` rather than line position to follow a conversation. `configure` installs tested, local Git drivers that union independent text-shard additions and message IDs. If they report a collision, corruption, changed old value, or genuine semantic conflict, they refuse it; resolve it on **your own** branch with your neighbor and recheck. Never blindly choose ours/theirs or delete a peer message.
+
+After committing a batch, publish an isolated, mergeable authored snapshot:
 
 ```sh
-# Reports missing, invalid, incomplete, unresolved and complete agent records.
-# Exits nonzero while anything remains missing or unresolved.
-node --import tsx scripts/split-agent.ts audit-batch "$MANIFEST" --work-dir "$WORK"
+node --import tsx scripts/six-agent-snapshot.ts --base "$BASE" --agent "$ME"
 ```
 
-The batch audit checks that each assigned item has its author's plan and matching generated preview plus its assigned different reviewer's complete review; it recompiles the plan, verifies the preview and checks review coverage. It also flags unexpected files in live `plans`, `previews` and `reviews` directories; it does not scan `inputs` or archived versions. It cannot establish that an agent really read a passage or that a decision is correct. `agent-review-records-complete` is not human, scholarly, religious, translation, alignment or rights approval.
+The command prints the exact `snapshot` SHA and `partial-authored-snapshot` or `author-ready`. It makes a commit containing **only your own completed authored items**, attaches it to your own branch, and never pushes. Even after you merge a predecessor, a revised snapshot descends from your previous isolated snapshot, not your peer-merged branch. This avoids a cyclic chain and lets the successor merge revisions normally. Commit/push your own branch, then tell the successor the SHA and whether it is partial or author-ready:
 
-Pilot representative items first: include long and already split material, existing explanations and instructions, mixed/mislabeled fields, shared/repeated text and documented historical line-break/marker cases. Resolve examples and adjust the common tools/instructions before bulk work. After the two agent passes, adjudicate disagreements and unresolved cases, retain every decision, and rerun the mechanical and batch checks. Do not publish or mark rights, translations or alignments reviewed without appropriate evidence and authorized review.
+```sh
+NEXT_AGENT="agent-$NEXT"
+node --import tsx scripts/six-agent.ts message --from "$ME" --to "$NEXT_AGENT" --kind ready --commit "$SNAP" --text "author-ready or partial; base $BASE; see snapshot"
+# Commit your changed pair file with both trailers, then push only split-agent-N.
+```
 
-**There is no canonical split/apply or bookmark/ID migration command in this workflow.** Per-piece proposed roles do not automatically fit the current row-level kind. A separate reversible, copy-on-write migration design and tests must handle shared text, ordered per-language pieces, old-to-new occurrence IDs, bookmarks, links, source references, prior reviews, history and rollback before canonical application is even considered. The general item editor is not that migration.
+`SNAP` must be the actual SHA printed by the snapshot command, never guessed. A partial snapshot supports early review; do **not** call it author-ready. You may review predecessor batches as they appear, in parallel with your own work. When its full authored snapshot is ready, fetch its branch, verify that SHA is reachable from its pushed branch, and merge **that snapshot into your own branch**, not the moving peer tip:
+
+```sh
+PEER="agent-$PREV"
+git fetch origin "refs/heads/split-$PEER:refs/remotes/origin/split-$PEER"
+git merge-base --is-ancestor "$PEER_SNAPSHOT" "refs/remotes/origin/split-$PEER"
+# On split-agent-N, merge $PEER_SNAPSHOT with a merge-commit message containing both co-author trailers.
+```
+
+Do not wait for the predecessor to finish *its* predecessor merge, or wait for all six agents. If your predecessor has not pushed an author-ready snapshot, continue your own work and review available batches; if all remaining work is waiting on one neighbor, report the specific condition and stop rather than polling forever. The user can ask you to resume. If GitHub branch reads/pushes are unavailable in the Arena session, report the exact error and ask the user for a commit/file handoff; never expose credentials.
+
+To independently review an item from the predecessor's exact published snapshot:
+
+```sh
+ITEM=the-predecessors-assigned-item
+AUTHOR="agent-$PREV"
+RESULT="$PEER_SNAPSHOT"
+REVIEW="agent-work/$ME/reviews/$ITEM.json"
+node --import tsx scripts/six-agent.ts inspect "$ITEM" --base "$BASE" --result "$RESULT" --author "$AUTHOR"
+node --import tsx scripts/six-agent.ts review-template "$ITEM" --base "$BASE" --result "$RESULT" --author "$AUTHOR" --reviewer "$ME" --output "$REVIEW"
+# Independently inspect every source, actual output row, pairing, role and history issue; edit the review.
+node --import tsx scripts/six-agent.ts verify-review "$ITEM" "$REVIEW" --base "$BASE" --result "$RESULT" --author "$AUTHOR"
+```
+
+Set each `semantic_review.sources` split and kind decision to `accept`, `revise` or `uncertain`; explain findings. Resolve each historical or other issue with a note, and set the separate `layout.decision` after checking actual row pairings. `pending`, `revise`, `uncertain` or an escalated issue is not complete. Commit the review to **your own branch** and communicate findings through your shared neighbor file. An author revises on its own branch, commits, publishes a new isolated snapshot, and notifies its successor. A review is bound to exact plan, layout and canonical item/mapping hashes: changes to those invalidate it; unrelated commits do not. Repeat the affected review and merge after a revision. Agent checks are not human, scholarly or rights approval.
+
+## 5. Finish and hand off
+
+Run `node --import tsx scripts/six-agent.ts audit-authored --base "$BASE" --agent "$ME"`; it is complete only when every assigned item has a checked plan, layout and matching canonical result. Run `npm run check` and `npm run validate`; resolve real failures. Ensure your predecessor's final snapshot was reviewed and merged, all relevant neighbor questions have answers, and unresolved issues are clearly reported—not falsely marked complete. Push your own branch and report its exact tip, authored snapshot, predecessor snapshot and test/audit results. Do not open a PR.
+
+At the end the coordinator fetches all six tips and combines them without assuming any one contains everything. The agent `configure` command is deliberately branch-restricted. On the coordinator's integration branch, install the same safe drivers without overwriting a different existing setting:
+
+```sh
+for kind in texts messages; do
+  key="merge.mafatih-$kind.driver"
+  wanted="node scripts/merge-agent-files.mjs $kind %O %A %B %P"
+  if current=$(git config --local --get "$key"); then
+    test "$current" = "$wanted" || { echo "Conflicting $key: preserve and report" >&2; exit 1; }
+  else
+    git config --local "$key" "$wanted"
+  fi
+done
+```
+
+With the combined round changes committed and the relevant worktree clean, run the **strict pre-squash** audit and the full project checks:
+
+```sh
+node --import tsx scripts/six-agent.ts audit-round --base "$BASE"
+npm run check
+npm run validate
+npx playwright test tests/browser/row-split-links.spec.ts
+```
+
+`audit-round` requires every actual result and independent review, confirms each recorded author commit is reachable and contains the reviewed item and pooled values, and rejects out-of-scope canonical changes. Preserve its complete report with the integration handoff, identifying the integration commit it audited. Actual unresolved conflicts return to the agents; the coordinator does not make their semantic decisions.
+
+Produce one verified, squashed one-commit patch against the user's then-current main, without pushing or including the agents' individual commits. On that squashed result (including in a fresh clone without the original agent objects), run:
+
+```sh
+node --import tsx scripts/six-agent.ts audit-squashed --base "$BASE"
+```
+
+This repeats the coverage, reversible result, assigned independent-review and scope checks using the delivered files. Its `author_commit_provenance` is explicitly `not-verified-after-squash`: it cannot reconstruct the removed ancestry or prove that the pre-squash audit actually ran. The strict pre-squash audit is required, not replaced by this check. The user applies the patch and can delete the temporary branches; GitHub and local clones may retain copies.
+
+The Node suite's fixed historical assertions use the reversible pre-split rows, while current-corpus index and runtime tests still check current outputs. The optional `node --import tsx scripts/test-six-agent-migrated-corpus.ts` runs the Node suite against a disposable mechanically split data root; its artificial decisions are not content review. Some older browser specs also pin original row IDs and exact segmentation: review any failures against actual changes instead of treating the historical expectations as a semantic veto or hiding real regressions. The dedicated split-link/search spec above uses synthetic split rows. No automated check proves transcription, scholarly accuracy, translation provenance, publication rights or that an agent truly inspected the text.

@@ -11,7 +11,7 @@ This is the practical to-do list for turning the current data foundation into a 
 - [ ] Review the content and alignments; the existing row pairings and machine-generated candidates are **not** verified. No alignment groups have been reviewed yet.
 - [x] Provide a text/JSON split-planning tool for AI agents: export existing text, validate exact Unicode-safe cuts, and output lossless segments plus optional unreviewed alignment proposals. It makes no model/API calls and never generates a translation.
 - [x] Add a minimal shared Vite reader and Capacitor shell, with version-tag APK and Pages workflows. The workflows do not enforce the publication gate; content and rights remain unreviewed. This is a starter, not the finished website or app; no visual data-editing tool is planned.
-- [ ] Extend the agent workflow into a safe canonical split-and-merge operation with automatic migration previews. Today's planner does not physically rewrite source rows, synchronize translations, preserve newly retired row/paragraph addresses, or migrate reviewed groups for you.
+- [ ] The six-agent workflow can physically split checked Arabic/Persian rows, preserve exact original values and old row/offset mappings, and review another agent's actual output. It does not perform general row merging, create translations, migrate English paragraphs or human-reviewed groups, compose previous split mappings, or apply punctuation changes. Those broader migrations remain future work.
 
 ## Non-negotiable rule
 

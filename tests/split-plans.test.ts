@@ -67,6 +67,7 @@ test('text-only split CLI exports and validates without changing canonical data'
   const input=path.join(temp,'input.json'),planFile=path.join(temp,'plan.json'),out=path.join(temp,'result.json');
   const run=(...args:string[])=>spawnSync(process.execPath,['--import','tsx','scripts/split-plan.ts',...args],{cwd:process.cwd(),encoding:'utf8'});
   const before=fs.readFileSync('data/items/dua-kumayl.json','utf8');
+  const active=path.join(loadCorpus().root,'items/dua-kumayl.json'),activeBefore=fs.readFileSync(active,'utf8');
   const exportRun=run('export','dua-kumayl','--output',input);assert.equal(exportRun.status,0,exportRun.stderr);
   const data=JSON.parse(fs.readFileSync(input,'utf8')) as {rows:Array<{id:string;ar:{source_sha256:string}|null}>};
   const row=data.rows.find(r=>r.ar)!;
@@ -74,5 +75,11 @@ test('text-only split CLI exports and validates without changing canonical data'
   const validation=run('validate',planFile,'--output',out);assert.equal(validation.status,0,validation.stderr);
   const result=JSON.parse(fs.readFileSync(out,'utf8')) as {status:string;segment_count:number};assert.equal(result.status,'proposed-unreviewed');assert.equal(result.segment_count,1);
   assert.equal(fs.readFileSync('data/items/dua-kumayl.json','utf8'),before);
+  assert.equal(fs.readFileSync(active,'utf8'),activeBefore);
   const forbidden=run('validate',planFile,'--output','data/should-not-write.json');assert.notEqual(forbidden.status,0);assert.ok(!fs.existsSync('data/should-not-write.json'));
+  const alternate=path.join(loadCorpus().root,'should-not-write-either.json');
+  assert.notEqual(run('validate',planFile,'--output',alternate).status,0);assert.ok(!fs.existsSync(alternate));
+  const link=path.join(temp,'canonical-link');fs.symlinkSync(loadCorpus().root,link,'dir');
+  assert.notEqual(run('validate',planFile,'--output',path.join(link,'should-not-write-link.json')).status,0);
+  const saved=fs.readFileSync(out,'utf8');assert.notEqual(run('validate',planFile,'--output',out).status,0);assert.equal(fs.readFileSync(out,'utf8'),saved);
 });

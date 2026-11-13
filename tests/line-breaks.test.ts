@@ -8,6 +8,8 @@ import { validateLineBreakMarkerHistory } from '../src/line-break-history.js';
 import { normalizeSearch } from '../src/normalize.js';
 import { EnglishDocumentSchema, ItemSchema, NavigationSchema, SourcesSchema } from '../src/schema.js';
 import { textId } from '../src/text-ids.js';
+import { hasHistoricalRow } from '../src/row-splits.js';
+import { currentPieces, historicalRow } from './helpers/row-split-history.js';
 
 const real = loadCorpus();
 
@@ -130,7 +132,8 @@ test('all line-break corrections retain exact originals, stable IDs and search c
     assert.ok(entry.previous && entry.replacement);
     const before = text(real, entry.previous); const after = text(real, entry.replacement);
     assert.equal(textId(before), entry.previous); assert.equal(textId(after), entry.replacement);
-    assert.ok(real.items.get(entry.item)?.rows.some(row => row.id === entry.row));
+    assert.ok(hasHistoricalRow(real, entry.item, entry.row));
+    currentPieces(real, entry.item, entry.row, entry.language);
     assert.match(entry.reason, /AI-assisted, unreviewed/);
     assert.ok(breakPositions(before).length > 0);
     removedBreaks += breakPositions(before).length;
@@ -164,7 +167,9 @@ test('CLI exits nonzero for new breaks, stale exceptions and duplicates in a sep
     const itemPath = path.join(root, 'items/ziyarat-ashura.json');
     const itemBefore = fs.readFileSync(itemPath, 'utf8');
     const item = JSON.parse(itemBefore) as { rows: Array<{id:string;fa:string|null}> };
-    const row = item.rows.find(value => value.id === 'r00003')!;
+    const row = item.rows.find(value => value.id === 'r00003' && value.fa !== null) ?? item.rows.find(value => value.fa !== null);
+    assert.ok(row);
+    const location = `item/ziyarat-ashura/row/${row.id}/fa`;
     const value = text(real, row.fa) + ' 😀\nextra';
     const id = textId(value); row.fa = id;
     const shardPath = path.join(root, 'texts', id.slice(1, 3) + '.json');
@@ -173,11 +178,11 @@ test('CLI exits nonzero for new breaks, stale exceptions and duplicates in a sep
     fs.writeFileSync(itemPath, JSON.stringify(item));
     const introduced = run();
     assert.equal(introduced.status, 1);
-    assert.match(introduced.stderr, /NEW: item\/ziyarat-ashura\/row\/r00003\/fa/);
+    assert.ok(introduced.stderr.includes(`NEW: ${location}`));
     assert.ok(introduced.stderr.includes(`@${Array.from(value).indexOf('\n')}`), 'code-point offset in CLI output');
     const exceptionsPath = path.join(root, 'line-break-exceptions.json');
     const exceptions = LineBreakExceptionFile.parse(JSON.parse(fs.readFileSync(exceptionsPath, 'utf8')) as unknown);
-    const synthetic: Exception = { location: 'item/ziyarat-ashura/row/r00003/fa', text: id,
+    const synthetic: Exception = { location, text: id,
       offset: Array.from(value).indexOf('\n'), break: 'LF', status: 'pending', reason: 'Synthetic pending test entry.' };
     exceptions.exceptions.push(synthetic);
     fs.writeFileSync(exceptionsPath, JSON.stringify(exceptions));
@@ -187,7 +192,7 @@ test('CLI exits nonzero for new breaks, stale exceptions and duplicates in a sep
     fs.writeFileSync(itemPath, itemBefore);
     const stale = run();
     assert.equal(stale.status, 1);
-    assert.match(stale.stderr, /STALE EXCEPTION: item\/ziyarat-ashura\/row\/r00003\/fa/);
+    assert.ok(stale.stderr.includes(`STALE EXCEPTION: ${location}`));
 
     // Review is explicit and requires reviewer/date/evidence; it does not
     // unpin the text or offset. This is a synthetic fixture, not a real review.
@@ -236,16 +241,18 @@ test('the second pass removes the 88 old breaks without losing original text or 
   assert.equal(unchangedSearch, 78); // only the three moved section numbers change six searchable row fields
   assert.deepEqual(validateLineBreakMarkerHistory(real), []);
 
-  const samat = real.items.get('dua-samat')!.rows.find(row => row.id === 'r00117')!;
+  const samat = historicalRow(real, 'dua-samat', 'r00117');
   const excerpts = text(real, samat.fa);
+  assert.equal(currentPieces(real, 'dua-samat', 'r00117', 'fa').map(piece => piece.text).join(''), excerpts);
   assert.match(excerpts, /خدایا! به حق این دعا… خدایا! به حق این دعا/u);
   assert.equal(excerpts.split('خدایا! به حق این دعا').length, 3);
-  const monajat = real.items.get('monajat-mnajat-aymh-alyhm')!.rows.find(row => row.id === 'r00020')!;
+  const monajat = historicalRow(real, 'monajat-mnajat-aymh-alyhm', 'r00020');
+  assert.equal(currentPieces(real, 'monajat-mnajat-aymh-alyhm', 'r00020', 'ar').map(piece => piece.text).join(''), text(real, monajat.ar));
   assert.equal(text(real, monajat.ar).split('إِلٰهِى إِنْ حَرَمْتَنِى').length, 3);
 
   // Do not silently delete or reinterpret previously ambiguous punctuation.
   const rowText = (item: string, row: string, language: 'ar' | 'fa') =>
-    text(real, real.items.get(item)!.rows.find(value => value.id === row)![language]);
+    currentPieces(real, item, row, language).map(piece => piece.text).join('');
   assert.equal(rowText('hadith-asnad-hdys-ksa', 'r00012', 'fa'), '..');
   assert.match(rowText('namaz-adab-zhr', 'r00008', 'fa'), /\.\.$/u);
   assert.match(rowText('namaz-taqyb-mghrb-nql', 'r00015', 'ar'), /\.»\.$/u); // the two original periods remain

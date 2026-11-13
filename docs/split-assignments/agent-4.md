@@ -1,10 +1,10 @@
-# Draft assignment: agent-4
+# Assignment: agent-4
 
-> Assignment data for review only. The parallel-ring instructions and canonical application tool are not launch-ready.
+> Use [the six-agent instructions](../split-agent-instructions.md). These counts are the frozen starting snapshot, not a claim that the work is complete.
 
 - Authored items: **115**, covering **3,240** existing AR/FA row-field occurrences.
 - Review and merge: **agent-3**. Reviewed by: **agent-5**.
-- Proposed neighbor communication pairs: **3–4** and **4–5**.
+- Neighbor communication pairs: **3–4** and **4–5**.
 - Corpus snapshot: `5a7213e7185863d49836ce5a94c9456099e459a70eb4326596e8e20939cbb69b`.
 - Assignment manifest SHA-256: `93ba4bf02029a1a03d162168dcbc32280cf40dd7aad1e2dd7a1832c9339a3e0c`.
 - Item counts refer to the original prepared snapshot. No item here has been marked semantically complete by this list.

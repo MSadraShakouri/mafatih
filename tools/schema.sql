@@ -1,7 +1,7 @@
 -- SQLite is a generated output, never the source of truth. All text is interned.
 PRAGMA foreign_keys = ON;
--- Version 2 adds page-numbering series, endpoint presence and page history.
-PRAGMA user_version = 2;
+-- Version 3 adds retired row identities and reversible split mappings.
+PRAGMA user_version = 3;
 CREATE TABLE corpus_meta (key TEXT PRIMARY KEY, value TEXT NOT NULL) STRICT;
 CREATE TABLE text_value (id TEXT PRIMARY KEY, value TEXT NOT NULL UNIQUE) STRICT;
 CREATE TABLE claim (id TEXT PRIMARY KEY, text_id TEXT NOT NULL REFERENCES text_value(id)) STRICT;
@@ -20,10 +20,16 @@ CREATE TABLE item (
   legacy_missing_english_reason_claim TEXT REFERENCES claim(id),
   legacy_missing_english_title TEXT REFERENCES text_value(id), review_json TEXT
 ) STRICT;
+-- A row identity persists in history after a physical row is retired.
+CREATE TABLE row_identity (
+  item_id TEXT NOT NULL REFERENCES item(id), row_id TEXT NOT NULL,
+  PRIMARY KEY(item_id,row_id)
+) STRICT;
 CREATE TABLE item_row (
   item_id TEXT NOT NULL REFERENCES item(id), row_id TEXT NOT NULL, position INTEGER NOT NULL CHECK(position >= 0),
   ar_text_id TEXT REFERENCES text_value(id), fa_text_id TEXT REFERENCES text_value(id), kind TEXT,
-  PRIMARY KEY(item_id,row_id), UNIQUE(item_id,position), CHECK(ar_text_id IS NOT NULL OR fa_text_id IS NOT NULL)
+  PRIMARY KEY(item_id,row_id), UNIQUE(item_id,position), CHECK(ar_text_id IS NOT NULL OR fa_text_id IS NOT NULL),
+  FOREIGN KEY(item_id,row_id) REFERENCES row_identity(item_id,row_id)
 ) STRICT;
 CREATE TABLE item_tag (
   item_id TEXT NOT NULL REFERENCES item(id), position INTEGER NOT NULL CHECK(position >= 0),
@@ -37,6 +43,22 @@ CREATE TABLE row_source (
   item_id TEXT NOT NULL, row_id TEXT NOT NULL, language TEXT NOT NULL CHECK(language IN ('ar','fa')),
   position INTEGER NOT NULL, source_id TEXT NOT NULL REFERENCES source(id),
   PRIMARY KEY(item_id,row_id,language,position), FOREIGN KEY(item_id,row_id) REFERENCES item_row(item_id,row_id)
+) STRICT;
+CREATE TABLE item_split_record (
+  item_id TEXT PRIMARY KEY REFERENCES item(id), author TEXT NOT NULL,
+  baseline_item_sha256 TEXT NOT NULL, plan_sha256 TEXT NOT NULL, layout_sha256 TEXT NOT NULL
+) STRICT;
+CREATE TABLE row_split_original (
+  item_id TEXT NOT NULL REFERENCES item_split_record(item_id), source_row_id TEXT NOT NULL, original_json TEXT NOT NULL,
+  PRIMARY KEY(item_id,source_row_id), FOREIGN KEY(item_id,source_row_id) REFERENCES row_identity(item_id,row_id)
+) STRICT;
+CREATE TABLE row_split_segment (
+  item_id TEXT NOT NULL, source_row_id TEXT NOT NULL, source_language TEXT NOT NULL CHECK(source_language IN ('ar','fa')),
+  position INTEGER NOT NULL CHECK(position>=0), target_row_id TEXT NOT NULL, target_language TEXT NOT NULL CHECK(target_language IN ('ar','fa')),
+  start_cp INTEGER NOT NULL CHECK(start_cp>=0), end_cp INTEGER NOT NULL CHECK(end_cp>start_cp),
+  PRIMARY KEY(item_id,source_row_id,source_language,position),
+  FOREIGN KEY(item_id,source_row_id) REFERENCES row_split_original(item_id,source_row_id),
+  FOREIGN KEY(item_id,target_row_id) REFERENCES item_row(item_id,row_id)
 ) STRICT;
 CREATE TABLE english_document (
   id TEXT PRIMARY KEY, title_text_id TEXT REFERENCES text_value(id), title_ar_text_id TEXT REFERENCES text_value(id),
@@ -76,7 +98,7 @@ CREATE TABLE row_correction (
   position INTEGER PRIMARY KEY, item_id TEXT NOT NULL, row_id TEXT NOT NULL,
   language TEXT NOT NULL CHECK(language IN ('ar','fa')), previous_text_id TEXT REFERENCES text_value(id),
   replacement_text_id TEXT REFERENCES text_value(id), evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL,
-  FOREIGN KEY(item_id,row_id) REFERENCES item_row(item_id,row_id)
+  FOREIGN KEY(item_id,row_id) REFERENCES row_identity(item_id,row_id)
 ) STRICT;
 CREATE TABLE line_break_marker_move (
   position INTEGER PRIMARY KEY, item_id TEXT NOT NULL, language TEXT NOT NULL CHECK(language IN ('ar','fa')),
@@ -84,19 +106,19 @@ CREATE TABLE line_break_marker_move (
   source_previous_text_id TEXT NOT NULL REFERENCES text_value(id), source_replacement_text_id TEXT NOT NULL REFERENCES text_value(id),
   destination_previous_text_id TEXT NOT NULL REFERENCES text_value(id), destination_replacement_text_id TEXT NOT NULL REFERENCES text_value(id),
   evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL,
-  FOREIGN KEY(item_id,source_row_id) REFERENCES item_row(item_id,row_id),
-  FOREIGN KEY(item_id,destination_row_id) REFERENCES item_row(item_id,row_id)
+  FOREIGN KEY(item_id,source_row_id) REFERENCES row_identity(item_id,row_id),
+  FOREIGN KEY(item_id,destination_row_id) REFERENCES row_identity(item_id,row_id)
 ) STRICT;
 CREATE TABLE row_insertion (
   position INTEGER PRIMARY KEY, item_id TEXT NOT NULL, row_id TEXT NOT NULL, before_row_id TEXT NOT NULL,
   evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL,
-  FOREIGN KEY(item_id,row_id) REFERENCES item_row(item_id,row_id),
-  FOREIGN KEY(item_id,before_row_id) REFERENCES item_row(item_id,row_id)
+  FOREIGN KEY(item_id,row_id) REFERENCES row_identity(item_id,row_id),
+  FOREIGN KEY(item_id,before_row_id) REFERENCES row_identity(item_id,row_id)
 ) STRICT;
 CREATE TABLE row_classification (
   position INTEGER PRIMARY KEY, item_id TEXT NOT NULL, row_id TEXT NOT NULL, previous_kind TEXT,
   replacement_kind TEXT NOT NULL, evidence_id TEXT NOT NULL REFERENCES editorial_evidence(id), reason TEXT NOT NULL,
-  FOREIGN KEY(item_id,row_id) REFERENCES item_row(item_id,row_id)
+  FOREIGN KEY(item_id,row_id) REFERENCES row_identity(item_id,row_id)
 ) STRICT;
 CREATE TABLE paragraph_removal (
   position INTEGER PRIMARY KEY, document_id TEXT NOT NULL REFERENCES english_document(id), paragraph_id TEXT NOT NULL,

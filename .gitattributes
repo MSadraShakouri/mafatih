@@ -4,3 +4,8 @@
 # Upstream license notices must survive checkout and ordinary git am exactly,
 # including CRLF and trailing spaces. They remain readable text files.
 /web/fonts/licenses/*-OFL.txt binary
+
+# Install the two safe drivers locally using the six-agent startup instructions.
+# They union only immutable text additions and append-only neighbor messages.
+/data/texts/*.json merge=mafatih-texts
+/coordination/*.jsonl merge=mafatih-messages

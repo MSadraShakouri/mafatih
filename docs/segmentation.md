@@ -2,7 +2,7 @@
 
 ## The short answer
 
-Yes: the foundation can represent different amounts of Arabic, Persian and English without forcing their line breaks to match. The text-only [AI split-planning tool](ai-splitting.md) lets agents propose and validate exact, lossless segments and optional unreviewed links without modifying the original data. It does not itself call an AI or certify meaning. There is not yet an automatic tool to apply physical splits to canonical data.
+Yes: the foundation can represent different amounts of Arabic, Persian and English without forcing their line breaks to match. The text-only [AI split-planning tool](ai-splitting.md) proposes exact, lossless segments without modifying data. For the current Arabic/Persian round, the separate [six-agent workflow](split-agent-instructions.md) can apply a checked physical per-item split while preserving exact text and reversible old-row mappings. Neither tool calls an AI or certifies meaning. General row merging, punctuation changes and migration of human-reviewed spans remain separate work.
 
 An item currently stores ordered Arabic/Persian rows. A row can contain one or both languages; a single row may contain several sentences. English is stored separately as ordered document paragraphs. An alignment group points to any number of exact spans in those rows and paragraphs. A span is part or all of one existing text value.
 
@@ -29,8 +29,8 @@ This capability is tested with synthetic placeholder text in `tests/segmentation
 
 1. Distinguish a website's display wrapping from a meaningful content boundary. Wrapping needs no text change or database split.
 2. Give an AI agent the instructions in [ai-splitting.md](ai-splitting.md). The tool exports existing text and checks its proposed cuts; the agent can work in batches without hand-splitting every line. It emits exact spans, not new translations.
-3. The current planner outputs a lossless proposal **without** modifying canonical rows. The regular editor can change or insert rows and paragraphs, but it does **not** automatically make safe split/merge migrations, record a general one-to-many redirect, synchronize another language or preserve all prior review. Row and paragraph IDs must not be reused for unrelated content. Document the old-to-new mapping and changes; keep the previous version in Git.
-4. Extend the text-based workflow with a reversible canonical split/merge operation and bookmark migration reports, as planned in [ROADMAP.md](../ROADMAP.md). Until then, agents should not bulk-replace canonical text merely to implement their proposals.
+3. The general planner outputs a lossless proposal **without** modifying canonical rows. For the current six-agent round, `scripts/six-agent.ts` can apply a checked per-item plan and explicit row layout, retain original source references in `data/row-splits/`, and redirect old reading URLs. It refuses existing human-reviewed spans, physical line separators, punctuation edits and unsupported prior migrations rather than silently damaging them.
+4. Keep item IDs and previous values; personal bookmarks are item-level. The regular item editor is not the special split migration. General one-to-many/many-to-one merging, reviewed-span migration and other clients that do not follow the recorded row redirects still require separate work.
 5. Once an exact relationship has genuinely been reviewed, see [alignment.md](alignment.md) for the exact-quote import tool. It can produce spans inside an existing English paragraph. Spans use Unicode code points and hashes so stale reviewed text is detected. A machine proposal must not be labeled expert-reviewed.
 
 **No AI translation of the Arabic text:** see [CONTENT_POLICY.md](../CONTENT_POLICY.md). Alignment and splitting must preserve the original wording and must never generate a missing devotional translation.

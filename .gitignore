@@ -41,3 +41,8 @@ __pycache__/
 *.p12
 *.pfx
 *.b64
+
+# These six-agent working exports repeat source passages; keep them local.
+/agent-work/agent-*/inputs/
+/agent-work/agent-*/previews/
+/agent-work/agent-*/scratch/

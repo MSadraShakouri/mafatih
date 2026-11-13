@@ -3,13 +3,14 @@ import path from 'node:path';
 import { z } from 'zod';
 import {
   AlignmentFileSchema, ClaimId, CorpusMetaSchema, EditorialHistorySchema, EnglishDocumentSchema, ItemSchema,
-  Key, NavigationSchema, RelationsSchema, SourcesSchema, TextId, sourcePageIssues,
-  type AlignmentFile, type EnglishDocument, type Item, type NavNode, type Relations, type Sources
+  Key, NavigationSchema, RelationsSchema, RowSplitRecordSchema, SourcesSchema, TextId, sourcePageIssues,
+  type AlignmentFile, type EnglishDocument, type Item, type NavNode, type Relations, type RowSplitRecord, type Sources
 } from './schema.js';
 import { claimId, codePoints, sha256, slicePoints, textId } from './text-ids.js';
 import { validatePunctuationHistory } from './punctuation-history.js';
 import { validateLineBreakMarkerHistory } from './line-break-history.js';
 import { validateSourcePageHistory } from './source-page-history.js';
+import { hasHistoricalRow, validateRowSplitRecords } from './row-splits.js';
 
 type Metadata=z.infer<typeof CorpusMetaSchema>;
 type Navigation=z.infer<typeof NavigationSchema>;
@@ -17,51 +18,51 @@ export interface Corpus {
   root:string; meta:Metadata; items:Map<string,Item>; english:Map<string,EnglishDocument>;
   texts:Map<string,string>; textShards:Map<string,string>; claims:Record<string,string>;
   nav:Navigation; relations:Relations; sources:Sources; editorial:z.infer<typeof EditorialHistorySchema>; alignments:Map<string,AlignmentFile>;
+  rowSplits:Map<string,RowSplitRecord>;
 }
-function readJson(file:string):unknown { return JSON.parse(fs.readFileSync(file,'utf8')) as unknown; }
-function jsonFiles(dir:string):string[] {
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir).filter(f=>f.endsWith('.json')).sort();
-}
-export function loadCorpus(root=process.env.MAFATIH_DATA_ROOT ?? path.resolve('data')):Corpus {
-  root=path.resolve(root);
-  const read=<T>(file:string,schema:z.ZodType<T>):T => {
-    const parsed=schema.safeParse(readJson(file));
-    if(!parsed.success) throw new Error(`${path.relative(root,file)}: ${parsed.error.message}`);
+function assembleCorpus(root:string, contents:(name:string)=>string, list:(dir:string)=>string[]):Corpus {
+  const read=<T>(name:string,schema:z.ZodType<T>):T => {
+    const parsed=schema.safeParse(JSON.parse(contents(name)) as unknown);
+    if(!parsed.success) throw new Error(`${name}: ${parsed.error.message}`);
     return parsed.data;
   };
   const items=new Map<string,Item>(); const english=new Map<string,EnglishDocument>();
   const texts=new Map<string,string>(); const textShards=new Map<string,string>();
-  for(const f of jsonFiles(path.join(root,'texts'))){
+  for(const f of list('texts')){
     const shard=f.slice(0,-5);
     if(!/^[0-9a-f]{2}$/.test(shard)) throw new Error(`bad text shard ${f}`);
-    const values=read(path.join(root,'texts',f),z.record(TextId,z.string()));
+    const values=read(`texts/${f}`,z.record(TextId,z.string()));
     for(const [id,value] of Object.entries(values)){
       if(texts.has(id)) throw new Error(`duplicate text id ${id}`);
       texts.set(id,value); textShards.set(id,shard);
     }
   }
-  for(const f of jsonFiles(path.join(root,'items'))){
-    const id=f.slice(0,-5); Key.parse(id);
-    items.set(id,read(path.join(root,'items',f),ItemSchema));
-  }
-  for(const f of jsonFiles(path.join(root,'english'))){
-    const id=f.slice(0,-5); Key.parse(id);
-    english.set(id,read(path.join(root,'english',f),EnglishDocumentSchema));
-  }
-  const alignments=new Map<string,AlignmentFile>();
-  for(const f of jsonFiles(path.join(root,'alignments'))){
-    const id=f.slice(0,-5); Key.parse(id);
-    alignments.set(id,read(path.join(root,'alignments',f),AlignmentFileSchema));
-  }
-  return {root,items,english,texts,textShards,alignments,
-    meta:read(path.join(root,'corpus.json'),CorpusMetaSchema),
-    claims:read(path.join(root,'claims.json'),z.record(ClaimId,TextId)),
-    nav:read(path.join(root,'navigation.json'),NavigationSchema),
-    relations:read(path.join(root,'relations.json'),RelationsSchema),
-    sources:read(path.join(root,'sources.json'),SourcesSchema),
-    editorial:read(path.join(root,'editorial-history.json'),EditorialHistorySchema)
+  for(const f of list('items')){ const id=f.slice(0,-5); Key.parse(id); items.set(id,read(`items/${f}`,ItemSchema)); }
+  for(const f of list('english')){ const id=f.slice(0,-5); Key.parse(id); english.set(id,read(`english/${f}`,EnglishDocumentSchema)); }
+  const alignments=new Map<string,AlignmentFile>(), rowSplits=new Map<string,RowSplitRecord>();
+  for(const f of list('alignments')){ const id=f.slice(0,-5); Key.parse(id); alignments.set(id,read(`alignments/${f}`,AlignmentFileSchema)); }
+  for(const f of list('row-splits')){ const id=f.slice(0,-5); Key.parse(id); rowSplits.set(id,read(`row-splits/${f}`,RowSplitRecordSchema)); }
+  return {root,items,english,texts,textShards,alignments,rowSplits,
+    meta:read('corpus.json',CorpusMetaSchema), claims:read('claims.json',z.record(ClaimId,TextId)),
+    nav:read('navigation.json',NavigationSchema), relations:read('relations.json',RelationsSchema),
+    sources:read('sources.json',SourcesSchema), editorial:read('editorial-history.json',EditorialHistorySchema)
   };
+}
+
+export function loadCorpus(root=process.env.MAFATIH_DATA_ROOT ?? path.resolve('data')):Corpus {
+  root=path.resolve(root);
+  return assembleCorpus(root, name => fs.readFileSync(path.join(root,name),'utf8'), dir => {
+    const directory=path.join(root,dir);
+    return fs.existsSync(directory)?fs.readdirSync(directory).filter(f=>f.endsWith('.json')).sort():[];
+  });
+}
+
+/** Load a Git snapshot already held in memory, without a second checkout or copied data directory. */
+export function loadCorpusFromEntries(entries:Map<string,string>):Corpus {
+  return assembleCorpus('<git-snapshot>', name => {
+    const data=entries.get(name); if(data===undefined)throw new Error(`snapshot missing data/${name}`); return data;
+  }, dir => [...entries.keys()].filter(name=>name.startsWith(`${dir}/`) && !name.slice(dir.length+1).includes('/') && name.endsWith('.json'))
+    .map(name=>name.slice(dir.length+1)).sort());
 }
 export function text(c:Corpus,id:string|null|undefined):string {
   if(id==null) return '';
@@ -116,7 +117,7 @@ export function validateCorpus(c:Corpus):ValidationResult {
     else if(x && typeof x==='object') for(const v of Object.values(x)) scan(v);
   }
   scan(c.claims);scan(c.nav);scan(c.relations);scan(c.sources);scan(c.editorial);
-  for(const v of c.items.values())scan(v);for(const v of c.english.values())scan(v);for(const v of c.alignments.values())scan(v);
+  for(const v of c.items.values())scan(v);for(const v of c.english.values())scan(v);for(const v of c.alignments.values())scan(v);for(const v of c.rowSplits.values())scan(v);
   for(const id of referencedTexts) if(!c.texts.has(id)) fail(`missing referenced text ${id}`);
   for(const id of referencedClaims) if(!(id in c.claims)) fail(`missing referenced claim ${id}`);
   let unusedTexts=0;for(const id of c.texts.keys())if(!referencedTexts.has(id))unusedTexts++;
@@ -151,13 +152,14 @@ export function validateCorpus(c:Corpus):ValidationResult {
     if(!c.english.has(edit.source_document))fail(`editorial history: missing document ${edit.source_document}`);
     if(!(edit.evidence in c.editorial.evidence))fail(`editorial history: missing evidence ${edit.evidence}`);
   }
+  for(const error of validateRowSplitRecords(c))fail(error);
   for(const error of validatePunctuationHistory(c))fail(error);
   for(const error of validateLineBreakMarkerHistory(c))fail(error);
   for(const error of validateSourcePageHistory(c))fail(error);
   const historyEvidence=(id:string)=>{if(!(id in c.editorial.evidence))fail(`editorial history: missing evidence ${id}`);};
   const historyRow=(item:string,row:string)=>{
     const it=c.items.get(item);if(!it)fail(`editorial history: missing item ${item}`);
-    else if(!it.rows.some(r=>r.id===row))fail(`editorial history: missing row ${item}/${row}`);
+    else if(!hasHistoricalRow(c,item,row))fail(`editorial history: missing row ${item}/${row}`);
   };
   for(const e of c.editorial.row_corrections??[]){historyRow(e.item,e.row);historyEvidence(e.evidence);}
   for(const e of c.editorial.row_insertions??[]){historyRow(e.item,e.row);historyRow(e.item,e.before);historyEvidence(e.evidence);}

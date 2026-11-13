@@ -1,6 +1,7 @@
 import type { Corpus } from './corpus.js';
 import { normalizeSearch } from './normalize.js';
 import { normalizePunctuationSpacing } from './punctuation.js';
+import { hasHistoricalRow } from './row-splits.js';
 import { normalizeQuranMarkerSpacing } from './quran-markers.js';
 import type { PunctuationLocation } from './schema.js';
 
@@ -19,7 +20,7 @@ export function punctuationLocationKey(loc: PunctuationLocation): string {
 function locationStillRecognizable(c: Corpus, loc: PunctuationLocation): boolean {
   switch (loc.kind) {
     case 'item-title': case 'item-tag': return c.items.has(loc.item);
-    case 'item-row': return c.items.get(loc.item)?.rows.some(row => row.id === loc.row) ?? false;
+    case 'item-row': return hasHistoricalRow(c, loc.item, loc.row);
     case 'english-display': case 'english-metadata': return c.english.has(loc.document);
     case 'english-paragraph': return Boolean(c.english.get(loc.document)?.paragraphs.some(p => p.id === loc.paragraph) ||
       c.editorial.paragraph_removals?.some(p => p.document === loc.document && p.paragraph === loc.paragraph));

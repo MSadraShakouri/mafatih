@@ -13,6 +13,7 @@ import {
   splitAgentPlan, verifyAgentPartitions, verifyAgentPreview, verifyAgentReview,
 } from '../src/split-agent.js';
 import { auditAgentBatch } from '../src/split-agent-batch.js';
+import { corpusBeforeRowSplits } from './helpers/row-split-history.js';
 
 function fixture() {
   const c = loadCorpus(), item = 'test-agent-tool';
@@ -204,7 +205,9 @@ test('review templates require independent per-occurrence decisions and remain t
 });
 
 test('old line-break and marker history is exposed and flagged without restoring old text', () => {
-  const c = loadCorpus(), item = 'ziyarat-ashura';
+  // The planner uses the frozen pre-split source. Reconstruct that fixture
+  // after migration rather than looking for retired IDs in the live corpus.
+  const c = corpusBeforeRowSplits(loadCorpus()), item = 'ziyarat-ashura';
   const exported = exportAgentInput(c, item);
   const field = exported.rows.find(row => row.id === 'r00003')!.ar!;
   assert.ok(field.historical_line_break_corrections.length > 0);

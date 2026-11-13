@@ -46,9 +46,10 @@ export function buildData(options: BuildDataOptions = {}): void {
     });
     catalog.push({id,title,category:item.category,...(item.quran?{quran:item.quran}:{}),tags,featured:featured.has(id),row_count:rows.length,
       excluded_audio_rows:excludedAudioRows,alignment_claim:item.legacy_alignment, titles_reviewed:Boolean(item.review?.titles),english:links});
+    const redirects=c.rowSplits.get(id)?.rows.map(entry=>({original:{id:entry.original.id},ar:entry.ar,fa:entry.fa}))??[];
     write(`items/${id}.json`,{id,legacy_id:item.legacy_id,title,featured:featured.has(id),category:item.category,...(item.quran?{quran:item.quran}:{}),tags,
       alignment_claim:item.legacy_alignment,ar_fa_reviewed:Boolean(item.review?.ar_fa),sources:item.sources??{},excluded_audio_rows:excludedAudioRows,rows,english:links,
-      reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});
+      ...(redirects.length?{row_split_redirects:redirects}:{}),reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});
     // Each source field remains a separate OR result. Link only an immediately
     // neighboring source row in the same language, never across an excluded
     // audio row or an empty field; local phrase ranking can follow this link.

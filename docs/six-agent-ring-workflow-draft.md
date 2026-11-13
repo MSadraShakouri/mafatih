@@ -1,8 +1,6 @@
-# Draft: six-agent parallel ring for Arabic/Persian work
+# Historical draft: six-agent parallel ring for Arabic/Persian work
 
-> **Working draft for discussion — not ready to launch.** The user asked to write the details down and refine the workflow before implementing launch preparation or starting the agents. No semantic agent, canonical migration or branch integration has been run. Technical choices marked **proposed** still need review and implementation; committing this draft does not authorize launching agents.
->
-> The existing `docs/split-agent-instructions.md` and parts of `plan.md` still describe the earlier pilot-first, proposal-only workflow. They do not yet implement this draft. The previous assistant-proposed serial chain, blanket ban on branch-local canonical edits, and rule against merging into one's own branch do **not** describe the user's current request.
+> **Superseded historical record; do not use this as an agent startup guide.** The original discussion and its old status statements remain below for context. The executable implementation, current rules, assignments and limitations are in [the six-agent instructions](split-agent-instructions.md). In particular, the pilot-first, proposal-only and blanket no-push language in this draft is obsolete. The user has started agents and authorized each to push only its own branch; no PRs. Each needs the pushed executable preparation before continuing.
 
 ## 1. The requested workflow
 

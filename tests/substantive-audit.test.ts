@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadCorpus,text,validateCorpus,linksForItem,resolveEnglishParagraph} from '../src/corpus.js';
 import {potentiallySplitVerse} from '../src/quran-fragments.js';
+import {currentPieces,historicalRow} from './helpers/row-split-history.js';
 
 test('targeted corrections retain historical text references',()=>{
   const c=loadCorpus();assert.deepEqual(validateCorpus(c).errors,[]);
@@ -14,7 +15,9 @@ test('targeted corrections retain historical text references',()=>{
     if(change.replacement)assert.ok(c.texts.has(change.replacement));
     assert.ok(c.editorial.evidence[change.evidence]);
   }
-  const mujir=c.items.get('dua-mujir')!;const r=(id:string)=>mujir.rows.find(x=>x.id===id)!;
+  const r=(id:string)=>historicalRow(c,'dua-mujir',id);
+  for(const id of ['r00007','r00008','r00009','r00010','r00011','r00012'])
+    for(const language of ['ar','fa'] as const)currentPieces(c,'dua-mujir',id,language);
   assert.match(text(c,r('r00008').fa),/بری از هر عیب/);
   assert.match(text(c,r('r00009').fa),/ایمن بخش/);
   assert.doesNotMatch(text(c,r('r00009').fa),/مار از آتش/);
@@ -22,7 +25,8 @@ test('targeted corrections retain historical text references',()=>{
   assert.match(text(c,r('r00011').fa),/بزرگ‌منش/);
   assert.match(text(c,r('r00007').fa),/ای پناه دهنده/);
   assert.match(text(c,r('r00012').ar),/مُجِيرُ/);
-  const warith=c.items.get('ziyarat-warith')!;const instruction=warith.rows.find(x=>x.id==='r00131-instruction')!;const rec=warith.rows.find(x=>x.id==='r00131')!;
+  const instruction=historicalRow(c,'ziyarat-warith','r00131-instruction');const rec=historicalRow(c,'ziyarat-warith','r00131');
+  for(const id of ['r00131-instruction','r00131'])for(const language of ['ar','fa'] as const)currentPieces(c,'ziyarat-warith',id,language);
   assert.equal(instruction.kind,'instruction');assert.equal(instruction.ar,null);assert.match(text(c,instruction.fa),/پس خود را/);
   assert.match(text(c,rec.ar),/^اَلسَّلامُ/);assert.match(text(c,rec.fa),/پسر ولی خدا/);
 });

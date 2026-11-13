@@ -157,7 +157,7 @@ function measureItem(c: Corpus, itemId: string, sources = sourcesFor(c, itemId))
   }
   return { item: itemId, item_sha256: itemFingerprint(c, itemId, sources), row_count: item.rows.length,
     source_count: sources.length, ar_code_points: ar, fa_code_points: fa, code_points: ar + fa,
-    // Deliberately simple proxy; the pilot must calibrate actual semantic effort.
+    // Deliberately simple proxy; actual semantic effort may differ substantially.
     weight: ar + fa + 100 * sources.length + 300, manual_v1: item.legacy_alignment === 'manual-v1' };
 }
 function measureAll(c: Corpus): ItemMeasure[] {
@@ -553,7 +553,7 @@ export function verifyAgentPartitions(c: Corpus, input: unknown) {
   return { format_version: 1 as const, protocol: SPLIT_AGENT_PROTOCOL, status: 'valid-partitions' as const,
     snapshot_sha256: manifest.snapshot_sha256, item_count: all.length, group_count: manifest.groups.length,
     min_weight: Math.min(...weights), max_weight: Math.max(...weights),
-    caveat: 'Weight is an estimate; inspect the pilot and individual item complexity before full assignment.' };
+    caveat: 'Weight is an estimate, not a guarantee of equal semantic difficulty.' };
 }
 
 const SourceAssessment = z.object({

@@ -24,8 +24,25 @@ if(cmd==='export'){
   console.log(`Validated ${compiled.source_count} sources, ${compiled.segment_count} lossless segments and ${compiled.groups.length} unreviewed proposed groups.`);
 }
 const target=path.resolve(outputIndex>=0?args[outputIndex+1]!:path.join('generated','split-plans',defaultFile));
-const canonical=path.resolve(c.root);
-if(target===canonical||target.startsWith(canonical+path.sep))throw new Error('Output must be outside canonical data/.');
+// An alternate data root must not make the repository's own canonical data or
+// Git directory writable by this proposal-only command. Resolve ancestor
+// symlinks before creating output and never overwrite existing user work.
+const protectedRoots=[path.resolve(c.root),path.resolve('data'),path.resolve('.git')]
+  .filter(root=>fs.existsSync(root)).map(root=>fs.realpathSync(root));
+const inside=(candidate:string,root:string)=>{
+  const relative=path.relative(root,candidate);
+  return relative===''||(!relative.startsWith(`..${path.sep}`)&&relative!=='..'&&!path.isAbsolute(relative));
+};
+const parent=path.dirname(target);
+let existing=parent;
+while(!fs.existsSync(existing)) {
+  const next=path.dirname(existing);if(next===existing)throw new Error('No output ancestor');existing=next;
+}
+const resolved=path.resolve(fs.realpathSync(existing),path.relative(existing,parent));
+if(protectedRoots.some(root=>inside(path.join(resolved,path.basename(target)),root)))throw new Error('Output must be outside canonical data/ and .git/.');
 if(cmd==='validate'&&target===path.resolve(input))throw new Error('Output must not overwrite the input plan.');
-fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,JSON.stringify(result,null,2)+'\n','utf8');
+fs.mkdirSync(parent,{recursive:true,mode:0o700});
+const realParent=fs.realpathSync(parent);
+if(protectedRoots.some(root=>inside(path.join(realParent,path.basename(target)),root)))throw new Error('Output must be outside canonical data/ and .git/.');
+fs.writeFileSync(path.join(realParent,path.basename(target)),JSON.stringify(result,null,2)+'\n',{encoding:'utf8',flag:'wx',mode:0o600});
 console.log(`Wrote ${target}. Canonical data and reviewed alignments were not changed.`);

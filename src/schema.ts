@@ -206,6 +206,22 @@ export const AlignmentFileSchema = z.object({
   }))
 }).strict();
 
+// Per-item reversible record for a physical AR/FA split.  The source row is
+// retained here when its occurrence ID is retired; each segment is an exact
+// code-point slice, possibly moved to the other language field after review.
+export const RowSplitSegmentSchema = z.object({
+  row: Key, language: z.enum(['ar', 'fa']),
+  start: z.number().int().nonnegative(), end: z.number().int().positive(),
+}).strict();
+export const RowSplitRecordSchema = z.object({
+  format_version: z.literal(1), item: Key, author: Key,
+  baseline_item_sha256: Hash, plan_sha256: Hash, layout_sha256: Hash,
+  rows: z.array(z.object({
+    original: RowSchema, results: z.array(Key).min(1),
+    ar: z.array(RowSplitSegmentSchema), fa: z.array(RowSplitSegmentSchema),
+  }).strict()),
+}).strict();
+export type RowSplitRecord = z.infer<typeof RowSplitRecordSchema>;
 export type Item = z.infer<typeof ItemSchema>;
 export type Row = z.infer<typeof RowSchema>;
 export type EnglishDocument = z.infer<typeof EnglishDocumentSchema>;

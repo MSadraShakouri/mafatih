@@ -4,9 +4,14 @@ import { loadCorpus, text } from '../src/corpus.js';
 import { normalizeSearch } from '../src/normalize.js';
 import { IncrementalSearch, type SearchRecord, type SearchRequest } from '../src/search.js';
 import type { NavNode } from '../src/schema.js';
+import { corpusBeforeRowSplits } from './helpers/row-split-history.js';
 
-// Build directly from canonical rows, independent of the generated index.
-const corpus = loadCorpus();
+// These exact rank/continuation expectations describe the real pre-round
+// corpus, independent of the generated index. Once rows are migrated, rebuild
+// that same fixture from the validated reversible maps instead of requiring
+// those retired IDs or expecting ranking to ignore changed segmentation.
+// Separate current-corpus oracle and runtime-index tests exercise live rows.
+const corpus = corpusBeforeRowSplits(loadCorpus());
 const featured = new Set(corpus.nav.featured);
 const records: SearchRecord[] = [];
 function toc(nodes: NavNode[], path: number[] = []): void {

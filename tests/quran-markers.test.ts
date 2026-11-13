@@ -10,6 +10,7 @@ import { textId } from '../src/text-ids.js';
 import { normalizeSearch } from '../src/normalize.js';
 import { preserveKeyOrder } from '../src/editor.js';
 import { normalizeQuranMarkerSpacing, verseMarkerRanges } from '../src/quran-markers.js';
+import { corpusBeforeRowSplits, currentPieces, historicalRow } from './helpers/row-split-history.js';
 import { validatePunctuationHistory } from '../src/punctuation-history.js';
 import { applyQuranMarkerSpacing, planQuranMarkerSpacing } from '../src/punctuation-migration.js';
 
@@ -156,17 +157,25 @@ test('the current corpus has no unspaced numeric Arabic markers and preserves th
     const before = c.texts.get(edit.previous)!, after = c.texts.get(edit.replacement)!;
     assert.equal(normalizeQuranMarkerSpacing(before), after);
     assert.equal(before.replace(/\s/gu, ''), after.replace(/\s/gu, ''));
-    assert.equal(c.items.get(location.item)!.rows.find(row => row.id === location.row)?.ar, edit.replacement);
+    assert.equal(historicalRow(c, location.item, location.row).ar, edit.replacement);
+    assert.equal(currentPieces(c, location.item, location.row, 'ar').map(piece => piece.text).join(''), after);
     audit.delete(key);
   }
   assert.equal(audit.size, 0);
   assert.deepEqual(planQuranMarkerSpacing(c), []);
+  const original = corpusBeforeRowSplits(c);
   let numeric = 0, quotes = 0, ornaments = 0;
-  for (const item of c.items.values()) for (const row of item.rows) {
-    const value = row.ar ? c.texts.get(row.ar)! : '';
+  for (const item of original.items.values()) for (const row of item.rows) {
+    const value = row.ar ? original.texts.get(row.ar)! : '';
     numeric += verseMarkerRanges(value).length;
     quotes += [...value.matchAll(/﴿(?![0-9٠-٩۰-۹]+﴾)/gu)].length;
     ornaments += [...value.matchAll(/۞/gu)].length;
   }
   assert.ok(numeric >= 946); assert.ok(quotes >= 2); assert.ok(ornaments >= 15);
+  // Count both destination languages: a reviewed mixed field may move. Every
+  // numeric marker must remain whole, even when the surrounding row is split.
+  const markerCount = (corpus: typeof c) => [...corpus.items.values()].flatMap(item => item.rows)
+    .reduce((total, row) => total + (['ar', 'fa'] as const).reduce((sum, language) =>
+      sum + verseMarkerRanges(row[language] ? corpus.texts.get(row[language]!)! : '').length, 0), 0);
+  assert.equal(markerCount(c), markerCount(original));
 });

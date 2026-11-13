@@ -5,6 +5,8 @@ import { IncrementalSearch, type SearchIndex, type SearchRecord, type SearchRequ
 import type { ReaderItem } from '../web/data.js';
 import { itemSearchRecords } from '../web/item-search-records.js';
 import { normalizeSearchPreservingTa } from '../src/normalize.js';
+import { loadCorpus, text } from '../src/corpus.js';
+import { corpusBeforeRowSplits } from './helpers/row-split-history.js';
 
 test('item preparation normalizes each distinct source string only once', () => {
   const item: ReaderItem = { id: 'fixture', title: { ar: '', fa: '', en: '' }, rows: [
@@ -76,7 +78,11 @@ test('local reader records match every global source field and original adjacenc
     }
   }
   assert.equal(count, globals.length);
-  assert.ok(count > 20_000);
+  const current=loadCorpus();
+  const eligible=(c:typeof current)=>[...c.items.values()].flatMap(item=>item.rows).filter(row=>row.kind!=='audio-reciter')
+    .reduce((total,row)=>total+(['ar','fa'] as const).filter(language=>Boolean(text(c,row[language]))).length,0);
+  assert.equal(count,eligible(current), 'index every current non-audio field');
+  assert.ok(eligible(corpusBeforeRowSplits(current)) > 20_000, 'retain the pre-round regression fixture');
 
   // A different in-memory record order must not change per-item ranking,
   // aliases, source matches or continuation excerpts compared with global.

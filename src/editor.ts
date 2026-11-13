@@ -14,7 +14,7 @@ export function referencedTexts(c:Corpus):Set<string>{
     else if(Array.isArray(x))for(const v of x)walk(v);
     else if(x&&typeof x==='object')for(const v of Object.values(x))walk(v);
   }
-  walk(c.claims);walk(c.nav);walk(c.relations);walk(c.sources);walk(c.editorial);for(const x of c.items.values())walk(x);for(const x of c.english.values())walk(x);for(const x of c.alignments.values())walk(x);
+  walk(c.claims);walk(c.nav);walk(c.relations);walk(c.sources);walk(c.editorial);for(const x of c.items.values())walk(x);for(const x of c.english.values())walk(x);for(const x of c.alignments.values())walk(x);for(const x of c.rowSplits.values())walk(x);
   return refs;
 }
 export function pretty(x:unknown):string{return JSON.stringify(x,null,2)+'\n';}
@@ -46,7 +46,7 @@ export function commit(c:Corpus,changes:Map<string,string|null>,oldIds:(string|n
   const before=new Map<string,Buffer|null>();const temps:string[]=[];
   try{
     for(const [file,data] of changes){before.set(file,fs.existsSync(file)?fs.readFileSync(file):null);fs.mkdirSync(path.dirname(file),{recursive:true});
-      if(data!==null){const tmp=file+`.tmp-${process.pid}`;fs.writeFileSync(tmp,data,'utf8');temps.push(tmp);}}
+      if(data!==null){const tmp=file+`.tmp-${process.pid}`;fs.writeFileSync(tmp,data,{encoding:'utf8',flag:'wx'});temps.push(tmp);}}
     for(const [file,data] of changes){if(data===null){if(fs.existsSync(file))fs.unlinkSync(file);}else fs.renameSync(file+`.tmp-${process.pid}`,file);}
   }catch(e){
     for(const [file,original] of before){try{if(original===null){if(fs.existsSync(file))fs.unlinkSync(file);}else fs.writeFileSync(file,original);}catch{ /* report original error */ }}

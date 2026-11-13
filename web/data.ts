@@ -1,3 +1,5 @@
+import type { RowSplitRedirect } from './row-split-anchor.js';
+
 // The browser consumes resolved runtime data, not Node's corpus loader or
 // the canonical text pool. These interfaces cover only fields used so far.
 export interface Title {
@@ -41,6 +43,8 @@ export interface ReaderItem {
   title: Title;
   featured?: boolean;
   rows: ItemRow[];
+  /** Redirects from retired row/language/code-point URLs to current slices. */
+  row_split_redirects?: RowSplitRedirect[];
 }
 
 // Identifiers use the same character rule as the canonical schema. In

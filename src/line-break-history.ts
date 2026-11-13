@@ -1,4 +1,5 @@
 import type { Corpus } from './corpus.js';
+import { hasHistoricalRow } from './row-splits.js';
 
 interface Field {
   item: string; row: string; language: 'ar' | 'fa'; previous: string; replacement: string; evidence: string;
@@ -28,8 +29,7 @@ export function validateLineBreakMarkerHistory(c: Corpus): string[] {
     if (seen.has(key)) errors.push(`line-break marker history: duplicate ${label}`);
     seen.add(key);
     if (move.source_row === move.destination_row) errors.push(`line-break marker history: same source and destination ${label}`);
-    const item = c.items.get(move.item);
-    if (!item || !item.rows.some(row => row.id === move.source_row) || !item.rows.some(row => row.id === move.destination_row)) {
+    if (!hasHistoricalRow(c, move.item, move.source_row) || !hasHistoricalRow(c, move.item, move.destination_row)) {
       errors.push(`line-break marker history: missing row ${label}`);
     }
     if (!(move.evidence in c.editorial.evidence)) errors.push(`line-break marker history: missing evidence ${label}`);

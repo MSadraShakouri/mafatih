@@ -12,6 +12,7 @@ import { SearchClient } from './search-client.js';
 import { createSearchSession } from './search-common.js';
 import { nativeBackAction } from './native-back.js';
 import { scrollToReadingAnchor } from './reader-anchor.js';
+import { resolveLegacyRowAnchor } from './row-split-anchor.js';
 import { captureVisibleReaderPosition, keepReaderPositionOnResize, restoreVisibleReaderPosition, type VisibleReaderPosition } from './reader-position.js';
 import { createReaderPreferencesStore, type ReaderPreferences } from './reader-preferences.js';
 import { applyReaderPreferences, prepareReaderFont, renderReaderSettings } from './reader-settings.js';
@@ -246,8 +247,9 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
         snapshot !== undefined && snapshot.settingsRevision !== scrollSettings.get().revision, appActive);
       const attachedScroll = autoScroll;
       if (route.anchor && !restored) {
-        wideLayout?.prepareRow(route.anchor.row);
-        requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, route.anchor!, attachedScroll); });
+        const anchor = resolveLegacyRowAnchor(item.row_split_redirects ?? [], route.anchor);
+        wideLayout?.prepareRow(anchor.row);
+        requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, anchor, attachedScroll); });
       }
       inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch,
         open => attachedScroll.setSearchOpen(open), attachedScroll,

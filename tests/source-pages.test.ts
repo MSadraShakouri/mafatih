@@ -266,7 +266,7 @@ print(json.dumps({'nodes':nodes,'batches':batches,'changes':changes,'accepted':a
 `, db], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
     assert.equal(probe.status, 0, probe.stderr); const actual = JSON.parse(probe.stdout) as {
       nodes: unknown[][]; batches: unknown[][]; changes: unknown[][]; accepted: number[]; version: number; violations: unknown[] };
-    assert.equal(actual.version, 2);
+    assert.equal(actual.version, 3);
     const nodes = flatten(navigation().toc).map(({ node }) => [node.title, node.item, node.source_level, node.source_page,
       node.source_page_end ?? null, node.source_page_series ?? null, Number(has(node, 'source_page_end'))]);
     assert.deepEqual(actual.nodes, nodes); assert.deepEqual(actual.accepted, []); assert.deepEqual(actual.violations, []);

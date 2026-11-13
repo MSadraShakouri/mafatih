@@ -2,11 +2,13 @@
 
 For coding agents. Read this before working on the project. Mafatih is a Persian-first web reader with a Capacitor Android shell. Protect the source corpus, reading position, search behavior and the user's existing work.
 
+**Six-agent Arabic/Persian round:** If the user tells you only your agent number (1–6), immediately follow [the executable six-agent instructions](docs/split-agent-instructions.md) and your matching [assignment](docs/split-assignments/). These instructions supersede the historical draft and pilot-only notes. Preserve any existing session work when updating to the preparation commit.
+
 ## The working agreement
 
 **Never make an APK.** Do not build, assemble, package, sign, export or generate an APK, including a debug or test APK. Do not initiate an APK build for verification. Never run a Gradle task that produces one. The existing `npm run test:apk-assets` writes a temporary `.apk`-named ZIP fixture: do not run it unless the test has first been adapted to use a non-APK fixture.
 
-**Never push. Ever.** The user applies and pushes their own patches. Do not publish, create a release or tag, force-push or rewrite published history. Respect the content-rights restrictions below.
+**Pushing is normally forbidden.** The user applies and pushes patches. The user has explicitly authorized a narrow exception for the six-agent Arabic/Persian round: each numbered agent may push **only its own** `split-agent-N` branch for that round. Do not push `main` or another agent's branch, open a PR, create a release or tag, force-push, or rewrite published history. The coordinating assistant still does not push. The repository is public, so a pushed branch is public even without a PR; do not include private exports, new third-party content, secrets or unverified permission claims.
 
 **No patch leaves with a failing test.** Run the relevant checks and fix every failure before handing over a patch. A caveat in chat does not make a red result acceptable. If a required check cannot run or a failing test cannot be made green, hand over the diagnosis and no patch. If a failure predates the work, prove it against the base and report it, but do not ship a patch while the test remains red.
 
@@ -39,12 +41,12 @@ Read `CONTENT_POLICY.md`, `ROADMAP.md`, `docs/ai-splitting.md` and `docs/segment
 Never generate a translation of Arabic text (including Quran, prayers, ziyarat, invocations or quotations), or indirectly translate devotional Arabic through a Persian rendition. Missing devotional translations must come from licensed human translations or be left missing. AI may translate Persian explanatory prose only under `CONTENT_POLICY.md`, with source/method recorded and reviewed. Do not infer that existing translations are licensed or human-made when provenance is unknown.
 
 - Do not require manual line splitting or visual data-editing tools. Use text/JSON commands and build agent-friendly automation. Do not create an editor or reviewer GUI.
-- Use `npm run split:plan -- export <item>` and the plan/validate workflow in `docs/ai-splitting.md`. It proposes lossless pieces and optional **unreviewed** groups; it does not modify canonical text. Do not silently promote a machine proposal to a reviewed alignment.
-- Preserve exact Arabic, Persian and English source text, meaningful repeats, source claims, IDs and editorial history. Do not equate line number or position with translation. English can remain one paragraph while multiple exact spans refer to it.
-- A general one-to-many split/merge migration and physical canonical-splitting command are not implemented. Do not bulk-rewrite text or reuse retired IDs to fake one. Follow the roadmap and make backups/migration tests before adding that capability.
+- For the six-agent round use `scripts/split-agent.ts` and `scripts/six-agent.ts` as documented in `docs/split-agent-instructions.md`; the former plans, the latter can apply a checked, reversible physical split on the agent's own branch. The older `npm run split:plan` remains a separate proposal-only general planner. Do not promote any machine proposal or agent review to a human-reviewed alignment.
+- Preserve exact Arabic, Persian and English source text, meaningful repeats, source claims and editorial history. New physical rows have tested old-to-new row/language/code-point mappings; retired row IDs must never be reused for unrelated content. Do not equate line number or position with translation. English can remain one paragraph while multiple exact spans refer to it.
+- The six-agent command handles this round's checked per-item splits, not general row merging, punctuation correction, or migration of human-reviewed alignments. It rejects those unsupported cases and actual physical line breaks. Do not silently bypass these guards or bulk-rewrite canonical data by hand; preserve and report an exceptional case.
 - Source of truth is `data/`; SQLite, search indexes, audit reports and `generated/` are derived build artifacts. Do not commit duplicate generated files. Run `npm run check:repository` and the documented tests. Do not replace canonical data with an old import or generated output.
 - Earlier Persian normalization used Hazm; not every suggestion was applied, and its word list is incomplete. Do not assume an unknown word is wrong or automatically apply every suggestion. Read `docs/persian-normalization.md`.
-- Rights remain unverified; keep this work local/private until appropriate permissions are obtained. Do not publish, force-push, alter an unrelated repository, or mark rights reviewed without evidence.
+- Rights remain unverified. The user has nevertheless authorized the six numbered agents to push their own work branches in this public repository; that authorization is not evidence of content rights. Do not add third-party source material, duplicate private review exports, force-push, alter another repository, create a release, or mark rights reviewed without evidence.
 
 ## Local workspace: one checkout and a real budget
 

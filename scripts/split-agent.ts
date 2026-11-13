@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCorpus, validateCorpus, type Corpus } from '../src/corpus.js';
+import { loadCorpusAtCommit } from '../src/git-corpus.js';
 import { auditAgentBatch } from '../src/split-agent-batch.js';
 import {
   AgentPreviewSchema, AgentReviewSchema, SPLIT_AGENT_PROTOCOL, assertAgentAssignment,
@@ -28,14 +29,24 @@ const usage = `Arabic/Persian split preparation (local, text-only, never writes 
 
 Output is JSON, printed to stdout unless --output names a NEW file outside data/.
 Audit-batch exits nonzero until all assigned review records are complete.
-Nothing here performs a canonical migration or certifies meaning or rights.`;
+For corpus commands, add --base FULL_COMMIT_SHA to read a frozen Git snapshot in memory.
+This planning tool never writes canonical data; see scripts/six-agent.ts for canonical application.
+No tool certifies meaning or rights.`;
 
 const files = [
-  'scripts/split-agent.ts', 'src/split-agent.ts', 'src/split-agent-batch.ts', 'src/corpus.ts',
+  '.gitattributes', '.gitignore', 'scripts/split-agent.ts', 'scripts/six-agent.ts', 'scripts/six-agent-snapshot.ts',
+  'scripts/merge-agent-files.mjs', 'scripts/build-data.ts', 'scripts/split-plan.ts', 'scripts/test-six-agent-migrated-corpus.ts',
+  'src/split-agent.ts', 'src/split-agent-batch.ts',
+  'src/split-canonical.ts', 'src/six-agent-review.ts', 'src/row-splits.ts', 'src/git-corpus.ts', 'src/corpus.ts', 'src/editor.ts',
   'src/line-breaks.ts', 'src/line-break-history.ts', 'src/source-page-history.ts', 'src/punctuation-history.ts',
   'src/punctuation.ts', 'src/quran-markers.ts', 'src/normalize.ts', 'src/schema.ts', 'src/text-ids.ts',
-  'tests/split-agent.test.ts', 'tests/split-plans.test.ts', 'docs/split-agent-instructions.md',
-  'AGENTS.md', 'CONTENT_POLICY.md', 'package.json', 'package-lock.json',
+  'web/data.ts', 'web/main.ts', 'web/row-split-anchor.ts', 'tools/schema.sql', 'tools/export_sqlite.py',
+  'tests/split-agent.test.ts', 'tests/split-plans.test.ts', 'tests/six-agent-split.test.ts', 'tests/six-agent-build.test.ts',
+  'tests/six-agent-sqlite.test.ts', 'tests/six-agent-merge.test.ts', 'tests/six-agent-cli.test.ts', 'tests/browser/row-split-links.spec.ts',
+  'tests/helpers/row-split-history.ts', 'tests/explanation-classification.test.ts', 'tests/item-search-records.test.ts',
+  'tests/line-breaks.test.ts', 'tests/quran-markers.test.ts', 'tests/runtime-audio.test.ts',
+  'tests/search-real-relevance.test.ts', 'tests/substantive-audit.test.ts',
+  'docs/split-agent-instructions.md', 'AGENTS.md', 'CONTENT_POLICY.md', 'package.json', 'package-lock.json',
 ];
 function toolInfo() {
   const versions = ['tsx', 'typescript', 'zod'].map(name => {
@@ -92,7 +103,7 @@ function main(): void {
   for (let i = 0; i < args.length; i++) {
     const arg = args[i]!;
     if (!arg.startsWith('--')) { positional.push(arg); continue; }
-    if (!['--output', '--author', '--reviewer', '--manifest', '--work-dir'].includes(arg) || flags[arg] !== undefined ||
+    if (!['--output', '--author', '--reviewer', '--manifest', '--work-dir', '--base'].includes(arg) || flags[arg] !== undefined ||
         !args[i + 1] || args[i + 1]!.startsWith('--')) throw new Error(usage);
     flags[arg] = args[++i]!;
   }
@@ -111,14 +122,15 @@ function main(): void {
     'audit-batch': { count: 1, options: ['--output', '--work-dir'] },
   };
   const specification = allowed[command];
-  if (!specification || positional.length !== specification.count || Object.keys(flags).some(f => !specification.options.includes(f))) throw new Error(usage);
+  if (!specification || positional.length !== specification.count || Object.keys(flags).some(f => !specification.options.includes(f) && f !== '--base') ||
+      (flags['--base'] && ['tool-info','verify-tool-info'].includes(command))) throw new Error(usage);
   if (command === 'tool-info') { output(toolInfo(), flags['--output']); return; }
   if (command === 'verify-tool-info') {
     try { assert.deepStrictEqual(json(positional[0]!), toolInfo()); }
     catch { throw new Error('Tool source, dependencies, Node or Unicode/ICU version differs from the pinned common tool version'); }
     output({ status: 'tool-version-matches', protocol: SPLIT_AGENT_PROTOCOL }, flags['--output']); return;
   }
-  const c = loadCorpus(), validation = validateCorpus(c);
+  const c = flags['--base'] ? loadCorpusAtCommit(flags['--base']) : loadCorpus(), validation = validateCorpus(c);
   if (validation.errors.length) throw new Error('Fix corpus validation errors first:\n' + validation.errors.join('\n'));
   const assignment = (item: string, author: string, reviewer?: string) => {
     if (flags['--manifest']) assertAgentAssignment(c, json(flags['--manifest']), item, author, reviewer);
