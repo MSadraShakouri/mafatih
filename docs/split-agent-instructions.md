@@ -4,48 +4,111 @@ This is the **current executable workflow**, superseding the old proposal-only g
 
 The user explicitly authorizes **each agent to push only its own branch**. Never push `main` or a peer's branch, force-push, create a PR, release or tag, or change a different repository. A pushed branch of this repository is public even without a PR. Do not commit generated text-bearing inputs/previews, third-party editions, secrets, raw source quotations in messages, or claims that permissions were verified. Do not translate Arabic devotional text, even through Persian. No APK builds.
 
-## 1. Preserve existing work; obtain the common base
+## 1. Keep your Arena branch; obtain and register the common base
 
-If resuming a session, first report and preserve its current branch, status, commits and files. Do not reset, clean, stash, overwrite or throw away previous work. On `main`, create `split-agent-N` before editing; if already on your own differently named branch, rename it safely to `split-agent-N` if that name is free. If you cannot tell who owns the current branch, or a name is already occupied, stop and report. Commit your existing tracked work on your own branch before merging preparation; keep any text-bearing exports local. If unrelated or conflicting work cannot safely be committed, stop and report rather than discard it. All commits, including merge commits, need both `Co-authored-by:` trailers specified in `AGENTS.md`.
+First inspect and preserve the current branch, status, commits and files. In a GitHub-connected Arena session, keep the **platform-assigned current `arena/<session>-mafatih` branch**. Do not create, switch to or rename it to `split-agent-N`; the platform permits you to push only your own session branch. Outside Arena, an already-established own `split-agent-N` branch is also supported. If you cannot identify your session's own branch, stop and report; the name or registration alone does not prove ownership. Never reset, clean, stash, force-push, overwrite or discard work. If existing work cannot safely be committed or merged, stop and report it. Every commit, including merge commits, needs both co-author trailers from `AGENTS.md`.
 
-Wait until the user has applied **and pushed the preparation patch**. Fetch, find the exact commit that introduced the launch marker, and merge that commit into your own branch. Do not use the old draft-only base or wait for a pilot. These commands illustrate the process; set `N` to your actual number and inspect status before each mutating command:
+Wait until the user has applied **and pushed the updated preparation patch**. Fetch `main` and find the latest first-parent commit that **added or modified** the launch marker. This freezes the same preparation even if unrelated commits are later added to `main`; the original marker-adding commit is now obsolete. The following is Bash; set N to your own number:
 
-```sh
-N=3                       # replace with your own number, 1–6
+```bash
+set -euo pipefail
+N=4                       # replace with your own number, 1–6
 ME="agent-$N"
 PREV=$(( (N + 4) % 6 + 1 ))
 NEXT=$(( N % 6 + 1 ))
+OWN_BRANCH=$(git branch --show-current)
 git status --short --branch
-git fetch origin refs/heads/main:refs/remotes/origin/main
-BASE=$(git log -1 --diff-filter=A --format=%H refs/remotes/origin/main -- docs/split-assignments/launch.json)
-test -n "$BASE" && git show "$BASE:docs/split-assignments/launch.json"
-# Create/switch to split-agent-N as described above, preserving all work.
-# Merge $BASE into YOUR branch; resolve your own conflicts, retaining both.
-```
-
-Use a merge commit with the required trailers if histories diverged. If preparation is absent or you cannot fetch, report that and preserve your work. Do not guess the SHA. Save this exact full `BASE` **only if the file does not already exist**; on resume read it and require it to match:
-
-```sh
-mkdir -p "agent-work/$ME"
-BASE_FILE="agent-work/$ME/base.txt"
-if test -e "$BASE_FILE"; then
-  test "$(cat "$BASE_FILE")" = "$BASE" || { echo 'Frozen base mismatch: preserve and report' >&2; exit 1; }
-else
-  (set -C; printf '%s\n' "$BASE" > "$BASE_FILE")
+# Confirm OWN_BRANCH is your platform-assigned branch, not main or a peer.
+# Fetch the actual main tip without moving any local branch or tracking ref.
+git fetch --no-tags --refmap= origin refs/heads/main
+# A shallow boundary can falsely make existing commits appear to be roots.
+# If shallow, obtain the missing history before choosing a frozen base:
+if test "$(git rev-parse --is-shallow-repository)" = true; then
+  git fetch --no-tags --unshallow --refmap= origin refs/heads/main
+fi
+test "$(git rev-parse --is-shallow-repository)" = false || { echo 'Complete history unavailable; preserve work and report' >&2; exit 1; }
+MAIN=$(git rev-parse --verify 'FETCH_HEAD^{commit}')
+BASE=$(git log -1 --first-parent --diff-filter=AM --format=%H "$MAIN" -- docs/split-assignments/launch.json)
+test -n "$BASE" || { echo 'Updated launch marker not found; stop and report' >&2; exit 1; }
+git show "$BASE:docs/split-assignments/launch.json" | node -e '
+  let s=""; process.stdin.on("data", x => s+=x); process.stdin.on("end", () => {
+    const m=JSON.parse(s); if(m.protocol!=="six-agent-parallel-ring-v2" || m.preparation_revision!==2) {
+      console.error("Updated preparation is not on main; preserve work and stop"); process.exitCode=1;
+    } else console.log("Updated launch marker:", m.protocol, m.preparation_revision);
+  });'
+# Before any merge, reject a changed existing round/branch binding.
+REG="agent-work/$ME/registration.json"
+OLD_BASE="agent-work/$ME/base.txt"
+for p in agent-work "agent-work/$ME" "$REG" "$OLD_BASE"; do
+  test ! -L "$p" || { echo "Unsafe symlink: $p; preserve and report" >&2; exit 1; }
+done
+if test -e "$REG"; then
+  node -e 'const x=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));
+    if(x.agent!==process.argv[2]||x.branch!==process.argv[3]||x.base!==process.argv[4]) {
+      console.error("Existing registration differs; preserve work and report"); process.exit(1);
+    }' "$REG" "$ME" "$OWN_BRANCH" "$BASE"
+fi
+if test -e "$OLD_BASE"; then
+  test "$(cat "$OLD_BASE")" = "$BASE" || { echo 'Existing frozen base differs; preserve work and report' >&2; exit 1; }
+fi
+if ! test -e "$REG" && ! test -e "$OLD_BASE"; then
+  for kind in plans layouts reviews; do
+    d="agent-work/$ME/$kind"
+    if test -d "$d" && test -n "$(find "$d" -mindepth 1 -maxdepth 1 -print -quit)"; then
+      echo "Existing $kind have no verifiable frozen base; preserve work and report" >&2; exit 1
+    fi
+  done
 fi
 ```
 
-Never silently switch the baseline mid-round. The frozen baseline is what `--base "$BASE"` means below; reading it uses Git blobs in memory, not a second checkout.
+If the frozen base is not already an ancestor of your own branch, merge it **into that branch** with a merge-commit message containing both trailers. Do not switch branches. First commit your own existing tracked work if that can be done safely. For histories with a common ancestor, the merge command is:
 
-Install the existing locked dependencies if needed, without editing the package or lock file. Then run:
-
-```sh
-node --import tsx scripts/six-agent.ts configure --agent "$ME"
-node --import tsx scripts/split-agent.ts verify-tool-info docs/split-assignments/tool-info.json
-node --import tsx scripts/split-agent.ts verify-partitions docs/split-assignments/assignments.json --base "$BASE"
+```bash
+MERGE_MSG=$'Merge updated six-agent preparation\n\nCo-authored-by: Sadra Shakouri <sadra.shakouri@gmail.com>\nCo-authored-by: Arena Agent <agent@arena.ai>'
+git merge --no-ff -m "$MERGE_MSG" "$BASE"
 ```
 
-Tool-info pins the source, dependencies, Node, ICU and Unicode version; if it differs, report the mismatch rather than bypassing it. The partition checks all **686 items / 21,181 original AR/FA occurrences**, including already split/classified material and reciter labels. Your complete list is `docs/split-assignments/agent-N.md`; do not switch or sample the assignment. A `manual-v1` flag is an old claim, not proof of current accuracy. The workload weights are estimates.
+If Git says the histories are unrelated, first check whether the repository is shallow and fetch the missing history; never assume that a shallow boundary means unrelated roots. If full histories are genuinely unrelated, the corresponding careful merge is `git merge --allow-unrelated-histories --no-ff -m "$MERGE_MSG" "$BASE"` on **your own branch**. Preserve both histories and resolve conflicts by comparing the actual pre-merge work and preparation, never by blindly choosing a side; stop and report if any existing work cannot be preserved.
+
+A safe shortcut exists for the specific clean, unrelated-history case where your entire current tree is byte-for-byte identical to `$BASE^` (as with an unchanged session on the previous preparation). Verify `git status --porcelain` is empty and the current tree equals the parent tree **using the exact commands below**; otherwise do not use this shortcut. It retains the existing history and applies only the known preparation delta, then verifies the complete resulting tree before the merge commit:
+
+```bash
+set -euo pipefail
+# Only after confirming full histories are unrelated, the worktree is clean,
+# BASE has a parent, and your current tree is exactly BASE's parent tree:
+test -z "$(git status --porcelain)"
+test "$(git rev-parse HEAD^{tree})" = "$(git rev-parse "$BASE^"^{tree})"
+git merge --allow-unrelated-histories --no-ff --no-commit -s ours "$BASE"
+git diff --no-ext-diff --binary "$BASE^" "$BASE" | git apply --index
+test "$(git write-tree)" = "$(git rev-parse "$BASE"^{tree})" || { echo 'Tree mismatch; preserve merge state and report' >&2; exit 1; }
+git commit -m "Merge updated six-agent preparation" \
+  -m $'Co-authored-by: Sadra Shakouri <sadra.shakouri@gmail.com>\nCo-authored-by: Arena Agent <agent@arena.ai>'
+```
+
+If the command fails or conflicts, preserve the merge state and report; do not force, reset or discard files. If your current tree is not exactly the prior preparation, use an ordinary careful merge instead. If fetching the complete history is impossible, report the exact limitation rather than guessing a common base.
+
+Install the existing locked dependencies with `npm ci` if needed, without changing package or lock files. This round is pinned to **Node v22.22.3, ICU 78.2 and Unicode 17.0**: use that exact runtime, not the earlier Node 20 pin. If the runtime or another pin differs, `verify-tool-info` reports the differing fields; do not bypass it. On resume, keep the original registration and base; if a legacy `agent-work/$ME/base.txt` or existing plans record a different or unverifiable base, preserve them and report instead of silently migrating them.
+
+```bash
+node --version                 # must print v22.22.3
+node --import tsx scripts/split-agent.ts verify-tool-info docs/split-assignments/tool-info.json
+node --import tsx scripts/split-agent.ts verify-partitions docs/split-assignments/assignments.json --base "$BASE"
+node --import tsx scripts/six-agent.ts register --agent "$ME" --base "$BASE"
+node --import tsx scripts/six-agent.ts configure --agent "$ME"
+```
+
+Registration creates `agent-work/$ME/registration.json` once, binding your number, **actual current branch**, and frozen base. Repeating it is safe only when all three match. It checks the base is an ancestor and refuses a changed legacy base, duplicate local identity or differently bound registration. This is a self-declaration, not platform ownership proof. Review and commit just your registration with the required trailers, then publish it on **your own** current branch:
+
+```bash
+git status --short --branch
+git add "agent-work/$ME/registration.json"
+git commit -m "Register $ME for the splitting round" \
+  -m $'Co-authored-by: Sadra Shakouri <sadra.shakouri@gmail.com>\nCo-authored-by: Arena Agent <agent@arena.ai>'
+test "$(git branch --show-current)" = "$OWN_BRANCH" || { echo 'Own branch changed; preserve work and stop' >&2; exit 1; }
+git push origin "$OWN_BRANCH"
+```
+
+If already committed, do not create an empty commit; push the existing own branch if necessary. Never push another ref or `main`. If push is rejected, stop and report without exposing credentials. The partition covers all **686 items / 21,181 original AR/FA occurrences**, including already split/classified material and reciter labels. Your complete list is `docs/split-assignments/agent-N.md`; do not switch or sample the assignment. A `manual-v1` flag is an old claim, not proof of current accuracy. The workload weights are estimates.
 
 ## 2. What to do
 
@@ -83,9 +146,9 @@ Every `--output` must be a **new** file; don't overwrite a prior export. For rev
 
 A layout's `rows` follow the original row order. Each `output` row has `ar` and `fa`, each either `null` or `{ "source": "ar" | "fa", "part": 0 }`, plus one `kind`. Parts are zero-based within the original field, must appear **exactly once and in source order**, and the output kind must match each included part. `source` names the original field; the containing `ar`/`fa` key is the destination field. For example, a Persian instruction formerly in the Arabic field may be `fa: {"source":"ar","part":0}` with `kind: "instruction"`, followed by the Arabic and its existing Persian in a later output row. Unpair uncertain portions; do not invent a translation. The generated layout is a starting draft, not evidence that pairings are right.
 
-The tool checks a frozen item fingerprint, author assignment, complete occurrence coverage, Unicode/marker boundaries, source-order reconstruction, row roles and shared-text copy-on-write. It writes your `data/items/ITEM.json`, a reversible `data/row-splits/ITEM.json` and any necessary `data/texts/*.json` additions. It preserves original references and historical row identities and supports old row/language/offset reading links. It refuses to overwrite unrelated or non-reconstructible prior item work; preserve and reconcile such work, don't force it. Mechanical checks do not establish correct meaning or rights.
+The tool checks a frozen item fingerprint, author assignment, complete occurrence coverage, Unicode/marker boundaries, source-order reconstruction, row roles and shared-text copy-on-write. It writes your `data/items/ITEM.json`, a reversible `data/row-splits/ITEM.json` and any necessary `data/texts/*.json` additions. It preserves original references and historical row identities and supports old row/language/offset reading links. When an export contains `inherited_from`, a historical hint is conservatively attached to every mapped descendant of the old occurrence, including pieces moved between languages. The original event may affect only part of that occurrence; old break offsets are not offsets into the current field. Inspect the history instead of treating this inheritance as an automatic boundary. It refuses to overwrite unrelated or non-reconstructible prior item work; preserve and reconcile such work, don't force it. Mechanical checks do not establish correct meaning or rights.
 
-Review `git status` and the actual diff. Stage and commit only your own plans/layouts, changed assigned items, their split records and the affected text shards; never `git add` ignored inputs/previews or an unrelated user's file. Use the two co-author trailers. Push only your own branch with `git push -u origin "HEAD:refs/heads/split-$ME"` (never force). If a push is rejected or branch ownership is unclear, stop and preserve/report the state.
+Review `git status` and the actual diff. Stage and commit only your own plans/layouts, changed assigned items, their split records and the affected text shards; never `git add` ignored inputs/previews or an unrelated user's file. Use the two co-author trailers. Before every push, confirm `git branch --show-current` still equals the verified `$OWN_BRANCH`; then push only that branch with `git push origin "$OWN_BRANCH"` (never force). If a push is rejected or branch ownership is unclear, stop and preserve/report the state.
 
 ## 4. Parallel ring, two communication files, and independent review
 
@@ -98,32 +161,50 @@ Review `git status` and the actual diff. Stage and commit only your own plans/la
 | 5 | 4 | 6 | `agent-4-agent-5`, `agent-5-agent-6` |
 | 6 | 5 | 1 | `agent-5-agent-6`, `agent-1-agent-6` |
 
-Each listed file is `coordination/<pair>.jsonl`. Each agent uses exactly its two pairwise files. The files are **branch copies**, not a live shared filesystem: write messages on your own branch, commit and push; fetch the neighbor's branch and `git show` the same pair file at its tip to read replies. Never edit the peer's branch. Messages are grow-only records; use IDs/offsets and no text passages. Merges may sort records by ID, so use `reply_to` rather than line position to follow a conversation. `configure` installs tested, local Git drivers that union independent text-shard additions and message IDs. If they report a collision, corruption, changed old value, or genuine semantic conflict, they refuse it; resolve it on **your own** branch with your neighbor and recheck. Never blindly choose ours/theirs or delete a peer message.
+Each listed file is `coordination/<pair>.jsonl`. Each agent uses exactly its two pairwise files. The files are **branch copies**, not a live shared filesystem: write messages on your own branch, commit and push; discover the neighbor's actual branch and read that file at its fetched tip. Never edit or push the peer's branch. Messages are grow-only records; use IDs/offsets and no text passages. Merges may sort records by ID, so use `reply_to` and commit ancestry rather than line order. `configure` installs tested local Git drivers that union independent text-shard additions and message IDs. If they report a collision, corruption, changed old value, or genuine semantic conflict, resolve it on **your own** branch with your neighbor and recheck. Never blindly choose ours/theirs or delete a peer message.
 
-After committing a batch, publish an isolated, mergeable authored snapshot:
+Discover each neighbor from its committed registration instead of guessing an `arena/` name:
 
-```sh
-node --import tsx scripts/six-agent-snapshot.ts --base "$BASE" --agent "$ME"
+```bash
+node --import tsx scripts/six-agent.ts discover --agent "$ME" --peer "agent-$PREV"
+node --import tsx scripts/six-agent.ts discover --agent "$ME" --peer "agent-$NEXT"
 ```
 
-The command prints the exact `snapshot` SHA and `partial-authored-snapshot` or `author-ready`. It makes a commit containing **only your own completed authored items**, attaches it to your own branch, and never pushes. Even after you merge a predecessor, a revised snapshot descends from your previous isolated snapshot, not your peer-merged branch. This avoids a cyclic chain and lets the successor merge revisions normally. Commit/push your own branch, then tell the successor the SHA and whether it is partial or author-ready:
+`awaiting-peer` means the neighbor has not published a matching registration: continue your own assignment and try later, rather than waiting. `peer-found` includes the exact `branch`, fetched `tip` SHA and common `base`. Discovery lists candidate Arena and conventional branches, fetches their objects without changing any local branch or pushing, accepts a registration only when it names its own remote ref and this exact base, and refuses multiple claimants instead of guessing. Registration is self-reported, not proof of ownership; if it is ambiguous or branch read access fails, preserve the state and ask the coordinator for a verified handoff.
 
-```sh
-NEXT_AGENT="agent-$NEXT"
-node --import tsx scripts/six-agent.ts message --from "$ME" --to "$NEXT_AGENT" --kind ready --commit "$SNAP" --text "author-ready or partial; base $BASE; see snapshot"
-# Commit your changed pair file with both trailers, then push only split-agent-N.
-```
+To read the predecessor's messages when discovery reports `peer-found`:
 
-`SNAP` must be the actual SHA printed by the snapshot command, never guessed. A partial snapshot supports early review; do **not** call it author-ready. You may review predecessor batches as they appear, in parallel with your own work. When its full authored snapshot is ready, fetch its branch, verify that SHA is reachable from its pushed branch, and merge **that snapshot into your own branch**, not the moving peer tip:
-
-```sh
+```bash
 PEER="agent-$PREV"
-git fetch origin "refs/heads/split-$PEER:refs/remotes/origin/split-$PEER"
-git merge-base --is-ancestor "$PEER_SNAPSHOT" "refs/remotes/origin/split-$PEER"
-# On split-agent-N, merge $PEER_SNAPSHOT with a merge-commit message containing both co-author trailers.
+PEER_INFO=$(node --import tsx scripts/six-agent.ts discover --agent "$ME" --peer "$PEER")
+# Run the next lines only if PEER_INFO reports peer-found.
+PEER_TIP=$(node -e 'const x=JSON.parse(process.argv[1]); if(x.status!=="peer-found") process.exit(1); console.log(x.tip)' "$PEER_INFO")
+PAIR="coordination/$(node -e 'console.log(process.argv.slice(1).sort().join("-"))' "$ME" "$PEER").jsonl"
+git show "$PEER_TIP:$PAIR"
 ```
 
-Do not wait for the predecessor to finish *its* predecessor merge, or wait for all six agents. If your predecessor has not pushed an author-ready snapshot, continue your own work and review available batches; if all remaining work is waiting on one neighbor, report the specific condition and stop rather than polling forever. The user can ask you to resume. If GitHub branch reads/pushes are unavailable in the Arena session, report the exact error and ask the user for a commit/file handoff; never expose credentials.
+After committing a batch, publish an isolated, mergeable authored snapshot and notify the successor:
+
+```bash
+SNAP_INFO=$(node --import tsx scripts/six-agent-snapshot.ts --base "$BASE" --agent "$ME")
+printf '%s\n' "$SNAP_INFO"
+SNAP=$(node -e 'console.log(JSON.parse(process.argv[1]).snapshot)' "$SNAP_INFO")
+SNAP_STATUS=$(node -e 'console.log(JSON.parse(process.argv[1]).status)' "$SNAP_INFO")
+NEXT_AGENT="agent-$NEXT"
+NEXT_PAIR="coordination/$(node -e 'console.log(process.argv.slice(1).sort().join("-"))' "$ME" "$NEXT_AGENT").jsonl"
+node --import tsx scripts/six-agent.ts message --from "$ME" --to "$NEXT_AGENT" --kind ready --commit "$SNAP" --text "$SNAP_STATUS; base $BASE"
+git add "$NEXT_PAIR"
+git commit -m "Publish $ME snapshot notice" \
+  -m $'Co-authored-by: Sadra Shakouri <sadra.shakouri@gmail.com>\nCo-authored-by: Arena Agent <agent@arena.ai>'
+test "$(git branch --show-current)" = "$OWN_BRANCH" || { echo 'Own branch changed; preserve work and stop' >&2; exit 1; }
+git push origin "$OWN_BRANCH"
+```
+
+The snapshot command prints `partial-authored-snapshot` or `author-ready`; it makes a commit containing **only your own completed authored items**, attaches it to your own branch and never pushes. Even after a predecessor merge, a revised snapshot descends from your previous isolated snapshot, not your peer-merged branch. A partial snapshot supports early review; do **not** call it author-ready. Never guess the SHA or status.
+
+For a predecessor snapshot, use a `ready` message sent by that predecessor to you for this base. Verify its exact `commit` is reachable from the discovered `PEER_TIP` using `git merge-base --is-ancestor "$PEER_SNAPSHOT" "$PEER_TIP"`. When there are multiple ready messages, select the newest by **snapshot commit ancestry**, not message line order; a later revision descends from the previous snapshot. If candidates are incomparable or the tip does not contain the snapshot, report it rather than guessing. Review available partial snapshots in parallel. When the full `author-ready` snapshot is available, merge **that exact snapshot into your own branch**, not the moving peer tip, with both co-author trailers; after revisions, merge the newer descendant and redo affected reviews.
+
+Do not wait for the predecessor to finish *its* predecessor merge, or wait for all six agents. If the predecessor has not pushed an author-ready snapshot, continue your own work and review available batches; if all remaining work is waiting on one neighbor, report the specific condition and stop rather than polling forever. The user can ask you to resume. If GitHub branch reads/pushes are unavailable in the Arena session, report the error without credentials and ask the coordinator for a commit/file handoff.
 
 To independently review an item from the predecessor's exact published snapshot:
 
@@ -144,7 +225,7 @@ Set each `semantic_review.sources` split and kind decision to `accept`, `revise`
 
 Run `node --import tsx scripts/six-agent.ts audit-authored --base "$BASE" --agent "$ME"`; it is complete only when every assigned item has a checked plan, layout and matching canonical result. Run `npm run check` and `npm run validate`; resolve real failures. Ensure your predecessor's final snapshot was reviewed and merged, all relevant neighbor questions have answers, and unresolved issues are clearly reported—not falsely marked complete. Push your own branch and report its exact tip, authored snapshot, predecessor snapshot and test/audit results. Do not open a PR.
 
-At the end the coordinator fetches all six tips and combines them without assuming any one contains everything. The agent `configure` command is deliberately branch-restricted. On the coordinator's integration branch, install the same safe drivers without overwriting a different existing setting:
+At the end each agent reports its actual Arena branch, exact pushed tip and frozen base. The coordinator fetches those six reported refs, checks each `agent-work/agent-N/registration.json` against the reported ref and base, rejects duplicate claims, and combines all six tips without assuming any one contains everything. Registration alone is not ownership proof. The agent `configure` command is deliberately branch-restricted. On the coordinator's integration branch, install the same safe drivers without overwriting a different existing setting:
 
 ```sh
 for kind in texts messages; do
