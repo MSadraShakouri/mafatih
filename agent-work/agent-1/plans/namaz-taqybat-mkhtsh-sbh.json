@@ -1,0 +1,110 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-taqybat-mkhtsh-sbh",
+  "item_sha256": "879563bfb3b1c8ff8d299a9695b23541bcb06c1b3a21f57c6cb6dc715f91817c",
+  "author": "agent-1",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "6ffddbe37c945baeeea7af1939bc4039ee1991d2e685e7bec851a27b5d14b1e6",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "be8ecab60cfb4f9ca057dd1561e649b848b5fc4fd34b3a54247805ea9d367cb8",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "5a46e2c763280460e5fa34f041f47736106de6f22fb41e99ff038c19c995ff63",
+      "checked": true,
+      "cuts": [
+        134
+      ],
+      "kinds": [
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "10e365defa1e8c71adf9564a751eb73d71b1b3fa2eabf9ffe84d846b4f0ada2e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "084e5d27653324042f4e70e997c6caa8386812ffa7e2a8c94746b9f501bc1f3c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "678219a649dda6214f8289550c3aeafb1eb96e50c3058cdb591954dee085704c",
+      "checked": true,
+      "cuts": [
+        121
+      ],
+      "kinds": [
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "4fdb99b427a1c56025ec374188eb716d0953ab052b6a12ea39878e7d2a96be9a",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "be00d55e31feb4994af0a0b38f12bd89d92f7c81c2bf8e4595654e043cee059a",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 of this ar field is Persian-language text (note); the layout places it in the fa field. Wording unchanged."
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Part 0 of this ar field is Persian-language text (note); the layout places it in the fa field. Wording unchanged."
+    }
+  ]
+}
