@@ -22,98 +22,98 @@
         "row": "r00001",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 355 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 585 code points and 15 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 481 code points and 14 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00005",
         "language": "ar",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 422 code points and 11 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 382 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "accept",
+        "note": "Under-split recitation row: output piece of 140 code points with 7 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "accept",
+        "note": "Under-split recitation row: output piece of 140 code points with 7 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
       },
       {
         "row": "r00007",
         "language": "ar",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 591 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 525 code points and 19 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00008",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 221 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00010",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00011",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 469 code points and 11 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       }
     ],
@@ -121,13 +121,13 @@
     "issues": [
       {
         "index": 0,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Checked: the output field has no physical separator and no earlier separator is restored (the line-break guard reports none). Whether the earlier break position should also be a cut is covered by the split decision for this source."
       }
     ]
   },
   "layout": {
-    "decision": "pending",
-    "note": ""
+    "decision": "revise",
+    "note": "Recitation rows r00005 to r00007 pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised."
   }
 }

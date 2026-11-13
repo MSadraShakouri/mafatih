@@ -22,49 +22,49 @@
         "row": "r00001",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 256 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 2 has 398 code points and 7 internal clause marks; piece 1 of 2 has 622 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
-        "note": "Under-split: piece 0 of 1 has 694 code points and 17 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "kind": "accept",
+        "note": "Under-split: piece 0 of 1 has 694 code points and 17 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. This fa field translates the Arabic prayer that stands in the fa field of r00002 together with the short Arabic of r00003, yet the output row pairs it with the Arabic of r00003 alone; split it by clause and pair only the last clause with that Arabic."
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 598 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 539 code points and 18 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 249 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       }
     ],
@@ -73,6 +73,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+    "note": "Output row r00003 pairs a three-word Arabic tail with the translation of the whole prayer; the Arabic prayer piece of r00002 sits in the fa slot. Redo both after the split is revised."
   }
 }

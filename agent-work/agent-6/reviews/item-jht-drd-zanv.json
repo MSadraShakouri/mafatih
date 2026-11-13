@@ -22,49 +22,49 @@
         "row": "r00001",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
-        "note": "Under-split: piece 0 of 1 has 288 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "kind": "accept",
+        "note": "Under-split: piece 0 of 1 has 288 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. The piece starts with a section label (the name of the prayer or its purpose) fused to the text that follows; cut after the label and classify it heading."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "accept",
+        "note": "Under-split recitation row: output piece of 92 code points with 4 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "accept",
+        "note": "Under-split recitation row: output piece of 92 code points with 4 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       }
     ],
@@ -72,13 +72,13 @@
     "issues": [
       {
         "index": 0,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Checked: the first piece is Persian narration that only names the opening and closing words of a Quran passage; short Arabic fragments inside Persian prose stay, so keeping it as one note piece in the fa slot is right."
       }
     ]
   },
   "layout": {
-    "decision": "pending",
-    "note": ""
+    "decision": "revise",
+    "note": "Row r00003 pairs a five-clause Arabic prayer with its whole translation; redo that pairing clause by clause after the split is revised. The verse row r00005 is paired correctly."
   }
 }

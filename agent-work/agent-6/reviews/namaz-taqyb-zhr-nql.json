@@ -21,50 +21,50 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 639 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 656 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 2 of 3 has 386 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. Read by the reviewer: Persian text from the ar field is kept in the ar slot of its output row; place that piece in the fa slot with its instruction or note kind."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 1 of 2 has 363 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       }
     ],
@@ -72,23 +72,23 @@
     "issues": [
       {
         "index": 0,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Checked: the output field has no physical separator and no earlier separator is restored (the line-break guard reports none). Whether the earlier break position should also be a cut is covered by the split decision for this source."
       },
       {
         "index": 1,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Checked: the output field has no physical separator and no earlier separator is restored (the line-break guard reports none). Whether the earlier break position should also be a cut is covered by the split decision for this source."
       },
       {
         "index": 2,
-        "decision": "pending",
-        "note": ""
+        "decision": "escalate",
+        "note": "The issue text does not match the plan: this field is in fact cut into an Arabic clause, the Persian instruction and the second supplication, and the fa field is cut to match. Correct or remove the issue text; the Persian instruction piece still has to move to the fa slot (see the layout decision)."
       }
     ]
   },
   "layout": {
     "decision": "revise",
-    "note": "Persian text from the ar field is kept in the ar slot of its output row; place that piece in the fa slot with its instruction or note kind."
+    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised. Persian text from the ar field is kept in the ar slot of its output row; place that piece in the fa slot with its instruction or note kind."
   }
 }

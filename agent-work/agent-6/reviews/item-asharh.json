@@ -21,43 +21,43 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 282 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
-        "note": "Under-split: piece 0 of 1 has 302 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "kind": "accept",
+        "note": "Under-split: piece 0 of 1 has 302 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. The field starts with the translation of the basmala, whose Arabic is r00001; cut after it so that it pairs with r00001, then cut the rest by clause."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 546 code points and 3 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "pending",
+        "kind": "accept",
         "note": "Under-split: piece 0 of 1 has 343 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
+        "split": "accept",
+        "kind": "accept",
         "note": ""
       }
     ],
@@ -65,7 +65,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "pending",
-    "note": ""
+    "decision": "revise",
+    "note": "The basmala of r00001 has no Persian beside it while its translation is fused at the head of the Persian of r00002; pair it after the cut, and pair the rest clause by clause."
   }
 }
