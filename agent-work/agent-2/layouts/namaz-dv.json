@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-v1",
+  "item": "namaz-dv",
+  "author": "agent-2",
+  "plan_sha256": "a2154c0c4484d0dfdb4b566cbda661881ae586add32b37e5dc3f9ee020a15210",
+  "rows": [
+    {
+      "row": "r00001",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        }
+      ]
+    },
+    {
+      "row": "r00002",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "instruction"
+        }
+      ]
+    }
+  ]
+}

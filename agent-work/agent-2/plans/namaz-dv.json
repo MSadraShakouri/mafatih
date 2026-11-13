@@ -1,0 +1,51 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "namaz-dv",
+  "item_sha256": "6a7023e71a90bc2e2c437cee57b09923466f94c6ecc800a72984c14aa40d3fb0",
+  "author": "agent-2",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "source_sha256": "20b76171f753fee98bd590845add04ea98d88ffe785fc667cd995d94f9576acb",
+      "checked": true,
+      "cuts": [
+        124
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "e01f01cc02cc33076a091a565f7ac86d35152fac00d3bf0ff2cb91dae9e7729d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "2bd64bda8f0ab90a7cb2f37014ec949306237ddafeb4a3c6ef4cc68d108c1b59",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00001",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Persian prayer instruction sits in the ar field; layout re-homes part 0 to the fa destination; the Arabic dhikr stays in ar and pairs with the existing fa translation."
+    }
+  ]
+}
