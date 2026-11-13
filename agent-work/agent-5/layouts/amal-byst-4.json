@@ -3,28 +3,36 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-byst-4",
   "author": "agent-5",
-  "plan_sha256": "9adbcabaa371a0c8a626f1bc2dea797eef9a570b2ae8603ff89e5ee783e9b376",
+  "plan_sha256": "3f9aba622cd7c1ea3ee71291ad9aa89ef5628c7ca8a31b7417503e1a0c2afad9",
   "rows": [
     {
       "row": "r00001",
-      "checked": false,
+      "checked": true,
       "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 0
+          },
+          "kind": "heading"
+        },
         {
           "ar": {
             "source": "ar",
-            "part": 0
+            "part": 1
           },
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "unknown"
+          "kind": "recitation"
         }
       ]
     },
     {
       "row": "r00002",
-      "checked": false,
+      "checked": true,
       "output": [
         {
           "ar": {
@@ -35,7 +43,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "unknown"
+          "kind": "recitation"
         }
       ]
     }
