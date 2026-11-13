@@ -1,0 +1,77 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-mbas",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "86d4db672784e109ce1138e437f6ec09d1055a7ecc356a90b3e11416a1146102",
+  "layout_sha256": "af60a02d4a59c52c20c8e16cf4971cede9852c0b1d29f973c0e44a0a05063ff8",
+  "result_item_sha256": "d91615b3fd359ff0566e25ccf8f01588f9c19f13aa317cb88944d4e5d0ae1185",
+  "result_record_sha256": "795498cd35b60426b3bc6dbae27624061a56a12c4deaa1dcd333b437dce699d2",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-mbas",
+    "item_sha256": "d139e53df576719ff297d19b97289efeec5060bead88ea56335a3803c492d108",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "2931a16e4b4ffe1266dc4889a2768020f61dc32201327b56196692924778171f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 heading + 1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 7 pieces (1 heading + 5 explanatory note + 1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (3 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 8 pieces (8 devotional recitation); 8 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 8 pieces (8 devotional recitation); 8 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 3 pieces (3 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded historical-line-break at r00004/fa is accurate and no earlier physical separator is restored; the old break is used only as an ordinary piece boundary."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Rajab 25th and 27th headings plus the night's numbered acts split at sentence ends; the Arabic supplication pairs clause-for-clause with its Persian rendering."
+  }
+}

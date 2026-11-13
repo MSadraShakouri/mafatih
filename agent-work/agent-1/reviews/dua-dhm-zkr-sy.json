@@ -1,0 +1,89 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-dhm-zkr-sy",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "6f4513dd3b8a018ff6b947ee6a3ce6f969b6e9f0c95b15466f29dd0a6a2bd18c",
+  "layout_sha256": "a0ef595e78558744f4a37c08f373103540b2fc36383ac8a1767598980e8be1eb",
+  "result_item_sha256": "f7a131942e977cc800f209470d3c50a7a896a56a2279f407d2952388a1c0640c",
+  "result_record_sha256": "ae6b912813bac1a3f4af8deeb0656f9acb7ae28e9254841e0dcd75b87715c790",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-dhm-zkr-sy",
+    "item_sha256": "2984220381366e0518545883b16ff71fa987624fb304e86f1fcf976d03e3f685",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "a05c7e321aad4c67a14996cf4746260b231bc20b77e4fddce8ac4f022d590097",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 15 pieces (2 explanatory note + 13 devotional recitation); 13 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 13 pieces (13 devotional recitation); 13 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 devotional recitation); 4 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 devotional recitation); 4 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 devotional recitation); 1 clause paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 devotional recitation); 1 clause paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00001/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00001/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Persian framing notes split at sentence ends; the Persian notes that live in ar fields stay there with the mixed-language finding, and each Arabic supplication pairs clause-for-clause with its Persian rendering, including the sentence that continues into r00004."
+  }
+}

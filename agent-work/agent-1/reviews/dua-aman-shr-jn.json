@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-aman-shr-jn",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "ea8eafb2f8621f1574bbe2d5bca35e0e395f02cd8119529974bc781e95bebe01",
+  "layout_sha256": "1dc27aad0145bfc33d0267682cb93f937c814a859d70e86c4109288d207b73e6",
+  "result_item_sha256": "380a20b9e2c11f6d8a45b2e4057e5e9535ae5a2fb959b503cc0553652a04ce14",
+  "result_record_sha256": "a36faee254f68701efc7e0c6926767e80fa9b3168dddc56594861a3dd00f616b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-aman-shr-jn",
+    "item_sha256": "26650aa36555411b4a0028c2d2b318397f03d31b51540373c169305fc7496bd7",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "71229aacbb87cec9676f599c8e4122ceaca8f6cdff9a06b397861867370115a6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 16 pieces (16 devotional recitation); 15 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 15 pieces (15 devotional recitation); 15 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 6 pieces (1 ritual instruction + 5 devotional recitation); 5 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (5 devotional recitation); 5 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language at r00004/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Citation lead-in, the Arabic safety supplication and the closing instruction split at sentence ends; each Arabic clause pairs with its Persian rendering, and the parenthetical '(باللّه)' stays a separate unpaired piece rather than being merged or invented into Persian."
+  }
+}

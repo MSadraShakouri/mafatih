@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-tsbyh-zhra-alyha",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "31f5bcffad0321600ae87ae33a80661a43a40135871cd84149a098b4d9476815",
+  "layout_sha256": "e7793d7906508f01d9f2474d9b74c3b8bf6a599ea4a954035c6ef3bd24ce3578",
+  "result_item_sha256": "c7a569c78f4a1cfeff31ae2c96ef15c37e6e035dd47ba5f7884fe5278a126ffd",
+  "result_record_sha256": "56aac40ebcdcd189ad1af5cceffeb21eb2d83d9a330a8829e08ee538f09ef024",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-tsbyh-zhra-alyha",
+    "item_sha256": "9315a4331430193b32f8ac2df7c79f3f5b0c8e6f65206c8b35cdcc911f5d2795",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "24ef6ca535aa61b456ac7d5748ccb43ac327b26fb53457eb495545ac90a6912c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 6 pieces (6 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (5 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Persian exposition of the Tasbih of Fatima split at sentence ends into note pieces, with each narration kept whole and the order preserved."
+  }
+}

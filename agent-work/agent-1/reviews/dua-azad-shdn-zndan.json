@@ -1,0 +1,77 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-azad-shdn-zndan",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "40d04ee0e5d70686cf2be683db2f7686490d3488634bbe6fdbec7aa8cb0a43bc",
+  "layout_sha256": "be3374d887cee844132fdd04b1ea38b81289fd0576b4f4f1b46c9365ee2d11b9",
+  "result_item_sha256": "892462cb64cfb0954ede0ed1cff6dc892ca7f3d0e31a2c350f20ae22c6b33ff5",
+  "result_record_sha256": "bef09cecb508bc25f8aa1c325d3008b2430a33f0a9d53cc60002aa4277f799f1",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-azad-shdn-zndan",
+    "item_sha256": "59e6b9b44ec0d3b217243c79acde9c8aca0fce1660d02949150a057f0fceaac7",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "aeeca502aadde5fb710d97685a0c6b2c3738cd90ad0982c819399b2258e78a7b",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 1 piece (1 reciter label); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 heading + 1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 9 pieces (9 devotional recitation); 9 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 9 pieces (9 devotional recitation); 9 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (5 devotional recitation); 5 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (5 devotional recitation); 5 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded uncertain-classification at r00001/fa is a fair reading: a bare personal name in label position matches the reciter rows already classified that way in this corpus, and it stays flagged as agent judgment rather than a verified audio attribution."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Reciter label, heading and citation lead-in kept distinct; the Arabic supplication splits at clause ends pairing with its Persian rendering, with one sentence continuing across the r00003/r00004 boundary exactly as in the source."
+  }
+}

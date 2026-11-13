@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-fzylt-kyfyt-sjdh",
+  "author": "agent-6",
+  "reviewer": "agent-1",
+  "author_commit": "941c7ad3053664b04a2993a64f1e9c19076fd522",
+  "plan_sha256": "eecedb6067fec3b620b543de9f9d1bc76cb4ec5d5d162c20432c10f146be3f6a",
+  "layout_sha256": "f2d6f1351e2dc8408ba57936ed762d6114ca148f1b07c658f3749220be597590",
+  "result_item_sha256": "73cef23c073580a59a598833dcb2e0cdbda9a843a2aece8877da75bf2bc41a06",
+  "result_record_sha256": "f725600734ab60f57793d2ffa2b6886e2f277e4ac01d5c7e52e7ca6e5361def4",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-fzylt-kyfyt-sjdh",
+    "item_sha256": "bb65bd04f8d2c50f4cebc2a8fcc8901d7043066cf9ae73ed3a73c293443c5113",
+    "author": "agent-6",
+    "reviewer": "agent-1",
+    "preview_sha256": "7d0d2a02364f226dc079bbbace3fba466fc71bd988f2f5666ccdd496bc96df6f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (1 ritual instruction + 4 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 6 pieces (6 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (5 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 5 pieces (3 explanatory note + 2 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 explanatory note + 1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Persian exposition of the thanksgiving prostration split into instruction and note pieces at sentence ends, narration sentences kept whole and in order."
+  }
+}
