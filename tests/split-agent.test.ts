@@ -278,6 +278,16 @@ test('batch audit detects missing, invalid, unfinished and independently complet
   assert.equal(invalid.complete_reviews, 0);
 });
 
+test('the committed round pin accepts the actual Arena Node 22 runtime', {
+  skip: process.version !== 'v22.22.3' || process.versions.icu !== '78.2' || process.versions.unicode !== '17.0',
+}, () => {
+  const result=spawnSync(process.execPath,['--import','tsx','scripts/split-agent.ts','verify-tool-info','docs/split-assignments/tool-info.json'],
+    {cwd:process.cwd(),encoding:'utf8'});
+  assert.equal(result.status,0,result.stderr);
+  const info=JSON.parse(result.stdout) as {status:string;node:string;icu:string;unicode:string};
+  assert.deepEqual(info,{status:'tool-version-matches',protocol:'ar-fa-split-preflight-v1',node:'v22.22.3',icu:'78.2',unicode:'17.0'});
+});
+
 test('CLI is non-destructive, checks review identity, and refuses overwrite or symlinked data output', t => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mafatih-agent-split-'));
   t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
@@ -297,6 +307,7 @@ test('CLI is non-destructive, checks review identity, and refuses overwrite or s
   const pinned = JSON.parse(fs.readFileSync(info, 'utf8')) as { node: string }; pinned.node = 'wrong-version';
   const staleInfo = path.join(dir, 'stale-tool-info.json'); fs.writeFileSync(staleInfo, JSON.stringify(pinned));
   const mismatch = run('verify-tool-info', staleInfo); assert.notEqual(mismatch.status, 0);
+  assert.match(mismatch.stderr, /node: expected "wrong-version", actual/);
   const bad = path.join('data', 'agent-tool-should-not-write.json');
   const forbidden = run('inventory', '--output', bad); assert.notEqual(forbidden.status, 0); assert.ok(!fs.existsSync(bad));
   const link = path.join(dir, 'to-data'); fs.symlinkSync(path.resolve('data'), link, 'dir');

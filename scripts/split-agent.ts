@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';
+import { isDeepStrictEqual } from 'node:util';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -36,17 +36,18 @@ No tool certifies meaning or rights.`;
 const files = [
   '.gitattributes', '.gitignore', 'scripts/split-agent.ts', 'scripts/six-agent.ts', 'scripts/six-agent-snapshot.ts',
   'scripts/merge-agent-files.mjs', 'scripts/build-data.ts', 'scripts/split-plan.ts', 'scripts/test-six-agent-migrated-corpus.ts',
-  'src/split-agent.ts', 'src/split-agent-batch.ts',
+  'src/split-agent.ts', 'src/split-agent-batch.ts', 'src/six-agent-branch.ts',
   'src/split-canonical.ts', 'src/six-agent-review.ts', 'src/row-splits.ts', 'src/git-corpus.ts', 'src/corpus.ts', 'src/editor.ts',
   'src/line-breaks.ts', 'src/line-break-history.ts', 'src/source-page-history.ts', 'src/punctuation-history.ts',
   'src/punctuation.ts', 'src/quran-markers.ts', 'src/normalize.ts', 'src/schema.ts', 'src/text-ids.ts',
   'web/data.ts', 'web/main.ts', 'web/row-split-anchor.ts', 'tools/schema.sql', 'tools/export_sqlite.py',
   'tests/split-agent.test.ts', 'tests/split-plans.test.ts', 'tests/six-agent-split.test.ts', 'tests/six-agent-build.test.ts',
-  'tests/six-agent-sqlite.test.ts', 'tests/six-agent-merge.test.ts', 'tests/six-agent-cli.test.ts', 'tests/browser/row-split-links.spec.ts',
+  'tests/six-agent-sqlite.test.ts', 'tests/six-agent-merge.test.ts', 'tests/six-agent-cli.test.ts', 'tests/six-agent-arena.test.ts', 'tests/browser/row-split-links.spec.ts',
   'tests/helpers/row-split-history.ts', 'tests/explanation-classification.test.ts', 'tests/item-search-records.test.ts',
   'tests/line-breaks.test.ts', 'tests/quran-markers.test.ts', 'tests/runtime-audio.test.ts',
   'tests/search-real-relevance.test.ts', 'tests/substantive-audit.test.ts',
-  'docs/split-agent-instructions.md', 'AGENTS.md', 'CONTENT_POLICY.md', 'package.json', 'package-lock.json',
+  'docs/split-agent-instructions.md', 'docs/split-assignments/launch.json', 'docs/split-assignments/assignments.json',
+  'AGENTS.md', 'CONTENT_POLICY.md', 'package.json', 'package-lock.json',
 ];
 function toolInfo() {
   const versions = ['tsx', 'typescript', 'zod'].map(name => {
@@ -59,6 +60,18 @@ function toolInfo() {
     files: Object.fromEntries(files.map(file => [file, sha256(fs.readFileSync(path.join(root, file), 'utf8'))])) };
 }
 function json(file: string): unknown { return JSON.parse(fs.readFileSync(path.resolve(file), 'utf8')) as unknown; }
+function infoDifferences(expected:unknown,actual:unknown,prefix=''):string[] {
+  if(isDeepStrictEqual(expected,actual))return [];
+  if(expected&&actual&&typeof expected==='object'&&typeof actual==='object'&&!Array.isArray(expected)&&!Array.isArray(actual)) {
+    const left=expected as Record<string,unknown>,right=actual as Record<string,unknown>;
+    const priority=['node','icu','unicode','dependencies','format_version','protocol','files'];
+    const rank=(key:string):number => prefix ? 0 : (priority.indexOf(key)<0 ? priority.length : priority.indexOf(key));
+    return [...new Set([...Object.keys(left),...Object.keys(right)])].sort((a,b)=>rank(a)-rank(b)||a.localeCompare(b)).flatMap(key =>
+      infoDifferences(left[key],right[key],prefix ? `${prefix}.${key}` : key));
+  }
+  const describe=(value:unknown):string => value===undefined?'missing':JSON.stringify(value);
+  return [`${prefix||'tool-info'}: expected ${describe(expected)}, actual ${describe(actual)}`];
+}
 function isInside(candidate: string, base: string): boolean {
   const rel = path.relative(base, candidate);
   return rel === '' || (!rel.startsWith(`..${path.sep}`) && rel !== '..' && !path.isAbsolute(rel));
@@ -126,9 +139,10 @@ function main(): void {
       (flags['--base'] && ['tool-info','verify-tool-info'].includes(command))) throw new Error(usage);
   if (command === 'tool-info') { output(toolInfo(), flags['--output']); return; }
   if (command === 'verify-tool-info') {
-    try { assert.deepStrictEqual(json(positional[0]!), toolInfo()); }
-    catch { throw new Error('Tool source, dependencies, Node or Unicode/ICU version differs from the pinned common tool version'); }
-    output({ status: 'tool-version-matches', protocol: SPLIT_AGENT_PROTOCOL }, flags['--output']); return;
+    const actual=toolInfo(),differences=infoDifferences(json(positional[0]!),actual);
+    if(differences.length)throw new Error(`Tool info mismatch (do not bypass):\n${differences.slice(0,12).join('\n')}${differences.length>12 ? `\n... ${differences.length-12} more differences` : ''}`);
+    output({ status: 'tool-version-matches', protocol: SPLIT_AGENT_PROTOCOL,
+      node:actual.node,icu:actual.icu,unicode:actual.unicode }, flags['--output']); return;
   }
   const c = flags['--base'] ? loadCorpusAtCommit(flags['--base']) : loadCorpus(), validation = validateCorpus(c);
   if (validation.errors.length) throw new Error('Fix corpus validation errors first:\n' + validation.errors.join('\n'));
