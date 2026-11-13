@@ -1,8 +1,9 @@
-import { normalizeSearch } from './normalize.js';
+import { normalizeSearchQuery } from './normalize.js';
 import { wordVariants, safeAliasPrefix } from './lam-aliases.js';
 import { TopK } from './search-top-k.js';
 import { findOriginalMatches } from './search-text.js';
-import { compactNormalized, mightJoin, normalizedTokens, scoreSequence, type Relevance, type SequencePart } from './search-relevance.js';
+import { compileCompactCandidate, compileTaMatcher, mightContainWithTa, recordContains, recordHasWhole, type TaMatcher } from './search-ta.js';
+import { compactNormalized, mightJoin, normalizedTokens, prepareSequence, scoreSequence, scoreVerifiedDirect, type Relevance, type SequencePart } from './search-relevance.js';
 
 export type SearchLanguage = 'ar' | 'fa';
 export type SearchSection = 'toc' | 'text';
@@ -83,6 +84,10 @@ export interface WordWork {
 }
 interface WordScan {
   word: string;
+  variants: readonly { word: string; ta?: TaMatcher; compact?: RegExp }[];
+  shortDirect: boolean; // no variant can use a joined-word match
+  /** Whole/substring scores for short single-term searches, indexed by source record. */
+  shortScores?: Uint8Array;
   cursor: number; // global source-record cursor
   itemCursors: Map<string, number>;
   flags: Uint8Array; // checked, conservative compact-prefix candidate, direct/spaced
@@ -100,41 +105,57 @@ interface ScoredRecord {
   /** Distinct terms in the scored continuation, cached for this query sequence. */
   continuationWords?: string[];
 }
+// A verified short direct hit cannot have a joined match or continuation.
+// Store only its score; public hits receive independent relevance objects.
+function shortDirectScore(record: SearchRecord, scan: WordScan): number {
+  for (const variant of scan.variants) {
+    if (variant.ta ? variant.ta.whole(record) : recordHasWhole(record, variant.word)) return 6;
+  }
+  return 3;
+}
 interface ScoreState { scores: Map<number, ScoredRecord>; waiting: Map<string, Set<number>> }
 interface ActiveSearch extends ScoreState {
   request: SearchRequest;
   words: string[];
   sequence: string[];
+  scoreParts: ReturnType<typeof prepareSequence>;
   rankingPending: boolean;
 }
 
 /** Unique terms implement OR search; repetitions do not inflate hit counts. */
 export function searchWords(query: string): string[] {
-  return [...new Set(normalizeSearch(query).split(' ').filter(Boolean))];
+  return [...new Set(normalizeSearchQuery(query).split(' ').filter(Boolean))];
 }
 
 function matchKind(record: SearchRecord, word: string): 'direct' | 'spaced' | undefined {
   const variants = wordVariants(word);
-  if (variants.some(variant => record.normalized.includes(variant))) return 'direct';
+  if (variants.some(variant => recordContains(record, variant))) return 'direct';
   // These are only rejection filters: the original-text matcher still checks
   // horizontal gaps, word boundaries, and partial-final-word safeguards.
-  for (const variant of variants) if (variant.length >= 3 && compactNormalized(record).includes(variant) &&
+  for (const variant of variants) if (variant.length >= 3 && mightContainWithTa(compactNormalized(record), variant) &&
       mightJoin(normalizedTokens(record), variant) && findOriginalMatches(record.text, [variant], 1).length) return 'spaced';
   return undefined;
 }
 
 /** A conservative compact-prefix candidate can be useful to a later, longer word. */
-function probe(record: SearchRecord, word: string): number {
-  const variants = wordVariants(word);
-  if (variants.some(variant => record.normalized.includes(variant))) return CHECKED | POSSIBLE | DIRECT;
+function probe(record: SearchRecord, variants: WordScan['variants']): number {
   let possible = false, spaced = false;
-  for (const variant of variants) {
+  for (const { word, ta, compact } of variants) {
     // Removing spaces cannot create a new single-code-point occurrence.
-    if (variant.length === 1 || (variant.length === 2 && variant.codePointAt(0)! > 0xffff) ||
-        !compactNormalized(record).includes(variant)) continue;
+    if (word.length === 1 || (word.length === 2 && word.codePointAt(0)! > 0xffff)) {
+      if (ta ? ta.contains(record) : record.normalized.includes(word)) return CHECKED | POSSIBLE | DIRECT;
+      continue;
+    }
+    // Optional spaces recognize the same conservative compact substring
+    // without making a compact copy of every source record. Exceptionally
+    // long queries use the existing compact-string fallback instead.
+    const candidate = compact ? compact.test(record.normalized) :
+      ta ? ta.possible(compactNormalized(record)) : compactNormalized(record).includes(word);
+    if (!candidate) continue;
     possible = true;
-    if (variant.length >= 3 && mightJoin(normalizedTokens(record), variant) &&
-        findOriginalMatches(record.text, [variant], 1).length > 0) spaced = true;
+    if (ta ? ta.contains(record) : record.normalized.includes(word)) return CHECKED | POSSIBLE | DIRECT;
+    if (word.length >= 3 && mightJoin(normalizedTokens(record), word) &&
+        findOriginalMatches(record.text, [word], 1).length > 0) spaced = true;
   }
   return CHECKED | (possible ? POSSIBLE : 0) | (spaced ? SPACED : 0);
 }
@@ -189,11 +210,9 @@ function nextCandidate(bits: Uint32Array, start: number, end: number): number {
 function provisionalScore(record: SearchRecord, words: string[]): ScoredRecord {
   let score = 0;
   for (const word of words) {
-    const text = record.normalized; const variants = wordVariants(word);
-    if (variants.some(variant => text === variant || text.startsWith(`${variant} `) || text.endsWith(` ${variant}`) || text.includes(` ${variant} `))) {
-      score = 6; break;
-    }
-    score = Math.max(score, variants.some(variant => text.includes(variant)) ? 3 : 4); // the cache already verified a spaced match
+    const variants = wordVariants(word);
+    if (variants.some(variant => recordHasWhole(record, variant))) { score = 6; break; }
+    score = Math.max(score, variants.some(variant => recordContains(record, variant)) ? 3 : 4); // the cache already verified a spaced match
   }
   return { relevance: { score, matchedSequenceWords: score ? 1 : 0, exactSequenceWords: score === 6 ? 1 : 0 }, parts: [record] };
 }
@@ -253,13 +272,13 @@ export class IncrementalSearch {
   }
 
   begin(request: SearchRequest): SearchSnapshot {
-    const sequence = normalizeSearch(request.query).split(' ').filter(Boolean);
+    const sequence = normalizeSearchQuery(request.query).split(' ').filter(Boolean);
     const words = [...new Set(sequence)];
     const scoreKey = JSON.stringify(sequence);
     let scoreState = this.scoreCache.get(scoreKey);
     if (!scoreState) scoreState = { scores: new Map(), waiting: new Map() };
     this.scoreCache.delete(scoreKey); this.scoreCache.set(scoreKey, scoreState);
-    this.active = { request, words, sequence, ...scoreState, rankingPending: false };
+    this.active = { request, words, sequence, scoreParts: prepareSequence(sequence), ...scoreState, rankingPending: false };
     this.trimScoreCache(scoreState);
     for (const word of words) {
       let scan = this.cache.get(word);
@@ -270,7 +289,10 @@ export class IncrementalSearch {
         for (const prior of this.cache.values()) {
           if (word.startsWith(prior.word) && word !== prior.word && safeAliasPrefix(prior.word, word) && (!parent || prior.word.length > parent.word.length)) parent = prior;
         }
-        scan = { word, cursor: 0, itemCursors: new Map(), flags: new Uint8Array(), parent,
+        const variants = wordVariants(word).map(variant => ({ word: variant, compact: compileCompactCandidate(variant),
+          ...(/[تة]/u.test(variant) ? { ta: compileTaMatcher(variant) } : {}) }));
+        scan = { word, variants, shortDirect: variants.every(variant => Array.from(variant.word).length < 3),
+          cursor: 0, itemCursors: new Map(), flags: new Uint8Array(), parent,
           matches: [], spacedMatches: new Set(), used: 0,
           work: { visited: 0, examined: 0, reused: 0, prefixRejected: 0 } };
         this.cache.set(word, scan);
@@ -319,7 +341,7 @@ export class IncrementalSearch {
         if (parent && ((previous & CHECKED) || index < parent.cursor) && !(previous & POSSIBLE)) {
           scan.flags[index] = CHECKED; scan.work.prefixRejected += 1; continue;
         }
-        const flags = probe(this.records[index]!, word);
+        const flags = probe(this.records[index]!, scan.variants);
         scan.flags[index] = flags; scan.work.examined += 1; examined += 1;
         if (scan.possible && (flags & POSSIBLE)) recordCandidate(scan, index);
         if (flags & (DIRECT | SPACED)) {
@@ -368,11 +390,37 @@ export class IncrementalSearch {
     }
   }
 
-  private score(index: number, active: ActiveSearch): ScoredRecord {
+  /** Checked negative word flags are proof that those terms cannot score here. */
+  private otherWordsAbsent(index: number, words: string[], except: string): boolean {
+    for (const word of words) {
+      if (word === except) continue;
+      const flags = this.cache.get(word)!.flags[index] ?? 0;
+      if (!(flags & CHECKED) || (flags & (DIRECT | SPACED))) return false;
+    }
+    return true;
+  }
+
+  private score(index: number, active: ActiveSearch, matchedWords?: readonly string[]): ScoredRecord {
     const existing = active.scores.get(index);
     if (existing) return existing;
     const anchor = this.records[index]!;
+    if (active.sequence.length === 1) {
+      const word = active.sequence[0]!, scan = this.cache.get(word);
+      // A one-term direct hit cannot need a continuation. Reuse the verified
+      // match while still checking for a stronger whole-word or joined hit.
+      if (scan && (scan.flags[index]! & DIRECT)) {
+        const value = { relevance: scoreVerifiedDirect(anchor, word), parts: [anchor] };
+        active.scores.set(index, value);
+        return value;
+      }
+    }
     const parts: SequencePart[] = [{ record: anchor }];
+    const onlyWord = matchedWords?.length === 1 ? matchedWords[0] : undefined;
+    // A single occurrence of one query term cannot form a longer sequence if
+    // every other term is already known absent throughout the lookahead.
+    // Unknown flags and repeated positions conservatively use the full scorer.
+    let isolated = Boolean(onlyWord && active.sequence.indexOf(onlyWord) === active.sequence.lastIndexOf(onlyWord) &&
+      this.otherWordsAbsent(index, active.words, onlyWord));
     // A positive alignment cannot benefit from arbitrarily many gaps. Bound
     // lookahead while allowing the maximum useful gaps and a joined term.
     let budget = 4 * active.sequence.length + active.sequence.reduce((sum, word) => sum + word.length, 0);
@@ -393,14 +441,109 @@ export class IncrementalSearch {
         if (!length) break;
         const maxTokens = Math.min(length, budget);
         parts.push({ record: next, maxTokens });
+        if (isolated && onlyWord && !this.otherWordsAbsent(nextIndex, active.words, onlyWord)) isolated = false;
         budget -= maxTokens; visited.add(next.key); last = next;
         if (maxTokens < length) break;
       }
     }
-    const scored = scoreSequence(parts, active.sequence);
+    if (isolated && onlyWord) {
+      const scan = this.cache.get(onlyWord)!;
+      const direct = Boolean(scan.flags[index]! & DIRECT);
+      let relevance: Relevance;
+      if (direct && scan.shortDirect) {
+        const score = scan.shortScores?.[index] || shortDirectScore(anchor, scan);
+        relevance = { score, matchedSequenceWords: 1, exactSequenceWords: Number(score === 6) };
+      } else relevance = direct ? scoreVerifiedDirect(anchor, onlyWord) : scoreSequence([{ record: anchor }], [onlyWord]).relevance;
+      const value = { relevance, parts: [anchor] };
+      active.scores.set(index, value);
+      return value;
+    }
+    const scored = active.scoreParts(parts);
     const value = { relevance: scored.relevance, parts: parts.slice(0, scored.endPart + 1).map(part => part.record) };
     active.scores.set(index, value);
     return value;
+  }
+
+  /** Rank a one-term search without allocating a candidate per hit. */
+  private snapshotSingle(scan: WordScan, scoreBudget: number): SearchSnapshot {
+    const active = this.active!, { request } = active;
+    const languages = new Set(request.languages);
+    const scores = new Uint8Array(this.records.length);
+    let shortScores = scan.shortScores;
+    if (scan.shortDirect && (!shortScores || shortScores.length < this.records.length)) {
+      const grown = new Uint8Array(this.records.length);
+      if (shortScores) grown.set(shortScores);
+      scan.shortScores = shortScores = grown;
+    }
+    // For one term, count, coverage and sequence length are identical for
+    // every hit. Score determines exactness; directness still breaks ties.
+    const compare = (a: number, b: number): number => {
+      const left = this.records[a]!, right = this.records[b]!;
+      return Number(right.featured) - Number(left.featured) || scores[b]! - scores[a]! ||
+        Number(right.section === 'toc') - Number(left.section === 'toc') ||
+        Number(right.language === 'ar') - Number(left.language === 'ar') ||
+        Number(Boolean(scan.flags[b]! & DIRECT)) - Number(Boolean(scan.flags[a]! & DIRECT)) ||
+        left.order - right.order || a - b;
+    };
+    const limit = request.resultLimit ?? request.tocLimit + request.textLimit;
+    const best = new TopK<number>(limit, scan.matches.length, compare);
+    const bestToc = new TopK<number>(request.tocLimit, scan.matches.length, compare);
+    const bestText = new TopK<number>(request.textLimit, scan.matches.length, compare);
+    const effective = (value: number): number => Number.isNaN(value) ? 0 : Math.max(0, Math.floor(value));
+    const resultLimit = effective(limit), tocLimit = effective(request.tocLimit), textLimit = effective(request.textLimit);
+    let resultsTotal = 0, tocTotal = 0, textTotal = 0, rankingPending = false;
+    let featured = 0, featuredToc = 0, featuredText = 0;
+    for (const index of scan.matches) {
+      const record = this.records[index]!;
+      if (request.item && record.item !== request.item) continue;
+      if (record.section === 'text' && !languages.has(record.language as SearchLanguage)) continue;
+      resultsTotal += 1;
+      if (record.section === 'toc') tocTotal += 1; else textTotal += 1;
+      if (record.featured) {
+        featured += 1;
+        if (record.section === 'toc') featuredToc += 1; else featuredText += 1;
+      } else if (featured >= resultLimit &&
+          (record.section === 'toc' ? featuredToc >= tocLimit : featuredText >= textLimit)) {
+        // Equal term count means every starred hit outranks this one. Once
+        // each requested list is already full of starred hits, this record
+        // cannot enter the page; retain its total without scoring it. A later
+        // larger limit or different scope can score it on demand.
+        continue;
+      }
+      if (shortScores) {
+        let score = shortScores[index]!;
+        if (!score) {
+          score = shortDirectScore(record, scan);
+          if (scoreBudget > 0) { shortScores[index] = score; scoreBudget -= 1; }
+          else rankingPending = true;
+        }
+        scores[index] = score;
+      } else {
+        let scored = active.scores.get(index);
+        if (!scored && scoreBudget > 0) { scored = this.score(index, active); scoreBudget -= 1; }
+        if (!scored) { rankingPending = true; scored = provisionalScore(record, [scan.word]); }
+        scores[index] = scored.relevance.score;
+      }
+      best.add(index);
+      if (record.section === 'toc') bestToc.add(index); else bestText.add(index);
+    }
+    const materialized = new Map<number, SearchHit>();
+    const materialize = (index: number): SearchHit => {
+      const existing = materialized.get(index);
+      if (existing) return existing;
+      const score = scores[index]!;
+      const hit: SearchHit = { record: this.records[index]!, matchedWords: [scan.word],
+        directMatches: Number(Boolean(scan.flags[index]! & DIRECT)),
+        relevance: { score, matchedSequenceWords: 1, exactSequenceWords: Number(score === 6) } };
+      materialized.set(index, hit);
+      return hit;
+    };
+    active.rankingPending = rankingPending;
+    this.trimScoreCache(active);
+    return { id: request.id,
+      complete: !this.loading && !rankingPending && this.scopeCursor(scan, request.item) === this.scopeSize(request.item),
+      results: best.sorted().map(materialize), resultsTotal,
+      toc: bestToc.sorted().map(materialize), text: bestText.sorted().map(materialize), tocTotal, textTotal };
   }
 
   private snapshot(scoreBudget: number): SearchSnapshot {
@@ -419,10 +562,11 @@ export class IncrementalSearch {
         results: [], resultsTotal: 0, toc: [], text: [], tocTotal: 0, textTotal: 0,
       };
     }
-    const languages = new Set(request.languages);
     // A single logical word already has a unique, source-ordered match list.
     // Only multi-word OR searches need a map to merge terms by record.
     const single = words.length === 1 ? this.cache.get(words[0]!) : undefined;
+    if (single && active.sequence.length === 1) return this.snapshotSingle(single, scoreBudget);
+    const languages = new Set(request.languages);
     const matched = single ? undefined : new Map<number, { words: string[]; direct: number }>();
     if (matched) for (const word of words) {
       const scan = this.cache.get(word)!;
@@ -436,7 +580,10 @@ export class IncrementalSearch {
         if (!scan.spacedMatches.has(index)) existing.direct += 1;
       }
     }
-    type Candidate = { hit: SearchHit; parts: SearchRecord[]; matchedWordCount: number; coverage: number; ordinal: number };
+    // Keep ranking candidates lightweight; public hit objects are needed only
+    // for the selected page, not for every matching corpus record.
+    type Candidate = { record: SearchRecord; matchedWords: string[]; directMatches: number; relevance: Relevance;
+      parts: SearchRecord[]; matchedWordCount: number; coverage: number; ordinal: number };
     // Ranking uses the distinct count displayed by the UI, including words in
     // the materialized continuation. Count, then star, are unconditional keys:
     // a conditional star override of score order would create comparator cycles.
@@ -444,15 +591,15 @@ export class IncrementalSearch {
     // comparator field ties, including item-first scans discovered earlier.
     const compare = (a: Candidate, b: Candidate): number =>
       b.matchedWordCount - a.matchedWordCount ||
-      Number(b.hit.record.featured) - Number(a.hit.record.featured) ||
-      b.hit.relevance.score - a.hit.relevance.score ||
-      b.hit.relevance.matchedSequenceWords - a.hit.relevance.matchedSequenceWords ||
-      b.hit.relevance.exactSequenceWords - a.hit.relevance.exactSequenceWords ||
+      Number(b.record.featured) - Number(a.record.featured) ||
+      b.relevance.score - a.relevance.score ||
+      b.relevance.matchedSequenceWords - a.relevance.matchedSequenceWords ||
+      b.relevance.exactSequenceWords - a.relevance.exactSequenceWords ||
       b.coverage - a.coverage ||
-      Number(b.hit.record.section === 'toc') - Number(a.hit.record.section === 'toc') ||
-      Number(b.hit.record.language === 'ar') - Number(a.hit.record.language === 'ar') ||
-      b.hit.directMatches - a.hit.directMatches ||
-      a.hit.record.order - b.hit.record.order || a.ordinal - b.ordinal;
+      Number(b.record.section === 'toc') - Number(a.record.section === 'toc') ||
+      Number(b.record.language === 'ar') - Number(a.record.language === 'ar') ||
+      b.directMatches - a.directMatches ||
+      a.record.order - b.record.order || a.ordinal - b.ordinal;
     const resultLimit = request.resultLimit ?? request.tocLimit + request.textLimit;
     // For one word, the unfiltered list is a safe upper bound for TopK even
     // when the current language or item scope excludes some records.
@@ -465,7 +612,7 @@ export class IncrementalSearch {
       const record = this.records[index]!;
       resultsTotal += 1;
       let scored = active.scores.get(index);
-      if (!scored && scoreBudget > 0) { scored = this.score(index, active); scoreBudget -= 1; }
+      if (!scored && scoreBudget > 0) { scored = this.score(index, active, matchedWords); scoreBudget -= 1; }
       if (!scored) { rankingPending = true; scored = provisionalScore(record, matchedWords); }
       const coverage = Math.max(matchedWords.length, Math.min(words.length, scored.relevance.matchedSequenceWords));
       // Only scored continuations can contribute additional UI terms. Cache
@@ -480,8 +627,8 @@ export class IncrementalSearch {
       if (scored.continuationWords) {
         for (const word of scored.continuationWords) if (!matchedWords.includes(word)) matchedWordCount += 1;
       }
-      const hit: SearchHit = { record, matchedWords, directMatches, relevance: scored.relevance };
-      const candidate = { hit, parts: scored.parts, matchedWordCount, coverage, ordinal: ordinal++ };
+      const candidate: Candidate = { record, matchedWords, directMatches, relevance: scored.relevance,
+        parts: scored.parts, matchedWordCount, coverage, ordinal: ordinal++ };
       best.add(candidate);
       if (record.section === 'toc') { tocTotal += 1; bestToc.add(candidate); }
       else { textTotal += 1; bestText.add(candidate); }
@@ -497,10 +644,12 @@ export class IncrementalSearch {
     const materialize = (candidate: Candidate): SearchHit => {
       const cached = materialized.get(candidate);
       if (cached) return cached;
-      const hit = candidate.hit;
-      // The temporary one-word array is shared while ranking, but public hits
-      // retain independent arrays just as they did with the merge map.
-      if (single) hit.matchedWords = [...hit.matchedWords];
+      // The temporary one-word array and short scores can be shared while
+      // ranking, but each public hit retains independent mutable values.
+      const hit: SearchHit = { record: candidate.record,
+        matchedWords: single ? [...candidate.matchedWords] : candidate.matchedWords,
+        directMatches: candidate.directMatches,
+        relevance: single?.shortDirect && active.sequence.length === 1 ? { ...candidate.relevance } : candidate.relevance };
       if (candidate.parts.length > 1) {
         hit.continuation = candidate.parts.slice(1).map(part => ({ row: part.row!, text: part.text,
           matchedWords: words.filter(word => Boolean(matchKind(part, word))) }));

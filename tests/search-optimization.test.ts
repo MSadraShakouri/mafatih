@@ -18,6 +18,30 @@ function finish(engine: IncrementalSearch, query: string, options: Partial<Searc
   return result;
 }
 
+test('cold negative scans avoid materializing compact copies while retaining split-prefix candidates', () => {
+  const negative = normalizeSearch('متن دیگری عادی است');
+  const records = Array.from({ length: 1000 }, (_, index) => record(`r${index}`, 'متن دیگری عادی است'));
+  const original = String.prototype.replace;
+  let compactions = 0;
+  String.prototype.replace = new Proxy(original, { apply(target, receiver, args) {
+    const search: unknown = args[0];
+    if (String(receiver) === negative && search instanceof RegExp && search.source === ' ' && search.flags === 'g') compactions += 1;
+    return Reflect.apply(target, receiver, args);
+  } });
+  try {
+    assert.equal(finish(new IncrementalSearch(records), 'العقوبت').resultsTotal, 0);
+  } finally { String.prototype.replace = original; }
+  assert.equal(compactions, 0, `created ${compactions} compact copies of impossible candidates`);
+  for (const [source, prefix, longer] of [
+    ['صلا ةالله', 'صلات', 'صلاتالله'],
+    ['𐐀 ةنور', '𐐀ت', '𐐀تنور'],
+  ] as const) {
+    const engine = new IncrementalSearch([record('split', source)]);
+    assert.equal(finish(engine, prefix).resultsTotal, 0, prefix);
+    assert.deepEqual(finish(engine, longer).results.map(hit => hit.record.key), ['split'], longer);
+  }
+});
+
 test('extending a word checks a safe prefix superset, including previously unconfirmed spaced joins', () => {
   const records = [record('r0', 'اهل بیتش'), record('r1', 'اهلبیت'),
     ...Array.from({ length: 400 }, (_, n) => record(`r${n + 2}`, 'اهلبا یت'))];

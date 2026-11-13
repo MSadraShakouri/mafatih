@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { buildData } from '../scripts/build-data.js';
-import { IncrementalSearch, type SearchRequest, type SearchShard } from '../src/search.js';
+import { IncrementalSearch, type SearchIndex, type SearchRecord, type SearchRequest, type SearchShard } from '../src/search.js';
 import type { ReaderItem } from '../web/data.js';
 import { itemSearchRecords } from '../web/item-search-records.js';
+import { normalizeSearchPreservingTa } from '../src/normalize.js';
 
 test('item preparation normalizes each distinct source string only once', () => {
   const item: ReaderItem = { id: 'fixture', title: { ar: '', fa: '', en: '' }, rows: [
@@ -29,12 +30,35 @@ test('item preparation normalizes each distinct source string only once', () => 
   assert.equal(records.find(record => record.key === 'row:fixture:r2:ar')?.next, undefined, 'audio rows must remain excluded');
 });
 
+test('generated search records need no extra ة-position metadata', () => {
+  const files = new Map<string, string>();
+  buildData({ quiet: true, write: (name, value) => files.set(name, value) });
+  const records = [...files.entries()].filter(([name]) => name === 'search-index.json' || /^search\/\d+\.json$/.test(name))
+    .flatMap(([, value]) => (JSON.parse(value) as SearchIndex).records);
+  assert.ok(records.some(record => record.text.includes('ة')), 'exercise original source ة');
+  assert.ok(records.every(record => !('taMarbuta' in record)), 'do not enlarge transferred indexes with per-record ة positions');
+});
+
 test('local reader records match every global source field and original adjacency', () => {
   const files = new Map<string, string>();
   buildData({ quiet: true, write: (name, value) => files.set(name, value) });
   const globals = [...files.entries()].filter(([name]) => /^search\/\d+\.json$/.test(name))
     .flatMap(([, value]) => (JSON.parse(value) as SearchShard).records);
   const byKey = new Map(globals.map(record => [record.key, record]));
+  const verifyFold = (record: SearchRecord): void => {
+    assert.equal(record.normalized, normalizeSearchPreservingTa(record.text).replace(/ة/g, 'ه'), record.key);
+  };
+  const toc = (JSON.parse(files.get('search-index.json')!) as SearchIndex).records;
+  assert.ok(toc.some(record => record.text.includes('ة')));
+  for (const record of toc) verifyFold(record);
+  // The unchanged index representation must still allow all three spellings
+  // to find a real TOC title containing source ة.
+  const tocEngine = new IncrementalSearch(toc);
+  for (const query of ['الواقعت', 'الواقعه', 'الواقعة']) {
+    let result = tocEngine.begin({ id: 1, query, languages: [], tocLimit: 1000, textLimit: 0, resultLimit: 1000 });
+    while (!result.complete) result = tocEngine.advance(600);
+    assert.ok(result.results.some(hit => hit.record.text === 'سوره الواقعة'), `TOC: ${query}`);
+  }
   let count = 0;
   for (const [name, value] of files) {
     if (!name.startsWith('items/') || !name.endsWith('.json')) continue;
@@ -46,6 +70,7 @@ test('local reader records match every global source field and original adjacenc
       assert.ok(global, record.key);
       base ??= global.order - record.order;
       assert.deepEqual({ ...record, order: global.order }, global, record.key);
+      verifyFold(global);
       assert.equal(global.order - record.order, base, `source order: ${record.key}`);
       count++;
     }
@@ -57,7 +82,7 @@ test('local reader records match every global source field and original adjacenc
   // aliases, source matches or continuation excerpts compared with global.
   const globalEngine = new IncrementalSearch(globals);
   const selected = ['dua-kumayl', 'dua-samat', 'namaz-hnvt-myt'];
-  const queries = ['الهم', 'شیء قوت', 'بالطف', 'درود'];
+  const queries = ['الهم', 'شیء قوت', 'بالطف', 'درود', 'رحمت', 'رحمه', 'رحمة', 'برحمةکالتی'];
   for (const id of selected) {
     const item = JSON.parse(files.get(`items/${id}.json`)!) as ReaderItem;
     const localEngine = new IncrementalSearch(itemSearchRecords(item));

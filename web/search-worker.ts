@@ -1,4 +1,4 @@
-import { IncrementalSearch, type SearchIndex, type SearchRequest, type SearchShard } from '../src/search.js';
+import { IncrementalSearch, type SearchIndex, type SearchRequest, type SearchShard, type SearchSnapshot } from '../src/search.js';
 import { itemSearchRecords } from './item-search-records.js';
 import { searchBatchSize, type SearchWorkerRequest, type SearchWorkerResponse } from './search-protocol.js';
 
@@ -18,25 +18,53 @@ let started = false;
 let globalFailure: string | undefined;
 let scheduled = false;
 let batchSize = 450;
+let firstBatchSize = 450;
+let lastSnapshotAt = 0;
+let sentHits = false;
+
+// A posted message yields to the worker's event loop without the browser's
+// increasing nested-timer delay. Incoming edits and cancellations can still be
+// handled between bounded batches. Older engines retain the timer fallback.
+let batchYield: MessageChannel | undefined;
+try { if (typeof MessageChannel !== 'undefined') batchYield = new MessageChannel(); } catch { /* use timers */ }
+if (batchYield) batchYield.port1.onmessage = runScheduled;
 
 function currentEngine(): IncrementalSearch | undefined {
   return active?.item ? itemEngines.get(active.item) : globalEngine;
 }
+function publish(snapshot: SearchSnapshot, force = false): void {
+  const engine = currentEngine();
+  if (!engine || !active) return;
+  const hasHits = (active.item ? snapshot.text.length : snapshot.results.length) > 0;
+  const now = performance.now();
+  // Fast message-channel batches can otherwise flood the UI with dozens of
+  // serialized pages before the next keystroke. Always show the first current
+  // hit and final answer; also publish when the available shards are drained,
+  // so a slow network never hides progress while waiting for the next shard.
+  if (force || snapshot.complete || (hasHits && !sentHits) || !engine.hasUnscannedRecords() || now - lastSnapshotAt >= 16) {
+    worker.postMessage({ type: 'snapshot', snapshot });
+    lastSnapshotAt = now;
+    if (hasHits) sentHits = true;
+  }
+}
 function sendSnapshot(): void {
   const engine = currentEngine();
   if (!engine || !active) return;
-  worker.postMessage({ type: 'snapshot', snapshot: engine.advance(batchSize) });
+  // Cold multiword readers use the ordinary smaller batch until the first
+  // hits are visible, then the larger reader batch avoids extra page merges.
+  publish(engine.advance(sentHits ? batchSize : firstBatchSize));
+}
+function runScheduled(): void {
+  scheduled = false;
+  if (!active || !currentEngine()) return;
+  sendSnapshot();
+  if (currentEngine()?.hasUnscannedRecords()) schedule();
 }
 function schedule(force = false): void {
   const engine = currentEngine();
   if (!engine || !active || scheduled || (!force && !engine.hasUnscannedRecords())) return;
   scheduled = true;
-  setTimeout(() => {
-    scheduled = false;
-    if (!active || !currentEngine()) return;
-    sendSnapshot();
-    if (currentEngine()?.hasUnscannedRecords()) schedule();
-  }, 0);
+  if (batchYield) batchYield.port2.postMessage(0); else setTimeout(runScheduled, 0);
 }
 function beginActive(): void {
   if (!active) return;
@@ -44,7 +72,8 @@ function beginActive(): void {
   if (error) { worker.postMessage({ type: 'error', id: active.id, message: error }); return; }
   const engine = currentEngine();
   if (!engine) return;
-  worker.postMessage({ type: 'snapshot', snapshot: engine.begin(active) });
+  lastSnapshotAt = 0; sentHits = false;
+  publish(engine.begin(active), true);
   schedule();
 }
 async function json<T>(url: URL): Promise<T> {
@@ -106,7 +135,11 @@ worker.addEventListener('message', event => {
     active = undefined; // Keep warm engines for later.
   } else {
     active = message.request;
-    batchSize = searchBatchSize(active.query);
+    // A reader is restricted to its already-loaded item. After its first hits,
+    // the same bounded batch used for single terms avoids an extra page merge;
+    // full-library multiword scans and cold first-hit batches stay at 450.
+    firstBatchSize = searchBatchSize(active.query);
+    batchSize = active.item ? 600 : firstBatchSize;
     beginActive();
   }
 });

@@ -9,12 +9,12 @@ import type { NavNode } from '../src/schema.js';
 import { protectedLamPairs } from './fixtures/search-protected-lam.js';
 
 /** An independent, deliberately simple test oracle built from original text. */
-interface ReferenceText { simple: string; groups: string[][] }
+interface ReferenceText { simple: string; groups: string[][]; preserved: string; preservedGroups: string[][] }
 function referenceText(input: string): ReferenceText {
   const digits = '۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩';
   const equivalents: Record<string, string> = {
     ك: 'ک', ک: 'ک', ي: 'ی', ى: 'ی', ی: 'ی',
-    ٱ: 'ا', أ: 'ا', إ: 'ا', آ: 'ا', ة: 'ه', ؤ: 'و', ئ: 'ی',
+    ٱ: 'ا', أ: 'ا', إ: 'ا', آ: 'ا', ؤ: 'و', ئ: 'ی',
   };
   let folded = '';
   for (const raw of input.normalize('NFKD').toLocaleLowerCase('en-US')) {
@@ -32,27 +32,46 @@ function referenceText(input: string): ReferenceText {
     }
   }
   folded = folded.replace(/[ |]+$/, '');
-  return { simple: folded.replace(/[ |]+/g, ' ').trim(),
-    groups: folded.split('|').map(group => group.split(' ').filter(Boolean)).filter(group => group.length > 0) };
+  const tokenize = (value: string) => value.split('|').map(group => group.split(' ').filter(Boolean)).filter(group => group.length > 0);
+  const legacy = folded.replace(/ة/g, 'ه');
+  return { simple: legacy.replace(/[ |]+/g, ' ').trim(), groups: tokenize(legacy),
+    preserved: folded.replace(/[ |]+/g, ' ').trim(), preservedGroups: tokenize(folded) };
 }
 
 /** Concatenate whole source-word starts and, optionally, a prefix of the last. */
 function referenceMatch(value: ReferenceText, queryWord: string): 'direct' | 'spaced' | undefined {
-  if (value.simple.includes(queryWord)) return 'direct';
+  const useTa = /[تة]/u.test(queryWord);
+  const source = useTa ? value.preserved : value.simple;
+  const groups = useTa ? value.preservedGroups : value.groups;
+  // Intentionally character-by-character, independent of the production
+  // regex/prefilters: ت and ه each match ة, while ة matches all three.
+  const accepts = (query: string, prefix: string): boolean => {
+    if (prefix.length > query.length) return false;
+    for (let i = 0; i < prefix.length; i++) {
+      const q = query[i], s = prefix[i];
+      if (q !== s && !(s === 'ة' && (q === 'ت' || q === 'ه')) &&
+          !(q === 'ة' && (s === 'ت' || s === 'ه'))) return false;
+    }
+    return true;
+  };
+  if (!useTa && source.includes(queryWord)) return 'direct';
+  if (useTa) for (let i = 0; i + queryWord.length <= source.length; i++) {
+    if (accepts(queryWord, source.slice(i, i + queryWord.length))) return 'direct';
+  }
   if (Array.from(queryWord).length < 3) return undefined;
-  for (const group of value.groups) for (let first = 0; first < group.length - 1; first += 1) {
+  for (const group of groups) for (let first = 0; first < group.length - 1; first += 1) {
     let prefix = group[first]!;
-    if (!queryWord.startsWith(prefix)) continue;
+    if (!accepts(queryWord, prefix)) continue;
     for (let last = first + 1; last < group.length; last += 1) {
       const next = group[last]!;
       const remainder = queryWord.slice(prefix.length);
       if (Array.from(remainder).length < 2 || Array.from(next).length < 2) break;
-      if (next.startsWith(remainder)) {
+      if (next.length >= remainder.length && accepts(remainder, next.slice(0, remainder.length))) {
         const minPartial = group[first] === 'یا' || group[first] === 'و' ? 2 : 3;
-        if (next === remainder || Array.from(remainder).length >= minPartial) return 'spaced';
+        if (next.length === remainder.length || Array.from(remainder).length >= minPartial) return 'spaced';
         break;
       }
-      if (!remainder.startsWith(next)) break;
+      if (!accepts(remainder, next)) break;
       prefix += next;
     }
   }
@@ -102,7 +121,7 @@ function runCases(records: SearchRecord[], cases: Case[]): void {
   const engine = new IncrementalSearch(records);
   for (const [id, example] of cases.entries()) {
     const languages = example.languages ?? ['ar', 'fa'];
-    const referenceWords = [...new Set(referenceText(example.query).simple.split(' ').filter(Boolean))];
+    const referenceWords = [...new Set(referenceText(example.query).preserved.split(' ').filter(Boolean))];
     assert.deepEqual(searchWords(example.query), referenceWords, `query tokens: ${example.query}`);
     const expected: Record<'toc' | 'text', Expected[]> = { toc: [], text: [] };
     for (const record of records) {
@@ -178,6 +197,9 @@ const actualExamples: Case[] = [
   { query: 'الله الله' }, { query: 'یا،رب' }, { query: 'ا' },
   { query: 'خدایا' }, { query: 'کلام' }, { query: 'درود' }, { query: 'یاعلی' },
   { query: 'والله' }, { query: 'ولله' }, { query: 'یارب' }, { query: 'ورب' },
+  { query: 'العقوبت' }, { query: 'العقوبة' }, { query: 'رحمت' }, { query: 'رحمة' }, { query: 'ت', languages: ['ar'] },
+  { query: 'ة', languages: ['ar'] }, { query: 'ته' }, { query: 'تة' }, { query: 'صلاتالله' },
+  { query: 'برحمةکالتی', item: 'dua-kumayl' }, { query: 'یا رحمت الله', item: 'dua-kumayl' },
   { query: 'الفبایناموجود' }, { query: '' },
 ];
 

@@ -1,7 +1,7 @@
 import { localizeSearchInput } from './display-text.js';
 import { attachHomePullSearch } from './gestures.js';
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
-import { normalizeSearch } from '../src/normalize.js';
+import { normalizeSearchQuery } from '../src/normalize.js';
 import { utf16ToCodePointOffset } from '../src/search-text.js';
 import type { Catalog } from './data.js';
 import { titleText } from './render.js';
@@ -15,6 +15,9 @@ import {
 } from './search-common.js';
 
 const PAGE_SIZE = 50;
+// Show a useful first screen promptly without constructing 50 snippets in a
+// single input-blocking task. Later partials and final pages are not truncated.
+const FIRST_PARTIAL_SIZE = 10;
 
 export interface GlobalSearch {
   close(): boolean;
@@ -88,17 +91,25 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     if (measureFrame) cancelAnimationFrame(measureFrame);
     measureFrame = requestAnimationFrame(() => {
       measureFrame = 0;
+      const candidates: HTMLElement[] = [], wrapped: HTMLElement[] = [];
+      // Clear old wrap flags before any layout read, then perform all reads
+      // together and finally write new flags. Interleaving them can force one
+      // synchronous layout per result row while the user is typing.
       for (const row of results.querySelectorAll<HTMLElement>('.search-result[data-search-kind="text"]')) {
         if (measured.get(row) === measureVersion) continue;
-        delete row.dataset.indexWrap;
-        if (row.dataset.multi === 'true') { measured.set(row, measureVersion); continue; }
+        if (row.dataset.indexWrap !== undefined) delete row.dataset.indexWrap;
+        if (row.dataset.multi === 'true') measured.set(row, measureVersion);
+        else candidates.push(row);
+      }
+      for (const row of candidates) {
         const body = row.querySelector<HTMLElement>('.search-result-body');
         const mark = body?.querySelector<HTMLElement>('mark');
         if (!body || !mark || !body.offsetWidth) continue;
         const bounds = body.getBoundingClientRect(), match = mark.getBoundingClientRect();
-        if (match.left < bounds.left + 14 || match.right > bounds.right + 1) row.dataset.indexWrap = 'true';
+        if (match.left < bounds.left + 14 || match.right > bounds.right + 1) wrapped.push(row);
         measured.set(row, measureVersion);
       }
+      for (const row of wrapped) row.dataset.indexWrap = 'true';
     });
   }
   const resize = (): void => { measureVersion++; scheduleMeasurement(); };
@@ -153,20 +164,8 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     row.append(button); return row;
   }
 
-  function renderDisplay(): void {
-    const visible = window.scrollY > 0 && !needsRestore ? [...results.querySelectorAll<HTMLElement>('[data-result-key]')]
-      .find(node => node.getBoundingClientRect().bottom > 0 && node.getBoundingClientRect().top < innerHeight) : undefined;
-    const key = visible?.dataset.resultKey, top = visible?.getBoundingClientRect().top;
-    const nodes: KeyedNode[] = [];
-    for (const [index, entry] of display.entries()) {
-      const prior = display[index - 1]?.previous === entry.previous ? display[index - 1]?.hit : undefined;
-      const next = display[index + 1]?.previous === entry.previous ? display[index + 1]?.hit : undefined;
-      const signature = JSON.stringify([hitSignature(entry.hit), entry.multi, prior?.record.item, next?.record.item]);
-      nodes.push({ key: `hit:${entry.hit.record.key}`, signature,
-        create: () => resultRow(entry.hit, entry.multi, prior, next), update: node => markPrevious(node, entry.previous) });
-    }
-    reconcileRows(list, nodes);
-    const active = Boolean(input.value.trim()), valid = Boolean(normalizeSearch(input.value));
+  function renderStatus(): boolean {
+    const active = Boolean(input.value.trim()), valid = Boolean(normalizeSearchQuery(input.value));
     results.hidden = !active;
     const failed = searchFailed || catalogFailed;
     const pendingResults = searching || (active && valid && !catalog);
@@ -184,6 +183,22 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     }
     more.hidden = !active || total <= currentCount || currentCount === 0;
     more.disabled = searching || failed;
+    return failed;
+  }
+  function renderDisplay(): void {
+    const visible = window.scrollY > 0 && !needsRestore ? [...results.querySelectorAll<HTMLElement>('[data-result-key]')]
+      .find(node => node.getBoundingClientRect().bottom > 0 && node.getBoundingClientRect().top < innerHeight) : undefined;
+    const key = visible?.dataset.resultKey, top = visible?.getBoundingClientRect().top;
+    const nodes: KeyedNode[] = [];
+    for (const [index, entry] of display.entries()) {
+      const prior = display[index - 1]?.previous === entry.previous ? display[index - 1]?.hit : undefined;
+      const next = display[index + 1]?.previous === entry.previous ? display[index + 1]?.hit : undefined;
+      const signature = JSON.stringify([hitSignature(entry.hit), entry.multi, prior?.record.item, next?.record.item]);
+      nodes.push({ key: `hit:${entry.hit.record.key}`, signature,
+        create: () => resultRow(entry.hit, entry.multi, prior, next), update: node => markPrevious(node, entry.previous) });
+    }
+    reconcileRows(list, nodes);
+    const failed = renderStatus();
     if (key && top !== undefined) {
       const after = [...results.querySelectorAll<HTMLElement>('[data-result-key]')].find(node => node.dataset.resultKey === key);
       if (after) window.scrollBy(0, after.getBoundingClientRect().top - top);
@@ -199,7 +214,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   }
   function showSnapshot(snapshot: SearchSnapshot): void {
     total = snapshot.resultsTotal; currentCount = snapshot.results.length; searching = !snapshot.complete;
-    const multi = normalizeSearch(input.value).split(' ').filter(Boolean).length > 1;
+    const multi = normalizeSearchQuery(input.value).split(' ').filter(Boolean).length > 1;
     display = mergeSearchHits(snapshot.results, previous, snapshot.complete, multi, previous.length, retainedIsOldQuery);
     if (snapshot.complete) previous = [];
     renderDisplay();
@@ -207,7 +222,13 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   function flush(): void {
     timer = undefined;
     if (destroyed || pointerDown || !pending || !catalog || (results.contains(document.activeElement) && focusIndex === undefined)) return;
-    const snapshot = pending; pending = undefined; showSnapshot(snapshot);
+    const snapshot = pending; pending = undefined;
+    if (!snapshot.complete && currentCount === 0 && snapshot.results.length > FIRST_PARTIAL_SIZE) {
+      // Keep the complete partial snapshot for the normal coalesced update.
+      // A newer edit resets it; a final answer still bypasses the timer.
+      showSnapshot({ ...snapshot, results: snapshot.results.slice(0, FIRST_PARTIAL_SIZE) });
+      pending = snapshot; timer = window.setTimeout(flush, 80);
+    } else showSnapshot(snapshot);
   }
   function queue(snapshot: SearchSnapshot): void {
     if (destroyed) return;
@@ -244,21 +265,25 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
     root.dataset.active = String(active); clear.hidden = !active; toolbar.hidden = !active;
     if (contents) contents.hidden = active;
     for (const [language, button] of toggles) button.setAttribute('aria-pressed', String(session.languages.has(language)));
-    if (!active || !normalizeSearch(query)) {
+    if (!active || !normalizeSearchQuery(query)) {
       client.cancel(); resetQueue(); baseKey = ''; requestKey = ''; display = []; previous = [];
       searching = false; searchFailed = false; total = 0; currentCount = 0;
       renderDisplay(); return;
     }
-    const nextBase = JSON.stringify([normalizeSearch(query), [...session.languages].sort()]);
+    const nextBase = JSON.stringify([normalizeSearchQuery(query), [...session.languages].sort()]);
     const nextRequest = JSON.stringify([nextBase, limit]);
     if (nextRequest === requestKey) return;
     resetQueue();
     const changed = nextBase !== baseKey;
+    // When every retained row was already marked previous, another edit does
+    // not alter its grouping or geometry. Mixed current/previous rows must
+    // still be reconciled because their item-title boundaries can change.
+    const unchangedRows = changed && searching && currentCount === 0 && display.every(entry => entry.previous);
     previous = display.slice(); retainedIsOldQuery = changed;
     if (changed) { focusIndex = undefined; currentCount = 0; total = 0; }
     baseKey = nextBase; requestKey = nextRequest; searching = true; searchFailed = false;
     if (changed) display = previous.map(entry => ({ ...entry, previous: true }));
-    renderDisplay();
+    if (unchangedRows) renderStatus(); else renderDisplay();
     client.search({ query, languages: [...session.languages], tocLimit: 0, textLimit: 0, resultLimit: limit }, queue, () => {
       if (destroyed) return;
       resetQueue(); requestKey = ''; searching = false; searchFailed = true; renderDisplay();
@@ -268,7 +293,7 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
   input.addEventListener('blur', () => { if (!input.value.trim()) onState(input.value, false); });
   input.addEventListener('input', event => {
     if (!(event as InputEvent).isComposing) localizeSearchInput(input);
-    if (normalizeSearch(input.value) !== normalizeSearch(session.libraryQuery)) limit = PAGE_SIZE;
+    if (normalizeSearchQuery(input.value) !== normalizeSearchQuery(session.libraryQuery)) limit = PAGE_SIZE;
     needsRestore = false; run();
   });
   input.addEventListener('compositionend', () => { localizeSearchInput(input); run(); });

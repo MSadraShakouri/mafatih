@@ -13,6 +13,8 @@ export class SearchClient {
   private onError: (() => void) | undefined;
   private pending: Extract<SearchWorkerRequest, { type: 'search' }> | undefined;
   private sendTimer: ReturnType<typeof setTimeout> | undefined;
+  private lastQuery = '';
+  private lastQueryAt = 0;
   private globalStarted = false;
   private item: ReaderItem | undefined;
   private sentItem = '';
@@ -40,7 +42,14 @@ export class SearchClient {
         if (!this.item || this.item.id !== query.item) throw new Error('Reader search item is not prepared.');
         this.startItem(worker, this.item);
       } else this.startGlobal(worker);
-      // Start loading immediately; only rapid query messages are coalesced.
+      // Start loading immediately. A fresh query dispatches promptly, while
+      // single characters and successive prefix edits retain the longer
+      // coalescing window so fast typing does not scan every broad prefix.
+      const now = Date.now();
+      const editing = this.lastQuery && query.query !== this.lastQuery && now - this.lastQueryAt < 100 &&
+        (query.query.startsWith(this.lastQuery) || this.lastQuery.startsWith(query.query));
+      const short = Array.from(query.query.trim()).length < 2;
+      this.lastQuery = query.query; this.lastQueryAt = now;
       this.pending = { type: 'search', request: { ...query, id: this.activeId } };
       if (this.sendTimer === undefined) this.sendTimer = setTimeout(() => {
         this.sendTimer = undefined;
@@ -48,7 +57,7 @@ export class SearchClient {
         this.pending = undefined;
         if (!pending || !this.worker) return;
         try { this.worker.postMessage(pending); } catch { this.fail(); }
-      }, 30);
+      }, editing || short ? 30 : 20);
     } catch {
       this.fail();
     }
@@ -61,6 +70,7 @@ export class SearchClient {
     if (this.sendTimer !== undefined) clearTimeout(this.sendTimer);
     this.sendTimer = undefined;
     this.pending = undefined;
+    this.lastQuery = ''; this.lastQueryAt = 0;
     try { this.worker?.postMessage({ type: 'cancel' } satisfies SearchWorkerRequest); } catch { this.fail(); }
   }
 

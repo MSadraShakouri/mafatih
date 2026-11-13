@@ -3,7 +3,7 @@ import { textRange } from './text-offset.js';
 import { scrollRangeToPointer, type ReadingPointer } from './reader-anchor.js';
 import type { ReaderItem } from './data.js';
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
-import { normalizeSearch } from '../src/normalize.js';
+import { normalizeSearchQuery } from '../src/normalize.js';
 import { utf16ToCodePointOffset, type TextRange } from '../src/search-text.js';
 import { SearchClient } from './search-client.js';
 import { hitSignature, markPrevious, mergeSearchHits, reconcileRows, type DisplayHit, type KeyedNode } from './search-results.js';
@@ -171,6 +171,19 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     });
     li.append(button); return li;
   }
+  function renderResultStatus(): void {
+    const query = input.value.trim(), valid = Boolean(normalizeSearchQuery(query));
+    const label = !query || searching ? 'جست‌وجو در متن' : `${digits(total)} نتیجه`;
+    if (headText.textContent !== label) headText.textContent = label;
+    results.setAttribute('aria-busy', String(searching && !errorOpen));
+    empty.hidden = display.length > 0 || searching;
+    if (!empty.hidden) empty.textContent = !query ? 'برای جست‌وجو، واژه‌ای بنویسید.'
+      : !valid ? 'برای جست‌وجو، دست‌کم یک واژه یا عدد بنویسید.'
+        : !session.languages.size ? 'برای جست‌وجوی متن، عربی یا فارسی را روشن کنید.'
+          : 'نتیجه‌ای پیدا نشد.';
+    more.hidden = total <= currentCount || currentCount === 0;
+    more.disabled = searching || errorOpen;
+  }
   function renderResults(): void {
     const scroll = results.scrollTop;
     const visible = !results.hidden ? [...results.querySelectorAll<HTMLElement>('[data-result-key]')]
@@ -182,17 +195,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
         create: () => resultRow(entry.hit), update: node => markPrevious(node, entry.previous) });
     }
     reconcileRows(list, nodes);
-    const query = input.value.trim(), valid = Boolean(normalizeSearch(query));
-    const label = !query || searching ? 'جست‌وجو در متن' : `${digits(total)} نتیجه`;
-    if (headText.textContent !== label) headText.textContent = label;
-    results.setAttribute('aria-busy', String(searching && !errorOpen));
-    empty.hidden = display.length > 0 || searching;
-    if (!empty.hidden) empty.textContent = !query ? 'برای جست‌وجو، واژه‌ای بنویسید.'
-      : !valid ? 'برای جست‌وجو، دست‌کم یک واژه یا عدد بنویسید.'
-        : !session.languages.size ? 'برای جست‌وجوی متن، عربی یا فارسی را روشن کنید.'
-          : 'نتیجه‌ای پیدا نشد.';
-    more.hidden = total <= currentCount || currentCount === 0;
-    more.disabled = searching || errorOpen;
+    renderResultStatus();
     results.scrollTop = scroll;
     if (key && top !== undefined) {
       const after = [...results.querySelectorAll<HTMLElement>('[data-result-key]')].find(node => node.dataset.resultKey === key);
@@ -205,7 +208,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   }
   function showSnapshot(snapshot: SearchSnapshot): void {
     total = snapshot.textTotal; currentCount = snapshot.text.length; searching = !snapshot.complete;
-    const multi = normalizeSearch(input.value).split(' ').filter(Boolean).length > 1;
+    const multi = normalizeSearchQuery(input.value).split(' ').filter(Boolean).length > 1;
     display = mergeSearchHits(snapshot.text, previous, snapshot.complete, multi, previous.length, retainedIsOldQuery);
     if (snapshot.complete) previous = [];
     renderResults();
@@ -230,12 +233,12 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   function run(): void {
     if (!open || destroyed) return;
     const query = input.value; session.readerQuery = query; visibility();
-    if (!query.trim() || !normalizeSearch(query) || !session.languages.size) {
+    if (!query.trim() || !normalizeSearchQuery(query) || !session.languages.size) {
       client.cancel(); resetQueue(); baseKey = ''; requestKey = ''; display = []; previous = [];
       total = 0; currentCount = 0; searching = false; errorOpen = false;
       live.textContent = query.trim() ? 'نتیجه‌ای پیدا نشد' : ''; renderResults(); visibility(); return;
     }
-    const nextBase = JSON.stringify([normalizeSearch(query), [...session.languages].sort(), item.id]);
+    const nextBase = JSON.stringify([normalizeSearchQuery(query), [...session.languages].sort(), item.id]);
     const nextRequest = JSON.stringify([nextBase, limit]);
     if (nextRequest === requestKey) return;
     resetQueue();
@@ -246,7 +249,14 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
     if (changed) display = previous.map(entry => ({ ...entry, previous: true }));
     // Do not leave a previous completed search's announcement in the live region.
     live.textContent = '';
-    renderResults(); visibility();
+    if (changed && headText.textContent === 'جست‌وجو در متن') {
+      // Only the previous/current marker changes while another search is
+      // already pending. Rows and header geometry are unchanged, so do not
+      // reconcile them or force layout merely to preserve their scroll anchor.
+      for (const node of list.children) if (node instanceof HTMLElement) markPrevious(node, true);
+      renderResultStatus();
+    } else renderResults();
+    visibility();
     client.search({ query, languages: [...session.languages], item: item.id, tocLimit: 0, textLimit: limit, resultLimit: 0 }, queue, () => {
       if (!open || destroyed) return;
       resetQueue(); requestKey = ''; searching = false; errorOpen = true; listOpen = true; menuOpen = false;
@@ -255,7 +265,7 @@ export function attachInTextSearch(main: HTMLElement, item: ReaderItem, client: 
   }
   input.addEventListener('input', event => {
     if (!(event as InputEvent).isComposing) localizeSearchInput(input);
-    if (normalizeSearch(input.value) !== normalizeSearch(session.readerQuery)) limit = PAGE_SIZE;
+    if (normalizeSearchQuery(input.value) !== normalizeSearchQuery(session.readerQuery)) limit = PAGE_SIZE;
     listOpen = true; menuOpen = false; run();
   });
   input.addEventListener('compositionend', () => { localizeSearchInput(input); run(); });

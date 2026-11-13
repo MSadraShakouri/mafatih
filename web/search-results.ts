@@ -51,7 +51,7 @@ export function reconcileRows(parent: HTMLElement, entries: readonly KeyedNode[]
       node = replacement;
     }
     if (!node) node = entry.create();
-    node.dataset.renderKey = entry.key;
+    if (node.dataset.renderKey !== entry.key) node.dataset.renderKey = entry.key;
     signatures.set(node, entry.signature);
     entry.update?.(node);
     if (node !== cursor) parent.insertBefore(node, cursor);
@@ -67,5 +67,6 @@ export function hitSignature(hit: SearchHit): string {
 }
 
 export function markPrevious(node: HTMLElement, previous: boolean): void {
-  node.dataset.previous = String(previous);
+  const value = String(previous);
+  if (node.dataset.previous !== value) node.dataset.previous = value;
 }

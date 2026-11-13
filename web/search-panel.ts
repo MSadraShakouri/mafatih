@@ -1,5 +1,5 @@
 import type { SearchHit, SearchLanguage, SearchSnapshot } from '../src/search.js';
-import { normalizeSearch } from '../src/normalize.js';
+import { normalizeSearchQuery } from '../src/normalize.js';
 import { findOriginalWordMatches, utf16ToCodePointOffset, wholeWordRanges, type TextRange } from '../src/search-text.js';
 import type { Catalog, Title } from './data.js';
 import { scrollToReadingAnchor } from './reader-anchor.js';
@@ -376,7 +376,7 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
       announce('');
       return;
     }
-    const baseKey = JSON.stringify([normalizeSearch(query), languages, item ?? null]);
+    const baseKey = JSON.stringify([normalizeSearchQuery(query), languages, item ?? null]);
     // A trailing/repeated space or a removed mark may change the input without
     // changing any search term. Preserve the ongoing work and displayed page.
     if (reset && baseKey === lastBaseKey) return;
