@@ -1,0 +1,134 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-mbas",
+  "item_sha256": "d139e53df576719ff297d19b97289efeec5060bead88ea56335a3803c492d108",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "65654c4dd2d460fa5e9eb012c6e413cf76a460914ed4d7f33692aa004552e9bd",
+      "checked": true,
+      "cuts": [
+        17
+      ],
+      "kinds": [
+        "heading",
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "bc73875f9067a38196cddee0a69c3457a64c7da955df822c2a2edbe9cfa23e19",
+      "checked": true,
+      "cuts": [
+        16,
+        125,
+        209,
+        390,
+        466,
+        516
+      ],
+      "kinds": [
+        "heading",
+        "note",
+        "note",
+        "quotation",
+        "quotation",
+        "note",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "b1bd125efea2897deae3a65e81f676e0ad595fec6edbc4cb9dc7cf90a1f639cd",
+      "checked": true,
+      "cuts": [
+        96,
+        348
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "0f378d25a4f0384e6921b595b8065f92665a270d49c33acc52605e99756522b1",
+      "checked": true,
+      "cuts": [
+        51,
+        161,
+        274,
+        324,
+        370,
+        399,
+        440
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "c95b9960da77f348af317ad665fd9b0a50fb4ee36ffd8517e3667de4b37a3670",
+      "checked": true,
+      "cuts": [
+        34,
+        124,
+        217,
+        247,
+        270,
+        288,
+        318
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "cefd99cfa77f89c29b43fc51dc1034f2d21c8fe4c93b0eb6e0bd35fa36139ca1",
+      "checked": true,
+      "cuts": [
+        35,
+        66
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "instruction"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier source value contains physical separators. Inspect the exported history and current context; do not silently restore old separators. Agent-6: The earlier physical break fell at the sentence boundary between parts 1 and 2 of this field (code point 121); that boundary is used as an ordinary cut, no separator restored."
+    }
+  ]
+}

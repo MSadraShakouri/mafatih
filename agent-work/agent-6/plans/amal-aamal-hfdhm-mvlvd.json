@@ -1,0 +1,96 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-hfdhm-mvlvd",
+  "item_sha256": "136a08231686547fa5ae01d08d8046e66918fde95a2a78d65da86d073dd27b9e",
+  "author": "agent-6",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "19e7030f9d71f45d7439deb6e2b01e2a75a7c35f56df946308e30d8bd77c5b51",
+      "checked": true,
+      "cuts": [
+        11,
+        278
+      ],
+      "kinds": [
+        "heading",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "91c86fe9916f0dd253b050b53b60179dd57b383606bfc0f93b7144fc1be2a0ac",
+      "checked": true,
+      "cuts": [
+        337,
+        346,
+        479
+      ],
+      "kinds": [
+        "note",
+        "note",
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "022329b5c0c12d77cc0d6457139d7b64d385df405bbecbd778b90821dbe8aa98",
+      "checked": true,
+      "cuts": [
+        11,
+        56,
+        210,
+        291,
+        472
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "note",
+        "instruction",
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "b9ae98ffe4da95b144f743ff253c4669f5546dd19a987fa507098fd49d36c25e",
+      "checked": true,
+      "cuts": [
+        129,
+        186,
+        219,
+        257,
+        387,
+        513,
+        584
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "quotation",
+        "quotation",
+        "note",
+        "instruction",
+        "note",
+        "quotation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00004",
+      "language": "fa",
+      "kind": "mixed-language",
+      "note": "Part 2 (code points 186-219) of this fa field is Arabic-language text (quotation); the layout places it in the ar field. Wording unchanged."
+    }
+  ]
+}
