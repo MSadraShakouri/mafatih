@@ -6,9 +6,42 @@ import {loadCorpus,text} from '../src/corpus.js';
 import {normalizeSearch} from '../src/normalize.js';
 import {IncrementalSearch,type SearchIndex,type SearchShard} from '../src/search.js';
 import {corpusBeforeRowSplits,currentPieces,historicalRow} from './helpers/row-split-history.js';
+import {codePoints,slicePoints} from '../src/text-ids.js';
 
 // Build now, rather than relying on potentially stale generated artifacts.
 before(()=>{execFileSync(process.execPath,['--import','tsx','scripts/build-data.ts'],{stdio:'pipe'});});
+
+/** Check a mapped historical slice without treating it as a whole merged row. */
+function assertCorrectedRuntimePiece(
+  whole:string|undefined,
+  indexed:{text:string;normalized:string}|undefined,
+  piece:{text:string;target_start:number},
+  location:string,
+):void {
+  assert.ok(whole !== undefined, `missing built field ${location}`);
+  assert.equal(slicePoints(whole, piece.target_start, piece.target_start + codePoints(piece.text).length),
+    piece.text, `wrong corrected occurrence slice ${location}`);
+  assert.equal(indexed?.text, whole, `reader/search field mismatch ${location}`);
+  assert.equal(indexed?.normalized, normalizeSearch(whole), `wrong normalized search field ${location}`);
+}
+
+test('corrected occurrences use code-point slices while search indexes the whole merged field',()=>{
+  // The emoji makes UTF-16 indexes differ from the required code-point offsets;
+  // the space models a separately recorded editorial insertion between sources.
+  const whole='a😀 bc', indexed={text:whole,normalized:normalizeSearch(whole)};
+  assertCorrectedRuntimePiece(whole,indexed,{text:'a😀',target_start:0},'left');
+  assertCorrectedRuntimePiece(whole,indexed,{text:'bc',target_start:3},'right');
+  assertCorrectedRuntimePiece('bc',{text:'bc',normalized:normalizeSearch('bc')},
+    {text:'bc',target_start:0},'unmerged');
+  assert.throws(()=>assertCorrectedRuntimePiece(whole,indexed,{text:'bc',target_start:2},'wrong offset'),
+    /wrong corrected occurrence slice/);
+  assert.throws(()=>assertCorrectedRuntimePiece(whole,{text:'bc',normalized:normalizeSearch('bc')},
+    {text:'bc',target_start:3},'partial index'),/reader\/search field mismatch/);
+  assert.throws(()=>assertCorrectedRuntimePiece(whole,{...indexed,normalized:'incorrect'},
+    {text:'bc',target_start:3},'bad normalization'),/wrong normalized search field/);
+  assert.throws(()=>assertCorrectedRuntimePiece(undefined,indexed,{text:'bc',target_start:3},'missing'),
+    /missing built field/);
+});
 
 test('web build excludes classified audio menus from content and search but retains canonical rows',()=>{
   const c=loadCorpus();
@@ -153,9 +186,11 @@ test('generated reader, search, navigation and English data use the corrected ca
         if (piece.row.kind === 'audio-reciter') {
           assert.equal(built, undefined); assert.equal(indexed, undefined); continue;
         }
-        assert.equal(built?.[piece.language], piece.text);
-        assert.equal(indexed?.text, piece.text);
-        assert.equal(indexed?.normalized, normalizeSearch(piece.text));
+        // A piece may be a slice of a row that later merged with neighbours:
+        // the corrected occurrence must sit verbatim at its recorded offset,
+        // while the built row and the search record carry the whole row text.
+        assertCorrectedRuntimePiece(built?.[piece.language], indexed, piece,
+          `${location.item}/${piece.row.id}/${piece.language}`);
         rows += 1;
       }
     } else if (location.kind === 'english-paragraph') {
