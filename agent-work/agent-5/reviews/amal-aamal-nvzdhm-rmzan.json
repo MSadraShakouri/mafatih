@@ -4,7 +4,7 @@
   "item": "amal-aamal-nvzdhm-rmzan",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "83c072ea2233005acc8e73a145f8ea0b2338d14767948ae742f499b6ce28f8b1",
   "layout_sha256": "11a708948f785a2859da82cabd9bd5b65bc15ebd73142f3c46ecda331da527cc",
   "result_item_sha256": "746d694bf9e50e7b506f67d912c0658596d673b5be9fe88cd660900ed78bc642",
@@ -21,72 +21,72 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The heading and first numbered instruction are correctly moved to Persian; the formula is paired. Reviewed ar source."
       },
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The heading and first numbered instruction are correctly moved to Persian; the formula is paired. Reviewed fa source."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The second numbered direction is correctly moved and its formula paired. Reviewed ar source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The second numbered direction is correctly moved and its formula paired. Reviewed fa source."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The third practice is a cross-reference and instruction. Reviewed fa source."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fourth practice introduces the prayer. Reviewed fa source."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The two Arabic and two Persian prayer sections correspond but are emitted as separate language-only rows; pair the supplied renderings without changing source. Reviewed ar source."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The two Arabic and two Persian prayer sections correspond but are emitted as separate language-only rows; pair the supplied renderings without changing source. Reviewed fa source."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The final instruction explains how to replace the placeholder. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "The numbered instructions and first formulas are appropriately placed, but r00005’s corresponding prayer sections are detached as separate language-only rows. Pair them in source order, preserving anchors and without inventing text."
   }
 }

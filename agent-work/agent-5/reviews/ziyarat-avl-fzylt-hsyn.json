@@ -4,7 +4,7 @@
   "item": "ziyarat-avl-fzylt-hsyn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "cb32e9be29101ec7b863bcf13b5ac730d63544cfe243e76378fdaa1c5c7e3c55",
   "layout_sha256": "8b89bb4f670cb1056dd6d82a86c9c5b14c0dc9010bf3940f0f4006b36fa0fdb0",
   "result_item_sha256": "dcab2e6940e8b8bde51c3301e212b4f5d7ed130cace7548aa918fe31a2ac0f94",
@@ -21,72 +21,72 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The destination title is a heading. Reviewed fa source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The introductory attributed benefits end mid-sentence and continue in r00003; retain the claims as reported. Reviewed fa source."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first part completes r00002; the source list and attribution at the end continue in r00004. Reviewed fa source."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "revise",
+        "note": "The attribution continues from r00003, then Persian quoted devotional prayer is classified as note around an Arabic quotation with no corresponding explicit Persian wording. Distinguish narration from prayer and preserve the source omission. Reviewed fa source."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian prayer starts by completing the r00004 sentence and is classified as note, whereas the following Arabic quotation and supplied Persian are paired; distinguish prayer from narration and preserve the passage. Reviewed ar source."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian prayer starts by completing the r00004 sentence and is classified as note, whereas the following Arabic quotation and supplied Persian are paired; distinguish prayer from narration and preserve the passage. Reviewed fa source."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "revise",
+        "note": "This Persian passage continues the prayer at the end of r00005 and should be devotional recitation or quotation rather than a general note. Reviewed fa source."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first Persian sentence continues the prayer; the later narrative switches to the reporter and is interrupted into r00008. Distinguish prayer and report. Reviewed fa source."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first words complete r00007’s report; the subsequent response is attributed source narrative. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Group the interrupted prose r00002/03, 03/04, 04/05 and 07/08; Persian devotional prayer in r00004–07 is interwoven with the report and misclassified as note. Preserve the Arabic quotation without inventing an absent rendering and retain reported claims and IDs."
   }
 }
