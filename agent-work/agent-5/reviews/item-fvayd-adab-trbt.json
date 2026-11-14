@@ -1,0 +1,288 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-fvayd-adab-trbt",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "f1f4c0688a0111db8b1ce9572f5054ced1d2e7fa2078ad95e4864990a85499c0",
+  "layout_sha256": "65022ae5c89cdc922aabf9639789cac705ade575300cbc5c3fde75b244952fca",
+  "result_item_sha256": "91b38eaa5b0ac4c97e63d7424a1a7de669be3105e03c1835ac5439532216f7b2",
+  "result_record_sha256": "29cd61355483476a22eb8046018d5e46194d67c97ba47b0a926c05e304c910fb",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-fvayd-adab-trbt",
+    "item_sha256": "3ee15abfb543a2d5ed234bc36a1149ba7927d7625c23095c8928b7751c572e8b",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "81d0d2162580f8bdcf8980a32700177c98ec3e34dd9b3e67daea372ac26838a5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The compiler’s prose and report continue mid-explanation into r00002, including the bracketed gloss; group that uninterrupted context without treating the reported healing claims as verified. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first phrase completes the gloss and account in r00001; group the source continuation, preserving the author’s claims as claims. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Four numbered reports occupy this one piece; separate their labels and accounts. The fourth account is interrupted mid-phrase at the r00003/04 boundary. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00003 and the ending continues in r00005; group the interrupted report while preserving the reported account and exact text. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening completes the r00004 account, then practical guidance, compiler commentary and the fifth numbered attribution/directions occur together. Distinguish their roles and preserve the numbered heading. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic and Persian prayer both end at the unfinished phrase وبحق / و به حق; their completion begins r00007. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic and Persian prayer both end at the unfinished phrase وبحق / و به حق; their completion begins r00007. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired opening completes the invocation begun in r00006; group both languages. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired opening completes the invocation begun in r00006; group both languages. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The initial direction, narration about sealing the soil and a new direction introducing a different prayer are distinct roles; separate while retaining the reports as supplied. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic supplication and its existing Persian rendering correspond; preserve the supplied translation. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic supplication and its existing Persian rendering correspond; preserve the supplied translation. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The compiler’s note continues into r00011 at the phrase identifying a property of the beads; group the interrupted sentence. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00010; the end introduces the Persian poem, which remains quotation. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "First Persian poetic couplet quoted as support for the compiler’s explanation; quotation is suitable. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Second Persian couplet is a quoted line of the poem. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Third Persian couplet is a quoted line of the poem. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Fourth Persian couplet is a quoted line of the poem. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Fifth Persian couplet is a quoted line of the poem. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Sixth Persian couplet is a quoted line of the poem. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The compiler’s conclusion precedes the sixth numbered report and an Arabic formula within Persian prose. Separate those roles and the Arabic formula; there is no separate supplied Persian rendering for that formula. The report continues r00019. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The beginning completes r00018’s report, followed by another report, then the seventh numbered attribution and ritual direction; it is not all instruction. Separate roles and preserve the interrupted account. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields end within the list of creation, completed by the contrasting next term in r00021; group the paired continuation. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields end within the list of creation, completed by the contrasting next term in r00021; group the paired continuation. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00020 in both languages; preserve the existing rendering and source variants. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00020 in both languages; preserve the existing rendering and source variants. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian instruction is correctly moved out of the Arabic source and the prayer is paired, but its final من كل / از هر is completed in r00023. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian instruction is correctly moved out of the Arabic source and the prayer is paired, but its final من كل / از هر is completed in r00023. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both opening words complete r00022’s prayer; group the paired continuation. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both opening words complete r00022’s prayer; group the paired continuation. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The initial practical direction, reports of effects, and compiler’s legal commentary precede a further instruction to speak; separate those roles without endorsing or changing the reported claims. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer and supplied Persian rendering correspond. Assessment includes the ar source and its actual output."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer and supplied Persian rendering correspond. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This legal commentary ends at the condition continued in r00027; group the interrupted prose. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first words complete the condition in r00026; the report is not a new practice. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The reported dream narrative ends inside the sentence at نزد and continues r00029; group the interrupted report. Assessment includes the fa source and its actual output."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00028’s narrative; preserve the dream account as source text, not independent factual verification. Assessment includes the fa source and its actual output."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The poem and existing bilingual prayers are appropriately classified, and r00022’s language transfer is sound. Several bilingual supplications are broken at r00006/07, r00020/21, r00022/23; prose is interrupted across r00001/02, r00003/04/05, r00010/11, r00018/19, r00026/27 and r00028/29. Numbered reports, compiler comments and ritual directions mix roles in r00003, r00005, r00008, r00018/19 and r00024. Retain source claims as historical claims, do not create translations, and preserve published row links; escalate blocked migration or nonadjacent joining."
+  }
+}

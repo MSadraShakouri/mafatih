@@ -1,0 +1,827 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sura-muddaththir",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "dd74e8a45cadcb24038ac9f8b66b16eed7215537d049c6fde9d60c4fbdc08a7c",
+  "layout_sha256": "b80c04093bfb4b7697c2b5792ebcbb16eda1bfa702f1784e85451c62819cbb79",
+  "result_item_sha256": "563ef51430d242e5efc02490b4d539d33c1a0c996346aa63dc604b735e2b1173",
+  "result_record_sha256": "bf498300fd131596c4dfac3586826c9cb2dad10a5e440f588848b567d7fa5b42",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sura-muddaththir",
+    "item_sha256": "34d70b71415aa899f241c093350a74181e859ada21d8719e9842db8f19091502",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "a4d385ba477ae24f2201ff56e21c811f58004248b91cc3fcafa920b8b92c6f7c",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The basmala is paired with the existing Persian rendering."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The basmala is paired with the existing Persian rendering."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 1, address to the cloaked one: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 1, address to the cloaked one: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 2, rise and warn: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 2, rise and warn: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 3, magnifying the Lord: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 3, magnifying the Lord: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 4, purifying garments: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 4, purifying garments: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 5, avoiding impurity: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 5, avoiding impurity: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 6, not giving with expectation of increase: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 6, not giving with expectation of increase: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 7, patience for the Lord: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 7, patience for the Lord: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 8, the trumpet sounded: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 8, the trumpet sounded: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 9, a difficult day: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 9, a difficult day: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 10, difficulty for disbelievers: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 10, difficulty for disbelievers: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 11, the one created alone: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 11, the one created alone: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 12, extensive wealth: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 12, extensive wealth: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 13, children present: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 13, children present: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 14, life made comfortable: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 14, life made comfortable: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 15, desire for more: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 15, desire for more: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 16, hostility to the signs: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 16, hostility to the signs: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 17, the arduous ascent: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 17, the arduous ascent: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 18, thought and calculation: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 18, thought and calculation: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 19, condemnation of the calculation: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 19, condemnation of the calculation: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 20, repeated condemnation: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 20, repeated condemnation: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 21, looking: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 21, looking: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 22, frowning and scowling: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 22, frowning and scowling: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 23, turning away and arrogance: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 23, turning away and arrogance: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 24, calling the revelation inherited magic: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 24, calling the revelation inherited magic: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00026",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 25, calling it human speech: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 25, calling it human speech: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00027",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 26, entering Saqar: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 26, entering Saqar: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00028",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 27, what Saqar is: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 27, what Saqar is: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00029",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 28, it leaves nothing: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 28, it leaves nothing: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00030",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 29, scorching skin: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 29, scorching skin: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00031",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 30, nineteen guardians: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 30, nineteen guardians: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00032",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 31, angels, their number and its trial, guidance and reminder: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 31, angels, their number and its trial, guidance and reminder: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00033",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 32, swearing by the moon: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00033",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 32, swearing by the moon: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00034",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 33, the departing night: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00034",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 33, the departing night: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00035",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 34, the brightening dawn: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00035",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 34, the brightening dawn: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00036",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 35, one of the great matters: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00036",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 35, one of the great matters: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00037",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 36, a warning to humanity: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00037",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 36, a warning to humanity: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00038",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 37, those who advance or fall behind: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00038",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 37, those who advance or fall behind: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00039",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 38, every soul held by its acts: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00039",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 38, every soul held by its acts: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00040",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 39, except those of the right: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00040",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 39, except those of the right: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00041",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 40, in gardens asking: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00041",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 40, in gardens asking: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00042",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 41, about the guilty: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00042",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 41, about the guilty: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00043",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 42, what brought them to Saqar: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00043",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 42, what brought them to Saqar: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00044",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 43, they did not pray: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00044",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 43, they did not pray: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00045",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 44, they did not feed the needy: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00045",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 44, they did not feed the needy: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00046",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 45, they joined those who indulged in falsehood: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00046",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 45, they joined those who indulged in falsehood: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00047",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 46, they denied the day of judgment: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00047",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 46, they denied the day of judgment: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00048",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 47, until certainty came: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00048",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 47, until certainty came: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00049",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 48, intercession not benefiting them: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00049",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 48, intercession not benefiting them: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00050",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 49, turning from the reminder: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00050",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 49, turning from the reminder: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00051",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 50, wild asses in flight: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00051",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 50, wild asses in flight: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00052",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 51, fleeing a lion: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00052",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 51, fleeing a lion: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00053",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 52, wishing for unrolled pages: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00053",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 52, wishing for unrolled pages: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00054",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 53, not fearing the Hereafter: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00054",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 53, not fearing the Hereafter: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00055",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 54, the revelation as a reminder: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00055",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 54, the revelation as a reminder: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00056",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 55, whoever wills takes heed: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00056",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 55, whoever wills takes heed: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00057",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 56, remembrance subject to God’s will and His forgiveness: the ar text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      },
+      {
+        "row": "r00057",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 56, remembrance subject to God’s will and His forgiveness: the fa text is paired with the source rendering of the same verse. Preserve the existing verse boundary and interpretive wording."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Read the basmala and all 56 Arabic/Persian numbered verse pairs. Their verse markers, meaning sequence and existing explanatory renderings align; Quranic verse boundaries remain even when syntax carries across verses. This is an alignment review, not scholarly or translation certification."
+  }
+}
