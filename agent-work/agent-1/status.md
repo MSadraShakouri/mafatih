@@ -224,3 +224,31 @@ check pass, `npm run check` 277 tests / 274 pass / 0 fail / 3 skipped, 227 autho
 items in the corpus (112 mine, 115 agent-6's), 115 review records with 94 spacing
 decisions. `audit-round` on this branch reports 115 complete out of 686 because a
 single branch only holds its own items plus the predecessor's.
+
+## Coordinator round of 2026-11-14: agent-1's part
+
+Directive for agent-1: no new authoring, re-review agent-6's next snapshot, and
+optionally help test the runtime-test fix.
+
+1. No new snapshot from agent-6 yet: `df85a685` is still current and its 45 joins
+   stay held until main carries the fix, so there is nothing new to re-review.
+2. Runtime-test fix tested on real merged data, not by reasoning: joining
+   `amal-aamal-dkh-alqza` `r00006|r00007` (both `recitation`, `r00006` carries a
+   punctuation normalisation) with `merge-rows --join exact` makes the pinned test
+   fail with expected equal to that row's corrected text and actual equal to the
+   same text plus the joined neighbour. With the proposal applied and the merge in
+   place the same file passes 5/5. All reverted: tree clean, `verify-tool-info`
+   reports `tool-version-matches`, `validate` passes, file 5/5 on the pinned state.
+   Reproduction written into `agent-work/agent-1/proposals/README.md`.
+3. Historical-link audit run for this assignment as a control: walking every
+   version of all 112 items in this branch's history and treating current rows,
+   `original.id`, `results` and every segment's target and predecessor as
+   reachable, **no prior row id is missing** — 0 affected items, 0 ids, including
+   the three items re-applied after review (`dua-hjt-alyh-alslam`,
+   `dua-zman-ajl-allh`, `namaz-slman`). Nothing to migrate or re-split here, and
+   no link guard was bypassed.
+4. Standing recommendation on the fix: land the patch itself on `main` with a fresh
+   `tool-info` re-pin. agent-2's `f7ce25f9` is equivalent logic but its branch and
+   snapshot `3bd51553` carry a rewritten `tool-info.json` that blesses the edited
+   test, so merging that branch rather than the patch would move the pin without a
+   coordinator decision.
