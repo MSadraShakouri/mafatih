@@ -4,11 +4,11 @@
   "item": "amal-aamal-shbhay-dhh",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "b2f60a04ab9479cbba54e015a2231674bd8fa8101dd68906d799732d7830b36f",
-  "layout_sha256": "d54ad4c0b0e7d96fc16bada8f9803cce4d7583f0064a4cb1bb9547989de591c0",
-  "result_item_sha256": "7a0f36b9b6322a4d3379f5a93b4ff631b101007fc5b79395ee1bbf51e64ec7b8",
-  "result_record_sha256": "7b4a79aab6cf61bb733e0d814643382210632586a61d7ff6e3c44fce137285b0",
+  "author_commit": "48f3ea69d6ae00b12a4d256476e67b64b39ed32a",
+  "plan_sha256": "698822d03feccd6cff6cd9e702ff6188a56c8947b795a6d44ed82daa78d8a4cd",
+  "layout_sha256": "dd68f3d3ebfa56d18799ef5888486086d3c80f0985cfac6746a6df66b26f2580",
+  "result_item_sha256": "85154cf6e17b86972ddefba0499d3d38b7dfd13f3c478f6d05b92a5cbe0fcee1",
+  "result_record_sha256": "03dfbee86f0c4dc22bc43388b531b15715c1316290e68658845d5acb4f9b166b",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "c226e4cc057a3d4d5487ec47fc92e2560a91e8506d59e4191106c842a11303ce",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "8068e787d85e37a0b232bd5a7d582507af1bca2bf4f14cf7af763f6e61df2a3a",
+    "preview_sha256": "47d074a063814e4acf8dd657630c0ef304495b11934fa9856b50d1bc37b3fdc9",
     "sources": [
       {
         "row": "r00001",
@@ -133,16 +133,16 @@
       {
         "row": "r00012",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut keeps its id as the mapping original and retires nothing). Specific ground, not a count: a Persian direction to the reciter (two words meaning that what follows is to be said many times) stands inside this Arabic field at code point 274 of 694. It ends one supplication and introduces a second, separate invocation. Cut before and after it: the first supplication as recitation, the direction out of the Arabic slot as instruction, the second invocation as recitation. My earlier count-based wording is withdrawn."
+        "note": "Resolved at 48f3ea69. The Arabic field is cut at code points 274 and 285: the first supplication (0 to 274) and the second invocation (285 to 694) are recitation rows, and the Persian direction that stood between them (274 to 285) is now an instruction row in the fa slot, no longer inside the Arabic. All 694 code points are kept, no space is inserted, and r00012 stays reachable as the mapping original; no id is retired. Kinds read and accepted: recitation, instruction, recitation."
       },
       {
         "row": "r00012",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut). Specific ground, not a count: the same direction to the reciter stands inside this Persian field at code point 214 of 547, between the rendering of the first supplication and that of the second invocation. Cut before and after it so that each supplication has its own rendering beside it and the direction is one instruction row. My earlier count-based wording is withdrawn."
+        "note": "Resolved at 48f3ea69. The Persian field is cut at code points 214 and 226 at the matching places: the rendering of the first supplication, the direction with its colon as an instruction row, and the rendering of the second invocation. Each recitation row now has its own rendering beside it; I read both pairs clause by clause and they match in order. All 547 code points are kept and no space is inserted. Kinds read and accepted."
       },
       {
         "row": "r00013",
@@ -192,6 +192,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The cut asked for on r00012 (a Persian direction inside the recitation) is recorded in the source notes; the rows as they stand are placed and paired consistently. Withdrawn: my request to re-pair r00009, r00015 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "note": "Read all 19 rows in both languages at 48f3ea69. Rows 12 to 15 carry the cut I asked for on r00012: supplication with its rendering, the direction to the reciter, then the second invocation with its rendering. The source gives that direction twice, once inside the Arabic field (without a colon) and once inside the Persian field (with a colon), so it now stands as two adjacent Persian instruction rows. I accept this: every source code point must stay in exactly one output row, a layout row takes one piece per slot, and the only way to show it once would be to drop one occurrence or to put the Persian words in the ar slot, which is the slot fault the cut removes. The doubled line is a property of the source, as in amal-bqyh-aamal r00029. Link check: the 16 row ids of every earlier snapshot of this item are still reachable (r00012 is a mapping original); nothing is retired or reused. No inserted space, so there is no spacing decision to make. Withdrawn earlier and unchanged: my count-based requests on r00009 and r00015."
   }
 }
