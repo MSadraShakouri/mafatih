@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "fazilat-svrhnba",
   "author": "agent-5",
-  "plan_sha256": "72d266257da2c8afd9e49d5d6ee677cf8d8a34a56a953e573328b187ab1e880a",
+  "plan_sha256": "e04f91a9a925173ac11bd5694f867ee59b176fbc226960d61692150cd9c016a5",
   "rows": [
     {
       "row": "r00001",
@@ -16,8 +16,31 @@
             "part": 0
           },
           "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 1
+          },
+          "fa": null,
+          "kind": "quotation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "quotation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-sf7ca695579f299a4",
+      "right": "r00001-sff26221dba6bb317",
+      "checked": true
     }
   ]
 }

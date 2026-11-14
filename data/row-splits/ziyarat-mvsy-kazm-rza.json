@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "ziyarat-mvsy-kazm-rza",
   "author": "agent-5",
   "baseline_item_sha256": "e907deddb15bd91a5ef4a4cfa03a94620a4fc992096b03d11b76b0acac9bba00",
-  "plan_sha256": "383c4fe81dbf1b607dd306a503d04cc3a26fb4a09a19c4219b090a2ad66efc95",
-  "layout_sha256": "ccc5507fcc7729aefe3a616039412a8f3caaf89833c6183320922e9bfb6f39d2",
+  "plan_sha256": "72f567ba4c61c9e0bf3b3149672bbef68a1df811341c0c2faa6277e0c8db9698",
+  "layout_sha256": "e5cad8038c39d0f83eff8dce425fd3e77c088978393412add02a33871a3297bc",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "t4682c976925fba0467728bb6"
       },
       "results": [
-        "r00001"
+        "m8984a8d78522bdc38982521e"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m8984a8d78522bdc38982521e",
           "language": "fa",
           "start": 0,
-          "end": 44
+          "end": 44,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +33,24 @@
         "fa": "t1d20a612ad462992b91a693e"
       },
       "results": [
-        "r00002"
+        "m8984a8d78522bdc38982521e",
+        "r00002-sb99308cb22091a05"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m8984a8d78522bdc38982521e",
           "language": "fa",
           "start": 0,
-          "end": 81
+          "end": 55,
+          "target_start": 45
+        },
+        {
+          "row": "r00002-sb99308cb22091a05",
+          "language": "fa",
+          "start": 55,
+          "end": 81,
+          "target_start": 0
         }
       ]
     },
@@ -58,7 +68,8 @@
           "row": "r00003",
           "language": "ar",
           "start": 0,
-          "end": 940
+          "end": 940,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -66,7 +77,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 731
+          "end": 731,
+          "target_start": 0
         }
       ]
     },
@@ -84,7 +96,8 @@
           "row": "r00004",
           "language": "ar",
           "start": 0,
-          "end": 28
+          "end": 28,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -92,9 +105,41 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 16
+          "end": 16,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-scbcad34ad2773d20",
+        "ar": null,
+        "fa": "teb8bea85760f0ac68e9f393c",
+        "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m8984a8d78522bdc38982521e",
+          "language": "fa",
+          "start": 0,
+          "end": 55,
+          "target_start": 45
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m8984a8d78522bdc38982521e",
+      "language": "fa",
+      "target_start": 44,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-scbcad34ad2773d20",
+      "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text."
     }
   ]
 }
