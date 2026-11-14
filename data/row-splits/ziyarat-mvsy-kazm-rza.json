@@ -4,7 +4,7 @@
   "author": "agent-5",
   "baseline_item_sha256": "e907deddb15bd91a5ef4a4cfa03a94620a4fc992096b03d11b76b0acac9bba00",
   "plan_sha256": "72f567ba4c61c9e0bf3b3149672bbef68a1df811341c0c2faa6277e0c8db9698",
-  "layout_sha256": "e5cad8038c39d0f83eff8dce425fd3e77c088978393412add02a33871a3297bc",
+  "layout_sha256": "2a3090ef0564dc55a347cfd8d5a7f0968672893eaef44a6ea764557870f370a8",
   "rows": [
     {
       "original": {
@@ -61,11 +61,11 @@
         "fa": "t6c3af9dce78899cae2325f7e"
       },
       "results": [
-        "r00003"
+        "md48ed3fca39a9da9108ab16f"
       ],
       "ar": [
         {
-          "row": "r00003",
+          "row": "md48ed3fca39a9da9108ab16f",
           "language": "ar",
           "start": 0,
           "end": 940,
@@ -74,7 +74,7 @@
       ],
       "fa": [
         {
-          "row": "r00003",
+          "row": "md48ed3fca39a9da9108ab16f",
           "language": "fa",
           "start": 0,
           "end": 731,
@@ -89,24 +89,24 @@
         "fa": "t54ad605e1548ec8dfa9cfdd5"
       },
       "results": [
-        "r00004"
+        "md48ed3fca39a9da9108ab16f"
       ],
       "ar": [
         {
-          "row": "r00004",
+          "row": "md48ed3fca39a9da9108ab16f",
           "language": "ar",
           "start": 0,
           "end": 28,
-          "target_start": 0
+          "target_start": 941
         }
       ],
       "fa": [
         {
-          "row": "r00004",
+          "row": "md48ed3fca39a9da9108ab16f",
           "language": "fa",
           "start": 0,
           "end": 16,
-          "target_start": 0
+          "target_start": 732
         }
       ]
     }
@@ -140,6 +140,24 @@
       "left": "r00001",
       "right": "r00002-scbcad34ad2773d20",
       "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text."
+    },
+    {
+      "row": "md48ed3fca39a9da9108ab16f",
+      "language": "ar",
+      "target_start": 940,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete Arabic and Persian descriptions of the household across source-row boundaries."
+    },
+    {
+      "row": "md48ed3fca39a9da9108ab16f",
+      "language": "fa",
+      "target_start": 731,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete Arabic and Persian descriptions of the household across source-row boundaries."
     }
   ]
 }
