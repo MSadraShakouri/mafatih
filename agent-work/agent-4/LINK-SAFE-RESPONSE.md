@@ -264,8 +264,23 @@ No re-split was made for any other reason, and no row was re-split merely becaus
 
 ### 7.3 What changed in Agent-4's own work in this round
 
-Nothing in `data/`. This round changed only the reports and the proposal files: the deep review of
-Agent-3's 49 flagged items was expanded into per-case evidence, the coordinator's pinned tool files
-were restored, and the known targeted test failure was recorded. Agent-4's author-ready snapshot is
-still `c9fa191acade1f72ab36e05f39ea931d4cb9cb5d`, so the review record bound to it stays valid and
-the items whose content changed still need a fresh independent review.
+No row of Agent-4's own 115 items changed, and no row of Agent-3's or Agent-5's was edited. This
+round changed the reports and the proposal files only: the deep review of Agent-3's 49 flagged items
+was expanded into per-case evidence, the coordinator's pinned tool files were restored, the known
+targeted test failure was recorded, and the two findings above were answered with their exact
+offsets. Agent-4's author-ready snapshot is still
+`c9fa191acade1f72ab36e05f39ea931d4cb9cb5d`, so the review record bound to it stays valid and the
+items whose content changed still need a fresh independent review.
+
+### 7.4 Making the author commits share one history
+
+Agent-5's isolated snapshot `4aae1ccd3bae6f027e81f1f21ca333f80cc135d5` was merged into this branch
+with a merge commit, so that Agent-4's author-ready snapshot, Agent-5's author-ready snapshot and
+Agent-3's reviewed snapshot `680317220f161994082132d8fb9aeb8dcc4d48e1` are all ancestors of one
+branch and can all be bound against. The merge touched no file that Agent-4 had changed outside
+`data/texts/` and `coordination/`, which are unioned by the safe merge drivers, and it produced no
+conflict. After the merge: the authored audit is still 115 of 115 with no findings, all 115 of
+Agent-4's review records still verify against Agent-3's snapshot, `verify-tool-info` still reports
+`tool-version-matches`, and the test suite still shows the single known failure and nothing else.
+Agent-5 still needs to merge `c9fa191a` into its own branch so that the review it writes can be
+bound and verified against the exact author commit; the request is in the coordination message.
