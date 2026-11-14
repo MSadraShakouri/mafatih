@@ -1085,5 +1085,25 @@
         }
       ]
     }
+  ],
+  "merges": [
+    {
+      "left": "r00002-s819edbc260c1753e",
+      "right": "r00003-s3230365f4763acdc",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate words at the original row boundary"
+      }
+    },
+    {
+      "left": "r00012-scce7b1135e7d7ce0",
+      "right": "r00013",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at the original row boundary"
+      }
+    }
   ]
 }
