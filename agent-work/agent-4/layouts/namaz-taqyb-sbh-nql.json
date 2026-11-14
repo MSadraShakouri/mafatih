@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-taqyb-sbh-nql",
   "author": "agent-4",
-  "plan_sha256": "cc693f503fb4cd9c38cb4bec3356b13f7e6ccac9117afa778aed85ad115679f5",
+  "plan_sha256": "559fb788582f1adfac4180f4e64f50a196b7a34c1d4e99f5ff44a47b390f6aa2",
   "rows": [
     {
       "row": "r00001",
@@ -108,9 +108,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -125,9 +133,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -142,9 +158,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -159,9 +183,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -201,9 +233,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -218,9 +258,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -429,6 +477,17 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00013-sd2a7a94bd2258f18",
+      "right": "r00014",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Join the prayer the source split across r00013 and r00014 in both languages"
+      }
     }
   ]
 }

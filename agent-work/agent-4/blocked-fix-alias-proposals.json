@@ -1,9 +1,151 @@
 {
-  "purpose": "Alias proposals for Agent-5 findings that cannot be applied with the current tooling because correcting a published child row kind retires its identity.",
+  "purpose": "Alias proposals for Agent-5 findings that cannot be applied with the current tooling because correcting a published child row role retires its identity.",
   "method": "For each flagged base row whose Arabic and Persian renderings are published as separate single-language child rows, the two published ids and their code-point lengths are listed with the alias entries a supported V1-to-V2 mapping migration must carry.",
   "note": "No proposal is applied here. No source text is quoted. These are structural mappings, not translation or scholarly approval.",
-  "proposal_count": 80,
+  "proposal_count": 108,
   "items": {
+    "amal-aamal-hrm-hsyn": [
+      {
+        "base_row": "r00002",
+        "published_ids": {
+          "ar_child": "r00002-sb4c2bfb77eb89124",
+          "fa_child": "r00002-s16b235f3fb54b1a5"
+        },
+        "ar_code_points": 85,
+        "fa_code_points": 75,
+        "proposed_aliases": [
+          {
+            "original_id": "r00002-sb4c2bfb77eb89124",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 85,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00002-s16b235f3fb54b1a5",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 75,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00003",
+        "published_ids": {
+          "ar_child": "r00003-s90ce2cbb3805f148",
+          "fa_child": "r00003-sa84854240323e3e5"
+        },
+        "ar_code_points": 270,
+        "fa_code_points": 248,
+        "proposed_aliases": [
+          {
+            "original_id": "r00003-s90ce2cbb3805f148",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 270,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00003-sa84854240323e3e5",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 248,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00005",
+        "published_ids": {
+          "ar_child": "r00005-sd923aced91424bab",
+          "fa_child": "r00005-s16520fa053c7f321"
+        },
+        "ar_code_points": 76,
+        "fa_code_points": 69,
+        "proposed_aliases": [
+          {
+            "original_id": "r00005-sd923aced91424bab",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 76,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00005-s16520fa053c7f321",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 69,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00008",
+        "published_ids": {
+          "ar_child": "r00008-s6bbb477ed900eaea",
+          "fa_child": "r00008-s88eba61461dcd450"
+        },
+        "ar_code_points": 175,
+        "fa_code_points": 170,
+        "proposed_aliases": [
+          {
+            "original_id": "r00008-s6bbb477ed900eaea",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 175,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00008-s88eba61461dcd450",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 170,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00011",
+        "published_ids": {
+          "ar_child": "r00011-s732558bf155fc307",
+          "fa_child": "r00011-sff3d5cac0f1b50db"
+        },
+        "ar_code_points": 48,
+        "fa_code_points": 315,
+        "proposed_aliases": [
+          {
+            "original_id": "r00011-s732558bf155fc307",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 48,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00011-sff3d5cac0f1b50db",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 315,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      }
+    ],
     "amal-aamal-rvyt-hlal": [
       {
         "base_row": "r00003",
@@ -572,6 +714,206 @@
         "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
       }
     ],
+    "amal-mjavl-bvdn-daayy": [
+      {
+        "base_row": "r00005",
+        "published_ids": {
+          "ar_child": "r00005-s65910f28bd2bd075",
+          "fa_child": "r00005-saba56576a8f4a2e8"
+        },
+        "ar_code_points": 138,
+        "fa_code_points": 119,
+        "proposed_aliases": [
+          {
+            "original_id": "r00005-s65910f28bd2bd075",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 138,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00005-saba56576a8f4a2e8",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 119,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00006",
+        "published_ids": {
+          "ar_child": "r00006-s816b520837ffe102",
+          "fa_child": "r00006-s6b2b0ff07b4b8ae2"
+        },
+        "ar_code_points": 292,
+        "fa_code_points": 165,
+        "proposed_aliases": [
+          {
+            "original_id": "r00006-s816b520837ffe102",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 292,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00006-s6b2b0ff07b4b8ae2",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 165,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00009",
+        "published_ids": {
+          "ar_child": "r00009-sea2e7a71d8f713f2",
+          "fa_child": "r00009-sace04f5552303cc5"
+        },
+        "ar_code_points": 69,
+        "fa_code_points": 72,
+        "proposed_aliases": [
+          {
+            "original_id": "r00009-sea2e7a71d8f713f2",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 69,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00009-sace04f5552303cc5",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 72,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00010",
+        "published_ids": {
+          "ar_child": "r00010-s7b1cf06aeba5667e",
+          "fa_child": "r00010-seb219ae3b3f3af47"
+        },
+        "ar_code_points": 75,
+        "fa_code_points": 56,
+        "proposed_aliases": [
+          {
+            "original_id": "r00010-s7b1cf06aeba5667e",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 75,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00010-seb219ae3b3f3af47",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 56,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00011",
+        "published_ids": {
+          "ar_child": "r00011-s74e819cfe8448d9a",
+          "fa_child": "r00011-sff3d5cac0f1b50db"
+        },
+        "ar_code_points": 75,
+        "fa_code_points": 56,
+        "proposed_aliases": [
+          {
+            "original_id": "r00011-s74e819cfe8448d9a",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 75,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00011-sff3d5cac0f1b50db",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 56,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00012",
+        "published_ids": {
+          "ar_child": "r00012-sb69f67f5bacb4705",
+          "fa_child": "r00012-s233dd7da462b3635"
+        },
+        "ar_code_points": 76,
+        "fa_code_points": 73,
+        "proposed_aliases": [
+          {
+            "original_id": "r00012-sb69f67f5bacb4705",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 76,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00012-s233dd7da462b3635",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 73,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      }
+    ],
+    "dua-daa-zndh-shdn": [
+      {
+        "base_row": "r00002",
+        "published_ids": {
+          "ar_child": "r00002-s93ed69e2ceaad8b5",
+          "fa_child": "m25f8aba9778a65efac295c45"
+        },
+        "ar_code_points": 139,
+        "fa_code_points": 201,
+        "proposed_aliases": [
+          {
+            "original_id": "r00002-s93ed69e2ceaad8b5",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 139,
+            "target_start": 0
+          },
+          {
+            "original_id": "m25f8aba9778a65efac295c45",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 201,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      }
+    ],
     "dua-dvm-daahay-vqt": [
       {
         "base_row": "r00001",
@@ -968,6 +1310,92 @@
         "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
       }
     ],
+    "namaz-ayza-hajt-sndhay": [
+      {
+        "base_row": "r00003",
+        "published_ids": {
+          "ar_child": "r00003-s90ce2cbb3805f148",
+          "fa_child": "r00003-s1828851db03b603e"
+        },
+        "ar_code_points": 284,
+        "fa_code_points": 254,
+        "proposed_aliases": [
+          {
+            "original_id": "r00003-s90ce2cbb3805f148",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 284,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00003-s1828851db03b603e",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 254,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00005",
+        "published_ids": {
+          "ar_child": "r00005-sd923aced91424bab",
+          "fa_child": "r00005-s16520fa053c7f321"
+        },
+        "ar_code_points": 241,
+        "fa_code_points": 237,
+        "proposed_aliases": [
+          {
+            "original_id": "r00005-sd923aced91424bab",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 241,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00005-s16520fa053c7f321",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 237,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      },
+      {
+        "base_row": "r00006",
+        "published_ids": {
+          "ar_child": "r00006-sd441b11af7c6fc50",
+          "fa_child": "r00006-s6b2b0ff07b4b8ae2"
+        },
+        "ar_code_points": 203,
+        "fa_code_points": 182,
+        "proposed_aliases": [
+          {
+            "original_id": "r00006-sd441b11af7c6fc50",
+            "language": "ar",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 203,
+            "target_start": 0
+          },
+          {
+            "original_id": "r00006-s6b2b0ff07b4b8ae2",
+            "language": "fa",
+            "row": "<new bilingual row>",
+            "start": 0,
+            "end": 182,
+            "target_start": 0
+          }
+        ],
+        "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
+      }
+    ],
     "ziyarat-daahay-bad-alyh": [
       {
         "base_row": "r00002",
@@ -1108,36 +1536,6 @@
           }
         ],
         "note": "The new bilingual row must carry the Arabic and the Persian of this base row; the migration assigns its id and stores these two aliases so both published child ids keep resolving."
-      }
-    ],
-    "ziyarat-pyadh-rftn-shah": [
-      {
-        "base_row": "r00015",
-        "published_ids": {
-          "ar_in_fa_slot": "r00015-sad231d5ea719cca1",
-          "fa_child": "r00015-sd760fea7c38647a2"
-        },
-        "ar_code_points": 318,
-        "fa_code_points": 208,
-        "proposed_aliases": [
-          {
-            "original_id": "r00015-sad231d5ea719cca1",
-            "language": "ar",
-            "row": "<new bilingual row>",
-            "start": 0,
-            "end": 318,
-            "target_start": 0
-          },
-          {
-            "original_id": "r00015-sd760fea7c38647a2",
-            "language": "fa",
-            "row": "<new bilingual row>",
-            "start": 0,
-            "end": 208,
-            "target_start": 0
-          }
-        ],
-        "note": "The Arabic piece of this base row is currently published inside the Persian slot and is unpaired. The corrected layout pairs the Arabic with its own Persian rendering in one row; the migration must carry both published ids as aliases so neither link breaks."
       }
     ]
   }

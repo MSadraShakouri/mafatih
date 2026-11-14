@@ -33,5 +33,16 @@
         }
       ]
     }
+  ],
+  "merges": [
+    {
+      "left": "r00001",
+      "right": "r00002",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Join the instruction the source split across r00001 and r00002"
+      }
+    }
   ]
 }
