@@ -1,0 +1,133 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-amamyn-askryyn-alyhma",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "cca8d5f129eaea7e4bc57cff13a6f31c99a5b25fbd2045d0b0cc41aebeb35a15",
+  "layout_sha256": "56c635ef5b7348716b330522793b99375bf6fc478229de9ddb5d18c8521b3170",
+  "result_item_sha256": "509eb39dd24aeb7792969a5edb50dd94da87c3bc656c39f715dadcf0dc534b38",
+  "result_record_sha256": "8777534e691fc0b69c9bde2c83211d277f39807bd2770024cd13b898ab37f0bd",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-amamyn-askryyn-alyhma",
+    "item_sha256": "152f0b110907d07c9487137c74f455c6cdbb9edc66ab53d2a53e2c9b183795b1",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "f7496a415795f4d317718be2f4f5c4209e741535ce93855db42da94f20dea6d8",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first piece includes the مقام اول heading and the start of entry instructions. Distinguish the heading from the directions; subsequent instructions belong together."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic ziyarat is recitation; the second piece ends مبطلاً and continues لِمَا أَبْطَلْتُمَا in r00003. Existing Persian is wrongly separated as notes."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces are the Persian rendering of the ziyarat, not notes; the second finishes with an incomplete phrase continuing into r00003. Reconcile the crossing with the Arabic without inventing text."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first piece begins by completing r00002 and ends with the request for a share of the visit; its object الصلاة begins in the next piece, so regroup at complete matched clauses."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This is the continuation of the Persian ziyarat rendering, not instruction. It includes the end of r00002 and matches r00003/ar; align coherent corresponding passages."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic recitation continues from r00003; its later prayer petitions do not line up with the two Persian piece boundaries. Align at matched transitions preserving published IDs."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both Persian pieces render the ziyarat and prayers, not instructions; the first crosses an Arabic split and the second spans multiple Arabic pieces. Pair at corresponding boundaries."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The instruction to pray for oneself and parents continues in r00006; preserve the continuation when regrouping."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening completes r00005, then practical directions transition to a historical explanation and compiler attribution. Current instruction pieces also break continuous statements: identify real role transitions and preserve links."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Historical discussion, practical advice and bibliographic narrative are mixed or misclassified; in particular the final note ends with the book title مصباح, whose الزائر continuation starts r00008. Regroup across the boundary and distinguish narrative from directions."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The relocated Persian prefix starts with a continuation of the book title and compiler narrative before giving entry directions; distinguish note from instruction. The subsequent Arabic entry request is recitation."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both Persian parts render the entry requests; the first is incorrectly note and both are unpaired with the one Arabic passage. Align the existing renderings at corresponding names, preserving all prior IDs."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic request to the angels has its Persian rendering in the same original row but is currently detached."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the Persian rendering of the request to the angels, not a note; it belongs with the Arabic recitation if link-safe."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The mixed Persian introductory text is moved from the original Arabic source field to a Persian instruction slot; its separation was inspected, with any remaining source-role findings recorded above."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "Existing Persian recitation renderings r00002-r00004 and r00008-r00009 are detached and often misclassified as note/instruction. Cross-row r00002/r00003 and r00007/r00008 cut incomplete phrases, including the book title. r00001 and r00006-r00008 mix headings, narrative and instructions. Align matching material and classify on content while preserving published child IDs; request migration where necessary."
+  }
+}

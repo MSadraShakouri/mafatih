@@ -1,0 +1,168 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-ayd-ftr",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "315d95b036fedbad03879e5eb11d9f91853339a05bf2144f7a70dc32b077f042",
+  "layout_sha256": "c88c02d6a511af6b1e342a3173847f6a2741e4578873df1a998d82600ce22a3c",
+  "result_item_sha256": "5cbbff904697bcb53608d38cf92a927cf9cce7275d21559046bb403e9c613f6a",
+  "result_record_sha256": "908eb5a6b357b6e3095a669e752fb29d3144279b90cdda9cdf89c0ba383b92d0",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-ayd-ftr",
+    "item_sha256": "f738f6886f8c4a30ad13c958ff3e203f92ac133dd30daacf8f09961465a90303",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "66b1a52e8ea86f5dc028148a113851645bf6b6f2711f3fa5c9d118c593e0df52",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A prayer procedure and introduction to the Arabic invocation; instruction is appropriate."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer is recitation; its existing Persian rendering is incorrectly detached and labelled note."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the Persian rendering of r00002/ar, not a note; align it with the prayer if the published identities can be preserved."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening explains the substitution, then a report of the Imam begins and continues into r00004; distinguish instruction from reported account and do not leave بجا isolated from می آرود."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first piece continues r00003 and contains reported merit; the cut after هزار مرتبه سوره توحید leaves صد مرتبه of the alternate report in the next piece. Group the continuous report, classify the narrative and distinguish the actual timing instruction."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The prayer names correspond to the existing Persian, but cuts do not match that source, and the final يا مولى continues with يا الله in r00006; group corresponding phrases without retiring published IDs."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "These are renderings of r00005/ar invocations, not notes; their boundaries do not coincide with the three Arabic pieces. Align at corresponding invocations and preserve existing links."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening يا الله completes the prior invocation and the later names have different Persian boundaries; group corresponding passages without losing source or aliases."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This is a rendering of the invocations, not a note; the cuts do not align with the Arabic. Reconcile corresponding spans while preserving published links."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The ending يا continues as بارئ in r00008; do not leave the vocative separated from its name. Pair with existing Persian only at corresponding boundaries."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The text is a Persian rendering of the Arabic invocations, not a note; first cut ends with the rendering of a name in the next Arabic piece."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first word completes r00007 ending يا; review that cross-row phrase and align the invocation pieces with their renderings."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The existing Persian is the rendering of the Arabic invocations, not commentary; pair where meanings and boundary permit."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic invocations and subsequent request are recitation; the cut/pairing boundaries differ from the rendering, and the closing request continues into r00010."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian is a prayer rendering, not a note; its divisions differ from Arabic and the request continues across r00010. Preserve source wording and do not invent missing passages."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This is the continuation of the request begun in r00009, with an existing Persian rendering; group where the published links can be preserved."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This continues the Persian rendering of r00009/r00010, not a note; pair to matching Arabic once link-safe."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The initial Persian instruction is moved to the Persian slot and the Arabic prayer remains recitation."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces are the existing rendering of the prayer, not notes; the Arabic prayer corresponds to both pieces, so align them as a coherent pair."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The mixed Persian introductory text is moved from the original Arabic source field to a Persian instruction slot; its separation was inspected, with any remaining source-role findings recorded above."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "Existing Persian renderings in r00002 and r00005-r00011 are detached as notes rather than paired recitations. Several segment boundaries cut across corresponding invocations, notably r00007/ar يا continuing into r00008, and r00003/r00004 split a Persian report mid-phrase. Separate reported narrative from actual instructions. These are semantic, not length-only findings. Do not retire published child IDs or invent text; migration may be required."
+  }
+}
