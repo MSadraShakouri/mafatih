@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-amyralmvmnyn-alyh-alslam-2",
   "author": "agent-5",
-  "plan_sha256": "a61e62f54c580a97d59534762d3d5c34cf770586e382683ca5cd40c866704385",
+  "plan_sha256": "9284a4a54102f893cd29fe7929d6d73bc32a878acb7ee2f2d62162637719fc63",
   "rows": [
     {
       "row": "r00001",
@@ -1910,6 +1910,14 @@
             "part": 0
           },
           "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
         }
       ]
     },
@@ -1954,6 +1962,15 @@
       "spacing": {
         "mode": "both-space",
         "reason": "Separate words at original source row continuation"
+      }
+    },
+    {
+      "left": "r00019-s8f99afc8febdc8ff",
+      "right": "r00020",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate words at compiler remark continuation"
       }
     }
   ]

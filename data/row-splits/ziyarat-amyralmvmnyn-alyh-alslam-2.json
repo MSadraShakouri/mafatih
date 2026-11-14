@@ -3,8 +3,8 @@
   "item": "ziyarat-amyralmvmnyn-alyh-alslam-2",
   "author": "agent-5",
   "baseline_item_sha256": "a5614a8628ca06a407c0cf02b72fb3ea72b570693fb71a5c6c82092d5b62d0c7",
-  "plan_sha256": "a61e62f54c580a97d59534762d3d5c34cf770586e382683ca5cd40c866704385",
-  "layout_sha256": "122d91f3a90370c460724ce1f87e9208ff9ae2bcc43722d0ac43dfc2ccd6c6d5",
+  "plan_sha256": "9284a4a54102f893cd29fe7929d6d73bc32a878acb7ee2f2d62162637719fc63",
+  "layout_sha256": "c21bf78c54c6f27b0d01af9b2b95b222f46982ca275e789a72884ba28a257df0",
   "rows": [
     {
       "original": {
@@ -2662,14 +2662,22 @@
         "fa": "t7449a9d41d2433d3fd4457ee"
       },
       "results": [
-        "r00019"
+        "r00019-se32f9cfe77f50721",
+        "mcf80710131eac0ffbd7b6ca8"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00019",
+          "row": "r00019-se32f9cfe77f50721",
           "language": "fa",
           "start": 0,
+          "end": 232,
+          "target_start": 0
+        },
+        {
+          "row": "mcf80710131eac0ffbd7b6ca8",
+          "language": "fa",
+          "start": 232,
           "end": 464,
           "target_start": 0
         }
@@ -2682,16 +2690,16 @@
         "fa": "t7c4914c03b682feee2112a13"
       },
       "results": [
-        "r00020"
+        "mcf80710131eac0ffbd7b6ca8"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00020",
+          "row": "mcf80710131eac0ffbd7b6ca8",
           "language": "fa",
           "start": 0,
           "end": 81,
-          "target_start": 0
+          "target_start": 233
         }
       ]
     }
@@ -2800,6 +2808,24 @@
           "target_start": 26
         }
       ]
+    },
+    {
+      "original": {
+        "id": "r00019-s8f99afc8febdc8ff",
+        "ar": null,
+        "fa": "t09c2e864e94c6ff4dd6b053f",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mcf80710131eac0ffbd7b6ca8",
+          "language": "fa",
+          "start": 0,
+          "end": 232,
+          "target_start": 0
+        }
+      ]
     }
   ],
   "insertions": [
@@ -2847,6 +2873,15 @@
       "left": "r00014-s27df6917e57f6df4",
       "right": "r00015-s847abda1272bdf4e",
       "reason": "Separate words at original source row continuation"
+    },
+    {
+      "row": "mcf80710131eac0ffbd7b6ca8",
+      "language": "fa",
+      "target_start": 232,
+      "value": " ",
+      "left": "r00019-s8f99afc8febdc8ff",
+      "right": "r00020",
+      "reason": "Separate words at compiler remark continuation"
     }
   ]
 }
