@@ -102,6 +102,26 @@ Notes on the kinds:
   occurrences and kinds assessed, the recorded issues answered and the layout
   accepted; no revisions were requested. Records live in
   `agent-work/agent-1/reviews/` (115 files).
+- The review was then deepened: every one of agent-6's sources now carries its own
+  note built from its own cuts, kinds, pairing, sentence count and lengths, not a
+  repeated sentence, and each item note states the row counts, the median piece
+  and any polish point.
+- Measured against the frozen corpus, agent-6's granularity is finer than the
+  base, not coarser: base pieces sit at 417 code points at the p90 with 18% above
+  220 and 6.8% holding more than one sentence; agent-6's set is at 86 at the p90,
+  1.7% above 220 and 0.7% multi-sentence, in 10,261 pieces over 115 items. My own
+  112 items are at 249/11.5%/4.6% — coarser than agent-6's work, not finer.
+- Polish points found for a later revision, recorded in the item notes and not
+  blocking: seven items keep a Persian section label fused with the passage it
+  opens (`amal-aamal-hfdhm-mvlvd`, `amal-sayr-aamal-rjb`, `dua-mqatl-bn-slyman`,
+  `item-mrvr-amyr-alyh`, `khavas-aday-qrz`, `namaz-kyfyt-hzar-rkat`,
+  `sura-khvas-hmd-vbazy`).
+- The same reading caught two defects of my own: `dua-hjt-alyh-alslam/r00001` and
+  `dua-zman-ajl-allh/r00001` are reciter labels classed `other`; both are now
+  `audio-reciter`, re-applied, and the corpus has no `other` piece left.
+- Agent-6's own duty — reviewing and merging agent-5 — was already done on their
+  branch, and agent-5 has since published corrected snapshot `2226f6b`; that
+  review belongs to agent-6's branch and cannot be written from this one.
 - The snapshot, not the moving peer tip, is merged into this branch
   (`git merge --no-ff`), so the corpus now holds 227 authored items: 112 of mine
   and 115 of agent-6's, with both histories preserved.
