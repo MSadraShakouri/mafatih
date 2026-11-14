@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "monajat-mnajat-mnzvm-mnsvb",
   "author": "agent-5",
-  "plan_sha256": "db030006199052773ae8b4373f13540c081d8321633ca1068d676feb2381646e",
+  "plan_sha256": "44ef3791f8e41cba41bcd22d79f714948b226b279962020a332e6ee8350d74d2",
   "rows": [
     {
       "row": "r00001",
@@ -1061,12 +1061,12 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "fa",
             "part": 0
           },
-          "kind": "recitation"
+          "fa": null,
+          "kind": "heading"
         }
       ]
     },
@@ -1075,13 +1075,21 @@
       "checked": true,
       "output": [
         {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "heading"
+        },
+        {
           "ar": {
             "source": "ar",
             "part": 0
           },
           "fa": {
             "source": "fa",
-            "part": 0
+            "part": 1
           },
           "kind": "recitation"
         }

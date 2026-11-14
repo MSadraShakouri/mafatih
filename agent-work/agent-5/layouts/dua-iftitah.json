@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-iftitah",
   "author": "agent-5",
-  "plan_sha256": "2bea78f6685bf1da56a6f77110aab9d34a07a4a52c5b075f0e7eca9da2476acf",
+  "plan_sha256": "6c4ff7bf680038e3a08385ce884af6363ff095aedf98cdd9067cd1f7e67fcc18",
   "rows": [
     {
       "row": "r00001",
@@ -192,11 +192,19 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
           },
-          "fa": null,
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 1
+          },
           "kind": "instruction"
         }
       ]
@@ -338,7 +346,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "other"
+          "kind": "audio-reciter"
         }
       ]
     },
@@ -352,7 +360,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "other"
+          "kind": "audio-reciter"
         }
       ]
     },
@@ -366,7 +374,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "other"
+          "kind": "audio-reciter"
         }
       ]
     },

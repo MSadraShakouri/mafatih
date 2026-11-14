@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-nvr",
   "author": "agent-5",
-  "plan_sha256": "3f598ada123c5485d9a043dc7e46af53ab7c28bf10132df47a601436a481991a",
+  "plan_sha256": "9681a7fa0d7991cdb534e68f0d233b25a47f74568ce5152ed9508897d53227ed",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "other"
+          "kind": "audio-reciter"
         }
       ]
     },
@@ -45,6 +45,17 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "recitation"
         }
