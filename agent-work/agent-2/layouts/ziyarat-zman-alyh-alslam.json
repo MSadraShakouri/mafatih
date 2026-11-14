@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-zman-alyh-alslam",
   "author": "agent-2",
-  "plan_sha256": "a5908ea7a03aae5bbe1b823b25fbbbfb6c615ef2ab0d4bd4b87d145d73712dfa",
+  "plan_sha256": "ed3974902cfd7f535aa487986686263721f0ff5e98b5c2fce50078b6dbc1e5d8",
   "rows": [
     {
       "row": "r00001",
@@ -163,6 +163,13 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00006-s2a34f5cf5c0f0065",
+      "right": "r00007",
+      "checked": true
     }
   ]
 }

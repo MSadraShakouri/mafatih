@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "monajat-mnajat-tlb-rvzy",
   "author": "agent-2",
-  "plan_sha256": "060b4f7ff5c25dedb823c1c509e1439091baabdd08b47ddda73fe32f58d7b152",
+  "plan_sha256": "9fc745977ecf59101f4d860e715252b63bc3895c68286329190af63f7f3caf9a",
   "rows": [
     {
       "row": "r00001",
@@ -103,19 +103,6 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 1
-          },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
@@ -123,7 +110,10 @@
           "kind": "recitation"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
           "fa": {
             "source": "fa",
             "part": 1
