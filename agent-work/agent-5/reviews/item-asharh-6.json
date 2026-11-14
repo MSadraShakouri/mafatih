@@ -4,11 +4,11 @@
   "item": "item-asharh-6",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "29ee52b5410c6eeb313fe67751313576b887d647",
-  "plan_sha256": "7032394219ce9d33cecfebdc9ff805593fd6e4a20c0586d530b9382353537356",
-  "layout_sha256": "0449686afd4b7c57b21ad3dccb024517325baee65f7dd8c75ac3bc73f96ef630",
-  "result_item_sha256": "357267d2f9a295c48c902d03fc596f5d2fa79ac30e380cb32385d54d02016864",
-  "result_record_sha256": "0ee01f5f218a0af22837e747c76c2e8c099af62b59fc84f28ed00ece32007571",
+  "author_commit": "283c8c6dac208b923a31aeaf3d0e8c00859f3640",
+  "plan_sha256": "c0aacc900e29398de04c32e686ec318719a51208bb5d654cb0baeada5d106129",
+  "layout_sha256": "b717b0e31965ee594003ac1e59fa554bda8ea049d05505be06d7b042a3e1fd26",
+  "result_item_sha256": "e82dd1665ce20c2de598a6b84ae40141a3a71f55f6815bf2b3c82f0556d75823",
+  "result_record_sha256": "26cd088b73442b061506b62da938c95fc8d07e0263f70172ab69ddb09a92d0af",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,171 +16,171 @@
     "item_sha256": "1770c16687fb1297e463befa6304956e8b2b88f8937245a36bd131bf1413862a",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "d64e82ad092ee9a8501e595dd4e48676c8a4953be0f064fbc6972f43e7771fcd",
+    "preview_sha256": "9d1cf09b47e16c8862994830b3114963afd9f6c6fe2dde6e9cbcfd44a8ab1626",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Standalone invocation; the corresponding Persian opening is at the beginning of r00002/fa, so cross-row mapping needs separate consideration."
+        "note": "The Arabic basmala and its Persian rendering from r00002/fa are correctly grouped in the exact cross-row merge."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "uncertain",
+        "split": "revise",
         "kind": "accept",
-        "note": "Arabic introductory recitation; inspect whether smaller meaningful passages are warranted."
+        "note": "The basmala rendering is properly separated and paired across rows, but the following lengthy paired praise still bundles multiple independently corresponding clauses. Inspect finer paired boundaries; preserve V2 aliases through a supported migration."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "The opening corresponds to r00001/ar; the remainder corresponds to r00002/ar, but the entire Persian field is labeled instruction and placed unpaired. Split at the transition and classify as recitation; cross-row pairing is not directly supported."
+        "kind": "accept",
+        "note": "The basmala rendering is properly separated and paired across rows, but the following lengthy paired praise still bundles multiple independently corresponding clauses. Inspect finer paired boundaries; preserve V2 aliases through a supported migration."
       },
       {
         "row": "r00003",
         "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "This is the author’s explanatory introduction, not instructions to the reader; the existing cut divides an ongoing list. Reconsider boundaries and note classification, including continuation in r00004."
-      },
-      {
-        "row": "r00004",
-        "language": "ar",
-        "split": "accept",
-        "kind": "accept",
-        "note": "Persian narrative in an Arabic field is moved to Persian and classified note."
-      },
-      {
-        "row": "r00004",
-        "language": "fa",
-        "split": "accept",
-        "kind": "revise",
-        "note": "The standalone Persian title or title rendering is not an instruction; note or heading should be considered in context."
-      },
-      {
-        "row": "r00005",
-        "language": "ar",
-        "split": "accept",
-        "kind": "accept",
-        "note": "The introductory formula and quoted verse are separated into note and quotation; the Arabic introductory formula was moved to Persian and needs a destination review."
-      },
-      {
-        "row": "r00005",
-        "language": "fa",
-        "split": "uncertain",
-        "kind": "accept",
-        "note": "The translation includes an introductory formula and verse reference; inspect whether the boundaries and pairing match the Arabic pieces."
+        "note": "The Persian includes a narrative introducing formula before the quoted verse. Its Arabic counterpart is separated into a note, but the Persian formula remains inside the quotation row; separate the introductory formula and pair with the note, leaving the verse in quotation."
       },
       {
         "row": "r00006",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Persian editorial prose is classified as recitation; note is more appropriate."
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
       },
       {
         "row": "r00007",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Chapter heading moved to the Persian field."
+        "note": "Inspected source, output role and placement."
       },
       {
         "row": "r00008",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Chapter heading moved to the Persian field."
+        "note": "Inspected source, output role and placement."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "A chapter heading is cut between its first word and ordinal, and classified note then instruction. Reconsider as one heading."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
       },
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "A chapter heading is cut between its first word and ordinal, and classified note then instruction. Reconsider as one heading."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "A chapter heading is cut between its first word and ordinal, and classified note then instruction. Reconsider as one heading."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
       },
       {
         "row": "r00012",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "A chapter heading is cut between its first word and ordinal and labeled note; r00013 continues this same heading. Preserve the cross-row continuation."
+        "kind": "accept",
+        "note": "This heading continues across the original r00012/r00013 boundary; consider one correctly spaced cross-row heading with preserved original mappings rather than two incomplete rows."
       },
       {
         "row": "r00013",
         "language": "ar",
-        "split": "accept",
-        "kind": "revise",
-        "note": "Persian continuation of the preceding chapter heading is moved to Persian but classified instruction; heading is more consistent."
+        "split": "revise",
+        "kind": "accept",
+        "note": "This heading continues across the original r00012/r00013 boundary; consider one correctly spaced cross-row heading with preserved original mappings rather than two incomplete rows."
       },
       {
         "row": "r00014",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Closing-section heading."
+        "note": "Inspected source, output role and placement."
       },
       {
         "row": "r00015",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Closing authorial request: inspect whether it should be note or instruction and whether further cuts are useful."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected source, output role and placement."
       }
     ],
     "punctuation": [],
     "issues": [
       {
         "index": 0,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Inspected the original field and its output destination; classification and remaining layout concerns are recorded per source."
       },
       {
         "index": 1,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Inspected the original field and its output destination; classification and remaining layout concerns are recorded per source."
       },
       {
         "index": 2,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Inspected the original field and its output destination; classification and remaining layout concerns are recorded per source."
       },
       {
         "index": 3,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Inspected the original field and its output destination; classification and remaining layout concerns are recorded per source."
       },
       {
         "index": 4,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Inspected the original field and its output destination; classification and remaining layout concerns are recorded per source."
       },
       {
         "index": 5,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Inspected the original field and its output destination; classification and remaining layout concerns are recorded per source."
       }
     ]
   },
   "layout": {
     "decision": "revise",
-    "note": "r00002/fa mixes the translation of r00001 and r00002 and is labeled instruction; r00005/ar part 0 moves an Arabic formula to fa; r00006 and r00009–r00013 have incorrect prose/heading labels and heading cuts. Cross-row pairing is not directly supported; inspect before revising."
+    "note": "The basmala is now correctly paired across rows and earlier prose/heading roles improved. r00002 paired praise remains too coarse; r00005/fa includes an introductory narrative formula in the quotation row rather than paired with the Arabic note. The single heading split over r00012/r00013 should be considered for cross-row grouping. Preserve V2 aliases and use a supported migration if revised cuts are blocked."
   }
 }

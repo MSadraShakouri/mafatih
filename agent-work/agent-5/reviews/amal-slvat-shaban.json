@@ -4,11 +4,11 @@
   "item": "amal-slvat-shaban",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "160cb869136abe14c183ddc862ea653f1bc09094",
-  "plan_sha256": "5d664a4b6e242dd795b28939bd8b054f64ec51bb435750d128ec1c6769646059",
-  "layout_sha256": "44549dc3d1dbd766d501b25721779d33bd0b1dca26e0c8bf7c0557f261200c74",
-  "result_item_sha256": "6ca9a346afb56c771814a0a87c6080816f48da66959e42d3a6b3ce92479adeb6",
-  "result_record_sha256": "575d7ff560cd8f8f922afbe8ca66acb0a048b1acd6bf5c2223a2b1282d2989ee",
+  "author_commit": "283c8c6dac208b923a31aeaf3d0e8c00859f3640",
+  "plan_sha256": "a39fd4b826cbf9dc8148cadf84c7ada8a39986af6474f8c7fead0f05361231af",
+  "layout_sha256": "056bf4e864334ab791d731a898be4336ace582676521a24eb6bd82c8e98bc63f",
+  "result_item_sha256": "5bbf90365c5450e2d6bf5ac6693450b3972d5599f81b91b77497427208e67403",
+  "result_record_sha256": "4a9fab0b00b91d8a56143c39c3455f95c5123824a6c8302f3642b63cb765d1cd",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,97 +16,186 @@
     "item_sha256": "c85b38038000a660c7395d9a8a32bdc34e1be5164abb465008524437c5ae3a20",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "2dbb18bd561feecc4b686e32458d9c637204ed69b555afeca653efd9d04da7bc",
+    "preview_sha256": "a6eac75cfed7b6a7306f24549e9e57f7c860c275a7575ccef4a95ccd13a26358",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Standalone reciter-name label."
+        "note": "Name-only audio reciter."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
+        "split": "accept",
         "kind": "accept",
-        "note": "Procedure continues into the next source row; review the ordinal and passage boundary."
+        "note": "Procedure continues in r00003; grouping and proposed boundary space inspected."
       },
       {
         "row": "r00003",
         "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Procedure, narrative, and next numbered instruction are separated; inspect pending layout granularity separately."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
         "split": "revise",
-        "kind": "revise",
-        "note": "The replacement note still contains a procedural continuation at the beginning and a separate numbered instruction at the end, with explanatory narrative between them. Reconsider role boundaries and preserve the continuation from r00002."
-      },
-      {
-        "row": "r00004",
-        "language": "ar",
-        "split": "uncertain",
         "kind": "accept",
-        "note": "Persian lead-in is separated from the Arabic recitation; recheck passage granularity."
+        "note": "Persian procedural lead-in and Arabic recitation are separated, but the following recitation is still bundled into a very long multiclause row with a cross-row continuation. Inspect and cut corresponding clauses finer before migration."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "revise",
-        "note": "Existing Persian rendering of the Arabic recitation is classified instruction and emitted separately; classify as recitation and inspect a corresponding pairing."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian rendering is correctly recitation but remains bundled with multiple clauses and a continuation in a large merged row; inspect finer corresponding cuts."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "uncertain",
+        "split": "revise",
         "kind": "accept",
-        "note": "Recitation divided into three Arabic-only pieces; inspect boundaries against the existing Persian rendering."
+        "note": "Recitation is paired and the cross-row joins are sensible, but the remaining output rows contain many separable clauses rather than short paired passages."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "revise",
-        "note": "All three parts are an existing Persian recitation rendering, but are classified note and left unpaired; recheck boundaries and corresponding pairings."
+        "split": "revise",
+        "kind": "accept",
+        "note": "Persian recitation is now paired and correctly classified; inspect finer matched clauses, especially the long final cross-row passage."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "uncertain",
+        "split": "revise",
         "kind": "accept",
-        "note": "Arabic recitation split into two pieces; inspect against the Persian source and cross-row continuation."
+        "note": "Cross-row continuation is joined, but the result combines numerous distinct recitation clauses that merit finer boundaries."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "revise",
-        "note": "Existing Persian recitation rendering is classified instruction and left unpaired."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The cut before the next rendering leaves a comma at the start of the next row rather than at the end of the preceding phrase. Inspect and move the boundary without changing the punctuation; further paired clauses need finer splitting."
       },
       {
         "row": "r00007",
         "language": "ar",
-        "split": "uncertain",
+        "split": "revise",
         "kind": "accept",
-        "note": "Arabic recitation split into two pieces; check corresponding Persian boundaries and prior-row continuation."
+        "note": "Cross-row continuation is joined, but later long recitation combines many meaningful clauses and should be split more finely with its existing Persian."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "revise",
-        "note": "Both pieces are Persian recitation rendering, not instructions, and are left unpaired."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The existing translation is paired and correctly classified; later long recitation combines many meaningful clauses and should be split more finely."
       }
     ],
     "punctuation": [],
     "issues": [
       {
         "index": 0,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Original row boundary and both corresponding fields inspected; proposed insertion decisions recorded separately."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Original row boundary and both corresponding fields inspected; proposed insertion decisions recorded separately."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Original row boundary and both corresponding fields inspected; proposed insertion decisions recorded separately."
       }
     ]
   },
   "layout": {
     "decision": "revise",
-    "note": "r00003 mixes procedural and narrative roles in one note. r00004–r00007 separate the Arabic recitation and Persian rendering into unpaired rows and misclassify the Persian as instruction or note. Check cuts and meaning before pairing; source-row continuations must remain intact."
-  }
+    "note": "The procedural/narrative roles and most AR/FA pairings are improved. r00004–r00007 retain very long multiclause recitations; inspect finer matched cuts. r00006/fa has a comma stranded at the start of the following row. Existing V3 aliases constrain later revisions: preserve all recorded links and request a supported mapping migration if the tool cannot revise cuts."
+  },
+  "spacing_review": [
+    {
+      "row": "m0a65bb84f22990a314437199",
+      "language": "fa",
+      "target_start": 143,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-sa84854240323e3e5",
+      "reason": "Separate words at r00002/r00003 fa boundary",
+      "decision": "accept",
+      "note": "At this original row break, a single ordinary space separates the adjacent words; assessed as an editorial proposal, not a source character."
+    },
+    {
+      "row": "mfc62a9fa6de76a4527937b07",
+      "language": "ar",
+      "target_start": 344,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005-sf75a34654a0b51be",
+      "reason": "Separate words at r00004/r00005 ar/fa boundary",
+      "decision": "accept",
+      "note": "At this original row break, a single ordinary space separates the adjacent words; assessed as an editorial proposal, not a source character."
+    },
+    {
+      "row": "mfc62a9fa6de76a4527937b07",
+      "language": "fa",
+      "target_start": 269,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005-sf75a34654a0b51be",
+      "reason": "Separate words at r00004/r00005 ar/fa boundary",
+      "decision": "accept",
+      "note": "At this original row break, a single ordinary space separates the adjacent words; assessed as an editorial proposal, not a source character."
+    },
+    {
+      "row": "mc3133c28659a89e4debe9223",
+      "language": "ar",
+      "target_start": 176,
+      "value": " ",
+      "left": "r00005-s43c86915aa88b706",
+      "right": "r00006-s3e3874d69dfd3c50",
+      "reason": "Separate words at r00005/r00006 ar/fa boundary",
+      "decision": "accept",
+      "note": "At this original row break, a single ordinary space separates the adjacent words; assessed as an editorial proposal, not a source character."
+    },
+    {
+      "row": "mc3133c28659a89e4debe9223",
+      "language": "fa",
+      "target_start": 145,
+      "value": " ",
+      "left": "r00005-s43c86915aa88b706",
+      "right": "r00006-s3e3874d69dfd3c50",
+      "reason": "Separate words at r00005/r00006 ar/fa boundary",
+      "decision": "accept",
+      "note": "At this original row break, a single ordinary space separates the adjacent words; assessed as an editorial proposal, not a source character."
+    },
+    {
+      "row": "mfaa6f3934de456f96fcd3edf",
+      "language": "ar",
+      "target_start": 203,
+      "value": " ",
+      "left": "r00006-s34b02a6bb1ae0a35",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at r00006/r00007 ar/fa boundary",
+      "decision": "accept",
+      "note": "At this original row break, a single ordinary space separates the adjacent words; assessed as an editorial proposal, not a source character."
+    },
+    {
+      "row": "mfaa6f3934de456f96fcd3edf",
+      "language": "fa",
+      "target_start": 144,
+      "value": " ",
+      "left": "r00006-s34b02a6bb1ae0a35",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at r00006/r00007 ar/fa boundary",
+      "decision": "accept",
+      "note": "At this original row break, a single ordinary space separates the adjacent words; assessed as an editorial proposal, not a source character."
+    }
+  ]
 }
