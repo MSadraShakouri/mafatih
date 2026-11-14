@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-aamal-rmzan-2",
   "author": "agent-5",
   "baseline_item_sha256": "fa15c9e22182eb5ca3401024169254bb208f886abee5bdd625834a8c54e1d859",
   "plan_sha256": "b50aa77da9f46cc0f1aae4ad57f7ba1cf0601b1530002d4cc009fb7605a4e92c",
-  "layout_sha256": "9f12712ac82cc1c1fa9f5e4e335fffbb422f7f87698addf5a34abfe4a5282741",
+  "layout_sha256": "183d8a6b9d7aad1a16ca76755824a2441c64b1eac10c4d5e1803e19333defb79",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 148
+          "end": 148,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +33,16 @@
         "fa": "t2662dd75f486bdd42dcaa298"
       },
       "results": [
-        "r00002"
+        "m372c23ae5f76b87351156a44"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m372c23ae5f76b87351156a44",
           "language": "fa",
           "start": 0,
-          "end": 100
+          "end": 100,
+          "target_start": 0
         }
       ]
     },
@@ -51,7 +53,7 @@
         "fa": "t3d232aff31a8c4351963a5e5"
       },
       "results": [
-        "r00003-sa84854240323e3e5",
+        "m372c23ae5f76b87351156a44",
         "r00003-s830b2abcb24c84d9",
         "r00003-s277471b51abf8d01",
         "r00003-s024cdc2dba162f3f",
@@ -60,34 +62,39 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00003-sa84854240323e3e5",
+          "row": "m372c23ae5f76b87351156a44",
           "language": "fa",
           "start": 0,
-          "end": 73
+          "end": 73,
+          "target_start": 101
         },
         {
           "row": "r00003-s830b2abcb24c84d9",
           "language": "fa",
           "start": 73,
-          "end": 79
+          "end": 79,
+          "target_start": 0
         },
         {
           "row": "r00003-s277471b51abf8d01",
           "language": "fa",
           "start": 79,
-          "end": 125
+          "end": 125,
+          "target_start": 0
         },
         {
           "row": "r00003-s024cdc2dba162f3f",
           "language": "fa",
           "start": 125,
-          "end": 132
+          "end": 132,
+          "target_start": 0
         },
         {
           "row": "r00003-s14bd161087f11064",
           "language": "fa",
           "start": 132,
-          "end": 341
+          "end": 341,
+          "target_start": 0
         }
       ]
     },
@@ -106,7 +113,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 39
+          "end": 39,
+          "target_start": 0
         }
       ]
     },
@@ -124,7 +132,8 @@
           "row": "r00005",
           "language": "ar",
           "start": 0,
-          "end": 336
+          "end": 336,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -132,7 +141,8 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 319
+          "end": 319,
+          "target_start": 0
         }
       ]
     },
@@ -153,19 +163,22 @@
           "row": "r00006-sac7cfe4397cd2200",
           "language": "fa",
           "start": 0,
-          "end": 66
+          "end": 66,
+          "target_start": 0
         },
         {
           "row": "r00006-s0cf0082faa234234",
           "language": "fa",
           "start": 66,
-          "end": 72
+          "end": 72,
+          "target_start": 0
         },
         {
           "row": "r00006-saa9b9be4b3d5606d",
           "language": "fa",
           "start": 72,
-          "end": 222
+          "end": 222,
+          "target_start": 0
         }
       ]
     },
@@ -184,7 +197,8 @@
           "row": "r00007",
           "language": "fa",
           "start": 0,
-          "end": 322
+          "end": 322,
+          "target_start": 0
         }
       ]
     },
@@ -203,7 +217,8 @@
           "row": "r00008",
           "language": "fa",
           "start": 0,
-          "end": 14
+          "end": 14,
+          "target_start": 0
         }
       ]
     },
@@ -221,7 +236,8 @@
           "row": "r00009",
           "language": "ar",
           "start": 0,
-          "end": 664
+          "end": 664,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -229,7 +245,8 @@
           "row": "r00009",
           "language": "fa",
           "start": 0,
-          "end": 541
+          "end": 541,
+          "target_start": 0
         }
       ]
     },
@@ -248,7 +265,8 @@
           "row": "r00010-s393a5ff8315ecf10",
           "language": "ar",
           "start": 0,
-          "end": 145
+          "end": 145,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -256,13 +274,15 @@
           "row": "r00010-s3d412748668b3db4",
           "language": "fa",
           "start": 0,
-          "end": 29
+          "end": 29,
+          "target_start": 0
         },
         {
           "row": "r00010-s393a5ff8315ecf10",
           "language": "fa",
           "start": 29,
-          "end": 181
+          "end": 181,
+          "target_start": 0
         }
       ]
     },
@@ -280,7 +300,8 @@
           "row": "r00011",
           "language": "ar",
           "start": 0,
-          "end": 975
+          "end": 975,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -288,7 +309,8 @@
           "row": "r00011",
           "language": "fa",
           "start": 0,
-          "end": 824
+          "end": 824,
+          "target_start": 0
         }
       ]
     },
@@ -306,7 +328,8 @@
           "row": "r00012",
           "language": "ar",
           "start": 0,
-          "end": 674
+          "end": 674,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -314,7 +337,8 @@
           "row": "r00012",
           "language": "fa",
           "start": 0,
-          "end": 587
+          "end": 587,
+          "target_start": 0
         }
       ]
     },
@@ -332,7 +356,8 @@
           "row": "r00013",
           "language": "ar",
           "start": 0,
-          "end": 413
+          "end": 413,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -340,7 +365,8 @@
           "row": "r00013",
           "language": "fa",
           "start": 0,
-          "end": 340
+          "end": 340,
+          "target_start": 0
         }
       ]
     },
@@ -358,7 +384,8 @@
           "row": "r00014",
           "language": "ar",
           "start": 0,
-          "end": 249
+          "end": 249,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -366,7 +393,8 @@
           "row": "r00014",
           "language": "fa",
           "start": 0,
-          "end": 240
+          "end": 240,
+          "target_start": 0
         }
       ]
     },
@@ -384,7 +412,8 @@
           "row": "r00015",
           "language": "ar",
           "start": 0,
-          "end": 787
+          "end": 787,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -392,7 +421,8 @@
           "row": "r00015",
           "language": "fa",
           "start": 0,
-          "end": 673
+          "end": 673,
+          "target_start": 0
         }
       ]
     },
@@ -410,7 +440,8 @@
           "row": "r00016",
           "language": "ar",
           "start": 0,
-          "end": 165
+          "end": 165,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -418,7 +449,8 @@
           "row": "r00016",
           "language": "fa",
           "start": 0,
-          "end": 165
+          "end": 165,
+          "target_start": 0
         }
       ]
     },
@@ -436,7 +468,8 @@
           "row": "r00017",
           "language": "ar",
           "start": 0,
-          "end": 817
+          "end": 817,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -444,7 +477,8 @@
           "row": "r00017",
           "language": "fa",
           "start": 0,
-          "end": 737
+          "end": 737,
+          "target_start": 0
         }
       ]
     },
@@ -463,7 +497,8 @@
           "row": "r00018",
           "language": "fa",
           "start": 0,
-          "end": 53
+          "end": 53,
+          "target_start": 0
         }
       ]
     },
@@ -481,10 +516,42 @@
           "row": "r00019-s91c68958f817ee5b",
           "language": "fa",
           "start": 0,
-          "end": 22
+          "end": 22,
+          "target_start": 0
         }
       ],
       "fa": []
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00003-sa84854240323e3e5",
+        "ar": null,
+        "fa": "t259467e5e5a37e56671a125a",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m372c23ae5f76b87351156a44",
+          "language": "fa",
+          "start": 0,
+          "end": 73,
+          "target_start": 101
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m372c23ae5f76b87351156a44",
+      "language": "fa",
+      "target_start": 100,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-sa84854240323e3e5",
+      "reason": "Complete the Persian phrase across original rows: تا در آن سال."
     }
   ]
 }
