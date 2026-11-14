@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-aamal-mkhsvs-rvzha",
   "author": "agent-5",
-  "plan_sha256": "8fcd303b8abd6b409e6784b75ea48544c43b775c94fdd7149cbc880645946bd9",
+  "plan_sha256": "e30dc8f7d4c05cc3aff3755056a4e72ccff74e627de0d6065dc696e645bf59cc",
   "rows": [
     {
       "row": "r00001",
@@ -65,7 +65,39 @@
             "source": "fa",
             "part": 0
           },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -106,6 +138,30 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
           },
           "kind": "note"
         }
@@ -165,6 +221,14 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "note"
         }
@@ -284,6 +348,17 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00006-s301ee66f47674098",
+      "right": "r00007",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate شیخ from در when joining the source narrative across r00006 and r00007."
+      }
     }
   ]
 }
