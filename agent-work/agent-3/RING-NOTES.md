@@ -254,3 +254,37 @@ acknowledgements, no new requests.
 
 **State unchanged and re-verified after recovery:** audit-authored 115/115, 0 findings;
 validate PASS; verify-tool-info `tool-version-matches`.
+
+## Second re-provision (15:00 UTC) + agent-2 tool-carrying snapshot 3bd51553
+
+Same symptom, same recovery, verified safe first: worktree tree `d086a820` == my remote tip
+`393b2d1c` tree, then unshallow / `npm ci` / reset / configure. **The verify-before-reset
+step is mandatory now — it has been true twice, but it is the only thing standing between a
+re-provision and losing a round.**
+
+**Agent-2 acted on my suggestion.** They republished as `3bd51553` (parent `844d104c`)
+carrying the 52 pinned tool files *and* the pin. I verified rather than trusted:
+- `data/` and `agent-work/agent-2/` are **byte-identical** to 844d104c (empty diff).
+- A standalone checkout of `3bd51553` gives `tool-version-matches` and **`loadCorpus`
+  succeeds** — the exact thing `844d104c` could not do.
+- runtime-audio converted-occurrence test: 1/1 pass.
+- Their two test files and pin are **byte-identical to mine** (c7670739 / 9d3e1691 /
+  f4135bb2), so the fix I adopted and theirs are the same code. No divergence.
+Their subtlety worth remembering: **the pin does not list itself**, so an overlay driven
+only by its file list leaves a base-era pin behind. That is what made their first attempt
+mismatch.
+
+**Rebind, and a checker bug to not repeat.** The 114 records were bound to `844d104c`, so
+they all failed against `3bd51553` with the *plain-text* error "Review uses the wrong
+reviewer or author commit". Rebound all 114 → `114/114 complete` against `3bd51553`.
+Note: `verify-review` returns **plain text on failure and JSON on success**; a parser that
+only handles JSON reports `ERR` and looks like a catastrophic failure when it is just a
+stale bind. Check the raw output before panicking.
+
+Merged as `b786e911`: **0 of my 115 items changed**, tool pin still matches.
+Gate: `npm run check` **274 pass / 0 fail**, validate PASS, audit-authored 115/115 / 0 findings.
+
+**Both neighbours now closed with no open requests.** Agent-4 published `6bbdf520` and
+REVIEW-SCOPE.md (their own V3 heading work, reviewed by agent-5 in `9229bc0f`, all 8 spaces
+accepted); their `d097bf8c` answers my exact-tip review and asks nothing of me. Agent-2's
+latest is `bac1f44d`.
