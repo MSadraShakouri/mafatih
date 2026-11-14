@@ -4,11 +4,11 @@
   "item": "item-asharh-6",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "283c8c6dac208b923a31aeaf3d0e8c00859f3640",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
   "plan_sha256": "c0aacc900e29398de04c32e686ec318719a51208bb5d654cb0baeada5d106129",
-  "layout_sha256": "b717b0e31965ee594003ac1e59fa554bda8ea049d05505be06d7b042a3e1fd26",
-  "result_item_sha256": "e82dd1665ce20c2de598a6b84ae40141a3a71f55f6815bf2b3c82f0556d75823",
-  "result_record_sha256": "26cd088b73442b061506b62da938c95fc8d07e0263f70172ab69ddb09a92d0af",
+  "layout_sha256": "9ce2bc1f17b52b44029d602d76954e910fb3560c666bafe6ddd092add8185a6b",
+  "result_item_sha256": "7ad4319902ef09150bf06f2667e6903b36e34590db890028cbff33d6d73dcc87",
+  "result_record_sha256": "a556179f471abdf0112b01409d1a18da79a433975cea0e01745ba88294f36bd8",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -119,16 +119,16 @@
       {
         "row": "r00012",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This heading continues across the original r00012/r00013 boundary; consider one correctly spaced cross-row heading with preserved original mappings rather than two incomplete rows."
+        "note": "The formerly interrupted heading is now grouped across original rows; the proposed Persian boundary space was assessed separately."
       },
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This heading continues across the original r00012/r00013 boundary; consider one correctly spaced cross-row heading with preserved original mappings rather than two incomplete rows."
+        "note": "The formerly interrupted heading is now grouped across original rows; the proposed Persian boundary space was assessed separately."
       },
       {
         "row": "r00014",
@@ -181,6 +181,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The basmala is now correctly paired across rows and earlier prose/heading roles improved. r00002 paired praise remains too coarse; r00005/fa includes an introductory narrative formula in the quotation row rather than paired with the Arabic note. The single heading split over r00012/r00013 should be considered for cross-row grouping. Preserve V2 aliases and use a supported migration if revised cuts are blocked."
-  }
+    "note": "The basmala and interrupted sixth heading are now correctly grouped across source rows. r00002 paired praise remains too coarse; r00005/fa puts an introductory formula in the quotation row rather than pairing it with the Arabic note. Existing V2/V3 aliases block ordinary apply for those cuts; preserve them and request a supported mapping-composition migration."
+  },
+  "spacing_review": [
+    {
+      "row": "m7aada489c3a8236a60d4132b",
+      "language": "fa",
+      "target_start": 50,
+      "value": " ",
+      "left": "r00012",
+      "right": "r00013-sbada6bac666ff1e1",
+      "reason": "Join interrupted r00012/r00013 heading at original boundary",
+      "decision": "accept",
+      "note": "One ordinary space is needed between the words at the original r00012/r00013 Persian boundary; recorded as a proposed correction, not a source character."
+    }
+  ]
 }
