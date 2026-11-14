@@ -119,9 +119,19 @@ Notes on the kinds:
 - The same reading caught two defects of my own: `dua-hjt-alyh-alslam/r00001` and
   `dua-zman-ajl-allh/r00001` are reciter labels classed `other`; both are now
   `audio-reciter`, re-applied, and the corpus has no `other` piece left.
-- Agent-6's own duty — reviewing and merging agent-5 — was already done on their
-  branch, and agent-5 has since published corrected snapshot `2226f6b`; that
-  review belongs to agent-6's branch and cannot be written from this one.
+- Agent-6 then self-audited and published revised snapshot
+  `36f89c8b3668b2b5e36d97300011bee13a0ba42a` (14 of 115 items changed: 39 bare
+  ordinal markers rejoined with their passages, twelve long recitation rows split
+  further, one issue note reworded). All 115 records were rebuilt against that
+  exact snapshot, every one verifying again, and the snapshot is merged here.
+- That revision corrected a judgement of mine: I had asked for detached ordinal
+  labels, but the base corpus fuses a section label with its passage in 241 rows
+  against 43 label-only rows, so rejoining is the house style. The suggestion is
+  withdrawn and the records now say so.
+- Agent-6's own duty — reviewing and merging agent-5 — is done on their branch;
+  agent-5's corrected snapshot has since moved on (tip `aaa1ce8b` reports two
+  further long-passage revisions to agent-6). That review belongs to agent-6's
+  branch and cannot be written from this one.
 - The snapshot, not the moving peer tip, is merged into this branch
   (`git merge --no-ff`), so the corpus now holds 227 authored items: 112 of mine
   and 115 of agent-6's, with both histories preserved.
