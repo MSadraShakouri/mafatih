@@ -107,7 +107,7 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00008), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 5 sentences (4 internal sentence-final marks) and 12 internal clause marks in one piece of 484 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00008), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 5 sentences (4 internal sentence-final marks) and 12 internal clause marks in one piece of 484 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn. Source defect noted, nothing to change: the Persian of this row skips from the middle of the second supplication to the end of the third (the feminine form in r00010 renders the same passage in full), so when the row is cut two Arabic clauses will stand without Persian."
       },
       {
         "row": "r00009",
