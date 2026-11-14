@@ -361,3 +361,60 @@ the r00002 heading and second-practice split, and the two petition transitions i
 `md9954596d59be1a71a3e08fb`. Their offsets are recorded and their alias proposals are in
 `round-4-alias-proposals.json`, and no canonical data, published id, row split, plan, layout or
 review record was changed to accommodate them.
+
+## 9. Round 5: Agent-5's two reviews of `namaz-ayd-ftr` and `ziyarat-amamyn-askryyn-alyhma`
+
+Agent-5 merged Agent-4's author-ready snapshot `c9fa191a` into its own branch and then reviewed two
+of Agent-4's items against it, in review records bound to `64d4950e`. Both records verify against
+the exact author commit and both carry the decision `revise`. Agent-4 has read every source note in
+both records against the frozen base and against the current canonical rows, and every one of the
+findings is confirmed.
+
+### 9.1 What was confirmed
+
+In `namaz-ayd-ftr` the Persian renderings of the Arabic invocations are published as detached
+`note` rows: r00002 has one Arabic invocation row and one Persian rendering row, and r00005 to
+r00011 have three or two Arabic invocation rows followed by the same number of Persian rendering
+rows. In `ziyarat-amamyn-askryyn-alyhma` the same holds for r00002 to r00004, r00008 and r00009. In
+both items the Persian row is the rendering of the Arabic row in the same source row, so the
+pairing class that Agent-5 raised against Agent-4's own items in earlier rounds applies to
+Agent-4's items as well.
+
+Three cross-row divisions are confirmed as well. In `namaz-ayd-ftr` the reported clause of r00003
+ends where the first piece of r00004 begins, the two reported counts of r00004 are divided between
+its two pieces, and the Arabic vocative of r00007 ends where the name of r00008 begins. In
+`ziyarat-amamyn-askryyn-alyhma` the title of the cited book is divided between r00007 and r00008,
+and the clause and its complement are divided between r00002 and r00003. Every one of these cuts
+falls on a whitespace boundary, so no word is broken anywhere; what is divided is a clause, a
+vocative or a title.
+
+### 9.2 Why none of it is applied
+
+The proposals are in `round-5-alias-proposals.json`, with the published id, the proposed id and
+the blocker for every case. Nothing in `data/` changed.
+
+- **The pairing and the role correction are the same operation, and it retires a published id.**
+  A split row id is a hash of its source row, its language slots and its role label, so correcting
+  the role of a Persian rendering changes that row's identity. The tool refuses the pairing merge
+  first with `Merge requires matching reviewed row kinds`, and once the role is corrected the
+  published id stops resolving. A V1 record has no alias array to carry it, and on a V2 or V3 record
+  the same revision is refused outright with `revision would orphan a previously published row
+  link; preserve it and request a mapping migration`.
+- **The cross-row divisions cannot be joined with the current merge tool at all.** The merge joins
+  two adjacent rows of the compiled item, and the compiler emits the output rows of one source row
+  consecutively. When the earlier source row has several output rows, the row to be joined and the
+  row it continues are separated by the intervening outputs, and the tool refuses with `Merge
+  requires two adjacent current rows in source order`. This is a limitation of the tool, not of the
+  migration, and it is the one item in this round that is not waiting on the mapping migration. It
+  is reported to Agent-5 for relay to the coordinator.
+- **The cut-level findings** on the Arabic side of r00005 to r00009 in `namaz-ayd-ftr`, and on
+  r00003 and r00001 in `ziyarat-amamyn-askryyn-alyhma`, need a re-cut. A re-cut changes the piece
+  identities, so it waits with the rest.
+
+### 9.3 Reachability after this round
+
+Agent-5's branch now contains `c9fa191a`, so Agent-4's author-ready snapshot, Agent-5's author-ready
+snapshot and Agent-3's reviewed snapshot `68031722` can all be bound against one history, and the
+round-5 reviews are bound to the exact author commit. Agent-3's branch does not yet contain
+`c9fa191a` or the round-4 message `2043499a`, and Agent-4's branch does not yet contain Agent-3's
+latest tip; that merge is still requested.
