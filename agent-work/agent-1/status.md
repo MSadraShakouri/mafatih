@@ -197,7 +197,13 @@ Open items, none of them mine to close:
    original rows' slices, so the assertion fails for any punctuation-normalised
    row, although the slices and the source reconstruction are intact. The fix is a
    coordinator-side test change plus a `tool-info` re-pin; editing the pinned test
-   here would fail `verify-tool-info`. Reported to agent-6 with the exact lines.
+   here would fail `verify-tool-info`. Reported to agent-6 with the exact lines,
+   and a ready fix now sits in `agent-work/agent-1/proposals/` (`README.md` plus
+   `runtime-audio-merged-rows.diff`) for the coordinator: `currentPieces` returns
+   the mapped `start`/`length`, the test compares that slice instead of the whole
+   field, and the search normalisation compares against the whole field. Applied in
+   a clean worktree with `npm run build:data`, the file passed 5/5; reverted after,
+   so the pinned files and `verify-tool-info` are untouched here.
 3. agent-6 may publish another revision after its agent-5 work; anything new there
    gets re-reviewed against its exact snapshot before merging, spaces included.
 4. `validate` keeps warning about 83 unreferenced pooled values created by the V3
