@@ -1,38 +1,49 @@
 {
- "format_version": 1,
- "kind": "historical-row-link-proposal",
+ "format_version": 2,
  "author": "agent-6",
- "status": "proposal only; not applied to data/",
  "base": "ffa01da92fbba25731356e8158c295b3824763f0",
- "audited_head": "7e71470a02c9d6e6312582ff610e6a9a982d6de4",
+ "target_snapshot": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
  "snapshots_checked": [
-  "941c7ad3",
   "b8d0d350",
+  "941c7ad3",
   "561fdfb0",
   "36f89c8b",
-  "df85a685"
+  "df85a685",
+  "3e35f4ca"
  ],
+ "generated_by": "agent-work/agent-6/proposals/scripts/recompute-row-links.cjs",
+ "kind": "historical-row-link-proposal",
+ "status": "proposal only; not applied to data/. To be applied by the coordinator tooling as durable aliases, not by hand.",
+ "how_to_read": "Each proposed_alias has the shape of an aliases[] entry of data/row-splits: original is the old row exactly as it was published; ar and fa tile that old field from offset 0 with slices of rows of the target snapshot (code-point offsets). pooled_values_absent_from_target lists old text values that the target pool does not hold, with the source slice from which each can be rebuilt.",
  "totals": {
   "items": 16,
   "ids": 142,
-  "published_in_snapshot_561fdfb0": 132,
-  "items_with_published_ids": 10,
+  "in_a_snapshot": 132,
   "branch_commits_only": 10,
-  "exactly_recoverable": 142,
-  "not_recoverable": 0
+  "mapped_and_text_checked": 142,
+  "with_problems": 0,
+  "more_than_one_old_meaning": 0,
+  "by_class": {
+   "part-of-one-larger-row": 77,
+   "same-text-kind-changed": 10,
+   "same-row-new-id": 55
+  },
+  "pooled_values_absent_from_target": 0
  },
  "items": [
   {
    "item": "amal-aamal-daahay-rvzhay",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 2,
    "entries": [
     {
      "old_id": "r00001-s20cd347b4672299d",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sa3fbdb6fa458720f"
@@ -40,7 +51,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s20cd347b4672299d",
@@ -63,9 +74,11 @@
     {
      "old_id": "r00001-s730fcd91e8c82399",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sa3fbdb6fa458720f"
@@ -73,7 +86,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s730fcd91e8c82399",
@@ -97,15 +110,15 @@
   },
   {
    "item": "amal-aamal-hfdhm-mvlvd",
-   "current_mapping_format": 1,
+   "target_mapping_format": 1,
    "ids": 1,
    "entries": [
     {
      "old_id": "r00004-s389f14da21f3afab",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first cae8863c"
-     ],
+     "last_seen_in": "cae8863c",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00004-sd273acd294b3a429"
@@ -113,7 +126,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00004-s389f14da21f3afab",
@@ -137,48 +150,15 @@
   },
   {
    "item": "amal-aamal-mabyn-altlvayn",
-   "current_mapping_format": 1,
+   "target_mapping_format": 3,
    "ids": 4,
    "entries": [
     {
-     "old_id": "r00001-sff26221dba6bb317",
-     "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first 39ca3bb0"
-     ],
-     "class": "same-text-kind-changed",
-     "current_rows": [
-      "r00001-s8939275b275c817a"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sff26221dba6bb317",
-       "ar": null,
-       "fa": "ta2c169f1287fae6049f20762",
-       "kind": "quotation"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001-s8939275b275c817a",
-        "language": "fa",
-        "start": 0,
-        "end": 92,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00001-s54304cee9c0fc677",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first 39ca3bb0"
-     ],
+     "last_seen_in": "39ca3bb0",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00001-sa021c793590ec5ab"
@@ -186,7 +166,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s54304cee9c0fc677",
@@ -207,33 +187,33 @@
      }
     },
     {
-     "old_id": "r00002-s70b05d1806fceca6",
+     "old_id": "r00001-sff26221dba6bb317",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first 39ca3bb0"
-     ],
+     "last_seen_in": "39ca3bb0",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
-      "r00002-s16b235f3fb54b1a5"
+      "r00001-s8939275b275c817a"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00002-s70b05d1806fceca6",
+       "id": "r00001-sff26221dba6bb317",
        "ar": null,
-       "fa": "t5121b978e95b1ba8f3bd3f37",
+       "fa": "ta2c169f1287fae6049f20762",
        "kind": "quotation"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00002-s16b235f3fb54b1a5",
+        "row": "r00001-s8939275b275c817a",
         "language": "fa",
         "start": 0,
-        "end": 20,
+        "end": 92,
         "target_start": 0
        }
       ]
@@ -242,9 +222,9 @@
     {
      "old_id": "r00002-s361652a7a64cae8a",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first 39ca3bb0"
-     ],
+     "last_seen_in": "39ca3bb0",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00002-sb8a7c4ea61e1d0eb"
@@ -252,7 +232,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00002-s361652a7a64cae8a",
@@ -271,20 +251,53 @@
        }
       ]
      }
+    },
+    {
+     "old_id": "r00002-s70b05d1806fceca6",
+     "old_kind": "quotation",
+     "last_seen_in": "39ca3bb0",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
+     "class": "same-text-kind-changed",
+     "current_rows": [
+      "r00002-s16b235f3fb54b1a5"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00002-s70b05d1806fceca6",
+       "ar": null,
+       "fa": "t5121b978e95b1ba8f3bd3f37",
+       "kind": "quotation"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00002-s16b235f3fb54b1a5",
+        "language": "fa",
+        "start": 0,
+        "end": 20,
+        "target_start": 0
+       }
+      ]
+     }
     }
    ]
   },
   {
    "item": "amal-aamal-mbas",
-   "current_mapping_format": 1,
+   "target_mapping_format": 1,
    "ids": 2,
    "entries": [
     {
      "old_id": "r00002-s361652a7a64cae8a",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first cae8863c"
-     ],
+     "last_seen_in": "cae8863c",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00002-sb8a7c4ea61e1d0eb"
@@ -292,7 +305,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00002-s361652a7a64cae8a",
@@ -315,9 +328,9 @@
     {
      "old_id": "r00002-s54840edd27db6bdc",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first cae8863c"
-     ],
+     "last_seen_in": "cae8863c",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00002-s5d8056670847d3e5"
@@ -325,7 +338,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00002-s54840edd27db6bdc",
@@ -349,15 +362,15 @@
   },
   {
    "item": "amal-aamal-msjd-sasah",
-   "current_mapping_format": 1,
+   "target_mapping_format": 1,
    "ids": 1,
    "entries": [
     {
      "old_id": "r00002-sd6c1d7af35072d21",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first cae8863c"
-     ],
+     "last_seen_in": "cae8863c",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00002-se090ec1c15d74b91"
@@ -365,7 +378,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00002-sd6c1d7af35072d21",
@@ -389,15 +402,15 @@
   },
   {
    "item": "amal-aamal-zval-jmah",
-   "current_mapping_format": 1,
+   "target_mapping_format": 1,
    "ids": 1,
    "entries": [
     {
      "old_id": "r00005-s383eb14907aba211",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first 39ca3bb0"
-     ],
+     "last_seen_in": "39ca3bb0",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00005-sfdf3c9f95366cbaf"
@@ -405,7 +418,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00005-s383eb14907aba211",
@@ -429,15 +442,15 @@
   },
   {
    "item": "amal-arbayn",
-   "current_mapping_format": 1,
+   "target_mapping_format": 1,
    "ids": 1,
    "entries": [
     {
      "old_id": "r00002-s70b05d1806fceca6",
      "old_kind": "quotation",
-     "published_in": [
-      "branch commits only, first cae8863c"
-     ],
+     "last_seen_in": "cae8863c",
+     "published_in_snapshots": [],
+     "seen_in_commits": 1,
      "class": "same-text-kind-changed",
      "current_rows": [
       "r00002-s16b235f3fb54b1a5"
@@ -445,7 +458,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00002-s70b05d1806fceca6",
@@ -469,48 +482,17 @@
   },
   {
    "item": "amal-tsbyhat-slvat-rmzan",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 17,
    "entries": [
     {
-     "old_id": "r00001-sac8d3a493e4cbc88",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00001"
-     ],
-     "current_kinds": [
-      "instruction"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sac8d3a493e4cbc88",
-       "ar": null,
-       "fa": "t68d5f7527211ea8e4e34d34d",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001",
-        "language": "fa",
-        "start": 0,
-        "end": 6,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00001-sa3fbdb6fa458720f",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001"
@@ -518,7 +500,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-sa3fbdb6fa458720f",
@@ -539,11 +521,48 @@
      }
     },
     {
-     "old_id": "r00020-s247b184bce031e5b",
+     "old_id": "r00001-sac8d3a493e4cbc88",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00001"
+     ],
+     "current_kinds": [
+      "instruction"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sac8d3a493e4cbc88",
+       "ar": null,
+       "fa": "t68d5f7527211ea8e4e34d34d",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00001",
+        "language": "fa",
+        "start": 0,
+        "end": 6,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00020-s247b184bce031e5b",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00020"
@@ -551,7 +570,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00020-s247b184bce031e5b",
@@ -574,9 +593,11 @@
     {
      "old_id": "r00020-sfbb079b5b539900f",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00020"
@@ -584,7 +605,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00020-sfbb079b5b539900f",
@@ -605,44 +626,13 @@
      }
     },
     {
-     "old_id": "r00032-sf9304ca1285bf7b9",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00032"
-     ],
-     "current_kinds": [
-      "instruction"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00032-sf9304ca1285bf7b9",
-       "ar": null,
-       "fa": "t2ab3e710c161fc4c8ea0eeb3",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00032",
-        "language": "fa",
-        "start": 0,
-        "end": 7,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00032-sa307cbbba4c3f909",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00032"
@@ -650,7 +640,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00032-sa307cbbba4c3f909",
@@ -671,33 +661,35 @@
      }
     },
     {
-     "old_id": "r00043-sdcfeaa43f019319f",
+     "old_id": "r00032-sf9304ca1285bf7b9",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00043-s6e20cb78db494457"
+      "r00032"
      ],
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00043-sdcfeaa43f019319f",
+       "id": "r00032-sf9304ca1285bf7b9",
        "ar": null,
-       "fa": "t4a07ea498aa64c298ad79e69",
+       "fa": "t2ab3e710c161fc4c8ea0eeb3",
        "kind": "heading"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00043-s6e20cb78db494457",
+        "row": "r00032",
         "language": "fa",
         "start": 0,
-        "end": 6,
+        "end": 7,
         "target_start": 0
        }
       ]
@@ -706,9 +698,11 @@
     {
      "old_id": "r00043-s51ac52b54a54595c",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00043-s6e20cb78db494457"
@@ -716,7 +710,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00043-s51ac52b54a54595c",
@@ -739,17 +733,19 @@
     {
      "old_id": "r00043-sb1e5398141e27b83",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00043-s3f131d4ef19a03b7"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00043-sb1e5398141e27b83",
@@ -778,11 +774,48 @@
      }
     },
     {
-     "old_id": "r00045-s97c3de07bbc4b247",
+     "old_id": "r00043-sdcfeaa43f019319f",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00043-s6e20cb78db494457"
+     ],
+     "current_kinds": [
+      "instruction"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00043-sdcfeaa43f019319f",
+       "ar": null,
+       "fa": "t4a07ea498aa64c298ad79e69",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00043-s6e20cb78db494457",
+        "language": "fa",
+        "start": 0,
+        "end": 6,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00045-s97c3de07bbc4b247",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00045"
@@ -790,7 +823,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00045-s97c3de07bbc4b247",
@@ -813,9 +846,11 @@
     {
      "old_id": "r00045-sd2e9916e44f72c37",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00045"
@@ -823,7 +858,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00045-sd2e9916e44f72c37",
@@ -844,44 +879,13 @@
      }
     },
     {
-     "old_id": "r00047-s79b40d065d09127f",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00047"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00047-s79b40d065d09127f",
-       "ar": null,
-       "fa": "t4ebd2ac9d8dbca3878e025a8",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00047",
-        "language": "fa",
-        "start": 0,
-        "end": 6,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00047-s141a10d3a942eb5b",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00047"
@@ -889,7 +893,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00047-s141a10d3a942eb5b",
@@ -910,30 +914,32 @@
      }
     },
     {
-     "old_id": "r00049-se451499b8f06e0cc",
+     "old_id": "r00047-s79b40d065d09127f",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00049"
+      "r00047"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00049-se451499b8f06e0cc",
+       "id": "r00047-s79b40d065d09127f",
        "ar": null,
-       "fa": "t4ca89955f845b08d139c7de1",
+       "fa": "t4ebd2ac9d8dbca3878e025a8",
        "kind": "heading"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00049",
+        "row": "r00047",
         "language": "fa",
         "start": 0,
         "end": 6,
@@ -945,9 +951,11 @@
     {
      "old_id": "r00049-s19cee973e578c723",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00049"
@@ -955,7 +963,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00049-s19cee973e578c723",
@@ -976,33 +984,35 @@
      }
     },
     {
-     "old_id": "r00052-s9d1bd020e29b161c",
+     "old_id": "r00049-se451499b8f06e0cc",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00052"
+      "r00049"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00052-s9d1bd020e29b161c",
+       "id": "r00049-se451499b8f06e0cc",
        "ar": null,
-       "fa": "t288d64295a94b56dcc41811a",
+       "fa": "t4ca89955f845b08d139c7de1",
        "kind": "heading"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00052",
+        "row": "r00049",
         "language": "fa",
         "start": 0,
-        "end": 5,
+        "end": 6,
         "target_start": 0
        }
       ]
@@ -1011,9 +1021,11 @@
     {
      "old_id": "r00052-s44bcd83b300ea13a",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00052"
@@ -1021,7 +1033,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00052-s44bcd83b300ea13a",
@@ -1040,20 +1052,57 @@
        }
       ]
      }
+    },
+    {
+     "old_id": "r00052-s9d1bd020e29b161c",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00052"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00052-s9d1bd020e29b161c",
+       "ar": null,
+       "fa": "t288d64295a94b56dcc41811a",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00052",
+        "language": "fa",
+        "start": 0,
+        "end": 5,
+        "target_start": 0
+       }
+      ]
+     }
     }
    ]
   },
   {
    "item": "dua-aml-am-davd",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 3,
    "entries": [
     {
      "old_id": "r00001-s20cd347b4672299d",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sd0076416ed435839"
@@ -1061,7 +1110,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s20cd347b4672299d",
@@ -1082,52 +1131,21 @@
      }
     },
     {
-     "old_id": "r00001-s8939275b275c817a",
-     "old_kind": "note",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00001-sd0076416ed435839"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-s8939275b275c817a",
-       "ar": null,
-       "fa": "taf487a840486e97a9c0df95f",
-       "kind": "note"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001-sd0076416ed435839",
-        "language": "fa",
-        "start": 0,
-        "end": 176,
-        "target_start": 6
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00001-s7bfef5eb4d4dae9c",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00001-sd5653c4c45655497"
      ],
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s7bfef5eb4d4dae9c",
@@ -1146,28 +1164,65 @@
        }
       ]
      }
+    },
+    {
+     "old_id": "r00001-s8939275b275c817a",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00001-sd0076416ed435839"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-s8939275b275c817a",
+       "ar": null,
+       "fa": "taf487a840486e97a9c0df95f",
+       "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00001-sd0076416ed435839",
+        "language": "fa",
+        "start": 0,
+        "end": 176,
+        "target_start": 6
+       }
+      ]
+     }
     }
    ]
   },
   {
    "item": "dua-samat",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 1,
    "entries": [
     {
      "old_id": "r00136-s6dce204a4f052c50",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00136-s8edab82296df46ca"
      ],
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00136-s6dce204a4f052c50",
@@ -1191,48 +1246,17 @@
   },
   {
    "item": "item-adayh-vqt-tlva",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 49,
    "entries": [
     {
-     "old_id": "r00001-s20cd347b4672299d",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00001-sd0076416ed435839"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-s20cd347b4672299d",
-       "ar": null,
-       "fa": "tfd569a43d3686a1920992776",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001-sd0076416ed435839",
-        "language": "fa",
-        "start": 0,
-        "end": 5,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00001-s132193aa69a3626e",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sa021c793590ec5ab"
@@ -1240,7 +1264,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s132193aa69a3626e",
@@ -1261,11 +1285,48 @@
      }
     },
     {
-     "old_id": "r00001-s90136106b1b46f45",
-     "old_kind": "note",
-     "published_in": [
+     "old_id": "r00001-s20cd347b4672299d",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00001-sd0076416ed435839"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-s20cd347b4672299d",
+       "ar": null,
+       "fa": "tfd569a43d3686a1920992776",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00001-sd0076416ed435839",
+        "language": "fa",
+        "start": 0,
+        "end": 5,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-s90136106b1b46f45",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sa021c793590ec5ab"
@@ -1273,7 +1334,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s90136106b1b46f45",
@@ -1296,9 +1357,11 @@
     {
      "old_id": "r00003-s830b2abcb24c84d9",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00003-s1b27bb8c75bc48e1"
@@ -1306,7 +1369,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00003-s830b2abcb24c84d9",
@@ -1329,17 +1392,19 @@
     {
      "old_id": "r00003-sd8fe963a13fe0305",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00003-s2fd8d78ba1da248f"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00003-sd8fe963a13fe0305",
@@ -1360,44 +1425,13 @@
      }
     },
     {
-     "old_id": "r00004-s593105986b1fe6ae",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00004-s6781612fc75b6e23"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00004-s593105986b1fe6ae",
-       "ar": null,
-       "fa": "t2ab3e710c161fc4c8ea0eeb3",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00004-s6781612fc75b6e23",
-        "language": "fa",
-        "start": 0,
-        "end": 7,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00004-s1eea81343f83a892",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00004-s6781612fc75b6e23"
@@ -1405,7 +1439,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00004-s1eea81343f83a892",
@@ -1426,11 +1460,48 @@
      }
     },
     {
-     "old_id": "r00006-s0cf0082faa234234",
+     "old_id": "r00004-s593105986b1fe6ae",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00004-s6781612fc75b6e23"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00004-s593105986b1fe6ae",
+       "ar": null,
+       "fa": "t2ab3e710c161fc4c8ea0eeb3",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00004-s6781612fc75b6e23",
+        "language": "fa",
+        "start": 0,
+        "end": 7,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00006-s0cf0082faa234234",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00006-s99b2880b659f859b"
@@ -1438,7 +1509,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00006-s0cf0082faa234234",
@@ -1461,9 +1532,11 @@
     {
      "old_id": "r00006-saa9b9be4b3d5606d",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00006-s99b2880b659f859b"
@@ -1471,7 +1544,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00006-saa9b9be4b3d5606d",
@@ -1494,9 +1567,11 @@
     {
      "old_id": "r00008-s1bfeb42c3822c64e",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00008-s88eba61461dcd450"
@@ -1504,7 +1579,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00008-s1bfeb42c3822c64e",
@@ -1525,11 +1600,83 @@
      }
     },
     {
-     "old_id": "r00008-sb553e7372366eba9",
+     "old_id": "r00008-s3ad1fc19ff32f876",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00008-s8bcbf982b70a19ae"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00008-s3ad1fc19ff32f876",
+       "ar": null,
+       "fa": "tae1ebb0535f05ab5dd5417d0",
+       "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00008-s8bcbf982b70a19ae",
+        "language": "fa",
+        "start": 0,
+        "end": 57,
+        "target_start": 6
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00008-s4c2ae3151fd2045e",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00008-s8bcbf982b70a19ae"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00008-s4c2ae3151fd2045e",
+       "ar": null,
+       "fa": "t4ebd2ac9d8dbca3878e025a8",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00008-s8bcbf982b70a19ae",
+        "language": "fa",
+        "start": 0,
+        "end": 6,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00008-sb553e7372366eba9",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00008-s88eba61461dcd450"
@@ -1537,7 +1684,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00008-sb553e7372366eba9",
@@ -1560,17 +1707,19 @@
     {
      "old_id": "r00008-sccc00909b6e9dbcf",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00008-s2babcd8b6889817e"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00008-sccc00909b6e9dbcf",
@@ -1591,77 +1740,13 @@
      }
     },
     {
-     "old_id": "r00008-s4c2ae3151fd2045e",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00008-s8bcbf982b70a19ae"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00008-s4c2ae3151fd2045e",
-       "ar": null,
-       "fa": "t4ebd2ac9d8dbca3878e025a8",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00008-s8bcbf982b70a19ae",
-        "language": "fa",
-        "start": 0,
-        "end": 6,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00008-s3ad1fc19ff32f876",
-     "old_kind": "note",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00008-s8bcbf982b70a19ae"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00008-s3ad1fc19ff32f876",
-       "ar": null,
-       "fa": "tae1ebb0535f05ab5dd5417d0",
-       "kind": "note"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00008-s8bcbf982b70a19ae",
-        "language": "fa",
-        "start": 0,
-        "end": 57,
-        "target_start": 6
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00010-s1e72e16813ee869b",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00010-s2aee4e8f2bc4648d"
@@ -1669,7 +1754,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00010-s1e72e16813ee869b",
@@ -1692,9 +1777,11 @@
     {
      "old_id": "r00010-sc11fe20af14467fe",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00010-s2aee4e8f2bc4648d"
@@ -1702,7 +1789,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00010-sc11fe20af14467fe",
@@ -1725,17 +1812,19 @@
     {
      "old_id": "r00010-sc32bcced97c5b5e8",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00010-sb44ad5fa44c07378"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00010-sc32bcced97c5b5e8",
@@ -1764,60 +1853,21 @@
      }
     },
     {
-     "old_id": "r00010-sf1f132ef4fb129a5",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00010-sa2735365fc568aa4"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00010-sf1f132ef4fb129a5",
-       "ar": "tbd38470adb45af5d983c9cdb",
-       "fa": "td7d082df16713a066b76db27",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00010-sa2735365fc568aa4",
-        "language": "ar",
-        "start": 0,
-        "end": 30,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00010-sa2735365fc568aa4",
-        "language": "fa",
-        "start": 0,
-        "end": 21,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00010-sd9581b2ec2e674d4",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00010-s81cf5e722f709478"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00010-sd9581b2ec2e674d4",
@@ -1846,19 +1896,64 @@
      }
     },
     {
-     "old_id": "r00010-sf6523d66e2398715",
+     "old_id": "r00010-sf1f132ef4fb129a5",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00010-sa2735365fc568aa4"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00010-sf1f132ef4fb129a5",
+       "ar": "tbd38470adb45af5d983c9cdb",
+       "fa": "td7d082df16713a066b76db27",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00010-sa2735365fc568aa4",
+        "language": "ar",
+        "start": 0,
+        "end": 30,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00010-sa2735365fc568aa4",
+        "language": "fa",
+        "start": 0,
+        "end": 21,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00010-sf6523d66e2398715",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00010-sd4166720f63f56fc"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00010-sf6523d66e2398715",
@@ -1889,9 +1984,11 @@
     {
      "old_id": "r00013-s01e357ccedbe8880",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00013"
@@ -1899,7 +1996,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00013-s01e357ccedbe8880",
@@ -1922,9 +2019,11 @@
     {
      "old_id": "r00013-s2bdfbac9196cec41",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00013"
@@ -1932,7 +2031,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00013-s2bdfbac9196cec41",
@@ -1953,44 +2052,13 @@
      }
     },
     {
-     "old_id": "r00015-sa633d95b1096af39",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00015-s8695625c7b76cc7b"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00015-sa633d95b1096af39",
-       "ar": null,
-       "fa": "t58d380efdc1bbfa46b2d9710",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00015-s8695625c7b76cc7b",
-        "language": "fa",
-        "start": 0,
-        "end": 5,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00015-s452daffcea61fcf6",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00015-s8695625c7b76cc7b"
@@ -1998,7 +2066,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00015-s452daffcea61fcf6",
@@ -2019,52 +2087,21 @@
      }
     },
     {
-     "old_id": "r00015-se26f1f16d2565cf6",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00015-sf25af67371f8d332"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00015-se26f1f16d2565cf6",
-       "ar": "t4e0cc9f1acc71ad48dcab539",
-       "fa": null,
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00015-sf25af67371f8d332",
-        "language": "ar",
-        "start": 0,
-        "end": 58,
-        "target_start": 0
-       }
-      ],
-      "fa": []
-     }
-    },
-    {
      "old_id": "r00015-s5f38b2076e0042c9",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00015-s3306d6e0b0e63a42"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00015-s5f38b2076e0042c9",
@@ -2085,11 +2122,83 @@
      }
     },
     {
-     "old_id": "r00016-sece116a3ecf8cd53",
+     "old_id": "r00015-sa633d95b1096af39",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00015-s8695625c7b76cc7b"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00015-sa633d95b1096af39",
+       "ar": null,
+       "fa": "t58d380efdc1bbfa46b2d9710",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00015-s8695625c7b76cc7b",
+        "language": "fa",
+        "start": 0,
+        "end": 5,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00015-se26f1f16d2565cf6",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00015-sf25af67371f8d332"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00015-se26f1f16d2565cf6",
+       "ar": "t4e0cc9f1acc71ad48dcab539",
+       "fa": null,
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00015-sf25af67371f8d332",
+        "language": "ar",
+        "start": 0,
+        "end": 58,
+        "target_start": 0
+       }
+      ],
+      "fa": []
+     }
+    },
+    {
+     "old_id": "r00016-sece116a3ecf8cd53",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00016-s2548cdc989d420da"
@@ -2097,7 +2206,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00016-sece116a3ecf8cd53",
@@ -2120,9 +2229,11 @@
     {
      "old_id": "r00016-sf4c17401137b033c",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00016-s2548cdc989d420da"
@@ -2130,7 +2241,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00016-sf4c17401137b033c",
@@ -2151,44 +2262,13 @@
      }
     },
     {
-     "old_id": "r00019-sca4f04071c415730",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00019-s91c68958f817ee5b"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00019-sca4f04071c415730",
-       "ar": null,
-       "fa": "teb482c311107a37c7065bbb5",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00019-s91c68958f817ee5b",
-        "language": "fa",
-        "start": 0,
-        "end": 9,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00019-s1991c0b9fa3cc415",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00019-s91c68958f817ee5b"
@@ -2196,7 +2276,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00019-s1991c0b9fa3cc415",
@@ -2219,17 +2299,19 @@
     {
      "old_id": "r00019-s63700a597bce4b99",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00019-s2a227bae9469067c"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00019-s63700a597bce4b99",
@@ -2258,19 +2340,56 @@
      }
     },
     {
-     "old_id": "r00019-sf8f440b8953ecef6",
-     "old_kind": "recitation",
-     "published_in": [
+     "old_id": "r00019-sca4f04071c415730",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00019-s91c68958f817ee5b"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00019-sca4f04071c415730",
+       "ar": null,
+       "fa": "teb482c311107a37c7065bbb5",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00019-s91c68958f817ee5b",
+        "language": "fa",
+        "start": 0,
+        "end": 9,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00019-sf8f440b8953ecef6",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00019-s61dd4397055b8385"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00019-sf8f440b8953ecef6",
@@ -2299,11 +2418,56 @@
      }
     },
     {
-     "old_id": "r00021-s1a2b0e0223fb7589",
-     "old_kind": "heading",
-     "published_in": [
+     "old_id": "r00021-s15bec5a8060ec155",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00021-s987da6e7b1279f1a"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00021-s15bec5a8060ec155",
+       "ar": "t06168d10f2ab216159cac05b",
+       "fa": "t63045db812afae6cfbecbd56",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00021-s987da6e7b1279f1a",
+        "language": "ar",
+        "start": 0,
+        "end": 51,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00021-s987da6e7b1279f1a",
+        "language": "fa",
+        "start": 0,
+        "end": 57,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00021-s1a2b0e0223fb7589",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00021-sebbdb4c62c3e6140"
@@ -2311,7 +2475,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00021-s1a2b0e0223fb7589",
@@ -2332,52 +2496,21 @@
      }
     },
     {
-     "old_id": "r00021-s67254100531fa7fa",
-     "old_kind": "note",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00021-sebbdb4c62c3e6140"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00021-s67254100531fa7fa",
-       "ar": null,
-       "fa": "ta88accfdb4f3b43550beb1b6",
-       "kind": "note"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00021-sebbdb4c62c3e6140",
-        "language": "fa",
-        "start": 0,
-        "end": 86,
-        "target_start": 8
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00021-s25972dd5fcb8038a",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00021-s5cf55c705726c407"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00021-s25972dd5fcb8038a",
@@ -2406,60 +2539,21 @@
      }
     },
     {
-     "old_id": "r00021-sba400d9740c1530c",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00021-scc198d90a54c7d80"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00021-sba400d9740c1530c",
-       "ar": "t5e301d48439bfbaa69fbc7de",
-       "fa": "tc8ef30c4681c8350582eed0d",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00021-scc198d90a54c7d80",
-        "language": "ar",
-        "start": 0,
-        "end": 31,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00021-scc198d90a54c7d80",
-        "language": "fa",
-        "start": 0,
-        "end": 20,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00021-s2baa89770e540439",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00021-sf3b72520f4698a2b"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00021-s2baa89770e540439",
@@ -2488,42 +2582,36 @@
      }
     },
     {
-     "old_id": "r00021-scd66d16b7b08c202",
-     "old_kind": "recitation",
-     "published_in": [
+     "old_id": "r00021-s67254100531fa7fa",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00021-s5d6196e78dfbccfa"
+      "r00021-sebbdb4c62c3e6140"
      ],
      "current_kinds": [
-      "recitation"
+      "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00021-scd66d16b7b08c202",
-       "ar": "t4c8688cca75cbd9645c65cdf",
-       "fa": "t6e1224a6a4fd9df1403ca7b2",
-       "kind": "recitation"
+       "id": "r00021-s67254100531fa7fa",
+       "ar": null,
+       "fa": "ta88accfdb4f3b43550beb1b6",
+       "kind": "note"
       },
-      "ar": [
-       {
-        "row": "r00021-s5d6196e78dfbccfa",
-        "language": "ar",
-        "start": 0,
-        "end": 39,
-        "target_start": 0
-       }
-      ],
+      "ar": [],
       "fa": [
        {
-        "row": "r00021-s5d6196e78dfbccfa",
+        "row": "r00021-sebbdb4c62c3e6140",
         "language": "fa",
         "start": 0,
-        "end": 33,
-        "target_start": 0
+        "end": 86,
+        "target_start": 8
        }
       ]
      }
@@ -2531,17 +2619,19 @@
     {
      "old_id": "r00021-s77fd84344485a9da",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00021-s1b071e8416987815"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00021-s77fd84344485a9da",
@@ -2572,17 +2662,19 @@
     {
      "old_id": "r00021-saa4698f6be3dc571",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00021-sd6bbc7b87bd2331e"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00021-saa4698f6be3dc571",
@@ -2611,41 +2703,86 @@
      }
     },
     {
-     "old_id": "r00021-s15bec5a8060ec155",
+     "old_id": "r00021-sba400d9740c1530c",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
-      "r00021-s987da6e7b1279f1a"
+      "r00021-scc198d90a54c7d80"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00021-s15bec5a8060ec155",
-       "ar": "t06168d10f2ab216159cac05b",
-       "fa": "t63045db812afae6cfbecbd56",
+       "id": "r00021-sba400d9740c1530c",
+       "ar": "t5e301d48439bfbaa69fbc7de",
+       "fa": "tc8ef30c4681c8350582eed0d",
        "kind": "recitation"
       },
       "ar": [
        {
-        "row": "r00021-s987da6e7b1279f1a",
+        "row": "r00021-scc198d90a54c7d80",
         "language": "ar",
         "start": 0,
-        "end": 51,
+        "end": 31,
         "target_start": 0
        }
       ],
       "fa": [
        {
-        "row": "r00021-s987da6e7b1279f1a",
+        "row": "r00021-scc198d90a54c7d80",
         "language": "fa",
         "start": 0,
-        "end": 57,
+        "end": 20,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00021-scd66d16b7b08c202",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00021-s5d6196e78dfbccfa"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00021-scd66d16b7b08c202",
+       "ar": "t4c8688cca75cbd9645c65cdf",
+       "fa": "t6e1224a6a4fd9df1403ca7b2",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00021-s5d6196e78dfbccfa",
+        "language": "ar",
+        "start": 0,
+        "end": 39,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00021-s5d6196e78dfbccfa",
+        "language": "fa",
+        "start": 0,
+        "end": 33,
         "target_start": 0
        }
       ]
@@ -2654,9 +2791,11 @@
     {
      "old_id": "r00023-s42299837035d8bf2",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00023"
@@ -2664,7 +2803,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00023-s42299837035d8bf2",
@@ -2687,9 +2826,11 @@
     {
      "old_id": "r00023-s5e60edbd2145e56b",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00023"
@@ -2697,7 +2838,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00023-s5e60edbd2145e56b",
@@ -2718,126 +2859,21 @@
      }
     },
     {
-     "old_id": "r00025-s748afb9d475b5b53",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00025-sd2dab105b5ca52a5"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-s748afb9d475b5b53",
-       "ar": null,
-       "fa": "td6f97b13f861e6ca841f1ed8",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00025-sd2dab105b5ca52a5",
-        "language": "fa",
-        "start": 0,
-        "end": 9,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00025-se113cb0da3953199",
-     "old_kind": "note",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00025-sd2dab105b5ca52a5"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-se113cb0da3953199",
-       "ar": null,
-       "fa": "ta9772a859cb055f267245966",
-       "kind": "note"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00025-sd2dab105b5ca52a5",
-        "language": "fa",
-        "start": 0,
-        "end": 180,
-        "target_start": 9
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00025-s8f5831960a39064a",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00025-safa09c4b853d08ca"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-s8f5831960a39064a",
-       "ar": "tbd7b6eb3bf3718eb95003d74",
-       "fa": "tb2d3abd00a92ff6d62ed1da9",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00025-safa09c4b853d08ca",
-        "language": "ar",
-        "start": 0,
-        "end": 68,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00025-safa09c4b853d08ca",
-        "language": "fa",
-        "start": 0,
-        "end": 53,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00025-s1001e02e180cde4d",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00025-s4f2cae6bd2a21e9c"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00025-s1001e02e180cde4d",
@@ -2866,11 +2902,126 @@
      }
     },
     {
-     "old_id": "r00026-sd11d8e64ebe81c7f",
+     "old_id": "r00025-s748afb9d475b5b53",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00025-sd2dab105b5ca52a5"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00025-s748afb9d475b5b53",
+       "ar": null,
+       "fa": "td6f97b13f861e6ca841f1ed8",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00025-sd2dab105b5ca52a5",
+        "language": "fa",
+        "start": 0,
+        "end": 9,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00025-s8f5831960a39064a",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00025-safa09c4b853d08ca"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00025-s8f5831960a39064a",
+       "ar": "tbd7b6eb3bf3718eb95003d74",
+       "fa": "tb2d3abd00a92ff6d62ed1da9",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00025-safa09c4b853d08ca",
+        "language": "ar",
+        "start": 0,
+        "end": 68,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00025-safa09c4b853d08ca",
+        "language": "fa",
+        "start": 0,
+        "end": 53,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00025-se113cb0da3953199",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00025-sd2dab105b5ca52a5"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00025-se113cb0da3953199",
+       "ar": null,
+       "fa": "ta9772a859cb055f267245966",
+       "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00025-sd2dab105b5ca52a5",
+        "language": "fa",
+        "start": 0,
+        "end": 180,
+        "target_start": 9
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00026-sd11d8e64ebe81c7f",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00026"
@@ -2878,7 +3029,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00026-sd11d8e64ebe81c7f",
@@ -2901,9 +3052,11 @@
     {
      "old_id": "r00026-sf586f177713e87d9",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00026"
@@ -2911,7 +3064,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00026-sf586f177713e87d9",
@@ -2935,48 +3088,17 @@
   },
   {
    "item": "item-avl-adayh-sbh",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 35,
    "entries": [
     {
-     "old_id": "r00001-s7f51a14775f28b53",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00001-sa021c793590ec5ab"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-s7f51a14775f28b53",
-       "ar": null,
-       "fa": "tfd569a43d3686a1920992776",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001-sa021c793590ec5ab",
-        "language": "fa",
-        "start": 0,
-        "end": 5,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00001-s1fa9d92731f5fd90",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sa021c793590ec5ab"
@@ -2984,7 +3106,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s1fa9d92731f5fd90",
@@ -3005,30 +3127,32 @@
      }
     },
     {
-     "old_id": "r00003-sd94b175a5dcff057",
+     "old_id": "r00001-s7f51a14775f28b53",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00003"
+      "r00001-sa021c793590ec5ab"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00003-sd94b175a5dcff057",
+       "id": "r00001-s7f51a14775f28b53",
        "ar": null,
-       "fa": "t9e5d3b4837dc546fcf7d6d7a",
+       "fa": "tfd569a43d3686a1920992776",
        "kind": "heading"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00003",
+        "row": "r00001-sa021c793590ec5ab",
         "language": "fa",
         "start": 0,
         "end": 5,
@@ -3040,9 +3164,11 @@
     {
      "old_id": "r00003-s1b27bb8c75bc48e1",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00003"
@@ -3050,7 +3176,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00003-s1b27bb8c75bc48e1",
@@ -3071,11 +3197,48 @@
      }
     },
     {
-     "old_id": "r00006-s1986413e9fa8d4b7",
+     "old_id": "r00003-sd94b175a5dcff057",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00003"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00003-sd94b175a5dcff057",
+       "ar": null,
+       "fa": "t9e5d3b4837dc546fcf7d6d7a",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00003",
+        "language": "fa",
+        "start": 0,
+        "end": 5,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00006-s1986413e9fa8d4b7",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00006"
@@ -3083,7 +3246,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00006-s1986413e9fa8d4b7",
@@ -3106,9 +3269,11 @@
     {
      "old_id": "r00006-s99b2880b659f859b",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00006"
@@ -3116,7 +3281,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00006-s99b2880b659f859b",
@@ -3139,9 +3304,11 @@
     {
      "old_id": "r00009-s4281a81b93558f0a",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00009"
@@ -3149,7 +3316,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00009-s4281a81b93558f0a",
@@ -3172,9 +3339,11 @@
     {
      "old_id": "r00009-sf7cef5d6daa9e7b3",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00009"
@@ -3182,7 +3351,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00009-sf7cef5d6daa9e7b3",
@@ -3203,44 +3372,13 @@
      }
     },
     {
-     "old_id": "r00016-s9a1b97ae78463e05",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00016-s5e54498e4d1aef10"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00016-s9a1b97ae78463e05",
-       "ar": null,
-       "fa": "t4a07ea498aa64c298ad79e69",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00016-s5e54498e4d1aef10",
-        "language": "fa",
-        "start": 0,
-        "end": 6,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00016-s8cf2c50308626e54",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00016-s5e54498e4d1aef10"
@@ -3248,7 +3386,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00016-s8cf2c50308626e54",
@@ -3269,11 +3407,48 @@
      }
     },
     {
-     "old_id": "r00022-s11809add8a4fb78e",
+     "old_id": "r00016-s9a1b97ae78463e05",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00016-s5e54498e4d1aef10"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00016-s9a1b97ae78463e05",
+       "ar": null,
+       "fa": "t4a07ea498aa64c298ad79e69",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00016-s5e54498e4d1aef10",
+        "language": "fa",
+        "start": 0,
+        "end": 6,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00022-s11809add8a4fb78e",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00022"
@@ -3281,7 +3456,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00022-s11809add8a4fb78e",
@@ -3304,9 +3479,11 @@
     {
      "old_id": "r00022-se123f9760b212f73",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00022"
@@ -3314,7 +3491,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00022-se123f9760b212f73",
@@ -3335,126 +3512,21 @@
      }
     },
     {
-     "old_id": "r00025-s748afb9d475b5b53",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00025-sd2dab105b5ca52a5"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-s748afb9d475b5b53",
-       "ar": null,
-       "fa": "t4ebd2ac9d8dbca3878e025a8",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00025-sd2dab105b5ca52a5",
-        "language": "fa",
-        "start": 0,
-        "end": 6,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00025-se113cb0da3953199",
-     "old_kind": "note",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00025-sd2dab105b5ca52a5"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-se113cb0da3953199",
-       "ar": null,
-       "fa": "t7834b58e631da50d42edce22",
-       "kind": "note"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00025-sd2dab105b5ca52a5",
-        "language": "fa",
-        "start": 0,
-        "end": 85,
-        "target_start": 6
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00025-s8f5831960a39064a",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00025-safa09c4b853d08ca"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-s8f5831960a39064a",
-       "ar": "tfa14f3218fd13b96ff10eccd",
-       "fa": "t2537307831320f68e32b99c4",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00025-safa09c4b853d08ca",
-        "language": "ar",
-        "start": 0,
-        "end": 110,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00025-safa09c4b853d08ca",
-        "language": "fa",
-        "start": 0,
-        "end": 79,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00025-s1001e02e180cde4d",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00025-s4f2cae6bd2a21e9c"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00025-s1001e02e180cde4d",
@@ -3483,60 +3555,21 @@
      }
     },
     {
-     "old_id": "r00025-s872934bbe0bf1871",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00025-s85adfb64ee4eace4"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-s872934bbe0bf1871",
-       "ar": "t7c25efdf01e6a1d0acd7b71f",
-       "fa": "tf3a24b9a8c7ce39bfb77220a",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00025-s85adfb64ee4eace4",
-        "language": "ar",
-        "start": 0,
-        "end": 149,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00025-s85adfb64ee4eace4",
-        "language": "fa",
-        "start": 0,
-        "end": 112,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00025-s484e170e32161b17",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00025-s4c999e5b4ba094e2"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00025-s484e170e32161b17",
@@ -3567,17 +3600,19 @@
     {
      "old_id": "r00025-s48cf1e48361aa774",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00025-sef76d0a6af14afff"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00025-s48cf1e48361aa774",
@@ -3606,60 +3641,21 @@
      }
     },
     {
-     "old_id": "r00025-sc431006eeb83cff8",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00025-s18138d2083827a71"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00025-sc431006eeb83cff8",
-       "ar": "t10ae03e17e70a71a5c9159ab",
-       "fa": "t5bdf3d526b4dad123b334040",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00025-s18138d2083827a71",
-        "language": "ar",
-        "start": 0,
-        "end": 169,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00025-s18138d2083827a71",
-        "language": "fa",
-        "start": 0,
-        "end": 110,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00025-s4ea5e5d261782e32",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00025-s8fbd1379f8968c94"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00025-s4ea5e5d261782e32",
@@ -3688,30 +3684,32 @@
      }
     },
     {
-     "old_id": "r00029-s9db55c5b7a38e46e",
+     "old_id": "r00025-s748afb9d475b5b53",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00029-s1f55036bf4946328"
+      "r00025-sd2dab105b5ca52a5"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00029-s9db55c5b7a38e46e",
+       "id": "r00025-s748afb9d475b5b53",
        "ar": null,
-       "fa": "t4ca89955f845b08d139c7de1",
+       "fa": "t4ebd2ac9d8dbca3878e025a8",
        "kind": "heading"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00029-s1f55036bf4946328",
+        "row": "r00025-sd2dab105b5ca52a5",
         "language": "fa",
         "start": 0,
         "end": 6,
@@ -3721,116 +3719,165 @@
      }
     },
     {
-     "old_id": "r00029-s1fe764ece8f48820",
-     "old_kind": "note",
-     "published_in": [
+     "old_id": "r00025-s872934bbe0bf1871",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00025-s85adfb64ee4eace4"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00025-s872934bbe0bf1871",
+       "ar": "t7c25efdf01e6a1d0acd7b71f",
+       "fa": "tf3a24b9a8c7ce39bfb77220a",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00025-s85adfb64ee4eace4",
+        "language": "ar",
+        "start": 0,
+        "end": 149,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00025-s85adfb64ee4eace4",
+        "language": "fa",
+        "start": 0,
+        "end": 112,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00025-s8f5831960a39064a",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00025-safa09c4b853d08ca"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00025-s8f5831960a39064a",
+       "ar": "tfa14f3218fd13b96ff10eccd",
+       "fa": "t2537307831320f68e32b99c4",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00025-safa09c4b853d08ca",
+        "language": "ar",
+        "start": 0,
+        "end": 110,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00025-safa09c4b853d08ca",
+        "language": "fa",
+        "start": 0,
+        "end": 79,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00025-sc431006eeb83cff8",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00025-s18138d2083827a71"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00025-sc431006eeb83cff8",
+       "ar": "t10ae03e17e70a71a5c9159ab",
+       "fa": "t5bdf3d526b4dad123b334040",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00025-s18138d2083827a71",
+        "language": "ar",
+        "start": 0,
+        "end": 169,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00025-s18138d2083827a71",
+        "language": "fa",
+        "start": 0,
+        "end": 110,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00025-se113cb0da3953199",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00029-s1f55036bf4946328"
+      "r00025-sd2dab105b5ca52a5"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00029-s1fe764ece8f48820",
+       "id": "r00025-se113cb0da3953199",
        "ar": null,
-       "fa": "t5598c880130bcd14f4221823",
+       "fa": "t7834b58e631da50d42edce22",
        "kind": "note"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00029-s1f55036bf4946328",
+        "row": "r00025-sd2dab105b5ca52a5",
         "language": "fa",
         "start": 0,
-        "end": 92,
+        "end": 85,
         "target_start": 6
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00029-s68fd26f6a3b541ca",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00029-sdaf07802b227a6c3"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00029-s68fd26f6a3b541ca",
-       "ar": "tb1f460ed7f4080abed38b8fe",
-       "fa": "t21e1bb9a9698b84cb4f346e7",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00029-sdaf07802b227a6c3",
-        "language": "ar",
-        "start": 0,
-        "end": 52,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00029-sdaf07802b227a6c3",
-        "language": "fa",
-        "start": 0,
-        "end": 41,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00029-sf8271d7a8ab3420c",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00029-s02ead87eda33589e"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00029-sf8271d7a8ab3420c",
-       "ar": "t749581ffab6e5b4b8dfe4d62",
-       "fa": "tb33be0d2f4ecf1a128da5cbd",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00029-s02ead87eda33589e",
-        "language": "ar",
-        "start": 0,
-        "end": 35,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00029-s02ead87eda33589e",
-        "language": "fa",
-        "start": 0,
-        "end": 30,
-        "target_start": 0
        }
       ]
      }
@@ -3838,17 +3885,19 @@
     {
      "old_id": "r00029-s0382fde1778a37c9",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00029-s2eb28af4f66600f2"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00029-s0382fde1778a37c9",
@@ -3877,41 +3926,113 @@
      }
     },
     {
-     "old_id": "r00029-sd2ebb9eaeed97685",
-     "old_kind": "recitation",
-     "published_in": [
+     "old_id": "r00029-s1fe764ece8f48820",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00029-s27c531d36bb09166"
+      "r00029-s1f55036bf4946328"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00029-s1fe764ece8f48820",
+       "ar": null,
+       "fa": "t5598c880130bcd14f4221823",
+       "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00029-s1f55036bf4946328",
+        "language": "fa",
+        "start": 0,
+        "end": 92,
+        "target_start": 6
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00029-s68fd26f6a3b541ca",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00029-sdaf07802b227a6c3"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00029-sd2ebb9eaeed97685",
-       "ar": "t00f1af75f41279b0129d81f6",
-       "fa": "tefa91b9b610f48aaf97f820e",
+       "id": "r00029-s68fd26f6a3b541ca",
+       "ar": "tb1f460ed7f4080abed38b8fe",
+       "fa": "t21e1bb9a9698b84cb4f346e7",
        "kind": "recitation"
       },
       "ar": [
        {
-        "row": "r00029-s27c531d36bb09166",
+        "row": "r00029-sdaf07802b227a6c3",
         "language": "ar",
         "start": 0,
-        "end": 27,
+        "end": 52,
         "target_start": 0
        }
       ],
       "fa": [
        {
-        "row": "r00029-s27c531d36bb09166",
+        "row": "r00029-sdaf07802b227a6c3",
         "language": "fa",
         "start": 0,
-        "end": 26,
+        "end": 41,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00029-s9db55c5b7a38e46e",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00029-s1f55036bf4946328"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00029-s9db55c5b7a38e46e",
+       "ar": null,
+       "fa": "t4ca89955f845b08d139c7de1",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00029-s1f55036bf4946328",
+        "language": "fa",
+        "start": 0,
+        "end": 6,
         "target_start": 0
        }
       ]
@@ -3920,17 +4041,19 @@
     {
      "old_id": "r00029-saffab4d3b1f56697",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00029-s47b852c869c1e7bd"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00029-saffab4d3b1f56697",
@@ -3959,67 +4082,87 @@
      }
     },
     {
-     "old_id": "r00031-se686309f4d1f9338",
-     "old_kind": "heading",
-     "published_in": [
+     "old_id": "r00029-sd2ebb9eaeed97685",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "part-of-one-larger-row",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
-      "r00031-s7f1832a52acb3093"
+      "r00029-s27c531d36bb09166"
      ],
      "current_kinds": [
-      "note"
+      "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00031-se686309f4d1f9338",
-       "ar": null,
-       "fa": "t288d64295a94b56dcc41811a",
-       "kind": "heading"
+       "id": "r00029-sd2ebb9eaeed97685",
+       "ar": "t00f1af75f41279b0129d81f6",
+       "fa": "tefa91b9b610f48aaf97f820e",
+       "kind": "recitation"
       },
-      "ar": [],
+      "ar": [
+       {
+        "row": "r00029-s27c531d36bb09166",
+        "language": "ar",
+        "start": 0,
+        "end": 27,
+        "target_start": 0
+       }
+      ],
       "fa": [
        {
-        "row": "r00031-s7f1832a52acb3093",
+        "row": "r00029-s27c531d36bb09166",
         "language": "fa",
         "start": 0,
-        "end": 5,
+        "end": 26,
         "target_start": 0
        }
       ]
      }
     },
     {
-     "old_id": "r00031-s97f582ecc360c0d6",
-     "old_kind": "note",
-     "published_in": [
+     "old_id": "r00029-sf8271d7a8ab3420c",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "part-of-one-larger-row",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
-      "r00031-s7f1832a52acb3093"
+      "r00029-s02ead87eda33589e"
      ],
      "current_kinds": [
-      "note"
+      "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00031-s97f582ecc360c0d6",
-       "ar": null,
-       "fa": "t11d4913299803ad6b504ca85",
-       "kind": "note"
+       "id": "r00029-sf8271d7a8ab3420c",
+       "ar": "t749581ffab6e5b4b8dfe4d62",
+       "fa": "tb33be0d2f4ecf1a128da5cbd",
+       "kind": "recitation"
       },
-      "ar": [],
+      "ar": [
+       {
+        "row": "r00029-s02ead87eda33589e",
+        "language": "ar",
+        "start": 0,
+        "end": 35,
+        "target_start": 0
+       }
+      ],
       "fa": [
        {
-        "row": "r00031-s7f1832a52acb3093",
+        "row": "r00029-s02ead87eda33589e",
         "language": "fa",
         "start": 0,
-        "end": 135,
-        "target_start": 5
+        "end": 30,
+        "target_start": 0
        }
       ]
      }
@@ -4027,17 +4170,19 @@
     {
      "old_id": "r00031-s49f4d60f0ef00c0a",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00031-s4a9fd1112d1ab99e"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00031-s49f4d60f0ef00c0a",
@@ -4066,19 +4211,56 @@
      }
     },
     {
-     "old_id": "r00031-s983faf1a019d5f36",
-     "old_kind": "recitation",
-     "published_in": [
+     "old_id": "r00031-s97f582ecc360c0d6",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00031-s7f1832a52acb3093"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00031-s97f582ecc360c0d6",
+       "ar": null,
+       "fa": "t11d4913299803ad6b504ca85",
+       "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00031-s7f1832a52acb3093",
+        "language": "fa",
+        "start": 0,
+        "end": 135,
+        "target_start": 5
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00031-s983faf1a019d5f36",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00031-sd3072f786a280e83"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00031-s983faf1a019d5f36",
@@ -4107,30 +4289,32 @@
      }
     },
     {
-     "old_id": "r00032-s98a5d2b7defee44c",
+     "old_id": "r00031-se686309f4d1f9338",
      "old_kind": "heading",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00032-s85a6eb240306f389"
+      "r00031-s7f1832a52acb3093"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00032-s98a5d2b7defee44c",
+       "id": "r00031-se686309f4d1f9338",
        "ar": null,
-       "fa": "t58d380efdc1bbfa46b2d9710",
+       "fa": "t288d64295a94b56dcc41811a",
        "kind": "heading"
       },
       "ar": [],
       "fa": [
        {
-        "row": "r00032-s85a6eb240306f389",
+        "row": "r00031-s7f1832a52acb3093",
         "language": "fa",
         "start": 0,
         "end": 5,
@@ -4142,9 +4326,11 @@
     {
      "old_id": "r00032-s045e644b2d009d5d",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00032-s85a6eb240306f389"
@@ -4152,7 +4338,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00032-s045e644b2d009d5d",
@@ -4173,19 +4359,56 @@
      }
     },
     {
-     "old_id": "r00032-se22710c8e9aadf49",
-     "old_kind": "recitation",
-     "published_in": [
+     "old_id": "r00032-s98a5d2b7defee44c",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00032-s85a6eb240306f389"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00032-s98a5d2b7defee44c",
+       "ar": null,
+       "fa": "t58d380efdc1bbfa46b2d9710",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00032-s85a6eb240306f389",
+        "language": "fa",
+        "start": 0,
+        "end": 5,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00032-se22710c8e9aadf49",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00032-s3052d501a233135c"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00032-se22710c8e9aadf49",
@@ -4217,417 +4440,25 @@
   },
   {
    "item": "item-dvm-khtbh-ayd",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 19,
    "entries": [
     {
-     "old_id": "r00001-sf8ca119bc7deb30b",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00001-saa3ec3f116259495"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sf8ca119bc7deb30b",
-       "ar": null,
-       "fa": "t9e5d3b4837dc546fcf7d6d7a",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001-saa3ec3f116259495",
-        "language": "fa",
-        "start": 0,
-        "end": 5,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-scc7f1fee80b053cc",
-     "old_kind": "note",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00001-saa3ec3f116259495"
-     ],
-     "current_kinds": [
-      "note"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-scc7f1fee80b053cc",
-       "ar": null,
-       "fa": "tdadb80a5a77355d976507831",
-       "kind": "note"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001-saa3ec3f116259495",
-        "language": "fa",
-        "start": 0,
-        "end": 191,
-        "target_start": 5
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-sfdf8989d1f4ea1c8",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-s3e4b70ad1b9cb544"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sfdf8989d1f4ea1c8",
-       "ar": "t04a7cce6326d75becb55a481",
-       "fa": "t07b7610cd82619a5b7b42da4",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-s3e4b70ad1b9cb544",
-        "language": "ar",
-        "start": 0,
-        "end": 61,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-s3e4b70ad1b9cb544",
-        "language": "fa",
-        "start": 0,
-        "end": 44,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-sde6f42512d208c2d",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-sa329ad2c5a367a28"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sde6f42512d208c2d",
-       "ar": "t58a169b7c74a66809948c4c4",
-       "fa": "tdc3666c52d745becb8924d68",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-sa329ad2c5a367a28",
-        "language": "ar",
-        "start": 0,
-        "end": 35,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-sa329ad2c5a367a28",
-        "language": "fa",
-        "start": 0,
-        "end": 34,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-s5ed8fede50e90b72",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-s3f685494486c4317"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-s5ed8fede50e90b72",
-       "ar": "t29a844a3120e97c5521f1c0d",
-       "fa": "t6a6fd5cb9db5bcefca5d61ab",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-s3f685494486c4317",
-        "language": "ar",
-        "start": 0,
-        "end": 51,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-s3f685494486c4317",
-        "language": "fa",
-        "start": 0,
-        "end": 74,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-sf8ef3babe9137c22",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-sd54903b3e416a7e1"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sf8ef3babe9137c22",
-       "ar": "t57d6f39dba93c9b79a324c48",
-       "fa": "tc093c700d90dd4e6d010dc78",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-sd54903b3e416a7e1",
-        "language": "ar",
-        "start": 0,
-        "end": 31,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-sd54903b3e416a7e1",
-        "language": "fa",
-        "start": 0,
-        "end": 33,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-s52309656b4e9249f",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-s4e67802153784e07"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-s52309656b4e9249f",
-       "ar": "t9ff4d540184f317334edca6e",
-       "fa": "t413b9fae3fda05e03b4279d3",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-s4e67802153784e07",
-        "language": "ar",
-        "start": 0,
-        "end": 40,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-s4e67802153784e07",
-        "language": "fa",
-        "start": 0,
-        "end": 38,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-s3216c8f39b9b1648",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-sbec4b2d569e949d9"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-s3216c8f39b9b1648",
-       "ar": "t65f0ad5e7562db71b79b2ea0",
-       "fa": "t68be30b1adc48299dc3088f6",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-sbec4b2d569e949d9",
-        "language": "ar",
-        "start": 0,
-        "end": 77,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-sbec4b2d569e949d9",
-        "language": "fa",
-        "start": 0,
-        "end": 59,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-sdeae6ffbb766ddb1",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-sa8e06d52cff05696"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sdeae6ffbb766ddb1",
-       "ar": "t6a1cae2fc0811c7a19ba5b7e",
-       "fa": "t0d7416330ba2b644a01f71c3",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-sa8e06d52cff05696",
-        "language": "ar",
-        "start": 0,
-        "end": 64,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-sa8e06d52cff05696",
-        "language": "fa",
-        "start": 0,
-        "end": 48,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-sa8f63d105c01f01a",
-     "old_kind": "recitation",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-s381b173f545b1bd6"
-     ],
-     "current_kinds": [
-      "recitation"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sa8f63d105c01f01a",
-       "ar": "t7705d3e1387ebd14a3154137",
-       "fa": "tc7ea450e265787fc52cc5ab2",
-       "kind": "recitation"
-      },
-      "ar": [
-       {
-        "row": "r00001-s381b173f545b1bd6",
-        "language": "ar",
-        "start": 0,
-        "end": 143,
-        "target_start": 0
-       }
-      ],
-      "fa": [
-       {
-        "row": "r00001-s381b173f545b1bd6",
-        "language": "fa",
-        "start": 0,
-        "end": 155,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00001-s1eb7bdd1ec07c68d",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00001-s4640b08d7bfa1113"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s1eb7bdd1ec07c68d",
@@ -4656,123 +4487,129 @@
      }
     },
     {
-     "old_id": "r00001-s9126baea658ccf65",
+     "old_id": "r00001-s3216c8f39b9b1648",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
-      "r00001-sec3d1c360cbcda93"
+      "r00001-sbec4b2d569e949d9"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00001-s9126baea658ccf65",
-       "ar": "t7e5a02181907a453b53cb9d1",
-       "fa": "tf5bdb265a682159b6c2b2989",
+       "id": "r00001-s3216c8f39b9b1648",
+       "ar": "t65f0ad5e7562db71b79b2ea0",
+       "fa": "t68be30b1adc48299dc3088f6",
        "kind": "recitation"
       },
       "ar": [
        {
-        "row": "r00001-sec3d1c360cbcda93",
+        "row": "r00001-sbec4b2d569e949d9",
         "language": "ar",
         "start": 0,
-        "end": 21,
+        "end": 77,
         "target_start": 0
        }
       ],
       "fa": [
        {
-        "row": "r00001-sec3d1c360cbcda93",
+        "row": "r00001-sbec4b2d569e949d9",
         "language": "fa",
         "start": 0,
-        "end": 24,
+        "end": 59,
         "target_start": 0
        }
       ]
      }
     },
     {
-     "old_id": "r00001-sebc15aaff98830c3",
+     "old_id": "r00001-s52309656b4e9249f",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
-      "r00001-seb3425b70ef80838"
+      "r00001-s4e67802153784e07"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00001-sebc15aaff98830c3",
-       "ar": "t9958cf0e66cd4a117ee14230",
-       "fa": "td6878f6cb4d986e2e07f4cce",
+       "id": "r00001-s52309656b4e9249f",
+       "ar": "t9ff4d540184f317334edca6e",
+       "fa": "t413b9fae3fda05e03b4279d3",
        "kind": "recitation"
       },
       "ar": [
        {
-        "row": "r00001-seb3425b70ef80838",
+        "row": "r00001-s4e67802153784e07",
         "language": "ar",
         "start": 0,
-        "end": 95,
+        "end": 40,
         "target_start": 0
        }
       ],
       "fa": [
        {
-        "row": "r00001-seb3425b70ef80838",
+        "row": "r00001-s4e67802153784e07",
         "language": "fa",
         "start": 0,
-        "end": 82,
+        "end": 38,
         "target_start": 0
        }
       ]
      }
     },
     {
-     "old_id": "r00001-s6c77ee33b9984b7e",
+     "old_id": "r00001-s5ed8fede50e90b72",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
-      "r00001-s135de678eb0e07df"
+      "r00001-s3f685494486c4317"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00001-s6c77ee33b9984b7e",
-       "ar": "td1026c3fd4cc0ae2c3d278e3",
-       "fa": "tcb715e81797184a2f5efeb56",
+       "id": "r00001-s5ed8fede50e90b72",
+       "ar": "t29a844a3120e97c5521f1c0d",
+       "fa": "t6a6fd5cb9db5bcefca5d61ab",
        "kind": "recitation"
       },
       "ar": [
        {
-        "row": "r00001-s135de678eb0e07df",
+        "row": "r00001-s3f685494486c4317",
         "language": "ar",
         "start": 0,
-        "end": 44,
+        "end": 51,
         "target_start": 0
        }
       ],
       "fa": [
        {
-        "row": "r00001-s135de678eb0e07df",
+        "row": "r00001-s3f685494486c4317",
         "language": "fa",
         "start": 0,
-        "end": 31,
+        "end": 74,
         "target_start": 0
        }
       ]
@@ -4781,17 +4618,19 @@
     {
      "old_id": "r00001-s643b722fcfee51ae",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00001-s4ce1e96011bf0945"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-s643b722fcfee51ae",
@@ -4820,19 +4659,193 @@
      }
     },
     {
-     "old_id": "r00001-saaca74e6ee237b89",
+     "old_id": "r00001-s6c77ee33b9984b7e",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-s135de678eb0e07df"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-s6c77ee33b9984b7e",
+       "ar": "td1026c3fd4cc0ae2c3d278e3",
+       "fa": "tcb715e81797184a2f5efeb56",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-s135de678eb0e07df",
+        "language": "ar",
+        "start": 0,
+        "end": 44,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-s135de678eb0e07df",
+        "language": "fa",
+        "start": 0,
+        "end": 31,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-s878bc828a532fb1d",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-se3dd669c980a86da"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-s878bc828a532fb1d",
+       "ar": "t90add5f9529360945aa2ddc2",
+       "fa": "t409899717ff7fada26aabb7c",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-se3dd669c980a86da",
+        "language": "ar",
+        "start": 0,
+        "end": 60,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-se3dd669c980a86da",
+        "language": "fa",
+        "start": 0,
+        "end": 41,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-s9126baea658ccf65",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-sec3d1c360cbcda93"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-s9126baea658ccf65",
+       "ar": "t7e5a02181907a453b53cb9d1",
+       "fa": "tf5bdb265a682159b6c2b2989",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-sec3d1c360cbcda93",
+        "language": "ar",
+        "start": 0,
+        "end": 21,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-sec3d1c360cbcda93",
+        "language": "fa",
+        "start": 0,
+        "end": 24,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sa8f63d105c01f01a",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-s381b173f545b1bd6"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sa8f63d105c01f01a",
+       "ar": "t7705d3e1387ebd14a3154137",
+       "fa": "tc7ea450e265787fc52cc5ab2",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-s381b173f545b1bd6",
+        "language": "ar",
+        "start": 0,
+        "end": 143,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-s381b173f545b1bd6",
+        "language": "fa",
+        "start": 0,
+        "end": 155,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-saaca74e6ee237b89",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00001-sbe758e2bcf2348a8"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-saaca74e6ee237b89",
@@ -4863,17 +4876,19 @@
     {
      "old_id": "r00001-sb666f53be83b768a",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00001-sb924930fa3e7d473"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-sb666f53be83b768a",
@@ -4902,41 +4917,285 @@
      }
     },
     {
-     "old_id": "r00001-s878bc828a532fb1d",
-     "old_kind": "recitation",
-     "published_in": [
+     "old_id": "r00001-scc7f1fee80b053cc",
+     "old_kind": "note",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00001-se3dd669c980a86da"
+      "r00001-saa3ec3f116259495"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-scc7f1fee80b053cc",
+       "ar": null,
+       "fa": "tdadb80a5a77355d976507831",
+       "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00001-saa3ec3f116259495",
+        "language": "fa",
+        "start": 0,
+        "end": 191,
+        "target_start": 5
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sde6f42512d208c2d",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-sa329ad2c5a367a28"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
-       "id": "r00001-s878bc828a532fb1d",
-       "ar": "t90add5f9529360945aa2ddc2",
-       "fa": "t409899717ff7fada26aabb7c",
+       "id": "r00001-sde6f42512d208c2d",
+       "ar": "t58a169b7c74a66809948c4c4",
+       "fa": "tdc3666c52d745becb8924d68",
        "kind": "recitation"
       },
       "ar": [
        {
-        "row": "r00001-se3dd669c980a86da",
+        "row": "r00001-sa329ad2c5a367a28",
         "language": "ar",
         "start": 0,
-        "end": 60,
+        "end": 35,
         "target_start": 0
        }
       ],
       "fa": [
        {
-        "row": "r00001-se3dd669c980a86da",
+        "row": "r00001-sa329ad2c5a367a28",
         "language": "fa",
         "start": 0,
-        "end": 41,
+        "end": 34,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sdeae6ffbb766ddb1",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-sa8e06d52cff05696"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sdeae6ffbb766ddb1",
+       "ar": "t6a1cae2fc0811c7a19ba5b7e",
+       "fa": "t0d7416330ba2b644a01f71c3",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-sa8e06d52cff05696",
+        "language": "ar",
+        "start": 0,
+        "end": 64,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-sa8e06d52cff05696",
+        "language": "fa",
+        "start": 0,
+        "end": 48,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sebc15aaff98830c3",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-seb3425b70ef80838"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sebc15aaff98830c3",
+       "ar": "t9958cf0e66cd4a117ee14230",
+       "fa": "td6878f6cb4d986e2e07f4cce",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-seb3425b70ef80838",
+        "language": "ar",
+        "start": 0,
+        "end": 95,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-seb3425b70ef80838",
+        "language": "fa",
+        "start": 0,
+        "end": 82,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sf8ca119bc7deb30b",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00001-saa3ec3f116259495"
+     ],
+     "current_kinds": [
+      "note"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sf8ca119bc7deb30b",
+       "ar": null,
+       "fa": "t9e5d3b4837dc546fcf7d6d7a",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00001-saa3ec3f116259495",
+        "language": "fa",
+        "start": 0,
+        "end": 5,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sf8ef3babe9137c22",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-sd54903b3e416a7e1"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sf8ef3babe9137c22",
+       "ar": "t57d6f39dba93c9b79a324c48",
+       "fa": "tc093c700d90dd4e6d010dc78",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-sd54903b3e416a7e1",
+        "language": "ar",
+        "start": 0,
+        "end": 31,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-sd54903b3e416a7e1",
+        "language": "fa",
+        "start": 0,
+        "end": 33,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sfdf8989d1f4ea1c8",
+     "old_kind": "recitation",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-s3e4b70ad1b9cb544"
+     ],
+     "current_kinds": [
+      "recitation"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sfdf8989d1f4ea1c8",
+       "ar": "t04a7cce6326d75becb55a481",
+       "fa": "t07b7610cd82619a5b7b42da4",
+       "kind": "recitation"
+      },
+      "ar": [
+       {
+        "row": "r00001-s3e4b70ad1b9cb544",
+        "language": "ar",
+        "start": 0,
+        "end": 61,
+        "target_start": 0
+       }
+      ],
+      "fa": [
+       {
+        "row": "r00001-s3e4b70ad1b9cb544",
+        "language": "fa",
+        "start": 0,
+        "end": 44,
         "target_start": 0
        }
       ]
@@ -4945,17 +5204,19 @@
     {
      "old_id": "r00001-sff96fc5fba421d81",
      "old_kind": "recitation",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
      "current_rows": [
-      "r00001-s9dfc00a69fac535c"
+      "m6238f25f38ff801b758fc1e1"
      ],
      "current_kinds": [
       "recitation"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-sff96fc5fba421d81",
@@ -4965,7 +5226,7 @@
       },
       "ar": [
        {
-        "row": "r00001-s9dfc00a69fac535c",
+        "row": "m6238f25f38ff801b758fc1e1",
         "language": "ar",
         "start": 0,
         "end": 16,
@@ -4974,7 +5235,7 @@
       ],
       "fa": [
        {
-        "row": "r00001-s9dfc00a69fac535c",
+        "row": "m6238f25f38ff801b758fc1e1",
         "language": "fa",
         "start": 0,
         "end": 9,
@@ -4987,23 +5248,25 @@
   },
   {
    "item": "khavas-khvas-angshtr-aqyq",
-   "current_mapping_format": 1,
+   "target_mapping_format": 1,
    "ids": 1,
    "entries": [
     {
      "old_id": "r00001-sa021c793590ec5ab",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
-     "class": "same-text-renumbered",
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
      "current_rows": [
       "r00001-se963c96e911abd20"
      ],
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-sa021c793590ec5ab",
@@ -5027,48 +5290,17 @@
   },
   {
    "item": "monajat-mnajat-aymh-alyhm",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 2,
    "entries": [
     {
-     "old_id": "r00001-sac8d3a493e4cbc88",
-     "old_kind": "heading",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "part-of-one-larger-row",
-     "current_rows": [
-      "r00001"
-     ],
-     "current_kinds": [
-      "instruction"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-sac8d3a493e4cbc88",
-       "ar": null,
-       "fa": "t4ca89955f845b08d139c7de1",
-       "kind": "heading"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001",
-        "language": "fa",
-        "start": 0,
-        "end": 6,
-        "target_start": 0
-       }
-      ]
-     }
-    },
-    {
      "old_id": "r00001-sa3fbdb6fa458720f",
      "old_kind": "instruction",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001"
@@ -5076,7 +5308,7 @@
      "current_kinds": [
       "instruction"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-sa3fbdb6fa458720f",
@@ -5095,20 +5327,92 @@
        }
       ]
      }
+    },
+    {
+     "old_id": "r00001-sac8d3a493e4cbc88",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
+     "class": "part-of-one-larger-row",
+     "current_rows": [
+      "r00001"
+     ],
+     "current_kinds": [
+      "instruction"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-sac8d3a493e4cbc88",
+       "ar": null,
+       "fa": "t4ca89955f845b08d139c7de1",
+       "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00001",
+        "language": "fa",
+        "start": 0,
+        "end": 6,
+        "target_start": 0
+       }
+      ]
+     }
     }
    ]
   },
   {
    "item": "ziyarat-svm-jamah-aymh",
-   "current_mapping_format": 3,
+   "target_mapping_format": 3,
    "ids": 3,
    "entries": [
     {
-     "old_id": "r00001-sac8d3a493e4cbc88",
-     "old_kind": "heading",
-     "published_in": [
+     "old_id": "r00001-s730fcd91e8c82399",
+     "old_kind": "instruction",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
+     "class": "same-row-new-id",
+     "current_rows": [
+      "r00001-sa3fbdb6fa458720f"
+     ],
+     "current_kinds": [
+      "instruction"
+     ],
+     "text_checked": true,
+     "proposed_alias": {
+      "original": {
+       "id": "r00001-s730fcd91e8c82399",
+       "ar": null,
+       "fa": "tf901027f5a4819a59dbdc5ff",
+       "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+       {
+        "row": "r00001-sa3fbdb6fa458720f",
+        "language": "fa",
+        "start": 0,
+        "end": 52,
+        "target_start": 0
+       }
+      ]
+     }
+    },
+    {
+     "old_id": "r00001-sac8d3a493e4cbc88",
+     "old_kind": "heading",
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
+      "561fdfb0"
+     ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sc5e9d9539705078a"
@@ -5116,7 +5420,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-sac8d3a493e4cbc88",
@@ -5139,9 +5443,11 @@
     {
      "old_id": "r00001-sd0076416ed435839",
      "old_kind": "note",
-     "published_in": [
+     "last_seen_in": "561fdfb0",
+     "published_in_snapshots": [
       "561fdfb0"
      ],
+     "seen_in_commits": 2,
      "class": "part-of-one-larger-row",
      "current_rows": [
       "r00001-sc5e9d9539705078a"
@@ -5149,7 +5455,7 @@
      "current_kinds": [
       "note"
      ],
-     "exactly_recoverable": true,
+     "text_checked": true,
      "proposed_alias": {
       "original": {
        "id": "r00001-sd0076416ed435839",
@@ -5165,39 +5471,6 @@
         "start": 0,
         "end": 259,
         "target_start": 5
-       }
-      ]
-     }
-    },
-    {
-     "old_id": "r00001-s730fcd91e8c82399",
-     "old_kind": "instruction",
-     "published_in": [
-      "561fdfb0"
-     ],
-     "class": "same-text-renumbered",
-     "current_rows": [
-      "r00001-sa3fbdb6fa458720f"
-     ],
-     "current_kinds": [
-      "instruction"
-     ],
-     "exactly_recoverable": true,
-     "proposed_alias": {
-      "original": {
-       "id": "r00001-s730fcd91e8c82399",
-       "ar": null,
-       "fa": "tf901027f5a4819a59dbdc5ff",
-       "kind": "instruction"
-      },
-      "ar": [],
-      "fa": [
-       {
-        "row": "r00001-sa3fbdb6fa458720f",
-        "language": "fa",
-        "start": 0,
-        "end": 52,
-        "target_start": 0
        }
       ]
      }

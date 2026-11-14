@@ -6,12 +6,116 @@ guard was bypassed and no pinned tool was changed to produce this.
 Data in this directory:
 
 - `historical-row-links.json`: one proposed alias per retired row ID (142 IDs,
-  all recoverable).
-- `reused-row-ids.json`: a second class found after the first report, 93 row
-  IDs that are still in use but now carry other text (not recoverable by an
-  alias; see the section near the end).
-- `agent-5-retired-row-ids.json`: the same check run on agent-5's items as
-  their reviewer.
+  all recoverable). **Recomputed against snapshot `3e35f4ca`.**
+- `reused-row-ids.json`: the 93 row IDs that are still in use but stood for
+  other text in an earlier snapshot, now as a **snapshot-versioned map**
+  (recomputed against `3e35f4ca`).
+- `scripts/recompute-row-links.cjs` and `scripts/validate-row-links.mjs`: the
+  two programs that produce and check the files above. Both only read.
+- `held-joins.json`: the 45 joins applied in `3e35f4ca`, with every proposed
+  space.
+- `agent-5-retired-row-ids.json`: the retired-ID check run on agent-5's items as
+  their reviewer (as of their snapshot `4aae1ccd`; not recomputed here).
+
+## Coordinator decision and recomputation against `3e35f4ca`
+
+The coordinator decided (relayed 2026-11-14):
+
+- **142 retired IDs:** recover them with durable aliases, including the 10 seen
+  only in branch commits. The coordinator's tooling must keep those aliases
+  through rebuilds and guard V1 re-splits. Not by hand, and not by re-cutting
+  text. Recompute and validate the mappings against `3e35f4ca` before applying.
+- **93 reused IDs:** do not overwrite their current meaning and do not redirect
+  them to the old text. Use snapshot-versioned links and mappings. A link
+  without a version is ambiguous: the reader should warn and offer the known
+  destinations. An old unversioned link cannot be repaired automatically.
+- Final release of the affected items is held until the link fixes are
+  validated. Reviews bound to a snapshot are refreshed after the migration.
+
+What I did, and nothing more: I recomputed both files against `3e35f4ca` and
+validated them. **Nothing is applied to `data/`. No alias was added, no row was
+re-cut, and the IDs are still unresolved** until the coordinator's tooling
+applies the migration.
+
+### How it is computed
+
+A cut piece is a slice of one source field of one original row, and every
+version of `data/row-splits/<item>.json` records that slice as code-point
+offsets. So the program does not search for text. For an old row ID it takes
+the slice the ID stood for in its own version, intersects it with the segments
+that `3e35f4ca` records for the same source field, and that is the mapping.
+Then it checks each mapping by text: the mapped slices of the `3e35f4ca` rows,
+joined, must equal the old field exactly.
+
+It reads every version of my 115 items in every commit since the base, plus the
+six snapshot commits (`b8d0d350`, `941c7ad3`, `561fdfb0`, `36f89c8b`,
+`df85a685`, `3e35f4ca`).
+
+```
+node agent-work/agent-6/proposals/scripts/recompute-row-links.cjs 3e35f4ca2d8491e2e3b3111672a42edb84b1e619
+node --import tsx agent-work/agent-6/proposals/scripts/validate-row-links.mjs
+```
+
+### Result for the 142 retired IDs
+
+- The set is unchanged: **142 IDs in 16 items**, 132 published in a snapshot
+  (`561fdfb0`) and 10 seen only in branch commits. The 45 joins of `3e35f4ca`
+  added none.
+- All 142 are mapped and text-checked, with 0 problems. No ID had more than one
+  old meaning, and the text of every old piece is already in the pooled values
+  of `3e35f4ca`, so the migration has no text to add.
+- 141 mappings are the same as in my earlier proposal. One changed because of
+  the joins: `item-dvm-khtbh-ayd` `r00001-sff96fc5fba421d81` now points into the
+  merged row `m6238f25f38ff801b758fc1e1`.
+- By kind of repair: 55 are the same row under a new ID, 10 are the same text
+  with a changed kind (the 10 branch-only ones), 77 are a part of one larger
+  current row.
+- Validation with the project's own `validateCorpus`, in a throw-away copy of
+  the `3e35f4ca` tree: 0 errors before; 142 aliases added; 0 errors after; all
+  142 IDs then answer `hasHistoricalRow`; the 93 reused IDs keep their current
+  meaning. Six records are still V1 and had to be raised to V2 for the test
+  (`amal-aamal-hfdhm-mvlvd`, `amal-aamal-mbas`, `amal-aamal-msjd-sasah`,
+  `amal-aamal-zval-jmah`, `amal-arbayn`, `khavas-khvas-angshtr-aqyq`), because
+  V1 may not carry aliases. The real migration needs the same step from the
+  tool, with the record hashes kept consistent.
+
+### Result for the 93 reused IDs
+
+- The set is unchanged: **93 IDs in 9 items**. For a link made against the
+  earlier snapshot, the ID today opens different text in 79 cases, the start of
+  the old text in 13, and a row that contains the old text in 1.
+- `reused-row-ids.json` now gives, for each ID and each earlier meaning, the
+  snapshots that carried that meaning and where that old text is in `3e35f4ca`
+  (same segment shape as an alias). All 93 mappings are text-checked.
+- For a link without a snapshot each entry lists the known destinations to
+  offer (`unversioned_link.known_destinations`): the current meaning and each
+  earlier one. The file does not pick one.
+- One of the 93, `ziyarat-rjybyh-alhmd-allh` `r00004-s2d6fcdaf315ab02c`, is no
+  longer a current row in `3e35f4ca`: the join made it an alias of the merged
+  row. Its current meaning is unchanged; its earlier meaning still differs.
+- Checked for completeness: of 18,843 row IDs in my earlier snapshots (items
+  that were authored in that snapshot), 18,477 stand for the same text and kind
+  in `3e35f4ca`, 56 for the same text with another kind (whole-row kind
+  changes; the link opens the same text), 132 are the retired ones above, and
+  the remaining 178 occurrences are these 93 IDs.
+
+### Items held from final release (20)
+
+Retired IDs only (11): `amal-aamal-daahay-rvzhay`, `amal-aamal-hfdhm-mvlvd`,
+`amal-aamal-mabyn-altlvayn`, `amal-aamal-mbas`, `amal-aamal-msjd-sasah`,
+`amal-aamal-zval-jmah`, `amal-arbayn`, `amal-tsbyhat-slvat-rmzan`,
+`item-avl-adayh-sbh`, `monajat-mnajat-aymh-alyhm`, `ziyarat-svm-jamah-aymh`.
+
+Reused IDs only (4): `amal-slvat-abvalhsn-zrab`, `namaz-rsvl-sly-allh`,
+`ziyarat-hshtm-adab-nyabt`, `ziyarat-rjybyh-alhmd-allh`.
+
+Both (5): `dua-aml-am-davd`, `dua-samat`, `item-adayh-vqt-tlva`,
+`item-dvm-khtbh-ayd`, `khavas-khvas-angshtr-aqyq`.
+
+Ten of the 20 are also among the 22 items changed by the 45 joins. The
+migration will change the row-split record of the 16 items with retired IDs, so
+agent-1's review records of those items will need to be refreshed against the
+migrated snapshot. I will rerun both programs against that snapshot first.
 
 ## What was asked
 
@@ -121,9 +225,9 @@ Needed from the tool:
 
 ## What this means for work in progress
 
-- My 45 prepared joins stay on hold. When they are applied they will not lose
-  links: a merge writes an alias for each retired row, and the guard refuses a
-  revision that would orphan one.
+- My 45 prepared joins are applied in `3e35f4ca` (after the test fix on `main`).
+  They lost no link: a merge writes an alias for each retired row, and the
+  guard refuses a revision that would orphan one.
 - Until item 1 exists I will not revise the cuts of any item, and as a reviewer
   I will not ask an author to re-cut a row that is already split and published.
 

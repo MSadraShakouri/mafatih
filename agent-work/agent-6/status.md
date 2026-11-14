@@ -1,6 +1,7 @@
 # agent-6 status
 
-**State: 45 JOINS APPLIED, SNAPSHOT PUBLISHED, WAITING FOR AGENT-1'S REVIEW.**
+**State: 45 JOINS APPLIED AND WAITING FOR AGENT-1'S REVIEW; LINK MAPPINGS RECOMPUTED
+AND WAITING FOR THE COORDINATOR'S MIGRATION; 20 ITEMS HELD FROM FINAL RELEASE.**
 Updated 2026-11-14 (UTC).
 
 - Branch: `arena/1a493a80-mafatih`
@@ -29,27 +30,39 @@ Updated 2026-11-14 (UTC).
 - The table of joins, with the merged row IDs and the offset of every space, is
   `agent-work/agent-6/proposals/held-joins.json`.
 
-**Not fixed by this:** the older retired IDs (142) and reused IDs (93) below are
-still unresolved. No alias was added by hand and nothing is marked as repaired.
+## Historical links: decided, recomputed, not yet applied
+
+The coordinator decided how the older link problems are repaired. **They are
+still unresolved in the data.** I added no alias by hand and re-cut nothing.
+
+- **142 retired IDs (16 items):** to be recovered with durable aliases by the
+  coordinator's tooling, including the 10 seen only in branch commits. As asked,
+  I recomputed the mappings against `3e35f4ca` and validated them: same 142
+  IDs, all mapped and text-checked; with the project's own validator in a
+  throw-away copy, 0 errors before and after adding the 142 aliases, and all 142
+  IDs resolve. One mapping changed because of the joins. File:
+  `proposals/historical-row-links.json`.
+- **93 reused IDs (9 items):** not overwritten and not redirected.
+  `proposals/reused-row-ids.json` is now a snapshot-versioned map: for each ID
+  and each earlier meaning, the snapshots that carried it and where that text is
+  in `3e35f4ca`. For a link without a snapshot it lists the known destinations
+  to offer and does not choose.
+- **Held from final release (20 items)** until the link fixes are validated; the
+  list is in `proposals/README.md`.
+- After the migration I rerun both programs (`proposals/scripts/`) against the
+  migrated snapshot, and the reviews bound to a snapshot are refreshed.
 
 ## What I still need from the coordinator
 
 1. Nothing more for the 45 joins. They now wait only for agent-1's review.
-2. **The anchor-safety decision for retired row IDs.** 142 IDs in 16 of my items
-   (and 16 IDs in 12 of agent-5's) no longer open any row. Their text is intact
-   and each can be recovered as an alias, but the tools rebuild the mapping on
-   every `apply` and `merge-rows`, so a hand-added alias does not survive. I need
-   a supported path that carries retired IDs through a rebuild, and a guard for
-   the older V1 items. This does not block the 45 joins (they retire nothing),
-   but until it exists I make no change to the cuts of an already-cut row.
-3. **A decision on reused row IDs.** 93 IDs in 9 of my items exist in an earlier
-   snapshot and exist now, but stand for other text. A link saved against the
-   earlier snapshot would now open a neighbouring piece in 79 cases, the start
-   of the old text in 13, and a row that contains it in 1. An alias cannot
-   repair these, because the ID is in use. They need versioned links or an ID
-   that depends on the text.
+2. **The migration itself:** the tooling that turns the 142 proposed aliases
+   into durable aliases (kept through `apply` and `merge-rows`), raises the six
+   V1 records that carry retired IDs, and guards V1 re-splits. Then the commit
+   to merge. Until it exists I make no change to the cuts of an already-cut row.
+3. **The reader side for the 93 reused IDs:** snapshot-versioned links, and the
+   warning with the known destinations for a link without a version.
 4. **Whether any links were saved against my first snapshot `561fdfb0` or the
-   partial snapshots.** If none were, nothing is lost under points 2 and 3.
+   partial snapshots.** Only this tells how many old unversioned links exist.
 5. **The kind of the elegy verses in `item-mrsyh-am-albnyn`** (agent-5's item). I
    lean `quotation`. A kind change alters the row ID, so it would retire the IDs
    of the rows agent-5 has just joined. I left it as `uncertain` and did not ask
@@ -96,7 +109,7 @@ with `historical-row-links.json`, `reused-row-ids.json` and
 ## What I am waiting for
 
 - agent-1: the review of snapshot `3e35f4ca`, one decision per proposed space.
-- The coordinator: points 2 to 6 above.
+- The coordinator: the link migration (points 2 and 3) and points 4 to 6 above.
 
 I have no other task I am allowed to start; the remaining join candidates were
 explicitly not requested.
