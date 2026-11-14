@@ -4,11 +4,11 @@
   "item": "ziyarat-amyralmvmnyn-alyh-alslam-2",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "00917bc1e56d7a2f364985ac5a378adda1f24e1e",
-  "plan_sha256": "a61e62f54c580a97d59534762d3d5c34cf770586e382683ca5cd40c866704385",
-  "layout_sha256": "122d91f3a90370c460724ce1f87e9208ff9ae2bcc43722d0ac43dfc2ccd6c6d5",
-  "result_item_sha256": "e5c2e92636c8b8bd45005b7b9144be0936ad296feb7badd84c432c363242c462",
-  "result_record_sha256": "12d54ef14ddb26067c3cdc54064bb25a0ee5f33f12f8f7ff7510033068e056e6",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "9284a4a54102f893cd29fe7929d6d73bc32a878acb7ee2f2d62162637719fc63",
+  "layout_sha256": "c21bf78c54c6f27b0d01af9b2b95b222f46982ca275e789a72884ba28a257df0",
+  "result_item_sha256": "3133712df249f24db8e0042d1d8ceb6c617e9845ac9c2b9906f1671023b375a9",
+  "result_record_sha256": "3a619f2be3757b01319c2f79017ba7a2543dab860c5856434dd57b74341d7aff",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "a5614a8628ca06a407c0cf02b72fb3ea72b570693fb71a5c6c82092d5b62d0c7",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "00dd904d58181c00e92fc7a8f59e268528b467906e106e46b272b4e92acb6d36",
+    "preview_sha256": "86037fd1fee79b81d47dffa553a468ee90dd7caeafa20bb45a997dc8564b6aa0",
     "sources": [
       {
         "row": "r00001",
@@ -252,16 +252,16 @@
       {
         "row": "r00019",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Read. One piece classed instruction, but the field holds two things: directions for the prayer after the visit, ending with the closing formula, and then the compiler's own remark, which opens with the words announcing the compiler and runs on into r00020. Cut immediately before the words announcing the compiler; class the first piece instruction and the second note; then join the second piece to r00020 with a Persian space (neither field has punctuation history, so the pinned test does not stand in the way). That also resolves issue 8. My earlier length-based finding on this field is withdrawn; this one is about kind and the broken sentence. If apply refuses the new cut because the item already has merges, tell me what it reports."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Re-read at this snapshot. Cut at code point 232, immediately before the words announcing the compiler: the first piece is the directions for the prayer after the visit, ending with its closing formula, classed instruction; the second is the compiler's remark, classed note and joined to r00020. Both kinds fit. My finding is resolved."
       },
       {
         "row": "r00020",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Read. One piece, note: the end of the compiler's remark begun in r00019. Correct kind; it should receive the second piece of r00019."
+        "note": "Re-read. One piece, note: the end of the compiler's remark, now in one row with the second piece of r00019."
       }
     ],
     "punctuation": [],
@@ -309,13 +309,13 @@
       {
         "index": 8,
         "decision": "addressed",
-        "note": "Checked: the sentence at the end of r00019 does continue in r00020, and the kinds differ because r00019 holds an instruction followed by the compiler's remark. The remedy is a cut in r00019, asked for in the split and kind decision of r00019/fa; after it the join is between two note rows."
+        "note": "Checked at this snapshot: r00019 is cut into instruction and note, and the note piece is joined to r00020, where its sentence ends. The merged row reads as one remark; the space is decided below."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "Read all 163 output rows in both languages. Every paired row holds one Arabic greeting or clause with its own Persian rendering; the three directions found inside source fields are separate instruction rows. Three cross-row joins are in place and correct (r00001 with r00002, r00007 with r00008, r00014 with r00015). Four boundaries still split a phrase across rows (r00004 with r00005, r00009 with r00010, r00011 with r00012, r00012 with r00013); they are correctly identified and blocked by the pinned test, not by the author. The closing prose needs one cut; see r00019/fa. Spelling slips of the frozen Persian translation were noticed in several rows and are left as they stand."
+    "note": "Read all 163 output rows in both languages. Every paired row holds one Arabic greeting or clause with its own Persian rendering; the three directions found inside source fields are separate instruction rows. Four cross-row joins are in place and correct (r00001 with r00002, r00007 with r00008, r00014 with r00015, and the compiler remark of r00019 with r00020). Four boundaries still split a phrase across rows (r00004 with r00005, r00009 with r00010, r00011 with r00012, r00012 with r00013); they are correctly identified and blocked by the pinned test, not by the author. The closing prose is now an instruction row followed by one note row. Spelling slips of the frozen Persian translation were noticed in several rows and are left as they stand."
   },
   "spacing_review": [
     {
@@ -372,6 +372,17 @@
       "reason": "Separate words at original source row continuation",
       "decision": "accept",
       "note": "Inspected the merged Persian field and both frozen sources: the text before code point 25 is exactly the end of r00014, the text after it is exactly the start of r00015, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls between a preposition and its noun. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "mcf80710131eac0ffbd7b6ca8",
+      "language": "fa",
+      "target_start": 232,
+      "value": " ",
+      "left": "r00019-s8f99afc8febdc8ff",
+      "right": "r00020",
+      "reason": "Separate words at compiler remark continuation",
+      "decision": "accept",
+      "note": "Inspected the merged Persian field and both frozen sources: the text before code point 232 is exactly the end of r00019, the text after it is exactly the start of r00020, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls inside a noun phrase, between a quantifier and the preposition that follows it. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
     }
   ]
 }

@@ -56,9 +56,9 @@
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Read every piece. Cuts are at clause boundaries, but the last piece ends with the particle that opens the clause continued in r00005, and the join carries everything from the main verb to the end of that clause: the merged row has 213 code points and four clause marks, above the pilot level. Cut this field just before that final particle, keep the Persian of this row with the first part, and join only the particle to the first piece of r00005 (Arabic space only). If apply refuses because of the existing merge link, report it as a mapping-migration request; I will then accept the row as it stands and record the limitation."
+        "note": "Read every piece. Cuts are at clause boundaries; the last piece ends with the particle that opens the clause continued in r00005, and the join gives one row of 213 code points with four clause marks, longer than the rest of the item. I asked for a cut before that particle. The author tried it and apply refused: the revision would orphan the published row link of the merged row and needs a mapping migration. Accepted as it stands on that ground: the row is correctly paired and complete, only long. Recorded as a known limitation for the coordinator, to be redone if a mapping migration becomes available."
       },
       {
         "row": "r00004",
@@ -230,7 +230,7 @@
       {
         "index": 2,
         "decision": "addressed",
-        "note": "Checked both parts. The exact pairing with r00003/fa is right. The join of the final piece with the head of r00005 is right in content and both spaces are correct; the resulting row is longer than the pilot level, which is handled in the split decision for r00004/ar."
+        "note": "Checked both parts. The exact pairing with r00003/fa is right. The join of the final piece with the head of r00005 is right in content and both spaces are correct. The resulting row is long; a shorter division was tried and is not possible without a mapping migration, see the note on r00004/ar."
       },
       {
         "index": 3,
@@ -256,7 +256,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read all 120 output rows in both languages. Every paired row holds an Arabic piece and its own Persian rendering; the heading, note and two instruction rows are Persian only. Four cross-row joins are in place and correct: the exact pairing of r00003/fa with r00004/ar, and the joins r00004 with r00005, r00007 with r00008 and r00011 with r00012. Three boundaries still split a phrase across rows (r00002 with r00003, r00006 with r00007, r00014 with r00015); they are correctly identified and are blocked by the pinned test, not by the author. One merged row is too long; see r00004/ar."
+    "note": "Read all 120 output rows in both languages. Every paired row holds an Arabic piece and its own Persian rendering; the heading, note and two instruction rows are Persian only. Four cross-row joins are in place and correct: the exact pairing of r00003/fa with r00004/ar, and the joins r00004 with r00005, r00007 with r00008 and r00011 with r00012. Three boundaries still split a phrase across rows (r00002 with r00003, r00006 with r00007, r00014 with r00015); they are correctly identified and are blocked by the pinned test, not by the author. One merged row is long and cannot be re-cut without a mapping migration; accepted, see r00004/ar."
   },
   "spacing_review": [
     {
@@ -268,7 +268,7 @@
       "right": "r00005-sf75a34654a0b51be",
       "reason": "Separate words at original r00004/r00005 continuation",
       "decision": "accept",
-      "note": "Inspected the merged Arabic field and both frozen sources: the text before code point 107 is exactly the end of r00004, the text after it is exactly the start of r00005, and neither side carries whitespace at the boundary, so without a separator two words run together. The join is correct for the row as built; if r00004/ar is re-cut as asked, the Persian join is no longer needed and only the Arabic one remains. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+      "note": "Inspected the merged Arabic field and both frozen sources: the text before code point 107 is exactly the end of r00004, the text after it is exactly the start of r00005, and neither side carries whitespace at the boundary, so without a separator two words run together. The join is correct for the row as built. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
     },
     {
       "row": "m22a89760354461ffcf188056",
@@ -279,7 +279,7 @@
       "right": "r00005-sf75a34654a0b51be",
       "reason": "Separate words at original r00004/r00005 continuation",
       "decision": "accept",
-      "note": "Inspected the merged Persian field and both frozen sources: the text before code point 77 is exactly the end of r00004, the text after it is exactly the start of r00005, and neither side carries whitespace at the boundary, so without a separator two words run together. The join is correct for the row as built; if r00004/ar is re-cut as asked, the Persian join is no longer needed and only the Arabic one remains. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+      "note": "Inspected the merged Persian field and both frozen sources: the text before code point 77 is exactly the end of r00004, the text after it is exactly the start of r00005, and neither side carries whitespace at the boundary, so without a separator two words run together. The join is correct for the row as built. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
     },
     {
       "row": "m2f0887dc33c1faad31c80d41",
