@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-aamal-arfh-2",
   "author": "agent-4",
-  "plan_sha256": "9ab395904c512a9786a2f2468a1d7398ae8c88025c7571ac8bcebb47a354fa23",
+  "plan_sha256": "e927fb0f0f0d60c15aed8dc0cfb65dde3ad1c3c5e3684af0b5c3e3bffc43a31f",
   "rows": [
     {
       "row": "r00001",
@@ -198,9 +198,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -215,9 +223,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -232,9 +248,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -249,9 +273,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -266,9 +298,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -300,9 +340,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -348,9 +396,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -365,9 +421,17 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
@@ -567,6 +631,35 @@
           "kind": "quotation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00008",
+      "right": "r00009",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Join the praise the source split across r00008 and r00009 in both languages"
+      }
+    },
+    {
+      "left": "r00017-s18f0993006f44169",
+      "right": "r00018",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Join the praise the source split across r00017 and r00018 in both languages"
+      }
+    },
+    {
+      "left": "r00030",
+      "right": "r00031",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Join the praise the source split across r00030 and r00031 in both languages"
+      }
     }
   ]
 }
