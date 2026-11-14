@@ -288,3 +288,43 @@ Gate: `npm run check` **274 pass / 0 fail**, validate PASS, audit-authored 115/1
 REVIEW-SCOPE.md (their own V3 heading work, reviewed by agent-5 in `9229bc0f`, all 8 spaces
 accepted); their `d097bf8c` answers my exact-tip review and asks nothing of me. Agent-2's
 latest is `bac1f44d`.
+
+## Historical-link audit — 28 orphaned prior-output IDs (the count that took 4 tries)
+
+Coordinator reported 28 prior IDs across 14 items for agent-3. My first three audit
+definitions all returned **0**, which is exactly the trap:
+
+1. base row id not live and not in `rows[].original.id` → 0
+2. plus `aliases[]` → 0 (my records have no aliases at all)
+3. editorial-history references unresolvable → 0 (all 284 resolve)
+
+**The definition that matched:** ids that existed in my *earlier published snapshot*
+`731bbd96` but are neither a current row nor a redirect target today. That gave
+**exactly 28 across 14 items** on the first run.
+
+**What they are:** prior-OUTPUT children (e.g. `r00014-s30d7521ced3cc2a9`). My first pass
+split base row `r00014` into four children; the later defect-fix revision re-split *from the
+frozen original* into a different, smaller set. Links by the BASE id still resolve because
+`rows[].original.id` is still `r00014`. Links by a child id have nothing to resolve through.
+
+**Why it is not self-fixable:** records are `format_version: 1`; `src/schema.ts` forbids
+aliases on V1 and requires them on V2/V3. There is literally no field. Do not bypass.
+
+**Recovery:** 27/28 mapped and **all 27 verified byte-exact** (slicing the current row at the
+proposed offset reproduces the orphan text). 14 exact-row, 13 unique-in-family. The 28th is
+`namaz-vqt-tlva-ghrvb/r00010-s5435c4aabef83342`, content is a lone `"."`; point it at live
+parent `r00010` instead of inventing an offset.
+
+Report: `agent-work/agent-3/HISTORICAL-LINK-AUDIT.md`. Nothing written into `data/`.
+
+**Lesson worth keeping:** a zero result from an audit is not evidence of cleanliness until
+the definition has been calibrated against a known count. Three "clean" audits in a row were
+three wrong questions.
+
+## CLI gotchas hit this round
+- `message --commit` needs the **full 40-character SHA**; a short sha fails with
+  "Pass the full 40-character frozen base commit ID".
+- Message text limit is ~2,000 chars; my first draft (2,395) failed with the unhelpful
+  "Invalid message kind or text".
+- `verify-review` prints **plain text** on failure and **JSON** on success. A JSON-only
+  parser reports `ERR` for a merely stale bind.
