@@ -4,11 +4,11 @@
   "item": "namaz-item-3",
   "author": "agent-3",
   "reviewer": "agent-4",
-  "author_commit": "d10ce632b8c86ad825bbc6cc83b6e3a9810c1a86",
-  "plan_sha256": "bfd84ccc74fc2c88be3b23799c218b0c1edde5c372c3edef1dc77e181fabb766",
-  "layout_sha256": "c50f6fc120edebee2795d6915cc09f1a9a282ca39a06db292f49c178474a11e1",
-  "result_item_sha256": "c0f08e1b330f4d6bb452a96daef7952be9c6dbfb0aeefd91b2fa465805db1782",
-  "result_record_sha256": "915622e0390a0c63e822c9e87a0c6d1f2dc74da6c0eaa2eaf2bfcd07d996c00e",
+  "author_commit": "680317220f161994082132d8fb9aeb8dcc4d48e1",
+  "plan_sha256": "68b9476ce8b9352463035f7cee998acfec01a9325f21de67ab658cbe35ea6002",
+  "layout_sha256": "77d522221e7c50687b44ce8cf7aedc31c44ad99c6aae40de0439d641c05d7e2e",
+  "result_item_sha256": "3e7845b9fb1b701fdd99e22b5bf37c0f1cbcc24df01066d2650b54788c9a7893",
+  "result_record_sha256": "04a8e9ddcb8db7edc54c94e5541cfa99a9bfffeedff85717a25fa22a4b0fb1b7",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,42 +16,42 @@
     "item_sha256": "5339bd69f2dffb3f51f595559fb1f2af27000c17d4539838043c156489e9559c",
     "author": "agent-3",
     "reviewer": "agent-4",
-    "preview_sha256": "fa1abdeb3fe8bdad025b9cd6ae687e7267a9b4b36d1ea851a852c127332703cb",
+    "preview_sha256": "5ee75ecb9df7e2fb851644abd4af7c155c8e9211d48d790fb1e5baa742c7861d",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Rebound to d10ce632; r00001/ar: 2 text piece(s); 1 cut(s) after clause punctuation; 0 retained separator(s) attached to preceding piece; kind(s) note/recitation checked against opening clause and reader role; no special reciter/heading label; no orphan piece; 1 language move(s) character-exact; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
+        "note": "Independent re-review of r00001/ar against 68031722: the earlier gratuitous mid-translation fa cut is removed; the Arabic prayer and complete Persian rendering now share one recitation row with exact source characters preserved. Structural check only; no scholarly or rights approval."
       },
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Rebound to d10ce632; r00001/fa: 2 text piece(s); 1 cut(s) after punctuation punctuation; 0 retained separator(s) attached to preceding piece; kind(s) recitation checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
+        "note": "Independent re-review of r00001/fa against 68031722: the earlier gratuitous mid-translation fa cut is removed; the Arabic prayer and complete Persian rendering now share one recitation row with exact source characters preserved. Structural check only; no scholarly or rights approval."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Rebound to d10ce632; r00002/ar: 1 text piece(s); no internal cut; 0 retained separator(s) attached to preceding piece; kind(s) recitation checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; 1 pairing(s) checked by meaning and piece count; exact character reconstruction; no mid-word or punctuation-free cut."
+        "note": "Independent structural check of r00002/ar against 68031722: reversible mapping, row identity and role inspected; no word-by-word semantic certification."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Rebound to d10ce632; r00002/fa: 1 text piece(s); no internal cut; 0 retained separator(s) attached to preceding piece; kind(s) recitation checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; 1 pairing(s) checked by meaning and piece count; exact character reconstruction; no mid-word or punctuation-free cut."
+        "note": "Independent structural check of r00002/fa against 68031722: reversible mapping, row identity and role inspected; no word-by-word semantic certification."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Rebound to d10ce632; r00003/fa: 1 text piece(s); no internal cut; 0 retained separator(s) attached to preceding piece; kind(s) instruction checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
+        "note": "Independent structural check of r00003/fa against 68031722: reversible mapping, row identity and role inspected; no word-by-word semantic certification."
       }
     ],
     "punctuation": [],
@@ -59,6 +59,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Accepted original row order, explicit source-part destinations, pairings and output kinds for namaz-item-3 against exact snapshot d10ce632b8c86ad825bbc6cc83b6e3a9810c1a86. Rechecked all four flagged areas: 529 cuts with 0 mid-word and 0 punctuation-free, 0 orphan pieces, 154 language moves, 524 partial-pairing rows and 13 Arabic/Persian boundary mismatches inspected against source boundaries. Kind labels remain conservative agent judgement calls on opening-clause imperative evidence; no unresolved structural defect found. Independent agent assertion only; not human, scholarly, translation-provenance or rights approval."
+    "note": "Independent re-review against 68031722: r00001 pairing defect is corrected; remaining rows are structurally consistent. No word-by-word semantic certification."
   }
 }
