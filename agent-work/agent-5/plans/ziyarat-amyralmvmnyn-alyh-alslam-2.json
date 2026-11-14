@@ -947,9 +947,12 @@
       "language": "fa",
       "source_sha256": "7449a9d41d2433d3fd4457ee1498e3ee3613e3fef08158100a69d0aceda14353",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        232
+      ],
       "kinds": [
-        "instruction"
+        "instruction",
+        "note"
       ]
     },
     {
@@ -1011,13 +1014,13 @@
       "row": "r00017",
       "language": "ar",
       "kind": "ambiguous-boundary",
-      "note": "The sentence continues through r00018; consider natural clause boundary."
+      "note": "The boundary to r00018 falls between whole members of the series; retain the separate rows (agent-6 review)."
     },
     {
       "row": "r00019",
       "language": "fa",
       "kind": "ambiguous-boundary",
-      "note": "Prose continues into r00020, but merge-preview refuses because the existing row kinds differ; inspect and reconcile kinds before joining."
+      "note": "The instruction and compiler remark are now separated; the remark continues into r00020 and was joined using a separately reviewable Persian space."
     }
   ]
 }
