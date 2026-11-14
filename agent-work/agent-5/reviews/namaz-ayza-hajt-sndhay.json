@@ -1,0 +1,112 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-ayza-hajt-sndhay",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "29ee52b5410c6eeb313fe67751313576b887d647",
+  "plan_sha256": "cbea21a048843f0495dbea7db3c439f3936432cb52d3c5ffc2854d48c17bb94e",
+  "layout_sha256": "02b0b061d77ea0147a0bb461e27b69988615df1d5b26569bbb4cea16553d8508",
+  "result_item_sha256": "0dcf01e284656ca6178941dc9942b00ad95552d9ad543ed1edfa3a98b7fa0823",
+  "result_record_sha256": "546fee5b0c3e6a953cd383f94a5e703edacafb33cd808cc334795d87ea443ce5",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-ayza-hajt-sndhay",
+    "item_sha256": "61bbd8b48fdf870eb5815fd48ef04234cb0438cf51a5229694e439bc99e3461a",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "f2bf200c41c52ee8fe94299961200aada78df19aa616d3ecade7d971e225e1e0",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "revise",
+        "note": "Part 0 is procedural Persian, not recitation; its destination is Persian but its kind needs to be instruction."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "pending",
+        "note": ""
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00007/ar: Part 0 is procedural Persian, not recitation; its destination is Persian but its kind needs to be instruction. Other rows remain pending."
+  }
+}

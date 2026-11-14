@@ -1,0 +1,112 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-slvat-shaban",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "29ee52b5410c6eeb313fe67751313576b887d647",
+  "plan_sha256": "efe41f64b15eaf571154486cb02c0852e664ae08effa47e795a1f42650f638ce",
+  "layout_sha256": "1ccb2d29e73a4a92c33262505f1557496772302430086f174d45bcbbc4a69d7a",
+  "result_item_sha256": "deae0d11c2b91a7ffaca3f8b4fa5e6d70ed1a9faba625529e5cbf8ac3480d21e",
+  "result_record_sha256": "a267f796ba9d6fb0a792ec0f34f784d824567280d3f866f5ae1c9e3b2ee296c6",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-slvat-shaban",
+    "item_sha256": "c85b38038000a660c7395d9a8a32bdc34e1be5164abb465008524437c5ae3a20",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "561703e0e62de3c50d7ac4df959ae1ceae7d35f645405d70a22db62abc196e41",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Part 0 includes procedural and narrative prose classified as recitation; inspect role boundaries and classify the prose appropriately."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "pending",
+        "kind": "pending",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "pending",
+        "note": ""
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00003/fa: Part 0 includes procedural and narrative prose classified as recitation; inspect role boundaries and classify the prose appropriately. Other rows remain pending."
+  }
+}
