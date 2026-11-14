@@ -1,0 +1,207 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-hftm-daa-vardh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "7b1225ac9e8df97b48a5d5c294d90e53a03ed776e81b696cde6f6fb16bc0284e",
+  "layout_sha256": "278902e3a2f9be0462121e6ebf702738ac21ac6be07a0244a35609afcbcf01e9",
+  "result_item_sha256": "484c3a62dfd9b945fa97a56ae37e44b54378c1fe93f87d6619cfedd12d6fe1ff",
+  "result_record_sha256": "9a0f70a78af61a74cb34055e8c755a989900bef1cc4d97efd4d6379eb572a8b3",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-hftm-daa-vardh",
+    "item_sha256": "ecb465ba7074b52696c3cf91cf46125252f1299921c4f301fff1ac54394c9791",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "42a2176d5215d09808c555e794585d147fc38e65666fbafc52573cb2c19d65bc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening sentence describes the collection, not an instruction. The numbered attribution precedes a direction that continues into r00002; distinguish roles and retain the complete direction."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first instruction completes r00001; Arabic excerpts are correctly moved without invented translations. After the first excerpt, separate the first-prayer direction from the second numbered attribution, and classify the third numbered story as report rather than instruction."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The prayer ends with ذو الجلال and continues in r00004; group the paired bilingual continuation."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The prayer ends with صاحب شکوه and continues in r00004; group the paired bilingual continuation."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The prayer begins with the completion of r00003, but its existing Persian rendering is detached and misclassified; pair it and repair the cross-row boundary."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This is the existing Persian rendering of the r00004 Arabic and continues r00003 Persian; it is recitation, not note. Pair and group without inventing text."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "After the outcome of Joseph’s story, the fourth numbered attribution and direction start a distinct practice; distinguish these roles. The Arabic excerpt has no Persian rendering here and should remain untranslated."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian report is correctly moved to the Persian field and the Arabic prayer to Arabic; the latter must be paired with the existing Persian rendering from the other source."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This is the Persian rendering of the Arabic prayer, not an instruction. Pair it with the Arabic and classify it as recitation."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The introductory Persian report and Arabic invocation are separated into proper language slots, but classify the report accordingly; pair the prayer with its existing rendering and group the r00007/08 continuation."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This is Persian recitation corresponding to the Arabic, not instruction; pair and group its r00008 continuation."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic وعندك ام الكتاب completes the preceding invocation; the Persian is separately emitted as a note. Pair and group the continuation with r00007."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian is the existing rendering of the Arabic continuation and is recitation, not note; pair and group with r00007."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The direction and prayer have been correctly moved to the appropriate language slots, but the prayer needs pairing with the existing Persian rendering."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This is the Persian rendering of r00009 Arabic, not a note; pair it and classify recitation."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The numbered Persian attribution and Arabic prayer belong in their present language slots, but the attribution is report not instruction. The Arabic prayer continues in r00011 and existing Persian cuts do not align."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both Persian pieces are prayer rendering, not instruction; pair semantically with the Arabic prayer and group the incomplete cross-row phrase at r00010/11."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "All Arabic pieces are prayer, but Persian is detached and the Arabic cuts do not match the Persian cuts; the first and last passages continue r00010 and r00012 respectively."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "All Persian pieces are prayer renderings, not note or instruction; their cuts do not match the Arabic. Align on complete units and preserve cross-row continuations into r00010 and r00012."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic prayer completes the r00011 petition; group and pair with the corresponding Persian continuation."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian continues the r00011 prayer and renders the Arabic, so it is recitation not instruction; pair and group."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The identified source-language change is real and the relevant pieces were moved to the appropriate output language; see separate source and layout findings on role and pairing."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "The identified source-language change is real and the relevant pieces were moved to the appropriate output language; see separate source and layout findings on role and pairing."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "The identified source-language change is real and the relevant pieces were moved to the appropriate output language; see separate source and layout findings on role and pairing."
+      },
+      {
+        "index": 3,
+        "decision": "addressed",
+        "note": "The identified source-language change is real and the relevant pieces were moved to the appropriate output language; see separate source and layout findings on role and pairing."
+      },
+      {
+        "index": 4,
+        "decision": "addressed",
+        "note": "The identified source-language change is real and the relevant pieces were moved to the appropriate output language; see separate source and layout findings on role and pairing."
+      },
+      {
+        "index": 5,
+        "decision": "addressed",
+        "note": "The identified source-language change is real and the relevant pieces were moved to the appropriate output language; see separate source and layout findings on role and pairing."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The language transfers are appropriate, but existing Persian prayer renderings are detached and misclassified in r00004 and r00006–12; r00010/11 cuts do not align, and paired continuations cross r00003/04, r00007/08, r00010/11 and r00011/12. Opening reports, directions and numbered-practice transitions also mix roles. Keep Arabic excerpts without source translations untranslated; preserve published links, and escalate any blocked migration or nonadjacent merge."
+  }
+}
