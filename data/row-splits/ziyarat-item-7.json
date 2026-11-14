@@ -4,7 +4,7 @@
   "author": "agent-6",
   "baseline_item_sha256": "cad8575ab9b57d0b5db508cc2169f0d08ca2b321f709a5318d191c9f59b71242",
   "plan_sha256": "b4ec717735c34503056471e58ed705ba1d5026ef2b479bf74e51e0811a0612aa",
-  "layout_sha256": "a9bf202af76dd3f0d60093d92d40bb844f1d618ce1d9a2816ffe47805942bd24",
+  "layout_sha256": "c9994406d87d2fb42d4607ba029071c6dbdfb92842f374b055db2227e2298bc6",
   "rows": [
     {
       "original": {
@@ -567,7 +567,7 @@
         "r00008-sd9b1c56b4b332205",
         "r00008-s06a2345cea0936a9",
         "r00008-sd4b1e3214186760b",
-        "r00008-sf7015822215fb3ac"
+        "mbbd9daf9d1f10f516b1ca193"
       ],
       "ar": [
         {
@@ -620,7 +620,7 @@
           "target_start": 0
         },
         {
-          "row": "r00008-sf7015822215fb3ac",
+          "row": "mbbd9daf9d1f10f516b1ca193",
           "language": "ar",
           "start": 408,
           "end": 426,
@@ -678,7 +678,7 @@
           "target_start": 0
         },
         {
-          "row": "r00008-sf7015822215fb3ac",
+          "row": "mbbd9daf9d1f10f516b1ca193",
           "language": "fa",
           "start": 368,
           "end": 383,
@@ -693,7 +693,7 @@
         "fa": "t5b525a97c7a5e07f8555ed90"
       },
       "results": [
-        "r00009-s3b3375cb23a6131d",
+        "mbbd9daf9d1f10f516b1ca193",
         "r00009-s94f3428995dfd8af",
         "r00009-sd118dd28bca499bf",
         "r00009-s44fe362f6fa893a5",
@@ -703,11 +703,11 @@
       ],
       "ar": [
         {
-          "row": "r00009-s3b3375cb23a6131d",
+          "row": "mbbd9daf9d1f10f516b1ca193",
           "language": "ar",
           "start": 0,
           "end": 9,
-          "target_start": 0
+          "target_start": 19
         },
         {
           "row": "r00009-s94f3428995dfd8af",
@@ -1539,6 +1539,50 @@
           "target_start": 0
         }
       ]
+    },
+    {
+      "original": {
+        "id": "r00008-sf7015822215fb3ac",
+        "ar": "t6c82f8db0036e7027c4be980",
+        "fa": "td17dcced9690f22972848381",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mbbd9daf9d1f10f516b1ca193",
+          "language": "ar",
+          "start": 0,
+          "end": 18,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mbbd9daf9d1f10f516b1ca193",
+          "language": "fa",
+          "start": 0,
+          "end": 15,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00009-s3b3375cb23a6131d",
+        "ar": "t5690204e8884b8464a6ea890",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mbbd9daf9d1f10f516b1ca193",
+          "language": "ar",
+          "start": 0,
+          "end": 9,
+          "target_start": 19
+        }
+      ],
+      "fa": []
     }
   ],
   "insertions": [
@@ -1567,6 +1611,15 @@
       "value": " ",
       "left": "r00012-scce7b1135e7d7ce0",
       "right": "r00013",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "mbbd9daf9d1f10f516b1ca193",
+      "language": "ar",
+      "target_start": 18,
+      "value": " ",
+      "left": "r00008-sf7015822215fb3ac",
+      "right": "r00009-s3b3375cb23a6131d",
       "reason": "Separate words at the original row boundary"
     }
   ]

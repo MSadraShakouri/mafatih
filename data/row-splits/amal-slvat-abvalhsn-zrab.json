@@ -4,7 +4,7 @@
   "author": "agent-6",
   "baseline_item_sha256": "174850d1de0150a8135fc704f9693a75a78e51f0b9892b73184c72248058cbdd",
   "plan_sha256": "1c698c8d9528a7f5ecae1702c5b8d4a2ad4b247ae39f841760775f72d0c9bc73",
-  "layout_sha256": "34ec8ed56372dd08307e299d5ff19dd845e3844f7ec0981e3509098ff9e6a05d",
+  "layout_sha256": "f8c68df748dcf4df0fbd64c2972d127bde062f173bd5b9a5d5631b17ad96cedf",
   "rows": [
     {
       "original": {
@@ -583,7 +583,7 @@
         "r00007-saa8624e01d980aee",
         "r00007-s67d6659c4f577a83",
         "r00007-s987315911498ca70",
-        "r00007-sc2f6c9f6a813b18d"
+        "mc24556b2d294dc7cc59e0a59"
       ],
       "ar": [
         {
@@ -629,7 +629,7 @@
           "target_start": 0
         },
         {
-          "row": "r00007-sc2f6c9f6a813b18d",
+          "row": "mc24556b2d294dc7cc59e0a59",
           "language": "ar",
           "start": 658,
           "end": 665,
@@ -674,18 +674,18 @@
         "fa": "t7a04dadee0bbc58787c95e22"
       },
       "results": [
-        "r00008-sbfc120554e3eef61",
+        "mc24556b2d294dc7cc59e0a59",
         "r00008-s8a39e8e01f37628b",
         "r00008-s28bf4bcfd6629d97",
         "r00008-s995d4cc90029e1f8"
       ],
       "ar": [
         {
-          "row": "r00008-sbfc120554e3eef61",
+          "row": "mc24556b2d294dc7cc59e0a59",
           "language": "ar",
           "start": 0,
           "end": 111,
-          "target_start": 0
+          "target_start": 8
         },
         {
           "row": "r00008-s8a39e8e01f37628b",
@@ -711,7 +711,7 @@
       ],
       "fa": [
         {
-          "row": "r00008-sbfc120554e3eef61",
+          "row": "mc24556b2d294dc7cc59e0a59",
           "language": "fa",
           "start": 0,
           "end": 83,
@@ -1867,6 +1867,50 @@
           "target_start": 31
         }
       ]
+    },
+    {
+      "original": {
+        "id": "r00007-sc2f6c9f6a813b18d",
+        "ar": "t17291e9aa568187f4741f6c6",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mc24556b2d294dc7cc59e0a59",
+          "language": "ar",
+          "start": 0,
+          "end": 7,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00008-sbfc120554e3eef61",
+        "ar": "t87e6ea32d290db6d5cf8447b",
+        "fa": "t8cfb4912d1001d138e2c2f27",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mc24556b2d294dc7cc59e0a59",
+          "language": "ar",
+          "start": 0,
+          "end": 111,
+          "target_start": 8
+        }
+      ],
+      "fa": [
+        {
+          "row": "mc24556b2d294dc7cc59e0a59",
+          "language": "fa",
+          "start": 0,
+          "end": 83,
+          "target_start": 0
+        }
+      ]
     }
   ],
   "insertions": [
@@ -1904,6 +1948,15 @@
       "value": " ",
       "left": "r00013-s866f06b313feab21",
       "right": "r00014-sa839c43f8232dd91",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "mc24556b2d294dc7cc59e0a59",
+      "language": "ar",
+      "target_start": 7,
+      "value": " ",
+      "left": "r00007-sc2f6c9f6a813b18d",
+      "right": "r00008-sbfc120554e3eef61",
       "reason": "Separate words at the original row boundary"
     }
   ]
