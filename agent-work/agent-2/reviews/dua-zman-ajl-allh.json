@@ -4,11 +4,11 @@
   "item": "dua-zman-ajl-allh",
   "author": "agent-1",
   "reviewer": "agent-2",
-  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
-  "plan_sha256": "e7ca06311a3ee231c99b9cf74346052d3784c98efeda78252b3a62c340699f7c",
-  "layout_sha256": "3defccca2631272785e806d4bbf859295455717318e1cfd17bda3d92ea82dc21",
-  "result_item_sha256": "f2e8c52856490800cd9056fff2a29c498727fc44416e8d0a3913bdd8b14ec386",
-  "result_record_sha256": "030adb46a2b1652635ed42f53b6a572f03571c93161ff78bd1b0119604d05030",
+  "author_commit": "8d9704b99508ab405017dc891844a38e99685b4a",
+  "plan_sha256": "5237a9ba29294f03dd38db16d6e3b13d2eca1b41a141708ed72bfdc899bb30e7",
+  "layout_sha256": "4b9458b5e7b62d7c350ea4cff1477f1a2d8916cfed2726428b8312c2c1d9c305",
+  "result_item_sha256": "b5ef14079814f16b25f6209b1f7e3e2fb0f2d4e9ca5cbff656a089d4fd144cc3",
+  "result_record_sha256": "a8d1d653826874931811f1810e7b3787200f340fa0b45066b93318186a4d5b32",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "8ebc5409308542ad0984f095ae1581b634c20842d333c4c83d74aff6a13ed3f9",
     "author": "agent-1",
     "reviewer": "agent-2",
-    "preview_sha256": "7d511f17c66c4b752f217ad8ff1b1a4cf1e1e6d21c7438865a65aac9e0688010",
+    "preview_sha256": "b334047fe65208fe0fb9b88dc9959d323716020e469bcb4785c5568d3bfc2edc",
     "sources": [
       {
         "row": "r00001",
@@ -66,6 +66,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+    "note": "Re-reviewed against 8d9704b: the revision restores the audio-reciter kind on the r00001 reciter label; reconstruction, pairing and every other decision are unchanged from my review of 9439f6ae."
   }
 }
