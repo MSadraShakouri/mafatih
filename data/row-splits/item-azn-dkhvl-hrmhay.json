@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "item-azn-dkhvl-hrmhay",
   "author": "agent-5",
   "baseline_item_sha256": "b4ffd1a18a53992586b00fc7dee274ae48715e0cff73a3303841d419e898dcef",
   "plan_sha256": "11a7ab47855041367f2a29d7b921e0375addf439541186b9c5ec82459d1a71c4",
-  "layout_sha256": "e65e92c00a5482dab8826826f30401fac20eace7145475e6f2c5ad99262ccd20",
+  "layout_sha256": "683037a56e8d79312b3f56557e8b9485409bdb79549b01def0af2c6ce1953d04",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 189
+          "end": 189,
+          "target_start": 0
         }
       ]
     },
@@ -32,22 +33,24 @@
         "fa": "td0e40afa8c0ef9c78f0d419d"
       },
       "results": [
-        "r00002"
+        "m73cf671c7b7dc08b7375f046"
       ],
       "ar": [
         {
-          "row": "r00002",
+          "row": "m73cf671c7b7dc08b7375f046",
           "language": "ar",
           "start": 0,
-          "end": 830
+          "end": 830,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m73cf671c7b7dc08b7375f046",
           "language": "fa",
           "start": 0,
-          "end": 699
+          "end": 699,
+          "target_start": 0
         }
       ]
     },
@@ -58,22 +61,24 @@
         "fa": "t16c34da63185ceefc753faf9"
       },
       "results": [
-        "r00003"
+        "m73cf671c7b7dc08b7375f046"
       ],
       "ar": [
         {
-          "row": "r00003",
+          "row": "m73cf671c7b7dc08b7375f046",
           "language": "ar",
           "start": 0,
-          "end": 38
+          "end": 38,
+          "target_start": 831
         }
       ],
       "fa": [
         {
-          "row": "r00003",
+          "row": "m73cf671c7b7dc08b7375f046",
           "language": "fa",
           "start": 0,
-          "end": 14
+          "end": 14,
+          "target_start": 700
         }
       ]
     },
@@ -92,7 +97,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 259
+          "end": 259,
+          "target_start": 0
         }
       ]
     },
@@ -110,7 +116,8 @@
           "row": "r00005",
           "language": "ar",
           "start": 0,
-          "end": 389
+          "end": 389,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -118,7 +125,8 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 302
+          "end": 302,
+          "target_start": 0
         }
       ]
     },
@@ -137,7 +145,8 @@
           "row": "r00006",
           "language": "fa",
           "start": 0,
-          "end": 42
+          "end": 42,
+          "target_start": 0
         }
       ]
     },
@@ -155,7 +164,8 @@
           "row": "r00007",
           "language": "ar",
           "start": 0,
-          "end": 198
+          "end": 198,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -163,9 +173,31 @@
           "row": "r00007",
           "language": "fa",
           "start": 0,
-          "end": 172
+          "end": 172,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [],
+  "insertions": [
+    {
+      "row": "m73cf671c7b7dc08b7375f046",
+      "language": "ar",
+      "target_start": 830,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts."
+    },
+    {
+      "row": "m73cf671c7b7dc08b7375f046",
+      "language": "fa",
+      "target_start": 699,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts."
     }
   ]
 }

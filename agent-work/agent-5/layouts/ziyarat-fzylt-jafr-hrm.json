@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-fzylt-jafr-hrm",
   "author": "agent-5",
-  "plan_sha256": "e66b21e71aa030d86b8a5b4074a3712cbf00f8aa1977672316e72b8f0df1019f",
+  "plan_sha256": "1fc56a1b1a8b8a4aaac360680bacd67b02b287983f930e904efac7dd40b0e12c",
   "rows": [
     {
       "row": "r00001",
@@ -14,6 +14,38 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
           },
           "kind": "note"
         }
@@ -28,6 +60,22 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
           },
           "kind": "note"
         }
@@ -46,6 +94,26 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-s1fa9d92731f5fd90",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text."
+      }
+    },
+    {
+      "left": "r00002-se090ec1c15d74b91",
+      "right": "r00003",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text."
+      }
     }
   ]
 }

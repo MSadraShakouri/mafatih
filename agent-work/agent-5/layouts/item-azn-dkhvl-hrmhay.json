@@ -115,5 +115,16 @@
         }
       ]
     }
+  ],
+  "merges": [
+    {
+      "left": "r00002",
+      "right": "r00003",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts."
+      }
+    }
   ]
 }

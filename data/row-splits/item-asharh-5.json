@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "item-asharh-5",
   "author": "agent-5",
   "baseline_item_sha256": "7f2e309215526a28932b83b9a5ced3b7d2fc4906f79076e401cf6345faaf5745",
-  "plan_sha256": "6cc0c6087bb2f53986f312d3b054eacf49d0fd7b514952fc2696d4afce6ecfcc",
-  "layout_sha256": "71a32617993c132aba459d3b9d0bc20fbded599c4fed4af48e87e89fe5a8abbf",
+  "plan_sha256": "8c2d237d4b1bad1a236d3cffc37cb10951f26e2efad58fb177b863034624b34b",
+  "layout_sha256": "8588398e8c1d5d6c3ce22a8020558d1763546b118519600f8afd7c47720d366f",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 12
+          "end": 12,
+          "target_start": 0
         }
       ]
     },
@@ -40,7 +41,8 @@
           "row": "r00002",
           "language": "fa",
           "start": 0,
-          "end": 4
+          "end": 4,
+          "target_start": 0
         }
       ]
     },
@@ -59,7 +61,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 4
+          "end": 4,
+          "target_start": 0
         }
       ]
     },
@@ -70,15 +73,16 @@
         "fa": "t4fa76aa22b9f6fe98016596b"
       },
       "results": [
-        "r00004"
+        "me985071a1de152f325648f2e"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004",
+          "row": "me985071a1de152f325648f2e",
           "language": "fa",
           "start": 0,
-          "end": 188
+          "end": 188,
+          "target_start": 0
         }
       ]
     },
@@ -89,15 +93,48 @@
         "fa": "t99a6be6b6823e37512878eca"
       },
       "results": [
-        "r00005"
+        "me985071a1de152f325648f2e",
+        "r00005-sbf827ad20eeda70b",
+        "r00005-sb0c0867fb6f8a3dd",
+        "r00005-sfdf3c9f95366cbaf",
+        "r00005-sef9a89da7babe159"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00005",
+          "row": "me985071a1de152f325648f2e",
           "language": "fa",
           "start": 0,
-          "end": 507
+          "end": 222,
+          "target_start": 189
+        },
+        {
+          "row": "r00005-sbf827ad20eeda70b",
+          "language": "fa",
+          "start": 222,
+          "end": 302,
+          "target_start": 0
+        },
+        {
+          "row": "r00005-sb0c0867fb6f8a3dd",
+          "language": "fa",
+          "start": 302,
+          "end": 307,
+          "target_start": 0
+        },
+        {
+          "row": "r00005-sfdf3c9f95366cbaf",
+          "language": "fa",
+          "start": 307,
+          "end": 460,
+          "target_start": 0
+        },
+        {
+          "row": "r00005-sef9a89da7babe159",
+          "language": "fa",
+          "start": 460,
+          "end": 507,
+          "target_start": 0
         }
       ]
     },
@@ -115,7 +152,8 @@
           "row": "r00006",
           "language": "ar",
           "start": 0,
-          "end": 512
+          "end": 512,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -123,7 +161,8 @@
           "row": "r00006",
           "language": "fa",
           "start": 0,
-          "end": 362
+          "end": 362,
+          "target_start": 0
         }
       ]
     },
@@ -141,7 +180,8 @@
           "row": "r00007",
           "language": "ar",
           "start": 0,
-          "end": 533
+          "end": 533,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -149,7 +189,8 @@
           "row": "r00007",
           "language": "fa",
           "start": 0,
-          "end": 554
+          "end": 554,
+          "target_start": 0
         }
       ]
     },
@@ -167,7 +208,8 @@
           "row": "r00008",
           "language": "ar",
           "start": 0,
-          "end": 579
+          "end": 579,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -175,7 +217,8 @@
           "row": "r00008",
           "language": "fa",
           "start": 0,
-          "end": 493
+          "end": 493,
+          "target_start": 0
         }
       ]
     },
@@ -193,7 +236,8 @@
           "row": "r00009",
           "language": "ar",
           "start": 0,
-          "end": 279
+          "end": 279,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -201,7 +245,8 @@
           "row": "r00009",
           "language": "fa",
           "start": 0,
-          "end": 276
+          "end": 276,
+          "target_start": 0
         }
       ]
     },
@@ -219,7 +264,8 @@
           "row": "r00010",
           "language": "ar",
           "start": 0,
-          "end": 859
+          "end": 859,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -227,7 +273,8 @@
           "row": "r00010",
           "language": "fa",
           "start": 0,
-          "end": 723
+          "end": 723,
+          "target_start": 0
         }
       ]
     },
@@ -245,7 +292,8 @@
           "row": "r00011",
           "language": "ar",
           "start": 0,
-          "end": 261
+          "end": 261,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -253,7 +301,8 @@
           "row": "r00011",
           "language": "fa",
           "start": 0,
-          "end": 196
+          "end": 196,
+          "target_start": 0
         }
       ]
     },
@@ -272,7 +321,8 @@
           "row": "r00012",
           "language": "fa",
           "start": 0,
-          "end": 67
+          "end": 67,
+          "target_start": 0
         }
       ]
     },
@@ -291,7 +341,8 @@
           "row": "r00013",
           "language": "fa",
           "start": 0,
-          "end": 623
+          "end": 623,
+          "target_start": 0
         }
       ]
     },
@@ -310,9 +361,41 @@
           "row": "r00014",
           "language": "fa",
           "start": 0,
-          "end": 251
+          "end": 251,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00005-saba56576a8f4a2e8",
+        "ar": null,
+        "fa": "t3ae35292cae834affdb223d0",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "me985071a1de152f325648f2e",
+          "language": "fa",
+          "start": 0,
+          "end": 222,
+          "target_start": 189
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "me985071a1de152f325648f2e",
+      "language": "fa",
+      "target_start": 188,
+      "value": " ",
+      "left": "r00004",
+      "right": "r00005-saba56576a8f4a2e8",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text."
     }
   ]
 }
