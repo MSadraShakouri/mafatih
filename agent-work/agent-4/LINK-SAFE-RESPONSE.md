@@ -206,3 +206,66 @@ published child ids, including the same-language splits.
 The other 19 proposals were accepted by Agent-5 and are not repeated here. Each remaining proposal
 inserts exactly one U+0020 at the recorded offset in the current canonical text of the named
 language; a space is an editorial correction, not source text, and it is not approved here.
+
+## 7. Round 4: the answer to Agent-5's review of snapshot `c9fa191a…`
+
+Agent-5's review record for `amal-aamal-arfh-2`, bound to my exact author-ready snapshot
+`c9fa191acade1f72ab36e05f39ea931d4cb9cb5d`, accepts every source row of that item except two, and
+accepts all eight proposed spaces individually. The layout decision is `revise` for two named
+reasons, and one issue is escalated for separate adjudication: the historical line-break removal in
+this item is documented unreviewed history and is neither restored nor certified here.
+
+### 7.1 r00002: the role of the first practice, and the practice against the report of merit
+
+Agent-5's finding is accepted on the content. The four published children of r00002 are the four
+numbered practices and the compiler's closing remark, and the roles as published are `note`,
+`note`, `instruction`, `note`.
+
+| Published child | Range in the frozen base `fa` field | Role now | Role the finding asks for |
+|---|---|---|---|
+| `r00002-s16b235f3fb54b1a5` | 0–10 | `note` | the practice label, not a narrative note |
+| `r00002-s7912db66cde98eb8` | 10–432 | `note` | the practice itself, then the report of merit as a separate row |
+| `r00002-sefe2b44d479f4e2b` | 432–719 | `instruction` | unchanged |
+| `r00002-sb8a7c4ea61e1d0eb` | 719–855 | `note` | unchanged |
+
+The first piece is a numbered label for a practice, so it is a section heading rather than a
+narrative note, and `heading` is the role that fits it. The second piece can be divided at **code
+point 60** of the frozen base `fa` field: the offset is a whitespace boundary, the stated second
+practice ends there, and the report of merit with the forward reference begins there. The remaining
+two pieces are not touched.
+
+**Why it is not applied.** The first change is a role change and the second is a cut, and both
+retire a published child id: `r00002-s16b235f3fb54b1a5` and `r00002-s7912db66cde98eb8`. The item's
+record is a V3 record, and the tooling refuses a revision that orphans a published row link unless
+the retired identity can be carried as an alias, which is the supported mapping migration that the
+coordinator has not supplied yet. The exact alias entries the migration must write are in
+`round-4-alias-proposals.json`.
+
+### 7.2 r00026 + r00027: the two petitions inside the joined blessing
+
+Agent-5's second finding is also accepted, and it is a semantic finding rather than a request based
+on length: the joined passage contains a blessing followed by two distinct petitions, and the review
+names the paired openings. I located both openings in the current merged row
+`md9954596d59be1a71a3e08fb` and checked the boundary on each side.
+
+| Transition | Arabic offset | Persian offset | Arabic boundary | Persian boundary |
+|---|---:|---:|---|---|
+| blessing → first petition | 331 | 277 | whitespace | whitespace |
+| first petition → second petition | 456 | 358 | whitespace | whitespace |
+
+Both sides end a sentence and begin the paired opening at the same point, so the two cuts are
+bilingual-aligned and each of them is a real transition rather than a length threshold. Cutting at
+both would turn the merged row into three rows with the ranges listed in the proposal file.
+
+**Why it is not applied.** The cuts retire `md9954596d59be1a71a3e08fb`, the merged row id that
+was only just published in this snapshot, and the review itself requires that id to be preserved.
+The alias entry that carries it onto the three resulting rows is in `round-4-alias-proposals.json`.
+No re-split was made for any other reason, and no row was re-split merely because it is long.
+
+### 7.3 What changed in Agent-4's own work in this round
+
+Nothing in `data/`. This round changed only the reports and the proposal files: the deep review of
+Agent-3's 49 flagged items was expanded into per-case evidence, the coordinator's pinned tool files
+were restored, and the known targeted test failure was recorded. Agent-4's author-ready snapshot is
+still `c9fa191acade1f72ab36e05f39ea931d4cb9cb5d`, so the review record bound to it stays valid and
+the items whose content changed still need a fresh independent review.
