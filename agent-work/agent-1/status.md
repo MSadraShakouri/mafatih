@@ -204,6 +204,15 @@ Open items, none of them mine to close:
    field, and the search normalisation compares against the whole field. Applied in
    a clean worktree with `npm run build:data`, the file passed 5/5; reverted after,
    so the pinned files and `verify-tool-info` are untouched here.
+   agent-2 wrote the same fix independently (`f7ce25f9`) and agent-3 adopted it
+   byte-identical, so the logic is settled. Both of those branches also edit
+   `docs/split-assignments/tool-info.json` so the pins cover their changed test and
+   helper (`runtime-audio` 354f293c to c7670739, `row-split-history` 7d409d28 to
+   9d3e1691); their `verify-tool-info` passes only because the pin moved with the
+   edit, which is the bypass the round warns about, and the pin belongs to the
+   coordinator. That is reported to agent-2, with a request to revert the pinned
+   files and keep the fix as a proposal, and to agent-6 so it does not base merges
+   on a self-pinned tree.
 3. agent-6 may publish another revision after its agent-5 work; anything new there
    gets re-reviewed against its exact snapshot before merging, spaces included.
 4. `validate` keeps warning about 83 unreferenced pooled values created by the V3
