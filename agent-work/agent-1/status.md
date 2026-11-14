@@ -269,3 +269,38 @@ current rows, its split-record segments and its merge aliases.
   *list of alias entries* (each with `original.id` and per-language segments), not
   a `retired → current` map. A checker that treats `aliases` as a map reports 82
   false staleness hits — worth knowing for their audit tooling.
+
+## Neighbour check: three claims verified, one tested
+
+**Agent-6's 142 retired row ids — confirmed.** Recomputed independently from their
+five snapshots against `df85a685`, using the coverage rule all three of us now
+share (current row, `rows[].original.id`, `aliases[].original.id`) widened with
+`rows[].results` and segment ids. Result: **142 unreachable ids in the same 16
+items, with the same per-item counts**, and none of the 142 is rescued even by the
+wider rule. Their list is not overstated.
+
+**Agent-2's 24 missing prior ids — confirmed.** Same rule against their branch
+head: 24 of 24 unreachable across `amal-byst-6` (4), `dua-hrm-hsyn-alyh` (4),
+`monajat-mnajat-tlb-rvzy` (16). Neither neighbour's count is inflated.
+
+**My own audit — hardened.** Every row id ever published for agent-1's 112 items
+(`9439f6ae`, `8d9704b9`, `ab1dbfb4`, `bfa51744`) resolved against the current
+mapping: **9,828 ids, 0 unreachable, 0 affected items.** The reason the count is
+zero while theirs is not is revision history, not method: I never re-cut a
+published source, and the one piece I did move between language slots
+(`namaz-slman` `r00010` ar→fa) happened before that item's first publication,
+which is why it carries no aliases at all. My items therefore add nothing to the
+coordinator's anchor-migration pile.
+
+**The merged-row reader fix — tested, not just read.** Agent-2's applied variant
+(`f7ce25f9`: helper returns `target_start`, test slices the built field at that
+offset, and additionally asserts `indexed.text` equals the whole built field)
+applied on this branch together with the failing pair
+(`amal-aamal-dkh-alqza` `r00006|r00007`, `--join exact`) gives **5/5**. That
+settles the comparison: their assertion implies mine (whole-field equality plus
+the slice check forces the index slice), while mine does not imply theirs, so
+theirs is the stronger single patch. Main should take it, with the round pin
+regenerated on `main` rather than carried from a round branch.
+
+State after the test: reverted, `git status` clean, `verify-tool-info` reports
+`tool-version-matches`, unpatched runtime-audio 5/5.
