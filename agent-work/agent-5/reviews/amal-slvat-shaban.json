@@ -4,11 +4,11 @@
   "item": "amal-slvat-shaban",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "29ee52b5410c6eeb313fe67751313576b887d647",
-  "plan_sha256": "efe41f64b15eaf571154486cb02c0852e664ae08effa47e795a1f42650f638ce",
-  "layout_sha256": "1ccb2d29e73a4a92c33262505f1557496772302430086f174d45bcbbc4a69d7a",
-  "result_item_sha256": "deae0d11c2b91a7ffaca3f8b4fa5e6d70ed1a9faba625529e5cbf8ac3480d21e",
-  "result_record_sha256": "a267f796ba9d6fb0a792ec0f34f784d824567280d3f866f5ae1c9e3b2ee296c6",
+  "author_commit": "160cb869136abe14c183ddc862ea653f1bc09094",
+  "plan_sha256": "5d664a4b6e242dd795b28939bd8b054f64ec51bb435750d128ec1c6769646059",
+  "layout_sha256": "44549dc3d1dbd766d501b25721779d33bd0b1dca26e0c8bf7c0557f261200c74",
+  "result_item_sha256": "6ca9a346afb56c771814a0a87c6080816f48da66959e42d3a6b3ce92479adeb6",
+  "result_record_sha256": "575d7ff560cd8f8f922afbe8ca66acb0a048b1acd6bf5c2223a2b1282d2989ee",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,84 +16,84 @@
     "item_sha256": "c85b38038000a660c7395d9a8a32bdc34e1be5164abb465008524437c5ae3a20",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "561703e0e62de3c50d7ac4df959ae1ceae7d35f645405d70a22db62abc196e41",
+    "preview_sha256": "2dbb18bd561feecc4b686e32458d9c637204ed69b555afeca653efd9d04da7bc",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "Standalone reciter-name label."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "accept",
+        "note": "Procedure continues into the next source row; review the ordinal and passage boundary."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "Part 0 includes procedural and narrative prose classified as recitation; inspect role boundaries and classify the prose appropriately."
+        "note": "The replacement note still contains a procedural continuation at the beginning and a separate numbered instruction at the end, with explanatory narrative between them. Reconsider role boundaries and preserve the continuation from r00002."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "accept",
+        "note": "Persian lead-in is separated from the Arabic recitation; recheck passage granularity."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "revise",
+        "note": "Existing Persian rendering of the Arabic recitation is classified instruction and emitted separately; classify as recitation and inspect a corresponding pairing."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "accept",
+        "note": "Recitation divided into three Arabic-only pieces; inspect boundaries against the existing Persian rendering."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "revise",
+        "note": "All three parts are an existing Persian recitation rendering, but are classified note and left unpaired; recheck boundaries and corresponding pairings."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "accept",
+        "note": "Arabic recitation split into two pieces; inspect against the Persian source and cross-row continuation."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "revise",
+        "note": "Existing Persian recitation rendering is classified instruction and left unpaired."
       },
       {
         "row": "r00007",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "accept",
+        "note": "Arabic recitation split into two pieces; check corresponding Persian boundaries and prior-row continuation."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "revise",
+        "note": "Both pieces are Persian recitation rendering, not instructions, and are left unpaired."
       }
     ],
     "punctuation": [],
@@ -107,6 +107,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00003/fa: Part 0 includes procedural and narrative prose classified as recitation; inspect role boundaries and classify the prose appropriately. Other rows remain pending."
+    "note": "r00003 mixes procedural and narrative roles in one note. r00004–r00007 separate the Arabic recitation and Persian rendering into unpaired rows and misclassify the Persian as instruction or note. Check cuts and meaning before pairing; source-row continuations must remain intact."
   }
 }
