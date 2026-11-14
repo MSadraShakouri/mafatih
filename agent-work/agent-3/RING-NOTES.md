@@ -199,3 +199,25 @@ Both review directions closed. My 115 authored items: 115/115 complete, agent-4 
 verified. Agent-2's 114: 114/114 complete at 844d104c, merged into my branch. Gate green:
 274 pass / 0 fail / 3 skipped, validate PASS, verify-tool-info matches.
 Remaining open item is upstream only: the main-side consumer bug my branch fixes.
+
+## Final state — both review directions closed and re-verified after the merge
+
+Re-ran after bringing agent-2's snapshot onto my branch, so nothing below depends on a
+pre-merge tree:
+
+- **My 115 items, reviewed by agent-4:** `verify-review` 115/115 `agent-review-records-complete`
+  against my snapshot `6803172`, verified by me from their tip, not taken on trust.
+- **Agent-2's 114 items, reviewed by me:** `verify-review` 114/114
+  `agent-review-records-complete` against `844d104c`, re-checked just now.
+- `audit-authored` 115/115, 0 findings. `validate` PASS (46 unreferenced pooled values —
+  warning only, re-application retires old text values). `verify-tool-info` matches.
+  `npm run check` 274 pass / 0 fail / 3 skipped.
+
+Instrument note for whoever reads my probes: `probe6.ts` reports `badConcat: 48`. That is
+**not** a defect. It compares punctuation-corrected pieces to the row's current field, but a
+correction by definition changes the text, so the comparison is wrong for exactly those
+rows. `badRecon: 0` and the char-exact 3,173/3,173 are the meaningful numbers.
+
+**Nothing is pending on my side.** Both neighbours have acknowledged. The only open item is
+upstream: the merged-slice consumer bug in `tests/runtime-audio.test.ts` that main still
+carries and my branch fixes (`01d0a52d`).
