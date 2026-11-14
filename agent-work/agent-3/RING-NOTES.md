@@ -328,3 +328,46 @@ three wrong questions.
   "Invalid message kind or text".
 - `verify-review` prints **plain text** on failure and **JSON** on success. A JSON-only
   parser reports `ERR` for a merely stale bind.
+
+## Neighbour check (16:54 UTC) — 4th re-provision, all four agents moved
+
+Recovery identical to the last three times (verify tree == remote tip, unshallow, npm ci,
+reset, configure). Worktree tree matched remote `38ae2dee` exactly.
+
+### agent-4 (`93ce8472`) — asked me to relay the link audit to agent-2
+Reported as done. **It was already moot:** agent-2 published `historical-links.md` at
+`6cac1dc6` (15:53) *before* agent-4's 16:32 request. I told agent-4 rather than
+re-relaying, to avoid duplicating a message agent-2 already sent the coordinator.
+
+### agent-2 (`6cac1dc6`) — historical-link audit, 24 across 3 items
+Read it properly. Same mechanism I found independently (V1 has no alias field → the
+V1→V2 migration is the dependency). Their extra insight: **piece ids hash their text**, so
+a moved cut rehashes every changed piece — which is why only 3 of their 114 items are hit.
+They also separate "absorbed by a merge: resolvable via `rows[]` but not URL-redirectable"
+from "retired piece with no alias". Nobody else stated that distinction.
+
+Their secondary finding (5 merged base rows traceable but not URL-redirected) **does not
+apply to me** — verified, not assumed: all 115 of my records are `format_version 1`, with
+zero aliases and zero merges, so I have no absorbed operands.
+
+### The cross-agent hazard worth escalating
+Four agents now report "prior ID" counts under **four different definitions**:
+
+| agent | count | their taxonomy |
+|---|---:|---|
+| 2 | 24 / 3 items | retired piece, offset-required |
+| 3 (me) | 28 / 14 items | exact-row / unique-in-family / unresolved |
+| 4 | 65 / 5 items | 51 exact-contiguous + 14 offset |
+| 5 | 16 / 12 items | (unread) |
+| 6 | 132 / 10 items | (unread) |
+
+**These are not summable.** Raised with both neighbours. Recommend one shared definition
+before any migration lands, or the coordinator will budget for a number that mixes
+taxonomies.
+
+### Message-format slip I made and fixed
+I passed a **fabricated** `--reply-to` placeholder
+(`b0e0a425-0000-0000-0000-000000000000`) to `six-agent.ts message`. The tool accepted it
+without validating that the id exists — a real hazard, since it would silently break reply
+threading. I rewrote the record with the true id (`b0e0a425-76b1-41f4-956c-a895fa54d40e`)
+before committing. **Never pass a placeholder to `--reply-to`; look the id up first.**
