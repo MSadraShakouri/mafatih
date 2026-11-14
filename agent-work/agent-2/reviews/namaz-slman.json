@@ -4,11 +4,11 @@
   "item": "namaz-slman",
   "author": "agent-1",
   "reviewer": "agent-2",
-  "author_commit": "ab1dbfb43e114cafad5cb9edb9f6525fca18834f",
-  "plan_sha256": "e53db7e48c6dd8abc74870454486040ddd05dfb1e09ffe529b1f3dcbd3dd5d87",
-  "layout_sha256": "f24b9e19c523f7b7f5fb237917be69897215709370a20f4af5ec0d3f9af48b7f",
-  "result_item_sha256": "6ce8169b5b893b37a1194d1b1cc5219a406e9d9b0ee2836e95bbb6206f982861",
-  "result_record_sha256": "8a8a9c43af481cd86ee6df898aa0eaaa498ee2bf479d92b4eecf51ee2b6527f8",
+  "author_commit": "bfa51744f09c5ac4ad7283942776038645d4503b",
+  "plan_sha256": "565841b7df82c9ac30252f0e30fc428f6c9e15e653dcde1e8f4fb088c71a5e7d",
+  "layout_sha256": "213effab711cafbe00102aa9d25ce90caeef4b122523b71500f34d1aba92f726",
+  "result_item_sha256": "884b726363e63ecdb29ee8357dd8f958996a87e4286e47a973109986ec75e27b",
+  "result_record_sha256": "bcbc447dfa683eb1fe43e0e42cd61b7fa241c6425d18e7ffe330ba9ae2164652",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "f562cc9ae868fb0249751734c24549d947a3bd2af385c0734988fb61744ef94d",
     "author": "agent-1",
     "reviewer": "agent-2",
-    "preview_sha256": "23ca8db41fe3c5e4af16bb5ba36ec9454ec46d1af0865006bed3bf35c97af54c",
+    "preview_sha256": "5cd0e8b84829e25a634dbd6ce218e17cdad54d1ae724d12e6d0ffb6f6214d968",
     "sources": [
       {
         "row": "r00001",
@@ -120,8 +120,8 @@
         "row": "r00010",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Independent check found Persian-language narrative prose left on the ar side with kind recitation and no recorded issue, while the same item re-homes the analogous r00001 and r00006 Persian pieces to the fa field. Recommend the same treatment here: move the piece to the fa destination with kind note. The split itself (no cuts) needs no change."
+        "kind": "accept",
+        "note": "Re-reviewed against bfa51744: the r00010 Persian prose now sits in the fa slot with kind note and the mixed-language finding recorded, matching r00001 and r00006; the pooled text ref is unchanged so the wording is byte-identical, and the split is unchanged."
       }
     ],
     "punctuation": [],
@@ -129,17 +129,22 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+        "note": "Verified against the original and applied rows: the Persian piece is re-homed to the fa field with wording unchanged, matching the treatment of the other mixed-language rows."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+        "note": "Verified against the original and applied rows: the Persian piece is re-homed to the fa field with wording unchanged, matching the treatment of the other mixed-language rows."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the Persian piece is re-homed to the fa field with wording unchanged, matching the treatment of the other mixed-language rows."
       }
     ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "Row pairings and reconstruction verified exact for every row except r00010, whose Persian piece stays on the ar side with kind recitation; see the source finding. All other pairings, re-homes and kinds are correct."
+    "decision": "accept",
+    "note": "Row pairings and reconstruction verified exact for every row including r00010, whose Persian piece is now correctly on the fa side with kind note. The revise finding from my reviews of 9439f6a/8d9704b/ab1dbfb4 is resolved; all pairings, re-homes and kinds are correct."
   }
 }
