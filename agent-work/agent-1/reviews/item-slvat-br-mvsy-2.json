@@ -4,11 +4,11 @@
   "item": "item-slvat-br-mvsy-2",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "3ddec2ab27b41fc518eef04680460d689f50344ce3bf69aa39117ed8869ac771",
-  "layout_sha256": "b63a920a88bd6bd1e6eea54acf7aa8b2810feb736da79b9735438ee6c0e0d018",
-  "result_item_sha256": "4008aa8b9736f633441df20c4958eb790ea5701392a806f6b560682489d32658",
-  "result_record_sha256": "8e1d6188c2f675ba7f4b4f3ea96488217edf568106778359a86fcf54ef46113e",
+  "layout_sha256": "e8845dc34cab6ee719d6268093530114d909366b7f0a4b47b9e474d87becfb03",
+  "result_item_sha256": "30d43d376b2e415485c3f789364c7a5bb88e85fd704cefc10ed1367b7ddce8cc",
+  "result_record_sha256": "68d95e10fe926c0c2cb2c3654ce9bb0e3d87d7de01c0232c88a814248e2c7df1",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,21 +23,21 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 7 pieces (6 cuts), kind recitation; 7 paired with the other language in the same output rows; lengths 50/22/21/23/32/61/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 6 pieces (6 cuts), kind recitation; 6 paired with the other language in the same output rows; lengths 50/22/21/23/32/61. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 7 pieces (6 cuts), kind recitation; 7 paired with the other language in the same output rows; lengths 37/14/16/14/10/60/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 6 pieces (6 cuts), kind recitation; 6 paired with the other language in the same output rows; lengths 37/14/16/14/10/60. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 6 pieces (5 cuts), kind recitation; 5 paired with the other language in the same output rows; 1 left unpaired where the language rows cross; lengths 22/30/86/24/89/24. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 5 pieces (5 cuts), kind recitation; 5 paired with the other language in the same output rows; lengths 30/86/24/89/24. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
@@ -58,6 +58,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 4 sources are placed once, in order: 14 output rows, 12 of them carrying Arabic and Persian together. Piece lengths run 30 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 4 sources are placed once, in order: 13 output rows, 12 of them carrying Arabic and Persian together. Piece lengths run 32 code points at the median, inside the manual-v1 range. 1 inserted space across 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "m573014aea96fa9f7c4e44608",
+      "language": "ar",
+      "target_start": 60,
+      "value": " ",
+      "left": "r00001-s7767019033990731",
+      "right": "r00002-sb4c2bfb77eb89124",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «تُودِعَ مِنْ» and «أَمْرِكَ وَ » at destination offset 60, where the original row boundary cut a sentence (r00001-s7767019033990731 to r00002-sb4c2bfb77eb89124). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }

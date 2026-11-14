@@ -4,11 +4,11 @@
   "item": "dua-baqr-alyh-alslam",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "11e7075f74405a9656017a2213a8a5c31f437058f6be96352129afdf90e87e6b",
-  "layout_sha256": "bd225dd0c80af01e49a52e74ec58433006ef27bcaef3eb531160c6ac0ac94b4d",
-  "result_item_sha256": "eeffd438dbdb6218d6e572ea1ff0cc7d01182735f5bb52047e77abd7da9ba0f7",
-  "result_record_sha256": "6270f731f1ad5e4a7c1c56a5ef54957ff258e21f4d0b7a8e81ad32abe074703d",
+  "layout_sha256": "150b6eb07adf928b85955fd5942b592b9c13dd795f6a909770051937b1acf87e",
+  "result_item_sha256": "3f1288b5a18487e0060e87c1265cc70b223e8fb1c4b556a1ab53a112ea0f553c",
+  "result_record_sha256": "c48a60e9433add9d9c0e0d7cb44709489f3f35ded28edbd386a068f537c756aa",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -30,14 +30,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 4 pieces (3 cuts), kind recitation; single-language; 4 in a row the source stores in this language only; lengths 39/45/55/37. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 3 pieces (3 cuts), kind recitation; single-language; 3 in a row the source stores in this language only; lengths 39/45/55. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; single-language; 1 in a row the source stores in this language only; lengths 23. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -45,6 +45,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 3 sources are placed once, in order: 7 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 45 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 3 sources are placed once, in order: 6 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 54 code points at the median, inside the manual-v1 range. 1 inserted space across 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "m0b12d09adf80a6fda179e2cc",
+      "language": "ar",
+      "target_start": 37,
+      "value": " ",
+      "left": "r00002-seb6222a3827d90b5",
+      "right": "r00003",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «يِ الدُّنْيا» and «وَ عَذَابِ ا» at destination offset 37, where the original row boundary cut a sentence (r00002-seb6222a3827d90b5 to r00003). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }

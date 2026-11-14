@@ -4,11 +4,11 @@
   "item": "item-adayh-vqt-tlva",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "91a1ef621f35eb6ff199701556b457d424ca1f7e3bc88c7867256ef23f4210b0",
-  "layout_sha256": "6a4f2de7dd7bd52c44df42db7cbda27a045577bcd8e33ce53d9d6f6bb5455da2",
-  "result_item_sha256": "3c7ad8db10b37a0076eecda93f62cd8cfdf33bc853ee87057c5c73452fc32402",
-  "result_record_sha256": "eb158e9557e1f63f5847728aa73cac65c0ad6c185e19a1a960dc0bbeb8335f67",
+  "layout_sha256": "d0a403ad2493c58af977c8b6025bf7d268f33d9eec3e7c396bd818e097113cc4",
+  "result_item_sha256": "8e3b02f1d0cd11eee7edcedd697f8a35e9c80fe1e24e86b0687b3c86f6a2fda3",
+  "result_record_sha256": "a3976d91c99d0235d4695c68d1e7af26b54cef1645c79528d222f8ad7aa6513f",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,7 +23,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 4 pieces (3 cuts), kind note; single-language; 4 in a row the source stores in this language only; lengths 257/226/131/216; a section label stays fused with the passage it opens. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 4 pieces (3 cuts), kind note; single-language; 4 in a row the source stores in this language only; lengths 257/226/131/216; a section label opens the passage in the same row, as in the base corpus. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
@@ -65,7 +65,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 2 pieces (1 cut), kind note; single-language; 2 in a row the source stores in this language only; lengths 154/242; a section label stays fused with the passage it opens. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 2 pieces (1 cut), kind note; single-language; 2 in a row the source stores in this language only; lengths 154/242; a section label opens the passage in the same row, as in the base corpus. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00007",
@@ -128,7 +128,7 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; single-language; 1 in a row the source stores in this language only; lengths 60. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00013",
@@ -325,72 +325,72 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as recitation, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as recitation, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 3,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 4,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 5,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 6,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 7,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 8,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 9,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 10,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 11,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 12,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 13,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 14,
@@ -400,7 +400,7 @@
       {
         "index": 15,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 16,
@@ -431,6 +431,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 43 sources are placed once, in order: 101 output rows, 57 of them carrying Arabic and Persian together. Piece lengths run 45 code points at the median, inside the manual-v1 range. At r00001/fa, r00006/fa a section label opens the passage inside the same row; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted, and the earlier suggestion to detach bare ordinals is withdrawn. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 43 sources are placed once, in order: 100 output rows, 57 of them carrying Arabic and Persian together. Piece lengths run 46 code points at the median, inside the manual-v1 range. 1 inserted space across 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "mdbe6f80dd13550de2de03b49",
+      "language": "ar",
+      "target_start": 43,
+      "value": " ",
+      "left": "r00011-s4672e46d8224a853",
+      "right": "r00012",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «َلِیمِ، مِنَ» and «الشَّيْطَانِ» at destination offset 43, where the original row boundary cut a sentence (r00011-s4672e46d8224a853 to r00012). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }

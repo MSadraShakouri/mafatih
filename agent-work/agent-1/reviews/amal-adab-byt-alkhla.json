@@ -4,11 +4,11 @@
   "item": "amal-adab-byt-alkhla",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "66f9c2315da57ee57089d577beb4dbc9f861680866b16dd5b0d5f43c792c136e",
-  "layout_sha256": "1b041af266e849c5cb1e4e0309ad242839c04c4ba6f3d99202c788a3ec002155",
-  "result_item_sha256": "8aa678f52b5f20c01f10932f85825aaab41e17e7a906f34b67156c4a9635db31",
-  "result_record_sha256": "f05842881b3a62dedbdf5a652179bb4dd3324599e9d29c88169af7304164d832",
+  "layout_sha256": "ecf566a325192790635756ec21279300ce93a9520ff84a36cc1a01df479baf3d",
+  "result_item_sha256": "1d9caa6a258994594dc3b4016a16658ad63d32fc463570b70f8bb37480c2d853",
+  "result_record_sha256": "d4f20913b284b8d1abd2826e2f0b631302e176ecf6b28bc6ecbc9a0a4e755142",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -86,14 +86,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 59. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 64. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00008",
@@ -155,37 +155,37 @@
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 3,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 4,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 5,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 6,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 7,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 8,
@@ -196,6 +196,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 18 sources are placed once, in order: 33 output rows, 20 of them carrying Arabic and Persian together. Piece lengths run 34 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 18 sources are placed once, in order: 32 output rows, 20 of them carrying Arabic and Persian together. Piece lengths run 34 code points at the median, inside the manual-v1 range. 1 inserted space across 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "m25662819b10556b62fb74eba",
+      "language": "ar",
+      "target_start": 15,
+      "value": " ",
+      "left": "r00006-s607f491d5e7bd839",
+      "right": "r00007",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «ْحَمْدُ للّه» and «الَّذِي جَعَ» at destination offset 15, where the original row boundary cut a sentence (r00006-s607f491d5e7bd839 to r00007). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-yazdhm-raz",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "40b251b0599f47c2c24da6d5f03f3abcd34cab33ba4e7970d662179ba3dc9f81",
-  "layout_sha256": "3dfb0304830586a0d1924525d337943e3c67263c7f12f1685fb9f26eba2ed315",
-  "result_item_sha256": "a71e275c964998ea23c7ec4544ffdad1647326771bdb1ad5f74fab67acebd887",
-  "result_record_sha256": "26dd6a669789180acc59f7b248d7fc658a9c2247bcfdf83f41f1f2b05c66b6f5",
+  "layout_sha256": "9d9a1cb2260dcb80d3141b95eea65304aaa6481b1761f5a3744f15e1675b2a5c",
+  "result_item_sha256": "4132000231de1036f49a57c8bb8a771a26fb95d38018e29c5f9c506686210a0b",
+  "result_record_sha256": "f0a295907a2bdc9537c4b31b1048895bc859b666b3f21789ade12bc194539f67",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -324,28 +324,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 22. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00023",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 14. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00024",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 12. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00024",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 10. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00025",
@@ -733,6 +733,30 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 99 sources are placed once, in order: 50 output rows, 49 of them carrying Arabic and Persian together. Piece lengths run 35 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 99 sources are placed once, in order: 49 output rows, 48 of them carrying Arabic and Persian together. Piece lengths run 36 code points at the median, inside the manual-v1 range. 2 inserted spaces across 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "m85510fc4917d3fb57b65dcf3",
+      "language": "ar",
+      "target_start": 22,
+      "value": " ",
+      "left": "r00023",
+      "right": "r00024",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «تَهَی أَمَلِ» and «الْآمِلِينَ،» at destination offset 22, where the original row boundary cut a sentence (r00023 to r00024). Both retained slices stay byte-identical; no other character is added or removed."
+    },
+    {
+      "row": "m85510fc4917d3fb57b65dcf3",
+      "language": "fa",
+      "target_start": 14,
+      "value": " ",
+      "left": "r00023",
+      "right": "r00024",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between « نهایت آرزوی» and «آرزومندان،» at destination offset 14, where the original row boundary cut a sentence (r00023 to r00024). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }

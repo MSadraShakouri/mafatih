@@ -4,11 +4,11 @@
   "item": "dua-kumayl",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "550c432748dde4e65237035e870777d6fdd111bf022307553be1c0a03e157abc",
-  "layout_sha256": "017db4508dcad9090c41606572b1ec454c8451c1f8c8ba90439c7c024fc54ae6",
-  "result_item_sha256": "020b9eededb9cc8a0b72267d302b91742dbcc84a05e112800b70e21d966712fc",
-  "result_record_sha256": "6c45dda350869614696f843416106cb893df460e1dd7a2e3aa4918b5e0db11ea",
+  "layout_sha256": "5e11c2b51e6b842f090383a2c7b592a97cc14c20f8211373bca6d822a119d452",
+  "result_item_sha256": "4fb48666917832ffe36c8177213f479d2265a799007be8a6b414ff4c343d6a02",
+  "result_record_sha256": "9f7287a2f65fb99bc220b4da5833db1fb17f052f47312c6fb17b6e3f71068d63",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -3446,28 +3446,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 13. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00251",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 33. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00252",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 22. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00252",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 18. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00253",
@@ -3806,6 +3806,30 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 523 sources are placed once, in order: 269 output rows, 256 of them carrying Arabic and Persian together. Piece lengths run 40 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 523 sources are placed once, in order: 268 output rows, 255 of them carrying Arabic and Persian together. Piece lengths run 40 code points at the median, inside the manual-v1 range. 2 inserted spaces across 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "mf119d41aeb2605d1dc479654",
+      "language": "ar",
+      "target_start": 13,
+      "value": " ",
+      "left": "r00251",
+      "right": "r00252",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «َبِعِزَّتِكَ» and «اسْتَجِبْ لِ» at destination offset 13, where the original row boundary cut a sentence (r00251 to r00252). Both retained slices stay byte-identical; no other character is added or removed."
+    },
+    {
+      "row": "mf119d41aeb2605d1dc479654",
+      "language": "fa",
+      "target_start": 33,
+      "value": " ",
+      "left": "r00251",
+      "right": "r00252",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «ند می‌دهم که» and «دعایم را اجا» at destination offset 33, where the original row boundary cut a sentence (r00251 to r00252). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }

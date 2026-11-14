@@ -4,11 +4,11 @@
   "item": "sura-svrh-alnba",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "ce1ce66dbb49b2c5f4211f7ddc6467bd269a49ed87804be7428890a9780bc3e1",
-  "layout_sha256": "4478a1759ec8ddd88be22e788c921c0956204e51d593ef41aa1c948a7243fd06",
-  "result_item_sha256": "ffcee7646fd7f7e60336558451cf4e6c21c043828c94b1e226624a3340c6bd95",
-  "result_record_sha256": "44bdb3afee613c7a5cc0eafe4c2fe36c1bd8873c9ef3eaf847cd91dee376db9f",
+  "layout_sha256": "290cf8b37d3d5f1c17f8b8dcb3ef8d12f7bf299ac284faac456e526640abc211",
+  "result_item_sha256": "4e714d64f5cffb494c32a6f5e735096ed6e67e6d5d72fe2b7b69a4e1c9d8187d",
+  "result_record_sha256": "b88803085f42667ea4c487bad43d83d068dee6331c2e983223cf101e17e70e65",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -436,21 +436,21 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; single-language; 1 in a row the source stores in this language only; lengths 7. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00032",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 34. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00032",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 126. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00033",
@@ -618,6 +618,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 84 sources are placed once, in order: 43 output rows, 41 of them carrying Arabic and Persian together. Piece lengths run 42 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 84 sources are placed once, in order: 42 output rows, 41 of them carrying Arabic and Persian together. Piece lengths run 43 code points at the median, inside the manual-v1 range. 1 inserted space across 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "m51ca7451e0291b6ca5c91c21",
+      "language": "ar",
+      "target_start": 7,
+      "value": " ",
+      "left": "r00031",
+      "right": "r00032",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «وَكُلَّ» and «شَيْءٍ أَحْص» at destination offset 7, where the original row boundary cut a sentence (r00031 to r00032). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }

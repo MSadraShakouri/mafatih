@@ -4,11 +4,11 @@
   "item": "namaz-rsvl-sly-allh",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "b8be09ceb0e6e4343d3b5de1ef998e92bfdbab2a23c47520baf2fa1e68703920",
-  "layout_sha256": "cc129ec3537b2a7d102248d41c5277cd6d8cf27c4bd2196806676d2470af8d65",
-  "result_item_sha256": "77ba8bfc772d67a2a91b971e0a2a9880eef965b69aff75c25cd5587c8bec9fb6",
-  "result_record_sha256": "5c56ff77f92e7db45c889b387914c96afc4ca1ab1fdc6e45aff38ba6a84ebc9a",
+  "layout_sha256": "c4fa1f3abc17a8fd19fe4bad1f085441fa562e59dd568a558ac77088c509bc47",
+  "result_item_sha256": "2462e5874bb737f98139539f829db567f9725c90790e754f1ee80ca8314b7455",
+  "result_record_sha256": "8f7099ab30a8eefcd052ae69fad826d539bb8b32f181dad8e6ce4d0f5d50c88f",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -37,28 +37,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 13 pieces (12 cuts), kind recitation; 13 paired with the other language in the same output rows; lengths 26/41/69/52/57/53/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 12 pieces (12 cuts), kind recitation; 12 paired with the other language in the same output rows; lengths 26/41/69/52/57/53/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 13 pieces (12 cuts), kind recitation; 13 paired with the other language in the same output rows; lengths 27/25/69/48/60/45/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 12 pieces (12 cuts), kind recitation; 12 paired with the other language in the same output rows; lengths 27/25/69/48/60/45/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 18 pieces (17 cuts), kind recitation; 18 paired with the other language in the same output rows; lengths 62/81/20/29/18/22/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 17 pieces (17 cuts), kind recitation; 17 paired with the other language in the same output rows; lengths 81/20/29/18/22/21/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 18 pieces (17 cuts), kind recitation; 18 paired with the other language in the same output rows; lengths 60/79/10/13/12/10/…; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 17 pieces (17 cuts), kind recitation; 17 paired with the other language in the same output rows; lengths 79/10/13/12/10/11/…; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00005",
@@ -80,12 +80,36 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 8 sources are placed once, in order: 38 output rows, 31 of them carrying Arabic and Persian together. Piece lengths run 36 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 8 sources are placed once, in order: 37 output rows, 30 of them carrying Arabic and Persian together. Piece lengths run 36 code points at the median, inside the manual-v1 range. 2 inserted spaces across 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "mb84306f3696231cd0915f6d4",
+      "language": "ar",
+      "target_start": 24,
+      "value": " ",
+      "left": "r00003-s78c3441e400eeaee",
+      "right": "r00004-s2d6fcdaf315ab02c",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «أَنْتَ نُورُ» and «السَّمَاوَات» at destination offset 24, where the original row boundary cut a sentence (r00003-s78c3441e400eeaee to r00004-s2d6fcdaf315ab02c). Both retained slices stay byte-identical; no other character is added or removed."
+    },
+    {
+      "row": "mb84306f3696231cd0915f6d4",
+      "language": "fa",
+      "target_start": 15,
+      "value": " ",
+      "left": "r00003-s78c3441e400eeaee",
+      "right": "r00004-s2d6fcdaf315ab02c",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: the single U+0020 sits between «یا تویی! نور» and «آسمان‌ها و ز» at destination offset 15, where the original row boundary cut a sentence (r00003-s78c3441e400eeaee to r00004-s2d6fcdaf315ab02c). Both retained slices stay byte-identical; no other character is added or removed."
+    }
+  ]
 }
