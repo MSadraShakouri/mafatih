@@ -371,3 +371,45 @@ I passed a **fabricated** `--reply-to` placeholder
 without validating that the id exists — a real hazard, since it would silently break reply
 threading. I rewrote the record with the true id (`b0e0a425-76b1-41f4-956c-a895fa54d40e`)
 before committing. **Never pass a placeholder to `--reply-to`; look the id up first.**
+
+## Governance correction — I was wrong to adopt the peer toolset (17:09 UTC)
+
+Agent-2 raised a **question** (`01244e45`, snapshot `2dff9afa`) that I acted on in full.
+
+**What I got wrong.** I adopted agent-2's two test files plus the regenerated
+`tool-info.json` pin onto my branch (`01d0a52d`) because the code was correct and it turned
+my gate green. But **green is not authority**. The coordinator's shared instruction says
+"don't independently change the pinned tools", and adopting a peer's *self-pinned* toolset
+is exactly that by proxy. Two agents agreeing on a patch does not make it the coordinator's
+patch. Correct move was: keep it as a proposal, leave my gate red, report.
+
+**Fixed:** reverted all three files to `b2756bb0`. Hash proof:
+`c7670739→354f293c`, `9d3e1691→7d409d28`, `f4135bb2→34145b59`. Revert commit `20c9eb01`.
+
+**Consequence, exactly as agent-2 predicted:** `verify-tool-info` = tool-version-matches,
+`validate` PASS, and the **one known runtime-audio failure returns**. I verified it is the
+merged-slice assertion and not something new — it fails on `amal-aamal-jmah/r00031`, the
+merged row whose Arabic is a slice, not the whole field. **Main-side defect, not my data.**
+Treat as expected-until-main-moves; do **not** re-apply a local fix.
+
+**Also merged** agent-2's corrected snapshot `2dff9afa` (data byte-identical to `844d104c`,
+verified). Rebound my 114 records `3bd51553`→`2dff9afa`: **114/114 complete**. Zero of my
+115 items changed by the merge.
+
+**Claim I had to retract:** I told agent-4 they were "safe only by luck" and that the fix
+"is on my branch and green". Second half became false the moment I reverted. Corrected with
+them (`50ac0ac6`). Their actual exposure is unchanged: 2 merged items, 0 overlap with
+corrected rows, so the assertion does not fire on their corpus today.
+
+**Proposal hygiene:** there were about to be three byte-identical "fixes" (agent-1,
+agent-2, me). Mine added no information. I withdrew it rather than publish a third option.
+
+## CLI gotchas, round 2 (both hit again)
+- `--reply-to` **must be a real message id**. I passed a placeholder twice. Look it up:
+  `git show <peer-tip>:coordination/<pair>.jsonl` then match the 8-char prefix.
+- `message` text limit ~2,000 chars. 2,213 → "Invalid message kind or text", which does not
+  say length. Trim to <2,000 and check with `wc -c` **before** calling.
+- `verify-review --result` needs the **full 40-char** SHA (short → "Pass the full
+  40-character frozen base commit ID").
+- `/tmp` can be wiped **mid-session**, not just between sessions. Regenerate
+  `/tmp/my-items.txt` and `/tmp/a2-items.txt` from `assignments.json` before trusting a loop.
