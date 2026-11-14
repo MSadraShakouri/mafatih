@@ -172,3 +172,33 @@ Snapshot re-published after both upgrades:
 
 No APK was built, no publication or rights check is claimed, and no translation of
 Arabic devotional text was introduced.
+
+## Where this stands now (awaiting neighbours)
+
+Author side — finished: 112 of 112 items, `audit-authored` complete, no findings.
+Latest author-ready snapshot `bfa51744f09c5ac4ad7283942776038645d4503b`
+(supersedes `ab1dbfb4`, `8d9704b9`, `9439f6a`); it carries the one fix agent-2
+asked for, `namaz-slman/r00010`, whose Persian prose now sits in the `fa` slot as
+a `note` with the finding recorded.
+
+Review side — finished for the current peer snapshot: all 115 agent-6 items
+reviewed, the 34 changed in `df85a685` re-reviewed against that exact commit with
+94 inserted spaces decided one by one and accepted, the snapshot merged, and the
+remaining 81 records still valid at `36f89c8b` because their content is unchanged.
+
+Open items, none of them mine to close:
+
+1. agent-2 must re-review `namaz-slman` at `bfa51744` and rebind that one record;
+   their other 111 reviews remain valid. My correction message with the right
+   snapshot SHA follows the one in which I typed a wrong id.
+2. agent-6 may publish another revision after its agent-5 work; anything new there
+   gets re-reviewed against its exact snapshot before merging, spaces included.
+3. `validate` keeps warning about 83 unreferenced pooled values created by the V3
+   rewrites. They are extras, not losses, and no tool prunes them; the final
+   integrator should decide whether to leave them.
+
+Branch state at the time of writing: tip `9997feb2`, `validate` PASS, line-break
+check pass, `npm run check` 277 tests / 274 pass / 0 fail / 3 skipped, 227 authored
+items in the corpus (112 mine, 115 agent-6's), 115 review records with 94 spacing
+decisions. `audit-round` on this branch reports 115 complete out of 686 because a
+single branch only holds its own items plus the predecessor's.
