@@ -30,9 +30,14 @@
       "language": "fa",
       "source_sha256": "f0438c86bed917a0995f373b21b1119eda0a6541916e509895e7e5ca38fd3514",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        74,
+        409
+      ],
       "kinds": [
-        "note"
+        "instruction",
+        "note",
+        "instruction"
       ]
     },
     {
@@ -55,7 +60,7 @@
       "checked": true,
       "cuts": [],
       "kinds": [
-        "instruction"
+        "recitation"
       ]
     },
     {
@@ -64,10 +69,14 @@
       "source_sha256": "b9fe2d95b714e6f5beca5fcd9314a3970ffb98a8fe8839e4cbbc74a877cac106",
       "checked": true,
       "cuts": [
+        79,
         247,
-        443
+        443,
+        607
       ],
       "kinds": [
+        "recitation",
+        "recitation",
         "recitation",
         "recitation",
         "recitation"
@@ -79,13 +88,17 @@
       "source_sha256": "f87bf0a07aa04a08bae5846823e459e7d895ac66e5310db08dea6e0cb6dfb7dd",
       "checked": true,
       "cuts": [
-        227,
-        396
+        84,
+        220,
+        396,
+        538
       ],
       "kinds": [
-        "note",
-        "note",
-        "note"
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
       ]
     },
     {
@@ -106,9 +119,12 @@
       "language": "fa",
       "source_sha256": "3ea4f1c2add12a6bec88e8bd18e18527b0f22c754e7daf281c8d51efb74de1c7",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        104
+      ],
       "kinds": [
-        "instruction"
+        "recitation",
+        "recitation"
       ]
     },
     {
@@ -117,9 +133,11 @@
       "source_sha256": "a7d11c4b6df796b3f95761a53a3fd6dfbc9536783d038aac1e1b88ea0de48b33",
       "checked": true,
       "cuts": [
+        114,
         206
       ],
       "kinds": [
+        "recitation",
         "recitation",
         "recitation"
       ]
@@ -130,21 +148,35 @@
       "source_sha256": "179ebf1d78c40b089f21d42b6d8fd81a74af4c3cd14d4b732adc1e6a9b80c087",
       "checked": true,
       "cuts": [
-        133
+        126,
+        197
       ],
       "kinds": [
-        "instruction",
-        "instruction"
+        "recitation",
+        "recitation",
+        "recitation"
       ]
     }
   ],
   "punctuation_suggestions": [],
   "issues": [
     {
-      "row": "r00004",
+      "row": "r00003",
+      "language": "fa",
+      "kind": "ambiguous-boundary",
+      "note": "r00002/r00003 fa cp143/0 has no whitespace; a cross-row merge would touch. Kept adjacent and reported for separately reviewed editorial correction."
+    },
+    {
+      "row": "r00005",
       "language": "ar",
-      "kind": "mixed-language",
-      "note": "Exact code-point cuts 140; moved parts to destination fields shown in the layout."
+      "kind": "ambiguous-boundary",
+      "note": "r00004/r00005 ar cp484/0 and r00005/r00006 ar cp783/0 have no whitespace; cross-row merges would touch. Pairings stay within frozen rows pending separately reviewed editorial correction."
+    },
+    {
+      "row": "r00007",
+      "language": "ar",
+      "kind": "ambiguous-boundary",
+      "note": "r00006/r00007 ar cp309/0 has no whitespace; a cross-row merge would touch. Pairings stay within frozen rows pending separately reviewed editorial correction."
     }
   ]
 }
