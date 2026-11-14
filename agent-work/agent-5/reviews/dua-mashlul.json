@@ -1,0 +1,3313 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-mashlul",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "e38687245a3511c26202f53d9eb2e5340370c79829e8fa725aabd5eff25697fd",
+  "layout_sha256": "3d4a1fdf192d5dbeb45932cd07ff5679bd0ee1154c560670ec485bed877e449f",
+  "result_item_sha256": "8e189d7c755fc688d6f39ae981b9db520de4cdd5937aabf2a18e1cf029177155",
+  "result_record_sha256": "5e3c10d9d6b754d84c1f24d8eae3788611d9c8de0796031dce57e0f082c41910",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-mashlul",
+    "item_sha256": "f68f5536fd71fb65c0cecedaa3c7d185703b8d23c16fbeec4b1d8422aa47e9c3",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "8130b97d6bce4e4e71e22ec223236b8c3f6e1fa4a4ab0a2ae37fd90b7e1b1170",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The reciter name is audio metadata, not devotional text."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The title/attribution and narrative about the young man are reported as source context, not verified historical or medical claims."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The title/attribution and narrative about the young man are reported as source context, not verified historical or medical claims."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “اَللّٰهُمَّ إِنِّى أَسْأَلُكَ بِاسْمِكَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “خدایا! از تو خواستارم به نامت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “به نام خدا که رحمتش بسیار و مهربانیاش همیشگی است،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْجَلالِ وَ الإِكْرامِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دارای بزرگی و بزرگواری،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حَىُّ يَا قَيُّومُ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای زنده‌ای همیشه پاینده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حَىُّ لَا إِلٰهَ إِلّا أَنْتَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای زنده، معبودی جز تو نیست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا هُوَ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای او،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَايَعْلَمُ ما هُوَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که کسی نمی‌داند او چیست”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ لَا كَيْفَ هُوَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و نمی‌داند او چگونه است”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ لَا أَيْنَ هُوَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و نمی‌داند کجاست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ لَا حَيْثُ هُوَ إِلّا هُوَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و نمی‌داند در کدام سو است،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْمُلْكِ وَ الْمَلَكُوتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دارای فرمانروایی و ملکوت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْعِزَّةِ وَ الْجَبَرُوتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای صاحب عزّت و جبروت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يا مَلِكُ يَا قُدُّوسُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فرمانروا، ای منزّه از هرعیب،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا سَلامُ يَا مُؤْمِنُ يَا مُهَيْمِنُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای سلام، ای ایمنیبخش، ای پرشکوه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عَزِيزُ يَا جَبّارُ يَا مُتَكَبِّرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای عزّتمند، ای دارنده قره، ای بزرگمنش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا خالِقُ يَا بارِئُ يَا مُصَوِّرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آفریننده، ای پدیدآوردنده، ای صورتگر،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُفِيدُ يَا مُدَبِّرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای سودبخش‌ای تدبیر کننده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا شَدِيدُ يَا مُبْدِئُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای محکم کار، ای آغازگر،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Persian for the Arabic مُبِيدُ and the next row’s وَدُودُ occurs here, while مُعِيدُ has no visible Persian equivalent. Group r00022/23 to align available phrases and preserve the source omission."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Persian for the Arabic مُبِيدُ and the next row’s وَدُودُ occurs here, while مُعِيدُ has no visible Persian equivalent. Group r00022/23 to align available phrases and preserve the source omission."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian for Arabic وَدُودُ is in r00022; group these invocations while preserving the missing مُعِيدُ rendering."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian for Arabic وَدُودُ is in r00022; group these invocations while preserving the missing مُعِيدُ rendering."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا بَعِيدُ يَا قَرِيبُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دور از هر چیز، ای نزدیک به هرچیز،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُجِيبُ يَا رَقِيبُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای اجابت کننده، ای دیدبان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00026",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حَسِيبُ يَا بَدِيعُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای حسابرس، ای نورآفرین،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00027",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رَفِيعُ يَا مَنِيعُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بلندمرتبه، ای ارجمند،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00028",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا سَمِيعُ يَا عَلِيمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای شنوا، ای دانا،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00029",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حَلِيمُ يَاكَرِيمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بردبار، ای بزرگوار،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00030",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حَكِيمُ يَا قَدِيمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فرزانه، ای دیرینه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00031",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عَلِىُّ يَا عَظِيمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای والا، ای بزرگ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00032",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حَنَّانُ يَا مَنَّانُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پرمهر، ای عطابخش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00033",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا دَيَّانُ يَا مُسْتَعانُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00033",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای جزادهنده، ای یاری کننده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00034",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَاجَلِيلُ يَا جَمِيلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00034",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای با جلالت، ای زیبا،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00035",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا وَكِيلُ يَا كَفِيلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00035",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای کارگزار، ای کفایت‌کننده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00036",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُقِيلُ يَا مُنِيلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00036",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بخشنده لغزش، ای رساننده نعمت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00037",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا نَبِيلُ يَا دَلِيلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00037",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای شریف، ای رهنما،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00038",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا هادِى يَا بادِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00038",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای هدایت‌گر، ای آغازگر،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00039",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا أَوَّلُ يَا آخِرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00039",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای اوّل، ای آخر،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00040",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ظاهِرُ يَا باطِنُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00040",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آشکار، ای پنهان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00041",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا قائِمُ يَا دائِمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00041",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای استوار، ای پایدار،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00042",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عالِمُ يَا حاكِمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00042",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آگاه، ای حکمران،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00043",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا قاضِى يَا عادِلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00043",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای داور، ای دادگر،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00044",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا فاصِلُ يَا واصِلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00044",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای جدا کننده، ای پیونددهنده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00045",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا طاهِرُ يَا مُطَهِّرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00045",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پاک، ای پاک‌کننده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00046",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا قادِرُ يَا مُقْتَدِرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00046",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای توانا، ای نیرومند،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00047",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا كَبِيرُ يَا مُتَكَبِّرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00047",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بزرگ، ای بزگمنش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00048",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا واحِدُ يَا أَحَدُ يَا صَمَدُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00048",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای یگانه، ای یکتا، ای مقصود دل نیازمندان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00049",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَمْ يَلِدْ وَ لَمْ يُولَدْ وَ لَمْ يَكُنْ لَهُ كُف”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00049",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که نزاده و زاده نشده، و همتایی ندارد”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00050",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ لَمْ يَكُنْ لَهُ صاحِبَةٌ وَ لَا كانَ مَعَهُ وَزِيرٌ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00050",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و همسری برایش نباشد و وزیری با او نبوده”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00051",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ لَا اتَّخَذَ مَعَهُ مُشِيراً،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00051",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و برای خود مشاوری نگرفته”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00052",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ لَا احْتاجَ إِلىٰ ظَهِيرٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00052",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و به پشتیبانی نیازمند نگشته”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00053",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ لَا كانَ مَعَهُ مِنْ إِلٰهٍ غَيْرُهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00053",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و با او جز او معبودی نبوده است،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00054",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “لَا إِلٰهَ إِلّا أَنْتَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00054",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “نیست معبودی جز تو،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00055",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “فَتَعالَيْتَ عَمَّا يَقُولُ الظَّالِمُونَ عُلُوّاً كَبِيراً،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00055",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “تو برتر از آنی که ستمکاران گویند بسیار برتری،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00056",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عَلِىُّ يَا شامِخُ يَا باذِخُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00056",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای والا بلند مرتبه، ای عطابخش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00057",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا فَتَّاحُ يَا نَفَّاحُ يَا مُرْتاحُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00057",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گشایشگر، ای بخشایشگر، ای فرخ بخش دلها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00058",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُفَرِّجُ يَا ناصِرُ يَا مُنْتَصِرُ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00058",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای غم زدا، ای یاری‌رسان، ای یاری ستان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00059",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُدْرِكُ يَا مُهْلِكُ يَامُنْتَقِمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00059",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دریابنده، ای نابود کننده، ای انتقام گیرنده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00060",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا باعِثُ يَا وارِثُ، يَا طالِبُ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00060",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای برانگیزنده، ای وارث، ای خواهان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00061",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا غالِبُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00061",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای چیره،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00062",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَايَفُوتُهُ هارِبٌ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00062",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای که گریزنده‌ای از دستش نگریزد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00063",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا تَوَّابُ يَا أَوَّابُ يَا وَهَّابُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00063",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بسیار توبه پذیر، ای بسیار پذیرای بندگان، ای بسیار بخشنده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00064",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُسَبِّبَ الْأَسْبابِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00064",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فراهم آورنده سبب‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00065",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُفَتِّحَ الْأَبْوابِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00065",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گشاینده درها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00066",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ حَيْثُ ما دُعِىَ أَجابَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00066",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که هرگاه و هرجا خوانده شود اجابت نماید،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00067",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا طَهُورُ يَاشَكُورُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00067",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پاک‌کننده، ای قَدردان صالحان‌”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00068",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عَفُوُّ يَا غَفُورُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00068",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای با گذشت، ای آمرزنده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00069",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا نُورَ النُّورِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00069",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای روشنایی نور،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00070",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُدَبِّرَ الْأُمُورِ؛”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00070",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مدبّر امور،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00071",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا لَطِيفُ يَاخَبِيرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00071",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مهربان، ای آگاه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00072",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُجِيرُ يَا مُنِيرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00072",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پناه دهنده، ای روشنی‌بخش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00073",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian supplies the two latter attributes but apparently has no separate rendering for بَصِيرُ; preserve this source omission instead of inventing a translation."
+      },
+      {
+        "row": "r00073",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian supplies the two latter attributes but apparently has no separate rendering for بَصِيرُ; preserve this source omission instead of inventing a translation."
+      },
+      {
+        "row": "r00074",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا وِتْرُ يَا فَرْدُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00074",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای یکتا، ای یگانه‌”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00075",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا أَبَدُ يَا سَنَدُ يَا صَمَدُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00075",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پاینده، ای تکیه‌گاه، ای بی‌نیاز،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00076",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا كافِى يَا شافِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00076",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای کفایت‌کننده، ای شفابخش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00077",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا وافِى يَا مُعافِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00077",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای وفا کننده، ای عافیت بخش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00078",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُحْسِنُ يَا مُجْمِلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00078",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای نیکوکار، ای زیبایی بخش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00079",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُنْعِمُ يَا مُفْضِلُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00079",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای نعمت افزا، ای فزون بخش‌”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00080",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُتَكَرِّمُ يَا مُتَفَرِّدُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00080",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گرامی، ای بی‌همتا،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00081",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ عَلا فَقَهَرَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00081",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که بلندی گرفت و چیره گشت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00082",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ مَلَكَ فَقَدَرَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00082",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که در فرمانروایی‌اش توانا شد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00083",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ بَطَنَ فَخَبَرَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00083",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که پنهان و آگاه گشت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00084",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ عُبِدَ فَشَكَرَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00084",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که پرستیده شد و پذیرفت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00085",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ عُصِىَ فَغَفَرَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00085",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که نافرمانی شد و آمرزید،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00086",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَاتَحْوِيهِ الْفِكَرُ، وَ لَا يُدْرِكُهُ بَصَرٌ، و”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00086",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که اندیشه نگنجایدش، و دیده‌ای او را در نیابد، و اثری ب”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00087",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رازِقَ الْبَشَرِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00087",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای روزی دهنده بشر،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00088",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُقَدِّرَ كُلِّ قَدَرٍ؛”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00088",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای اندازه گیر هر اندازه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00089",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عالِىَ الْمَكانِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00089",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای والا جاه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00090",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا شَدِيدَ الْأَرْكانِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00090",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای استوار پایه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00091",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُبَدِّلَ الزَّمانِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00091",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گرداننده روزگار،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00092",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا قابِلَ الْقُرْبانِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00092",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پذیرنده قربانی،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00093",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْمَنِّ وَ الْإِحْسانِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00093",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای منتّ گذار نیکوکار،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00094",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْعِزَّةِ وَ السُّلْطانِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00094",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دارای شکوه و سلطنت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00095",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رَحِيمُ يَا رَحْمٰنُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00095",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مهربان، ای بخشنده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00096",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ هُوَ كُلَّ يَوْمٍ فِى شَأْنٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00096",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای کسی که هر روز در کاری است،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00097",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَايَشْغَلُهُ شَأْنٌ عَنْ شَأْنٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00097",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که کاری از کار دیگر بازش ندارد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00098",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عَظِيمَ الشَّأْنِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00098",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بلندمرتبه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00099",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ هُوَ بِكُلِّ مَكانٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00099",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که در هر جا هست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00100",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا سامِعَ الْأَصْواتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00100",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای شنونده نجواها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00101",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُجِيبَ الدَّعَواتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00101",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای اجابت کننده دعاها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00102",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُنْجِحَ الطَّلِباتِ، يَا قاضِىَ الْحاجاتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00102",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای برآورنده خواسته‌ها و نیازها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00103",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُنْزِلَ الْبَرَكاتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00103",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فرو فرستنده برکات،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00104",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا راحِمَ الْعَبَراتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00104",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای رحم کننده بر اشک‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00105",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُقِيلَ الْعَثَراتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00105",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای درگذرنده از لغزش‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00106",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا كاشِفَ الْكُرُباتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00106",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای برطرف‌کننده ناراحتی‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00107",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا وَلِىَّ الْحَسَناتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00107",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای سرچشمه خوبی‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00108",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رافِعَ الدَّرَجاتِ؛”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00108",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بالابرنده درجات،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00109",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُؤْتِىَ السُّؤْلاتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00109",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دهنده خواسته‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00110",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُحْيِىَ الْأَمْواتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00110",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای زنده کننده مردگان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00111",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا جامِعَ الشَّتاتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00111",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گرد آورنده پراکنده‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00112",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُطَّلِعاً عَلَى النِّيَّاتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00112",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آگاه از نیت‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00113",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رادَّ ما قَدْ فاتَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00113",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای برگرداننده آنچه از دست رفته،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00114",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَاتَشْتَبِهُ عَلَيْهِ الْأَصْواتُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00114",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای کسی که نجواها بر او مشتبه نشود،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00115",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَاتُضْجِرُهُ الْمَسْأَلاتُ، وَ لَا تَغْشاهُ الظُّل”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00115",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای کسی که درخواست‌ها او را به ستوه نیاورد، و تاریکی‌ها او را”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00116",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا نُورَ الْأَرْضِ وَ السَّماواتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00116",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای روشنی زمین و آسمان‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00117",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا سابِغَ النِّعَمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00117",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فروریز نعمت‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00118",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا دافِعَ النِّقَمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00118",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دفع‌کننده بدفرجامی‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00119",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا بارِئَ النَّسَمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00119",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آفریننده آدمیان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00120",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا جامِعَ الْأُمَمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00120",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گرد آورنده امّت‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00121",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا شافِىَ السَّقَمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00121",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای شفابخش دردها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00122",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا خالِقَ النُّورِ وَ الظُّلَمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00122",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پدیدآورنده روشنی و تاریکی‌ها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00123",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْجُودِ وَ الْكَرَمِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00123",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای صاحب جود و کرم،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00124",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَا يَطَأُ عَرْشَهُ قَدَمٌ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00124",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که به عرشش قدمی پای ننهد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00125",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا أَجْوَدَ الْأَجْوَدِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00125",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بخشنده‌ترین بخشندگان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00126",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا أَكْرَمَ الْأَكْرَمِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00126",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای کریم‌ترین کریمان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00127",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا أَسْمَعَ السَّامِعِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00127",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای شنواترین شنوایان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00128",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا أَبْصَرَ النَّاظِرِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00128",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بیناترین بینایان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00129",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا جارَ الْمُسْتَجِيرِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00129",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پناه پناه جویان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00130",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا أَمانَ الْخائِفِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00130",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای امان هراس ناکان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00131",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ظَهْرَ اللَّاجِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00131",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای تکیه‌گاه پناهندگان”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00132",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا وَلِىَّ الْمُؤْمِنِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00132",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای سرپرست مؤمنان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00133",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا غِياثَ الْمُسْتَغِيثِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00133",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فریادرس فریادکنندگان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00134",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا غايَةَ الطَّالِبِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00134",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مقصود دل نیازمندان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00135",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا صاحِبَ كُلِّ غَرِيبٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00135",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای کس هر بی‌کس،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00136",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُونِسَ كُلِّ وَحِيدٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00136",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای همدم هر تنها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00137",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَلْجَأَ كُلِّ طَرِيدٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00137",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پناه هر رانده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00138",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَأْوىٰ كُلِّ شَرِيدٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00138",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مأوای هر آواره،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00139",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حافِظَ كُلِّ ضَّالَّةٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00139",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای نگهدار هر گمشده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00140",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا راحِمَ الشَّيْخِ الْكَبِيرِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00140",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مهرورز سالخوردگان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00141",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رازِقَ الطِّفْلِ الصَّغِيرِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00141",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای روزی دهنده کودکان خردسال،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00142",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا جَابِرَ الْعَظْمِ الْكَسِيرِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00142",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای ترمیم‌کننده استخوان شکسته،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00143",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا فَاكَّ كُلِّ أَسِيرٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00143",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای رهاننده هر اسیر‌”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00144",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُغْنِىَ الْبَائِسِ الْفَقِيرِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00144",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بینیاز کننده هر بینوای تهدیست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00145",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عِصْمَةَ الْخائِفِ الْمُسْتَجِيرِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00145",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پناه هر ترسان پناه‌جو،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00146",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَهُ التَّدْبِيرُ وَ التَّقْدِيرُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00146",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که تدبیر و تقدیر از آن اوست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00147",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنِ الْعَسِيرُ عَلَيْهِ سَهْلٌ يَسِيرٌ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00147",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که دشواریها برای او سهل و آسان است،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00148",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ لَايَحْتاجُ إِلىٰ تَفْسِيرٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00148",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که نیازمند به دلیل و تفسیر نیست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00149",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ هُوَ عَلَىٰ كُلِّ شَىْءٍ قدِيرٌ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00149",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که بر هر کاری تواناست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00150",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ هُوَ بِكُلِّ شَىْءٍ خَبِيرٌ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00150",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که به هر چیزی داناست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00151",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ هُوَ بِكُلِّ شَىْءٍ بَصِيرٌ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00151",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن به همه چیز بیناست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00152",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُرْسِلَ الرِّياحِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00152",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فرستنده بادها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00153",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا فَالِقَ الْإِصْباحِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00153",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای شکافنده روشنی صبح‌”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00154",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا بَاعِثَ الْأَرْواحِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00154",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای برانگیزنده ارواح،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00155",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْجُودِ وَ السَّماحِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00155",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای صاحب جود و بخشش،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00156",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ بِيَدِهِ كُلُّ مِفْتاحٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00156",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که هر کلیدی به دست اوست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00157",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا سَامِعَ كُلِّ صَوْتٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00157",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای شنونده هر نجوا‌”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00158",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا سَابِقَ كُلِّ فَوْتٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00158",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پیشتر از هر آنچه گذشته،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00159",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُحْيِىَ كُلِّ نَفْسٍ بَعْدَ الْمَوْتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00159",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای حیات‌بخش هر جان پس از مرگ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00160",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا عُدَّتِى فِى شِدَّتِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00160",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای توشه‌ام در سختی،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00161",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حافِظِى فِى غُرْبَتِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00161",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای نگهدارم در غربت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00162",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُونِسِى فِى وَحْدَتِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00162",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای همدمم در تنهایی،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00163",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا وَلِيِّى فِى نِعْمَتِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00163",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای سرپرستم در نعمت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00164",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا كَهْفِى حِينَ تُعْيِينِى الْمَذَاهِبُ، وَ تُسَلِّمُنِى ا”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00164",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پناهم آنگاه که روش‌های ناهنجار درمانده‌ام سازد و نزدیکان ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00165",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “یَا عِمَادَ مَنْ لا عِمَادَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00165",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای تکیه‌گاه آن‌که تکیه گاهی ندارد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00166",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا سَنَدَ مَنْ لَاسَنَدَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00166",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پشتوانه کسی که پشت و پناهی ندارد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00167",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذُخْرَ مَنْ لَاذُخْرَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00167",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای اندوخته هر بی اندوخته،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00168",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا حِرْزَ مَنْ لَاحِرْزَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00168",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای نگهدار آن‌که نگهداری ندارد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00169",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا كَهْفَ مَنْ لَاكَهْفَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00169",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پناه بی پناهان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00170",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا كَنْزَ مَنْ لَاكَنْزَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00170",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گنجینه کسی که برایش گنج نیست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00171",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رُكْنَ مَنْ لَارُكْنَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00171",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای تکیه‌گاه هر بیکس،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00172",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا غِياثَ مَنْ لَاغِياثَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00172",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای فریادرس آن‌که برایش فریادرسی نیست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00173",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا جَارَ مَنْ لَاجَارَ لَهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00173",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای همسایه بی همسایگان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00174",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا جَارِىَ اللَّصِيقَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00174",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای همسایه همراه من،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00175",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رُكْنِىَ الْوَثِيقَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00175",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای تکیه‌گاه محکم،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00176",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا إِلٰهِى بِالتَّحْقِيقِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00176",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای خدای من به حقیقت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00177",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رَبَّ الْبَيْتِ الْعَتِيقِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00177",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پرورگار خانه کعبه،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00178",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا شَفِيقُ يا رَفِيقُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00178",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مهربان‌ای دوست،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00179",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “فُكَّنِى مِنْ حَلَقِ الْمَضِيقِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00179",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “رهایم کن از بندهای تنگناها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00180",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ اصْرِفْ عَنِّى كُلَّ هَمٍّ وَ غَمٍّ وَ ضِيقٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00180",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و هر غم و اندوه و تنگی را از من برگردان”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00181",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ اكْفِنِى شَرَّ مَا لَاأُطِيقُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00181",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و شرّ آنچه را تاب نیاورم از من دور ساز”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00182",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ أَعِنِّى عَلَىٰ ما أُطِيقُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00182",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و بر آنچه می‌توانم یاری‌ام ده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00183",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رَادَّ يُوسُفَ عَلَىٰ يَعْقُوبَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00183",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بازگرداننده یوسف نزد یعقوب،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00184",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا كاشِفَ ضُرِّ أَيُّوبَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00184",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای برطرف‌کننده رنج ایّوب،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00185",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا غافِرَ ذَنْبِ داوُدَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00185",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آمرزنده خطای داود،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00186",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رافِعَ عِيسَىٰ بْنِ مَرْيَمَ وَ مُنْجِيَهُ مِنْ أَيْدِى ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00186",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بالا برنده عیسی بن مریم و رهایی‌بخش او از دست یهود،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00187",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُجِيبَ نِداءِ يُونُسَ فِى الظُّلُماتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00187",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای پاسخ‌دهنده به ندای یونس در دل تاریکی‌ها”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00188",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُصْطَفِىَ مُوسىٰ بِالْكَلِماتِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00188",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای برگزیننده موسی برای سخن‌گویی،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00189",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ غَفَرَ لاِدَمَ خَطِيئَتَهُ، وَ رَفَعَ إِدْرِيسَ مَك”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00189",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که خطای آدم را بخشید و ادریس را به رحمت خویش به جایگاه”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00190",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ نَجَّىٰ نُوحاً مِنَ الْغَرَقِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00190",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که نوح را از غرق شدن نجات بخشید،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00191",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ أَهْلَكَ عاداً الْأُولىٰ وَ ثَمُودَ فَما أَبْقَىٰ، ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00191",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که هلاک ساخت قوم عاد نخستین و قوم ثمود را و هیچکس از آ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00192",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired clause continues the narrative invocation of r00191; source interpretation of المؤتفكة differs in Persian, and must remain unchanged."
+      },
+      {
+        "row": "r00192",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired clause continues the narrative invocation of r00191; source interpretation of المؤتفكة differs in Persian, and must remain unchanged."
+      },
+      {
+        "row": "r00193",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “یَا مَنْ دَمَّرَ عَلَی قَوْمِ لُوطٍ، وَ دَمْدَمَ عَلَی قَوْم”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00193",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که بر قوم لوط واژگون نمود، و بر قوم شعیب عذابی دردناک ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00194",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنِ اتَّخَذَ إِبْراهِيمَ خَلِيلاً،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00194",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که ابراهیم را دوست خویش ساخت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00195",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنِ اتَّخَذَ مُوسىٰ كَلِيماً،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00195",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که موسی را همسخن خود ساخت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00196",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ اتَّخَذَ مُحَمَّداً صَلَّى اللّٰهُ عَلَيْهِ وَ آلِهِ وَ ع”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00196",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و محَمد (درود خدا بر او و همه خاندانش) را محبوب خویش برگرفت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00197",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مُؤْتِىَ لُقْمانَ الْحِكْمَةَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00197",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بخشنده حکمت به لقمان”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00198",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ الْواهِبَ لِسُلَيْمانَ مُلْكاً لَايَنْبَغِى لِأَحَدٍ مِنْ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00198",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و بخشنده فرمانروایی به سلیمان، چنان فرمانروایی که برای احدی ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00199",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ نَصَرَ ذَا الْقَرْنَيْنِ عَلَى الْمُلُوكِ الْجَبابِ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00199",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که ذو القرنین را بر فرمانروایان سرکش پیروز نمود،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00200",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ أَعْطَى الْخِضْرَ الْحَياةَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00200",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که به خضر زندگی جاودان عطا فرمود،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00201",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ رَدَّ لِيُوشَعَ بْنِ نُونٍ الشَّمْسَ بَعْدَ غُرُوبِها،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00201",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و خورشید را پس از غروبش برای یوشع بن نون برگرداند،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00202",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ رَبَطَ عَلىٰ قَلْبِ أم مُوسىٰ، وَ أَحْصَنَ فَرْجَ م”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00202",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که آرامش بخشید به قلب مادر موسی و عفت و پاکی مریم دختر”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00203",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يا مَنْ حَصَّنَ يَحْيَى بْنَ زَكَرِيَّا مِنَ الذَّنْبِ، وَ س”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00203",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که یحیی پسر زکریّا را از گناه پاک داشت و خشم را از موس”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00204",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ بَشَّرَ زَكَرِيَّا بِيَحْيىٰ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00204",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که زکریّا را به تولّد یحیی مژده داد،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00205",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ فَدَىٰ إِسْماعِيلَ مِنَ الذَّبْحِ بِذِبْحٍ عَظِيمٍ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00205",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که با فرستادن ذبح عظیم، اسماعیل را از ذبح شدن نجات داد”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00206",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا مَنْ قَبِلَ قُرْبانَ هابِيلَ، وَ جَعَلَ اللَّعْنَةَ عَلى”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00206",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای آن‌که قربانی هابیل را پذیرفت، و لعنت را بر قابیل قرار داد”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00207",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا هازِمَ الْأَحْزابِ لِمُحَمَّدٍ صَلَّى اللّٰهُ عَلَيْهِ و”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00207",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای گرزدهنده گروه‌ها دشمن محمّد (درود خدا بر او و خاندانش)،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00208",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “صَلِّ عَلىٰ مُحَمَّدٍ وَ آلِ مُحَمَّدٍ وَ عَلىٰ جَمِيعِ الْم”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00208",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “بر محمّد و خاندان محمّد و بر همه فرستادگان و فرشتگان بارگاهت”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00209",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “أَسْأَلُکَ بِکُلِّ مَسْأَلَةٍ سَأَلَكَ بِها أَحَدٌ مِمَّنْ ر”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00209",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و از تو خواستارم هر خواهشی را که، بندگان مورد خشنودیت از تو ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00210",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “فَحَتَمْتَ لَهُ عَلَى الْإِجابَةِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00210",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و اجابت خواهش آن‌ها حتم فرمودی،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00211",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا اللّٰهُ يَا اللّٰهُ يَا اللّٰهُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00211",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای خدا، ای خدا، ای خدا،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00212",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا رَحْمٰنُ يَا رَحْمٰنُ يَا رَحْمٰنُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00212",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای بخشنده، ای بخشنده، ای بخشنده،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00213",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يا رَحِيمُ يَا رَحِيمُ يَا رَحِيمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00213",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای مهربان، ای مهربان، ای مهربان،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00214",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْجَلالِ وَ الْإِكْرامِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00214",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دارای شکوه و کرامت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00215",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْجَلالِ وَ الْإِكْرامِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00215",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دارای شکوه و کرامت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00216",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “يَا ذَا الْجَلالِ وَ الْإِكْرامِ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00216",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “ای دارای شکوه و کرامت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00217",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "One Arabic بِهِ is paired with seven Persian repetitions; preserve and flag this source discrepancy rather than multiplying or deleting either text."
+      },
+      {
+        "row": "r00217",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "One Arabic بِهِ is paired with seven Persian repetitions; preserve and flag this source discrepancy rather than multiplying or deleting either text."
+      },
+      {
+        "row": "r00218",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “أَسْأَلُكَ بِكُلِّ اسْمٍ سَمَّيْتَ بِهِ نَفْسَكَ، أَوْ أَنْز”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00218",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “از تو خواستارم به هر نامی که خود را به آن نامیدی، یا آن را د”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00219",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ بِمَعاقِدِ الْعِزِّ مِنْ عَرْشِكَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00219",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و به بندگاه‌های بلند عرشت،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00220",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ بِمُنْتَهَى الرَّحْمَةِ مِنْ كِتابِكَ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00220",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و به انتهای رحمت از کتاب سرنوشت خویش”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00221",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ بِما «لَوْ أَنَّ مٰا فِي الْأَرْضِ مِنْ شَجَرَةٍ أَقْلاٰم”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00221",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و به آنچه در این آیه است: «اگر همه درختان روی زمین قلم باشند”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00222",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ أَسْأَلُکَ بِأَسْمَائِکَ الْحُسْنَی الَّتِی نَعَتَّهَا فِ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00222",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و تو را می‌خوانم به نامهای نیکویت که آن‌ها را در کتابت وصف ک”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00223",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “«وَ لِلّٰهِ الْأَسْمٰاءُ الْحُسْنىٰ فَادْعُوهُ بِهٰا» وَ قُل”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00223",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “«و برای خدا نامهای نیکوست، پس خدا را به آن‌ها بخوانید»، و نی”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00224",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ قُلْتَ:«وَ إِذٰا سَأَلَكَ عِبٰادِي عَنِّي فَإِنِّي قَرِيب”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00224",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و گفتی: «هرگاه بندگانم از تو درباره من بپرسند پس به یقین من ”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00225",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The quoted Quranic passage ends mid-sentence in both fields; its conclusion is in r00226."
+      },
+      {
+        "row": "r00225",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The quoted Quranic passage ends mid-sentence in both fields; its conclusion is in r00226."
+      },
+      {
+        "row": "r00226",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired quotation completes r00225; preserve all original punctuation."
+      },
+      {
+        "row": "r00226",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired quotation completes r00225; preserve all original punctuation."
+      },
+      {
+        "row": "r00227",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ أَنَا أَسْأَلُكَ يَا إِلٰهِى، وَ أَدْعُوكَ يَا رَبِّ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00227",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و من از تو درخواست می‌کنم ای خدای من و تو را می‌خوانم ای پرو”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00228",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ أَرْجُوكَ يَا سَيِّدِى،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00228",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و به تو امیدوارم‌ای آقایم”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00229",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian ends this appeal but its next word order differs from Arabic, with the promise and command in r00230; group r00229/30 to preserve the coherent relationship."
+      },
+      {
+        "row": "r00229",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian ends this appeal but its next word order differs from Arabic, with the promise and command in r00230; group r00229/30 to preserve the coherent relationship."
+      },
+      {
+        "row": "r00230",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields continue the appeal in r00229, with a differing Persian word order; keep the paired passage together without rewriting."
+      },
+      {
+        "row": "r00230",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields continue the appeal in r00229, with a differing Persian word order; keep the paired passage together without rewriting."
+      },
+      {
+        "row": "r00231",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “فَافْعَلْ بِى ما أَنْتَ أَهْلُهُ يَاكَرِيمُ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00231",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “پس با من چنان رفتار کن که سزاوار تو است ای کریم”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00232",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ اَلْحَمْدُ لِلّٰهِ رَبِّ الْعالَمِينَ،”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00232",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و سپاس خدای را پروردگار جهانیان”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00233",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing ar wording begins “وَ صَلَّى اللّٰهُ عَلىٰ مُحَمَّدٍ وَ آلِهِ أَجْمَعِينَ.”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00233",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This paired invocation remains in source order; its existing fa wording begins “و درود خدا بر محمّد و خاندانش همگان.”. Keep source spellings and phrasing."
+      },
+      {
+        "row": "r00234",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The request to state one’s need, the expectation of fulfillment, and the instruction attributed to Muhaj al-Daawat have different roles; separate instruction and attributed note while retaining exact words."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "escalate",
+        "note": "Inspected historical LF at offset 11, between عظيم and الشأن in one epithet. This appears within a single invocation or clause, but the prior removal was AI-assisted and unreviewed: retain provenance and seek adjudication rather than silently restoring it."
+      },
+      {
+        "index": 1,
+        "decision": "escalate",
+        "note": "Inspected historical LF at offset 10, between غاية and الطالبين in one epithet. This appears within a single invocation or clause, but the prior removal was AI-assisted and unreviewed: retain provenance and seek adjudication rather than silently restoring it."
+      },
+      {
+        "index": 2,
+        "decision": "escalate",
+        "note": "Inspected historical LF at offset 8, between مقصود and دل نیازمندان in one phrase. This appears within a single invocation or clause, but the prior removal was AI-assisted and unreviewed: retain provenance and seek adjudication rather than silently restoring it."
+      },
+      {
+        "index": 3,
+        "decision": "escalate",
+        "note": "Inspected historical LF at offset 18, between المؤتفكة and أهوى in one clause. This appears within a single invocation or clause, but the prior removal was AI-assisted and unreviewed: retain provenance and seek adjudication rather than silently restoring it."
+      },
+      {
+        "index": 4,
+        "decision": "escalate",
+        "note": "Inspected historical LF at offset 31, between که and the clause that follows. This appears within a single invocation or clause, but the prior removal was AI-assisted and unreviewed: retain provenance and seek adjudication rather than silently restoring it."
+      },
+      {
+        "index": 5,
+        "decision": "escalate",
+        "note": "Inspected historical LF at offset 29, between مسألة and its relative clause. This appears within a single invocation or clause, but the prior removal was AI-assisted and unreviewed: retain provenance and seek adjudication rather than silently restoring it."
+      },
+      {
+        "index": 6,
+        "decision": "escalate",
+        "note": "Inspected historical LF at offset 32, between که and a comma plus its relative clause. This appears within a single invocation or clause, but the prior removal was AI-assisted and unreviewed: retain provenance and seek adjudication rather than silently restoring it."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The many divine-name invocations are generally paired individually. The Persian rendering of وَدُودُ appears in r00022 while Arabic is in r00023 and مُعِيدُ has no obvious rendering; keep available text together and do not invent the missing phrase. Quranic quote r00225/26 and word-order-dependent r00229/30 should be grouped; r00234 mixes instructions and attribution. Flag source discrepancy at r00217 (one Arabic بِهِ versus seven Persian repetitions) and the absent Persian for بَصِيرُ in r00073; preserve both witnesses. Seven historical LF decisions escalated after examining context. Preserve links and source text."
+  }
+}
