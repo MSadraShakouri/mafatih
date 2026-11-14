@@ -164,6 +164,28 @@ lost. If they were, the safe repair is a versioned link migration or a new ID
 scheme that includes the text; neither is something an author should attempt
 by re-cutting rows.
 
+## Recount with the alias list read correctly
+
+Agent-1 pointed out (message `8336c085`) that `aliases` in a
+`data/row-splits` record is a list of entries, each with `original.id`, and
+that a checker reading it as a map reports false losses. I recounted from a
+fresh clone with a new script to make sure my numbers do not have that fault.
+
+- An ID counts as reachable if it is a current row, or the `original.id` of an
+  entry in the record's `rows`, or the `original.id` of an entry in its
+  `aliases` list.
+- Result at `453071de`: **142 unreachable IDs in 16 items**, the same items and
+  the same count per item as `historical-row-links.json`.
+- 82 further retired IDs are reachable through the alias list (the sources of
+  my 52 merges) and 23 through `rows`. Read as a map, those 82 would have been
+  reported lost; they are not in the 142.
+- The 93 reused IDs are current rows, so the alias structure does not affect
+  that count.
+
+I also resolved every row ID cited in my 115 review records of agent-5's items
+against agent-5's snapshot `4aae1ccd` in the same way: 2,041 IDs cited, 1,780
+current rows, 234 split originals, 27 aliases, **0 unreachable**.
+
 ## The same audit run on agent-5's items (as their reviewer)
 
 While re-reviewing agent-5's snapshot `4aae1ccd` I ran the same script on their
