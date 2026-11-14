@@ -1,0 +1,192 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-dvm-daahay-vqt",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "e9982c8154f928dff7fbc07c2c2981ad5b3ab02afa555c2ad3dd444c742c28b6",
+  "layout_sha256": "6398b7a94ea9e92d313ee0fc60fd72c6b8dc5f905ee8fc6fe805832f809d430a",
+  "result_item_sha256": "e801b63926d2231bbebd312771dcd5bdc3ccd3cdc81da5e1760e960717e4e43c",
+  "result_record_sha256": "52e130854cea492ca37144b776bec491c5fb4a314477fc64aa9885a9d37a419f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-dvm-daahay-vqt",
+    "item_sha256": "d6adc03c4722b3be6cadc6353fd558f56d7ea4ef1956b0b214592397d6fd32dc",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "0169c3f9019334c5f183d4228fa93eaae4958bdf77d18293eeaec1fd75099422",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian introduction is separated into its destination and the Arabic praise is isolated; its final phrase continues in r00002."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The Persian renders the Arabic praise and is not a note; pair as recitation and inspect continuation into r00002."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic finishes the previous praise phrase and continues the prayer, with matching Persian present."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This renders the Arabic prayer, not an instruction. A prior LF before closing punctuation was removed in documented unreviewed history; do not silently restore or treat that history as independent approval."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The first part reports effects and attribution rather than directing the reader; the second introduces the next prayer. Distinguish narrative from instruction where meaningful."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Arabic prayer corresponds to the existing Persian."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Persian renders the Arabic prayer."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian introduction is moved into the correct slot; the Arabic recitation ends with a phrase continued into r00006."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is a prayer rendering rather than a note; pair with Arabic and inspect the r00005/r00006 continuation."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic completes the preceding phrase and has matching Persian in this source row."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is a prayer rendering rather than a note; pair as recitation, preserving the source continuation."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Separate adjacent numbered practices and a direct instruction are preserved as distinct parts; no new translation is made."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Arabic prayer matches the existing Persian."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Persian renders the Arabic prayer."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The first part reports an outcome and the second begins the next numbered report; both read as narrative rather than direct instruction, and the second continues into r00010."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This introduces a reported instruction and completes r00009/fa; inspect a safe continuation join."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The praise is Arabic recitation and has a corresponding Persian portion."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The field contains a Persian prayer rendering followed by narrative attribution; split at that transition, pair the prayer with Arabic, and keep the narrative as a note."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The narrative introduction to the seventh prayer is a note."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer has a corresponding Persian rendering."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This renders the prayer and is not an instruction; pair as recitation."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Historical LF preceded final punctuation; the current source and documented correction were inspected without restoring it or certifying that correction."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Mixed-language transition was inspected; Persian instruction is moved to its destination and outstanding role/pairing issues are recorded per source."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Mixed-language transition was inspected; Persian instruction is moved to its destination and outstanding role/pairing issues are recorded per source."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00001-r00002, r00005-r00006 and r00013 have matching Persian prayer renderings misclassified and unpaired; inspect safe continuation joins in r00001/r00002 and r00005/r00006. r00011/fa combines a prayer rendering with following narrative: split by meaning, pair and classify. The numbered report beginning r00009 continues into r00010. Preserve documented historical line-break correction and separately review any space proposals."
+  }
+}

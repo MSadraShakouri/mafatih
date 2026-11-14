@@ -1,0 +1,176 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-nvshth-ay-hmrah",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "421d8910db84381980a8a954723d76fe33810eb9de57ce5321fdb84cf18287b6",
+  "layout_sha256": "5b2ceece32a605d0d66f78484a3789352fd2b8b6696311cf3efd228bc50ac4ec",
+  "result_item_sha256": "bf2c955c30055d4150e09511f6d97eeed0f94448072b4e55bd730b2c8e72b9f4",
+  "result_record_sha256": "0e314a708004b786ebca3315a44517558b83ee80cc9f1798ff2905022f8fa076",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-nvshth-ay-hmrah",
+    "item_sha256": "4966aff097ee49525b81b3e401bbd5d58c48c8cb91b870892661ea563b40b410",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "31f2ac6e85c0cc0b40b8e783c0f789d6796bf0d9a3b7ed6b8a9b05a2ed8f7d1a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The opening directs the reader before writing the document; instruction is appropriate."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic is split in the middle while the entire corresponding Persian is unpaired. Align at matching semantic boundaries or retain as a corresponding unit."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This renders the Arabic recitation, not a note. Its single span covers both Arabic pieces; align and pair, separating the basmala if safe."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian writing direction is moved into Persian and the following Arabic formula isolated; the latter has an existing rendering."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This renders the Arabic document formula and is not an independent note; pair it with the Arabic in an appropriate consistent quoted/recitation role."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian direction to supply a name is correctly moved out of the Arabic text."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "Persian renders the Arabic formula and is not a note; pair with the corresponding Arabic."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Three Arabic pieces and two Persian pieces have different boundaries, including a split after the Prophet’s name; align on semantic units before pairing."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "These are renderings of the written formula, not note/instruction. Cuts do not correspond to the Arabic pieces; align and pair while retaining additions."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic split is after one clause but Persian split occurs later within another; align the pieces, including the phrase continuing into r00007."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both parts render the Arabic formula, not instruction/note. Their cut differs from Arabic; align and pair."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic opening continues r00006 and its Persian counterpart is present in this row."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This renders r00007/ar, not a standalone note; classify consistently and pair, preserving the cross-row continuation."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian direction is separated and moved into the correct destination; the brief Arabic address has a Persian rendering."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the Persian rendering of the Arabic address, not a separate note; pair consistently."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian prefix contains both an address to witnesses and a direction introducing their reply, so treating all of it as instruction loses role distinctions; Arabic reply follows. Repeated Arabic words are source text and must not be silently removed."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the Persian rendering of the Arabic reply, not a note; pair as a consistent quoted/recitation role. Source repetition in Arabic has no corresponding repeated Persian; preserve and flag."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The concluding directions about sealing and placement are instructions."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Mixed-language transition was inspected; Persian instruction is moved to its destination and outstanding role/pairing issues are recorded per source."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Mixed-language transition was inspected; Persian instruction is moved to its destination and outstanding role/pairing issues are recorded per source."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Mixed-language transition was inspected; Persian instruction is moved to its destination and outstanding role/pairing issues are recorded per source."
+      },
+      {
+        "index": 3,
+        "decision": "addressed",
+        "note": "Mixed-language transition was inspected; Persian instruction is moved to its destination and outstanding role/pairing issues are recorded per source."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00002-r00009 repeatedly place existing Persian renderings apart from matching Arabic and label them note/instruction. Align the unequal cuts in r00002, r00005 and r00006 by meaning, pair the written formulas consistently and preserve the r00006/r00007 continuation. r00009/ar source prefix includes both an address and an instruction; distinguish these while preserving the repeated Arabic and its Persian discrepancy. Do not invent text or bypass published-link guards."
+  }
+}
