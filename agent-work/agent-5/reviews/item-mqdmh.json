@@ -1,0 +1,534 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-mqdmh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "a9dc32d442532d3c05e7d27d565ff97f1494d4abc9f8b83b947e5bd386e84ad2",
+  "layout_sha256": "cb01cd43165503571dd471b902acfe1bdc26be6a50d397a229ee89def0100ce7",
+  "result_item_sha256": "23fc1a65c58c987f66b3e0a0324990fde3e9d21a45f05b503d09ca230fbb2f82",
+  "result_record_sha256": "fb4ccba958fd53134603078461e377415294909f021582bd3c65f1103927198a",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-mqdmh",
+    "item_sha256": "4e06d7dfd52cb7bf662a6ad34d23a84f098de6b15a7c156418c22b3461a86947",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "d799a87206571eae2683438f4ac1a26f9fb8ce33b693a98d96c932b644ced3e5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic basmala is an epigraph; quotation is reasonable and no Persian rendering is present."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic verse is an epigraph; quotation is appropriate and no translation is present."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This source field is Persian introduction followed by the Persian rendering of the quotation; split the reported quotation from the surrounding note and pair it to its Arabic when feasible."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "This source field begins with the Arabic quotation, followed by a Persian bibliographic citation. Separate citation as note, put Arabic in the Arabic slot, and pair its existing Persian rendering from the other source; preserve all punctuation and original text."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Publisher introduction and exposition remain prose note."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The publisher explains its edition; note is appropriate."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The short publisher section title is a heading."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Publisher’s first typographic feature is prose note."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Publisher explains its treatment of variants, leading to the following two list entries."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "First list explanation of the parenthesized variants is appropriately prose."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Second list explanation of bracketed variants is appropriately prose."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Publisher introduces its editorial style guide; prose note is appropriate."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Run-in punctuation heading and accompanying editorial explanation form one prose note."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The line introduces the following punctuation list; heading is reasonable."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A single numbered punctuation symbol or name in the publisher’s list; other is suitable. Retain numbering and punctuation exactly as supplied."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Run-in heading and explanation of diacritics form one note leading to the list."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "An example in the first diacritic list entry stays with its explanatory prose."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The second diacritic list entry is complete."
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The second example and its closing quotation mark continue in r00031; group the entry and preserve the existing marker and history."
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This completes the quoted example begun in r00030; group the continuation."
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Run-in spelling label with explanatory publisher prose is coherent as a note."
+      },
+      {
+        "row": "r00033",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Publisher introduces the next list of edition features."
+      },
+      {
+        "row": "r00034",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A complete entry in the edition-feature list."
+      },
+      {
+        "row": "r00035",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The list entry ends mid-phrase and continues in r00036; group the uninterrupted item."
+      },
+      {
+        "row": "r00036",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This is the end of the list entry in r00035; group with its beginning."
+      },
+      {
+        "row": "r00037",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A complete edition-feature list entry."
+      },
+      {
+        "row": "r00038",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A complete edition-feature list entry."
+      },
+      {
+        "row": "r00039",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A complete edition-feature list entry."
+      },
+      {
+        "row": "r00040",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A complete edition-feature list entry."
+      },
+      {
+        "row": "r00041",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This section title introduces the publisher’s translation notes."
+      },
+      {
+        "row": "r00042",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The publisher describes and acknowledges the translator; retain its claims as source, not verification of rights."
+      },
+      {
+        "row": "r00043",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The publisher thanks editorial contributors; note is appropriate."
+      },
+      {
+        "row": "r00044",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The publisher thanks institutional contributors; note is appropriate."
+      },
+      {
+        "row": "r00045",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The publisher closes with a wish and request; note is appropriate as closing prose."
+      },
+      {
+        "row": "r00046",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Publisher signature follows its closing note."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 17 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 1,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00006→r00007 *. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 2,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 248 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 3,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00006→r00007 *, r00007→r00008 *. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 4,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 125 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 5,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00007→r00008 *, r00008→r00009 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 6,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 194 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 7,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00008→r00009 -, r00009→r00010 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 8,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 147 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 9,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00009→r00010 -, r00010→r00011 *. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 10,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00010→r00011 *. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 11,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 296 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 12,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00027→r00028 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 13,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 61 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 14,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00027→r00028 -, r00028→r00029 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 15,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 33 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 16,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00028→r00029 -, r00029→r00030 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 17,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 142 and its present context. This break occurs between two cited examples rather than before a moved list marker. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 18,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00029→r00030 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 19,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 282 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 20,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00032→r00033 *. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 21,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 55 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 22,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00032→r00033 *, r00033→r00034 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 23,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 34 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 24,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00033→r00034 -, r00034→r00035 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 25,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00034→r00035 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 26,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 25 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 27,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00036→r00037 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 28,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 51 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 29,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00036→r00037 -, r00037→r00038 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 30,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 39 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 31,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00037→r00038 -, r00038→r00039 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 32,
+        "decision": "escalate",
+        "note": "Inspected the historical LF at source code-point offset(s) 61 and its present context. The old break precedes a marker now attached to the next list item. Prior correction remains AI-assisted and unreviewed; do not silently restore or certify it."
+      },
+      {
+        "index": 33,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00038→r00039 -, r00039→r00040 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      },
+      {
+        "index": 34,
+        "decision": "escalate",
+        "note": "Inspected the prior adjacent-marker history and current list: r00039→r00040 -. The markers now introduce list entries, which is contextually plausible; the historical move remains AI-assisted and unreviewed, so retain provenance and escalate rather than silently re-edit or certify it."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00003 switches source languages but currently leaves its Arabic quotation in the Persian slot and the Persian rendering embedded in prose; separate the citation and pair existing quotation/rendering as feasible. r00030/31 divide one example, and r00035/36 divide one list item. Preserve all source text and existing markers. Historical line-break and marker changes are individually escalated for provenance review; no rights certification is implied by the publisher’s statements."
+  }
+}

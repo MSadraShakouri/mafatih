@@ -1,0 +1,477 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sura-svrh-alansan",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "fa6935c7cbd6c871b1096bc55204f3d5f14a7637f7db1df90d71b3bd0de0ef01",
+  "layout_sha256": "9f02d7ce7d0baef27a44fb3261e92fd68fd9c393ca3b996c17f0b438e21204fb",
+  "result_item_sha256": "84e52f05e0cd4860b4bb974aaa0622283ceae433e7e6f76d060b158f1a1bfdb2",
+  "result_record_sha256": "3dedb15c454198b0183a198c759de49c906f0d9e0e3e65511f01ee68e2389ae7",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sura-svrh-alansan",
+    "item_sha256": "b6c0148c203baeefb6a093964934a5071c8ea348ef563c6a81542ebec7173619",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "ece900f9959c0bcd29d2da7695f00a0aeac20f92020a48b998d0cec8ed49253f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the basmala; it is the basmala and pairs with the existing rendering."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the basmala; it is the basmala and pairs with the existing rendering."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the whether a time passed before humanity was mentioned; it is verse 1, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the whether a time passed before humanity was mentioned; it is verse 1, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the creation from a mixed drop and hearing and sight; it is verse 2, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording. The rendering expands the Arabic wording; record it as the supplied translation without silently revising or endorsing its interpretation."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the creation from a mixed drop and hearing and sight; it is verse 2, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording. The rendering expands the Arabic wording; record it as the supplied translation without silently revising or endorsing its interpretation."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the guidance and gratitude or ingratitude; it is verse 3, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the guidance and gratitude or ingratitude; it is verse 3, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the chains and fire prepared for disbelievers; it is verse 4, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the chains and fire prepared for disbelievers; it is verse 4, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the the righteous drinking a camphor-mixed cup; it is verse 5, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the the righteous drinking a camphor-mixed cup; it is verse 5, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the a spring drunk from by God’s servants; it is verse 6, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the a spring drunk from by God’s servants; it is verse 6, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the fulfilling vows and fearing the day; it is verse 7, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the fulfilling vows and fearing the day; it is verse 7, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the feeding the poor, orphan and captive; it is verse 8, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the feeding the poor, orphan and captive; it is verse 8, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the feeding for God without reward; it is verse 9, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the feeding for God without reward; it is verse 9, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the fear of a severe day; it is verse 10, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the fear of a severe day; it is verse 10, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the protection and joy; it is verse 11, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the protection and joy; it is verse 11, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the reward for patience; it is verse 12, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the reward for patience; it is verse 12, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the reclining without sun or severe cold; it is verse 13, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the reclining without sun or severe cold; it is verse 13, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the shade and accessible fruit; it is verse 14, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the shade and accessible fruit; it is verse 14, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the silver vessels and crystal cups; it is verse 15, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the silver vessels and crystal cups; it is verse 15, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the the measured silver vessels; it is verse 16, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the the measured silver vessels; it is verse 16, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the drink mixed with ginger; it is verse 17, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the drink mixed with ginger; it is verse 17, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the the spring called Salsabil; it is verse 18, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the the spring called Salsabil; it is verse 18, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the everlasting youths serving; it is verse 19, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the everlasting youths serving; it is verse 19, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the great blessings and dominion; it is verse 20, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the great blessings and dominion; it is verse 20, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the garments, bracelets and a pure drink; it is verse 21, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the garments, bracelets and a pure drink; it is verse 21, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the reward and accepted effort; it is verse 22, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the reward and accepted effort; it is verse 22, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the gradual revelation of the Quran; it is verse 23, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the gradual revelation of the Quran; it is verse 23, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the patience and not obeying sin or unbelief; it is verse 24, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the patience and not obeying sin or unbelief; it is verse 24, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00026",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the remembering the Lord morning and evening; it is verse 25, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the remembering the Lord morning and evening; it is verse 25, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00027",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the night prostration and glorification; it is verse 26, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the night prostration and glorification; it is verse 26, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00028",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the those who prefer the immediate world; it is verse 27, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the those who prefer the immediate world; it is verse 27, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00029",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the creation, strength and replacement; it is verse 28, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the creation, strength and replacement; it is verse 28, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00030",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the the reminder and choosing a way to the Lord; it is verse 29, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the the reminder and choosing a way to the Lord; it is verse 29, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00031",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the human will under God’s will; it is verse 30, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the human will under God’s will; it is verse 30, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00032",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ar field presents the divine mercy and punishment of wrongdoers; it is verse 31, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fa field presents the divine mercy and punishment of wrongdoers; it is verse 31, paired with the existing other-language verse bearing the same marker. Preserve that verse boundary and the source’s bracketed interpretive wording."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Read both languages of the basmala and all 31 numbered verses. Each verse remains paired with the source rendering of the same marker, including bracketed explanatory text; retain Quranic verse boundaries even when the syntax continues. This is an alignment review, not a scholarly verification or a translation revision."
+  }
+}
