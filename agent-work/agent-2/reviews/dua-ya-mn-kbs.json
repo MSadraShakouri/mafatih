@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-ya-mn-kbs",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "b7fdae1f5d48a11e735bf5dde3383404115825d37782e05368b771ebbfc616cc",
+  "layout_sha256": "9545af19924564bb67bf580e5595d60655d6d2295ae5dff2ac00699281cfd1dc",
+  "result_item_sha256": "eca92e65b60fd65fb553153872efbaed950bc10aeb9eae8876537efc678306fc",
+  "result_record_sha256": "54fcbfdcb49fcd7687e1de26eb68b68a16a4e7b19c2c5873b1508b3e96b14ccd",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-ya-mn-kbs",
+    "item_sha256": "53ebd45ac0dca97e16fd7d480d87c50bc97ebd5e84f2f39f542bff40ae7991f3",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "efb166a83eae9e921da399d2599174fa953e654467cd1aebccd3cb50a84d9618",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

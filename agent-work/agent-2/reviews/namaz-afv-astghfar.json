@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-afv-astghfar",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "1a20d626c2dc3fec7ab28f236e731d7c61c6b445864d10c0205a439ce74055ff",
+  "layout_sha256": "8ae0165719537cb3392415a446a4acd1107b97e518c75aedc1b64b70de2adce8",
+  "result_item_sha256": "e350ef6e54d48625f1af97a5bd491556f6acdc4c0c558911e181e3bb386ff248",
+  "result_record_sha256": "f0011bd61e3ba8d730d2deca0c5094392d80cc83954b4b0e958288f8b4622746",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-afv-astghfar",
+    "item_sha256": "c01a671db12a2edb0b5abba78d986ba74dca384935e31fe637cafa08ca341f28",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "b624f5ee7899c32f462e6d0ba51f665dcf07d33412b837666bba3851318b4830",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

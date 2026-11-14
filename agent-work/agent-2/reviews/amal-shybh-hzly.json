@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-shybh-hzly",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "61c1f205b8399b53f0522273d3f563cc25c2fbf26c4bd21ebfd4d5b545860caf",
+  "layout_sha256": "02f6049cdbbf1e0b5cba372e2820579a6c7afc5bedc281d52550d3ed78c3ec11",
+  "result_item_sha256": "58aa4728ea3594d099c862a33fca4f945919c8399778bbc5b8327e636e9beb14",
+  "result_record_sha256": "90bab084598bbaf712ca2fa03bd37cd33cae3b152e0b40f2545a180d496ecd54",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-shybh-hzly",
+    "item_sha256": "9f1c4d4ec3e80109c97368fc04f4e406a71bc8d22d33ec69bed298093c2f6a50",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "fb554ebb3c1a28a210707ab27aa161ac57f66fd96abe20a9d78b0526a88f6ba2",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

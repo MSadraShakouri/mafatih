@@ -1,0 +1,71 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-zman-ajl-allh",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "e7ca06311a3ee231c99b9cf74346052d3784c98efeda78252b3a62c340699f7c",
+  "layout_sha256": "3defccca2631272785e806d4bbf859295455717318e1cfd17bda3d92ea82dc21",
+  "result_item_sha256": "f2e8c52856490800cd9056fff2a29c498727fc44416e8d0a3913bdd8b14ec386",
+  "result_record_sha256": "030adb46a2b1652635ed42f53b6a572f03571c93161ff78bd1b0119604d05030",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-zman-ajl-allh",
+    "item_sha256": "8ebc5409308542ad0984f095ae1581b634c20842d333c4c83d74aff6a13ed3f9",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "7d511f17c66c4b752f217ad8ff1b1a4cf1e1e6d21c7438865a65aac9e0688010",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

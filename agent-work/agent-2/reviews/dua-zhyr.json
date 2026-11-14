@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-zhyr",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "058f15e033b224babdaf55ce7e45f5cde41ed600957bad0ef1afe0de9c7cbc7a",
+  "layout_sha256": "6c421a7cbd41f28038df6e30ce7b4778d7a31b5269865690d13b01ef836ba8f3",
+  "result_item_sha256": "607ddefb756671c3f39a33e2fa560415c86db0538d422c973af025823029f41d",
+  "result_record_sha256": "3bd17a56b9132fcfaba11e3117f6a284fda15d5c2d3aef8fd588a4b44ae0fb5c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-zhyr",
+    "item_sha256": "6422e077d30aa5a5bfe0bb3ae75197883742c643e80e0964fefaffd23388f433",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "d47c2a6ff8d18b2d6568b3d1d39623fd9823ac993096912b15c2a65d63c89532",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

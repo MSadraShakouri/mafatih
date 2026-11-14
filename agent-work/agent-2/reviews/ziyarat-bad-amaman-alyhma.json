@@ -1,0 +1,157 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-bad-amaman-alyhma",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "0583eb1833a5e28538a0136d67e01eeb773f9d0a80ddc9ec53953e0036b0783d",
+  "layout_sha256": "5e5679f74d795ceb5a6eb1253cc36cd30a5883ec44c13270d37bcf0335aa0c3b",
+  "result_item_sha256": "8343f246b1f592e0272569a361a09fca1bb5063dffd9d7a5493b6e3a6e7f111f",
+  "result_record_sha256": "6669e7e415877cb2abdbea25e7fd7c284713f56f8a323b5d8c76022a8e7e7bff",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-bad-amaman-alyhma",
+    "item_sha256": "3ec3b1455b6717f75f427d23faf898c545b9b3a89e6a5b68f5693b67da295f26",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "255bcaa383e9ceb18dadffd46938c09b892d40c5206ca2caa915870e8278e932",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

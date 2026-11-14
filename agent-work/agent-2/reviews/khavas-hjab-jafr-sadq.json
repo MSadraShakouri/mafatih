@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-hjab-jafr-sadq",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "ba29d354ad74dfe9f50748bcdfb8683bb6ef4d64d7c3339b8d0c42d103451836",
+  "layout_sha256": "4634c97e9b93f1a91d11b9ddfa79909303f40a838f8c1387aab51d278a8fb9b1",
+  "result_item_sha256": "4a7d21cf02fa6c67600e4bfda899a187e63653d5e453728bb89289acd6514f31",
+  "result_record_sha256": "70b7aa8028d6b795d242d30889aa36567a9c88ff4b5bce892c0e74196e46cad4",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-hjab-jafr-sadq",
+    "item_sha256": "78bdae1492d59fcb5f8aefa8503d6fce0463b80122336fc38f2609b9ad331619",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "493d2bfa96329f9591bbfaf4c4720536e3a36e37b52b5ebb67dc025a00eedefc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

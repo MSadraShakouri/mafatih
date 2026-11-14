@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-vsyt",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "a4553918828841d510125d464b7f0e7b455172c41fc6db72e6ee8508024084e0",
+  "layout_sha256": "fd3bf61ddee42eb3a17f17e5976775144a211f27c663297898e22771ca2edc4f",
+  "result_item_sha256": "e921c40b96b6506dd9e0ffa7739ef452f8eccc859c8931306aa4c446cb88fd55",
+  "result_record_sha256": "b725f696fced3967f6f0b2a9e850e3369793019ffd542997229dc7d5c4ac3190",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-vsyt",
+    "item_sha256": "c973877b43f3d2ac610d65001f15edc487659f54a99d6ff5d7f62d6e8d84404a",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "b3dcd098dfed7e5a14f1cfc08b82081472a28246e9f90408fc1d189c53664de3",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

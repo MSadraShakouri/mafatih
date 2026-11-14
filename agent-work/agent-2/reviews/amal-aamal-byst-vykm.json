@@ -1,0 +1,82 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-byst-vykm",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "de629eed21a83719ad8ca7b8833edc804bfb10d93f4762d4df3221d5d15feff8",
+  "layout_sha256": "a79ebffa6aa418f74ac86452a0150ddcb212c4ff2f078a636419cd376b814597",
+  "result_item_sha256": "507c90e9880e978380f8cc981ea0e53baa1db0a08a3f1e65f9deac6387b772a0",
+  "result_record_sha256": "f4026327ad715d68e76511782ef305610883cb7cddda94de4509181d1b98432c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-byst-vykm",
+    "item_sha256": "6deeabf8e944b6f8ccf244622cebad313e7db61506da29e6d2acb967fb9a2e07",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "c7df58d11a30251b71e0905c01fe423cc97c0cd11fcf20bfdc7f63a466891105",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

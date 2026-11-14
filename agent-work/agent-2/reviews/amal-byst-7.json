@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-byst-7",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "68063ad1d5a85bf19ebd990324f801a612fd61a83577fc5a584f57d67fb30eec",
+  "layout_sha256": "8cf952f43777b3cfa8f5874f762616ce0c885acc2534b78e6fd8e956154a2da1",
+  "result_item_sha256": "92eaeb0547ea6c16ac4fd3563ad93b9f1edf0223594f9d5dfc3b70e83c63a779",
+  "result_record_sha256": "956a60cdda6d6c781a289c5cbab7503d2d02196cb61fd36bf8e6087985597ded",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-byst-7",
+    "item_sha256": "63059cccd462408cd6ba55302173542d74ad73d9523404f9419380c20fc379f6",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "c210f5231348a5b8075b64916af724a47db5ccbeb3713c9cf5be221d157d33bc",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

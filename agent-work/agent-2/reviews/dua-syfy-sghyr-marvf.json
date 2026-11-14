@@ -1,0 +1,91 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-syfy-sghyr-marvf",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "222f7568f5d28d0eaa3c77db478b46ff9e25b4b7f8bf9039b47d7a65ae08cd73",
+  "layout_sha256": "13ba9d6664ea598e430d16e5c49a3169ce3f49753d18d37bbd562f10e5adb1fd",
+  "result_item_sha256": "f361f6d050677162e559cc25126a36f5dbd5d0dac7aee820a1685c6855018b89",
+  "result_record_sha256": "01992c9a9b86b3e212df53b07190011b6a1e5a6df9a0fba57f2b065bf3020b2c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-syfy-sghyr-marvf",
+    "item_sha256": "b254b41fa3f23d39b004c98a4df1ec942e71484952e347a5448c3b8a21634a4a",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "b1de84578ee3751ca7139a20f3a531fc6d41d19752bfefee14dae8837d8dc8e7",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified the row is a bare personal name matching the other reciter-label rows in form and position; the audio-reciter classification stands."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "fazilat-svrhtvhyd",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "c8f65c66c28026e2e91890b8b9efeea1eaa588ca85fe35ac36cc81945ba4eba0",
+  "layout_sha256": "d5851c96c50a1698b1856228ec0f0049f58fc598dc81c49e8d4cd3250a430251",
+  "result_item_sha256": "815450b7c85b6dc915b6660b13268320955df6817bd80f5f6fe35148f29aa6a8",
+  "result_record_sha256": "626957ee82ca927f93f3a536432d7f9002c81e5459cb71fcb3484c59a06a773f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "fazilat-svrhtvhyd",
+    "item_sha256": "d6000b754c1fe50faef82c07e349ea2ddc92e4ff379b7cbb0b06f207084f9eb4",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "bd4a3ad0a9a051965e5c7ebeb10819660e14632bb6eb28d353016adef02d050a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-shshm-zkr-dv",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "cccadcaa9b8f7cfbbb82fb01220a0cc485368ed90efe88a11be714b47cc4a011",
+  "layout_sha256": "8f8aa660b5f96aeeb469ce053cf79279b3860bcdff7b7e8e7ef9891236bcd1f4",
+  "result_item_sha256": "7269ffc13be67599aef30641efa93f0c0c0f9846cf30578bebeba59bf89c759e",
+  "result_record_sha256": "c3b959c8e9273ef0399dcc341e04d01bf7ecdab334d0d36fd0e3edbbc0377898",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-shshm-zkr-dv",
+    "item_sha256": "e1f6d741a8c133934df37eb7d080ddc10e5148dc7cedd981eba44bf03818efba",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "98631e3488eff37c0f1ded0d496bbbffa988ac4f8728194f67e6f189541c40d1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

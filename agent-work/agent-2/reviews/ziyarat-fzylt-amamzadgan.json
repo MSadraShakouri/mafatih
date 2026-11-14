@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-fzylt-amamzadgan",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "bfec4288a16dd4bea471e472e59102ee636bcf745d9c29bbf8c73800ffaa87f7",
+  "layout_sha256": "596f1c0be00cfc0d1fb407d5dd59fe5942c18272686564ced03c1090a8c33aa1",
+  "result_item_sha256": "d354dea015177012a04f432b1b7dd34e4db14dd63c0ff9d608f726032d90fe7c",
+  "result_record_sha256": "911cf1f41811d09445096e1245b182ee7acb27d1996a3dc005dae576af9d01a3",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-fzylt-amamzadgan",
+    "item_sha256": "56450ed5fea23acb9c8e396609d79603bfc2cbd973ec3dbeb3b5a8d9a475b5cb",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "2c91a5d9764555bb360f5af8427c159f18193730342042569dd35b81f5d61ef5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

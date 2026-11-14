@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-jvad-alyh-alslam",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "97d6e542a17d54e99716ba227580956a88a8f9a33c402a2d2a8eb935994f208d",
+  "layout_sha256": "cd0c74d425a2bf9428f253e32042bd0e78913584ec7317bad39c150f7b4b14d6",
+  "result_item_sha256": "d9fe384f61d830af0cad255a6ba7e70020674401c8e3b6be7f9d9a57b015bb64",
+  "result_record_sha256": "e0c853d53f4cb86214fe93740cdabcb2328b44b6040e891e15265f85a3838072",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-jvad-alyh-alslam",
+    "item_sha256": "010472fec7f1388c445aa03e9ce5cba51d7a1e7cd6567a497ed1c4c17fa8753c",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "580d2b5ef68f9c9243abb487d6a88d7ef0a2f9b70df2cec01507cbb0ce2b26eb",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

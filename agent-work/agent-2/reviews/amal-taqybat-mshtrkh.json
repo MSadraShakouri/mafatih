@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-taqybat-mshtrkh",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "0ec1a992f9440d667e470816a04a54e9654359d9fbce43a161e0e3963ef5dab1",
+  "layout_sha256": "ec22401b5a56ff301929eb5e55cd6cf6f5847be1a32c152e3c3bcb3b6cb4f9a4",
+  "result_item_sha256": "38aaa8b4fef30d3cca024b1464da3962a1eebb3d304eff056e5ea6347392aaa3",
+  "result_record_sha256": "c6f03e32802360e792f6612bc2df46baea714887ae218bab35d423a00f2b2654",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-taqybat-mshtrkh",
+    "item_sha256": "834123c5b769ccf6d62600bd5730e98183dfa37f04b1de203a64d8fe116a4016",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "76c2b1aecc120f0de942d9c9766c8dc93ff525f4917a155a3fa06f997a38903a",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

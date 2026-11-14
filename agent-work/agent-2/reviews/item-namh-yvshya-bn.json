@@ -1,0 +1,87 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-namh-yvshya-bn",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "447b8d347c32af1049f8ed737bf26a7467956cdf33c03ea11b6ae88e66b7cb0d",
+  "layout_sha256": "6216b1d972aed4241fe9f1f447e00f5c2e644650ea2f504b9f75126dc8d022b7",
+  "result_item_sha256": "f8e7f1a1a612ec6a614e1e968f4ef89f56c9dbd2ab5c1f8ca17f4fe8f04be017",
+  "result_record_sha256": "aad5b60130dadb0d563b53fde39df9080f8f8e4a9e0fdde2c4635338d1579d8e",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-namh-yvshya-bn",
+    "item_sha256": "97de130023384b56f7f774a6d702e7896abc518a8c9300f9a9ca2c80120ca50b",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "b450d30f4a8afd08899f719c8c92ec134630489a48b82783bb2cda26bccefec1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

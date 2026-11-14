@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sura-kawthar",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "3111e736db86ad7a4ffa8b82ebb9b038845fff9eb34c12f17df292af8af08206",
+  "layout_sha256": "f2b71c14bb7efdd48fad6c9543c3ee40ea2250b881dd9037de109e38f2a9f3f6",
+  "result_item_sha256": "e567be25285c40007badfba26a45232d56f6092ce38593d9a4a47880ade0305e",
+  "result_record_sha256": "b530cf6787db8707124f71127bd909b06775cef7b5439265302e170d4f1c3c3f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sura-kawthar",
+    "item_sha256": "246b06ff72cb20c2129622ffc1b39254db98c0c15b22ddebb0563f0f167b801b",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "2970e27081e7f6fd170574a9049dd683f14917427cc0d3d3b2a12e0b5c1b7176",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

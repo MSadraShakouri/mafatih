@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-rvyt-jhvd-trsa",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "dee8b32151d7d95225e4a96c073f04d69be97949eb82efd62a9529e3496c7d33",
+  "layout_sha256": "5ef63e68897c61388a5297229e5a8cfe060d320189c2c4f7e198245d7fd58bc1",
+  "result_item_sha256": "59203dd17fc2165365f030144a4b30181231cb98b6a66bc7586b35f854d388ff",
+  "result_record_sha256": "44597f915548eb87c3749faa6d778bdf2030b25262d95be291b768c482fbf499",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-rvyt-jhvd-trsa",
+    "item_sha256": "c28871f8196502c6d399badf8a2139cb35aa4d9d4246bc864e5671684fb35b6a",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "092a92378c6f7d0a347253529cc7bae58d264fd01bb738b6198d191ef3fdb909",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

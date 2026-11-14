@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-hrz-hady-alyh",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "61d350e7f6f950fd4cc7191c2fb947195ec67c5dfd9f8ef290583debcb1fec3c",
+  "layout_sha256": "08b9089617dc9dfb9cedfb05be4f4326d53052d99f0dca8bd2ebedc3c57efa9c",
+  "result_item_sha256": "91dd1cfc184934c6e851cb59947cd5d12c6f509d7afd1dcc37e6847bf5782d89",
+  "result_record_sha256": "efff44443b19bc6b77cf19a47b449c87ba065d1e03c9337e13617232cf7e7a09",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-hrz-hady-alyh",
+    "item_sha256": "051fecba72dd867eb607d62186c7b3d589f8b38eccd345d8459f4590262a8774",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "f64533b3875b4e3ec240efd174c367660a2a0aa0d74dc5f6a5d3ed559d481cf8",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

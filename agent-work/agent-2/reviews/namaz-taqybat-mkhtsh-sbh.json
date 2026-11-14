@@ -1,0 +1,96 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-taqybat-mkhtsh-sbh",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "f6faf5be57e8b53935b221091a866ce85bf6b53a4a6a6c151fb4be8782d39d4b",
+  "layout_sha256": "f7af9af41a0d6e2fc7c9902315b3a651f349ee6fedb9056a53281a4b9d821eea",
+  "result_item_sha256": "7346269b331822b114f184fb76d2218a1bed9ccabb34c9740f3c21cd889f3e83",
+  "result_record_sha256": "456f6229e623e42df341a50200b1e654fdd5c5f86576f836c7fd4af7cebad129",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-taqybat-mkhtsh-sbh",
+    "item_sha256": "879563bfb3b1c8ff8d299a9695b23541bcb06c1b3a21f57c6cb6dc715f91817c",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "2b70614b6fbb183ed8aa3e671b67d9aa97b4a496016517c03f9d240fa3faec4d",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

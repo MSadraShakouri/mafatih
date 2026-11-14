@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-takyd-amr-vsyt",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "6862bcd6fa85381acc2a7794f4e8d903ac7180ff029280fe7f216cf09ddb6d53",
+  "layout_sha256": "b9354ceb68f7555404f4704aebabc46ba041c8112ee20495cda3a43426d79e4e",
+  "result_item_sha256": "0cdbdad32f6c0fa51873c28a9da361bb03981245768c9dc3f3443294c6694576",
+  "result_record_sha256": "53b60cef850c96847a6dbd39eee18e0dfff7bbbbd935e330b46161004a762a42",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-takyd-amr-vsyt",
+    "item_sha256": "d57b085839fe5666a23d93556662c5772e285f5c6c63ff05d5e5f56dc873fa0b",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "ba726be8f2ba9f6e5978483f6dad9c8d6cf6d4dcf96fc8f382472774cbaeadd7",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

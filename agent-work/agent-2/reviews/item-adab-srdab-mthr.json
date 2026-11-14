@@ -1,0 +1,63 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-adab-srdab-mthr",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "47d299a04c4876305e105fd4cf42caed302f765019ff57dd573d82b60753bca2",
+  "layout_sha256": "13faf091ea4b7548d5b7c442c329acbf2f8eeaad743eb4630a8a7b9f5a2fe43b",
+  "result_item_sha256": "7878a4047a2ba72fd020e0b6d975ccb4da9c5fe62310f25426029b10239b676b",
+  "result_record_sha256": "54e333efb2da0bbc431b345d53c4bfeaa9d0070ac6ae3fbe00eb256f313a3b78",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-adab-srdab-mthr",
+    "item_sha256": "a8f2657de949ba35241e41d84184df9387c99da7f1f20eda10d3d547cc86a039",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "da9bab4be631e8d9217cdb89fe0f66c890b62d4519426e4552421f93f8a51246",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

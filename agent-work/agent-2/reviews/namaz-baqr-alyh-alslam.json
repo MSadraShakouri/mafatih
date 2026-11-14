@@ -1,0 +1,78 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-baqr-alyh-alslam",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "36137136954ed800f7e4baa75a9cb5f374c2ca10396dcd66d9f80c39edb568fe",
+  "layout_sha256": "e3314729efc8707bca00036fd0b84d050902de17cab34923cc9ae0a987912464",
+  "result_item_sha256": "a88ce07e1e6a8acb4db44b169449a3e1914056c1df7dd9beab1bc9154e17ba38",
+  "result_record_sha256": "a83e6883868a6333c09ee83a76ca1312b948056c20e0d641e9e58b3ea505f0de",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-baqr-alyh-alslam",
+    "item_sha256": "9626af7b2535a098e6a01c00d47dd257a4d8c8273c455279fb27ba18840b9371",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "58870350d4748810125f84d8d380a34f16b2e9b659e6b08626e6e911970cf742",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

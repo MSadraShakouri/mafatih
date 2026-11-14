@@ -1,0 +1,71 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-klam-abn-btvth",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "53c33574bcd36ee03dfa7e1927915a42ed1de19bee7bc16873b0d03f57beb27c",
+  "layout_sha256": "1cb9711aaa1bf440090e2ba408285ec9b790d8f9bd05372258e35d35ea86c0e9",
+  "result_item_sha256": "4a8f033c627b42eb20e57695139a684360345bb794d76ce79704b0078fac65df",
+  "result_record_sha256": "8ce4ee25daa8b48183b8f4024665ed4f919e178235cab5fc4a15049a50d63b2b",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-klam-abn-btvth",
+    "item_sha256": "28ab55069622aeeb613a4e69daf543573ac10db6f11ad0c04eda3e6b52fcdc7a",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "3256b46f3fbe28b676507793b4b2fe01057833f9f86728e40c721de046709215",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

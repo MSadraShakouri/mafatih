@@ -1,0 +1,64 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-zyad-shdn-rvzy",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "cf63b4a81ed4430a67e80a7274ca1fd555ffdc448880fa960410830cdb0c3dd9",
+  "layout_sha256": "a973921565564d685a9e4d5fcf25f0d8132dc04861bee8e0fff322ce4836ecce",
+  "result_item_sha256": "cea8784f6b53fdbca56a1f5d771029044014a9542ffdd757b4f625fcffcb2318",
+  "result_record_sha256": "eac3b752d58f288f42e0c379ca2a56e3dc8c549560738ef876fff3b0b6cabab2",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-zyad-shdn-rvzy",
+    "item_sha256": "43935b666610198bc08b397190a37f3781c0ea0bbb904aa474eb7da8274243c7",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "e7ad270cf224a3306c4c81e1e97b18f36d9c985bc514088f5b6a36607ab2142e",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

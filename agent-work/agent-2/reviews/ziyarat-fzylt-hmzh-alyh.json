@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-fzylt-hmzh-alyh",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "38e770803d4726c45338c1fd0feaa9fa3d663c5b7ac9930e3414eb86c3cbd90b",
+  "layout_sha256": "6550e7548e3b0ecd4d8a330fd1ff69433b5ee43a06047da31f59a1331d61006e",
+  "result_item_sha256": "88e53b164a68b4d230c3958bbfc77ec858dce79099084c2137f2ab86a7a65237",
+  "result_record_sha256": "fabe0e99d68c58ae6f83b2f9035babbd66c6f2697992367c375211666f44baac",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-fzylt-hmzh-alyh",
+    "item_sha256": "0e20bd9efa4bea676fb0b002703ab12e6155d4a30dd7c6919a3d03dc4c535df2",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "91dbe44c15d0aa94f450ac204ae590c70b6857e7b1d3d5d5dc90b6e74fdd79ea",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

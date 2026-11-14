@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-dvay-tngy-nfs",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "1c4df05757f2e875ca3b8eb071966f52f2def8f911c59f5821691d0b2d1c6aea",
+  "layout_sha256": "f13ac2dcc541607d6594abe7d3177fcaf72a02014ad2e1f233d6e630458579bd",
+  "result_item_sha256": "aa0c1d48554ffdd44aab5d78f570d8b226cd3042d4e87388f3e66f5d16db6260",
+  "result_record_sha256": "0032c5edd68855f0ec51ceae83daf9e5212d5454098faaf3ec7fae6e70266b21",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-dvay-tngy-nfs",
+    "item_sha256": "aed651f9d8a0587b33405a8f0107806666c1e9f37829431732396832e63dfc86",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "3859774335b181e84e9fc0171e72c57c84964a394300a44697539c79024922b3",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

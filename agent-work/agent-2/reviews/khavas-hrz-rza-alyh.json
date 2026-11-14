@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-hrz-rza-alyh",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "c332201d0af203a72bf6306656494a1835d8831cc4b447b9721673ba8452ce7f",
+  "layout_sha256": "3fd8bba000ff8d3d7fa92b97fe32b4eb58de1509ca900cf653050bba0d6ffe8e",
+  "result_item_sha256": "ac360bad9d3393a8c9b08a7440a39ea9e40a879418d762cf48acd0d0c086e79e",
+  "result_record_sha256": "bc8810500e0074a58149fd719a27068c763e851d12f13ea5e91710e65540b674",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-hrz-rza-alyh",
+    "item_sha256": "6ac55b1ce3af6866681d33cc81b5661b32ab21ddc417511fd267c16a04dc2d4e",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "ab303ec9847233e266caeba689b6d9b2058510943e78e09a637e560e312a6e46",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-amyralmvmnyn-alyh-alslam",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "8ce25cc3d0e58b5db1cf764febb7ac3119c340d689b78f50debf222e64386cd2",
+  "layout_sha256": "5e08f38c3462698468afbbcfe4f5f919c0481d45a30b1c66ffe929c08502308f",
+  "result_item_sha256": "1063b2c60a36d5a590e83c060859f7eee4bfb2887732a58060c8d5ffd13850f0",
+  "result_record_sha256": "6aeb60823e7b0e39f7a5ac38228a6ebcc938e48e5cdeacc20aef457d3b2ca152",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-amyralmvmnyn-alyh-alslam",
+    "item_sha256": "0dae840bd435ee99f245cb11313c11f082cd110b6119a652b5795892bf44b401",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "ee4dcb18cbb409e87228627fd30b20a8cb8f86197e3e19f063f4b25604463a5b",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Verified the current field text is one flow and the applied rows add no separator; the historical record is retained without restoration."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Verified the recorded situation against the original and applied rows; the recorded resolution is consistent and no data change is needed."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

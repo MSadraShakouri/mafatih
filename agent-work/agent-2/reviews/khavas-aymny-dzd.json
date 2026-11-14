@@ -1,0 +1,42 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "khavas-aymny-dzd",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "1bc55d7f8ef22b6ccf795b887610cb4375e1c8817276b530dab876e87adf27b6",
+  "layout_sha256": "977cdeba5503687550ea21d2e68b91d046d4292129487eedd13e25e63b8ea58f",
+  "result_item_sha256": "6142adf2208a73dffc0d0ce605cbc6caec1dcdaa611e4d79a9964041ab1aa214",
+  "result_record_sha256": "da87757ec40c5bcfc516731571811b9bc3e6e78abb5a7a3460c6b18c4bf0a502",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "khavas-aymny-dzd",
+    "item_sha256": "0140b04540c9694ae3354a03abea920b98d140da02c047fbeb11673581439a8c",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "76e87d4fdec2476f05c4e0e2c43e1028bc7eb5074fe8e3495aaca2b77dae4602",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the embedded short quote stays inline with wording unchanged and no language move asserted; consistent with keeping short embedded quotations intact."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

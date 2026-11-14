@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-asharh-4",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "a482db3f47d9e44197bc4568cfd9401ed4032a31788f71365cc6a8d2a5250ad1",
+  "layout_sha256": "d2c96091847fbac3c33d2b675c36af3a08a771cc879e996af448f2cddd47167a",
+  "result_item_sha256": "a4f2589b47b91c7b1ef0ec2d37edd01cd99b12d42461f8851a36fd35c65ff0b3",
+  "result_record_sha256": "22a005aeb251025bed0ed2bf96305a2a6af0da03fdb1dacada2b892a32cb7816",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-asharh-4",
+    "item_sha256": "be19d950ec755b69c19d96f1672719873b9245b7bab946ecdeab4c67bc0c00b7",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "2d7d397272a27d975c1c751533261fde1fa7e5e0faa0a87625b236f558854a29",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

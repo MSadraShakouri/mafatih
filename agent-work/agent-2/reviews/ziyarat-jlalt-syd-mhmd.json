@@ -1,0 +1,91 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-jlalt-syd-mhmd",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "9810a89d01bb6945a8f6ba792bfd82d3c5a3c73b9c57c27450b98d1fb4b72a00",
+  "layout_sha256": "a31fe4f7e14b3a64e9164395126ec17a787b4dd6e8efba26b56fdb03be8527c4",
+  "result_item_sha256": "fc1d8e17cdfccfd577ca13851c10f977236d44abdaadf78e9c0e5c83c6d8bc60",
+  "result_record_sha256": "34af4f6ece31eb7760fb2e47903996a4956e9ab927459c1f89ca3fad391f2e7d",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-jlalt-syd-mhmd",
+    "item_sha256": "b8351a68a4883c23674558ce1adfd4eb6e52e8e5163260695d877e1ad2638832",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "fcce3cb6ab0e93c8a5c40d54ec994d051afe14a6386b62a67e60f86cc1c4beb6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified against the original and applied rows: the re-homed piece matches its destination language and the remaining pieces stay paired; placement follows the round convention."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

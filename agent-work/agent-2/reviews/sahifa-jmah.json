@@ -1,0 +1,110 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sahifa-jmah",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "770e862b9c02083f2fd5870903c824e5314550685ab05c0f1baee4212d11d583",
+  "layout_sha256": "81b366571d9b5392ef50b81990a7ed5cd6cd17b54aa87990784d338570b93e46",
+  "result_item_sha256": "91bfa368953f33dd84e7ec1e0fc3429b0ce8db1966f0caf7e0d212660ace7537",
+  "result_record_sha256": "94488b3f1294d89c998fb57319d6ea52232659101353067729caac7730a9a36f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sahifa-jmah",
+    "item_sha256": "2288f1d52101af80033bb78b882a63d95118d7648ace9d63e4c4c9c366fc53b5",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "ea1af2bd1103f5be437dceeadb6202415c3fb57b507ec420e6c1712f0c582cb5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Verified the row is a bare personal name matching the other reciter-label rows in form and position; the audio-reciter classification stands."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Verified the row is a bare personal name matching the other reciter-label rows in form and position; the audio-reciter classification stands."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}

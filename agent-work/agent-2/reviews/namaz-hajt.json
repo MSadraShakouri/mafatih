@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-hajt",
+  "author": "agent-1",
+  "reviewer": "agent-2",
+  "author_commit": "9439f6ae585220777bf27d8dfbd2add21ca6bb42",
+  "plan_sha256": "611371f5cf0597be35b370331bbb9a1cc699c747699ffd838938ce29f4db6a3b",
+  "layout_sha256": "8940af5b9794628f95188b0088455628189c585b5c836bb9bac5e25d7c674093",
+  "result_item_sha256": "3c44d917d04bd09a0302f7b8b3e8efe4dc4248a6acc9bd89eabd553ded820aec",
+  "result_record_sha256": "3ca8f446d3f278a1c03d76554c265b83ff4330c076731faf06441c1393fac354",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-hajt",
+    "item_sha256": "cec8a99a2c61765d357ff9c1fa3e2935e300634a61d5cf7774e39d9164aefaf1",
+    "author": "agent-1",
+    "reviewer": "agent-2",
+    "preview_sha256": "3ff8502b95f9ed92e928a766134826104a769c0d3aff7496736f29c196d30e2e",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": ""
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Row pairings verified: reconstruction exact, languages on the correct sides, kinds consistent with content, re-homes (if any) checked."
+  }
+}
