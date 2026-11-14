@@ -4,11 +4,11 @@
   "item": "item-mrsyh-am-albnyn",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "author_commit": "10d8d38d82666a945be549126091de260d20998b",
   "plan_sha256": "2cd2ee554e92df5c8ee3abfae8fc665d774fc9a9209bfcee6523f7ae4f9623b0",
-  "layout_sha256": "e3e22bae20697e262f095756d23592e5d7b7d4614178d4f8aae3c5a276a891f4",
-  "result_item_sha256": "f61e2bf04d8faeeb4d870e4738432d7a6046a1889d04e36252555f0477c6903b",
-  "result_record_sha256": "8583c4aa9519c570de27534269723d66aa53d465097ec192059e26feed4cc93e",
+  "layout_sha256": "31202bb3443603ec6e7fbc037dc8ae44991a78bc0205572ef3ab9ae1c779c68d",
+  "result_item_sha256": "185dc8d60836ce3302df6593740702413784af9276214427e81bd44a80a029b9",
+  "result_record_sha256": "1f22668491a7d027254469c67d1b0b6622ffc03c11aa2b18e59cf99d2c48e4fe",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,70 +23,70 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
+        "note": "Withdrawn earlier and unchanged at 10d8d38d. Persian prose is not judged by length; no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
+        "note": "Withdrawn earlier and unchanged at 10d8d38d. Persian prose is not judged by length; no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The Arabic half-line now sits in the ar slot as asked. Kind still open, unchanged from my earlier note: these are elegy verses quoted inside the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation and recitation here is inconsistent with it. Either kind can be argued, so this needs one decision for both items."
+        "note": "Re-read at 10d8d38d: the Arabic half-line in the ar slot is now joined with r00004 into the merged row m7fd11ac1993a4b4f9d3db507. My pairing request is met. Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Joined at 10d8d38d after the half-line of r00003; the two half-lines form one couplet. Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "The cut of this field is accepted: the first half-line of the couplet now stands in the ar slot of the row before, so the repair is the join named in the layout decision (the Persian here renders both half-lines), not a cut between the two renderings. Kind still open, unchanged: elegy verses quoted inside the author's narrative; quotation in amal-byan-nhvst-sfr r00006, recitation here."
+        "note": "Read against the merged Arabic at 10d8d38d: the Persian renders the first half-line and then the second, in order, and nothing else. The pairing is now correct. Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The Arabic half-line now sits in the ar slot as asked. Kind still open, unchanged from my earlier note: elegy verses quoted inside the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation."
+        "note": "Re-read at 10d8d38d: the Arabic half-line in the ar slot is now joined with r00006 into the merged row m593b5e8d63e327587f6fea00. My pairing request is met. Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00006",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Joined at 10d8d38d after the half-line of r00005; the two half-lines form one couplet. Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "The cut of this field is accepted: the first half-line of the couplet now stands in the ar slot of the row before, so the repair is the join named in the layout decision (the Persian here renders both half-lines), not a cut between the two renderings. Kind still open, unchanged: elegy verses quoted inside the author's narrative; quotation in amal-byan-nhvst-sfr r00006, recitation here."
+        "note": "Read against the merged Arabic at 10d8d38d: the Persian renders the first half-line and then the second, in order, and nothing else. The pairing is now correct. Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00007",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00008",
@@ -100,77 +100,101 @@
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00010",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00010",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00011",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00011",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00012",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00012",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00013",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       },
       {
         "row": "r00013",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 10d8d38d. Cut accepted (one couplet beside its rendering). Kind still open, unchanged: these are elegy verses reported inside the author's narrative. Agent-5's own amal-byan-nhvst-sfr r00006 classifies a quoted couplet as quotation, and so does agent-6's amal-byst-sfr (elegy verses, accepted by agent-1); recitation here differs from both. I lean to quotation, but I do not ask for the change now: kind is part of the id of a cut or merged row, so changing it would retire the two merged ids published in this snapshot. This needs one coordinator decision together with anchor safety."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Author fix by a join, link-safe. The first half-line of each couplet (r00003, r00005) is now in the ar slot without Persian, while r00004 and r00006 pair the second half-line with a Persian piece that renders both half-lines. Joining r00003 with r00004 and r00005 with r00006 (same kind, no punctuation normalization on these fields, so the pinned test does not block it) gives each couplet beside its own rendering. The slot findings are resolved."
-  }
+    "decision": "accept",
+    "note": "Read all 11 rows in both languages at 10d8d38d. Both joins I asked for are applied: r00003 with r00004 and r00005 with r00006, so each of the first two couplets is one row beside its own rendering, like the couplets of the second poem. Link check: the joins retired nothing; r00003-s3230365f4763acdc and r00005-sbd4e608dd116bf2e are aliases, r00004 and r00006 are mapping originals, and every id this item has had since the base is reachable. The layout is accepted. The item is held only by the kind question recorded on the verse rows, which is not an author task at present."
+  },
+  "spacing_review": [
+    {
+      "row": "m7fd11ac1993a4b4f9d3db507",
+      "language": "ar",
+      "target_start": 59,
+      "value": " ",
+      "left": "r00003-s3230365f4763acdc",
+      "right": "r00004",
+      "reason": "Separate the Arabic verse ending النَّقَدِ from the following وَ; the Persian rendering covers both verse halves.",
+      "decision": "accept",
+      "note": "Accepted. The left half-line ends with a complete word and the right half-line begins with a separate conjunction; without the space they would run together. Checked by code point: U+0020 at index 59 of 118, no doubled space, nothing else added. A plain space, not the three-asterisk divider of the second poem, is right here: the source writes the single-row verse r00007 of this same poem with plain spaces only."
+    },
+    {
+      "row": "m593b5e8d63e327587f6fea00",
+      "language": "ar",
+      "target_start": 57,
+      "value": " ",
+      "left": "r00005-sbd4e608dd116bf2e",
+      "right": "r00006",
+      "reason": "Separate the Arabic verse ending یَدٍ from the following وَیْلِی; the Persian rendering covers both verse halves.",
+      "decision": "accept",
+      "note": "Accepted. The left half-line ends with a complete word and the right half-line begins with a new word; without the space they would run together. Checked by code point: U+0020 at index 57 of 115, no doubled space, nothing else added. A plain space matches how the source writes r00007 of the same poem."
+    }
+  ]
 }

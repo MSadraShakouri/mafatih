@@ -4,11 +4,11 @@
   "item": "amal-aamal-stvn-2",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "author_commit": "10d8d38d82666a945be549126091de260d20998b",
   "plan_sha256": "ceb9ae122dd139b462dcded893f94bf3dbc3500b4f54e191e4385a2502c92d2e",
-  "layout_sha256": "33517f3cbc260936d1b600b2e638a1c2306c28afa108bb73fc0d5e288bc1fc56",
-  "result_item_sha256": "ead3957af8863b731423d10056205534d44fc0180dcce1bb293d4959782591d9",
-  "result_record_sha256": "164b464038ef37de13e089d17dd4a85bc46d2351cec43a88081be7c97cf8483f",
+  "layout_sha256": "fa40a66b0fc1305f9b95ca6ba76d5dbc66f59e4f59b7d79c9a7a31f007af32e8",
+  "result_item_sha256": "a8a6588a385fd863d27030c248d9a9302d490ea689d0e35a3e30e7c0134918f1",
+  "result_record_sha256": "5c3f14fb80b5340f2d83fb86217098b386267b6655c74419ff5d0c928649e731",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,56 +23,69 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
+        "note": "Withdrawn earlier and unchanged at 10d8d38d. Persian prose is not judged by length; no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at 4aae1ccd: 2 output rows (1 note, 1 recitation). The field is now a Persian note (398 code points, prose, not judged by length) followed by the Arabic prayer, which has moved to the ar slot as asked. That Arabic piece has no Persian of its own in this row: its rendering stands in the fa field of r00003 (see the layout decision)."
+        "note": "Re-read at 10d8d38d: 2 parts, a Persian note (prose, not judged by length) and the Arabic prayer in the ar slot. The Arabic part is now joined with r00003 into the merged row mb9785677f42eefa51eea6136, so it no longer stands without Persian. My request is met. Source property, nothing to change: the Arabic lifted from this Persian field is written with Persian letter forms for kaf and ya, unlike the Arabic field of r00004."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Joined at 10d8d38d after the Arabic part of r00002; the three words complete the clause that part leaves open."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The cut of this field is accepted. Its Persian renders the whole prayer whose Arabic is the last piece of r00002 plus the three Arabic words of this row; the repair is the join named in the layout decision, not a cut."
+        "note": "Read against the merged Arabic at 10d8d38d: the Persian renders the whole prayer passage from its opening address to the clause about rescue from the fire, clause for clause and in the same order, and ends where the merged Arabic ends. The pairing is now correct. I ask for no cut of the merged row: it has been cut and joined, and a further cut would retire its id."
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00004), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 13 internal clause marks in one piece of 598 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Author fix, link-safe, unchanged at 10d8d38d. This row has never been cut (it is still output row r00004), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 13 internal clause marks in one piece of 598 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00004), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 13 internal clause marks in one piece of 598 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Author fix, link-safe, unchanged at 10d8d38d. This row has never been cut (it is still output row r00004), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 13 internal clause marks in one piece of 598 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
+        "note": "Withdrawn earlier and unchanged at 10d8d38d. Persian prose is not judged by length; no numbered section starts inside it and it holds no complete Arabic recitation."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Author fix by a join, link-safe. The Arabic prayer piece of r00002 (ar slot, no Persian) ends mid-sentence and is completed by the three Arabic words of r00003, whose Persian renders the whole prayer; so r00003 still pairs three words with the rendering of the whole passage. Joining the last piece of r00002 with r00003 (both recitation, neither field carries a punctuation normalization, so the pinned audio test does not block it, and a join writes aliases) gives one correctly paired row. The slot finding on r00002 is resolved. Author fix after the first cut: r00004 pairs several complete sentences or clauses with one block of translation; pair it part by part once cut."
-  }
+    "decision": "accept",
+    "note": "Read all 5 rows in both languages at 10d8d38d. The join I asked for is applied: the Arabic part of r00002 and r00003 are one recitation row beside the Persian that renders both. Link check: the join retired nothing, r00002-s51331c3b3dd06d15 is an alias and r00003 is a mapping original. One id from an earlier revision of this item, r00002-sa6349511538646ee, is still unreachable; it predates this join and is in the retired-id list already reported. Still open on this item: only the first cut of r00004 (see its source notes)."
+  },
+  "spacing_review": [
+    {
+      "row": "mb9785677f42eefa51eea6136",
+      "language": "ar",
+      "target_start": 622,
+      "value": " ",
+      "left": "r00002-s51331c3b3dd06d15",
+      "right": "r00003",
+      "reason": "Separate بِهِ from مِنَ across the original source-row boundary; the Persian rendering covers the full Arabic passage.",
+      "decision": "accept",
+      "note": "Accepted. The left part ends with a complete word and the right part begins with a new word; without the space the two words would run together. Checked by code point: the inserted character is U+0020 at index 622 of 650, a letter with its vowel mark stands before it and a letter after it, and the field has no doubled space. The space is the only character added; every other code point comes from the two sources in order."
+    }
+  ]
 }
