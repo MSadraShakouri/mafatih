@@ -1,0 +1,126 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-rvyt-hlal",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "d69e95ced54d8cf4f988683b73b7e77a5a64ea1b44bcc27c245269ea73525463",
+  "layout_sha256": "6a1e5ba460e08649967d841af00c3a94c9a3360237c25c4ca7da2c7315dadee9",
+  "result_item_sha256": "bf63c0276bc97b994f3f1dc308bbbe45420155508113125a82c9b945967841f8",
+  "result_record_sha256": "7e7a9611113e4d11c9e5a8a92ef59bd1cab3fa58f2dde7ecbfb3182689e351d9",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-rvyt-hlal",
+    "item_sha256": "a1a3dad0142593ac861f7949a561f6c130b6567ab6790ff38ecb36ecf400f1a0",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "89cd28dc6b39c7aa706605b9b561bebef5bc47d4946489e33e1e6232c091a047",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The cut at code point 3 isolates the first word as a note and leaves the ordinal with the instruction; keep the opening together or cut the complete section label, and choose a coherent role."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The second practice directs how to face and address the crescent; instruction fits."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This is recitation; its final clause continues at r00004/ar. The corresponding Persian is present in r00003/fa."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This field renders r00003/ar and is prayer text, not a separate note; pair as recitation."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Beginning completes the r00003/ar clause, then the next supplication follows; review a safe continuation pairing."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Beginning completes the r00003/fa clause; the remaining Persian corresponds to the following Arabic prayer."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Narrative report introducing the next prayer is a note."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Both sentence-level Arabic prayer parts have corresponding Persian in r00006/fa."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "Both parts are renderings of the two Arabic prayer sentences; neither instruction nor note fits. Classify as recitation and pair by sentence."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian direction is moved to Persian instruction, followed by the Arabic prayer; exact transition is appropriate."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian rendering belongs with the Arabic prayer; the source contains a singular/plural discrepancy near the end, which is not corrected here."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic prayer continuation has a Persian counterpart in this original row."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the continuation of the prayer rendering, not a note; pair it with r00008/ar as recitation."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The mixed-language transition is preserved and the Persian portion is moved into the Persian destination; remaining classification and pairing findings are recorded per source."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00001 isolates only the first word of the opening label; correct that boundary. r00003, r00006 and r00008 keep matching Persian renderings as note/instruction and unpaired despite available Arabic: classify them as recitation and pair matching spans. r00003/r00004 also have a two-language continuation; inspect a safe boundary join. Preserve existing source characters, and separately review any proposed space."
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-asharh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "a71a097e9c1f734956281dd50621a868085343924eac2325e078d7838d4c2161",
+  "layout_sha256": "e09465928351fcb927deb20700da94d3bcca9760fa6593843acf14cb014f3531",
+  "result_item_sha256": "38ffe85ace7ccd9b03a74af0aa06252b4ed314826e460e9ad752c0fa6ff9e880",
+  "result_record_sha256": "d212fd3716ef8ec80d469298f5b2ce6b1cf9ff346c1582b3a8867812c0d57d21",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-asharh",
+    "item_sha256": "419562db817461fc41d6266638ca062baa56f25647fdfa036c4a6199525dc155",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "4548d34f01b7a2bfac211dad64eb361ad96b7790d2e3f748cb3780b6348dc0b1",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Direction to go to the mosque and recite is an instruction."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The supplication’s Arabic has a matching Persian field in this same source row."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "Persian is the rendering of r00002/ar, not an independent note; classify and pair as recitation."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The following Arabic supplication has a matching Persian field."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is prayer rendering, not an instruction; pair with r00003/ar as recitation."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Instruction and supporting explanation continue into the Persian prefix moved out of r00005/ar; preserve the continuation."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian narrative prefix is correctly moved to Persian and the Arabic quotation isolated; its prefix also completes r00004/fa."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian rendering corresponds to the isolated quotation."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Reported direction to remember God and recite is instruction."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic supplication has a corresponding Persian field."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the matching prayer rendering, not a note; pair with r00007/ar as recitation."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian instruction was moved to the correct language and the following Arabic prayer isolated; its ending continues in r00009/ar."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "Persian corresponds to the isolated Arabic prayer and continues into r00009/fa; classify and pair as recitation."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This Arabic completes the preceding source field and has a Persian counterpart here."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The prayer rendering continues the preceding Persian and matches r00009/ar; classify and pair as recitation."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Direction to continue until the cited endpoint is an instruction or note; the current note is acceptable."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The mixed-language transition is preserved and the Persian portion is moved into the Persian destination; remaining classification and pairing findings are recorded per source."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "The mixed-language transition is preserved and the Persian portion is moved into the Persian destination; remaining classification and pairing findings are recorded per source."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00002, r00003, r00007, r00008 and r00009 have Persian prayer renderings misclassified as note/instruction and placed apart from matching Arabic; classify as recitation and pair. r00004/fa continues in the Persian prefix moved out of r00005/ar; r00008/r00009 also continue across rows in both languages. Inspect any cross-row joins and review proposed spaces separately. Mixed-language extraction of r00005/r00008 is otherwise sound."
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "sura-svrh-alhmzh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "8662fbf062331f12bbe8b0c1c590b562942bc74e95cb2a86281fc2ac54bfb42d",
+  "layout_sha256": "d2d2ece76afdf9b581765883cbe647b1b013c1f46d4759e70dbf52c57948bf5e",
+  "result_item_sha256": "c6cda4e4649bf2cbe4901fadf7333657dff9620484948b1044e05b81db114f8d",
+  "result_record_sha256": "e846e5cff88fe3d13076158557b395f3915fcce98b454f4d1eac9c7a48af61b8",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "sura-svrh-alhmzh",
+    "item_sha256": "8e2dff8a9bd2ad771c3de90e69aa24fb1aad739819738f6369ac039d85122c09",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "cb9cd6a60b3d863b5f12787a6090a584b1d890782dc09200cc5fd28ea6c7fc14",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Basmala and Persian rendering form one recitation row."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Basmala and Persian rendering form one recitation row."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 1 denunciation of backbiting/defaming aligns."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 1 denunciation of backbiting/defaming aligns."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 2 gathering and counting wealth aligns with existing Persian additions."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 2 gathering and counting wealth aligns with existing Persian additions."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 3 assumption that wealth confers permanence aligns."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 3 assumption that wealth confers permanence aligns."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 4 rejection and casting into the crushing fire aligns."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 4 rejection and casting into the crushing fire aligns."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 5 question about the crushing fire aligns."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 5 question about the crushing fire aligns."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 6 names the kindled fire of God in both fields."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 6 names the kindled fire of God in both fields."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 7 fire reaching hearts aligns, including the existing Persian explanatory wording."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 7 fire reaching hearts aligns, including the existing Persian explanatory wording."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 8 fire closed over them aligns with Persian explanatory bracket."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 8 fire closed over them aligns with Persian explanatory bracket."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 9 extended pillars align with the existing Persian rendering."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Verse 9 extended pillars align with the existing Persian rendering."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Read every output against both source fields: existing verse and basmala boundaries, paired renderings, numbered markers, repetitions and roles are retained; no space proposals or cuts. This is an agent review, not source or scholarly approval."
+  }
+}
