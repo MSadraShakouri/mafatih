@@ -4,11 +4,11 @@
   "item": "namaz-ayza-hajt-sndhay",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "29ee52b5410c6eeb313fe67751313576b887d647",
-  "plan_sha256": "cbea21a048843f0495dbea7db3c439f3936432cb52d3c5ffc2854d48c17bb94e",
-  "layout_sha256": "02b0b061d77ea0147a0bb461e27b69988615df1d5b26569bbb4cea16553d8508",
-  "result_item_sha256": "0dcf01e284656ca6178941dc9942b00ad95552d9ad543ed1edfa3a98b7fa0823",
-  "result_record_sha256": "546fee5b0c3e6a953cd383f94a5e703edacafb33cd808cc334795d87ea443ce5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "334647a711be212e80e2106b1feea56cd8fb94dcf2a0df5f101ea100e7c77d86",
+  "layout_sha256": "6c5473a5847f9d62dd305535560db6c82300a59cb191bebde74a8a15aec8d572",
+  "result_item_sha256": "41b7c960c265151bb3025e158dfd078dedce0572857592927d2e9cbd2c30916e",
+  "result_record_sha256": "eeb21eb1cd046063532c93c9861e6c53b75f66a5e4dc2b51fe756e64d4e1dda1",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,97 +16,97 @@
     "item_sha256": "61bbd8b48fdf870eb5815fd48ef04234cb0438cf51a5229694e439bc99e3461a",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "f2bf200c41c52ee8fe94299961200aada78df19aa616d3ecade7d971e225e1e0",
+    "preview_sha256": "c30a00daeb25cda3f8231686b84ff3bdf29845d01fe341ecabf718507b5430bb",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The source attribution is classified as instruction and interrupted across r00001/02. Reviewed fa source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The initial words complete r00001’s attribution; the later practical directions are distinct. Reviewed fa source."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The existing Persian rendering is detached and labeled note instead of recitation; preserve the placeholder and subsequent instruction. Reviewed ar source."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The existing Persian rendering is detached and labeled note instead of recitation; preserve the placeholder and subsequent instruction. Reviewed fa source."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "The instruction explains the placeholder without altering it. Reviewed fa source."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian rendering is detached and labeled instruction, and the paired sentence continues in r00006. Reviewed ar source."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian rendering is detached and labeled instruction, and the paired sentence continues in r00006. Reviewed fa source."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The supplied Persian renders the prayer but is detached and mislabeled note, and its cut names differ from the Arabic cut. The Arabic includes an Ali after Muhammad that appears omitted in Persian; do not invent a rendering. Reviewed ar source."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The supplied Persian renders the prayer but is detached and mislabeled note, and its cut names differ from the Arabic cut. The Arabic includes an Ali after Muhammad that appears omitted in Persian; do not invent a rendering. Reviewed fa source."
       },
       {
         "row": "r00007",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Part 0 is procedural Persian, not recitation; its destination is Persian but its kind needs to be instruction."
+        "kind": "accept",
+        "note": "The Persian procedural prefix is moved and classified as instruction; the following prayer is paired. Reviewed ar source."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian procedural prefix is moved and classified as instruction; the following prayer is paired. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": [
       {
         "index": 0,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "The Persian procedural prefix was correctly moved to Persian and marked instruction, with the Arabic prayer paired to its supplied rendering."
       }
     ]
   },
   "layout": {
     "decision": "revise",
-    "note": "r00007/ar: Part 0 is procedural Persian, not recitation; its destination is Persian but its kind needs to be instruction. Other rows remain pending."
+    "note": "Group interrupted source attribution r00001/02 and paired prayer r00005/06; pair the existing Arabic/Persian passages in r00003, r00005 and r00006 with appropriate recitation role. Preserve the apparent omission in the Persian names, the placeholder instruction, source wording and published links."
   }
 }

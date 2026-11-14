@@ -4,11 +4,11 @@
   "item": "amal-aamal-hrm-hsyn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "29ee52b5410c6eeb313fe67751313576b887d647",
-  "plan_sha256": "2041946d0f394a0d7ec8a13944b3547b2aa6c1a262de72c21777113c0f1e519d",
-  "layout_sha256": "a800eac486dd3f4f32422049dc9db3c0548a3f661da41874a8b0f0b0e2dcf2d4",
-  "result_item_sha256": "7c3d8b4b7368b7c459cfee3d1205f3f4bc5b20d033b95be1ebd3b77e0f72e321",
-  "result_record_sha256": "daedba471921c1ecc7d66aebfed857a46f4e13346ceaed1cb2d192abdaacb6f9",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "49db72f6c806e42bb70ab655badfb114af8d174323b1b23b1fcb4ac91b47a9ef",
+  "layout_sha256": "2bb3b53a89b5a2f82afe5241436f7c60649010c224b49d69142ef789faa03805",
+  "result_item_sha256": "f702510622c11cbf8a3d67221b4843399811c5119e1bbbf364dcb95d381ed861",
+  "result_record_sha256": "7b3d4dbecc2ad65aedfcd987712a6ea7dbdb126cb10a65e1da4f79181e5dd44b",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,151 +16,151 @@
     "item_sha256": "78d0968be79a57efc39cc0b539ef0358a443effbb7e8990bf42d99ff3557a2f0",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "a99624442d7f0bb611e324089cdb63b804d851a285d3abf66623d7c5627af06a",
+    "preview_sha256": "db5f28ab5830b62293579ff598e6406363f0ec3aba488975d3534b9507fd8a31",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The numbered context mixes attributed report and direction and interrupts the cited source title across the two pieces. Reviewed fa source."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic prayer and Persian rendering correspond but are separate and the prayer continues r00003; Persian is recitation, not note. Reviewed ar source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic prayer and Persian rendering correspond but are separate and the prayer continues r00003; Persian is recitation, not note. Reviewed fa source."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The two existing renderings continue r00002 and should be grouped and paired; Persian prayer is recitation, not instruction. Reviewed ar source."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The two existing renderings continue r00002 and should be grouped and paired; Persian prayer is recitation, not instruction. Reviewed fa source."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "The instruction introduces the supplication. Reviewed fa source."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The supplied Persian renders the Arabic supplication but is separated and misclassified as instruction. Reviewed ar source."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The supplied Persian renders the Arabic supplication but is separated and misclassified as instruction. Reviewed fa source."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "The repetition direction is retained. Reviewed fa source."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The numbered section mixes a source attribution, reported merits and practical direction; distinguish their roles. Reviewed fa source."
       },
       {
         "row": "r00008",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian prayer renders the Arabic but is separated and classified as note. Reviewed ar source."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian prayer renders the Arabic but is separated and classified as note. Reviewed fa source."
       },
       {
         "row": "r00009",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "revise",
+        "note": "The Persian statement moved from the Arabic source is a reported outcome, not a recitation. Reviewed ar source."
       },
       {
         "row": "r00010",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The numbered practice mixes practical direction and attributed reward narrative. Reviewed fa source."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic devotional formulae are correctly moved, but the first formula leaves a trailing و; preserve that source incompletion. The reported method mixes report and instruction, and the second formula is recitation. The final attribution continues into r00012. Reviewed fa source."
       },
       {
         "row": "r00012",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening completes r00011’s attribution, then an attributed visitation direction and extended reports are all classified as instruction; its last sentence continues r00013. Reviewed fa source."
       },
       {
         "row": "r00013",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first piece completes r00012 and later attributed reports are interrupted at internal boundaries and continue r00014. Reviewed fa source."
       },
       {
         "row": "r00014",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Parts 0 and 3 are narrative classified as recitation; parts 1 and 4 contain narrative classified as instruction. Several cuts split sentences. Reassess the full passage and its context."
+        "kind": "accept",
+        "note": "The opening completes r00013’s sentence and the later statements remain attributed reports and commentary. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": [
       {
         "index": 0,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "Persian reported outcome was moved out of the Arabic slot, though its recitation role must be corrected to note."
       },
       {
         "index": 1,
-        "decision": "pending",
-        "note": ""
+        "decision": "addressed",
+        "note": "The two Arabic formulae were moved to Arabic; separate note on role and the source formula’s trailing conjunction remains."
       }
     ]
   },
   "layout": {
     "decision": "revise",
-    "note": "r00014/fa: Parts 0 and 3 are narrative classified as recitation; parts 1 and 4 contain narrative classified as instruction. Several cuts split sentences. Reassess the full passage and its context. Other rows remain pending."
+    "note": "Pair existing Arabic/Persian prayers in r00002/03, r00005 and r00008, and distinguish attributed reports from instructions in r00001, r00007, r00009–12. Group r00001 internal citation, r00011/12 and r00012/13/14 narrative continuations. Preserve the source’s unfinished Arabic formula, claims and published links."
   }
 }
