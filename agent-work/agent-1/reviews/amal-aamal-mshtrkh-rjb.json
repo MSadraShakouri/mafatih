@@ -4,7 +4,7 @@
   "item": "amal-aamal-mshtrkh-rjb",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "dd9178322c19bf9902878b66e00b08bb401bda56f340a0d460de13dc1ce32ef4",
   "layout_sha256": "4cda5798677bb9d2b490d60175b774807b5672f7d4786b903c1fee3fa14a12e8",
   "result_item_sha256": "dfe846f5c27b5a236c8a577d9677ad6422d8f000d4d9d46f680b6045d253bdaa",
@@ -66,6 +66,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 6 sources are placed once, in order: 15 output rows, 9 of them carrying Arabic and Persian together. Piece lengths run 35 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 6 sources are placed once, in order: 15 output rows, 9 of them carrying Arabic and Persian together. Piece lengths run 35 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

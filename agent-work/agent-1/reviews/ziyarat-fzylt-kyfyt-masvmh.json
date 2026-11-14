@@ -4,7 +4,7 @@
   "item": "ziyarat-fzylt-kyfyt-masvmh",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "a042b7d4cec8047bbf87c6a2c9229a6d01dfe06351fad800118b26947ee6233a",
   "layout_sha256": "299eff83b05cee59ce238c8f805cf221deb983d39ae7933917395e68036b6bec",
   "result_item_sha256": "39e79c25da13fb2e461d28a2bc802e1483192e7a4393cb8e663b3a6935e32553",
@@ -37,7 +37,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 5 pieces (0 cuts), kind note+quotation; 1 paired with the other language in the same output row; 4 left unpaired where the language rows cross; lengths 290/215/129/282/69; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 5 pieces (0 cuts), kind note+quotation; 1 paired with the other language in the same output row; 4 left unpaired where the language rows cross; lengths 290/215/129/282/69; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
@@ -101,27 +101,27 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 3,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 11 sources are placed once, in order: 62 output rows, 55 of them carrying Arabic and Persian together. Piece lengths run 47 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 11 sources are placed once, in order: 62 output rows, 55 of them carrying Arabic and Persian together. Piece lengths run 47 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

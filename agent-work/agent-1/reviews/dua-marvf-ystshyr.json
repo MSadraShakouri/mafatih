@@ -4,7 +4,7 @@
   "item": "dua-marvf-ystshyr",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "c297b1515c77aed12dd9358ce3dd8b1e70219393feadd9973c77e44d4bdea308",
   "layout_sha256": "bb324a3450eb9074d5a7d08aa2b13ad978be64e4889caa7ff4903afbf6325362",
   "result_item_sha256": "51436bcac7a5729bcb12ce502d67a177a7e6f6adde4dc6c5485aaec39c98c044",
@@ -44,7 +44,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 2 pieces (1 cut), kind note; single-language; 2 in a row the source stores in this language only; lengths 197/16; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 2 pieces (1 cut), kind note; single-language; 2 in a row the source stores in this language only; lengths 197/16; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00005",
@@ -164,22 +164,22 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "Read as a reciter label from its position and form, alongside the corpus's other reciter rows; the record keeps that as judgement, not a verified audio attribution."
+        "note": "Read as a reciter label from position and form, alongside the corpus's other reciter rows; this stays a judgement, not a verified audio attribution."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "Read as a reciter label from its position and form, alongside the corpus's other reciter rows; the record keeps that as judgement, not a verified audio attribution."
+        "note": "Read as a reciter label from position and form, alongside the corpus's other reciter rows; this stays a judgement, not a verified audio attribution."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 20 sources are placed once, in order: 137 output rows, 131 of them carrying Arabic and Persian together. Piece lengths run 26 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 20 sources are placed once, in order: 137 output rows, 131 of them carrying Arabic and Persian together. Piece lengths run 26 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

@@ -4,7 +4,7 @@
   "item": "amal-aamal-zval-jmah",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "8379c6315bbddf80d8f377a0898290a84c809837727c57fb964506522b74a75d",
   "layout_sha256": "dfed01e185fe2448da045527862b5c617a555bfc06cf4423990ca325d24eb057",
   "result_item_sha256": "d2f8e36de983272948acfbf0cab72321d5b3884f9af55ba728a3203f4d9ecdaf",
@@ -192,17 +192,17 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as instruction with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 24 sources are placed once, in order: 53 output rows, 29 of them carrying Arabic and Persian together. Piece lengths run 40 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 24 sources are placed once, in order: 53 output rows, 29 of them carrying Arabic and Persian together. Piece lengths run 40 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

@@ -4,11 +4,11 @@
   "item": "khavas-khvas-angshtr-aqyq",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
-  "plan_sha256": "53d8a5e8a788abdec0d3dfe5fd60d72bea5bf7d7e18efc4e0347a7b99b13b213",
-  "layout_sha256": "63813acd7a5dda123e12af34116a73e30f6959f020d0116899a8737f1895b067",
-  "result_item_sha256": "95c8640b9384eb5a7a4da488a7e981959fa201238b5e1cd913ae05e694cc5fc2",
-  "result_record_sha256": "8a71658eedae2c0382051ef193c4a65c01b88ead9747076815e4f1f4eee2b602",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "plan_sha256": "30d773894010946c2b85956a1c265489ae3694e47f508b73c3f801e8e4c9cd60",
+  "layout_sha256": "9f2bef54ecdb3d4ede1925a291e9e6db6897c2dc1eb1b891f81218a936554231",
+  "result_item_sha256": "7ea65659b3bf748be90bdf9502af510116037c226e6e6dad76f8756bed15d5f9",
+  "result_record_sha256": "b8475787832f815cd88846a8bbdb123e86d65fedd8c624895c170fa0cfc2f14a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "b464e510b3563b4458873d6c271c515548cd1dd071547c4960f2b0b424a93ca5",
     "author": "agent-6",
     "reviewer": "agent-1",
-    "preview_sha256": "4fc25d7a4d07e9bc2362b474d850167becda80d98c2aee3710b6527325df79b4",
+    "preview_sha256": "58b4fff0cb0778f0f44d0603868c38fb4b1894efe4bfdd43c6216a9fecb26cb9",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 3 pieces (3 cuts), kind note+instruction; single-language; 3 in a row the source stores in this language only; lengths 71/224/220. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 3 pieces (6 cuts), kind note+instruction; single-language; 3 in a row the source stores in this language only; lengths 71/224/220. Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -31,12 +31,27 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
+      },
+      {
+        "index": 3,
+        "decision": "addressed",
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 1 sources are placed once, in order: 4 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 198 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 1 sources are placed once, in order: 7 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 60 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

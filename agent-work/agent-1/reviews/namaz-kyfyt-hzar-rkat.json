@@ -4,7 +4,7 @@
   "item": "namaz-kyfyt-hzar-rkat",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "cd451299dc3fb08e8e879a0263b658e4e3d49e164d0a0bb5c5fb12e61ca818b1",
   "layout_sha256": "dc8940a77230539141f1a7f6f53531dc1a15dedb9640ffb64401229fe11eda52",
   "result_item_sha256": "c7c2bb72db0c5399c889128f219b8cf0589f512add62d547290d84b79f61f0f1",
@@ -23,7 +23,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind note; single-language; 1 in a row the source stores in this language only; lengths 151; starts with a section label that stays fused with its passage. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 1 piece (0 cuts), kind note; single-language; 1 in a row the source stores in this language only; lengths 151; a section label stays fused with the passage it opens. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
@@ -66,6 +66,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 6 sources are placed once, in order: 18 output rows, 10 of them carrying Arabic and Persian together. Piece lengths run 48 code points at the median, so the granularity stays in the manual-v1 range. Polish points for a later revision, not blocking: section labels stay fused with their passage at r00001/fa. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 6 sources are placed once, in order: 18 output rows, 10 of them carrying Arabic and Persian together. Piece lengths run 48 code points at the median, inside the manual-v1 range. At r00001/fa a section label opens the passage inside the same row; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted, and the earlier suggestion to detach bare ordinals is withdrawn. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

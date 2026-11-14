@@ -4,7 +4,7 @@
   "item": "amal-aamal-akhr-aashvra",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "369577b544b732501be95f66b14242a6bfb0df76076323e9bd19850b05232a11",
   "layout_sha256": "b98a2985ca147bd4c4fd02259c3fb3d8665b8ba31c284311f1c2b61a6c9e9321",
   "result_item_sha256": "52162cbc02b6c6cbd3a9b666d7ce0320763a2cdf523b857937cb374573690e6f",
@@ -164,22 +164,22 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "Read as a reciter label from its position and form, alongside the corpus's other reciter rows; the record keeps that as judgement, not a verified audio attribution."
+        "note": "Read as a reciter label from position and form, alongside the corpus's other reciter rows; this stays a judgement, not a verified audio attribution."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "Read as a reciter label from its position and form, alongside the corpus's other reciter rows; the record keeps that as judgement, not a verified audio attribution."
+        "note": "Read as a reciter label from position and form, alongside the corpus's other reciter rows; this stays a judgement, not a verified audio attribution."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 20 sources are placed once, in order: 70 output rows, 64 of them carrying Arabic and Persian together. Piece lengths run 45 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were read in sampled groups against the source, including whole paired recitation sequences and their Persian renderings."
+    "note": "All 20 sources are placed once, in order: 70 output rows, 64 of them carrying Arabic and Persian together. Piece lengths run 45 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

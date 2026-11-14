@@ -4,7 +4,7 @@
   "item": "ziyarat-jamea-sagheera",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "8cefdff2dad434450e29aaab8f2fd38a6bbd28249c295169dc14cac00622834c",
   "layout_sha256": "a09e94b311366f574c8f3164f1ba346e56f6fd3e83ec84e6f294ecc0d89ca02c",
   "result_item_sha256": "3262fabe435bec9c8fef086820bac38b307f5c6a3c5f5686b52a205aaa18aefd",
@@ -384,12 +384,12 @@
       {
         "index": 2,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 50 sources are placed once, in order: 33 output rows, 23 of them carrying Arabic and Persian together. Piece lengths run 44 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 50 sources are placed once, in order: 33 output rows, 23 of them carrying Arabic and Persian together. Piece lengths run 44 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

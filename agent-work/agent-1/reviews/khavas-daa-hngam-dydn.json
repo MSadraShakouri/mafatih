@@ -4,7 +4,7 @@
   "item": "khavas-daa-hngam-dydn",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "3274f4d6a23a393f15fffd21d9b5807226ce57b8508fa261fb1b5af3afa9dd22",
   "layout_sha256": "e2df6c2d721b6b21741ea1d0c92223fdef601bacc952a346c7757eff1c2693f7",
   "result_item_sha256": "7775cd6945e8bb2cb73395198e85a8582b796f950c38019266f3f9e6b304b0a3",
@@ -52,12 +52,12 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 4 sources are placed once, in order: 6 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 4 sources are placed once, in order: 6 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

@@ -4,7 +4,7 @@
   "item": "amal-syghh-aqd-akhvt",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "633b7a8aa237f37678ed7a7a6ccf744ae9a1b9633e09d0e8e36b970da0eb77fb",
   "layout_sha256": "bd82b60e87dd5d0435e992b9077837101a85938225846bc2fc94dc9ba361cba8",
   "result_item_sha256": "800cc4c048fbf56c0871bae631b073918a01bc511ecb0b3a7837f4b9c1c271a0",
@@ -99,17 +99,17 @@
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as instruction with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as instruction with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 10 sources are placed once, in order: 21 output rows, 12 of them carrying Arabic and Persian together. Piece lengths run 37 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 10 sources are placed once, in order: 21 output rows, 12 of them carrying Arabic and Persian together. Piece lengths run 37 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

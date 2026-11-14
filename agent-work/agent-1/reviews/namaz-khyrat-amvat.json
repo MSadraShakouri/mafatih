@@ -4,7 +4,7 @@
   "item": "namaz-khyrat-amvat",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "1ff5c0dbda2472d2b997a5445caac9997fcda8f2b80488079edd79d0dd7f3ed9",
   "layout_sha256": "5a21c13b820680d84bc7c0706c674664e8eac928945960214c8cbdf27ad200fb",
   "result_item_sha256": "08207bee4e114dc1e59a2f22f33c6d828fa28ce73ac3a23e9b783f8f0a6c5d63",
@@ -52,6 +52,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 4 sources are placed once, in order: 13 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 185 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 4 sources are placed once, in order: 13 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 185 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

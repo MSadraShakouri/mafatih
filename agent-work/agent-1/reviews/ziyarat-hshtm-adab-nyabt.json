@@ -4,11 +4,11 @@
   "item": "ziyarat-hshtm-adab-nyabt",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
-  "plan_sha256": "8a0136b7b51895255d09c695d03ae3e8c5a877a71315eec67a88638727732db3",
-  "layout_sha256": "1b9aa0ce2116d3f432ea7445a6dc10de76feb75f2ed95f8f6e489bd53b17b827",
-  "result_item_sha256": "28eb5355859435b89d1ae21aad95517a98b282000f5adc130fc326eefa18f33f",
-  "result_record_sha256": "34316336037495bf3c569740393ffe7e1cbbace4494072a02404b8cbc832e459",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "plan_sha256": "44e742838e8ebe0b1e3bddecc07c14d39ac4f05277afe61750f04f7a374ba69f",
+  "layout_sha256": "72745b9532d77f6c598b57800ed03e2967fe28e7151e429b25a26857246df082",
+  "result_item_sha256": "053e3891fd1de35cca35eed1edc5d4af225be69fdc873b07d5bbf3d915005564",
+  "result_record_sha256": "3496a9490c0f4bd67b67ab56f8140e0f9197855fa170e45888d0a878ac59f05a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "9418f7ec5588f521fad12c01ebc2351c1fbd10ce19af83830a76e0af8194b789",
     "author": "agent-6",
     "reviewer": "agent-1",
-    "preview_sha256": "c1c01bcc02745676f0f4073a4d40c5dca4ad4c8981c6be99d3a8e46a585f8833",
+    "preview_sha256": "7114a70e474eac2cf3bbf2a47b87640fade6f4e867ea4ccd1ae7db23f4d91efa",
     "sources": [
       {
         "row": "r00001",
@@ -30,14 +30,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 2 pieces (5 cuts), kind recitation; 2 paired with the other language in the same output rows; lengths 130/57. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 4 pieces (7 cuts), kind recitation; 4 paired with the other language in the same output rows; lengths 39/59/32/57. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 6 pieces (1 cut), kind note+instruction+recitation; 2 paired with the other language in the same output rows; 4 left unpaired where the language rows cross; lengths 225/190/141/271/95/34; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 8 pieces (3 cuts), kind note+instruction+recitation; 4 paired with the other language in the same output rows; 4 left unpaired where the language rows cross; lengths 225/190/141/271/26/44/…; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
@@ -58,7 +58,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 5 pieces (2 cuts), kind note+instruction+recitation; 3 paired with the other language in the same output rows; 2 left unpaired where the language rows cross; lengths 428/177/42/17/92; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 5 pieces (2 cuts), kind note+instruction+recitation; 3 paired with the other language in the same output rows; 2 left unpaired where the language rows cross; lengths 428/177/42/17/92; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00005",
@@ -178,52 +178,52 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 3,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 4,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 5,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 6,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as instruction with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 7,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as instruction with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 8,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 22 sources are placed once, in order: 91 output rows, 77 of them carrying Arabic and Persian together. Piece lengths run 41 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 22 sources are placed once, in order: 93 output rows, 79 of them carrying Arabic and Persian together. Piece lengths run 41 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

@@ -4,7 +4,7 @@
   "item": "ziyarat-tan-br-mdakhlh",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "a6a5c6fd95707b7429718d1044a165e8844f67b490811ec26b061e4ed883ac8e",
   "layout_sha256": "a97fa2c396e38e10870ed023e06e983dc38a95753804c599a0929510d46b158f",
   "result_item_sha256": "34ed5c2fc03239bea53e151dbca62a5975f0c2868d713c609ee70d69ff84b871",
@@ -30,14 +30,14 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 6 pieces (7 cuts), kind note+quotation; single-language; 6 in a row the source stores in this language only; lengths 126/258/51/176/300/3; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 6 pieces (7 cuts), kind note+quotation; single-language; 6 in a row the source stores in this language only; lengths 126/258/51/176/300/3; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 4 pieces (3 cuts), kind quotation+note; single-language; 4 in a row the source stores in this language only; lengths 41/444/318/245; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 4 pieces (3 cuts), kind quotation+note; single-language; 4 in a row the source stores in this language only; lengths 41/444/318/245; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00004",
@@ -73,27 +73,27 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as recitation with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as recitation, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 3,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 7 sources are placed once, in order: 23 output rows, 3 of them carrying Arabic and Persian together. Piece lengths run 56 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 7 sources are placed once, in order: 23 output rows, 3 of them carrying Arabic and Persian together. Piece lengths run 56 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

@@ -4,11 +4,11 @@
   "item": "dua-aml-am-davd",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
-  "plan_sha256": "477672c365f270885bae76aab905b2230e1835783f3e382d3d2aa7b33f33a6ef",
-  "layout_sha256": "83332a5d76b1f592c585235f90344f633d15e51c0951bb30a997628668f8c84f",
-  "result_item_sha256": "9012d0b87d6c164b60927bb2749a35eacb3628ea829ed5cd9c31dc07c1a2b434",
-  "result_record_sha256": "af15e7cd37ea3b845b3182fe3b16433f9caafa21aed9eda8e97fc2c28170d0cf",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "plan_sha256": "f89c20b65ec916574c930a5971ac807b9c6a2587ff5b114f4cfe583829b38944",
+  "layout_sha256": "6f80e5a582d907c2a92e1c7de8f2a307ccb5672520b2c01714359a93cd63f3c3",
+  "result_item_sha256": "758c466ad75a8d49052858fb01975709730822e731bb5401b3e805a2690d0ccd",
+  "result_record_sha256": "d92024c51cf713c925e338c96f1bfcb523712e675705621c7390a8476a02d3ae",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "23674d626ae392035bb45eefb125d910975537f8ff8fde801c4ef6c9861f055c",
     "author": "agent-6",
     "reviewer": "agent-1",
-    "preview_sha256": "6b8e904df2ef3232d7f7161e1c45a84be483425adecdc4232ddaea1de2bb5632",
+    "preview_sha256": "7e60c34be96a0800b5f57364833a73b5bb4fdd6cf315317d569561cfa281bb2a",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 5 pieces (4 cuts), kind note+heading+instruction; single-language; 5 in a row the source stores in this language only; lengths 85/6/176/253/257. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 4 pieces (3 cuts), kind note+instruction; single-language; 4 in a row the source stores in this language only; lengths 85/182/253/257; a section label stays fused with the passage it opens. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
@@ -163,14 +163,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 24 pieces (23 cuts), kind recitation; 24 paired with the other language in the same output rows; lengths 13/25/25/25/29/25/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 25 pieces (24 cuts), kind recitation; 25 paired with the other language in the same output rows; lengths 13/25/25/25/29/25/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00012",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 24 pieces (23 cuts), kind recitation; 24 paired with the other language in the same output rows; lengths 9/24/30/23/30/28/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 25 pieces (24 cuts), kind recitation; 25 paired with the other language in the same output rows; lengths 9/24/30/23/30/28/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00013",
@@ -247,14 +247,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 3 pieces (3 cuts), kind recitation; 3 paired with the other language in the same output rows; lengths 27/17/101. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 5 pieces (5 cuts), kind recitation; 5 paired with the other language in the same output rows; lengths 27/17/28/28/45. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00018",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 4 pieces (2 cuts), kind instruction+recitation; 3 paired with the other language in the same output rows; 1 left unpaired where the language rows cross; lengths 62/26/21/105. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 6 pieces (4 cuts), kind instruction+recitation; 5 paired with the other language in the same output rows; 1 left unpaired where the language rows cross; lengths 62/26/21/39/20/46. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00019",
@@ -281,47 +281,47 @@
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The ar field holds text in the other language here; it is placed in that language's slot as instruction with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The ar field holds text in the other language here; it sits in that language's slot as instruction, with wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       },
       {
         "index": 3,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       },
       {
         "index": 4,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       },
       {
         "index": 5,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       },
       {
         "index": 6,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       },
       {
         "index": 7,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       },
       {
         "index": 8,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 36 sources are placed once, in order: 267 output rows, 257 of them carrying Arabic and Persian together. Piece lengths run 26 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 36 sources are placed once, in order: 269 output rows, 260 of them carrying Arabic and Persian together. Piece lengths run 27 code points at the median, inside the manual-v1 range. At r00001/fa a section label opens the passage inside the same row; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted, and the earlier suggestion to detach bare ordinals is withdrawn. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

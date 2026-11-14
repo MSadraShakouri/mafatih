@@ -4,7 +4,7 @@
   "item": "sura-asr",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "4f4286eaa0f2ab12b16996c32d94c8698f1178c871ac04b2f1867f68b58186b1",
   "layout_sha256": "dec934af8d9dafc8d43721179bb9b7d7416bb2d2eb74105adca1013edad134e8",
   "result_item_sha256": "0f31a63ef7be3f5f47f8f903c28437daeb92f5a8c59c41ec9097169dca554003",
@@ -80,6 +80,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 8 sources are placed once, in order: 4 output rows, 4 of them carrying Arabic and Persian together. Piece lengths run 36 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 8 sources are placed once, in order: 4 output rows, 4 of them carrying Arabic and Persian together. Piece lengths run 36 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

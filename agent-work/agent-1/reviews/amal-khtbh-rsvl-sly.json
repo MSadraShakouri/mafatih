@@ -4,7 +4,7 @@
   "item": "amal-khtbh-rsvl-sly",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "919b88edf0a32afd384e36efa2e9582fa32163772fb14142df9f1fdb6e351880",
   "layout_sha256": "46d574588ba68416a4bd122a1bd94fea244d88b20fb4bfd2d14bd0d35974364c",
   "result_item_sha256": "9d343fb4eb9c809f4c93fbcc0ed6d7c4be1b49fb2254917682830650d6070822",
@@ -30,7 +30,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 4 pieces (3 cuts), kind note; single-language; 4 in a row the source stores in this language only; lengths 285/283/319/116; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 4 pieces (3 cuts), kind note; single-language; 4 in a row the source stores in this language only; lengths 285/283/319/116; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
@@ -100,7 +100,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 3 pieces (2 cuts), kind note; single-language; 3 in a row the source stores in this language only; lengths 345/118/64; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 3 pieces (2 cuts), kind note; single-language; 3 in a row the source stores in this language only; lengths 345/118/64; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -108,6 +108,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 12 sources are placed once, in order: 38 output rows, 1 of them carrying Arabic and Persian together. Piece lengths run 185 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 12 sources are placed once, in order: 38 output rows, 1 of them carrying Arabic and Persian together. Piece lengths run 185 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

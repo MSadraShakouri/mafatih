@@ -4,7 +4,7 @@
   "item": "namaz-many-astkharh-kyfyt",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "3f94b3df313c615be25067f3dc13a13d690bf70dc59b0eb49ced80844df8fc59",
   "layout_sha256": "7efd235af57012946800fdaf95310fc649ecc4fa2bda2a1c13a4663ea670e966",
   "result_item_sha256": "1ecd122e47e6781c530a17fd2a58db13ad758a48c19fe343dfdcfd2ffb6fb3e4",
@@ -23,7 +23,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 3 pieces (3 cuts), kind note+instruction; single-language; 3 in a row the source stores in this language only; lengths 108/63/97; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 3 pieces (3 cuts), kind note+instruction; single-language; 3 in a row the source stores in this language only; lengths 108/63/97; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -31,12 +31,12 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
+        "note": "The fa field holds text in the other language here; it sits in that language's slot as note, with wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 1 sources are placed once, in order: 4 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 63 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 1 sources are placed once, in order: 4 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 63 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

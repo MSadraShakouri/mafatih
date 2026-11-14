@@ -4,7 +4,7 @@
   "item": "dua-ahd",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "ebdd626f4dfe6544391a5014ed24f1dc21fab2b03baa75aed4f9a3c9a8bd183f",
   "layout_sha256": "e1123249c1db94318d2f9fbaa2ceeb954766893f3863937291b4200dae34a50e",
   "result_item_sha256": "b76a7dace01070ef8bb9cf638b97e4cecbe34dbe4289dc87a853c2539616152d",
@@ -738,22 +738,22 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "Read as a reciter label from its position and form, alongside the corpus's other reciter rows; the record keeps that as judgement, not a verified audio attribution."
+        "note": "Read as a reciter label from position and form, alongside the corpus's other reciter rows; this stays a judgement, not a verified audio attribution."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "Read as a reciter label from its position and form, alongside the corpus's other reciter rows; the record keeps that as judgement, not a verified audio attribution."
+        "note": "Read as a reciter label from position and form, alongside the corpus's other reciter rows; this stays a judgement, not a verified audio attribution."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 102 sources are placed once, in order: 79 output rows, 72 of them carrying Arabic and Persian together. Piece lengths run 34 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 102 sources are placed once, in order: 79 output rows, 72 of them carrying Arabic and Persian together. Piece lengths run 34 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

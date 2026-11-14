@@ -4,7 +4,7 @@
   "item": "ziyarat-hjh-alyh-alslam",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "d3bad60f4ba248c4985255c67ab6c5076eebc36df294ad81d988cb242d3a51a4",
   "layout_sha256": "20cd89d5cee5e117ef3438a24f5791cf6e53d3b7c73cd301828dda1af6eb859e",
   "result_item_sha256": "1711653b4fa2d3cc72c76ca242bf17227c673bebad8852f338e2e8c87d423a6e",
@@ -65,7 +65,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 9 pieces (8 cuts), kind recitation; 9 paired with the other language in the same output rows; lengths 41/30/27/42/59/26/…; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 9 pieces (8 cuts), kind recitation; 9 paired with the other language in the same output rows; lengths 41/30/27/42/59/26/…; 1 piece carry more than one sentence and stand as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00005",
@@ -80,6 +80,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 8 sources are placed once, in order: 25 output rows, 21 of them carrying Arabic and Persian together. Piece lengths run 41 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 8 sources are placed once, in order: 25 output rows, 21 of them carrying Arabic and Persian together. Piece lengths run 41 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

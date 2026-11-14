@@ -4,7 +4,7 @@
   "item": "item-slvat-br-mvsy-2",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "561fdfb02c9a23002c5a2bcc098134c8c0bc6cc2",
+  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
   "plan_sha256": "3ddec2ab27b41fc518eef04680460d689f50344ce3bf69aa39117ed8869ac771",
   "layout_sha256": "b63a920a88bd6bd1e6eea54acf7aa8b2810feb736da79b9735438ee6c0e0d018",
   "result_item_sha256": "4008aa8b9736f633441df20c4958eb790ea5701392a806f6b560682489d32658",
@@ -52,12 +52,12 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
+        "note": "Left as recorded: the piece keeps its own kind and position, and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "All 4 sources are placed once, in order: 14 output rows, 12 of them carrying Arabic and Persian together. Piece lengths run 30 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
+    "note": "All 4 sources are placed once, in order: 14 output rows, 12 of them carrying Arabic and Persian together. Piece lengths run 30 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }
