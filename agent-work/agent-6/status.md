@@ -1,31 +1,49 @@
 # agent-6 status
 
-**State: WAITING FOR THE COORDINATOR.** Updated 2026-11-14 (UTC), after agent-5's
-snapshots `8121f9b2` and `48f3ea69` were merged and reviewed.
+**State: READY TO APPLY, WAITING FOR THE COORDINATOR'S GO.** Updated 2026-11-14
+(UTC), after the coordinator's commit `55ef3fe4` appeared on `main`.
 
 - Branch: `arena/1a493a80-mafatih`
 - Frozen base: `ffa01da92fbba25731356e8158c295b3824763f0`
-- `main` as I last fetched it: `b2756bb0` ("Add explicitly reviewable row-merge
-  spacing"). It does not yet carry the runtime-audio test fix or a new tool pin.
+- `main` as I last fetched it: `55ef3fe494826c4530b964a1578c54d8ce58aea3` ("Check
+  corrected occurrences at merged-row offsets", author Arena Coordinator). It
+  changes `tests/runtime-audio.test.ts`, `tests/helpers/row-split-history.ts` and
+  the pin in `tool-info.json`. It is **not merged into this branch yet**.
 - Role: author of 115 items (reviewer: agent-1); reviewer of agent-5's 115 items.
+
+## What I tested with `55ef3fe4` (scratch copy only, nothing pushed)
+
+I was told to keep the 45 joins on hold until the coordinator sends the approved
+commit and the next instructions. So I tried everything in a throw-away clone and
+left this branch untouched.
+
+- Merged `55ef3fe4`: no conflict; `verify-tool-info` reports the pin matches.
+- Applied all 45 held joins with `merge-rows`: all 45 accepted, including by the
+  link guard. 39 take one space in both languages, 6 in Arabic only; 84 new
+  spaces in total.
+- Links: of 3,202 row IDs published for these 22 items in my five snapshots, the
+  joins retire none (79 were unreachable before and the same 79 after; these are
+  the old ones already reported). No ID changes the text it opens.
+- `npm run validate` passes; `npm run check` exits 0 (278 tests, 275 pass,
+  0 fail, 3 skipped); `audit-authored` reports 115 of 115 complete.
+- The exact rows and modes are in
+  `agent-work/agent-6/proposals/held-joins.json` (row IDs only).
+
+So the test fix does unblock all 45, and the 45 are safe for historical links.
 
 ## What I need from the coordinator
 
-Nothing below can be done by an agent. Each point blocks the work named beside it.
-
-1. **The approved commit on `main`: the fix to `tests/runtime-audio.test.ts`
-   (lines 156 to 158) together with the regenerated `tool-info.json` pin.**
-   Blocks my 45 prepared joins, and the joins in agent-5's items held by the
-   same test. agent-1 measured all 45 of
-   mine against the pinned test: every one puts a punctuation-normalised row
-   inside a merged field, so none can be applied early and no subset is safe.
+1. **Your go: confirm that `55ef3fe4` is the approved commit and that I may apply
+   the 45 joins now**, or tell me which further commit (anchor safety) to wait
+   for. On your word I merge it, replay the 45 joins on this branch, publish an
+   isolated snapshot and ask agent-1 to review each new space separately.
 2. **The anchor-safety decision for retired row IDs.** 142 IDs in 16 of my items
    (and 16 IDs in 12 of agent-5's) no longer open any row. Their text is intact
    and each can be recovered as an alias, but the tools rebuild the mapping on
    every `apply` and `merge-rows`, so a hand-added alias does not survive. I need
    a supported path that carries retired IDs through a rebuild, and a guard for
-   the older V1 items. Until then any change of mine to an already-cut row risks
-   retiring more IDs, so I am making none.
+   the older V1 items. This does not block the 45 joins (they retire nothing),
+   but until it exists I make no change to the cuts of an already-cut row.
 3. **A decision on reused row IDs.** 93 IDs in 9 of my items exist in an earlier
    snapshot and exist now, but stand for other text. A link saved against the
    earlier snapshot would now open a neighbouring piece in 79 cases, the start
@@ -47,7 +65,7 @@ Details and evidence for points 2 to 4: `agent-work/agent-6/proposals/README.md`
 with `historical-row-links.json`, `reused-row-ids.json` and
 `agent-5-retired-row-ids.json` in the same folder.
 
-## What I will do when the commit arrives
+## What I will do on the coordinator's go
 
 In this order, and nothing before it:
 
@@ -70,8 +88,13 @@ adding aliases by hand.
   and merged by agent-1. The authored data has not changed since; agent-1
   confirmed the 115 items on my current head are byte-identical to it.
 - Of 243 places where an original row boundary cuts an Arabic sentence: 52 joins
-  are applied (33 items), 45 are prepared and held (22 items, listed in the
-  message of commit `e699d173`), 146 are left as they are.
+  are applied (33 items), 45 are prepared, tested and held (22 items, see
+  `proposals/held-joins.json`), 146 are left as they are.
+- agent-1 pre-read the 45 pairs and found all 45 justified. His one objection
+  (five Arabic-only joins would glue Persian words) does not apply: he read the
+  whole original rows, and each join merges only the last piece of one row with
+  the first piece of the next, where one side has no Persian. I sent him the
+  evidence.
 
 ## Where my review of agent-5's 115 items stands
 
@@ -85,10 +108,11 @@ adding aliases by hand.
 - The 35 open records each carry a specific pairing, slot or kind finding. All
   181 of my earlier requests that rested on sentence and clause counts are
   withdrawn, as the coordinator directed.
-- 13 joins that I asked for in agent-5's items are held by the same pinned test
-  as mine (point 1 above). They are a tooling block, not an author fault.
+- 13 joins that I asked for in agent-5's items were held by the same pinned test.
+  With `55ef3fe4` they should no longer be blocked; agent-5 has not applied them
+  yet.
 
 ## Not waiting on anyone
 
-Nothing. I have no open task I am allowed to start: the remaining candidates are
-either blocked by points 1 to 3 or were explicitly not requested.
+Nothing. I have no open task I am allowed to start: the 45 joins wait for point
+1, and the remaining candidates were explicitly not requested.

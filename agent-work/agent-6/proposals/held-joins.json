@@ -1,0 +1,818 @@
+{
+ "note": "The 45 held joins of agent-6, as prepared on 2026-11-14. Not applied on this branch. Row ids only, no text. left and right are the two adjacent CURRENT rows that the join would merge: the last piece of the original left row and the first piece of the original right row, at head fa21d533 (authored data identical to snapshot df85a685). Chains are listed in application order; after the first join of a chain the left id of the next one is replaced by the merged row. mode is one U+0020 per language in which both pieces carry text and neither edge is whitespace. Tested in a scratch clone with main 55ef3fe4 merged: all 45 accepted by merge-rows and its link guard, 84 new spaces, 0 row ids retired, npm run check exit 0.",
+ "base": "ffa01da92fbba25731356e8158c295b3824763f0",
+ "data_head": "fa21d533",
+ "tested_with_main": "55ef3fe494826c4530b964a1578c54d8ce58aea3",
+ "joins": [
+  {
+   "n": 1,
+   "item": "amal-aamal-daahay-rvzhay",
+   "original_left": "r00002",
+   "original_right": "r00003",
+   "left": "r00002-s610be4597b469a20",
+   "right": "r00003-s3a5c66537d9f28c5",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 2,
+   "item": "amal-aamal-daahay-rvzhay",
+   "original_left": "r00008",
+   "original_right": "r00009",
+   "left": "r00008-sd9b1c56b4b332205",
+   "right": "r00009-s509976db02c9c56c",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 3,
+   "item": "amal-aamal-daahay-rvzhay",
+   "original_left": "r00016",
+   "original_right": "r00017",
+   "left": "r00016-sc57e5403e44c0a2d",
+   "right": "r00017-s4f19d01387165b84",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 4,
+   "item": "amal-aamal-daahay-rvzhay",
+   "original_left": "r00017",
+   "original_right": "r00018",
+   "left": "r00017-s1801dbaa3f4e5345",
+   "right": "r00018-sc5b77b3076320de8",
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": false
+   }
+  },
+  {
+   "n": 5,
+   "item": "amal-byst-3",
+   "original_left": "r00001",
+   "original_right": "r00002",
+   "left": "r00001-s4ce1e96011bf0945",
+   "right": "r00002-se78f6df715196b3d",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 6,
+   "item": "amal-sayr-aamal-rjb",
+   "original_left": "r00032",
+   "original_right": "r00033",
+   "left": "r00032-s9612e2da83ce0e93",
+   "right": "r00033",
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "left_has": {
+    "ar": true,
+    "fa": false
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 7,
+   "item": "amal-slvat-abvalhsn-zrab",
+   "original_left": "r00007",
+   "original_right": "r00008",
+   "left": "r00007-sc2f6c9f6a813b18d",
+   "right": "r00008-sbfc120554e3eef61",
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "left_has": {
+    "ar": true,
+    "fa": false
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 8,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00002",
+   "original_right": "r00003",
+   "left": "r00002-sd871c8bb7b384e4c",
+   "right": "r00003-s3a5c66537d9f28c5",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 9,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00004",
+   "original_right": "r00005",
+   "left": "r00004-sdc2333e2c9516635",
+   "right": "r00005-sf75a34654a0b51be",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 10,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00008",
+   "original_right": "r00009",
+   "left": "r00008-s586af2336023b4f5",
+   "right": "r00009-s509976db02c9c56c",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 11,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00011",
+   "original_right": "r00012",
+   "left": "r00011-sc42a100063c7bcd6",
+   "right": "r00012-sa4438d7a5d3c6c0d",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 12,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00021",
+   "original_right": "r00022",
+   "left": "r00021-sd759b4777daaf8cf",
+   "right": "r00022-s6c8729839add20f1",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 13,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00027",
+   "original_right": "r00028",
+   "left": "r00027-s4904128bd01b8126",
+   "right": "r00028-sc1710b0977035e78",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 14,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00033",
+   "original_right": "r00034",
+   "left": "r00033-s25a3dcbc237008a5",
+   "right": "r00034-s1701249a509e1195",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 15,
+   "item": "amal-tsbyhat-slvat-rmzan",
+   "original_left": "r00037",
+   "original_right": "r00038",
+   "left": "r00037-s9a254e59fac1e2db",
+   "right": "r00038-sc6880ad6e6ab13b2",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 16,
+   "item": "dua-aml-am-davd",
+   "original_left": "r00003",
+   "original_right": "r00004",
+   "left": "r00003-s5ccc55d649900aae",
+   "right": "r00004-s2d6fcdaf315ab02c",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 17,
+   "item": "dua-aml-am-davd",
+   "original_left": "r00007",
+   "original_right": "r00008",
+   "left": "r00007-s8d06b8c6a6464a00",
+   "right": "r00008-sbfc120554e3eef61",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 18,
+   "item": "dua-aml-am-davd",
+   "original_left": "r00008",
+   "original_right": "r00009",
+   "left": "r00008-s00f6e1701d357780",
+   "right": "r00009-s509976db02c9c56c",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 19,
+   "item": "dua-marvf-ystshyr",
+   "original_left": "r00006",
+   "original_right": "r00007",
+   "left": "r00006-s958ee966dc0b41ae",
+   "right": "r00007-sb13bc65dd76f169b",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 20,
+   "item": "dua-marvf-ystshyr",
+   "original_left": "r00007",
+   "original_right": "r00008",
+   "left": "r00007-s2328a49b1e9c6d49",
+   "right": "r00008-sbfc120554e3eef61",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 21,
+   "item": "item-avl-adayh-sbh",
+   "original_left": "r00020",
+   "original_right": "r00021",
+   "left": "r00020-s63f9098dd62e8d6e",
+   "right": "r00021-sde6fd1f18d8ee701",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 22,
+   "item": "item-dvm-khtbh-ayd",
+   "original_left": "r00001",
+   "original_right": "r00002",
+   "left": "r00001-s9dfc00a69fac535c",
+   "right": "r00002-se78f6df715196b3d",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 23,
+   "item": "item-dvm-khtbh-ayd",
+   "original_left": "r00008",
+   "original_right": "r00009",
+   "left": "r00008-sddace2be52ccffd3",
+   "right": "r00009-s509976db02c9c56c",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 24,
+   "item": "item-dvm-khtbh-ayd",
+   "original_left": "r00013",
+   "original_right": "r00014",
+   "left": "r00013-se0089d3737b764c1",
+   "right": "r00014-sa839c43f8232dd91",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 25,
+   "item": "khavas-hrzhay-chshm-zkhm",
+   "original_left": "r00006",
+   "original_right": "r00007",
+   "left": "r00006-s4339ebe66b46a537",
+   "right": "r00007-sb13bc65dd76f169b",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 26,
+   "item": "monajat-mnajat-tlb-tvbh",
+   "original_left": "r00001",
+   "original_right": "r00002",
+   "left": "r00001-sa15f24fdc8d97d31",
+   "right": "r00002-se78f6df715196b3d",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 27,
+   "item": "namaz-fatmh-alyha-alslam",
+   "original_left": "r00011",
+   "original_right": "r00012",
+   "left": "r00011-s1a8f74e18798292c",
+   "right": "r00012-sa4438d7a5d3c6c0d",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 28,
+   "item": "sahifa-hllal-shyfh-mkrmh",
+   "original_left": "r00004",
+   "original_right": "r00005",
+   "left": "r00004-sc59b0790dbb79e98",
+   "right": "r00005-sf75a34654a0b51be",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 29,
+   "item": "ziyarat-fzayl-jnab-slman",
+   "original_left": "r00005",
+   "original_right": "r00006",
+   "left": "r00005-s702c785d1fc8e566",
+   "right": "r00006-s3e3874d69dfd3c50",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 30,
+   "item": "ziyarat-fzylt-kyfyt-masvmh",
+   "original_left": "r00005",
+   "original_right": "r00006",
+   "left": "r00005-s163870813beed2e4",
+   "right": "r00006-s3e3874d69dfd3c50",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 31,
+   "item": "ziyarat-fzylt-kyfyt-masvmh",
+   "original_left": "r00006",
+   "original_right": "r00007",
+   "left": "r00006-s98a7757a34f5fc1e",
+   "right": "r00007-sb13bc65dd76f169b",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 32,
+   "item": "ziyarat-hshtm-adab-nyabt",
+   "original_left": "r00008",
+   "original_right": "r00009",
+   "left": "r00008-s7a733165869d22d9",
+   "right": "r00009-s509976db02c9c56c",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 33,
+   "item": "ziyarat-hsn-asgry-alyh",
+   "original_left": "r00009",
+   "original_right": "r00010",
+   "left": "r00009-s486aac0127266250",
+   "right": "r00010-s9bd4144b26ada357",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 34,
+   "item": "ziyarat-hsn-asgry-alyh",
+   "original_left": "r00015",
+   "original_right": "r00016",
+   "left": "r00015-s87c2c95032000462",
+   "right": "r00016-se83437ebfd903157",
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "left_has": {
+    "ar": true,
+    "fa": false
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 35,
+   "item": "ziyarat-item-7",
+   "original_left": "r00008",
+   "original_right": "r00009",
+   "left": "r00008-sf7015822215fb3ac",
+   "right": "r00009-s3b3375cb23a6131d",
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": false
+   }
+  },
+  {
+   "n": 36,
+   "item": "ziyarat-jamah-zyart-svm",
+   "original_left": "r00004",
+   "original_right": "r00005",
+   "left": "r00004-sdc2333e2c9516635",
+   "right": "r00005-sf75a34654a0b51be",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 37,
+   "item": "ziyarat-jamah-zyart-svm",
+   "original_left": "r00005",
+   "original_right": "r00006",
+   "left": "r00005-s6650b6587f317204",
+   "right": "r00006-s3e3874d69dfd3c50",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 38,
+   "item": "ziyarat-svm-jamah-aymh",
+   "original_left": "r00002",
+   "original_right": "r00003",
+   "left": "r00002-s25507074a540df86",
+   "right": "r00003-s3a5c66537d9f28c5",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 39,
+   "item": "ziyarat-svm-jamah-aymh",
+   "original_left": "r00017",
+   "original_right": "r00018",
+   "left": "r00017-s4a6963e2df61112b",
+   "right": "r00018-s32f0369295be1218",
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "left_has": {
+    "ar": true,
+    "fa": false
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 40,
+   "item": "ziyarat-svm-jamah-aymh",
+   "original_left": "r00019",
+   "original_right": "r00020",
+   "left": "r00019-sbb23883d939ab43e",
+   "right": "r00020-s35b910bbda70cf13",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 41,
+   "item": "ziyarat-svm-jamah-aymh",
+   "original_left": "r00024",
+   "original_right": "r00025",
+   "left": "r00024-saba803e27bb05a95",
+   "right": "r00025-s8101cf4b9743208a",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 42,
+   "item": "ziyarat-svm-jamah-aymh",
+   "original_left": "r00029",
+   "original_right": "r00030",
+   "left": "r00029-sf31f6b2b381c9ac3",
+   "right": "r00030-sda0e2b38f6c307a6",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 43,
+   "item": "ziyarat-svm-jamah-aymh",
+   "original_left": "r00031",
+   "original_right": "r00032",
+   "left": "r00031-sd4d14a7da6109da7",
+   "right": "r00032-s29c9d2170e416b56",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 44,
+   "item": "amal-aamal-mabyn-altlvayn",
+   "original_left": "r00005",
+   "original_right": "r00006",
+   "left": "r00005-s93affcc5f3ac5677",
+   "right": "r00006-s3e3874d69dfd3c50",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  },
+  {
+   "n": 45,
+   "item": "ziyarat-rjybyh-alhmd-allh",
+   "original_left": "r00003",
+   "original_right": "r00004",
+   "left": "r00003-s943518af48760b0c",
+   "right": "r00004-s2d6fcdaf315ab02c",
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "left_has": {
+    "ar": true,
+    "fa": true
+   },
+   "right_has": {
+    "ar": true,
+    "fa": true
+   }
+  }
+ ]
+}
