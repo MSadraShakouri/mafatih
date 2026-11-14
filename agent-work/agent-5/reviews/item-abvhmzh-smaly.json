@@ -1,0 +1,3415 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "item-abvhmzh-smaly",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "badffc3bd0339c8ad801e5e9a3e5cc928f7f1fac700782f9e033e05a8321e140",
+  "layout_sha256": "a9b5532ac5a355c8e28fa9e8186175069947ef12c77375a6d68432f90e8f0586",
+  "result_item_sha256": "10154d5d38bbadac6419c7c0ddb3044c383756c94929bfe76e055567dbd6c538",
+  "result_record_sha256": "b66929b2de08df6707537e20914a57d9710a09cc2e0ed303893d820c0d991a34",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "item-abvhmzh-smaly",
+    "item_sha256": "4daf6de49c2f3119c60ebf291d67bb327f7a0ad8df65fbbef911ca08781104af",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "4c49ac20e4b9e1ff3e531bbcaaf0d4288688404b949027df072d2e562e7e1ecf",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The reciter name is audio metadata rather than the prayer. Reviewed fa source."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The numbered source attribution and report introduce the prayer; these are attributed claims, not independently verified. Reviewed fa source."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلٰهِى لَاتُؤَدِّبْنِى بِعُقُوبَتِكَ، وَ لَا تَمْكُرْ بِى فِى حِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا مرا به کیفرت ادب منما، و با نقشه‌ات با من نیرنگ مکن،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “مِنْ أَيْنَ لِىَ الْخَيْرُ يَا رَبِّ وَ لَا يُوجَدُ إِلّا مِنْ عِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا از کجا برایم خیری هست، درحالی‌که جز نزد تو یافت نمی‌شود”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ مِنْ أَيْنَ لِىَ النَّجاةُ؟وَلا تُسْتَطاعُ إِلّا بِكَ؟”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و از کجا برایم نجاتی است، درحالی‌که جز به تو فراهم نمی‌گردد،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “لَا الَّذِى أَحْسَنَ اسْتَغْنىٰ عَنْ عَوْنِكَ وَ رَحْمَتِكَ، وَ ل”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “نه آن‌که نیکی کرد از کمک و رحمتت بی‌نیاز شد، و نه آن‌که بدی کرد و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا رَبِّ يَا رَبِّ يَا رَبّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا، پروردگارا، پروردگارا.”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian repetition direction was separated from the Arabic source and moved to Persian; the following prayer and translation are paired. Historical LF in the instruction is separately escalated. Reviewed ar source."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian repetition direction was separated from the Arabic source and moved to Persian; the following prayer and translation are paired. Historical LF in the instruction is separately escalated. Reviewed fa source."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَلْحَمْدُ لِلّٰهِ الَّذِى أَدْعُوهُ فَيُجِيبُنِى وَ إِنْ كُنْتُ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سپاس خدای را که می‌خوانمش و او جوابم را می‌دهد، گرچه سستی می‌کنم ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اَلْحَمْدُ لِلّٰهِ الَّذِى أَسْأَلُهُ فَيُعْطِينِى وَ إِنْ كُن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و سپاس خدای را که از او درخواست می‌کنم و او به من عطا می‌نماید، گ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اَلْحَمْدُ لِلّٰهِ الَّذِى أُنادِيهِ كُلَّما شِئْتُ لِحاجَتِى ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و سپاس خدای را که هرگاه خواهم برای رفع حاجتم صدایش کنم، و هرجا که”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ الْحَمْدُ للّه الَّذِی لا أَدْعُو غَیْرَهُ، وَ لَوْ دَعَوْتُ غ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سپاس خدای را که غیر او را نمی‌خوانم، که اگر غیر او را می‌خواندم د”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اَلْحَمْدُ لِلّٰهِ الَّذِى لَاأَرْجُو غَيْرَهُ، وَ لَوْ رَجَوْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و سپاس خدای را که به غیر او امید نبندم، که اگر جز به او امید می‌ب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اَلْحَمْدُ لِلّٰهِ الَّذِى وَكَلَنِى إِلَيْهِ فَأَكْرَمَنِى، و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و سپاس خدای را که مرا بخویش وا گذاشت، از این رو اکرامم نمود، و به”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اَلْحَمْدُ لِلّٰهِ الَّذِى تَحَبَّبَ إِلَىَّ وَ هُوَ غَنِيٌّ ع”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و سپاس خدای را که با من دوستی ورزید، درحالی‌که از من بی‌نیاز است،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اَلْحَمْدُ لِلّٰهِ الَّذِى يَحْلُمُ عَنِّى حَتَّىٰ كَأَنِّى لَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و سپاس خدای را که بر من بردباری می‌کند تا آنجاکه گویی مرا گناهی ن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ إِنِّى أَجِدُ سُبُلَ الْمَطالِبِ إِلَيْكَ مُشْرَعَةً،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا راه‌های درخواست حاجت هایم را به جانب تو باز می‌یابم، و آبشخ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَبْوابَ الدُّعاءِ إِلَيْكَ لِلصَّارِخِينَ مَفْتُوحَةً، وَ أَع”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و درهای دعا را برای فریاد کنندگان گشوده می‌نگرم، و می‌دانم که تو ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian appears to omit the final copula in its own rendering; preserve the source without adding words. Reviewed ar source."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian appears to omit the final copula in its own rendering; preserve the source without adding words. Reviewed fa source."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَنَّ الرَّاحِلَ إِلَيْكَ قَرِيبُ الْمَسافَةِ، وَ أَنَّكَ لَات”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و همانا مسافر به سوی تو مسافتش نزدیک است، و تو از آفریدگانت هرگز ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ قَدْ قَصَدْتُ إِلَیْکَ بِطَلِبَتِی، وَ تَوَجَّهْتُ إِلَيْكَ بِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “من با درخواستم آهنگ تو کردم و با حاجتم روی به تو آوردم، نیاز خواه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ بِدُعائِكَ تَوَسُّلِى مِنْ غَيْرِ اسْتِحْقاقٍ لِاسْتِماعِكَ مِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و خواندت را دست‌آویز خویش نمودم بی آنکه مستحق شنیدن خواهشم، و شای”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لَجَإِى إِلَى الْإِيمانِ بِتَوْحِيدِكَ، وَ يَقِينِى (وَثِقَتِى”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و پناه جستن به ایمان به یگانگی‌ات و یقین به معرفتت که مرا پروردگا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ أَنْتَ الْقائِلُ وَ قَوْلُكَ حَقٌّ وَ وَعْدُكَ صِدْقٌ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا تو گفتی و گفتارت بر حق، و وعده‌ات درست است [فرمودی:] از فضل”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لَيْسَ مِنْ صِفاتِكَ يَا سَيِّدِى، أَنْ تَأْمُرَ بِالسُّؤالِ و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من در شأن تو این نیست که دستور به درخواست دهی و از بخشش خ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00026",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلٰهِى رَبَّيْتَنِى فِى نِعَمِكَ وَ إِحْسانِكَ صَغِيراً، وَ نَوّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا مرا در کودکی در میان نعمت‌ها و احسانت پروریدی، و در بزرگسال”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00027",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَيا مَنْ رَبَّانِى فِى الدُّنْيا بِإِحْسانِهِ وَ تَفَضُّلِهِ وَ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آن‌که مرا در دنیا به احسان و فضل نعمت هایش پرورید و برایم در آ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00028",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source contains repeated phrase material and a bracketed variant not duplicated in the Persian; retain both witnesses, without deleting or inventing text. Reviewed ar source."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source contains repeated phrase material and a bracketed variant not duplicated in the Persian; retain both witnesses, without deleting or inventing text. Reviewed fa source."
+      },
+      {
+        "row": "r00029",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَدْعُوكَ يَا سَيِّدِى بِلِسانٍ قَدْ أَخْرَسَهُ ذَنْبُهُ؛ رَبِّ أ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقایم تو را به زبانی می‌خوانم که گناهش او را ناگویا نموده، و ب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00030",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَدْعُوكَ يَا رَبِّ راهِباً راغِباً، راجِياً خائِفاً،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تو را می‌خوانم ای پروردگارم در حال هراس و اشتیاق و امید و بیم،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00031",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِذا رَأَيْتُ مَوْلاىَ ذُنُوبِى فَزِعْتُ، وَ إِذا رَأَيْتُ كَرَمَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “مولای من هرگاه گناهانم را می‌بینم بی‌تاب می‌گردم، و هرگاه کرمت را”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00032",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “حُجَّتِى يَا اللّٰهُ فِى جُرْأَتِى عَلَىٰ مَسْأَلَتِكَ مَعَ إِتْي”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا حجّت من در گستاخی بر درخواست از تو، با ارتکاب آنچه از آن کر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00033",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ قَدْ رَجَوْتُ أَنْ لَاتَخِيبَ بَيْنَ ذَيْنِ وَ ذَيْنِ مُنْيَتِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00033",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و امیدم بر‌ان است که بین حجّت و ذخیره‌ام آرزویم را نومید نکنی، پس”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00034",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا خَيْرَ مَنْ دَعاهُ داعٍ، وَ أَفْضَلَ مَنْ رَجاهُ راجٍ،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00034",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای بهترین کسی که خواننده‌ای او را خوانده، و برترین کسی که امیدوار”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00035",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “عَظُمَ يَا سَيِّدِى أَمَلِى وَ ساءَ عَمَلِى، فَأَعْطِنِى مِنْ عَف”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00035",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من آرزویم بزرگ‌شده، و کردارم زشت گشته، پس به اندازه آرزیم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00036",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَإِنَّ كَرَمَكَ يَجِلُّ عَنْ مُجازاةِ الْمُذْنِبِينَ، وَ حِلْمَك”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00036",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “زیرا کرمت برتر از کیفر گنهکاران و بردباریت بزرگتر از مکافات تبهکا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00037",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَأَنَا يَا سَيِّدِى عائِذٌ بِفَضْلِكَ، هارِبٌ مِنْكَ إِلَيْكَ، م”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00037",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و من ای آقایم پناهنده به فضل توام، گریزان از تو به سوی توام، خواس”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00038",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ مَا أَنَا يَا رَبِّ وَ مَا خَطَرِى، هَبْنِى بِفَضْلِكَ، وَ تَص”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00038",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “چه هستم من ای پروردگارم، و اهمیت من چیست؟ به فضلت مرا ببخش، و به ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00039",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَيْ رَبِّ جَلِّلْنِي بِسِتْرِكَ، وَ اعْفُ عَنْ تَوْبِيخِى بِكَرَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00039",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا مرا به پرده پوشی ات بپوشان، و از توبیخم به کرم ذاتت درگ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00040",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَلَوِ اطَّلَعَ الْيَوْمَ عَلَىٰ ذَنْبِى غَيْرُكَ مَا فَعَلْتُهُ،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00040",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اگر امروز جز تو بر گناهم آگاه می‌شد، آن را انجام نمی‌دادم، و اگر ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00041",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “لَا لِأَنَّكَ أَهْوَنُ النَّاظِرِينَ [إِلَیَّ]، وَ أَخَفُّ الْمُط”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00041",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “گناهم نه به این خاطر بود که تو سبک‌ترین بینندگانی و بی مقدارترین ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00042",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَتَّارُ الْعُيُوبِ، غَفَّارُ الذُّنُوبِ، عَلَّامُ الْغُيُوبِ، تَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00042",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پوشنده عیب‌ها، آمرزنده گناهان، دانای نهان‌ها، گناه را با کرمت می‌”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00043",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَلَكَ الْحَمْدُ عَلَىٰ حِلْمِكَ بَعْدَ عِلْمِكَ، وَ عَلَىٰ عَفْو”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00043",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سپاس تو را سزاست بر بردباری‌ات پس از انکه دانستی، و بر گذشتت پس ا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00044",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ يَحْمِلُنِى وَ يُجَرِّئُنِى عَلَىٰ مَعْصِيَتِكَ حِلْمُكَ عَنِّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00044",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “بردباری‌ات مرا به جانب گناه می‌کشد و بر نافرمانی‌ات جرأت می‌دهد، ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00045",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ يُسْرِعُنِى إِلَى التَّوَثُّبِ عَلَىٰ مَحارِمِكَ مَعْرِفَتِى ب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00045",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و شناختم از رحمت گسترده و بزرگی عفوت، به من در تاختن بر محرّماتت ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00046",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا حَلِيمُ يَا كَرِيمُ، يَا حَىُّ يَا قَيُّومُ، يَا غافِرَ الذَّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00046",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای شکیبا، ای گرامی، ای زنده، ای به خود پاینده، ای آمرزگار، ای توب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00047",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا عَظِيمَ الْمَنِّ، يَا قَدِيمَ الْإِحْسانِ، أَيْنَ سَتْرُكَ ال”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00047",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای بزرگ نعمت، ای دیرینه احسان، پرده پوشی زیبایت کجاست، گذشت بزرگت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00048",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَيْنَ رَحْمَتُكَ الْواسِعَةُ؟ أَيْنَ عَطاياكَ الْفاضِلَةُ؟ أَيْن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00048",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “رحمت گسترده‌ات کجاست، عطاهای برترت کجاست، موهبت‌های گوارایت کجاست”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00049",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَيْنَ فَضْلُكَ الْعَظِيمُ؟ أَيْنَ مَنُّكَ الْجَسِيمُ؟ أَيْنَ إِح”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00049",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فضل بزرگت کجاست، عطای عظیمت کجاست، احسان دیرینه‌ات کجاست، کرمت کج”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00050",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “(بِهِ وَ بِمُحَمَّدٍ وَ آلِ مُحَمَّدٍ) فَاسْتَنْقِذْنِى، وَ بِرَح”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00050",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “به حق کرمت و «به محمّد و خاندان محمّد» مرا رهایی‌بخش، و به رحمتت ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00051",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا مُنْعِمُ يَا مُفْضِلُ، لَسْتُ أَتَّكِلُ فِى النَّجاةِ مِنْ عِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00051",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای نعمت ده، ای فزونی بخش، من آن نیستم که در رهایی از کیفرت بر اعم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00052",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تُبْدِئُ بِالْإِحْسانِ نِعَماً، وَ تَعْفُو عَنِ الذَّنْبِ كَرَماً”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00052",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “از باب نعمت دهی ابتدای به احسان می‌کنی، و از جهت کرم از گناه در م”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00053",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أم عَظِيمَ مَا أَبْلَيْتَ وَ أَوْلَيْتَ؟! أم كَثِيرَ مَا مِنْهُ ن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00053",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا بزرگ آزمونی که آزمودی و شایسته نیکی نمودی، یا آن همه مشکلی که ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00054",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا حَبِيبَ مَنْ تَحَبَّبَ إِلَيْكَ، وَ يَا قُرَّةَ عَيْنِ مَنْ ل”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00054",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای محبوب آن‌که به تو دوستی ورزید، ای نور چشم کسی که به تو پناه آو”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00055",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَنْتَ الْمُحْسِنُ، وَنَحْنُ الْمُسِيئُونَ، فَتَجاوَزْ يَا رَبِّ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00055",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تو نیکوکاری و ما بدکارانیم، به زیبایی آنچه نزد توست، از زشتی آنچه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00056",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَىُّ جَهْلٍ يَا رَبِّ لَايَسَعُهُ جُودُكَ؟! أَوْ أَىُّ زَمانٍ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00056",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا کدام جهلی است که جود تو گنجایش آن را نداشته باشد، و کدا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00057",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ مَا قَدْرُ أَعْمالِنا فِى جَنْبِ نِعَمِكَ؟! وَ كَيْفَ نَسْتَكْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00057",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “در کنار نعمت هایت ارزش اعمال ما چیست، چگونه اعمال خود را بسیار ان”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00058",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “بَلْ كَيْفَ يَضِيقُ عَلَى الْمُذْنِبِينَ مَا وَسِعَهُمْ مِنْ رَحْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00058",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “بلکه چگونه بر گنهگاران تنگ شود آنچه از رحمتت شاملشان شده؟، ای گست”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00059",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَوَعِزَّتِكَ يَا سَيِّدِى لَوْ نَهَرْتَنِى مَا بَرِحْتُ مِنْ باب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00059",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من به عزّتت سوگند، اگر مرا برانی از درگاهت دور نخواهم شد،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00060",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لا کَفَفْتُ عَنْ تَمَلُّقِکَ، لِمَا انْتَهَی إِلَیَّ مِنَ الْم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00060",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و از چاپلوسی و تملق نسبت به تو دست نخواهم کشید، به خاطر شناختی که”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00061",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و أَنْتَ الْفاعِلُ لِما تَشاءُ، تُعَذِّبُ مَنْ تَشاءُ بِما تَشاءُ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00061",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تو انجام دهی آنچه را که خواهی، هرکه را بخواهی عذاب می‌کنی به هرچه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00062",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “لَاتُسْأَلُ عَنْ فِعْلِكَ، وَ لَا تُنازَعُ فِى مُلْكِكَ، وَ لَا ت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00062",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “از آنچه کنی بازخواست نشوی، و در فرمانروایی‌ات نزاع در نگیرد، و کس”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00063",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لَا تُضادُّ فِى حُكْمِكَ، وَ لَا يَعْتَرِضُ عَلَيْكَ أَحَدٌ فِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00063",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و در داوری‌ات با تو هماورد نشود، و در تدبیرت احدی بر تو اعتراض نک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00064",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا رَبِّ هٰذَا مَقامُ مَنْ لاذَبِكَ، وَ اسْتَجارَ بِكَرَمِكَ، وَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00064",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا این است جایگاه کسی که به پناهت آمد، و به کرمت پناهنده گ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00065",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَنْتَ الْجَوادُ الَّذِى لَايَضِيقُ عَفْوُكَ، وَ لَا يَنْقُصُ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00065",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تویی آن سخاوتمندی که گذشتت به تنگی نمی‌رسد، و احسانت کاهش نمی‌پذی”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00066",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ قَدْ تَوَثَّقْنا مِنْكَ بِالصَّفْحِ الْقَدِيمِ، وَ الْفَضْلِ ا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00066",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و به یقین از چشم‌پوشی دیرینت، و فضل بزرگت، و رحمت گسترده‌ات اعتما”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00067",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَتُراكَ يَا رَبِّ تُخْلِفُ ظُنُونَنا أَوْ تُخَيِّبُ آمالَنا؟ كَل”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00067",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “آیا ممکن است پروردگارا برخلاف گمان‌های ما به خویش رفتار کنی، یا آ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00068",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا رَبِّ إِنَّ لَنا فِيكَ أَمَلاً طَوِيلاً كَثِيراً، إِنَّ لَنا ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00068",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا، ما را درباره تو آروزی طولانی بسیاری است، ما را در حق ت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00069",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “عَصَيْناكَ وَ نَحْنُ نَرْجُو أَنْ تَسْتُرَ عَلَيْنا،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00069",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “از تو نافرمانی کردیم و حال آنکه امیدواریم گناه را بر ما بپوشانی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00070",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَدَعَوْناكَ وَ نَحْنُ نَرْجُو أَنْ تَسْتَجِيبَ لَنا، فَحَقِّقْ ر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00070",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و تو را خواندیم، و امیدواریم که بر ما اجابت کنی، مولای ما امیدمان”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00071",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic leaves the subject of the phrase until its verb حثنا in r00072, which has no explicit Persian equivalent. Group both rows to retain the connected Arabic and flag the Persian source omission without inventing it. Reviewed ar source."
+      },
+      {
+        "row": "r00071",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic leaves the subject of the phrase until its verb حثنا in r00072, which has no explicit Persian equivalent. Group both rows to retain the connected Arabic and flag the Persian source omission without inventing it. Reviewed fa source."
+      },
+      {
+        "row": "r00072",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic begins with حثنا, completing r00071, but Persian begins with the concessive clause; align the larger passage and preserve the apparent source omission. Reviewed ar source."
+      },
+      {
+        "row": "r00072",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic begins with حثنا, completing r00071, but Persian begins with the concessive clause; align the larger passage and preserve the apparent source omission. Reviewed fa source."
+      },
+      {
+        "row": "r00073",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَامْنُنْ عَلَيْنا بِما أَنْتَ أَهْلُهُ وَ جُدْ عَلَيْنا فَإِنَّا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00073",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پس آن گونه که شایسته آنی بر ما منّت گذار، و بر ما جود کن، که ما ن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00074",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “يَا غَفَّارُ بِنُورِكَ اهْتَدَيْنا، وَ بِفَضْلِكَ اسْتَغْنَيْنا، ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00074",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آمرزگار، به نور تو هدایت شدیم، و به فضل تو بی‌نیاز گشتیم، و به”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00075",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ذُنُوبُنا بَيْنَ يَدَيْكَ نَسْتَغْفِرُكَ اَللّٰهُمَّ مِنْها وَ نَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00075",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “گناهان ما پیش روی توست، خدایا از گناهانمان از تو آمرزش می‌خواهیم،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00076",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تَتَحَبَّبُ إِلَيْنا بِالنِّعَمِ وَ نُعارِضُكَ بِالذُّنُوبِ، خَيْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00076",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تو با نعمتها به ما مهر می‌ورزی و ما با گناهان با تو مقابله می‌کنی”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00077",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لَمْ يَزَلْ وَ لَا يَزالُ مَلَكٌ كَرِيمٌ يَأْتِيكَ عَنَّا بِعَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00077",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “همواره فرشته کریمی، از ما کردار زشت به جانب تو می‌آید، و این امر ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00078",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَسُبْحانَكَ مَا أَحْلَمَكَ وَ أَعْظَمَكَ وَ أَكْرَمَكَ، مُبْدِئا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00078",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “منزّهی تو، چه بردبار و بزرگ و کریمی، آغاز کننده به نیکی و تکرار ک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00079",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَنْتَ إِلَهِی أَوأَوْسَعُ فَضْلاً، وَ أَعْظَمُ حِلْماً مِنْ أَنْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00079",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا، فضلت گسترده‌تر، و بردباری‌ات بزرگ‌تر از آن است که مرا به ک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00080",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَالْعَفْوَ الْعَفْوَ الْعَفْوَ، سَيِّدِى سَيِّدِى سَيِّدِى!”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00080",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پس گذشت نما، گذشت نما، گذشت نما، آقای من، آقای من، آقای من.”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00081",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ اشْغَلْنا بِذِكْرِكَ، وَ أَعِذْنا مِنْ سَخَطِكَ، وَ أ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00081",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ما را به ذکرت مشغول کن، و از خشمت پناه ده، و از عذابت نجات‌بخش، و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00082",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ ارْزُقْنا حَجَّ بَيْتِكَ، وَ زِيارَةَ قَبْرِ نَبِيِّكَ، صَلَوا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00082",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و زیارت خانه‌ات، و زیارت مرقد پیامبرت را روزی ما کن، صلوات و رحمت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00083",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ ارْزُقْنا عَمَلاً بِطاعَتِكَ، وَ تَوَفَّنا عَلَىٰ مِلَّتِكَ وَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00083",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “عمل به طاعتت را روزی ما گردان، و ما را بر دینت و بر روش پیامبرت (”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00084",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ اغْفِرْ لِى وَ لِوالِدَىَّ، وَ ارْحَمْهُما كَما رَبَّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00084",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا من و پدر و مادرم را بیامرز و به هر دو آن‌ها رحم کن، چنان‌که”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00085",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ اغْفِرْ لِلْمُؤْمِنِینَ وَ الْمُؤْمِنَاتِ، الْأَحْیَاءِ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00085",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا مردان و زنان مؤمن را بیامرز، چه زنده و چه مرده آن‌ها را، و ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00086",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ اغْفِرْ لِحَیِّنَا وَ مَیِّتِنَا، وَ شَاهِدِنَا وَ غَائِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00086",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا بیامرز زنده و مرده ما را، حاضر و غائب ما را، مرد زن ما را، ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00087",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “کَذَبَ الْعَادِلُونَ بِاللّه، وَ ضَلُّوا ضَلالاً بَعِیداً، وَ خَس”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00087",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “برگشتگان از خدا دروغ گفتند، و گمراه شدند گمراهی دوری، و زیان کردن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00088",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَ آلِ مُحَمَّدٍ وَ اخْتِمْ لِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00088",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا بر محمّد و خاندان محمّد درود فرست، و برایم ختم به خیر فرما،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00089",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لَا تُسَلِّطْ عَلَىَّ مَنْ لَايَرْحَمُنِى، وَ اجْعَلْ عَلَىَّ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00089",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و کسی که مرا رحم نمی‌کنم بر من چیره مساز، و بر من از سوی خود نگهب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00090",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لَا تَسْلُبْنِى صالِحَ مَا أَنْعَمْتَ بِهِ عَلَىَّ، وَ ارْزُقْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00090",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و از من شایسته‌های آنچه را که انعام کردی مگیر، و از فضلت روزی گست”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00091",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ احْرُسْنِى بِحَراسَتِكَ، وَ احْفَظْنِى بِحِفْظِكَ، وَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00091",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا به نگهبانی‌ات مرا نگهبانی کن، و به نگهداری‌ات مرا نگهدار و ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00092",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ ارْزُقْنِى حَجَّ بَيْتِكَ [الْحَرامِ]، فِى عامِنا هٰذَا وَ فِى”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00092",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و زیارت خانه‌ات را در این سال و در هر سال، و زیارت مرقد پیامبرت و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00093",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لا تُخْلِنِى يَا رَبِّ مِنْ تِلْكَ الْمَشاهِدِ الشَّرِيفَةِ وَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00093",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا از این مشاهد پر شرف و مواقف بس گرامی مرا محروم مساز.”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00094",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ تُبْ عَلَىَّ حَتَّىٰ لَاأَعْصِيَكَ، وَ أَلْهِمْنِى ال”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00094",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا به من روی آور تا نافرمانی‌ات نکنم، و خیر و عمل به آن وحشت ا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00095",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اَللّٰهُمَّ إِنِّى كُلَّما قُلْتُ قَدْ تَهَيَّأْتُ وَ تَعَبَّأْتُ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00095",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا هرگاه گفتم مهیا و آماده شدم و در پیشگاهت به نماز ایستاد و ب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00096",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic and Persian conditional clauses leave their outcome to r00097; group the connected prayer. Reviewed ar source."
+      },
+      {
+        "row": "r00096",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic and Persian conditional clauses leave their outcome to r00097; group the connected prayer. Reviewed fa source."
+      },
+      {
+        "row": "r00097",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields supply the outcome of r00096’s conditional prayer. Reviewed ar source."
+      },
+      {
+        "row": "r00097",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields supply the outcome of r00096’s conditional prayer. Reviewed fa source."
+      },
+      {
+        "row": "r00098",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَيِّدِى، لَعَلَّكَ عَنْ بابِكَ طَرَدْتَنِى، وَ عَنْ خِدْمَتِكَ ن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00098",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سرور من شاید مرا از درگاهت رانده‌ای، و از خدمتت عزل نموده‌ای،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00099",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ رَأَيْتَنِى مُسْتَخِفّاً بِحَقِّكَ فَأَقْصَيْتَنِى”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00099",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا مرا دیده‌ای که حقّت را سبک می‌شمارم پس از پیشگاهت دورم ساختی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00100",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ رَأَيْتَنِى مُعْرِضاً عَنْكَ فَقَلَيْتَنِى،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00100",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید مرا روی‌گردان از خود مشاهده کردی، پس مرا مورد خشم قرار دا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00101",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ وَ جَدْتَنِى فِى مَقامِ الْكاذِبِينَ فَرَفَضْتَنِى”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00101",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید مرا در جایگاه دروغگویان یافتی، پس به دورم انداختی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00102",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ رَأَيْتَنِى غَيْرَ شاكِرٍ لِنَعْمائِكَ فَحَرَمْتَن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00102",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید مرا نسبت به نعمت هایت ناسپاس دیدی، پس محرومم نمودی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00103",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ فَقَدْتَنِى مِنْ مَجالِسِ الْعُلَماءِ فَخَذَلْتَنِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00103",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید مرا از هم‌نشینی دانشمندان غایب یافتی، پس خوارم نمودی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00104",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ رَأَيْتَنِى فِى الْغافِلِينَ فَمِنْ رَحْمَتِكَ آيَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00104",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید مرا در گروه غافلان دیدی، پس از رحمتت ناامیدم کردی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00105",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ رَأَيْتَنِى آلِفَ مَجالِسِ الْبَطَّالِينَ فَبَيْنِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00105",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید مرا انس یافته با مجالس بیکاره‌ها دیدی. پس مرا به آنان واگ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00106",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ لَمْ تُحِبَّ أَنْ تَسْمَعَ دُعائِى فَباعَدْتَنِى،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00106",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شدی دوست نداشتی دعایم را بشنوی پس دورم نمودی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00107",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّكَ بِجُرْمِى وَ جَرِيرَتِى كافَيْتَنِى،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00107",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید به خاطر جرم و جنایتم کیفرم نمودی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00108",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَوْ لَعَلَّکَ بِقِلَّةِ حَیَائِی مِنْکَ جَازَیْتَنِی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00108",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یا شاید برای کمی حیایم از تو مجازاتم نمودی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00109",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَإِنْ عَفَوْتَ یَا رَبِّ، فَطَالَمَا عَفَوْتَ عَنِ الْمُذْنِبِین”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00109",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پس اگر پروردگارا عفو کنی، سابقه اینکه از گناهکاران پیش از من گذشت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00110",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَنَا عائِذٌ بِفَضْلِكَ، هارِبٌ مِنْكَ إِلَيْكَ، مُتَنَجِّزٌ م”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00110",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و من پناهنده به فضل توام، از تو به تو گریزانم، خواهان چیزی هستم ک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00111",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلٰهِى أَنْتَ أَوْسَعُ فَضْلاً، وَ أَعْظَمُ حِلْماً مِنْ أَنْ تُ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00111",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا فضل تو گسترده‌تر، و بردباری‌ات بزرگ‌تر از آن است که مرا به ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00112",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ مَا أَنَا يَا سَيِّدِى وَ مَا خَطَرِى؟”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00112",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقایم من چیستم، و چه ارزشی دارم،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00113",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “هَبْنِى بِفَضْلِكَ سَيِّدِى، وَ تَصَدَّقْ عَلَیَّ بِعَفْوِکَ، وَ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00113",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سرور من مرا به فضلت ببخش، و با گذشت بر من کرم فرما، و به پرده پوش”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00114",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی، أَنَا الصَّغِیرُ الَّذِی رَبَّیْتَهُ، وَ أَنَا الْجَاهِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00114",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “آقای من منم کودکی که پروریدی، منم نادانی که دانا نمودی، منم گمراه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00115",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَنَا الْخَائِفُ الَّذِی آمَنْتَهُ، وَ الْجَائِعُ الَّذِی أَشْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00115",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “منم هراسانی که امانش دادی، و گرسنه‌ای که سیرش نمودی، و تشنه‌ای که”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00116",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ الْفَقِیرُ الَّذِی أَغْنَیْتَهُ، وَ الضَّعِیفُ الَّذِی قَوَّیْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00116",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و تهیدستی که توانگرش ساختی، و ناتوانی که نیرومندش نمودی، و خواری ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00117",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ السَّائِلُ الَّذِی أَعْطَیْتَهُ، وَ الْمُذْنِبُ الَّذِی سَتَرْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00117",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و خواهشمندی که عطایش کردی، و گنه کاری که گناهش را بر او پوشاندی، ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00118",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَنَا الْقَلِیلُ الَّذِی کَثَّرْتَهُ، وَ الْمُسْتَضْعَفُ الَّذ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00118",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و اندکی که بسیارش فرمودی، و ناتوان شمرده‌ای که یاری‌اش دادی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00119",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَنَا الطَّرِيدُ الَّذِى آوَيْتَهُ،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00119",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و رانده‌شده‌ای که مأوایش بخشیدی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00120",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَنَا يَا رَبِّ الَّذِى لَمْ أَسْتَحْيِكَ فِى الْخَلاءِ، وَ لَمْ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00120",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “من پروردگارا کسی هستم که در خلوت از تو حیا نکردم، و در آشکار از ت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00121",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَنَا صاحِبُ الدَّواهِى الْعُظْمىٰ، أَنَا الَّذِى عَلَىٰ سَيِّدِه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00121",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “منم صاحب مصیبت‌های بزرگ، منم آن‌که بر آقایش گستاخی کرد، منم آن‌که”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00122",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَنَا الَّذِى أَعْطَيْتُ عَلَىٰ مَعاصِى الْجَلِيلِ الرُّشى، أَنَا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00122",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “منم آن‌که بر معاصی بزرگ رشوه دادم، منم آن‌که هرگاه به گناهی مژده ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00123",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَنَا الَّذِى أَمْهَلْتَنِى فَمَا ارْعَوَيْتُ، وَ سَتَرْتَ عَلَىّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00123",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “منم آن‌که مهلتم دادی باز نایستادم، و بر من پرده پوشاندی حیا نکردم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00124",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَسْقَطْتَنِی مِنْ عَیْنِکَ [عِنْدِکَ] فَمَا بَالَیْتُ،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00124",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و مرا از چشمت انداختی، اهمیت ندادم،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00125",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَبِحِلْمِکَ أَمْهَلْتَنِی، وَ بِسِتْرِکَ سَتَرْتَنِی، حَتَّی کَأ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00125",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پس با بردباری‌ات مهلتم دادی، و با پرده پوشی ات مرا پوشاندی تا آنچ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00126",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی لَمْ أَعْصِکَ حِینَ عَصَیْتُکَ، وَ أَنَا بِرُبُوبِیَّتِکَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00126",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا، آنگاه که نافرمانی کردم نافرمانی‌ات نکردم چنان‌که پروردگاری”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00127",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian omits the Arabic phrase about desire overcoming the speaker; preserve the source discrepancy without invention. Reviewed ar source."
+      },
+      {
+        "row": "r00127",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian omits the Arabic phrase about desire overcoming the speaker; preserve the source discrepancy without invention. Reviewed fa source."
+      },
+      {
+        "row": "r00128",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَالْآنَ مِنْ عَذَابِکَ مَنْ یَسْتَنْقِذُنِی؟ وَ مِنْ أَیْدِی الْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00128",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اکنون چه کس مرا از عذابت نجات می‌دهند، و فردا از چنگ ستیره جویان ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00129",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ بِحَبْلِ مَنْ أَتَّصِلُ إِنْ أَنْتَ قَطَعْتَ حَبْلَکَ عَنِّی؟ف”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00129",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و به رشته چه کسی بپیوندم اگر تو رشته‌ات را از من بگسلی، مرا چه رس”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00130",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “الَّذِی لَوْ لا مَا أَرْجُو مِنْ کَرَمِکَ وَ سَعَةِ رَحْمَتِکَ، و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00130",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اگر امیدوار به کرم فراوانی رحمتت نبودم، و هم اینکه مرا از ناامیدی”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00131",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ بِذِمَّةِ الْإِسْلامِ أَتَوَسَّلُ إِلَیْکَ، وَ بِحُرْمَة”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00131",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا به پیمان اسلام به تو توسّل می‌جویم، و به حرمت قرآن بر تو تک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00132",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ بِحُبِّی النَّبِیَّ االْأُمِّیَّ الْقُرَشِیَّ، الْهَاشِمِیَّ ا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00132",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و به محبّتم نسبت به پیامبر درس ناخوانده قریشی هاشمی عربی تهامی مک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00133",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ لا تَجْعَلْ ثَوَابِی ثَوَابَ مَنْ عَبَدَ سِوَاکَ،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00133",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و و پاداش مرا، پاداش کسی که غیر تو را عبادت کرده قرار مده،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00134",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَإِنَّ قَوْماً آمَنُوا بِأَلْسِنَتِهِمْ لِیَحْقِنُوا بِهِ دِمَاء”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00134",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “چه اینکه مردمی به زبانشان ایمان آوردند تا جانشان را به این وسیله ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00135",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ إِنَّا آمَنَّا بِکَ بِأَلْسِنَتِنَا وَ قُلُوبِنَا لِتَعْفُوَ ع”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00135",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و ما با زبان و دلمان به تو ایمان آوردیم، تا از ما درگذری، پس ما ر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00136",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ ثَبِّتْ رَجَاءَکَ فِی صُدُورِنَا، وَ لا تُزِغْ قُلُوبَنَا بَعْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00136",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و امیدت را در سینه‌هایمان استوار کن، و دل‌هایمان را پس از آنکه هد”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00137",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَوَ عِزَّتِکَ لَوِ انْتَهَرْتَنِی مَا بَرِحْتُ مِنْ بَابِکَ، وَ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00137",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “به عزتت سوگند اگر مرا برانی، از درگاهت نخواهم رفت، و از چاپلوسی ن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00138",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “لِمَا أُلْهِمَ قَلْبِی [یَا سَیِّدِی] مِنَ الْمَعْرِفَةِ بِکَرَمِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00138",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “به خاطر الهامی که از معرفت به کرمت و گستردگی رحمتت به قلب من شده،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00139",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَی مَنْ یَذْهَبُ الْعَبْدُ إِلّا إِلَی مَوْلاهُ، وَ إِلَی مَنْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00139",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “بنده به جانب چه کسی جز مولایش می‌رود؟ و آفریده به چه کسی جز آفرید”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00140",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin a conditional sequence whose principal answer appears in r00141; keep it together. Reviewed ar source."
+      },
+      {
+        "row": "r00140",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin a conditional sequence whose principal answer appears in r00141; keep it together. Reviewed fa source."
+      },
+      {
+        "row": "r00141",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired statement is the answer to r00140’s conditional sequence. Reviewed ar source."
+      },
+      {
+        "row": "r00141",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired statement is the answer to r00140’s conditional sequence. Reviewed fa source."
+      },
+      {
+        "row": "r00142",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَنَا لا أَنْسَی أَیَادِیَکَ عِنْدِی، وَ سَتْرَکَ عَلَیَّ فِی دَا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00142",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “من فراوانی عطایت را نزد خود، و پرده پوشی ات را در دار دنیا بر گنا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00143",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی، أَخْرِجْ حُبَّ الدُّنْیَا مِنْ قَلْبِی، وَ اجْمَعْ بَیْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00143",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من محبت دنیا را از دلم بیرون کن، و میان من و مصطفی پیامبر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00144",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ انْقُلْنِی إِلَی دَرَجَةِ التَّوْبَةِ إِلَیْکَ، وَ أَعِنِّی بِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00144",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و مرا به مقام توبه به پیشگاهت برسان، و هر گریه بر خویشتن مرا یاری”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00145",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَمَنْ یَکُونُ أَسْوَأَ حَالاً مِنِّی؟ إِنْ أَنَا نُقِلْتُ عَلَی ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00145",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پس بدحال‌تر از من کیست؟ اگر من بر چنین حالی به قبرم وارد شوم، قبر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00146",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ مَا لِی لا أَبْکِی! وَ لا أَدْرِی إِلَی مَا یَکُونُ مَصِیرِی، ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00146",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و مرا چه شده که گریه نکنم، و حال آنکه نمی‌دانم بازگشت من به جانب ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00147",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ قَدْ خَفَقَتْ عِنْدَ رَأْسِی أَجْنِحَةُ الْمَوْتِ، فَمَا لِی ل”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00147",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و حال آنکه بالهای مرگ بالای سرم به حرکت درآمده، پس مرا چه شده که ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00148",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَبْکِی لِخُرُوجِ نَفْسِی؛ أَبْکِی لِظُلْمَةِ قَبْرِی؛ أَبْکِی لِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00148",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “گریه می‌کنم برای بیرون رفتن جان از بدنم، گریه می‌کنم برای تاریکی ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00149",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening quotation mark at the end of Arabic leads directly to the quoted passage in r00150; keep it attached to the paired text rather than isolated at the end of a separate row. Reviewed ar source."
+      },
+      {
+        "row": "r00149",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening quotation mark at the end of Arabic leads directly to the quoted passage in r00150; keep it attached to the paired text rather than isolated at the end of a separate row. Reviewed fa source."
+      },
+      {
+        "row": "r00150",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Quranic quotation starts after r00149’s opening mark; group to retain quotation boundaries and source punctuation. Reviewed ar source."
+      },
+      {
+        "row": "r00150",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Quranic quotation starts after r00149’s opening mark; group to retain quotation boundaries and source punctuation. Reviewed fa source."
+      },
+      {
+        "row": "r00151",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی، عَلَیْکَ مُعَوَّلِی وَ مُعْتَمَدِی، وَ رَجَائِی وَ تَوَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00151",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من، تکیه و اعتمادم و امید و توکلّم بر تو، و آویختنم بر رح”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00152",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَلَکَ الْحَمْدُ عَلَی مَا نَقَّیْتَ مِنَ الشِّرْکِ قَلْبِی، وَ ل”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00152",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پس تو را سپاس بر اینکه قلبم را از شرک پاک نمودی، و برای تو سپاس ب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00153",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَ فَبِلِسَانِی هَذَا الْکَالِّ أَشْکُرُکَ، أم بِغَایَةِ جُهْدِی ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00153",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “آیا با این زبان کندم تو را شکر کنم، یا با نهایت کوشش در کارم تو ر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00154",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی إِنَّ جُودَکَ بَسَطَ أَمَلِی، وَ شُکْرَکَ قَبِلَ عَمَلِی.”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00154",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا، جودت آرزویم را گسترد، و سپاست عملم را پذیرفت،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00155",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی إِلَیْکَ رَغْبَتِی، وَ إِلَیْکَ [مِنْکَ] رَهْبَتِی، وَ إ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00155",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من میلم به سوی توست، و ترسم از جانب توست، و آرزویم به پیش”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00156",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ عَلَیْکَ [إِلَیْکَ] یَا وَاحِدِی عَکَفَتْ هِمَّتِی، وَ فِیمَا ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00156",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و همّتم بر درگاه تو ای خدای یگانه معتکف شده، و رغبتم در آنچه نزد ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00157",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ إِلَیْکَ أَلْقَیْتُ بِیَدِی، وَ بِحَبْلِ طَاعَتِکَ مَدَدْتُ رَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00157",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و دستم را به جانب تو انداختم، و ترسم را به سوی رشته طاعت تو کشیدم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00158",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The appeal’s motivation at the end continues across r00159 and r00160; preserve coherent bilingual wording. Reviewed ar source."
+      },
+      {
+        "row": "r00158",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The appeal’s motivation at the end continues across r00159 and r00160; preserve coherent bilingual wording. Reviewed fa source."
+      },
+      {
+        "row": "r00159",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The short coordinated phrase continues r00158 and anticipates the relative clause in r00160. Reviewed ar source."
+      },
+      {
+        "row": "r00159",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The short coordinated phrase continues r00158 and anticipates the relative clause in r00160. Reviewed fa source."
+      },
+      {
+        "row": "r00160",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening relative clause continues r00158/59’s appeal in both languages; group without rewriting. Reviewed ar source."
+      },
+      {
+        "row": "r00160",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening relative clause continues r00158/59’s appeal in both languages; group without rewriting. Reviewed fa source."
+      },
+      {
+        "row": "r00161",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی ارْحَمْنِی إِذَا انْقَطَعَتْ حُجَّتِی، وَ کَلَّ عَنْ جَوَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00161",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا به من رحم کن آنگاه که حجّتم بریده شود، و زبانم از پاسخت ناگ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00162",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَیَا عَظِیمَ رَجَائِی لا تُخَیِّبْنِی إِذَا اشْتَدَّتْ فَاقَتِی،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00162",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای بزرگ امیدم، زمانی که بیچارگی‌ام شدّت گیرد محرومم مکن، و به خاط”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00163",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی عَلَیْکَ مُعْتَمَدِی وَ مُعَوَّلِی، وَ رَجَائِی وَ تَوَک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00163",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “آقایم اعتماد و تکیه، امید و توکلم بر توست، و آویختنم به رحمت توست”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00164",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ بِکَرَمِکَ أَیْ رَبِّ أَسْتَفْتِحُ دُعَائِی، وَ لَدَیْکَ أَرْج”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00164",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا دعایم را آغاز می‌کنم، و رفع تنگدستی‌ام را به تو امید می”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00165",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ تَحْتَ ظِلِّ عَفْوِکَ قِیَامِی، وَ إِلَی جُودِکَ وَ کَرَمِکَ أ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00165",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و ایستادنم زیر سایه عفو توست، و به جانب جود و کرمت دیده‌ام را بلن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00166",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَلا تُحْرِقْنِی بِالنَّارِ، وَ أَنْتَ مَوْضِعُ أَمَلِی، وَ لا تُ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00166",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پس مرا به آتش مسوزان، و حال آنکه تو جایگاه آرزوی منی، و در دوزخ ج”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00167",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یَا سَیِّدِی، لا تُکَذِّبْ ظَنِّی بِإِحْسَانِکَ وَ مَعْرُوفِکَ، ف”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00167",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من گمانم را به احسان و نیکی‌ات تکذیب مکن که تویی مورد اطم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00168",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی إِنْ کَانَ قَدْ دَنَا أَجَلِی، وَ لَمْ یُقَرِّبْنِی مِنْک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00168",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا اگر مرگم فرا رسیده و کردارم مرا به تو نزدیک نکرده پس اعتراف”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00169",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی إِنْ عَفَوْتَ فَمَنْ أَوْلَی مِنْکَ بِالْعَفْوِ؟! وَ إِنْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00169",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا اگر گذشت کنی، پس سزاوارتر از وجود تو به گذشت کیست، و اگر عذ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00170",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ارْحَمْ فِی هَذِهِ الدُّنْیَا غُرْبَتِی، وَ عِنْدَ الْمَوْتِ کُرْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00170",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “در این دنیا به غربت، و به گاه مرگ به سختی جان دادنم، و در قبر به ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00171",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَدِمْ لِی مَا بِهِ سَتَرْتَنِی، وَ ارْحَمْنِی صَرِیعا عَلَی ا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00171",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و آنچه را که مرا به آن پوشاندی تداوم بخش، و به من در حال افتادن د”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00172",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ تَفَضَّلْ عَلَیَّ مَمْدُودا عَلَی الْمُغْتَسَلِ یُقَلِّبُنِی ص”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00172",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و به من محبت فرما در آن حال که روی تخت غسّالخانه به صورت درازا اف”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00173",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ تَحَنَّنْ عَلَیَّ مَحْمُولاً قَدْ تَنَاوَلَ الْأَقْرِبَاءُ أَط”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00173",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و در وقت حمل شدنم که بستگانم گوشه‌های جنازه‌ام را به دوش برداشته‌”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00174",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یَا سَیِّدِی، إِنْ وَکَلْتَنِی إِلَی نَفْسِی هَلَکْتُ؛”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00174",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من، اگر مرا به خودم واگذاری هلاک شده‌ام،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00175",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی، فَبِمَنْ أَسْتَغِیثُ إِنْ لَمْ تُقِلْنِی عَثْرَتِی؟! فَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00175",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من، اگر لغزشم را نادیده نگری از چه کسی فریادرسی خواهم، و ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00176",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی مَنْ لِی وَ مَنْ یَرْحَمُنِی إِنْ لَمْ تَرْحَمْنِی؟! وَ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00176",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من که را دارم و چه کسی بر من رحم می‌کند، اگر تو به من رحم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00177",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ إِلَی مَنِ الْفِرَارُ مِنَ الذُّنُوبِ إِذَا انْقَضَی أَجَلِی؟!”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00177",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و گریز از گناهان به سوی کیست، وقتی‌که عمرم سرآید؟ ای آقای من، مرا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00178",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی [اللّهمَ] حَقِّقْ رَجَائِی، وَ آمِنْ خَوْفِی، فَإِنَّ کَث”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00178",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا امیدم را تحقق‌بخش، و ترسم را ایمنی ده، زیرا من در عین فراوا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00179",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی. أَنَا أَسْأَلُکَ مَا لا أَسْتَحِقُّ، وَ أَنْتَ أَهْلُ ا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00179",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من چیزی را از تو درخواست دارم که شایسته آن نیستم، و تو اه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00180",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِنَّکَ ذُو مَنٍّ قَدِیمٍ وَ صَفْحٍ عَظِیمٍ وَ تَجَاوُزٍ کَرِیمٍ.”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00180",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “که تو داری کرم دیرینه، و چشم‌پوشی بزرگ و گذشت کریمانه‌ای.”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00181",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی أَنْتَ الَّذِی تُفِیضُ سَیْبَکَ عَلَی مَنْ لا یَسْأَلُکَ،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00181",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا تویی که عطایت را پی‌درپی فرو ریزی، بر کسی که از تو درخواست ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00182",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “تَبَارَکْتَ وَ تَعَالَیْتَ؛ یَا رَبَّ الْعَالَمِینَ.”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00182",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “منزّه و والایی‌ای پروردگار جهانیان،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00183",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “سَیِّدِی، عَبْدُکَ بِبَابِکَ، أَقَامَتْهُ الْخَصَاصَةُ بَیْنَ یَد”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00183",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای آقای من بنده‌ات به درگاه توست، تنگدستی او را پیش رویت قرار داد”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00184",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “فَقَدْ دَعَوْتُ (دَعْوَتُکَ) بِهَذَا الدُّعَاءِ، وَ أَنَا أَرْجُو”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00184",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “من تو را به این دعا خواندم، امید دارم که به خاطر معرفتم به رأفت و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00185",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی أَنْتَ الَّذِی لا یُحْفِیکَ سَائِلٌ وَ لا یَنْقُصُکَ نَائ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00185",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا تویی آن‌که پرسنده‌ای ناتوانت نکند، و عطاگیری از تو نکاهد، ت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00186",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ إِنِّی أَسْأَلُکَ صَبْراً جَمِیلاً، وَ فَرَجاً قَرِیباً،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00186",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا از تو صبری زیبنده، و گشایشی نزدیک و گفتاری درست و مزدی بزرگ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00187",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَسْأَلُکَ یَا رَبِّ مِنَ الْخَیْرِ کُلِّهِ، مَا عَلِمْتُ مِنْهُ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00187",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا از خیر تمامش را از تو می‌خواهم، آنچه را از آن دانسته‌ام”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00188",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَسْأَلُکَ اللّهمَّ مِنْ خَیْرِ مَا سَأَلَکَ مِنْهُ عِبَادُکَ الص”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00188",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا از تو می‌خواهم بهترین چیزهایی را که بندگان شایسته‌ات از تو ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00189",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “أَعْطِنِی سُؤْلِی فِی نَفْسِی وَ أَهْلِی؛ وَ وَالِدَیَّ وَ وُلْدِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00189",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خواسته‌ام را در حق خودم و خانواده‌ام و پدر و مادرم و فرزندانم و خ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00190",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اجْعَلْنِی مِمَّنْ أَطَلْتَ عُمُرَهُ، وَ حَسَّنْتَ عَمَلَهُ، و”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00190",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و مرا از کسانی قرار ده که عمرش را طولانی کردی، و کردارش را نیکو س”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00191",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَحْیَیْتَهُ حَیَاةً طَیِّبَةً فِی أَدْوَمِ السُّرُورِ، وَ أَس”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00191",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و او را به زندگانی پاکیزه زنده داشتی، در بادوام‌ترین خوشی‌ها، و ک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00192",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِنَّکَ تَفْعَلُ مَا تَشَاءُ، وَ لا یَفْعَلُ مَا یَشَاءُ غَیْرُکَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00192",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “همانا تو هرچه را بخواهی انجام می‌دهی و جز تو هرچه را بخواهد توان ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00193",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ خُصَّنِی مِنْکَ بِخَاصَّةِ ذِکْرِکَ، وَ لا تَجْعَلْ شَیْ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00193",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدای از جانب خود مرا به ذکر خاصت اختصاص ده، و چیزی از آنچه که به ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00194",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ أَعْطِنِی السَّعَةَ فِی الرِّزْقِ، وَ الْأَمْنَ فِی الْو”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00194",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدای از تو می‌خواهم که به من عطا کنی: گشایش در روزی امنیّت در وطن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00195",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اسْتَعْمِلْنِی بِطَاعَتِکَ وَ طَاعَةِ رَسُولِکَ، مُحَمَّدٍ صَل”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00195",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و مرا به طاعتت و طاعت رسولت محمّد که درود خدا بر او و خاندانش باد”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00196",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اجْعَلْنِی مِنْ أَوْفَرِ عِبَادِکَ عِنْدَکَ، نَصِیبا فِی کُلِّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00196",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و مرا از پر نصیب‌ترین بندگانت در نزد خود قرار ده، پر نصیب‌تر در ه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00197",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ بَلِیَّةٍ تَدْفَعُهَا، وَ حَسَنَاتٍ تَتَقَبَّلُهَا، وَ سَیِّئَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00197",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و بلایی که دفع می‌کنی، و خوبی‌هایی که می‌پذیری، و بدی‌هایی که از ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00198",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ ارْزُقْنِی حَجَّ بَیْتِکَ الْحَرَامِ، فِی عَامِی هَذَا وَ فِی ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00198",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و در این سال و هر سال زیارت خانه‌ات را نصیبم فرما، و از فضل گسترد”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00199",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اصْرِفْ عَنِّی یَا سَیِّدِی الْأَسْوَاءَ، وَ اقْضِ عَنِّی الدّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00199",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و بدی‌ها را ای آقای من از من برگردان، و بدیه مرا بپرداز و جبران س”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00200",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ خُذْ عَنِّی بِأَسْمَاعِ وَ أَبْصَارِ أَعْدَائِی، وَ حُسَّادِی ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00200",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و گوش‌ها و دیدگان دشمنان و حسودان و متجاوزان بر من را از من برگیر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00201",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اجْعَلْ لِی مِنْ هَمِّی وَ کَرْبِی فَرَجاً وَ مَخْرَجاً،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00201",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و برایم از اندوه و غم گشایش و بیرون رو قرار ده،”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00202",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ اجْعَلْ مَنْ أَرَادَنِی بِسُوءٍ مِنْ جَمِیعِ خَلْقِکَ تَحْتَ ق”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00202",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و هرکه از میان مخلوقاتت نسبت به من به بدی قصد کرده، و زیر گامم قر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00203",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ طَهِّرْنِی مِنَ الذُّنُوبِ کُلِّهَا، وَ أَجِرْنِی مِنَ النَّار”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00203",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و از همه گناهان پاکم فرما، و به گذشتت از آتش امانم ده، و به رحمتت”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00204",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَلْحِقْنِی بِأَوْلِیَائِکَ الصَّالِحِینَ، مُحَمَّدٍ وَ آلِهِ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00204",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و مرا به دوستان شایسته‌ات محمّد و خاندانش آن خوبان و نیکان پاکیزه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00205",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی وَ سَیِّدِی وَ عِزَّتِکَ وَ جَلالِکَ، لَئِنْ طَالَبْتَنِی”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00205",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدای ای آقای من، به عزّت و جلالت سوگند، اگر مرا به گناهانم پی جوی”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00206",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی وَ سَیِّدِی، إِنْ کُنْتَ لا تَغْفِرُ إِلّا لِأَوْلِیَائِک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00206",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایم و آقایم اگر جز اولیا و اهل طاعتت را نیامرزی، پس گنهکاران به”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00207",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “إِلَهِی إِنْ أَدْخَلْتَنِی النَّارَ، فَفِی ذَلِکَ سُرُورُ عَدُوِّ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00207",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا اگر مرا وارد دوزخ کنی این موجب خرسندی دشمن توست، و اگر مرا ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00208",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ إِنِّی أَسْأَلُکَ أَنْ تَمْلَأَ قَلْبِی حُبّاً لَکَ، وَ ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00208",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا از تو درخواست می‌کنم که دلم را از محبت و خشیتت، و باور به ک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00209",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یَا ذَا الْجَلالِ وَ الْإِکْرَامِ، حَبِّبْ إِلَیَّ لِقَاءَکَ وَ أ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00209",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای دارای بزرگی و بزرگواری، دیدارت را محبوب من کن، و تو نیز مرا مح”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00210",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ أَلْحِقْنِی بِصَالِحِ مَنْ مَضَی، وَ اجْعَلْنِی مِنْ صَا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00210",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا مرا به شایستگان از بندگان گذشته‌ات ملحق ساز، و از شایستگان ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00211",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَعِنِّی عَلَی نَفْسِی بِمَا تُعِینُ بِهِ الصَّالِحِینَ عَلَی ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00211",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و بر مخالفت با خواسته‌های نفسم یاری ده، آنگونه که شایستگان را بر ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00212",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَعِنِّی عَلَی صَالِحِ مَا أَعْطَیْتَنِی، وَ ثَبِّتْنِی یَا رَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00212",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و بر شایسته‌ای آنچه عطا کردی یاری‌ام نما و ثابت قدمم کن، پروردگار”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00213",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ إِنِّی أَسْأَلُکَ إِیمَاناً لا أَجَلَ لَهُ دُونَ لِقَائِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00213",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا ایمانی از تو درخواست می‌کنم، که پایانی جز دیدار تو نداشده ب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00214",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَبْرِئْ قَلْبِی مِنَ الرِّیَاءِ وَ الشَّکِّ وَ السُّمْعَةِ فِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00214",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و دلم را از ریا و شک و شهرت خواهی در دینت پاک فرما، تا عملم برای ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00215",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ أَعْطِنِی بَصِیرَةً فِی دِینِکَ، وَ فَهْماً فِی حُکْمِکَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00215",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا از تو می‌خواهم که به من عطا کنی: بصیرت در دینت، و فهم در فر”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00216",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ بَیِّضْ وَجْهِی بِنُورِکَ، وَ اجْعَلْ رَغْبَتِی فِیمَا عِنْدَک”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00216",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و رخسارم را به فروغ نورت سپید کن، و رغبتم را در آنچه نزد توست قرا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00217",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ إِنِّی أَعُوذُ بِکَ مِنَ الْکَسَلِ وَ الْفَشَلِ، وَ الْه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00217",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا به تو پناه می‌آورم از کسالت و سرافکندی و اندوه و ترس و بخل ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00218",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ الْفَوَاحِشِ مَا ظَهَرَ مِنْهَا وَ مَا بَطَنَ، وَ أَعُوذُ بِکَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00218",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و زشتی‌های آشکار و پنهان، و به تو پناه می‌آورم از نفسی که قانع نم”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00219",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَعُوذُ بِکَ یَا رَبِّ عَلَی نَفْسِی وَ دِینِی وَ مَالِی، وَ ع”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00219",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “پروردگارا برای حفظ جان و دین و مال و آنچه که نصیب من فرموده‌ای، ا”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00220",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic has been correctly moved out of the Persian source slot, but its whole corresponding Persian passage remains alone in r00221; pair the two across source rows. Reviewed fa source."
+      },
+      {
+        "row": "r00221",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This Persian is the full rendering of Arabic moved from r00220. Pair the passage, preserving the bracketed Arabic source variant. Reviewed fa source."
+      },
+      {
+        "row": "r00222",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ قَدْ ظَلَمْنَا أَنْفُسَنَا فَاعْفُ عَنَّا، فَإِنَّکَ أَوْلَی ب”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00222",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و ما بر خود ستم ورزیدیم، پس از ما درگذر، که حضرتت به گذشت از ما، ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00223",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَمَرْتَنَا أَنْ لا نَرُدَّ سَائِلاً عَنْ أَبْوَابِنَا، وَ قَد”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00223",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و هم فرمان دادی که فقیری را دست خالی از در خانه‌هایمان نرانیم، و ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00224",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “وَ أَمَرْتَنَا بِالْإِحْسَانِ إِلَی مَا مَلَکَتْ أَیْمَانُنَا، وَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00224",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “و نیز به نیکی درباره بردگانمان امر فرمودی، و هم‌اینک ما بردگان تو”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00225",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یَا مَفْزَعِی عِنْدَ کُرْبَتِی، وَ یَا غَوْثِی عِنْدَ شِدَّتِی، إ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00225",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای پناهگاهم به وقت غم و اندوه، ای فریادرس به هنگام سختی، به تو پن”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00226",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “یَا مَنْ یَفُکُّ الْأَسِیرَ [یَقْبَلُ الْیَسِیرَ] وَ یَعْفُو عَنِ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00226",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “ای که اسیر را آزاد می‌کنی، و از گناه فراوان می‌گذری، از من عمل ان”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      },
+      {
+        "row": "r00227",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “اللّهمَّ إِنِّی أَسْأَلُکَ إِیمَانا تُبَاشِرُ بِهِ قَلْبِی، وَ یَ”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed ar source."
+      },
+      {
+        "row": "r00227",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired devotional source begins “خدایا ایمانی از تو می‌خواهم که دلم با آن همراه شود و باور صادقانه”; its corresponding rendering follows the same devotional passage. Retain source punctuation and variants. Reviewed fa source."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 19 between “آنقَدر بگوید تا نفس” and “قطع گردد. بِكَ عَرَفْتُكَ، وَ أَ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 1,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 125 between “ْكَ مُتْرَعَةً، وَ الاسْتِعانَةَ” and “بِفَضْلِكَ لِمَنْ أَمَّلَكَ مُبا”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 2,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 111 between “نزد تو پر می‌بینم، و یاری خواستن” and “از فضل برای آن‌که تو را آرزو کرد”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 3,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 38 between “ْ قَصَدْتُ إِلَیْکَ بِطَلِبَتِی،” and “وَ تَوَجَّهْتُ إِلَيْكَ بِحاجَتِ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 4,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 27 between “من با درخواستم آهنگ تو کردم” and “و با حاجتم روی به تو آوردم، نیاز”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 5,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 91 between “صِدْقٌ: «وَ اسْأَلُوا اللّه مِنْ” and “فَضْلِهِ؛ إِنَّ اللّه کَانَ بِکُ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 6,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 59 between “ق، و وعده‌ات درست است [فرمودی:] ” and “از فضل خدا بخواهید که خدا به شما”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 7,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 120 between “ُكَ وَ كَرَمُكَ، وَ عُدَّتِى فِى” and “شِدَّتِى مَعَ قِلَّةِ حَيائِى، ر”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 8,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 103 between “ری جود و کرم توست، و ذخیره‌ام در” and “سختی‌ها با کمی حیا همانا رأفت و ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 9,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 19 between “أَنْتَ الْمُحْسِنُ،” and “وَنَحْنُ الْمُسِيئُونَ، فَتَجاوَ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 10,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 11 between “تو نیکوکاری” and “و ما بدکارانیم، به زیبایی آنچه ن”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 11,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 75 between “َدِيمِ، وَ الْفَضْلِ الْعَظِيمِ،” and “وَ الرَّحْمَةِ الْوَاسِعَةِ،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 12,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 43 between “ز چشم‌پوشی دیرینت، و فضل بزرگت، ” and “و رحمت گسترده‌ات اعتماد نمودیم،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 13,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 14 between “أَنْتَ إِلَهِی” and “أَوأَوْسَعُ فَضْلاً، وَ أَعْظَمُ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 14,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 11 between “خدایا، فضلت” and “گسترده‌تر، و بردباری‌ات بزرگ‌تر ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 15,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 29 between “کَذَبَ الْعَادِلُونَ بِاللّه،” and “وَ ضَلُّوا ضَلالاً بَعِیداً، وَ ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 16,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 28 between “برگشتگان از خدا دروغ گفتند، ” and “و گمراه شدند گمراهی دوری، و زیان”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 17,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 116 between “کَرَمَکَ أَیْ رَبِّ یَجِلُّ عَنْ” and “مُكافاةِ الْمُقَصِّرِينَ،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 18,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 101 between “ طولانی است، زیرا کرمت پروردگارا” and “از مجازات اهل تقصیر بسیار بزرگ‌ت”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 19,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 67 between “تَهُ، وَ الْمُسْتَضْعَفُ الَّذِی” and “نَصَرْتَهُ،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 20,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 46 between “ارش فرمودی، و ناتوان شمرده‌ای که” and “یاری‌اش دادی،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 21,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 167 between “رْخَی عَلَیَّ، فَقَدْ عَصَیْتُکَ” and “وَ خَالَفْتُکَ بِجُهْدِی؛”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 22,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 143 between “ن مغرورم نمود، در نتیجه با کوششم” and “نافرمانی‌ات نمودم و به مخالفتت ب”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 23,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 131 between “ مِنْ لَدُنْکَ رَحْمَةً؛ إِنَّکَ” and “أَنْتَ الْوَهَّابُ.”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 24,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 121 between “ و از جانب خود ما را ببخش، که تو” and “بسیار بخشنده‌ای،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 25,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 189 between “لْتُ مَنْزِلَةَ الْآیِسِینَ مِنْ” and “خَیْرِی [حَیَاتِی]،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 26,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 162 between “و اینک به جایگاه به نا امیدان از” and “خیر و صلاح فرود آمده‌ام،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 27,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 145 between “ْمَتِکَ مَنْ تَشَاءُ، وَ تَهْدِی” and “بِکَرَامَتِکَ مَنْ تُحِبُّ؛”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 28,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 87 between “ختنم بر رحمت توست، هرکه را خواهی” and “به رحمتت رسانی، و با کرامتت هرکه”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 29,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 97 between “سْکِنِّی الْهَاوِیَةَ، فَإِنَّکَ” and “قُرَّةُ عَیْنِی.”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 30,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 78 between “وی منی، و در دوزخ جایم مده که تو” and “نور چشم منی،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 31,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 208 between “ الْبَیْتِ الْجَدِیدِ غُرْبَتِی،” and “حَتَّی لا أَسْتَأْنِسَ بِغَیْرِک”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 32,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 179 between “ این خانه جدید بر غربتم رحم کن، ” and “تا به غیر تو انس نگیرم”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 33,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 159 between “مَنْ سَأَلَکَ، وَ أَیْقَنَ أَنَّ” and “الْخَلْقَ لَکَ، وَ الْأَمْرَ إِل”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 34,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 166 between “ از تو خواهش کرده و یقین نمود که” and “آفرینش از تو و فرمان تنها به دست”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 35,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 167 between “ أَظْهِرْ مُرُوَّتِی وَ أَصْلِحْ” and “جَمِیعَ أَحْوَالِی،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 36,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 164 between “تم را آشکار ساز، و همه احوالم را” and “اصلاح کن،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 37,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 214 between “َنَةٍ مِنْ رَحْمَةٍ تَنْشُرُهَا،” and “وَ عَافِیَةٍ تُلْبِسُهَا،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 38,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 177 between “ر هر سال، از رحمتی که می‌گستری، ” and “و عافیتی که می‌پوشانی،”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 39,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 166 between “َلَیْهِمْ وَ عَلَی أَجْسَادِهِمْ” and “وَ أَرْوَاحِهِمْ، وَ (رَحمهُ الل”; offset 166 between “َلَیْهِمْ وَ عَلَی أَجْسَادِهِمْ” and “وَ أَرْوَاحِهِمْ، وَ رَحْمَةُ ال”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 40,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 103 between “ ملحق کن، درود بر آنان و بر تنها” and “و جانهای شان، و رحمت خدا و برکات”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 41,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 167 between “مِی لَأُطَالِبَنَّکَ بِکَرَمِکَ،” and “وَ لَئِنْ أَدْخَلْتَنِی النَّارَ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 42,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 161 between “ایی، من تو را به کرمت می‌خواهم، ” and “و اگر به دوزخم دراندازی اهل دوزخ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 43,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 35 between “ّهمَّ أَلْحِقْنِی بِصَالِحِ مَنْ” and “مَضَی، وَ اجْعَلْنِی مِنْ صَالِح”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 44,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 40 between “ا به شایستگان از بندگان گذشته‌ات” and “ملحق ساز، و از شایستگان از آنان ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 45,
+        "decision": "escalate",
+        "note": "Inspected historical ar LF offset 82 between “فَشَلِ، وَ الْهَمِّ وَ الْجُبْنِ” and “وَ الْبُخْلِ، وَ الْغَفْلَةِ وَ ”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      },
+      {
+        "index": 46,
+        "decision": "escalate",
+        "note": "Inspected historical fa LF offset 58 between “ز کسالت و سرافکندی و اندوه و ترس” and “و بخل و بی خبری و سنگدلی و نادار”. The boundary occurs inside the original phrase, clause, or devotional progression; its earlier removal was AI-assisted and unreviewed. Preserve this history for independent adjudication, and do not silently restore it."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The prayer is mostly paired at corresponding phrase boundaries, including the correctly moved direction in r00008. The Arabic source moved from the r00220 Persian slot corresponds to the Persian-only r00221 and needs a paired row. The Arabic clause r00071/72 is interrupted with an apparent missing Persian rendering; r00096/97 and r00140/41 have incomplete conditionals, r00149/150 separates opening quote from quoted text, and r00158/59/60 carries a dependent request. Preserve other source-specific omissions and variants: duplicated Arabic in r00028 and missing Persian phrase in r00127 are not license to invent text. All 47 historical LF issues individually examined and escalated. Preserve published links and use only supported migration."
+  }
+}
