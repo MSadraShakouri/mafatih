@@ -4,7 +4,7 @@
   "item": "dua-jawshan-sagheer",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "17ef48281d83548fbe946091225256804fa508ae64d6e13b12ca62d63282fb17",
   "layout_sha256": "7f634ef430c7ba9688731932a8c7104156b812ff60e8c440794bcde76a10d2af",
   "result_item_sha256": "8e2a11892e5761870fba29e9c773c9b960cf4d474ea2de41efee3e68fb7afc96",
@@ -4500,7 +4500,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 615 sources are placed once, in order: 315 output rows, 306 of them carrying Arabic and Persian together. Piece lengths run 41 code points at the median, inside the manual-v1 range. 2 inserted spaces at 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 615 sources are placed once, in order: 315 output rows, 306 of them carrying Arabic and Persian together. 2 proposed spaces from 1 row-pair join are decided one by one above; each sits exactly between the two pieces it joins, so no character of either piece moves. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -4512,7 +4512,7 @@
       "right": "r00121",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «عِرُّ مِنْهُ» and «الْجُلُودُ، », where the original row boundary (r00120 to r00121) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 38 between «عِرُّ مِنْهُ» and «الْجُلُودُ، », the point where r00120 ends and r00121 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     },
     {
       "row": "ma47a135c77e2c44217efc1da",
@@ -4523,7 +4523,7 @@
       "right": "r00121",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «نها از دیدنش» and «می‌لرزد، و د», where the original row boundary (r00120 to r00121) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 35 between «نها از دیدنش» and «می‌لرزد، و د», the point where r00120 ends and r00121 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     }
   ]
 }

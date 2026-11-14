@@ -351,3 +351,44 @@ Read all 45 pairs at `df85a685`, all adjacent in mapping order. Report:
 - `amal-aamal-daahay-rvzhay r00017|r00018` will put Persian instruction inside an
   Arabic field (`… وَ الدُّنْیَا سپس سه مرتبه بگوید…`) — a mixed-language finding
   for the review, not a reason to drop the join.
+
+## Agent-6's 45 joins are in, and my mode objection was wrong
+
+Main now carries `55ef3fe4` (merged here as `acf9e673`): runtime-audio checks a
+corrected occurrence at its code-point offset inside a merged row, plus a unit
+test with an astral character. Their snapshot `3e35f4ca` arrived after it and is
+merged here as `3e59fa5d`.
+
+**I retracted my five `both-space` corrections.** They were measured on whole
+original rows; a join merges only the last current piece of one row with the first
+current piece of the next, and in all six `(ar)` pairs one of those two pieces has
+no Persian at all. Their Persian field therefore receives a single piece and
+nothing can be glued. Checked row by row in `3e35f4ca`:
+
+| merged row | Arabic pieces | Persian pieces | space |
+|---|---|---|---|
+| `amal-aamal-daahay-rvzhay/me261330…` | `r00017-s1801`, `r00018-sc5b77` | `r00017-s1801` | ar@53 «…ْآخِرَةِ» + «وَ الدُّ…» |
+| `amal-slvat-abvalhsn-zrab/mc24556…` | `r00007-sc2f6`, `r00008-sbfc` | `r00008-sbfc` | ar@7 «…وَصَلِّ» + «عَلىٰ…» |
+| `ziyarat-hsn-asgry-alyh/m1d0aaaa…` | `r00015-s87c2`, `r00016-se834` | `r00016-se834` | ar@11 «جَعَلُوا» + «عِبادَكَ» |
+| `ziyarat-item-7/mbbd9daf…` | `r00008-sf701`, `r00009-s3b33` | `r00008-sf701` | ar@18 «يَخْتِمُ» + «اللّٰهُ» |
+| `ziyarat-svm-jamah-aymh/m4bc3198…` | `r00017-s4a69`, `r00018-s32f0` | `r00018-s32f0` | ar@15 «عَتْ فِي» + «قُلُوبِ» |
+| `amal-sayr-aamal-rjb/m909a81e…` | `r00032-s9612` only | `r00033` only | ar@8 «اللّهمَّ» + «اغْفِرْ» |
+
+Their Persian-direction claim is also right: in `daahay-rvzhay` the row after the
+merge is its own Persian instruction row («سپس سه مرتبه بگوید…»), so no Persian
+instruction sits inside the Arabic field.
+
+Corpus-wide check over all 74 merged rows in the snapshot: wherever two pieces meet
+in one field there is exactly one recorded space (82 Arabic and 73 Persian
+junctions), and **zero** piece pairs touch without a separator. Their counts also
+reproduce exactly: 84 new insertions = 45 Arabic + 39 Persian across 22 items,
+6 joins with one space and 39 with two.
+
+**Review result.** All 115 items re-reviewed and rebound to `3e35f4ca`, with **178
+spacing decisions** — one per recorded insertion, each judged on the merged row it
+sits in, including the offset, both neighbouring words, and the fact that removing
+it rejoins the two pieces exactly. 0 verify failures.
+
+Gates after the merges: `npm run validate` PASS, `check:line-breaks` PASS,
+`npm run check` 278 tests / 275 pass / 0 fail / 3 skipped, runtime-audio 6/6,
+`audit-authored` complete 112/112, `verify-tool-info` `tool-version-matches`.

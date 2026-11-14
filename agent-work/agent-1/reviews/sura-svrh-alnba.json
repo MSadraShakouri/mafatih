@@ -4,7 +4,7 @@
   "item": "sura-svrh-alnba",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "ce1ce66dbb49b2c5f4211f7ddc6467bd269a49ed87804be7428890a9780bc3e1",
   "layout_sha256": "290cf8b37d3d5f1c17f8b8dcb3ef8d12f7bf299ac284faac456e526640abc211",
   "result_item_sha256": "4e714d64f5cffb494c32a6f5e735096ed6e67e6d5d72fe2b7b69a4e1c9d8187d",
@@ -618,7 +618,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 84 sources are placed once, in order: 42 output rows, 41 of them carrying Arabic and Persian together. Piece lengths run 43 code points at the median, inside the manual-v1 range. 1 inserted space at 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 84 sources are placed once, in order: 42 output rows, 41 of them carrying Arabic and Persian together. 1 proposed space from 1 row-pair join is decided one by one above; each sits exactly between the two pieces it joins, so no character of either piece moves. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -630,7 +630,7 @@
       "right": "r00032",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «وَكُلَّ» and «شَيْءٍ أَحْص», where the original row boundary (r00031 to r00032) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 7 between «وَكُلَّ» and «شَيْءٍ أَحْص», the point where r00031 ends and r00032 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     }
   ]
 }

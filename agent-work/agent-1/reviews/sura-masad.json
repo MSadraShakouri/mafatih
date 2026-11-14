@@ -4,7 +4,7 @@
   "item": "sura-masad",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "2a60ec1d5c82ab073386046d654d49b7f3ac85714ad0caf1a00f1103841e5b6d",
   "layout_sha256": "d1484b2056e6a147327cc16944dfacfe95e2e5228045c7730979f809e4601743",
   "result_item_sha256": "d0514cba5be7ad934f5aa8eef27215e8f347ae1e7dfa4587163a16924840424d",
@@ -108,6 +108,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 12 sources are placed once, in order: 6 output rows, 6 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 12 sources are placed once, in order: 6 output rows, 6 of them carrying Arabic and Persian together. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

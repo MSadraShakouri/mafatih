@@ -4,11 +4,11 @@
   "item": "amal-sayr-aamal-rjb",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "1ddc0b41e38f0ccac48b4aa4c61a6ca15e107ce86a9b39b5a1743e7967c7509a",
-  "layout_sha256": "e05a4c25a08c0d157669293a44520d6e8d949c2910e81ffee21595a92117dfdf",
-  "result_item_sha256": "3a6d68f5915229bd11d2c86a0a9ed1b989500675140315a5ab675c2ddc78e95f",
-  "result_record_sha256": "7a4bc40c73445662c46266ceff4b85bb3cc94b6b2487acea311c9261ea578f77",
+  "layout_sha256": "64d08ecaed29c8fba18228affd334e622765bf75126ac8bb72cda68eab682b7e",
+  "result_item_sha256": "2cde775a264599b783a195b47ee2b0e19bfef16ebe0dcff1c21308f22694c4d9",
+  "result_record_sha256": "99138f708ce6c0348f249472b04c9abef13bf1d3aeccea4f70c9648772e97633",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -317,21 +317,21 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (1 cut), kind recitation; single-language; 1 in a row the source stores in this language only; lengths 8. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (1 cut), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00033",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 42. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00033",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 1 piece (0 cuts), kind recitation; 1 paired with the other language in the same output row; lengths 44. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 0 pieces (0 cuts), kind ; single-language; lengths . Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00034",
@@ -406,6 +406,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 48 sources are placed once, in order: 70 output rows, 30 of them carrying Arabic and Persian together. Piece lengths run 50 code points at the median, inside the manual-v1 range. Section labels open their passage inside the same row at r00019/fa, r00028/fa; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 48 sources are placed once, in order: 69 output rows, 30 of them carrying Arabic and Persian together. 1 proposed space from 1 row-pair join is decided one by one above; each sits exactly between the two pieces it joins, so no character of either piece moves. Section labels open their passage inside the same row at r00019/fa, r00028/fa; that is the base corpus's dominant style, so it is accepted. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "m909a81ee39fccedf74d908b5",
+      "language": "ar",
+      "target_start": 8,
+      "value": " ",
+      "left": "r00032-s9612e2da83ce0e93",
+      "right": "r00033",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: one U+0020 at code point 8 between «اللّهمَّ» and «اغْفِرْ لِلْ», the point where r00032-s9612e2da83ce0e93 ends and r00033 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
+    }
+  ]
 }

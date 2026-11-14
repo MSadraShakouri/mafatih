@@ -4,7 +4,7 @@
   "item": "amal-aamal-nymh-rjb",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "99d99095325ad578ac44b7afbc039fd22ac10698690be2a7de35e8283acc8435",
   "layout_sha256": "dd771ea084004054410ce0623fdac510c11f10d00eeee521475e0041f04f4d8a",
   "result_item_sha256": "865b5c2d00cbb9b1b15c79756c3212e845b679949975c7856146d5afbc338d03",
@@ -163,7 +163,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 19 sources are placed once, in order: 48 output rows, 22 of them carrying Arabic and Persian together. Piece lengths run 49 code points at the median, inside the manual-v1 range. 2 inserted spaces at 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 19 sources are placed once, in order: 48 output rows, 22 of them carrying Arabic and Persian together. 2 proposed spaces from 1 row-pair join are decided one by one above; each sits exactly between the two pieces it joins, so no character of either piece moves. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -175,7 +175,7 @@
       "right": "r00014-sa839c43f8232dd91",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «تِكَ الَّتِى» and «اسْتَوَيْتَ », where the original row boundary (r00013-s79132688e4ccc704 to r00014-sa839c43f8232dd91) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 32 between «تِكَ الَّتِى» and «اسْتَوَيْتَ », the point where r00013-s79132688e4ccc704 ends and r00014-sa839c43f8232dd91 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     },
     {
       "row": "m7501791cd23f3977b54d511b",
@@ -186,7 +186,7 @@
       "right": "r00014-sa839c43f8232dd91",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between « حق عزّتت که» and «با آن بر حکو», where the original row boundary (r00013-s79132688e4ccc704 to r00014-sa839c43f8232dd91) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 31 between « حق عزّتت که» and «با آن بر حکو», the point where r00013-s79132688e4ccc704 ends and r00014-sa839c43f8232dd91 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     }
   ]
 }

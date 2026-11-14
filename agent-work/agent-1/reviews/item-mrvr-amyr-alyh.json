@@ -4,7 +4,7 @@
   "item": "item-mrvr-amyr-alyh",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "671b531398b484739427bbdc7de8495e99fb61004e77b68bc01f0ffb2e0393ca",
   "layout_sha256": "943b79b8d9df509ad11acd0f451d30960ba639277e5e946c8b75911daaf4004c",
   "result_item_sha256": "d153e04c60ff90f476b5db5573ad76f053e41ad6d79ac1beef589835632c1b3c",
@@ -112,6 +112,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 11 sources are placed once, in order: 22 output rows, 12 of them carrying Arabic and Persian together. Piece lengths run 36 code points at the median, inside the manual-v1 range. Section labels open their passage inside the same row at r00002/fa; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 11 sources are placed once, in order: 22 output rows, 12 of them carrying Arabic and Persian together. Section labels open their passage inside the same row at r00002/fa; that is the base corpus's dominant style, so it is accepted. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

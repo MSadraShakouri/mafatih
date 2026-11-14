@@ -4,7 +4,7 @@
   "item": "amal-byst-sfr",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "cb3d98e16123d0b1e0996c411448808428b008e7729f877a66c53f18fda0c7b7",
   "layout_sha256": "96fbcc9af90c0a2487d405683000fd413275bf9a20b446ef70f27853dcbb3939",
   "result_item_sha256": "fdacc23ec801341cfb1d781057316fb69047985e2a6701f6121d4557134b6714",
@@ -206,6 +206,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 26 sources are placed once, in order: 23 output rows, 9 of them carrying Arabic and Persian together. Piece lengths run 84 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 26 sources are placed once, in order: 23 output rows, 9 of them carrying Arabic and Persian together. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

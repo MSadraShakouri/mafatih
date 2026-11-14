@@ -4,11 +4,11 @@
   "item": "khavas-hrzhay-chshm-zkhm",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "84ec846821497cebe5b67e64e3c322c86365d05fb4cb267944c16ec870528a7d",
-  "layout_sha256": "d92d469eb684b100a6004dc906324a321495d2ec36f1328a1c75ba869b0902a7",
-  "result_item_sha256": "d124d8350a0fa2a64255706b652f35b98a8ed739ab16e0149fe9c83b6e29787d",
-  "result_record_sha256": "ae866b4f0046e76e7d99f89fc564915c3fcf19f7373cf3e89ba011a3401561ec",
+  "layout_sha256": "44d712275f3a6409b4cee635e552fa9612cc7ca190da0f6386e314bde9c59f14",
+  "result_item_sha256": "efe42d0e04fab06db3144c2128bed19e699a4f2f3e9686035b2daee191d62677",
+  "result_record_sha256": "7ff5f3d417cc148bd52c30bb224cfbef883bfdac338ff93daef43740fe9de938",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -79,28 +79,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 6 pieces (6 cuts), kind recitation; 6 paired with the other language in the same output rows; lengths 35/24/15/17/15/15. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 5 pieces (6 cuts), kind recitation; 5 paired with the other language in the same output rows; lengths 35/24/15/17/15. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 7 pieces (5 cuts), kind heading+recitation; 6 paired with the other language in the same output rows; 1 left unpaired where the language rows cross; lengths 43/51/18/20/14/11/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 6 pieces (5 cuts), kind heading+recitation; 5 paired with the other language in the same output rows; 1 left unpaired where the language rows cross; lengths 43/51/18/20/14/11. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00007",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 10 pieces (9 cuts), kind recitation; 10 paired with the other language in the same output rows; lengths 19/30/34/30/34/29/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 9 pieces (9 cuts), kind recitation; 9 paired with the other language in the same output rows; lengths 30/34/30/34/29/22/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 10 pieces (9 cuts), kind recitation; 10 paired with the other language in the same output rows; lengths 11/18/43/23/23/24/…. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 9 pieces (9 cuts), kind recitation; 9 paired with the other language in the same output rows; lengths 18/43/23/23/24/20/…. Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -154,6 +154,30 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 12 sources are placed once, in order: 42 output rows, 30 of them carrying Arabic and Persian together. Piece lengths run 27 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
-  }
+    "note": "All 12 sources are placed once, in order: 41 output rows, 29 of them carrying Arabic and Persian together. 2 proposed spaces from 1 row-pair join are decided one by one above; each sits exactly between the two pieces it joins, so no character of either piece moves. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+  },
+  "spacing_review": [
+    {
+      "row": "m0afbd9da5004ed61df7e956b",
+      "language": "ar",
+      "target_start": 15,
+      "value": " ",
+      "left": "r00006-s4339ebe66b46a537",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: one U+0020 at code point 15 between «َدْتُ عَیْنَ» and «العايِنِ عَل», the point where r00006-s4339ebe66b46a537 ends and r00007-sb13bc65dd76f169b begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
+    },
+    {
+      "row": "m0afbd9da5004ed61df7e956b",
+      "language": "fa",
+      "target_start": 13,
+      "value": " ",
+      "left": "r00006-s4339ebe66b46a537",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at the original row boundary",
+      "decision": "accept",
+      "note": "Accepted: one U+0020 at code point 13 between «رگرداندم چشم» and «چشم زن را، », the point where r00006-s4339ebe66b46a537 ends and r00007-sb13bc65dd76f169b begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
+    }
+  ]
 }

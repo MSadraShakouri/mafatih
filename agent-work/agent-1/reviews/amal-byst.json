@@ -4,7 +4,7 @@
   "item": "amal-byst",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "83df49a1d79762244aa635720eda644106364c698a20e7f2f1b702d1e33f02b4",
   "layout_sha256": "11463c781e6b573da402ae1ec750b0273b2366ceb88c47f6725ba50a708f9fb4",
   "result_item_sha256": "08144d6b3557d72985f2a07f85ea69309b6cfec62a1bf78bf4cf85ea51b247b0",
@@ -59,7 +59,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 5 sources are placed once, in order: 24 output rows, 23 of them carrying Arabic and Persian together. Piece lengths run 34 code points at the median, inside the manual-v1 range. 2 inserted spaces at 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 5 sources are placed once, in order: 24 output rows, 23 of them carrying Arabic and Persian together. 2 proposed spaces from 1 row-pair join are decided one by one above; each sits exactly between the two pieces it joins, so no character of either piece moves. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -71,7 +71,7 @@
       "right": "r00003-s3a5c66537d9f28c5",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «لِى يَقِيناً» and «تُباشِرُ بِه», where the original row boundary (r00002-sa20ee45c3b66d926 to r00003-s3a5c66537d9f28c5) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 27 between «لِى يَقِيناً» and «تُباشِرُ بِه», the point where r00002-sa20ee45c3b66d926 ends and r00003-s3a5c66537d9f28c5 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     },
     {
       "row": "m71229831b834155f51646471",
@@ -82,7 +82,7 @@
       "right": "r00003-s3a5c66537d9f28c5",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «ر من بخشی که» and «دلم همراه آن», where the original row boundary (r00002-sa20ee45c3b66d926 to r00003-s3a5c66537d9f28c5) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 21 between «ر من بخشی که» and «دلم همراه آن», the point where r00002-sa20ee45c3b66d926 ends and r00003-s3a5c66537d9f28c5 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     }
   ]
 }

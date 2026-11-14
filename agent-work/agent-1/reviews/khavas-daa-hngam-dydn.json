@@ -4,7 +4,7 @@
   "item": "khavas-daa-hngam-dydn",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "3274f4d6a23a393f15fffd21d9b5807226ce57b8508fa261fb1b5af3afa9dd22",
   "layout_sha256": "feb3a572b3f0bcb661b5ee62f664937ad5f092aa0f564c7baf5628927acda290",
   "result_item_sha256": "d07b4479e6aa07e3d893df1efa85657a78538c3ed4cf405d430809a997e42be2",
@@ -58,7 +58,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 4 sources are placed once, in order: 5 output rows, 0 of them carrying Arabic and Persian together. Piece lengths run 78 code points at the median, inside the manual-v1 range. 1 inserted space at 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 4 sources are placed once, in order: 5 output rows, 0 of them carrying Arabic and Persian together. 1 proposed space from 1 row-pair join is decided one by one above; each sits exactly between the two pieces it joins, so no character of either piece moves. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -70,7 +70,7 @@
       "right": "r00002",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «فانِی مِمَّا» and «ابْتَلاكَ بِ», where the original row boundary (r00001-s3c4bebd45bdc4b10 to r00002) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: one U+0020 at code point 41 between «فانِی مِمَّا» and «ابْتَلاكَ بِ», the point where r00001-s3c4bebd45bdc4b10 ends and r00002 begins; removing it rejoins the two pieces with nothing else changed, and neither neighbour is a space."
     }
   ]
 }

@@ -4,7 +4,7 @@
   "item": "khavas-tavyz-btlan-shr",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
+  "author_commit": "3e35f4ca2d8491e2e3b3111672a42edb84b1e619",
   "plan_sha256": "cbad6d8400f229fd592e64fa14a94f433133905efb7dc61320e3ab0b928654b6",
   "layout_sha256": "1f0681a40f01357db6f0314ac6bcc0fb3b5ed95bd43e453b0a7e0505e96409ec",
   "result_item_sha256": "8848191a9e798934324ad8220cf13039bf27e9f268344b7c6aace8d33d260c2c",
@@ -45,6 +45,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 3 sources are placed once, in order: 10 output rows, 8 of them carrying Arabic and Persian together. Piece lengths run 40 code points at the median, inside the manual-v1 range. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 3 sources are placed once, in order: 10 output rows, 8 of them carrying Arabic and Persian together. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }
