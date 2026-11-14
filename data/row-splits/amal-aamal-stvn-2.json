@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-aamal-stvn-2",
   "author": "agent-5",
   "baseline_item_sha256": "ba7db2efa86625be529e907d55e599e32a3f3efbd9fae6aab1898ba7539931c3",
   "plan_sha256": "ceb9ae122dd139b462dcded893f94bf3dbc3500b4f54e191e4385a2502c92d2e",
-  "layout_sha256": "33517f3cbc260936d1b600b2e638a1c2306c28afa108bb73fc0d5e288bc1fc56",
+  "layout_sha256": "fa40a66b0fc1305f9b95ca6ba76d5dbc66f59e4f59b7d79c9a7a31f007af32e8",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 256
+          "end": 256,
+          "target_start": 0
         }
       ]
     },
@@ -33,7 +34,7 @@
       },
       "results": [
         "r00002-s16b235f3fb54b1a5",
-        "r00002-s51331c3b3dd06d15"
+        "mb9785677f42eefa51eea6136"
       ],
       "ar": [],
       "fa": [
@@ -41,13 +42,15 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 398
+          "end": 398,
+          "target_start": 0
         },
         {
-          "row": "r00002-s51331c3b3dd06d15",
+          "row": "mb9785677f42eefa51eea6136",
           "language": "ar",
           "start": 398,
-          "end": 1020
+          "end": 1020,
+          "target_start": 0
         }
       ]
     },
@@ -58,22 +61,24 @@
         "fa": "tda9e47657f24125daab317f2"
       },
       "results": [
-        "r00003"
+        "mb9785677f42eefa51eea6136"
       ],
       "ar": [
         {
-          "row": "r00003",
+          "row": "mb9785677f42eefa51eea6136",
           "language": "ar",
           "start": 0,
-          "end": 27
+          "end": 27,
+          "target_start": 623
         }
       ],
       "fa": [
         {
-          "row": "r00003",
+          "row": "mb9785677f42eefa51eea6136",
           "language": "fa",
           "start": 0,
-          "end": 694
+          "end": 694,
+          "target_start": 0
         }
       ]
     },
@@ -91,7 +96,8 @@
           "row": "r00004",
           "language": "ar",
           "start": 0,
-          "end": 598
+          "end": 598,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -99,7 +105,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 539
+          "end": 539,
+          "target_start": 0
         }
       ]
     },
@@ -118,9 +125,41 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 249
+          "end": 249,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s51331c3b3dd06d15",
+        "ar": "tdca85242373b858255e2a37e",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mb9785677f42eefa51eea6136",
+          "language": "ar",
+          "start": 0,
+          "end": 622,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    }
+  ],
+  "insertions": [
+    {
+      "row": "mb9785677f42eefa51eea6136",
+      "language": "ar",
+      "target_start": 622,
+      "value": " ",
+      "left": "r00002-s51331c3b3dd06d15",
+      "right": "r00003",
+      "reason": "Separate بِهِ from مِنَ across the original source-row boundary; the Persian rendering covers the full Arabic passage."
     }
   ]
 }
