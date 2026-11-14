@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-aamal-rmzan-2",
   "author": "agent-5",
-  "plan_sha256": "12741e29e859d8ec0fea49dee8123bf4cc658d0853c6a0e9e7c9fe95fb18f9bc",
+  "plan_sha256": "b50aa77da9f46cc0f1aae4ad57f7ba1cf0601b1530002d4cc009fb7605a4e92c",
   "rows": [
     {
       "row": "r00001",
@@ -44,6 +44,38 @@
             "part": 0
           },
           "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -57,7 +89,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction"
         }
       ]
     },
@@ -89,6 +121,22 @@
             "part": 0
           },
           "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
         }
       ]
     },
@@ -142,13 +190,21 @@
       "checked": true,
       "output": [
         {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
           "ar": {
             "source": "ar",
             "part": 0
           },
           "fa": {
             "source": "fa",
-            "part": 0
+            "part": 1
           },
           "kind": "recitation"
         }

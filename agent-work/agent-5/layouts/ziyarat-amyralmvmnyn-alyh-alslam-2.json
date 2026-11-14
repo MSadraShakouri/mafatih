@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-amyralmvmnyn-alyh-alslam-2",
   "author": "agent-5",
-  "plan_sha256": "9284a4a54102f893cd29fe7929d6d73bc32a878acb7ee2f2d62162637719fc63",
+  "plan_sha256": "236d15b54045083d96b5ea67e2e4a97ed9dff26849e0da85ec6eceb9a4f913c2",
   "rows": [
     {
       "row": "r00001",
@@ -1971,6 +1971,42 @@
       "spacing": {
         "mode": "fa-space",
         "reason": "Separate words at compiler remark continuation"
+      }
+    },
+    {
+      "left": "r00004-sd64be5b3d4fa0f32",
+      "right": "r00005-sf75a34654a0b51be",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the r00004/r00005 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00009-sb92ddd4ba9af14f7",
+      "right": "r00010",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00009/r00010 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00011-s37fafe1509cff40a",
+      "right": "r00012-sa4438d7a5d3c6c0d",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00011/r00012 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00012-s4673978e056b1e9a",
+      "right": "r00013-sdda5eb385847b753",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00012/r00013 source-row boundary when grouping the interrupted passage; retain all original text."
       }
     }
   ]

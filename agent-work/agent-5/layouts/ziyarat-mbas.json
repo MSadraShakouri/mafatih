@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-mbas",
   "author": "agent-5",
-  "plan_sha256": "df634769c95d2f34e7c19af411b9613f35cb99f900cab575a3db301f91753d02",
+  "plan_sha256": "4e11e571ca61d5e54e2d72ec547feca27de6aa633e46524274564f67897a2c17",
   "rows": [
     {
       "row": "r00001",
@@ -1164,6 +1164,62 @@
           "kind": "instruction"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00005-s74df049b5927f888",
+      "right": "r00006-s3e3874d69dfd3c50",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00005/r00006 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00008-sd4b1e3214186760b",
+      "right": "r00009-s509976db02c9c56c",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00008/r00009 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00010-sbf797ece44551d41",
+      "right": "r00011-seb43c5673ba605a6",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00010/r00011 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00011-s8b213929d86b9af1",
+      "right": "r00012-sa4438d7a5d3c6c0d",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00011/r00012 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00013-s97df0bc172edd1d0",
+      "right": "r00014-sa839c43f8232dd91",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00013/r00014 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00015-s82a0285ebe6ef69d",
+      "right": "r00016-se83437ebfd903157",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00015/r00016 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
     }
   ]
 }

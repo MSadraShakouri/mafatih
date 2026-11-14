@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "item-asharh",
   "author": "agent-5",
-  "plan_sha256": "cd7f54ba6d0338efeb673d515140580928899a71d32f3be54e6ca6fb68275537",
+  "plan_sha256": "ce3dc558dd6984f00b5f4de20d118db74d0a2b521b576fe7bfe51ec5566e845c",
   "rows": [
     {
       "row": "r00001",
@@ -24,13 +24,21 @@
       "checked": true,
       "output": [
         {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
           "ar": {
             "source": "ar",
             "part": 0
           },
           "fa": {
             "source": "fa",
-            "part": 0
+            "part": 1
           },
           "kind": "recitation"
         }
@@ -77,6 +85,13 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001",
+      "right": "r00002-s33d1515313a177c7",
+      "checked": true
     }
   ]
 }
