@@ -4,7 +4,7 @@
   "author": "agent-6",
   "baseline_item_sha256": "d2b3187dcecfc8a61241826e252f26265f8aa6940ec2761a506660f1ece1fbe3",
   "plan_sha256": "54a6dd0e1ded0ed5a4751ba7545467d95afe48b31fbb31babb622d7624e68fdc",
-  "layout_sha256": "9a1ff01e598b4c6b7b9890eb599ee990bf77f9477cad9a6d0d2b7e8dfbbe854c",
+  "layout_sha256": "737b98b3d8644dcc67b0da80c386541a32563ac24f77f4008f342c9fc25b0fa4",
   "rows": [
     {
       "original": {
@@ -1316,7 +1316,7 @@
         "r00020-s07b72c217f67cc13",
         "r00020-sc95474c8429b51da",
         "r00020-s974fcaaae643df75",
-        "r00020-s63f9098dd62e8d6e"
+        "mcf97f0c3829dbb702235c741"
       ],
       "ar": [
         {
@@ -1362,7 +1362,7 @@
           "target_start": 0
         },
         {
-          "row": "r00020-s63f9098dd62e8d6e",
+          "row": "mcf97f0c3829dbb702235c741",
           "language": "ar",
           "start": 449,
           "end": 484,
@@ -1406,7 +1406,7 @@
           "target_start": 0
         },
         {
-          "row": "r00020-s63f9098dd62e8d6e",
+          "row": "mcf97f0c3829dbb702235c741",
           "language": "fa",
           "start": 376,
           "end": 408,
@@ -1421,7 +1421,7 @@
         "fa": "t23bb60d683e600b8065bf1fc"
       },
       "results": [
-        "r00021-sde6fd1f18d8ee701",
+        "mcf97f0c3829dbb702235c741",
         "r00021-se2bc1c351c6fe166",
         "r00021-sc01d9a7771e1531a",
         "r00021-sc6899be91445a785",
@@ -1429,11 +1429,11 @@
       ],
       "ar": [
         {
-          "row": "r00021-sde6fd1f18d8ee701",
+          "row": "mcf97f0c3829dbb702235c741",
           "language": "ar",
           "start": 0,
           "end": 29,
-          "target_start": 0
+          "target_start": 36
         },
         {
           "row": "r00021-se2bc1c351c6fe166",
@@ -1466,11 +1466,11 @@
       ],
       "fa": [
         {
-          "row": "r00021-sde6fd1f18d8ee701",
+          "row": "mcf97f0c3829dbb702235c741",
           "language": "fa",
           "start": 0,
           "end": 15,
-          "target_start": 0
+          "target_start": 33
         },
         {
           "row": "r00021-se2bc1c351c6fe166",
@@ -2943,6 +2943,58 @@
           "target_start": 13
         }
       ]
+    },
+    {
+      "original": {
+        "id": "r00020-s63f9098dd62e8d6e",
+        "ar": "t71b8eec4e2ef2b3d062e7a75",
+        "fa": "t4def68dd6575c7922c0f547e",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mcf97f0c3829dbb702235c741",
+          "language": "ar",
+          "start": 0,
+          "end": 35,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mcf97f0c3829dbb702235c741",
+          "language": "fa",
+          "start": 0,
+          "end": 32,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00021-sde6fd1f18d8ee701",
+        "ar": "t5d6c79ecd73448e21c8c28c1",
+        "fa": "tff3d15368eabac55ab4d4470",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mcf97f0c3829dbb702235c741",
+          "language": "ar",
+          "start": 0,
+          "end": 29,
+          "target_start": 36
+        }
+      ],
+      "fa": [
+        {
+          "row": "mcf97f0c3829dbb702235c741",
+          "language": "fa",
+          "start": 0,
+          "end": 15,
+          "target_start": 33
+        }
+      ]
     }
   ],
   "insertions": [
@@ -2962,6 +3014,24 @@
       "value": " ",
       "left": "r00027-s0a36573193e9601b",
       "right": "r00028-sc1710b0977035e78",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "mcf97f0c3829dbb702235c741",
+      "language": "ar",
+      "target_start": 35,
+      "value": " ",
+      "left": "r00020-s63f9098dd62e8d6e",
+      "right": "r00021-sde6fd1f18d8ee701",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "mcf97f0c3829dbb702235c741",
+      "language": "fa",
+      "target_start": 32,
+      "value": " ",
+      "left": "r00020-s63f9098dd62e8d6e",
+      "right": "r00021-sde6fd1f18d8ee701",
       "reason": "Separate words at the original row boundary"
     }
   ]
