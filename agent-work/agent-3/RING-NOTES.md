@@ -171,3 +171,31 @@ merge.
 
 **Open for the coordinator:** this consumer bug is on main and will hit every agent whose
 corpus gains a V3/V2 merge. My branch carries the fix; main does not.
+
+## Agent-4 round CLOSED — independently verified, not taken on trust
+
+Agent-4's tip `857420b0` merges `4cd08faa` (my snapshot 6803172) and `5df47f79` rebinds
+their 115 review records. I did not accept their "115/115 verified" on trust: I fetched
+their tip and ran `verify-review` myself for all 115 items against my exact snapshot
+`680317220f16…`. Result **115/115 agent-review-records-complete**, 0 failures.
+
+Content check on their fresh work: 3,188 source entries, **all accept/accept**, each with a
+note. 3,180 are the same structural-inspection template repeated; the **8 substantive
+notes land exactly on my four fixed rows** (item-avl-taqybat-mshtrk r00014+r00018,
+namaz-item-3 r00001, ziyarat-bad-rza-alyh r00017) and describe the fix correctly. So the
+re-review is real where it matters, and honestly labelled where it is structural. Caveat
+worth keeping: 3,188 is not 3,188 independent judgements.
+
+**I was wrong about their snapshot and have retracted it.** `six-agent-snapshot` deliberately
+descends from the *prior isolated snapshot* and contains only the agent's own authored
+items. So `283c8c6d` not containing my work was a tool property, not a failed merge. My
+original "question" assumed otherwise. Recorded in `69e84dcc` so it is not re-raised.
+
+Also noted for them: they are only *accidentally* safe from the main-side consumer bug —
+2 merged items, 0 overlap with punctuation-corrected items.
+
+## Status
+Both review directions closed. My 115 authored items: 115/115 complete, agent-4 records
+verified. Agent-2's 114: 114/114 complete at 844d104c, merged into my branch. Gate green:
+274 pass / 0 fail / 3 skipped, validate PASS, verify-tool-info matches.
+Remaining open item is upstream only: the main-side consumer bug my branch fixes.
