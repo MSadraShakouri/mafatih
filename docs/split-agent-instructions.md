@@ -89,6 +89,8 @@ If the command fails or conflicts, preserve the merge state and report; do not f
 
 Install the existing locked dependencies with `npm ci` if needed, without changing package or lock files. This round is pinned to **Node v22.22.3, ICU 78.2 and Unicode 17.0**: use that exact runtime, not the earlier Node 20 pin. If the runtime or another pin differs, `verify-tool-info` reports the differing fields; do not bypass it. On resume, keep the original registration and base; if a legacy `agent-work/$ME/base.txt` or existing plans record a different or unverifiable base, preserve them and report instead of silently migrating them.
 
+**Mid-round tool upgrade:** merge the coordinator's updated `main` into your own branch before using or reviewing merged-row V2 records. The updated `tool-info.json` pins the upgraded files; verify it in your worktree as shown below. Keep your existing `$BASE`, registration, assignments, plans and old reviews—this upgrade does **not** move the frozen launch marker or change the assignment manifest. An unchanged V1 result and its matching review remain valid; an item changed by a merge needs a fresh independent review. Old clients cannot read V2 records, so the author, reviewer and eventual integrator must all upgrade. Preserve/report any Git conflict; do not force or discard work.
+
 ```bash
 node --version                 # must print v22.22.3
 node --import tsx scripts/split-agent.ts verify-tool-info docs/split-assignments/tool-info.json
@@ -149,6 +151,40 @@ A layout's `rows` follow the original row order. Each `output` row has `ar` and 
 The tool checks a frozen item fingerprint, author assignment, complete occurrence coverage, Unicode/marker boundaries, source-order reconstruction, row roles and shared-text copy-on-write. It writes your `data/items/ITEM.json`, a reversible `data/row-splits/ITEM.json` and any necessary `data/texts/*.json` additions. It preserves original references and historical row identities and supports old row/language/offset reading links. When an export contains `inherited_from`, a historical hint is conservatively attached to every mapped descendant of the old occurrence, including pieces moved between languages. The original event may affect only part of that occurrence; old break offsets are not offsets into the current field. Inspect the history instead of treating this inheritance as an automatic boundary. It refuses to overwrite unrelated or non-reconstructible prior item work; preserve and reconcile such work, don't force it. Mechanical checks do not establish correct meaning or rights.
 
 Review `git status` and the actual diff. Stage and commit only your own plans/layouts, changed assigned items, their split records and the affected text shards; never `git add` ignored inputs/previews or an unrelated user's file. Use the two co-author trailers. Before every push, confirm `git branch --show-current` still equals the verified `$OWN_BRANCH`; then push only that branch with `git push origin "$OWN_BRANCH"` (never force). If a push is rejected or branch ownership is unclear, stop and preserve/report the state.
+
+### Merge adjacent rows, including across original rows
+
+First apply your fully checked plan/layout normally and inspect the **current** row IDs and both languages. If finer cuts are needed, make them before merging. Select two adjacent current output rows in source order; they can come from different frozen original rows. Do not infer that the languages correspond just because they are adjacent. Preview without changing any files:
+
+```bash
+LEFT=first-current-row-id
+RIGHT=next-current-row-id
+node --import tsx scripts/six-agent.ts merge-preview "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME" --left "$LEFT" --right "$RIGHT"
+```
+
+Inspect the complete Arabic and Persian `left`, `right`, `merged`, and `no_whitespace_boundary` fields. **The join is literal: no character, not even a space, is added or removed.** If `no_whitespace_boundary` is true, the pieces will touch in the output; this applies to both languages at the Faraj `r00003`/`r00004` boundary. Do not silently add a space, and do not merge if touching is unacceptable; report the case for a separately reviewed editorial correction. The preview contains text: do not commit it or send it in coordination messages.
+
+Once you have inspected and explicitly accept the exact join, apply it:
+
+```bash
+node --import tsx scripts/six-agent.ts merge-rows "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME" --left "$LEFT" --right "$RIGHT" --join exact
+```
+
+The command checks ownership, the frozen plan, current result and adjacency; it refuses different row kinds or conflicting row-level source attributions. It writes the new layout decision, item, mapping and text values as one guarded worktree operation; it does not `git add` or commit them. It preserves frozen-source links and the just-retired output-row links, including nonzero destination code-point offsets. A sequence of merges can be made by previewing the returned `merged_row` with its next neighbor; intermediate merged-row links are preserved too. Once V2 exists, ordinary `apply` refuses a later revision that would orphan prior V2 row links; request a mapping migration rather than bypassing it. This does not reconstruct arbitrary earlier, already-retired V1 revision links that were never recorded.
+
+The author must review the resulting grouping and ask the assigned independent reviewer to review the new snapshot. Previous reviews for this changed item are stale; unchanged items' reviews remain bound to their existing results. Mechanical success is not scholarly or rights approval.
+
+### Prior snapshot text-pool repair
+
+Snapshots retain immutable text-pool values from their parent. If the branch no longer contains any of those values, snapshot creation now **stops before starting a Git merge**. On your registered own branch, with tracked changes committed and no merge in progress, run:
+
+```bash
+node --import tsx scripts/six-agent.ts restore-snapshot-texts --base "$BASE" --agent "$ME"
+# Inspect the listed data/texts/*.json shards, then commit only those restored shards.
+# Retry scripts/six-agent-snapshot.ts with the same frozen BASE and agent.
+```
+
+This explicitly restores missing, hash-checked immutable parent values without deleting or overwriting other values; it lists every restored ID and shard. Some may be unreferenced and cause validation warnings. Keep them while parallel snapshot merges are underway; do not prune the pool or choose ours/theirs blindly. If there is already an unresolved merge, preserve and resolve that state first.
 
 ## 4. Parallel ring, two communication files, and independent review
 

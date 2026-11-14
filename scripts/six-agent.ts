@@ -5,11 +5,11 @@ import { spawnSync } from 'node:child_process';
 import { loadCorpus, text, validateCorpus } from '../src/corpus.js';
 import { commit, pretty, preserveKeyOrder } from '../src/editor.js';
 import { gitCommit, gitFile, gitFiles, loadCorpusAtCommit } from '../src/git-corpus.js';
-import { ItemSchema, Key, RowSplitRecordSchema } from '../src/schema.js';
+import { ItemSchema, Key, RowSplitRecordSchema, type Item, type RowSplitRecord } from '../src/schema.js';
 import { AgentPartitionsSchema, AgentPlanSchema, exportAgentInput, splitAgentPlan, verifyAgentPartitions } from '../src/split-agent.js';
 import { CanonicalLayoutSchema, compileCanonicalSplit, createCanonicalLayoutTemplate, restoreCanonicalItem, verifyCanonicalResult } from '../src/split-canonical.js';
 import { CanonicalReviewSchema, createCanonicalReviewTemplate, verifyCanonicalReview } from '../src/six-agent-review.js';
-import { sha256 } from '../src/text-ids.js';
+import { sha256, textId } from '../src/text-ids.js';
 import { checkedAgent, currentAgentBranch, discoverAgentPeer, neighbors, registerAgent, requireAgentBranch } from '../src/six-agent-branch.js';
 
 const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens a PR):
@@ -18,6 +18,9 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts discover --agent agent-N --peer agent-M
   node --import tsx scripts/six-agent.ts layout PLAN --base COMMIT --output NEW_FILE
   node --import tsx scripts/six-agent.ts apply PLAN LAYOUT --base COMMIT --agent agent-N
+  node --import tsx scripts/six-agent.ts merge-preview PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW
+  node --import tsx scripts/six-agent.ts merge-rows PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW --join exact
+  node --import tsx scripts/six-agent.ts restore-snapshot-texts --base COMMIT --agent agent-N
   node --import tsx scripts/six-agent.ts inspect ITEM --base COMMIT --result AUTHOR_COMMIT --author agent-N
   node --import tsx scripts/six-agent.ts review-template ITEM --base COMMIT --result AUTHOR_COMMIT --author agent-N --reviewer agent-M --output NEW_FILE
   node --import tsx scripts/six-agent.ts verify-review ITEM REVIEW --base COMMIT --result AUTHOR_COMMIT --author agent-N
@@ -26,7 +29,8 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts audit-squashed --base COMMIT
   node --import tsx scripts/six-agent.ts message --from agent-N --to agent-M --kind TYPE --text TEXT [--commit COMMIT] [--item ID] [--reply-to ID]
 Use a full immutable 40-character commit. Register, configure and message write only work metadata or local Git configuration.
-Only apply writes data/, and only on the registered assigned agent's checked-out own branch.`;
+Only apply, merge-rows and restore-snapshot-texts write data/, and only on the registered agent's own branch.
+Merges concatenate the existing fields exactly, without inserting even a space; inspect and review them independently.`;
 const project=spawnSync('git',['rev-parse','--show-toplevel'],{encoding:'utf8'});
 if(project.status!==0)throw new Error('Run inside the project Git repository');
 const root=path.resolve(project.stdout.trim());process.chdir(root);
@@ -87,11 +91,21 @@ function ensureRoundScope(base:ReturnType<typeof loadCorpus>,current:ReturnType<
     throw new Error(`Out-of-scope canonical path: ${file}`);
   }
 }
+/** Never silently orphan a row or alias that an earlier V2 merge exposed. */
+function ensurePriorAnchors(before:Item, previous:RowSplitRecord, next:Item, mapping:RowSplitRecord):void {
+  const destinations=new Map(next.rows.map(row=>[row.id,row]));
+  const origins=new Map([...mapping.rows,...(mapping.aliases ?? [])].map(entry=>[entry.original.id,entry.original]));
+  for(const old of [...before.rows,...previous.rows.map(e=>e.original),...(previous.aliases ?? []).map(e=>e.original)]) {
+    const direct=destinations.get(old.id), redirect=origins.get(old.id);
+    const matches=(row:typeof old|undefined)=>row!==undefined && row.ar===old.ar && row.fa===old.fa;
+    if(!matches(direct)&&!matches(redirect)) throw new Error(`${old.id}: revision would orphan a previously published row link; preserve it and request a mapping migration`);
+  }
+}
 function parseArgs(args:string[]){
   const command=args.shift(),flags:Record<string,string>={},positional:string[]=[];
   for(let i=0;i<args.length;i++){
     const value=args[i]!;if(!value.startsWith('--')){positional.push(value);continue;}
-    if(!['--base','--output','--agent','--peer','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
+    if(!['--base','--output','--agent','--peer','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to','--left','--right','--join'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
     flags[value]=args[++i]!;
   }
   return {command,flags,positional};
@@ -119,6 +133,9 @@ function main():void {
   const specs:Record<string,{count:number;flags:string[]}>={
     register:{count:0,flags:['--agent','--base']},configure:{count:0,flags:['--agent']},
     discover:{count:0,flags:['--agent','--peer']},layout:{count:1,flags:['--base','--output']},apply:{count:2,flags:['--base','--agent']},
+    'merge-preview':{count:2,flags:['--base','--agent','--left','--right']},
+    'merge-rows':{count:2,flags:['--base','--agent','--left','--right','--join']},
+    'restore-snapshot-texts':{count:0,flags:['--base','--agent']},
     inspect:{count:1,flags:['--base','--result','--author']},
     'review-template':{count:1,flags:['--base','--result','--author','--reviewer','--output']},
     'verify-review':{count:2,flags:['--base','--result','--author']},
@@ -177,17 +194,53 @@ function main():void {
     const pools=new Map(shards.map(file=>[file,json(file) as Record<string,string>]));
     for(const id of ids)if(pools.get(`data/texts/${id.slice(1,3)}.json`)?.[id]!==current.texts.get(id))throw new Error(`Recorded author commit lacks the reviewed text ${id}`);
   };
+  if(command==='restore-snapshot-texts'){
+    const who=agent(flags['--agent']);requireOwnBranch(who,baseSha);
+    if(spawnSync('git',['diff','--quiet']).status!==0||spawnSync('git',['diff','--cached','--quiet']).status!==0||
+       spawnSync('git',['rev-parse','-q','--verify','MERGE_HEAD']).status===0)
+      throw new Error('Commit tracked changes and resolve any existing merge before restoring snapshot text; do not discard work');
+    const untracked=spawnSync('git',['ls-files','--others','--exclude-standard','--','data/'],{encoding:'utf8'});
+    if(untracked.status!==0||untracked.stdout.trim())throw new Error('Preserve and resolve untracked data files before restoring snapshot text');
+    const history=spawnSync('git',['log','--topo-order','-1','--format=%H',`--grep=^Isolated ${who} authored snapshot$`,'HEAD'],{encoding:'utf8'});
+    if(history.status!==0)throw new Error('Could not find prior authored snapshot');
+    const parent=history.stdout.trim()||baseSha;
+    if(spawnSync('git',['merge-base','--is-ancestor',baseSha,parent]).status!==0)throw new Error('Prior snapshot does not descend from frozen base');
+    const dataRoot=path.join(root,'data');
+    if(fs.realpathSync(dataRoot)!==dataRoot)throw new Error('Refusing canonical writes through a data-directory symlink');
+    const current=loadCorpus(dataRoot),prior=loadCorpusAtCommit(parent),pre=validateCorpus(current);
+    if(pre.errors.length)throw new Error(`Fix current corpus errors first: ${pre.errors.join('; ')}`);
+    const missing:string[]=[];
+    for(const [id,value] of prior.texts){
+      if(textId(value)!==id)throw new Error(`Prior snapshot has invalid pooled text ${id}`);
+      const present=current.texts.get(id);
+      if(present!==undefined && present!==value)throw new Error(`Prior snapshot conflicts with current text ${id}`);
+      if(present===undefined){current.texts.set(id,value);current.textShards.set(id,id.slice(1,3));missing.push(id);}
+    }
+    const shards=[...new Set(missing.map(id=>id.slice(1,3)))].sort();
+    for(const shard of shards){const file=path.join(dataRoot,'texts',`${shard}.json`);
+      if(fs.existsSync(file)&&fs.lstatSync(file).isSymbolicLink())throw new Error(`Refusing to write a symlink: ${file}`);}
+    const checked=validateCorpus(current);if(checked.errors.length)throw new Error(`Refusing invalid result: ${checked.errors.join('; ')}`);
+    if(missing.length)commit(current,new Map(),[],missing);
+    output({status:missing.length?'snapshot-texts-restored':'snapshot-texts-already-present',agent:who,base:baseSha,prior_snapshot:parent,
+      restored_count:missing.length,restored_ids:missing.sort(),changed_shards:shards.map(s=>`data/texts/${s}.json`),
+      note:'Explicitly restored immutable prior-snapshot values; some may be unreferenced. Review and commit these shards before the next snapshot; do not prune during the parallel round.'},undefined);return;
+  }
   if(command==='layout'){
     const plan=read(positional[0]!);checkPlanForPublication(plan);const parsed=AgentPlanSchema.parse(plan),group=groupFor(parsed.item);
     if(parsed.author!==group.agent)throw new Error('Wrong author for item');
     output(createCanonicalLayoutTemplate(base,splitAgentPlan(base,plan)),flags['--output']);return;
   }
-  if(command==='apply'){
+  if(command==='apply'||command==='merge-preview'||command==='merge-rows'){
     const who=agent(flags['--agent']);requireOwnBranch(who,baseSha);
-    const plan=read(positional[0]!),layoutInput=read(positional[1]!);checkPlanForPublication(plan);
-    const parsed=AgentPlanSchema.parse(plan),layout=CanonicalLayoutSchema.parse(layoutInput),group=groupFor(parsed.item);
-    if(group.agent!==who||parsed.author!==who||layout.author!==who)throw new Error('Cannot apply a different agent’s assignment');
+    const plan=read(positional[0]!),oldLayoutInput=read(positional[1]!);checkPlanForPublication(plan);
+    const parsed=AgentPlanSchema.parse(plan),oldLayout=CanonicalLayoutSchema.parse(oldLayoutInput),group=groupFor(parsed.item);
+    if(group.agent!==who||parsed.author!==who||oldLayout.author!==who)throw new Error('Cannot apply a different agent’s assignment');
     const names=filesFor(parsed.item,who);ensureExpectedPath(positional[0]!,names.plan);ensureExpectedPath(positional[1]!,names.layout);
+    const merging=command!=='apply';
+    const leftId=merging?Key.parse(flags['--left']):'',rightId=merging?Key.parse(flags['--right']):'';
+    if(command==='merge-rows' && flags['--join']!=='exact')throw new Error('Acknowledge literal concatenation with --join exact; no space will be inserted');
+    const layoutInput=merging?{...(oldLayoutInput as Record<string,unknown>),
+      merges:[...(oldLayout.merges ?? []),{left:leftId,right:rightId,checked:true}]}:oldLayoutInput;
     const dataRoot=path.join(root,'data');
     if(fs.realpathSync(dataRoot)!==dataRoot)throw new Error('Refusing canonical writes through a data-directory symlink');
     const current=loadCorpus(dataRoot),pre=validateCorpus(current);
@@ -199,23 +252,43 @@ function main():void {
     if(record){
       if(record.author!==who||record.baseline_item_sha256!==parsed.item_sha256||JSON.stringify(restoreCanonicalItem(current,parsed.item))!==JSON.stringify(baseline))throw new Error('Existing canonical work is not a reversible version of this agent’s frozen baseline; preserve it and report');
     } else if(JSON.stringify(before)!==JSON.stringify(baseline)) throw new Error('This item has other existing changes; preserve and reconcile them before applying');
+    let preview:Record<string,unknown>|undefined;
+    if(merging){
+      if(!record)throw new Error('Apply and inspect the checked layout before merging its current rows');
+      verifyCanonicalResult(base,current,plan,oldLayoutInput);
+      const position=before.rows.findIndex(row=>row.id===leftId),left=before.rows[position],right=before.rows[position+1];
+      if(position<0||!left||!right||right.id!==rightId)throw new Error('Merge requires two adjacent current rows in source order');
+      const fields=Object.fromEntries((['ar','fa'] as const).map(lang=>{
+        const a=text(current,left[lang]),b=text(current,right[lang]);
+        return [lang,{left:a,right:b,merged:a+b,no_whitespace_boundary:Boolean(a&&b&&!/\s$/u.test(a)&&!/^\s/u.test(b))}];
+      }));
+      preview={left:leftId,right:rightId,fields};
+    }
     const compiled=compileCanonicalSplit(base,plan,layoutInput);
+    if(record&&(merging||record.format_version===2))ensurePriorAnchors(before,record,compiled.item,compiled.record);
     current.items.set(parsed.item,compiled.item);current.rowSplits.set(parsed.item,compiled.record);
     for(const [id,value] of compiled.texts){const old=current.texts.get(id);if(old!==undefined&&old!==value)throw new Error(`Text hash collision: ${id}`);current.texts.set(id,value);current.textShards.set(id,id.slice(1,3));}
     const checked=validateCorpus(current);if(checked.errors.length)throw new Error(`Refusing invalid result: ${checked.errors.join('; ')}`);
     verifyCanonicalResult(base,current,plan,layoutInput);
-    const itemFile=path.join(dataRoot,'items',`${parsed.item}.json`),recordFile=path.join(dataRoot,'row-splits',`${parsed.item}.json`);
-    for(const file of [itemFile,recordFile,...[...compiled.texts.keys()].map(id=>path.join(dataRoot,'texts',`${id.slice(1,3)}.json`))]){
+    const mergedRow=merging?compiled.item.rows[before.rows.findIndex(row=>row.id===leftId)]?.id:undefined;
+    if(command==='merge-preview'){
+      output({status:'merge-preview',item:parsed.item,author:who,merged_row:mergedRow,...preview,
+        note:'No files changed. Text is concatenated literally, without inserting a separator. Inspect both languages; independent review is required. Do not commit this text-bearing preview.'},undefined);return;
+    }
+    const itemFile=path.join(dataRoot,'items',`${parsed.item}.json`),recordFile=path.join(dataRoot,'row-splits',`${parsed.item}.json`),layoutFile=path.join(root,names.layout);
+    for(const file of [itemFile,recordFile,...(merging?[layoutFile]:[]),...[...compiled.texts.keys()].map(id=>path.join(dataRoot,'texts',`${id.slice(1,3)}.json`))]){
       if(fs.existsSync(file)&&fs.lstatSync(file).isSymbolicLink())throw new Error(`Refusing to write a symlink: ${file}`);
     }
     const original=read(itemFile),changes=new Map<string,string|null>([
       [itemFile,pretty(preserveKeyOrder(original,compiled.item))],[recordFile,pretty(compiled.record)],
+      ...(merging?[[layoutFile,pretty(layoutInput)] as [string,string]]:[]),
     ]);
     commit(current,changes,[],[...compiled.texts.keys()]);
-    output({status:'canonical-item-applied',item:parsed.item,author:who,base:baseSha,
+    output({status:merging?'canonical-rows-merged':'canonical-item-applied',item:parsed.item,author:who,base:baseSha,
+      ...(merging?{left:leftId,right:rightId,merged_row:mergedRow,separator:'none'}:{}),
       original_rows:baseline.rows.length,result_rows:compiled.item.rows.length,new_text_values:compiled.texts.size,
       plan_sha256:compiled.record.plan_sha256,layout_sha256:compiled.record.layout_sha256,
-      note:'Independent semantic review is still required. No translation, scholarly approval or rights approval is claimed.'},undefined);return;
+      note:'Independent semantic review is still required; earlier reviews of this item are stale. No translation, scholarly approval or rights approval is claimed.'},undefined);return;
   }
   if(command==='audit-authored'||command==='audit-round'||command==='audit-squashed'){
     const who=command==='audit-authored'?agent(flags['--agent']):undefined;
