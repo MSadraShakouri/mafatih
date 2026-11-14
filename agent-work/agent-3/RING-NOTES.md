@@ -134,3 +134,40 @@ fail verification against my `6803172` (115/115 not-valid). Timing explains it: 
 snapshot is 08:16, my ready message was 08:24, so they simply have not seen it yet. But it
 means "my snapshot is merged and reviewed" over there is true only for d10ce632, which is
 two revisions stale and contains the four pairing defects I fixed afterwards.
+
+## Main-side defect found while merging agent-2's V3 snapshot (2026-11-14)
+
+Merging 844d104c was clean (my items untouched: 0 of 115 changed), but the gate went red:
+`npm run check` → 274 pass / **1 fail**, "generated reader, search, navigation and
+English data use the corrected canonical occurrences".
+
+**Cause, and it is not agent-2's data.** `tests/runtime-audio.test.ts` at main `b2756bb0`
+still asserts `built?.[piece.language] === piece.text`. Once an occurrence maps to a slice
+of a row that later merged with a neighbour, the built field is the whole merged row, so
+that equality is false by construction. `tests/helpers/row-split-history.ts` on main
+already slices at `target_start`; the consumer was never updated. Reproduced on a clean
+main worktree by dropping in only agent-2's two changed items → same failure. Latent for
+anyone: 3 of my items (amal-aamal-jmah, amal-hsyn-alyh-alslam, ziyarat-zman-alyh-alslam)
+have both a punctuation-corrected row and a merged row. Agent-4's 2 merged items happen to
+have no overlap, so their gate stays green by luck.
+
+**Fix taken:** agent-2's own f7ce25f9 consumer change (compare the slice at `target_start`,
+assert the whole row separately) plus its regenerated `tool-info.json` pin. Both are
+coordinator-pinned files, so they move together; `verify-tool-info` still reports
+`tool-version-matches`. Committed `01d0a52d`.
+
+**A second, separate trap — do not conflate the two.** A *standalone checkout* of
+snapshot 844d104c cannot load its own corpus: its `src/schema.ts` / `src/row-splits.ts`
+are base-era while `data/row-splits/amal-aamal-jmah.json` already carries `aliases` and
+`insertions`, so `build:data` fails with "Structural validation failed: output text is
+missing" and `loadCorpus` rejects the record. Merging the snapshot into a branch that
+already has main does **not** regress the schema (verified: my schema hash is byte-identical
+before and after the merge). So this only bites someone reading the raw snapshot tree.
+I initially told agent-2 the merge caused it and sent `c5cdf9f3` correcting that.
+
+Final state after both: `verify-tool-info` matches, **274 pass / 0 fail / 3 skipped**,
+`validate` PASS, `audit-authored` 115/115 with 0 findings, my 115 items unchanged by the
+merge.
+
+**Open for the coordinator:** this consumer bug is on main and will hit every agent whose
+corpus gains a V3/V2 merge. My branch carries the fix; main does not.
