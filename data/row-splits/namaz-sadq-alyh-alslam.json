@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "namaz-sadq-alyh-alslam",
   "author": "agent-2",
   "baseline_item_sha256": "c2fbb8c3da7af8154330a411141a403bc982fa08f9c3ada106c0fbb7d128931a",
-  "plan_sha256": "fd757511f843eb92c0089317bf2e328b93c1c9b0d01495f78bea63108760fed5",
-  "layout_sha256": "2efd84772cde24d793dbb5585feb856ca4348e095107cc262c16bffef2ccfe6d",
+  "plan_sha256": "f504c4b4c298862f9bd061dab259d6c9ad1c41fdbbdf4db3b767ea911d543d57",
+  "layout_sha256": "d84b91df67b9864bbb4b186e234d1a873e1b0ca499e3bd4e5251e018318e7eb0",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 136
+          "end": 136,
+          "target_start": 0
         }
       ]
     },
@@ -33,7 +34,7 @@
       },
       "results": [
         "r00002-scbcad34ad2773d20",
-        "r00002-s51331c3b3dd06d15"
+        "m4147a42f76924bdd8a1c5cf2"
       ],
       "ar": [],
       "fa": [
@@ -41,13 +42,15 @@
           "row": "r00002-scbcad34ad2773d20",
           "language": "fa",
           "start": 0,
-          "end": 13
+          "end": 13,
+          "target_start": 0
         },
         {
-          "row": "r00002-s51331c3b3dd06d15",
+          "row": "m4147a42f76924bdd8a1c5cf2",
           "language": "ar",
           "start": 13,
-          "end": 331
+          "end": 331,
+          "target_start": 0
         }
       ]
     },
@@ -58,7 +61,7 @@
         "fa": "t0a74f7944084dd12a8756f91"
       },
       "results": [
-        "r00003-sa800142d710dfc87",
+        "m4147a42f76924bdd8a1c5cf2",
         "r00003-s77b771ac83b5757d"
       ],
       "ar": [
@@ -66,21 +69,62 @@
           "row": "r00003-s77b771ac83b5757d",
           "language": "ar",
           "start": 0,
-          "end": 186
+          "end": 186,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00003-sa800142d710dfc87",
+          "row": "m4147a42f76924bdd8a1c5cf2",
           "language": "fa",
           "start": 0,
-          "end": 203
+          "end": 203,
+          "target_start": 0
         },
         {
           "row": "r00003-s77b771ac83b5757d",
           "language": "fa",
           "start": 203,
-          "end": 376
+          "end": 376,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s51331c3b3dd06d15",
+        "ar": "tfdadc6a2fb3d6c1c71d7c70e",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m4147a42f76924bdd8a1c5cf2",
+          "language": "ar",
+          "start": 0,
+          "end": 318,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00003-sa800142d710dfc87",
+        "ar": null,
+        "fa": "t1bc9935962bf6073f4bd8c41",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m4147a42f76924bdd8a1c5cf2",
+          "language": "fa",
+          "start": 0,
+          "end": 203,
+          "target_start": 0
         }
       ]
     }
