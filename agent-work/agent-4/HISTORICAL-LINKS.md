@@ -108,3 +108,15 @@ Full offset-by-offset proposals are in `agent-work/agent-4/historical-link-propo
 - **Exact current-field match yes:** the old field text remains a contiguous slice of exactly one current row field; an explicit redirect with the recorded offset is safe if the coordinator chooses to add it.
 - **Exact current-field match no:** a V3 proposed space or cross-row merge means the old field is no longer one contiguous string. The JSON proposal maps its source ranges to current row IDs and `target_start` offsets; this is a mapping-composition task, not a reason to re-split or invent text.
 - **No canonical changes in this audit:** all 65 old IDs remain retired; no row was restored, no alias was added, and no spacing proposal was created.
+
+## Findings that need the same migration
+
+The Agent-5 findings in `LINK-SAFE-RESPONSE.md` that could not be applied would each retire one or
+two published child identities, because a split output row's identity includes its role label and
+the correction changes that label. The exact alias entries a supported V1-to-V2 mapping migration
+would have to carry for those fixes are listed in `blocked-fix-alias-proposals.json`: 80 proposals
+over 8 items, each naming the two published child ids, their code-point lengths, and the alias
+entries the migration must write so that both published links keep resolving.
+
+No proposal in that file is applied, and applying this round's fixes retired no published identity:
+the Agent-4 missing-id count remains 65 across the same 5 items.

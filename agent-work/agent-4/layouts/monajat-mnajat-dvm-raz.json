@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "monajat-mnajat-dvm-raz",
   "author": "agent-4",
-  "plan_sha256": "b94430914409f64d5ccc6b9e51208e07928b10d2622854cca14aad290fc7d8c2",
+  "plan_sha256": "2c981cac68a9cc0b0564b65a7ea5c2529e13e2baa1836679d5b210f961fcd6fd",
   "rows": [
     {
       "row": "r00001",
@@ -34,6 +34,17 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "recitation"
         }
@@ -650,6 +661,17 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00006",
+      "right": "r00007",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Join the phrase the source split across r00006 and r00007 in both languages"
+      }
     }
   ]
 }
