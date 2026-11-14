@@ -4,11 +4,11 @@
   "item": "dua-hftm-daayy-zman",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "c140b7e1b19c4f3e4b7e9469eed310cd4886acea",
-  "plan_sha256": "e2925c132c075c88f67d06ff342250997cac38b26e47e2501e3ef0a47f7b83fc",
-  "layout_sha256": "ab26e5fa398b6c239b4bf7954cdca56c2c650b1f8d6c7de6ee21c54e61bdb2c1",
-  "result_item_sha256": "c83e28b29ac3e1f5545539f5bb0083af65c58437e2b543c638df45e158bc9a3c",
-  "result_record_sha256": "a56de649e57e00e4bc3c9d40f920054545f6b320e6dc040b3899c0bbf7359ee9",
+  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
+  "plan_sha256": "9acc728346e898e61c9ff77d94f9e47a77b4533654f13e08ae402108ca5ddfea",
+  "layout_sha256": "f03ed42a45cfc22f01be2e2b78cb978e80ab980136ab842a45f49079171c2b5e",
+  "result_item_sha256": "2a6959aa8845b74bc38c9d664fb86fa25192590bf523f4fffc22628b42c4fb26",
+  "result_record_sha256": "20f98097f5d4bb91095e9f7a3e603ea68c73135f3ead8e07cd0a51b7ce3f8e55",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "49c89a7087b77a9b1eeece6a37ea4d8917d7b31a88b3ac84340a6b389b4531b9",
     "author": "agent-2",
     "reviewer": "agent-3",
-    "preview_sha256": "9956b917d893540c1867bf8d45c79de00e7f6dac76e25be3917fb36d0ba4041f",
+    "preview_sha256": "23b0f4e07b54f451044838840a726c72b54bb83b67fb1f247891a52072454800",
     "sources": [
       {
         "row": "r00001",
@@ -49,9 +49,9 @@
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "mid-word cut at 456; mid-word cut at 456; 2/4 cut(s) not after sentence punctuation (checked against context)"
+        "note": "RE-VERIFIED FIXED in revision snapshot bbfe933c: the cut at 456 (inside لايظهر) is gone; Arabic spans are now 0-220,220-511,511-550,550-813, and 511 falls at a clause boundary after the jaur question where the Persian closes. Clearing the earlier finding."
       },
       {
         "row": "r00004",

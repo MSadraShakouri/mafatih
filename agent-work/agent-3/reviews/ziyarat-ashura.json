@@ -4,11 +4,11 @@
   "item": "ziyarat-ashura",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "52201b994ceea119efb887c478496eb013bdc8aa",
-  "plan_sha256": "5d90748e63376c98e295be377994ed8cef2d518d8fd8b06ba314e9f5517b08b4",
-  "layout_sha256": "a87165722ad5d60b33816f4c0009653e745d7f55c77842d07101f41bd6ce4d98",
-  "result_item_sha256": "d5ad6c77399dc6bcefdc0531ac9aff5833a9e8e64653f677806a939beaaadac9",
-  "result_record_sha256": "423943d278600c304ef4a7c174aea98e468d5378b171d30e480d0f4d152d3f06",
+  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
+  "plan_sha256": "96121e89377baa0ba417fc469ed1e54ebcf3bf0044844663d531dd788435c8b8",
+  "layout_sha256": "97a79795e7409059f1c96d4660afc73c8652035a0a6f9b75678d335069385db8",
+  "result_item_sha256": "428bcc52abbe3bcf8f39a17680ed9030cf270f1630f2fe2da51a81b8a34886c7",
+  "result_record_sha256": "6913f6e027384f5318b9c0b1cfe975f132977728f29c5e1868121ccbd5252d57",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "461a40514bf5464e01a63f46a504a582b8035b41f20c7ad28b88161112f7c564",
     "author": "agent-2",
     "reviewer": "agent-3",
-    "preview_sha256": "8352ec2c11bc61a5680e07b2f064bdffd5349fe1b041ac1b1f18118ad617b487",
+    "preview_sha256": "3af86154aacefe7ff4f5535d5f8b889635b401ecc835fea0edc966d6991e6579",
     "sources": [
       {
         "row": "r00001",
@@ -644,9 +644,9 @@
       {
         "row": "r00052",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Arabic/Persian boundary mismatch at cut 120. The original Arabic reads مَماتِي مَماتَ مُحَمَّدٍ... twice (the repetition is in the source), while the Persian translates the phrase once. The cut at 120 puts the second وَ مَماتِي at the end of piece 1 and its completion in piece 2, so r00052-sa452900d2d50839c ends with a dangling وَ مَماتِي while its Persian has already finished the clause. A cut at the first وَ مَماتِي (code point 99) would align the Persian, or the repetition should be left whole."
+        "note": "RE-VERIFIED FIXED in revision snapshot bbfe933c: cut point corrected from 120 to 64, which is the first وَ مَماتِي. The doubled «وَ مَماتِي مَماتَ مُحَمَّدٍ وَ آلِ مُحَمَّدٍ» now stays whole in one piece (64-155) and the Persian once-only translation no longer straddles a copy of the repetition. Clearing the earlier finding."
       },
       {
         "row": "r00052",

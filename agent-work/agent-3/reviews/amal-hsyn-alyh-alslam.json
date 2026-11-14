@@ -4,11 +4,11 @@
   "item": "amal-hsyn-alyh-alslam",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "52201b994ceea119efb887c478496eb013bdc8aa",
-  "plan_sha256": "0b09c2919116d7d4232526d7e3233db804a8c584dbe1d0d34c2ec0243e2e8d95",
-  "layout_sha256": "d32c8440346f2191a91bcb5fface78d0a319c3c516794fb36cf3674f8105ee84",
+  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
+  "plan_sha256": "15989eaee292ca78cf6532ad1145ecae3b313c6147401f40e988b3584044a3ee",
+  "layout_sha256": "9608b71afe9482a40f1d33e868a84e16e282aae2e3b848bab89a9cff1a209801",
   "result_item_sha256": "c580765768cd86fa9046fb1f06ed955db37a95568e155814c9c973ee6f363847",
-  "result_record_sha256": "ad3d7b5cdab9399c0b3894f9ab65588c5ea0eee7f1aaec6f0315a680d96da94f",
+  "result_record_sha256": "a2cd92e6ef8f9e5abc976f3c1ff088e76db32960026f863235b2233394d25e24",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "716a356d1bbbd2a263f3bbc3476ef8adf165793da280168ffdc85602bf9c81dc",
     "author": "agent-2",
     "reviewer": "agent-3",
-    "preview_sha256": "85a08a1ca93b83e59318381174eb429d8cf023cbfbb0b0fca5c2e1f484f8ae44",
+    "preview_sha256": "d1207f7da9ce514ae91095cfee58419947f5ab00b75096e3d918f0cba6d69e25",
     "sources": [
       {
         "row": "r00001",
@@ -9033,6 +9033,11 @@
         "index": 4,
         "decision": "addressed",
         "note": "historical hint inspected; no old break offset restored and no marker moved"
+      },
+      {
+        "index": 5,
+        "decision": "addressed",
+        "note": "r00133/fa: source fa field carries the trailing «الْحَمْدُلِلّهِ» lead-in belonging to the next row while its ar ends with the Ikhlas doxology. This row shift is in the source corpus (base ffa01da), not introduced by the split; the same-row layout cannot re-home across rows and the author documented it. No text lost, ordering preserved. Accepted as a documented source limitation."
       }
     ]
   },

@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-tlb-rvzy",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
   "plan_sha256": "060b4f7ff5c25dedb823c1c509e1439091baabdd08b47ddda73fe32f58d7b152",
-  "layout_sha256": "e27ec2c626f3c84dc3636678b9ec215ba3394347fbfa56b6cd273b7f26949668",
-  "result_item_sha256": "537b95571d792a532a10ba3b3d02b60a8cae83333013dc20feb8882df91f2f11",
-  "result_record_sha256": "20c9283c712bd0d286fcd72037225e1f035782dd5939122165aa7417d7f2244f",
+  "layout_sha256": "fbc606c00d9c64ebaf95db103dac1ab52e2744eea025b8479ac277ac226a22d9",
+  "result_item_sha256": "0a214fafdf9dba0696b85ebdd6ce7a00a88115a8716cef870a73da0ca89bdbd2",
+  "result_record_sha256": "c714102f85497d07ad038cec17a2a9f0516b771650d00c0187782a1f0ace45a8",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -65,7 +65,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "accept",
-    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+    "decision": "revise",
+    "note": "r00003 emits the two Arabic pieces and the two corresponding Persian pieces as FOUR separate single-language rows (layout output: {ar:p0},{ar:p1},{fa:p0},{fa:p1}). Cut points correspond 1:1 (ar cut at 680, fa cut at 604). r00002 in the same item pairs correctly, so this is inconsistent. Reader sees all Arabic then all Persian rather than facing paragraphs. The previous note claiming every bilingual row paired consistently was not accurate for this row."
   }
 }

@@ -4,11 +4,11 @@
   "item": "namaz-sadq-alyh-alslam",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
-  "plan_sha256": "cb525cc9bd417a84e147fb95a3d98d4037f637aa5b7818ffb61a6e741703e719",
-  "layout_sha256": "382dab9ebaeb9ef5955a387c5e301740d9852bac096a6d8130cf888a0b49d462",
+  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
+  "plan_sha256": "fd757511f843eb92c0089317bf2e328b93c1c9b0d01495f78bea63108760fed5",
+  "layout_sha256": "2efd84772cde24d793dbb5585feb856ca4348e095107cc262c16bffef2ccfe6d",
   "result_item_sha256": "d3ce10470e30e80a3b4243112603332daa4d6280179949730a8afd0bad1f79ea",
-  "result_record_sha256": "3f2a88f850b0b98d19185718ff9dc7a41d992627f722eba4dbcf173262fea09e",
+  "result_record_sha256": "8eeadbe9f7ac23b34f3c75e7fb047ac9a9debabf8fc93e9c17dc0d73265add58",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "c2fbb8c3da7af8154330a411141a403bc982fa08f9c3ada106c0fbb7d128931a",
     "author": "agent-2",
     "reviewer": "agent-3",
-    "preview_sha256": "ede78254d22bac75f7b6102a9b84016c63d02f9d1acc7e4c87a63bb3d7d7e025",
+    "preview_sha256": "5e0229f376410dac2fd4afa3aab7a2376524189cdb9343896689b1f0b044107c",
     "sources": [
       {
         "row": "r00001",
@@ -53,6 +53,11 @@
         "index": 0,
         "decision": "addressed",
         "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "historical hint inspected; no marker moved"
       }
     ]
   },

@@ -4,7 +4,7 @@
   "item": "dua-hrm-hsyn-alyh",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "75a24ec802d2514455c6637048e7697bc38328e2",
+  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
   "plan_sha256": "08b9a54d02832846444886c6e555b85204686b4485efcb18629187c0a31aa317",
   "layout_sha256": "d30f0ac246b93928b3ba460e770f8884b63c553a5cc4813ba57e4c8bfb02f00f",
   "result_item_sha256": "eb3b68a9a4255a16dc76b0be3aa2d27a04ad86f444a61bd8e10d11b9f1845cb0",
@@ -65,7 +65,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "accept",
-    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
+    "decision": "revise",
+    "note": "r00003 emits the two Arabic pieces and the two corresponding Persian pieces as FOUR separate single-language rows (layout output: {ar:p0},{ar:p1},{fa:p0},{fa:p1}). The cut points correspond 1:1 (ar cut at 357, fa cut at 293), and the same author pairs correctly in amal-byst-6 r00002 and dua-madr-mrz-frznd r00001, so this is inconsistent. The reader gets a block of Arabic followed by a block of Persian instead of facing paragraphs. The previous note claiming every bilingual row paired consistently was not accurate for this row."
   }
 }
