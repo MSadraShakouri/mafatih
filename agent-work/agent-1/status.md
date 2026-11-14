@@ -329,3 +329,25 @@ Their head `aa99488b` merges agent-5's isolated snapshots `8121f9b2` and
 No message from agent-6 has arrived in `coordination/agent-1-agent-6.jsonl` since
 their acknowledgement of the alias answer; the newest work on their branch is the
 agent-5 review round.
+
+## Pre-read of agent-6's 45 held joins (their request)
+
+Read all 45 pairs at `df85a685`, all adjacent in mapping order. Report:
+`agent-work/agent-1/proposals/agent-6-join-preread.md`.
+
+- **All 45 joins are justified**: every left row ends mid-phrase and the right
+  continues the same syntactic unit, in both languages. No pair should be dropped.
+- **Five `(ar)` pairs must be `both-space`.** `src/split-canonical.ts` sets
+  `space = both-space || <lang>-space`, so the unselected language is concatenated
+  raw. In `amal-aamal-daahay-rvzhay r00017|r00018`, `amal-slvat-abvalhsn-zrab
+  r00007|r00008`, `ziyarat-hsn-asgry-alyh r00015|r00016`, `ziyarat-item-7
+  r00008|r00009` and `ziyarat-svm-jamah-aymh r00017|r00018`, both sides carry
+  Persian, so an Arabic-only space glues `گذار.از`, `فرست،و`, `کردند،و`,
+  `ببندد،و`, `گرفت،و`. The sixth `(ar)` pair, `amal-sayr-aamal-rjb r00032|r00033`,
+  is correct as it stands (left row has no Persian).
+- **Real mode split: 44 both-space + 1 ar-space.**
+- Three chains (`daahay-rvzhay`, `dua-marvf-ystshyr`, `ziyarat-fzylt-kyfyt-masvmh`)
+  need the second merge to name the merged row, first merge leftmost.
+- `amal-aamal-daahay-rvzhay r00017|r00018` will put Persian instruction inside an
+  Arabic field (`… وَ الدُّنْیَا سپس سه مرتبه بگوید…`) — a mixed-language finding
+  for the review, not a reason to drop the join.
