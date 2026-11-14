@@ -39,6 +39,13 @@ function main():void {
   const parentCorpus=prior?loadCorpusAtCommit(prior):base;
   verifyAgentPartitions(base,manifest);
   const errors=validateCorpus(current).errors;if(errors.length)throw new Error(`Current committed corpus is invalid: ${errors.join('; ')}`);
+  let missingPrior=0;
+  for(const [id,value] of parentCorpus.texts){
+    const now=current.texts.get(id);
+    if(now===undefined)missingPrior++;
+    else if(now!==value)throw new Error(`Prior snapshot conflicts with current pooled text ${id}`);
+  }
+  if(missingPrior)throw new Error(`Previous authored snapshot contains ${missingPrior} immutable pooled value(s) missing from this branch. No snapshot or merge was attempted. Run node --import tsx scripts/six-agent.ts restore-snapshot-texts --base ${baseSha} --agent ${who}, review and commit its listed shards, then retry.`);
   const group=manifest.groups.find(g=>g.agent===who);if(!group)throw new Error('Missing agent assignment');
   const completed:Array<{item:string;paths:string[]}>=[],missing:string[]=[],needed=new Set<string>();
   const collect=(value:unknown):void=>{if(typeof value==='string'&&/^t[0-9a-f]{24}$/.test(value))needed.add(value);
