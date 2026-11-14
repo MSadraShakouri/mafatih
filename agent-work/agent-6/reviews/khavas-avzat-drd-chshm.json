@@ -21,9 +21,9 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The piece starts with a section label (the name of the prayer or its purpose) fused to the text that follows; cut after the label and classify it heading."
+        "note": "Finding withdrawn after recalibration: the piece opens with a section label that stays joined to its passage. That is the form of the base corpus and of the reviewer's own items, so it is not asked to be cut. Optional, not blocking: the label could stand alone as a heading."
       },
       {
         "row": "r00002",
@@ -42,37 +42,37 @@
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 255 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Length finding withdrawn after recalibration. Optional, not blocking: recitation piece 0 (255 code points) could be cut once more, or kept if it is a single sentence."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 164 code points with 7 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Length finding withdrawn after recalibration. Optional, not blocking: the recitation pieces here stay under 220 code points but hold several clauses each; they could be cut finer, toward the short rows of the manual-v1 items."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 392 code points and 14 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Length finding withdrawn after recalibration. The prose here (up to 392 code points) is one passage; Persian-only rows of the manual-v1 items reach 410 code points at the 90th percentile and 1043 at most, and the reviewer's own accepted items keep prose of this size whole. Read again: no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 262 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Length finding withdrawn after recalibration. Optional, not blocking: recitation piece 0 (262 code points) could be cut once more, or kept if it is a single sentence."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 242 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Length finding withdrawn after recalibration. Optional, not blocking: recitation piece 0 (242 code points) could be cut once more, or kept if it is a single sentence."
       },
       {
         "row": "r00006",
@@ -126,9 +126,9 @@
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 293 code points and 12 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Length finding withdrawn after recalibration. The prose here (up to 293 code points) is one passage; Persian-only rows of the manual-v1 items reach 410 code points at the 90th percentile and 1043 at most, and the reviewer's own accepted items keep prose of this size whole. Read again: no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00011",
@@ -164,6 +164,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised. Output row r00007 pairs four Arabic clauses with a Persian piece that also repeats the translation of r00005."
+    "note": "The recitation rows are no longer asked to be re-paired (length findings withdrawn after recalibration). Still open: Output row r00007 pairs four Arabic clauses with a Persian piece that also repeats the translation of r00005."
   }
 }
