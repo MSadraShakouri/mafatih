@@ -2258,5 +2258,34 @@
         }
       ]
     }
+  ],
+  "merges": [
+    {
+      "left": "r00067-sa28ed53db5e439b5",
+      "right": "r00068",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate words at the original row boundary"
+      }
+    },
+    {
+      "left": "r00016",
+      "right": "r00017",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at the original row boundary"
+      }
+    },
+    {
+      "left": "r00018",
+      "right": "r00019",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at the original row boundary"
+      }
+    }
   ]
 }
