@@ -4,11 +4,11 @@
   "item": "ziyarat-amyralmvmnyn-alyh-alslam-2",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "11cbb5cfd09addd433b13fc6a92c8156d569a837fc585c28754933df23d22a19",
-  "layout_sha256": "c0a87b86205b6582d5352c59ae61176531e049046368e52d489bc964d977450c",
-  "result_item_sha256": "e49ee798edce0293b5ad693981c1896fc1225a83ae7ee620f58c2bc134302025",
-  "result_record_sha256": "e7a587d53e6186aeb8197282359d864066a5c663b2e532b21744963b977e1ddd",
+  "author_commit": "00917bc1e56d7a2f364985ac5a378adda1f24e1e",
+  "plan_sha256": "a61e62f54c580a97d59534762d3d5c34cf770586e382683ca5cd40c866704385",
+  "layout_sha256": "122d91f3a90370c460724ce1f87e9208ff9ae2bcc43722d0ac43dfc2ccd6c6d5",
+  "result_item_sha256": "e5c2e92636c8b8bd45005b7b9144be0936ad296feb7badd84c432c363242c462",
+  "result_record_sha256": "12d54ef14ddb26067c3cdc54064bb25a0ee5f33f12f8f7ff7510033068e056e6",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,259 +16,362 @@
     "item_sha256": "a5614a8628ca06a407c0cf02b72fb3ea72b570693fb71a5c6c82092d5b62d0c7",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "9db86e8f146376c89eb960f06db8906a893bc687585155534b90b203899bd156",
+    "preview_sha256": "00dd904d58181c00e92fc7a8f59e268528b467906e106e46b272b4e92acb6d36",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Read. Persian-only introductory prose, one piece, note. It ends in the middle of a sentence that r00002 continues, and the two are now one row. I keep prose paragraphs whole, so no cut is required. Optional while the item is open: the directions to the visitor inside the reported speech (from the words for arriving at the shrine to the end) could be an instruction row, as you did in ziyarat-aashvray-ghyr r00001."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 459 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Continuation of the prose of r00001, one piece, note. I withdraw my earlier under-split finding on this field: it came from a length screen that does not apply to Persian-only prose."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 562 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. Nine greetings, one per piece."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 340 code points and 11 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Nine pieces matching the Arabic one to one."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+        "note": "Read. The field holds a Persian direction followed by the first Arabic word of the greeting. The direction is cut off as an instruction; the Arabic word is a recitation piece without Persian, because the rest of its greeting and its rendering open r00005. See issue 1."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1069 code points and 18 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. One greeting or one short phrase per piece, 18 pieces. The first piece lacks its opening word, which stands at the end of r00004. One greeting of 151 code points with three clauses under a single vocative stays whole, which is acceptable."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 697 code points and 20 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. 18 pieces matching the Arabic one to one; the first Persian piece also renders the word left in r00004."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 656 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. Seven greetings, one per piece."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 529 code points and 11 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Seven pieces matching the Arabic one to one."
       },
       {
         "row": "r00007",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 376 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. Six greetings and a final piece holding only the opening words of a greeting completed in r00008; that piece is joined to r00008."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 254 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Pieces match the Arabic one to one, including the final opening words."
       },
       {
         "row": "r00008",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 411 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. The first piece completes the greeting begun in r00007; then one greeting per piece."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 325 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Five pieces matching the Arabic one to one."
       },
       {
         "row": "r00009",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 675 code points and 11 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. Ten greetings and a final piece holding only the opening words of the greeting that is the whole of r00010. See issue 3."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 498 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Pieces match the Arabic one to one."
       },
       {
         "row": "r00010",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Read. One piece, the remainder of the greeting begun at the end of r00009."
       },
       {
         "row": "r00010",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Read. One piece matching the Arabic."
       },
       {
         "row": "r00011",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 973 code points and 15 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. One greeting per piece, 14 pieces. The last piece ends one word before the end of its phrase; the word opens r00012. See issue 4."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 667 code points and 18 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Pieces match the Arabic one to one; the last Persian piece likewise ends before its final words."
       },
       {
         "row": "r00012",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1149 code points and 29 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. One greeting or one short phrase per piece, 30 pieces; the series of short attributes is cut member by member, matching the Persian. The first piece is the single word completing r00011; the last piece ends one word before the end of its phrase, completed in r00013. See issues 4 and 5."
       },
       {
         "row": "r00012",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 751 code points and 28 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. 30 pieces matching the Arabic one to one."
       },
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 700 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. The first piece is the single word completing r00012; then one greeting or clause per piece. One piece of 153 code points holds a run of attributes that the Persian gives without separation, so it stays whole."
       },
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 499 code points and 12 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. 11 pieces matching the Arabic one to one."
       },
       {
         "row": "r00014",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 425 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. One clause per piece, ten pieces. The last piece ends before the final word of its clause, which opens r00015; the two are joined."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 356 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Ten pieces matching the Arabic one to one."
       },
       {
         "row": "r00015",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 262 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. The first piece is the word completing the clause from r00014; then one clause per piece."
       },
       {
         "row": "r00015",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 260 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Five pieces matching the Arabic one to one."
       },
       {
         "row": "r00016",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 1 of 2 has 613 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. The field opens with a Persian direction, cut off as an instruction and placed in the Persian slot; then one clause or vocative per piece. In one piece a semicolon stands before the last letter of the final word in the frozen source; it is kept exactly as it stands and recorded, not corrected."
       },
       {
         "row": "r00016",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 584 code points and 17 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. 16 pieces matching the 16 Arabic recitation pieces one to one."
       },
       {
         "row": "r00017",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Read every piece. The field opens with a Persian direction, cut off as an instruction; then three vocatives and one phrase, one per piece."
       },
       {
         "row": "r00017",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Read. Four pieces matching the Arabic recitation pieces one to one."
       },
       {
         "row": "r00018",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 569 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read every piece. One phrase or clause per piece, ten pieces. The final greeting of 159 code points could take one more cut at its comma; not required."
       },
       {
         "row": "r00018",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 447 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Read. Ten pieces matching the Arabic one to one."
       },
       {
         "row": "r00019",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 464 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "kind": "revise",
+        "note": "Read. One piece classed instruction, but the field holds two things: directions for the prayer after the visit, ending with the closing formula, and then the compiler's own remark, which opens with the words announcing the compiler and runs on into r00020. Cut immediately before the words announcing the compiler; class the first piece instruction and the second note; then join the second piece to r00020 with a Persian space (neither field has punctuation history, so the pinned test does not stand in the way). That also resolves issue 8. My earlier length-based finding on this field is withdrawn; this one is about kind and the broken sentence. If apply refuses the new cut because the item already has merges, tell me what it reports."
       },
       {
         "row": "r00020",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Read. One piece, note: the end of the compiler's remark begun in r00019. Correct kind; it should receive the second piece of r00019."
       }
     ],
     "punctuation": [],
-    "issues": []
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Checked: r00001 ends with a name and r00002 begins with its parenthesised honorific, mid-sentence. The join makes one prose row; the space is decided below."
+      },
+      {
+        "index": 1,
+        "decision": "escalate",
+        "note": "Confirmed in the frozen sources: the Arabic word left at the end of r00004 is the first word of the greeting whose remainder and Persian open r00005. The join is withheld because r00005/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "Checked: r00007 ends with the opening words of a greeting completed at the head of r00008, in both languages. The merged row reads whole; both spaces are decided below."
+      },
+      {
+        "index": 3,
+        "decision": "escalate",
+        "note": "Confirmed in the frozen sources: r00009 ends with the opening words of a greeting, in both languages, and r00010 is the rest of it. The join is withheld because r00009/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+      },
+      {
+        "index": 4,
+        "decision": "escalate",
+        "note": "Confirmed in the frozen sources: r00011 ends one word short of its phrase in both languages and the word opens r00012. The join is withheld because r00011/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+      },
+      {
+        "index": 5,
+        "decision": "escalate",
+        "note": "Confirmed in the frozen sources: r00012 ends one word short of its phrase in both languages and the word opens r00013. The join is withheld because r00012/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+      },
+      {
+        "index": 6,
+        "decision": "addressed",
+        "note": "Checked: r00014 ends before the last word of its clause and r00015 begins with it, in both languages. The merged row reads whole; both spaces are decided below."
+      },
+      {
+        "index": 7,
+        "decision": "addressed",
+        "note": "Checked: the address does run from r00017 into r00018, but the row boundary falls between two complete members of the series and every row on either side is a whole phrase with its own Persian. No join is needed."
+      },
+      {
+        "index": 8,
+        "decision": "addressed",
+        "note": "Checked: the sentence at the end of r00019 does continue in r00020, and the kinds differ because r00019 holds an instruction followed by the compiler's remark. The remedy is a cut in r00019, asked for in the split and kind decision of r00019/fa; after it the join is between two note rows."
+      }
+    ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised. The Persian of r00005 opens with the translation of the single Arabic word left in r00004. This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
-  }
+    "decision": "accept",
+    "note": "Read all 163 output rows in both languages. Every paired row holds one Arabic greeting or clause with its own Persian rendering; the three directions found inside source fields are separate instruction rows. Three cross-row joins are in place and correct (r00001 with r00002, r00007 with r00008, r00014 with r00015). Four boundaries still split a phrase across rows (r00004 with r00005, r00009 with r00010, r00011 with r00012, r00012 with r00013); they are correctly identified and blocked by the pinned test, not by the author. The closing prose needs one cut; see r00019/fa. Spelling slips of the frozen Persian translation were noticed in several rows and are left as they stand."
+  },
+  "spacing_review": [
+    {
+      "row": "m0bca67d0aca6b750885a0eff",
+      "language": "fa",
+      "target_start": 211,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Separate words at original source row continuation",
+      "decision": "accept",
+      "note": "Inspected the merged Persian field and both frozen sources: the text before code point 211 is exactly the end of r00001, the text after it is exactly the start of r00002, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls between a name and its parenthesised honorific, which this text writes with a space everywhere else. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "mef2d972c37b53ef23155114c",
+      "language": "ar",
+      "target_start": 19,
+      "value": " ",
+      "left": "r00007-s08a2cfe7da7cb2ec",
+      "right": "r00008-sbfc120554e3eef61",
+      "reason": "Separate words at original source row continuation",
+      "decision": "accept",
+      "note": "Inspected the merged Arabic field and both frozen sources: the text before code point 19 is exactly the end of r00007, the text after it is exactly the start of r00008, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls between the opening words of a greeting and its vocative. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "mef2d972c37b53ef23155114c",
+      "language": "fa",
+      "target_start": 10,
+      "value": " ",
+      "left": "r00007-s08a2cfe7da7cb2ec",
+      "right": "r00008-sbfc120554e3eef61",
+      "reason": "Separate words at original source row continuation",
+      "decision": "accept",
+      "note": "Inspected the merged Persian field and both frozen sources: the text before code point 10 is exactly the end of r00007, the text after it is exactly the start of r00008, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls between the opening words of a greeting and its vocative. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "m2953530d0dd62d7c8ee0276a",
+      "language": "ar",
+      "target_start": 35,
+      "value": " ",
+      "left": "r00014-s27df6917e57f6df4",
+      "right": "r00015-s847abda1272bdf4e",
+      "reason": "Separate words at original source row continuation",
+      "decision": "accept",
+      "note": "Inspected the merged Arabic field and both frozen sources: the text before code point 35 is exactly the end of r00014, the text after it is exactly the start of r00015, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls between a preposition and its noun. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "m2953530d0dd62d7c8ee0276a",
+      "language": "fa",
+      "target_start": 25,
+      "value": " ",
+      "left": "r00014-s27df6917e57f6df4",
+      "right": "r00015-s847abda1272bdf4e",
+      "reason": "Separate words at original source row continuation",
+      "decision": "accept",
+      "note": "Inspected the merged Persian field and both frozen sources: the text before code point 25 is exactly the end of r00014, the text after it is exactly the start of r00015, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls between a preposition and its noun. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    }
+  ]
 }
