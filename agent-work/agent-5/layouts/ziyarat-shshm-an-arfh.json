@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-shshm-an-arfh",
   "author": "agent-5",
-  "plan_sha256": "0a4b9785ed9f628cedaea29551afa776acc1e9362555006191e189d5b3c306ea",
+  "plan_sha256": "397b0fd73f4221ceed4fccac706d3c59b521581ba91b65cb9aee4dd87cf91a92",
   "rows": [
     {
       "row": "r00001",
@@ -292,13 +292,54 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 3
+          },
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 4
+          },
+          "fa": {
+            "source": "fa",
+            "part": 3
           },
           "kind": "recitation"
         }

@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-aamal-mbas-2",
   "author": "agent-5",
-  "plan_sha256": "03bb654a3fcab763200c8dc680ac6c00414f31cf07f4decdb3cb8e866ce509eb",
+  "plan_sha256": "7af7ba12dcabb4f904f0b390f63bd7af29b5dc5f8ccb15201bf70953df548971",
   "rows": [
     {
       "row": "r00001",
@@ -24,11 +24,19 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
           },
-          "fa": null,
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 1
+          },
           "kind": "instruction"
         }
       ]

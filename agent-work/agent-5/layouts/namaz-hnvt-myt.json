@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-hnvt-myt",
   "author": "agent-5",
-  "plan_sha256": "a0c202853cb991090b8c9d5199aebe79d43871b95b557fbb4ad6fb4e54759916",
+  "plan_sha256": "c80916eb88ad77c13ccba2cf74ddac61257180c825848c94d8604da1fc63d590",
   "rows": [
     {
       "row": "r00001",
@@ -38,17 +38,73 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "ar",
             "part": 0
           },
-          "kind": "note"
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 1
+          },
+          "kind": "instruction"
         },
         {
           "ar": {
             "source": "ar",
-            "part": 1
+            "part": 2
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 3
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 4
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 5
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 6
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 7
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 8
           },
           "fa": {
             "source": "fa",
@@ -186,13 +242,43 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
           },
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 3
+          },
+          "fa": {
+            "source": "fa",
+            "part": 2
           },
           "kind": "recitation"
         }
@@ -226,6 +312,30 @@
             "part": 0
           },
           "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 1
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 3
+          },
+          "fa": null,
+          "kind": "recitation"
         }
       ]
     }

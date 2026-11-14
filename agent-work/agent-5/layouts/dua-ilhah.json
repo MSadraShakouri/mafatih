@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-ilhah",
   "author": "agent-5",
-  "plan_sha256": "9827e781e6d5bd79993e4f724644a20a890b53b719d019cb59a27931da251817",
+  "plan_sha256": "03d157f6a095451aec25b65f72bf5c4a7a45f7d3b28fe0f7ebf62f1bae60906b",
   "rows": [
     {
       "row": "r00001",
@@ -1451,11 +1451,11 @@
           "kind": "note"
         },
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "fa",
             "part": 1
           },
+          "fa": null,
           "kind": "recitation"
         }
       ]
@@ -3274,12 +3274,20 @@
           "kind": "note"
         },
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "fa",
             "part": 1
           },
+          "fa": null,
           "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
         }
       ]
     },
