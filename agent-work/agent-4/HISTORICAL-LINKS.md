@@ -120,3 +120,14 @@ entries the migration must write so that both published links keep resolving.
 
 No proposal in that file is applied, and applying this round's fixes retired no published identity:
 the Agent-4 missing-id count remains 65 across the same 5 items.
+
+## Update after round 3
+
+The alias proposal file was rebuilt to cover every flagged base row that already has published
+child ids, including the same-language splits that the earlier version missed. It now holds **297
+alias entries over 15 items**: for each published child id it records the language slot, the source
+range in the frozen field, and the alias entry the supported V1-to-V2 mapping migration must write.
+
+The Agent-4 missing-id count is still **65 across the same 5 items**. Round 3 retired no published
+identity: the fixes were applied to base rows that had no published child id, to whole rows whose
+identity is unchanged, or through the merge path, which preserves both sides as aliases.

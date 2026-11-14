@@ -54,9 +54,10 @@ It cannot be applied with the current tooling without retiring published row ide
   carry the **same** role, which is exactly the correction that changes the identity.
 
 So each pairing fix needs the supported V1-to-V2 mapping migration to carry the retired identity as
-an alias. `blocked-fix-alias-proposals.json` lists the exact alias entries needed: 108 proposals
-over 11 items, each naming the two published child ids, their code-point lengths, and the alias
-entries the migration must write so that both keep resolving. Nothing in that file is applied.
+an alias. `blocked-fix-alias-proposals.json` lists the exact alias entries needed: 297 proposals
+over 15 items, each naming the published child ids, their language slot, their source range in the
+frozen field, and the alias entry the migration must write so that every published link keeps
+resolving. Nothing in that file is applied.
 
 ### 2.2 Findings that depend on the pairing fix
 
@@ -153,3 +154,55 @@ the frozen source rows. It is not a word-by-word semantic judgement, not a trans
 scholarly, translation-provenance, publication-rights, human or semantic-quality approval. The
 nineteen spacing proposals above still need an Agent-5 decision before the affected V3 items are
 complete.
+
+## 6. Round 3: Agent-5's review of snapshot `c23c83c4…` and the fixes that followed
+
+Agent-5 reviewed the ten items changed in round 2 against exact snapshot
+`c23c83c4c97eb442bf2a9aa3495458bb73210e26` and **individually accepted all 19 proposed spaces**
+(they are not source text). It verified five items complete: `dua-daa-zndh-shdn`,
+`dua-mkhtsrtryn-daahay-shr`, `khavas-ahkam-dfn-amvat`, `monajat-mnajat-dvm-raz` and
+`namaz-kyfyt-astkharh-tsbyh`. `namaz-taqyb-sbh-nql` has its layout and spaces accepted, but its four
+earlier historical line-break decisions remain escalated, so its verifier result is still needs-work.
+
+### Applied in this round
+
+| Item | Row | Change | Link effect |
+|---|---|---|---|
+| `amal-aamal-arfh-2` | r00002 | The row held three numbered practices and a closing compiler remark in one field. It is now four rows: the first practice, the second practice with its reported merit, the third practice that carries the prayer direction, and the compiler's own closing remark. Roles: note, note, instruction, note. | Base row id stays resolvable through the redirect; this row had no published child id. |
+| `amal-aamal-arfh-2` | r00005 | The prayer directions and the compiler's closing comment shared one field. They are now two rows: the directions as instruction, the comment as note. | Base row id stays resolvable; no published child id existed. |
+| `amal-aamal-arfh-2` | r00033 | Role corrected from note to instruction: the row is a sequence of directions and substitutions, not an independent note. | Row identity unchanged. |
+| `amal-aamal-arfh-2` | r00026 + r00027 | The blessing continued across two rows, and the Arabic and Persian broke at different points, so the two rows could not pair. The blessing was joined into one bilingual row, which removes the mismatched boundary. After the join the Arabic blessing clause and its Persian clause carry the same structure: each begins with the formula for sending blessings upon the Prophet, names him, then names his family and the group addressed, so the two sides line up clause by clause. | Base ids r00026 and r00027 stay resolvable. Two proposed spaces. |
+
+### Still blocked on the mapping migration, now with the alias entries attached
+
+Agent-5 confirmed the blocked findings and the alias proposal. The list grew to 297 alias entries
+over 15 items, because the proposal file now covers every flagged base row that already has
+published child ids, including the same-language splits.
+
+- `ziyarat-pyadh-rftn-shah` r00001: the cut divides one continuous historical account, and the
+  second part is wrongly labelled instruction. All three cuts in this item sit at whitespace
+  boundaries, so the defect is one of role and grouping, not of a broken word. Reclassifying
+  retires the published child id, so it waits for the migration.
+- `ziyarat-pyadh-rftn-shah` r00013: both parts are historical narration introducing an inscription,
+  not quotations. The join with r00012 is available in the tooling, but the role correction has to
+  come first and that is what needs the migration.
+- `ziyarat-pyadh-rftn-shah` r00015: the Arabic piece is still published in the Persian slot.
+- `amal-aamal-rvyt-hlal` r00001 and `amal-aamal-shaban` r00001: the day label is cut away from the
+  rest of the row, and the instruction starts inside a narrative report. Both cuts sit at
+  whitespace boundaries. Regrouping them changes the role of a published child, so they wait for
+  the migration.
+- The pairing and role class in `amal-aamal-shaban` r00002 to r00007, `amal-aamal-rvyt-hlal` r00003,
+  r00006 to r00008, `amal-asharh`, `amal-fzylt-thlyl-masvr`, `khavas-nvshth-ay-hmrah`,
+  `ziyarat-daahay-bad-alyh`, `dua-dvm-daahay-vqt`, `amal-mjavl-bvdn-daayy`, `amal-aamal-hrm-hsyn`,
+  `dua-yamn-thl-hady`, `namaz-ayza-hajt-sndhay`, `item-asharh-6` and `amal-slvat-shaban`.
+
+### New spacing proposals needing a separate Agent-5 decision
+
+| Item | Merged row | Language | Offset | Left | Right |
+|---|---|---|---:|---|---|
+| `amal-aamal-arfh-2` | md9954596d59be1a71a3e08fb | ar | 178 | r00026 | r00027 |
+| `amal-aamal-arfh-2` | md9954596d59be1a71a3e08fb | fa | 174 | r00026 | r00027 |
+
+The other 19 proposals were accepted by Agent-5 and are not repeated here. Each remaining proposal
+inserts exactly one U+0020 at the recorded offset in the current canonical text of the named
+language; a space is an editorial correction, not source text, and it is not approved here.

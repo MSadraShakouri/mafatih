@@ -3,8 +3,8 @@
   "item": "amal-aamal-arfh-2",
   "author": "agent-4",
   "baseline_item_sha256": "77fcd48509b5171bedc618132473c79c2a1da6e2872a4c7b933806b2278d8419",
-  "plan_sha256": "e927fb0f0f0d60c15aed8dc0cfb65dde3ad1c3c5e3684af0b5c3e3bffc43a31f",
-  "layout_sha256": "502abd93797fc69404e92b0dad960e48f1fa6da540d943a67faf11d8298f5ec0",
+  "plan_sha256": "427a9cadb8a97cec9b41b930b1c7512e5096cee5e572f25c3da2488815705434",
+  "layout_sha256": "06541720f40d45d42cde5ae813265851a1181134e39e19eadb30f63a36c57952",
   "rows": [
     {
       "original": {
@@ -33,14 +33,38 @@
         "fa": "t19d6063b7afad7c8d181bf5e"
       },
       "results": [
-        "r00002"
+        "r00002-s16b235f3fb54b1a5",
+        "r00002-s7912db66cde98eb8",
+        "r00002-sefe2b44d479f4e2b",
+        "r00002-sb8a7c4ea61e1d0eb"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
+          "end": 10,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-s7912db66cde98eb8",
+          "language": "fa",
+          "start": 10,
+          "end": 432,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-sefe2b44d479f4e2b",
+          "language": "fa",
+          "start": 432,
+          "end": 719,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-sb8a7c4ea61e1d0eb",
+          "language": "fa",
+          "start": 719,
           "end": 855,
           "target_start": 0
         }
@@ -93,14 +117,22 @@
         "fa": "t8c912ca9fdd157e0502792b3"
       },
       "results": [
-        "r00005"
+        "r00005-s16520fa053c7f321",
+        "r00005-sbf827ad20eeda70b"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00005",
+          "row": "r00005-s16520fa053c7f321",
           "language": "fa",
           "start": 0,
+          "end": 325,
+          "target_start": 0
+        },
+        {
+          "row": "r00005-sbf827ad20eeda70b",
+          "language": "fa",
+          "start": 325,
           "end": 434,
           "target_start": 0
         }
@@ -713,11 +745,11 @@
         "fa": "t09e9c4d8f96789043564207e"
       },
       "results": [
-        "r00026"
+        "md9954596d59be1a71a3e08fb"
       ],
       "ar": [
         {
-          "row": "r00026",
+          "row": "md9954596d59be1a71a3e08fb",
           "language": "ar",
           "start": 0,
           "end": 178,
@@ -726,7 +758,7 @@
       ],
       "fa": [
         {
-          "row": "r00026",
+          "row": "md9954596d59be1a71a3e08fb",
           "language": "fa",
           "start": 0,
           "end": 174,
@@ -741,24 +773,24 @@
         "fa": "t13924a2f6c85ae648702fb9d"
       },
       "results": [
-        "r00027"
+        "md9954596d59be1a71a3e08fb"
       ],
       "ar": [
         {
-          "row": "r00027",
+          "row": "md9954596d59be1a71a3e08fb",
           "language": "ar",
           "start": 0,
           "end": 822,
-          "target_start": 0
+          "target_start": 179
         }
       ],
       "fa": [
         {
-          "row": "r00027",
+          "row": "md9954596d59be1a71a3e08fb",
           "language": "fa",
           "start": 0,
           "end": 655,
-          "target_start": 0
+          "target_start": 175
         }
       ]
     },
@@ -1025,6 +1057,24 @@
       "left": "r00030",
       "right": "r00031",
       "reason": "Join the praise the source split across r00030 and r00031 in both languages"
+    },
+    {
+      "row": "md9954596d59be1a71a3e08fb",
+      "language": "ar",
+      "target_start": 178,
+      "value": " ",
+      "left": "r00026",
+      "right": "r00027",
+      "reason": "Join the blessing the source split across r00026 and r00027 so the Arabic and Persian break at the same phrase"
+    },
+    {
+      "row": "md9954596d59be1a71a3e08fb",
+      "language": "fa",
+      "target_start": 174,
+      "value": " ",
+      "left": "r00026",
+      "right": "r00027",
+      "reason": "Join the blessing the source split across r00026 and r00027 so the Arabic and Persian break at the same phrase"
     }
   ]
 }
