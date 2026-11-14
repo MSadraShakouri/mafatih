@@ -99,15 +99,24 @@ were mistakenly cut out. Text-pool repair is likewise not needed: no value from
 the parent snapshot is missing, only 79 extra values that arrived with the
 agent-6 revision, which no tool prunes.
 
-Snapshot re-published after the upgrade:
-`8d9704b99508ab405017dc891844a38e99685b4a` (supersedes `9439f6a`, same 112
-items, V1 results unchanged).
+A second coordinator commit, `b2756bb0`, followed: it adds **V3** split records
+with explicit per-language space proposals (`--join ar-space|fa-space|both-space`
+plus a reason, each bound to a separate independent review decision) while exact
+V1/V2 joins stay unchanged and no corpus value moves. It is merged here too, and
+`verify-tool-info` still reports `tool-version-matches`; the suite is now 277
+tests. Nothing in this assignment needs a V3 record: my only touching-boundary
+candidate, `dua-faraj`, belongs to agent-3, and the merge command refuses rows of
+different kinds, which is every adjacent pair left open in my items.
+
+Snapshot re-published after both upgrades:
+`ab1dbfb43e114cafad5cb9edb9f6525fca18834f` (supersedes `8d9704b9` and
+`9439f6a`, same 112 items, V1 results unchanged).
 
 ## Gates run at 112 items
 
 - `npm run validate` — STRUCTURAL VALIDATION PASS (not a content/rights approval).
 - `npm run check:line-breaks` — passed, 0 exact retained breaks (0 pending, 0 reviewed).
-- `npm run check` — exit 0; 271 tests after the upgrade, 268 pass, 0 fail, 3 skipped.
+- `npm run check` — exit 0; 277 tests after both upgrades, 274 pass, 0 fail, 3 skipped.
 - `six-agent.ts audit-authored --base ffa01da9… --agent agent-1` — `complete`,
   total_items 112, complete_items 112, findings [].
 
