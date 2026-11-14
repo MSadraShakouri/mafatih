@@ -1,8 +1,14 @@
 {
- "note": "The 45 held joins of agent-6, as prepared on 2026-11-14. Not applied on this branch. Row ids only, no text. left and right are the two adjacent CURRENT rows that the join would merge: the last piece of the original left row and the first piece of the original right row, at head fa21d533 (authored data identical to snapshot df85a685). Chains are listed in application order; after the first join of a chain the left id of the next one is replaced by the merged row. mode is one U+0020 per language in which both pieces carry text and neither edge is whitespace. Tested in a scratch clone with main 55ef3fe4 merged: all 45 accepted by merge-rows and its link guard, 84 new spaces, 0 row ids retired, npm run check exit 0.",
+ "note": "The 45 joins of agent-6 that were held by the pinned runtime-audio test. APPLIED on 2026-11-14 after merging main 55ef3fe4 (coordinator-confirmed fix). Row ids and offsets only, no text. left and right are the two adjacent rows that were merged: the last piece of the original left row and the first piece of the original right row. merged_row is the current row. spaces lists every proposed editorial U+0020 with its code-point offset in the merged field; each one needs its own independent review decision. A language missing from spaces received no space because one of the two pieces has no text in that language (see left_has and right_has). Checks after applying: all 45 accepted by merge-rows and its link guard; 84 new spaces; of 3,202 row ids published for these 22 items in five snapshots none is newly unreachable and none opens different text; npm run check exit 0 (278 tests, 275 pass, 0 fail, 3 skipped). The older retired and reused ids reported in README.md are NOT repaired by this change.",
  "base": "ffa01da92fbba25731356e8158c295b3824763f0",
- "data_head": "fa21d533",
- "tested_with_main": "55ef3fe494826c4530b964a1578c54d8ce58aea3",
+ "main_merged": "55ef3fe494826c4530b964a1578c54d8ce58aea3",
+ "totals": {
+  "joins": 45,
+  "both_space": 39,
+  "ar_space": 6,
+  "spaces": 84,
+  "items": 22
+ },
  "joins": [
   {
    "n": 1,
@@ -11,8 +17,6 @@
    "original_right": "r00003",
    "left": "r00002-s610be4597b469a20",
    "right": "r00003-s3a5c66537d9f28c5",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -20,7 +24,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m148889261eef65a60abd7e7b",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 66
+    },
+    {
+     "language": "fa",
+     "offset": 38
+    }
+   ]
   },
   {
    "n": 2,
@@ -29,8 +46,6 @@
    "original_right": "r00009",
    "left": "r00008-sd9b1c56b4b332205",
    "right": "r00009-s509976db02c9c56c",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -38,7 +53,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m32ad477135babb06f977bf5a",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 42
+    },
+    {
+     "language": "fa",
+     "offset": 49
+    }
+   ]
   },
   {
    "n": 3,
@@ -47,8 +75,6 @@
    "original_right": "r00017",
    "left": "r00016-sc57e5403e44c0a2d",
    "right": "r00017-s4f19d01387165b84",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -56,7 +82,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m859c357a9ad2f9acd9011609",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 3
+    },
+    {
+     "language": "fa",
+     "offset": 2
+    }
+   ]
   },
   {
    "n": 4,
@@ -65,8 +104,6 @@
    "original_right": "r00018",
    "left": "r00017-s1801dbaa3f4e5345",
    "right": "r00018-sc5b77b3076320de8",
-   "kinds": "recitation|recitation",
-   "mode": "ar-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -74,7 +111,16 @@
    "right_has": {
     "ar": true,
     "fa": false
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "merged_row": "me2613305286e4f21bf0f4551",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 53
+    }
+   ]
   },
   {
    "n": 5,
@@ -83,8 +129,6 @@
    "original_right": "r00002",
    "left": "r00001-s4ce1e96011bf0945",
    "right": "r00002-se78f6df715196b3d",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -92,7 +136,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "maccb93841a2a7aff5df9e624",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 14
+    },
+    {
+     "language": "fa",
+     "offset": 12
+    }
+   ]
   },
   {
    "n": 6,
@@ -101,8 +158,6 @@
    "original_right": "r00033",
    "left": "r00032-s9612e2da83ce0e93",
    "right": "r00033",
-   "kinds": "recitation|recitation",
-   "mode": "ar-space",
    "left_has": {
     "ar": true,
     "fa": false
@@ -110,7 +165,16 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "merged_row": "m909a81ee39fccedf74d908b5",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 8
+    }
+   ]
   },
   {
    "n": 7,
@@ -119,8 +183,6 @@
    "original_right": "r00008",
    "left": "r00007-sc2f6c9f6a813b18d",
    "right": "r00008-sbfc120554e3eef61",
-   "kinds": "recitation|recitation",
-   "mode": "ar-space",
    "left_has": {
     "ar": true,
     "fa": false
@@ -128,7 +190,16 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "merged_row": "mc24556b2d294dc7cc59e0a59",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 7
+    }
+   ]
   },
   {
    "n": 8,
@@ -137,8 +208,6 @@
    "original_right": "r00003",
    "left": "r00002-sd871c8bb7b384e4c",
    "right": "r00003-s3a5c66537d9f28c5",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -146,7 +215,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m167c0040e348b495c9fc4c94",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 7
+    },
+    {
+     "language": "fa",
+     "offset": 2
+    }
+   ]
   },
   {
    "n": 9,
@@ -155,8 +237,6 @@
    "original_right": "r00005",
    "left": "r00004-sdc2333e2c9516635",
    "right": "r00005-sf75a34654a0b51be",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -164,7 +244,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mb5d4122f534351d18e68a7cc",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 23
+    },
+    {
+     "language": "fa",
+     "offset": 20
+    }
+   ]
   },
   {
    "n": 10,
@@ -173,8 +266,6 @@
    "original_right": "r00009",
    "left": "r00008-s586af2336023b4f5",
    "right": "r00009-s509976db02c9c56c",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -182,7 +273,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mdf94faa8b4146f872d6542a8",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 8
+    },
+    {
+     "language": "fa",
+     "offset": 9
+    }
+   ]
   },
   {
    "n": 11,
@@ -191,8 +295,6 @@
    "original_right": "r00012",
    "left": "r00011-sc42a100063c7bcd6",
    "right": "r00012-sa4438d7a5d3c6c0d",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -200,7 +302,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m6c66e2313f8ddc071805a852",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 36
+    },
+    {
+     "language": "fa",
+     "offset": 33
+    }
+   ]
   },
   {
    "n": 12,
@@ -209,8 +324,6 @@
    "original_right": "r00022",
    "left": "r00021-sd759b4777daaf8cf",
    "right": "r00022-s6c8729839add20f1",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -218,7 +331,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mc37654836c0bf0b6cc4c6dd0",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 26
+    },
+    {
+     "language": "fa",
+     "offset": 8
+    }
+   ]
   },
   {
    "n": 13,
@@ -227,8 +353,6 @@
    "original_right": "r00028",
    "left": "r00027-s4904128bd01b8126",
    "right": "r00028-sc1710b0977035e78",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -236,7 +360,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m7468294ff85dc6f988004d83",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 41
+    },
+    {
+     "language": "fa",
+     "offset": 26
+    }
+   ]
   },
   {
    "n": 14,
@@ -245,8 +382,6 @@
    "original_right": "r00034",
    "left": "r00033-s25a3dcbc237008a5",
    "right": "r00034-s1701249a509e1195",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -254,7 +389,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m57dfb076769a81be3d5f3817",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 40
+    },
+    {
+     "language": "fa",
+     "offset": 34
+    }
+   ]
   },
   {
    "n": 15,
@@ -263,8 +411,6 @@
    "original_right": "r00038",
    "left": "r00037-s9a254e59fac1e2db",
    "right": "r00038-sc6880ad6e6ab13b2",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -272,7 +418,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mdc7a13aa43b36e25f7f2402a",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 52
+    },
+    {
+     "language": "fa",
+     "offset": 27
+    }
+   ]
   },
   {
    "n": 16,
@@ -281,8 +440,6 @@
    "original_right": "r00004",
    "left": "r00003-s5ccc55d649900aae",
    "right": "r00004-s2d6fcdaf315ab02c",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -290,7 +447,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m0747478b9969cc07c83955a0",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 11
+    },
+    {
+     "language": "fa",
+     "offset": 6
+    }
+   ]
   },
   {
    "n": 17,
@@ -299,8 +469,6 @@
    "original_right": "r00008",
    "left": "r00007-s8d06b8c6a6464a00",
    "right": "r00008-sbfc120554e3eef61",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -308,7 +476,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m7c688f206506c35bfd1a0c75",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 100
+    },
+    {
+     "language": "fa",
+     "offset": 65
+    }
+   ]
   },
   {
    "n": 18,
@@ -317,8 +498,6 @@
    "original_right": "r00009",
    "left": "r00008-s00f6e1701d357780",
    "right": "r00009-s509976db02c9c56c",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -326,7 +505,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m582e27c9ca8977dc6ea2a43a",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 35
+    },
+    {
+     "language": "fa",
+     "offset": 29
+    }
+   ]
   },
   {
    "n": 19,
@@ -335,8 +527,6 @@
    "original_right": "r00007",
    "left": "r00006-s958ee966dc0b41ae",
    "right": "r00007-sb13bc65dd76f169b",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -344,7 +534,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m19933fdd73829a26e640026f",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 75
+    },
+    {
+     "language": "fa",
+     "offset": 63
+    }
+   ]
   },
   {
    "n": 20,
@@ -353,8 +556,6 @@
    "original_right": "r00008",
    "left": "r00007-s2328a49b1e9c6d49",
    "right": "r00008-sbfc120554e3eef61",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -362,7 +563,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mbf43fa80494ee3325c50a27b",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 11
+    },
+    {
+     "language": "fa",
+     "offset": 6
+    }
+   ]
   },
   {
    "n": 21,
@@ -371,8 +585,6 @@
    "original_right": "r00021",
    "left": "r00020-s63f9098dd62e8d6e",
    "right": "r00021-sde6fd1f18d8ee701",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -380,7 +592,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mcf97f0c3829dbb702235c741",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 35
+    },
+    {
+     "language": "fa",
+     "offset": 32
+    }
+   ]
   },
   {
    "n": 22,
@@ -389,8 +614,6 @@
    "original_right": "r00002",
    "left": "r00001-s9dfc00a69fac535c",
    "right": "r00002-se78f6df715196b3d",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -398,7 +621,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m6238f25f38ff801b758fc1e1",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 16
+    },
+    {
+     "language": "fa",
+     "offset": 9
+    }
+   ]
   },
   {
    "n": 23,
@@ -407,8 +643,6 @@
    "original_right": "r00009",
    "left": "r00008-sddace2be52ccffd3",
    "right": "r00009-s509976db02c9c56c",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -416,7 +650,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m9ae0899e9bd390cbe8de6c22",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 37
+    },
+    {
+     "language": "fa",
+     "offset": 33
+    }
+   ]
   },
   {
    "n": 24,
@@ -425,8 +672,6 @@
    "original_right": "r00014",
    "left": "r00013-se0089d3737b764c1",
    "right": "r00014-sa839c43f8232dd91",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -434,7 +679,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "md7b3c07120cf451988af8b1b",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 34
+    },
+    {
+     "language": "fa",
+     "offset": 27
+    }
+   ]
   },
   {
    "n": 25,
@@ -443,8 +701,6 @@
    "original_right": "r00007",
    "left": "r00006-s4339ebe66b46a537",
    "right": "r00007-sb13bc65dd76f169b",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -452,7 +708,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m0afbd9da5004ed61df7e956b",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 15
+    },
+    {
+     "language": "fa",
+     "offset": 13
+    }
+   ]
   },
   {
    "n": 26,
@@ -461,8 +730,6 @@
    "original_right": "r00002",
    "left": "r00001-sa15f24fdc8d97d31",
    "right": "r00002-se78f6df715196b3d",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -470,7 +737,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "ma2ece47fbf049d85f2a883b7",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 12
+    },
+    {
+     "language": "fa",
+     "offset": 6
+    }
+   ]
   },
   {
    "n": 27,
@@ -479,8 +759,6 @@
    "original_right": "r00012",
    "left": "r00011-s1a8f74e18798292c",
    "right": "r00012-sa4438d7a5d3c6c0d",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -488,7 +766,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m29f282cce3036c49a8a9d370",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 71
+    },
+    {
+     "language": "fa",
+     "offset": 44
+    }
+   ]
   },
   {
    "n": 28,
@@ -497,8 +788,6 @@
    "original_right": "r00005",
    "left": "r00004-sc59b0790dbb79e98",
    "right": "r00005-sf75a34654a0b51be",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -506,7 +795,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m2f88dbc29b41d08040bbbf27",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 10
+    },
+    {
+     "language": "fa",
+     "offset": 9
+    }
+   ]
   },
   {
    "n": 29,
@@ -515,8 +817,6 @@
    "original_right": "r00006",
    "left": "r00005-s702c785d1fc8e566",
    "right": "r00006-s3e3874d69dfd3c50",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -524,7 +824,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m1ec4dae5da32b5f0d98f049e",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 19
+    },
+    {
+     "language": "fa",
+     "offset": 10
+    }
+   ]
   },
   {
    "n": 30,
@@ -533,8 +846,6 @@
    "original_right": "r00006",
    "left": "r00005-s163870813beed2e4",
    "right": "r00006-s3e3874d69dfd3c50",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -542,7 +853,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mbe6a2835d6cf1de73abc71bb",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 68
+    },
+    {
+     "language": "fa",
+     "offset": 44
+    }
+   ]
   },
   {
    "n": 31,
@@ -551,8 +875,6 @@
    "original_right": "r00007",
    "left": "r00006-s98a7757a34f5fc1e",
    "right": "r00007-sb13bc65dd76f169b",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -560,7 +882,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m345fd56f357b043d0bcd7fba",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 19
+    },
+    {
+     "language": "fa",
+     "offset": 14
+    }
+   ]
   },
   {
    "n": 32,
@@ -569,8 +904,6 @@
    "original_right": "r00009",
    "left": "r00008-s7a733165869d22d9",
    "right": "r00009-s509976db02c9c56c",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -578,7 +911,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m5a02cc8a1bd1997cda291946",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 21
+    },
+    {
+     "language": "fa",
+     "offset": 8
+    }
+   ]
   },
   {
    "n": 33,
@@ -587,8 +933,6 @@
    "original_right": "r00010",
    "left": "r00009-s486aac0127266250",
    "right": "r00010-s9bd4144b26ada357",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -596,7 +940,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m0714932060d438f0f23f2eee",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 38
+    },
+    {
+     "language": "fa",
+     "offset": 36
+    }
+   ]
   },
   {
    "n": 34,
@@ -605,8 +962,6 @@
    "original_right": "r00016",
    "left": "r00015-s87c2c95032000462",
    "right": "r00016-se83437ebfd903157",
-   "kinds": "recitation|recitation",
-   "mode": "ar-space",
    "left_has": {
     "ar": true,
     "fa": false
@@ -614,7 +969,16 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "merged_row": "m1d0aaaa7bf3bd896558fc5b9",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 11
+    }
+   ]
   },
   {
    "n": 35,
@@ -623,8 +987,6 @@
    "original_right": "r00009",
    "left": "r00008-sf7015822215fb3ac",
    "right": "r00009-s3b3375cb23a6131d",
-   "kinds": "recitation|recitation",
-   "mode": "ar-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -632,7 +994,16 @@
    "right_has": {
     "ar": true,
     "fa": false
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "merged_row": "mbbd9daf9d1f10f516b1ca193",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 18
+    }
+   ]
   },
   {
    "n": 36,
@@ -641,8 +1012,6 @@
    "original_right": "r00005",
    "left": "r00004-sdc2333e2c9516635",
    "right": "r00005-sf75a34654a0b51be",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -650,7 +1019,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mb5a2423bd30c64fa8f9bfd57",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 70
+    },
+    {
+     "language": "fa",
+     "offset": 41
+    }
+   ]
   },
   {
    "n": 37,
@@ -659,8 +1041,6 @@
    "original_right": "r00006",
    "left": "r00005-s6650b6587f317204",
    "right": "r00006-s3e3874d69dfd3c50",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -668,7 +1048,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m1ad16f1ff18bbf74af141bcf",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 29
+    },
+    {
+     "language": "fa",
+     "offset": 22
+    }
+   ]
   },
   {
    "n": 38,
@@ -677,8 +1070,6 @@
    "original_right": "r00003",
    "left": "r00002-s25507074a540df86",
    "right": "r00003-s3a5c66537d9f28c5",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -686,7 +1077,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m73fc8b5cdd945496b8508412",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 21
+    },
+    {
+     "language": "fa",
+     "offset": 23
+    }
+   ]
   },
   {
    "n": 39,
@@ -695,8 +1099,6 @@
    "original_right": "r00018",
    "left": "r00017-s4a6963e2df61112b",
    "right": "r00018-s32f0369295be1218",
-   "kinds": "recitation|recitation",
-   "mode": "ar-space",
    "left_has": {
     "ar": true,
     "fa": false
@@ -704,7 +1106,16 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "ar-space",
+   "merged_row": "m4bc3198f392b87692b445120",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 15
+    }
+   ]
   },
   {
    "n": 40,
@@ -713,8 +1124,6 @@
    "original_right": "r00020",
    "left": "r00019-sbb23883d939ab43e",
    "right": "r00020-s35b910bbda70cf13",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -722,7 +1131,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m15473347f90c439540325a32",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 22
+    },
+    {
+     "language": "fa",
+     "offset": 22
+    }
+   ]
   },
   {
    "n": 41,
@@ -731,8 +1153,6 @@
    "original_right": "r00025",
    "left": "r00024-saba803e27bb05a95",
    "right": "r00025-s8101cf4b9743208a",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -740,7 +1160,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "mfb4633d1809995ee4b75bd6b",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 9
+    },
+    {
+     "language": "fa",
+     "offset": 7
+    }
+   ]
   },
   {
    "n": 42,
@@ -749,8 +1182,6 @@
    "original_right": "r00030",
    "left": "r00029-sf31f6b2b381c9ac3",
    "right": "r00030-sda0e2b38f6c307a6",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -758,7 +1189,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m38e2a36b54e1647639d4ff3d",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 37
+    },
+    {
+     "language": "fa",
+     "offset": 26
+    }
+   ]
   },
   {
    "n": 43,
@@ -767,8 +1211,6 @@
    "original_right": "r00032",
    "left": "r00031-sd4d14a7da6109da7",
    "right": "r00032-s29c9d2170e416b56",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -776,7 +1218,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m80a232aea220f646291c4c18",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 15
+    },
+    {
+     "language": "fa",
+     "offset": 12
+    }
+   ]
   },
   {
    "n": 44,
@@ -785,8 +1240,6 @@
    "original_right": "r00006",
    "left": "r00005-s93affcc5f3ac5677",
    "right": "r00006-s3e3874d69dfd3c50",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -794,7 +1247,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "ma8ec7996556cc5d7693713c5",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 65
+    },
+    {
+     "language": "fa",
+     "offset": 68
+    }
+   ]
   },
   {
    "n": 45,
@@ -803,8 +1269,6 @@
    "original_right": "r00004",
    "left": "r00003-s943518af48760b0c",
    "right": "r00004-s2d6fcdaf315ab02c",
-   "kinds": "recitation|recitation",
-   "mode": "both-space",
    "left_has": {
     "ar": true,
     "fa": true
@@ -812,7 +1276,20 @@
    "right_has": {
     "ar": true,
     "fa": true
-   }
+   },
+   "kinds": "recitation|recitation",
+   "mode": "both-space",
+   "merged_row": "m37fb4a8a6aba8d98083ee182",
+   "spaces": [
+    {
+     "language": "ar",
+     "offset": 29
+    },
+    {
+     "language": "fa",
+     "offset": 24
+    }
+   ]
   }
  ]
 }
