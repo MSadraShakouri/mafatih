@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-daa-aymny-shr",
   "author": "agent-5",
-  "plan_sha256": "f2cb7ddc6186e0842108e53e506a85a9ccde5b83c0b4015f8d8be887f606fc2a",
+  "plan_sha256": "8fc9beb96aad1c6f2b31d9480934afb54263c8b8aaa663625a27620879f46195",
   "rows": [
     {
       "row": "r00001",
@@ -142,6 +142,14 @@
             "part": 0
           },
           "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 1
+          },
+          "fa": null,
+          "kind": "recitation"
         }
       ]
     },
@@ -186,6 +194,17 @@
           "kind": "quotation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00007-sbd47d389958800f8",
+      "right": "r00008",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text."
+      }
     }
   ]
 }

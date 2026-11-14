@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-mvsy-kazm-rza",
   "author": "agent-5",
-  "plan_sha256": "383c4fe81dbf1b607dd306a503d04cc3a26fb4a09a19c4219b090a2ad66efc95",
+  "plan_sha256": "72f567ba4c61c9e0bf3b3149672bbef68a1df811341c0c2faa6277e0c8db9698",
   "rows": [
     {
       "row": "r00001",
@@ -28,6 +28,14 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "instruction"
         }
@@ -66,6 +74,17 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001",
+      "right": "r00002-scbcad34ad2773d20",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text."
+      }
     }
   ]
 }

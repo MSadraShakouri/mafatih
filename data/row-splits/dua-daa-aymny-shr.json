@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "dua-daa-aymny-shr",
   "author": "agent-5",
   "baseline_item_sha256": "096f04af5626502f141f98d56685590fff3244df326b884bb4a55d65f15772b9",
-  "plan_sha256": "f2cb7ddc6186e0842108e53e506a85a9ccde5b83c0b4015f8d8be887f606fc2a",
-  "layout_sha256": "988dce677238589302b45cf2be1aca277c20091be810675748c84584fb163b2c",
+  "plan_sha256": "8fc9beb96aad1c6f2b31d9480934afb54263c8b8aaa663625a27620879f46195",
+  "layout_sha256": "0705988b45198194509d3e1340e9138d7720137c9211007a0ce31cf92975c2d9",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 243
+          "end": 243,
+          "target_start": 0
         }
       ]
     },
@@ -40,13 +41,15 @@
           "row": "r00002-se78f6df715196b3d",
           "language": "ar",
           "start": 0,
-          "end": 39
+          "end": 39,
+          "target_start": 0
         },
         {
           "row": "r00002-s85aa1380ba79f059",
           "language": "ar",
           "start": 39,
-          "end": 89
+          "end": 89,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -54,13 +57,15 @@
           "row": "r00002-se78f6df715196b3d",
           "language": "fa",
           "start": 0,
-          "end": 51
+          "end": 51,
+          "target_start": 0
         },
         {
           "row": "r00002-s85aa1380ba79f059",
           "language": "fa",
           "start": 51,
-          "end": 85
+          "end": 85,
+          "target_start": 0
         }
       ]
     },
@@ -78,7 +83,8 @@
           "row": "r00003",
           "language": "ar",
           "start": 0,
-          "end": 555
+          "end": 555,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -86,7 +92,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 455
+          "end": 455,
+          "target_start": 0
         }
       ]
     },
@@ -105,13 +112,15 @@
           "row": "r00004-s86898f86de8b9f04",
           "language": "fa",
           "start": 0,
-          "end": 155
+          "end": 155,
+          "target_start": 0
         },
         {
           "row": "r00004-se656eb44999bf14d",
           "language": "ar",
           "start": 155,
-          "end": 420
+          "end": 420,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -119,7 +128,8 @@
           "row": "r00004-se656eb44999bf14d",
           "language": "fa",
           "start": 0,
-          "end": 235
+          "end": 235,
+          "target_start": 0
         }
       ]
     },
@@ -137,7 +147,8 @@
           "row": "r00005",
           "language": "ar",
           "start": 0,
-          "end": 12
+          "end": 12,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -145,7 +156,8 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 18
+          "end": 18,
+          "target_start": 0
         }
       ]
     },
@@ -164,13 +176,15 @@
           "row": "r00006-s5277842879ed0547",
           "language": "fa",
           "start": 0,
-          "end": 185
+          "end": 185,
+          "target_start": 0
         },
         {
           "row": "r00006-s8f53b0f82f7a2dbf",
           "language": "ar",
           "start": 185,
-          "end": 582
+          "end": 582,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -178,7 +192,8 @@
           "row": "r00006-s8f53b0f82f7a2dbf",
           "language": "fa",
           "start": 0,
-          "end": 330
+          "end": 330,
+          "target_start": 0
         }
       ]
     },
@@ -189,15 +204,24 @@
         "fa": "t0c4dd38cef2745cdcf2ad960"
       },
       "results": [
-        "r00007"
+        "r00007-s5227989a1cf80a5b",
+        "ma8b5fc6e4d9b4e00b7ae91e8"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00007",
+          "row": "r00007-s5227989a1cf80a5b",
           "language": "fa",
           "start": 0,
-          "end": 213
+          "end": 170,
+          "target_start": 0
+        },
+        {
+          "row": "ma8b5fc6e4d9b4e00b7ae91e8",
+          "language": "ar",
+          "start": 170,
+          "end": 213,
+          "target_start": 0
         }
       ]
     },
@@ -208,22 +232,24 @@
         "fa": "t98694590d3f855246145e182"
       },
       "results": [
-        "r00008"
+        "ma8b5fc6e4d9b4e00b7ae91e8"
       ],
       "ar": [
         {
-          "row": "r00008",
+          "row": "ma8b5fc6e4d9b4e00b7ae91e8",
           "language": "ar",
           "start": 0,
-          "end": 101
+          "end": 101,
+          "target_start": 44
         }
       ],
       "fa": [
         {
-          "row": "r00008",
+          "row": "ma8b5fc6e4d9b4e00b7ae91e8",
           "language": "fa",
           "start": 0,
-          "end": 130
+          "end": 130,
+          "target_start": 0
         }
       ]
     },
@@ -242,13 +268,15 @@
           "row": "r00009-sc64421e6669ebe6d",
           "language": "fa",
           "start": 0,
-          "end": 27
+          "end": 27,
+          "target_start": 0
         },
         {
           "row": "r00009-se370353bb3dfce92",
           "language": "ar",
           "start": 27,
-          "end": 149
+          "end": 149,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -256,9 +284,41 @@
           "row": "r00009-se370353bb3dfce92",
           "language": "fa",
           "start": 0,
-          "end": 109
+          "end": 109,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00007-sbd47d389958800f8",
+        "ar": "t8a3ac18f84b2eeea14102bfb",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "ma8b5fc6e4d9b4e00b7ae91e8",
+          "language": "ar",
+          "start": 0,
+          "end": 43,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    }
+  ],
+  "insertions": [
+    {
+      "row": "ma8b5fc6e4d9b4e00b7ae91e8",
+      "language": "ar",
+      "target_start": 43,
+      "value": " ",
+      "left": "r00007-sbd47d389958800f8",
+      "right": "r00008",
+      "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text."
     }
   ]
 }
