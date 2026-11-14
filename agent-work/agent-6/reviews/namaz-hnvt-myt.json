@@ -4,7 +4,7 @@
   "item": "namaz-hnvt-myt",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "10d8d38d82666a945be549126091de260d20998b",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "c80916eb88ad77c13ccba2cf74ddac61257180c825848c94d8604da1fc63d590",
   "layout_sha256": "93787701fd685bf88f16f04b60a636559643931d8a6eca309fb42a69c7f36d0e",
   "result_item_sha256": "b23401241408fa7ae6447b56baccbc808ece43fee43ee1bb61cee9f85c02394b",
@@ -98,16 +98,16 @@
       {
         "row": "r00008",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00008), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 5 sentences (4 internal sentence-final marks) and 12 internal clause marks in one piece of 484 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside, in the same order. The split is accepted as it stands. Source property recorded, no cut asked: the Persian skips from the middle of the second supplication to the end of the third (the feminine form in r00010 renders the same passage in full), so two Arabic clauses have no Persian. A cut cannot supply a missing rendering."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00008), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 5 sentences (4 internal sentence-final marks) and 12 internal clause marks in one piece of 484 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn. Source defect noted, nothing to change: the Persian of this row skips from the middle of the second supplication to the end of the third (the feminine form in r00010 renders the same passage in full), so when the row is cut two Arabic clauses will stand without Persian."
+        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside, in the same order. The split is accepted as it stands. Source property recorded, no cut asked: the Persian skips from the middle of the second supplication to the end of the third (the feminine form in r00010 renders the same passage in full), so two Arabic clauses have no Persian. A cut cannot supply a missing rendering."
       },
       {
         "row": "r00009",
@@ -163,7 +163,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read rows 2 to 10 and 20 to 28: directions and formulae alternate in the right slots and the paired rows match. Author fix after the first cut: r00008 pairs several complete sentences or clauses with one block of translation; pair it part by part once cut."
+    "decision": "accept",
+    "note": "Read rows 2 to 10 and 20 to 28: directions and formulae alternate in the right slots and the paired rows match. Withdrawn: my request to re-pair r00008 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
   }
 }

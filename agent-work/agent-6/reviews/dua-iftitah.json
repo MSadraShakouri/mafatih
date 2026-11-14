@@ -4,7 +4,7 @@
   "item": "dua-iftitah",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "10d8d38d82666a945be549126091de260d20998b",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "6c4ff7bf680038e3a08385ce884af6363ff095aedf98cdd9067cd1f7e67fcc18",
   "layout_sha256": "f259ffc673d7f330b879c428d21c33c5ae85f92018a7ff667e9bb148de63ef22",
   "result_item_sha256": "425b5f4626f5eebfbf274734bba42c3434752650b6156c2a75a4df5f8f027634",
@@ -791,16 +791,16 @@
       {
         "row": "r00063",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00063), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 11 internal clause marks in one piece of 367 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside; I found no place where the Persian leaves the order of the Arabic or where part of one language lacks the other. The split is accepted as it stands."
       },
       {
         "row": "r00063",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00063), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 11 internal clause marks in one piece of 367 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside; I found no place where the Persian leaves the order of the Arabic or where part of one language lacks the other. The split is accepted as it stands."
       },
       {
         "row": "r00064",
@@ -1252,7 +1252,7 @@
     ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "The slot finding on r00012 is resolved. Author fix after the first cut: r00063 pairs several complete sentences or clauses with one block of translation; pair it part by part once cut. Prose rows r00002, r00010 hold numbered sections to be opened as their own rows (Persian only, nothing to pair)."
+    "decision": "accept",
+    "note": "The slot finding on r00012 is resolved. Prose rows r00002, r00010 hold numbered sections to be opened as their own rows (Persian only, nothing to pair). Withdrawn: my request to re-pair r00063 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
   }
 }

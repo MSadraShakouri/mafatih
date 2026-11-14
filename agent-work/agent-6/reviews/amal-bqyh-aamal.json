@@ -4,7 +4,7 @@
   "item": "amal-bqyh-aamal",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "10d8d38d82666a945be549126091de260d20998b",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "1e2004caba2bcccd0dad730b1e3214f0446a25ea316abd7dcefc428c47119746",
   "layout_sha256": "12b92993c0756f17e2b993734ce547190172f5522be59dda9e9c107ac66167f1",
   "result_item_sha256": "6e6f5aebc241ff7dbb47a8617e56a9340fe534b5b3260910e78f06370dca34f8",
@@ -196,16 +196,16 @@
       {
         "row": "r00020",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00020), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 3 sentences (2 internal sentence-final marks) and 4 internal clause marks in one piece of 181 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside, in the same order. The split is accepted as it stands. Source property recorded, no cut asked: both fields end with the vocative that opens the sentence of r00021 (a consistent source row break), and the Persian does not repeat the vocative of the second sentence."
       },
       {
         "row": "r00020",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00020), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 3 sentences (2 internal sentence-final marks) and 4 internal clause marks in one piece of 181 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
+        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside, in the same order. The split is accepted as it stands. Source property recorded, no cut asked: both fields end with the vocative that opens the sentence of r00021 (a consistent source row break), and the Persian does not repeat the vocative of the second sentence."
       },
       {
         "row": "r00021",
@@ -314,7 +314,7 @@
     ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all 79 output rows. Every recitation row pairs an Arabic sentence or clause group with its own rendering. Non-blocking: four sentences are still broken across source rows with the Persian cut at the matching point (r00012|r00013, r00015|r00016, r00020|r00021, r00028|r00029); these joins are not held by the pinned test. The break r00010|r00011 is held by it. Author fix after the first cut: r00020 pairs several complete sentences or clauses with one block of translation; pair it part by part once cut."
+    "decision": "accept",
+    "note": "Read all 79 output rows. Every recitation row pairs an Arabic sentence or clause group with its own rendering. Non-blocking: four sentences are still broken across source rows with the Persian cut at the matching point (r00012|r00013, r00015|r00016, r00020|r00021, r00028|r00029); these joins are not held by the pinned test. The break r00010|r00011 is held by it. Withdrawn: my request to re-pair r00020 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
   }
 }
