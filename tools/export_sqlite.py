@@ -26,7 +26,7 @@ try:
     (id,it['legacy_id'],t['fa'],t['ar'],t['en'],it['category'],it.get('quran',{}).get('chapter'),it['legacy_alignment'],it.get('legacy_missing_english_reason_claim'),it.get('legacy_missing_english_title'),compact(it.get('review'))))
    split=split_records.get(id)
    identities={r['id'] for r in it['rows']}
-   if split is not None:identities.update(e['original']['id'] for e in split['rows'])
+   if split is not None:identities.update(e['original']['id'] for e in split['rows']+split.get('aliases',[]))
    con.executemany('INSERT INTO row_identity VALUES (?,?)',[(id,r) for r in sorted(identities)])
    for pos,tid in enumerate(it['tags']):con.execute('INSERT INTO item_tag VALUES (?,?,?)',(id,pos,tid))
    for lang,ss in it.get('sources',{}).items():
@@ -37,12 +37,13 @@ try:
      for n,s in enumerate(ss):con.execute('INSERT INTO row_source VALUES (?,?,?,?,?)',(id,r['id'],lang,n,s))
    if split is not None:
     if split['item']!=id:raise ValueError(f'row split file/item mismatch: {id}')
-    con.execute('INSERT INTO item_split_record VALUES (?,?,?,?,?)',(id,split['author'],split['baseline_item_sha256'],split['plan_sha256'],split['layout_sha256']))
-    for e in split['rows']:
-     old=e['original']['id'];con.execute('INSERT INTO row_split_original VALUES (?,?,?)',(id,old,compact(e['original'])))
-     for lang in ('ar','fa'):
-      for pos,s in enumerate(e[lang]):
-       con.execute('INSERT INTO row_split_segment VALUES (?,?,?,?,?,?,?,?)',(id,old,lang,pos,s['row'],s['language'],s['start'],s['end']))
+    con.execute('INSERT INTO item_split_record VALUES (?,?,?,?,?,?)',(id,split['author'],split['format_version'],split['baseline_item_sha256'],split['plan_sha256'],split['layout_sha256']))
+    for kind,entries in (('original',split['rows']),('alias',split.get('aliases',[]))):
+     for e in entries:
+      old=e['original']['id'];con.execute('INSERT INTO row_split_original VALUES (?,?,?,?)',(id,old,compact(e['original']),kind))
+      for lang in ('ar','fa'):
+       for pos,s in enumerate(e[lang]):
+        con.execute('INSERT INTO row_split_segment VALUES (?,?,?,?,?,?,?,?,?)',(id,old,lang,pos,s['row'],s['language'],s['start'],s['end'],s.get('target_start',0)))
   for f in sorted((DATA/'english').glob('*.json')):
    id=f.stem;doc=load(f);m=doc['source_metadata'];con.execute('INSERT INTO english_document VALUES (?,?,?,?,?,?,?,?,?,?,?)',
     (id,m['title'],m['title_ar'],m['section'],m['chapter'],m['translator_claim'],m['origin_claim'],m['method_claim'],m['note_claim'],doc['coverage'],compact(doc.get('review'))))
