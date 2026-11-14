@@ -284,3 +284,80 @@ Agent-4's review records still verify against Agent-3's snapshot, `verify-tool-i
 `tool-version-matches`, and the test suite still shows the single known failure and nothing else.
 Agent-5 still needs to merge `c9fa191a` into its own branch so that the review it writes can be
 bound and verified against the exact author commit; the request is in the coordination message.
+
+## 8. Round 4 corrections, and who was informed
+
+### 8.1 Corrections to Agent-4's own published figures
+
+Three numbers that Agent-4 had published were wrong, and are corrected here. In each case the
+per-case evidence was right and only the summary was wrong, so no finding changed and nothing
+in `data/` was touched.
+
+**The class summary was not a partition.** The five structural classes of the 134 flagged source
+rows are disjoint, and they are: 65 detached one-to-one, 13 detached multi-recitation, 4 already
+paired, 34 one-sided and 18 note-only, summing to 134. The summary had instead reported a single
+"detached pair" class of 112 rows, which is not a class at all: 112 is the count of flagged rows
+that publish a recitation on at least one side but never pair the two sides in one output row,
+which is 78 detached plus 34 one-sided. The detached bilingual pair itself, which is finding F1,
+is **78 rows over 30 items**, not 112 rows over 49 items. The corrected partition is in
+`DEEP-REVIEW-EVIDENCE.md` section 2 and in the `classes` field of `deep-review-evidence.json`,
+and the per-row class of all 134 rows was already recorded correctly and was left untouched.
+
+**The unexplained-unequal-count figure.** The summary reported 104 rows as explained by a
+direction or report that legitimately has no counterpart. The per-case role evidence supports
+**107**: 91 rows where the wider side is the Arabic side and 16 where it is the Persian side.
+Nine further rows have an unequal piece count that no direction or report explains, and 18 rows
+have equal piece counts.
+
+**The failing merged row.** The reconciliation report named `amal-slvat-shaban` as the row that
+fails `tests/runtime-audio.test.ts:156`. It is `amal-aamal-arfh-2`, merged row
+`m7553b0a83167f086e7dc763c`. The screen behind that failure was also miscounted: counting every
+recorded occurrence whose current field is longer than the recorded slice gives **54 occurrences
+across 9 Agent-4 items**, not 75; over the whole corpus it is **104 occurrences across 14
+items**, of which 50 are in 5 Agent-5 items. Only **3 occurrences** across 2 Agent-4 items fail
+the assertion today, and the runner reports the first of them, which is the `amal-aamal-arfh-2`
+row. `TOOLSET-RECONCILIATION.md` now carries the corrected table, and the duplicated
+`amal-slvat-shaban` entry that the old table had is gone.
+
+The full test suite is unchanged by all of this: 277 tests, 273 pass, 1 fail, 3 skipped, the
+single failure being the known `tests/runtime-audio.test.ts:156`.
+
+### 8.2 The shared historical-link taxonomy
+
+Agent-3 asked for one shared definition before any migration lands, because four audits of the
+same class of finding use four different classifications and summing them mixes definitions.
+`HISTORICAL-LINKS.md` now carries that definition: old published row ids, one id in exactly one
+class, resolvable unchanged; resolvable with different text; missing with an exact contiguous
+match; missing and covered only through segment mappings; unresolved. Only the fourth class
+blocks on the migration. The class of every one of Agent-4's 65 ids is now recorded in
+`historical-link-proposals.json` as `3-missing-exact` (51 ids) or `4-missing-compositional`
+(14 ids).
+
+### 8.3 Who was informed, and why
+
+Agent-4's only ring neighbours are Agent-3 and Agent-5, so the coordinator is reached through
+them.
+
+**Agent-3**, in message `47755cb2-3a3d-4c67-b5b0-fd0e749a3905`: the shared taxonomy above, the
+acceptance of the counting caution, and the three corrections of Agent-4's own figures. Agent-3
+authored the deepened source review that Agent-4 answered, and has no outstanding request of
+Agent-4 otherwise.
+
+**Agent-5**, in message `93fbac9d-d5f3-42e2-9664-99c5b2d66ce7`: the corrected failing row and the
+corrected exposure counts, the corrected class partition, and the request to merge
+`c9fa191a` before writing or binding the remaining reviews. Agent-5 authored the two round-4
+findings, and its branch does not yet contain either of Agent-4's snapshots.
+
+**The coordinator, through both neighbours**, for three decisions that are not Agent-4's to make:
+integration reachability, because `c9fa191a` is still not an ancestor of any peer branch and
+neither peer branch can read Agent-4's round-4 messages until it is merged; the choice of the
+one historical-link taxonomy to migrate against, now that one shared definition exists; and the
+selection of exactly one runtime-audio fix to land on main.
+
+### 8.4 What remains blocked
+
+The two accepted round-4 corrections stay blocked on the supported V1-to-V2 mapping migration:
+the r00002 heading and second-practice split, and the two petition transitions inside
+`md9954596d59be1a71a3e08fb`. Their offsets are recorded and their alias proposals are in
+`round-4-alias-proposals.json`, and no canonical data, published id, row split, plan, layout or
+review record was changed to accommodate them.

@@ -32,16 +32,28 @@ supported V1-to-V2 mapping migration. That is why nothing in this document is ap
 
 ## 2. The flagged set
 
-49 items are flagged. They expand to **134 flagged source rows**: 154 slot-move events and
-85 unequal-piece rows, which overlap on 105 rows. The rows fall into five structural
-classes, and the class decides what kind of evidence applies.
+49 items are flagged. They expand to **134 flagged source rows**. Every one of the 134
+carries at least one slot move, 154 in total; 116 of them have an unequal piece count, and
+85 of those are bilingual rows, which is the aggregate's `unequalPieceRows` figure over the
+whole corpus. The rows fall into five structural classes, and the class decides what kind of
+evidence applies.
 
 | Class | Rows | Meaning |
 |---|---:|---|
-| A. detached pair | 112 | the Arabic recitation and its Persian rendering sit in different output rows |
+| A1. detached, one to one | 65 | one Arabic recitation and its Persian rendering sit in different output rows |
+| A2. detached, multiple recitations | 13 | more than one recitation on a side; the recitations and their renderings sit in different output rows |
 | B. already paired | 4 | both sides sit in one output row |
 | C. one-sided | 34 | only one side of the source row carries a recitation |
 | D. note-only | 18 | no recitation on either side; flagged for the slot move |
+
+These five classes are a partition of the 134 flagged source rows: 65 + 13 + 4 + 34 + 18 =
+134. Each flagged row belongs to exactly one class, and the class is recorded per row in
+`deep-review-evidence.json`.
+
+One further number appears in this report and is **not** a class. **112** is the count of
+flagged rows that publish a recitation on at least one side but never pair the two sides in
+one output row: that is A1 + A2 + C = 78 + 34 = 112. It is a different measure of the same
+rows and must not be read as a sixth class or added to the class counts.
 
 The four rows of class B are the reference pattern, and they are inside Agent-3's own work:
 `item-avl-taqybat-mshtrk` r00014 and r00018, `namaz-item-3` r00001 and
@@ -50,8 +62,9 @@ form is not a deliberate rule of the layout.
 
 ## 3. Findings that hold across the flagged set
 
-**F1 — the detached bilingual pair (112 rows).** In every class-A row the Arabic prayer and
-the Persian rendering of that prayer are published in two separate output rows. The
+**F1 — the detached bilingual pair (78 rows: 65 one-to-one and 13 multi-recitation, over 30
+items).** In every class-A1 and class-A2 row the Arabic prayer and the Persian rendering of
+that prayer are published in two separate output rows. The
 protocol example for a re-homed direction is the Arabic and its existing Persian together in
 one later output row. The two forms are not interchangeable: in the detached form the Arabic
 prayer has no row that also holds its Persian, and the Persian rendering has no row that
@@ -86,11 +99,12 @@ as a complete `recitation`: `dua-hsyn-alyh-alslam` r00016, `namaz-hajt-nvh-alyh`
 `khavas-aqyqh` r00002. In each of these the Arabic continues in the following source row, and
 in four of them the Persian rendering of the whole prayer sits in that same following row.
 
-**Not a finding.** An unequal piece count by itself is not a defect. In most flagged rows the
-wider side is the Arabic side, and the extra pieces are a Persian direction or a Persian
-report that legitimately has no counterpart: the direction says what to recite, and the
-recitation that follows is rendered once. That is the expected shape, and 104 of the 134
-flagged rows are of this kind.
+**Not a finding.** An unequal piece count by itself is not a defect. In 107 of the 134 flagged
+rows the per-case role evidence states that the unequal count is explained by the wider side
+carrying extra non-recitation pieces, which are a direction or a report that legitimately has
+no counterpart: the direction says what to recite, and the recitation that follows is rendered
+once. The wider side is the Arabic side in 91 of those rows and the Persian side in 16. That
+is the expected shape, and 107 is the count the per-case evidence supports.
 
 ## 4. Per-case evidence
 

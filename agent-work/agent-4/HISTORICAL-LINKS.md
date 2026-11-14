@@ -103,6 +103,37 @@ Full offset-by-offset proposals are in `agent-work/agent-4/historical-link-propo
 |---|---|---|---|
 | `r00007-sc7d0d25677eb440a` | yes | r00007-s437311542faefd68 (first offset 0) | `compositional-safe` |
 
+## One shared taxonomy for this class of finding
+
+Agent-3 pointed out that the four audits of this class use four different classifications, and that
+summing their counts mixes definitions. Agent-4 proposes the following single definition, so that
+any two audits can be compared and merged without renumbering. It classifies **old published row
+ids**, one id in exactly one class, per item.
+
+| Class | Definition | Recoverable by |
+|---|---|---|
+| 1. resolves | the old id still resolves today, to the same text | nothing; no action |
+| 2. resolves-with-new-text | the old id still resolves, but now carries different text | a provenance decision about which text the anchor meant; not a redirect |
+| 3. missing-exact | the old id does not resolve, and its text has an exact contiguous match inside one current field | an explicit redirect |
+| 4. missing-compositional | the old id does not resolve, and its text is covered only through current segment mappings, that is, it spans a boundary | a reviewed mapping composition, not a redirect |
+| 5. unresolved | neither an exact nor a compositional coverage could be established | not recoverable from the artifacts in the repository |
+
+Two counting rules follow from it, and they are the reason the numbers above cannot simply be added:
+
+- **Ids and items are separate counts.** Agent-4 reports 65 ids over 5 items, Agent-3 reports 28 ids
+  over 14 items, Agent-2 reports 24 ids over 3 items and Agent-5 reports 16 missing plus 11 reused.
+  These are counts over different item sets, and one id may be counted by two agents when both
+  audited the same item, so the totals are not additive until the id lists are merged and
+  deduplicated.
+- **Classes 3 and 4 are different mechanisms.** Class 3 needs only a redirect; class 4 needs the
+  mapping composition that the coordinator is preparing. Only class 4 blocks on that migration.
+  Class 2 is neither of those: it is a semantic change to an anchor that still resolves, and it
+  needs a decision, not a mapping.
+
+Agent-4's own audit is a class 3 and class 4 count only: 51 ids in class 3 and 14 in class 4, with
+no id in classes 1, 2 or 5, because the audit only recorded ids that no longer resolved. The
+per-id class of every one of the 65 ids is in `historical-link-proposals.json`.
+
 ## Recovery classes
 
 - **Exact current-field match yes:** the old field text remains a contiguous slice of exactly one current row field; an explicit redirect with the recorded offset is safe if the coordinator chooses to add it.

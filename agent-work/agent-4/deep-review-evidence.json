@@ -13,20 +13,36 @@
   "flagged_items": 49,
   "flagged_rows": 134,
   "slot_move_events": 154,
-  "unequal_piece_rows": 85
+  "unequal_bilingual_rows": 85,
+  "unequal_piece_rows": 116,
+  "flagged_rows_with_slot_move": 134,
+  "class_partition": {
+   "detached-1to1": 65,
+   "detached-multi": 13,
+   "paired": 4,
+   "one-sided": 34,
+   "note-only": 18
+  },
+  "class_partition_total": 134
  },
  "classes": {
-  "detached_pair": 112,
-  "already_paired": 4,
-  "one_sided": 34,
-  "note_only": 18
+  "detached-1to1": 65,
+  "detached-multi": 13,
+  "paired": 4,
+  "one-sided": 34,
+  "note-only": 18
  },
  "findings": {
   "F1_detached_bilingual_pair": {
-   "rows": 112,
-   "items": 49,
+   "rows": 78,
+   "items": 30,
    "applied": false,
-   "reason": "regrouping retires published child ids; needs the supported V1-to-V2 mapping migration"
+   "reason": "regrouping retires published child ids; needs the supported V1-to-V2 mapping migration",
+   "classes": {
+    "detached-1to1": 65,
+    "detached-multi": 13
+   },
+   "definition": "the Arabic recitation and its Persian rendering are published in two different output rows; no output row of the source row carries both slots"
   },
   "F2_wrong_destination_slot": {
    "rows": 3,
@@ -45,7 +61,8 @@
     "dua-svm-daahay-vqt|r00002",
     "namaz-astkharh-zat-alrqaa|r00002"
    ],
-   "applied": false
+   "applied": false,
+   "definition": "the Persian side carries a recitation while the Arabic side of the same source row carries none, because the Arabic was re-homed into the Persian slot, embedded in a Persian direction, or continued into a neighbouring row"
   },
   "F4_truncated_recitation": {
    "rows": 6,
@@ -57,10 +74,15 @@
     "ziyarat-kyfyt-rza-alyh|r00022",
     "khavas-aqyqh|r00002"
    ],
-   "applied": false
+   "applied": false,
+   "definition": "the Arabic piece ends inside an invocation while the rest of the prayer is in the next source row, yet the piece is published as a complete recitation"
   },
   "not_a_defect": {
-   "unequal_count_explained_by_direction_or_report": 104
+   "unequal_count_explained_by_direction_or_report": 107,
+   "wider_side_is_arabic": 91,
+   "wider_side_is_persian": 16,
+   "flagged_rows_with_unequal_piece_counts": 116,
+   "flagged_rows_with_equal_piece_counts": 18
   }
  },
  "items": [
@@ -7407,5 +7429,19 @@
     }
    ]
   }
- ]
+ ],
+ "measures_not_classes": {
+  "unpaired_recitation_rows": {
+   "value": 112,
+   "meaning": "flagged rows that publish a recitation on at least one side but never pair the two sides in one output row; equals detached-1to1 + detached-multi + one-sided = 78 + 34"
+  },
+  "unequal_bilingual_rows": {
+   "value": 85,
+   "meaning": "the aggregate corpus figure: bilingual source rows whose Arabic and Persian fields are cut into a different number of pieces; all 85 of them fall inside the flagged set"
+  },
+  "flagged_rows_with_unequal_piece_counts": {
+   "value": 116,
+   "meaning": "flagged rows whose two source fields are cut into a different number of pieces, including rows where one field is empty"
+  }
+ }
 }
