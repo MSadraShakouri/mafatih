@@ -4,7 +4,7 @@
   "item": "dua-mqatl-bn-slyman",
   "author": "agent-6",
   "reviewer": "agent-1",
-  "author_commit": "36f89c8b3668b2b5e36d97300011bee13a0ba42a",
+  "author_commit": "df85a685ee6ab183142fd99389258603d081c126",
   "plan_sha256": "a1687a1c39cc7e485702b5a9929297a6ddb46a46b4d11249f1d50fae3ef47d60",
   "layout_sha256": "085c3e3aef990e3516470c7c4c5aa558263df1fa882ccae5718413b453a95ea6",
   "result_item_sha256": "526fbe247b6cf6305843534eec14d0ab5bde6e26a9a59a48ed1a7873440192d5",
@@ -23,7 +23,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Accepted: 2 pieces (1 cut), kind note; single-language; 2 in a row the source stores in this language only; lengths 234/17; a section label stays fused with the passage it opens. Wording, diacritics, protected markers and repetition are unchanged."
+        "note": "Accepted: 2 pieces (1 cut), kind note; single-language; 2 in a row the source stores in this language only; lengths 234/17; a section label opens the passage in the same row, as in the base corpus. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
@@ -65,6 +65,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 5 sources are placed once, in order: 15 output rows, 9 of them carrying Arabic and Persian together. Piece lengths run 51 code points at the median, inside the manual-v1 range. At r00001/fa a section label opens the passage inside the same row; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted, and the earlier suggestion to detach bare ordinals is withdrawn. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 5 sources are placed once, in order: 15 output rows, 9 of them carrying Arabic and Persian together. Piece lengths run 51 code points at the median, inside the manual-v1 range. Section labels open their passage inside the same row at r00001/fa; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   }
 }

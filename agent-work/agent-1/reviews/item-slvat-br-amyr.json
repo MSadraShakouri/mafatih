@@ -52,7 +52,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 4 sources are placed once, in order: 19 output rows, 19 of them carrying Arabic and Persian together. Piece lengths run 29 code points at the median, inside the manual-v1 range. 2 inserted spaces across 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 4 sources are placed once, in order: 19 output rows, 19 of them carrying Arabic and Persian together. Piece lengths run 29 code points at the median, inside the manual-v1 range. 2 inserted spaces at 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -64,7 +64,7 @@
       "right": "r00002-se78f6df715196b3d",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «وَ عادِ» and «مَنْ عاداهُ،» at destination offset 7, where the original row boundary cut a sentence (r00001-se691a94311b8fa7c to r00002-se78f6df715196b3d). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «وَ عادِ» and «مَنْ عاداهُ،», where the original row boundary (r00001-se691a94311b8fa7c to r00002-se78f6df715196b3d) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "ma34967c1aee50aabf5597a37",
@@ -75,7 +75,7 @@
       "right": "r00002-se78f6df715196b3d",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «و دشمن بدار» and «هرکه دشمنش د» at destination offset 11, where the original row boundary cut a sentence (r00001-se691a94311b8fa7c to r00002-se78f6df715196b3d). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «و دشمن بدار» and «هرکه دشمنش د», where the original row boundary (r00001-se691a94311b8fa7c to r00002-se78f6df715196b3d) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

@@ -1910,7 +1910,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 260 sources are placed once, in order: 132 output rows, 127 of them carrying Arabic and Persian together. Piece lengths run 48 code points at the median, inside the manual-v1 range. 5 inserted spaces across 3 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 260 sources are placed once, in order: 132 output rows, 127 of them carrying Arabic and Persian together. Piece lengths run 48 code points at the median, inside the manual-v1 range. 5 inserted spaces at 3 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -1922,7 +1922,7 @@
       "right": "r00068",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «إِلَهِی» and «أَنَا عَبْدٌ» at destination offset 7, where the original row boundary cut a sentence (r00067-sa28ed53db5e439b5 to r00068). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «إِلَهِی» and «أَنَا عَبْدٌ», where the original row boundary (r00067-sa28ed53db5e439b5 to r00068) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mf2b893ae31bb9523b864f275",
@@ -1933,7 +1933,7 @@
       "right": "r00017",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «يَا سَيِّدِى» and «فِيما يَكُون» at destination offset 47, where the original row boundary cut a sentence (r00016 to r00017). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «يَا سَيِّدِى» and «فِيما يَكُون», where the original row boundary (r00016 to r00017) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mf2b893ae31bb9523b864f275",
@@ -1944,7 +1944,7 @@
       "right": "r00017",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «ن ای آقای من» and «در آنچه که ت» at destination offset 42, where the original row boundary cut a sentence (r00016 to r00017). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «ن ای آقای من» and «در آنچه که ت», where the original row boundary (r00016 to r00017) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m5f8c8905079ca09951fcadbc",
@@ -1955,7 +1955,7 @@
       "right": "r00019",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «ى وَ نَقْصِى» and «وَ نَفْعِى و» at destination offset 51, where the original row boundary cut a sentence (r00018 to r00019). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «ى وَ نَقْصِى» and «وَ نَفْعِى و», where the original row boundary (r00018 to r00019) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m5f8c8905079ca09951fcadbc",
@@ -1966,7 +1966,7 @@
       "right": "r00019",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «ی و کاستی‌ام» and «و سود و زیان» at destination offset 52, where the original row boundary cut a sentence (r00018 to r00019). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «ی و کاستی‌ام» and «و سود و زیان», where the original row boundary (r00018 to r00019) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

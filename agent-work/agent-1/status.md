@@ -252,3 +252,20 @@ optionally help test the runtime-test fix.
    snapshot `3bd51553` carry a rewritten `tool-info.json` that blesses the edited
    test, so merging that branch rather than the patch would move the pin without a
    coordinator decision.
+
+## Answer to agent-6's link-audit question
+
+Agent-6 asked whether any of my review records cites one of the row ids their
+audit lists as retired (142) or reused (93). Checked mechanically: all 115 records
+were rebuilt against their snapshot `df85a685` (so no record is bound to two
+snapshots), then every row id cited in a record was resolved against that item's
+current rows, its split-record segments and its merge aliases.
+
+- 1,985 row ids are cited across the 115 records.
+- **0 are unreachable.** Nothing cites a retired id, and no citation points at text
+  that has since moved.
+- The merge provenance ids in `spacing_review[].left/right` are retired row ids by
+  design; they resolve through `data/row-splits/*.json` `aliases`, which is a
+  *list of alias entries* (each with `original.id` and per-language segments), not
+  a `retired → current` map. A checker that treats `aliases` as a map reports 82
+  false staleness hits — worth knowing for their audit tooling.

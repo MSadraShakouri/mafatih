@@ -517,7 +517,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 61 sources are placed once, in order: 352 output rows, 340 of them carrying Arabic and Persian together. Piece lengths run 34 code points at the median, inside the manual-v1 range. 9 inserted spaces across 5 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 61 sources are placed once, in order: 352 output rows, 340 of them carrying Arabic and Persian together. Piece lengths run 34 code points at the median, inside the manual-v1 range. 9 inserted spaces at 5 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -529,7 +529,7 @@
       "right": "r00008-sbfc120554e3eef61",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «شْهِدُ اللّه» and «خالِقِي، » at destination offset 22, where the original row boundary cut a sentence (r00007-s4554f5fa4266580c to r00008-sbfc120554e3eef61). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «شْهِدُ اللّه» and «خالِقِي، », where the original row boundary (r00007-s4554f5fa4266580c to r00008-sbfc120554e3eef61) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mb32a2274f44abcf43170c01f",
@@ -540,7 +540,7 @@
       "right": "r00008-sbfc120554e3eef61",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «‌گیرم خدا را» and «که آفریننده » at destination offset 22, where the original row boundary cut a sentence (r00007-s4554f5fa4266580c to r00008-sbfc120554e3eef61). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «‌گیرم خدا را» and «که آفریننده », where the original row boundary (r00007-s4554f5fa4266580c to r00008-sbfc120554e3eef61) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mecc4d14434a6f0f7a00e8d1c",
@@ -551,7 +551,7 @@
       "right": "r00012-sa4438d7a5d3c6c0d",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between « إِلَی اللّه» and «بِالْحِكْمَة» at destination offset 23, where the original row boundary cut a sentence (r00011-s946900c320d376dc to r00012-sa4438d7a5d3c6c0d). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between « إِلَی اللّه» and «بِالْحِكْمَة», where the original row boundary (r00011-s946900c320d376dc to r00012-sa4438d7a5d3c6c0d) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m0bee7c7dc9b94c150ba86dc9",
@@ -562,7 +562,7 @@
       "right": "r00014-sa839c43f8232dd91",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «ْكُمْ نَقْعَ» and «الْحُرُوبِ و» at destination offset 31, where the original row boundary cut a sentence (r00013-sf4c620b510e65457 to r00014-sa839c43f8232dd91). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «ْكُمْ نَقْعَ» and «الْحُرُوبِ و», where the original row boundary (r00013-sf4c620b510e65457 to r00014-sa839c43f8232dd91) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m0bee7c7dc9b94c150ba86dc9",
@@ -573,7 +573,7 @@
       "right": "r00014-sa839c43f8232dd91",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «ا برانگیختند» and «گردوغبار جنگ» at destination offset 23, where the original row boundary cut a sentence (r00013-sf4c620b510e65457 to r00014-sa839c43f8232dd91). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «ا برانگیختند» and «گردوغبار جنگ», where the original row boundary (r00013-sf4c620b510e65457 to r00014-sa839c43f8232dd91) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "ma95c71d7910d0dee7ba4fca9",
@@ -584,7 +584,7 @@
       "right": "r00023-s29803a88965e2a15",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «َلَىٰ هٰذِهِ» and «الْمَصَائِبِ» at destination offset 13, where the original row boundary cut a sentence (r00022-sb6c7be179a7f744c to r00023-s29803a88965e2a15). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «َلَىٰ هٰذِهِ» and «الْمَصَائِبِ», where the original row boundary (r00022-sb6c7be179a7f744c to r00023-s29803a88965e2a15) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "ma95c71d7910d0dee7ba4fca9",
@@ -595,7 +595,7 @@
       "right": "r00023-s29803a88965e2a15",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «بر این» and «مصیبتهای بزر» at destination offset 6, where the original row boundary cut a sentence (r00022-sb6c7be179a7f744c to r00023-s29803a88965e2a15). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «بر این» and «مصیبتهای بزر», where the original row boundary (r00022-sb6c7be179a7f744c to r00023-s29803a88965e2a15) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mbd0821ae8f6b51bd1ef9ee54",
@@ -606,7 +606,7 @@
       "right": "r00028-sc1710b0977035e78",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «لَاتُمِتْنِي» and «فُجَاءَةً، » at destination offset 12, where the original row boundary cut a sentence (r00027-s489de1cd1aa9f33b to r00028-sc1710b0977035e78). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «لَاتُمِتْنِي» and «فُجَاءَةً، », where the original row boundary (r00027-s489de1cd1aa9f33b to r00028-sc1710b0977035e78) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mbd0821ae8f6b51bd1ef9ee54",
@@ -617,7 +617,7 @@
       "right": "r00028-sc1710b0977035e78",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «مرا» and «ناگهان نمیرا» at destination offset 3, where the original row boundary cut a sentence (r00027-s489de1cd1aa9f33b to r00028-sc1710b0977035e78). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «مرا» and «ناگهان نمیرا», where the original row boundary (r00027-s489de1cd1aa9f33b to r00028-sc1710b0977035e78) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

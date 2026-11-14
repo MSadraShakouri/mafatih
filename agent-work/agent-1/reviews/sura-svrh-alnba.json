@@ -618,7 +618,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 84 sources are placed once, in order: 42 output rows, 41 of them carrying Arabic and Persian together. Piece lengths run 43 code points at the median, inside the manual-v1 range. 1 inserted space across 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 84 sources are placed once, in order: 42 output rows, 41 of them carrying Arabic and Persian together. Piece lengths run 43 code points at the median, inside the manual-v1 range. 1 inserted space at 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -630,7 +630,7 @@
       "right": "r00032",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «وَكُلَّ» and «شَيْءٍ أَحْص» at destination offset 7, where the original row boundary cut a sentence (r00031 to r00032). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «وَكُلَّ» and «شَيْءٍ أَحْص», where the original row boundary (r00031 to r00032) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

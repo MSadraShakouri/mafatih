@@ -508,7 +508,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 54 sources are placed once, in order: 177 output rows, 148 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, inside the manual-v1 range. 2 inserted spaces across 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 54 sources are placed once, in order: 177 output rows, 148 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, inside the manual-v1 range. 2 inserted spaces at 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Section labels open their passage inside the same row at r00025/fa, r00031/fa, r00032/fa; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -520,7 +520,7 @@
       "right": "r00028-sc1710b0977035e78",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «تَبارَكْتَ» and «وَتَعالَيْتَ» at destination offset 10, where the original row boundary cut a sentence (r00027-s0a36573193e9601b to r00028-sc1710b0977035e78). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «تَبارَكْتَ» and «وَتَعالَيْتَ», where the original row boundary (r00027-s0a36573193e9601b to r00028-sc1710b0977035e78) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m62afcd48717df4cc2ab9eea4",
@@ -531,7 +531,7 @@
       "right": "r00028-sc1710b0977035e78",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «منزّه و پاکی» and «و برتری، » at destination offset 12, where the original row boundary cut a sentence (r00027-s0a36573193e9601b to r00028-sc1710b0977035e78). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «منزّه و پاکی» and «و برتری، », where the original row boundary (r00027-s0a36573193e9601b to r00028-sc1710b0977035e78) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

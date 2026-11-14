@@ -235,7 +235,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 25 sources are placed once, in order: 115 output rows, 88 of them carrying Arabic and Persian together. Piece lengths run 42 code points at the median, inside the manual-v1 range. 4 inserted spaces across 2 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 25 sources are placed once, in order: 115 output rows, 88 of them carrying Arabic and Persian together. Piece lengths run 42 code points at the median, inside the manual-v1 range. 4 inserted spaces at 2 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -247,7 +247,7 @@
       "right": "r00006-s3e3874d69dfd3c50",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «وَ ابْعَثْهُ» and «مَقَاماً مَح» at destination offset 12, where the original row boundary cut a sentence (r00005-s6650b6587f317204 to r00006-s3e3874d69dfd3c50). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «وَ ابْعَثْهُ» and «مَقَاماً مَح», where the original row boundary (r00005-s6650b6587f317204 to r00006-s3e3874d69dfd3c50) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mfc6bdf1684f1503ab6a4b43b",
@@ -258,7 +258,7 @@
       "right": "r00006-s3e3874d69dfd3c50",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «و او را در» and «جایگاه ستوده» at destination offset 10, where the original row boundary cut a sentence (r00005-s6650b6587f317204 to r00006-s3e3874d69dfd3c50). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «و او را در» and «جایگاه ستوده», where the original row boundary (r00005-s6650b6587f317204 to r00006-s3e3874d69dfd3c50) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m65083ec7a31cf4a024fd32e1",
@@ -269,7 +269,7 @@
       "right": "r00014-sa839c43f8232dd91",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «ىٰ وَلِيِّكَ» and «وَوُلَاةِ عَ» at destination offset 25, where the original row boundary cut a sentence (r00013-s866f06b313feab21 to r00014-sa839c43f8232dd91). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «ىٰ وَلِيِّكَ» and «وَوُلَاةِ عَ», where the original row boundary (r00013-s866f06b313feab21 to r00014-sa839c43f8232dd91) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m65083ec7a31cf4a024fd32e1",
@@ -280,7 +280,7 @@
       "right": "r00014-sa839c43f8232dd91",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «اران پای بند» and «به عهدت که ا» at destination offset 30, where the original row boundary cut a sentence (r00013-s866f06b313feab21 to r00014-sa839c43f8232dd91). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «اران پای بند» and «به عهدت که ا», where the original row boundary (r00013-s866f06b313feab21 to r00014-sa839c43f8232dd91) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

@@ -2048,7 +2048,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 269 sources are placed once, in order: 159 output rows, 137 of them carrying Arabic and Persian together. Piece lengths run 48 code points at the median, inside the manual-v1 range. 2 inserted spaces across 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 269 sources are placed once, in order: 159 output rows, 137 of them carrying Arabic and Persian together. Piece lengths run 48 code points at the median, inside the manual-v1 range. 2 inserted spaces at 1 original row boundary are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -2060,7 +2060,7 @@
       "right": "r00130",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between « بِالشِّفاءِ» and «وَالصِّحَّةِ» at destination offset 60, where the original row boundary cut a sentence (r00129 to r00130). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between « بِالشِّفاءِ» and «وَالصِّحَّةِ», where the original row boundary (r00129 to r00130) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "me8e1296614b8cb6c65d67376",
@@ -2071,7 +2071,7 @@
       "right": "r00130",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between « زنان بهبودی» and «و تندرستی بب» at destination offset 45, where the original row boundary cut a sentence (r00129 to r00130). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between « زنان بهبودی» and «و تندرستی بب», where the original row boundary (r00129 to r00130) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

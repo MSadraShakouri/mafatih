@@ -431,7 +431,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 43 sources are placed once, in order: 100 output rows, 57 of them carrying Arabic and Persian together. Piece lengths run 46 code points at the median, inside the manual-v1 range. 1 inserted space across 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 43 sources are placed once, in order: 100 output rows, 57 of them carrying Arabic and Persian together. Piece lengths run 46 code points at the median, inside the manual-v1 range. 1 inserted space at 1 original row boundary is decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Section labels open their passage inside the same row at r00001/fa, r00006/fa; that is the base corpus's dominant style (241 fused rows against 43 label-only rows), so it is accepted. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -443,7 +443,7 @@
       "right": "r00012",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «َلِیمِ، مِنَ» and «الشَّيْطَانِ» at destination offset 43, where the original row boundary cut a sentence (r00011-s4672e46d8224a853 to r00012). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «َلِیمِ، مِنَ» and «الشَّيْطَانِ», where the original row boundary (r00011-s4672e46d8224a853 to r00012) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }

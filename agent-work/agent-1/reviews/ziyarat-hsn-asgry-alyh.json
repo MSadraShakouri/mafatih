@@ -289,7 +289,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "All 32 sources are placed once, in order: 181 output rows, 173 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, inside the manual-v1 range. 4 inserted spaces across 2 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
+    "note": "All 32 sources are placed once, in order: 181 output rows, 173 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, inside the manual-v1 range. 4 inserted spaces at 2 original row boundaries are decided separately above, each accepted as the minimal correction where a boundary cut a sentence. No crossed pairings, no orphaned one-word heading rows and no detached section labels were left behind. Rows were checked against the source in sampled groups by genre, and every item against the corpus-wide statistics."
   },
   "spacing_review": [
     {
@@ -301,7 +301,7 @@
       "right": "r00006-s3e3874d69dfd3c50",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «َوْتَ إِلَىٰ» and «سَبِيلِ رَبّ» at destination offset 18, where the original row boundary cut a sentence (r00005-s08c8bf9fb2c97e55 to r00006-s3e3874d69dfd3c50). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «َوْتَ إِلَىٰ» and «سَبِيلِ رَبّ», where the original row boundary (r00005-s08c8bf9fb2c97e55 to r00006-s3e3874d69dfd3c50) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "mf3a214b72b92277232d312f2",
@@ -312,7 +312,7 @@
       "right": "r00006-s3e3874d69dfd3c50",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «و مردم را» and «به راه خدا، » at destination offset 9, where the original row boundary cut a sentence (r00005-s08c8bf9fb2c97e55 to r00006-s3e3874d69dfd3c50). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «و مردم را» and «به راه خدا، », where the original row boundary (r00005-s08c8bf9fb2c97e55 to r00006-s3e3874d69dfd3c50) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m095e2435a3bd529438c737da",
@@ -323,7 +323,7 @@
       "right": "r00012-sa4438d7a5d3c6c0d",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «َ مِصْباحَيِ» and «الظُّلُماتِ،» at destination offset 13, where the original row boundary cut a sentence (r00011-s29e31c19c7f04647 to r00012-sa4438d7a5d3c6c0d). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «َ مِصْباحَيِ» and «الظُّلُماتِ،», where the original row boundary (r00011-s29e31c19c7f04647 to r00012-sa4438d7a5d3c6c0d) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     },
     {
       "row": "m095e2435a3bd529438c737da",
@@ -334,7 +334,7 @@
       "right": "r00012-sa4438d7a5d3c6c0d",
       "reason": "Separate words at the original row boundary",
       "decision": "accept",
-      "note": "Accepted: the single U+0020 sits between «و دو چراغ» and «تاریکی‌ها، » at destination offset 9, where the original row boundary cut a sentence (r00011-s29e31c19c7f04647 to r00012-sa4438d7a5d3c6c0d). Both retained slices stay byte-identical; no other character is added or removed."
+      "note": "Accepted: the single U+0020 sits between «و دو چراغ» and «تاریکی‌ها، », where the original row boundary (r00011-s29e31c19c7f04647 to r00012-sa4438d7a5d3c6c0d) cut a sentence. Both retained slices stay byte-identical; no other character is added or removed."
     }
   ]
 }
