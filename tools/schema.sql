@@ -1,7 +1,7 @@
 -- SQLite is a generated output, never the source of truth. All text is interned.
 PRAGMA foreign_keys = ON;
--- Version 4 adds merged-row destination offsets and prior-output aliases.
-PRAGMA user_version = 4;
+-- Version 5 adds explicitly recorded editorial join-space proposals.
+PRAGMA user_version = 5;
 CREATE TABLE corpus_meta (key TEXT PRIMARY KEY, value TEXT NOT NULL) STRICT;
 CREATE TABLE text_value (id TEXT PRIMARY KEY, value TEXT NOT NULL UNIQUE) STRICT;
 CREATE TABLE claim (id TEXT PRIMARY KEY, text_id TEXT NOT NULL REFERENCES text_value(id)) STRICT;
@@ -45,7 +45,7 @@ CREATE TABLE row_source (
   PRIMARY KEY(item_id,row_id,language,position), FOREIGN KEY(item_id,row_id) REFERENCES item_row(item_id,row_id)
 ) STRICT;
 CREATE TABLE item_split_record (
-  item_id TEXT PRIMARY KEY REFERENCES item(id), author TEXT NOT NULL, format_version INTEGER NOT NULL CHECK(format_version IN (1,2)),
+  item_id TEXT PRIMARY KEY REFERENCES item(id), author TEXT NOT NULL, format_version INTEGER NOT NULL CHECK(format_version IN (1,2,3)),
   baseline_item_sha256 TEXT NOT NULL, plan_sha256 TEXT NOT NULL, layout_sha256 TEXT NOT NULL
 ) STRICT;
 -- Alias identities are previously emitted physical rows; originals belong to the frozen baseline.
@@ -62,6 +62,17 @@ CREATE TABLE row_split_segment (
   PRIMARY KEY(item_id,source_row_id,source_language,position),
   FOREIGN KEY(item_id,source_row_id) REFERENCES row_split_original(item_id,source_row_id),
   FOREIGN KEY(item_id,target_row_id) REFERENCES item_row(item_id,row_id)
+) STRICT;
+-- Insertions are separate from source slices and require independent review.
+CREATE TABLE row_split_insertion (
+  item_id TEXT NOT NULL REFERENCES item_split_record(item_id), target_row_id TEXT NOT NULL,
+  language TEXT NOT NULL CHECK(language IN ('ar','fa')), target_start_cp INTEGER NOT NULL CHECK(target_start_cp>=0),
+  inserted_text TEXT NOT NULL CHECK(inserted_text=' '), left_row_id TEXT NOT NULL, right_row_id TEXT NOT NULL,
+  reason TEXT NOT NULL CHECK(length(reason) BETWEEN 3 AND 240 AND reason=trim(reason)),
+  PRIMARY KEY(item_id,target_row_id,language,target_start_cp),
+  FOREIGN KEY(item_id,target_row_id) REFERENCES item_row(item_id,row_id),
+  FOREIGN KEY(item_id,left_row_id) REFERENCES row_identity(item_id,row_id),
+  FOREIGN KEY(item_id,right_row_id) REFERENCES row_identity(item_id,row_id)
 ) STRICT;
 CREATE TABLE english_document (
   id TEXT PRIMARY KEY, title_text_id TEXT REFERENCES text_value(id), title_ar_text_id TEXT REFERENCES text_value(id),

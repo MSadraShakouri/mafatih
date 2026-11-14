@@ -18,8 +18,8 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts discover --agent agent-N --peer agent-M
   node --import tsx scripts/six-agent.ts layout PLAN --base COMMIT --output NEW_FILE
   node --import tsx scripts/six-agent.ts apply PLAN LAYOUT --base COMMIT --agent agent-N
-  node --import tsx scripts/six-agent.ts merge-preview PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW
-  node --import tsx scripts/six-agent.ts merge-rows PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW --join exact
+  node --import tsx scripts/six-agent.ts merge-preview PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW [--join MODE --reason TEXT]
+  node --import tsx scripts/six-agent.ts merge-rows PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW --join MODE [--reason TEXT]
   node --import tsx scripts/six-agent.ts restore-snapshot-texts --base COMMIT --agent agent-N
   node --import tsx scripts/six-agent.ts inspect ITEM --base COMMIT --result AUTHOR_COMMIT --author agent-N
   node --import tsx scripts/six-agent.ts review-template ITEM --base COMMIT --result AUTHOR_COMMIT --author agent-N --reviewer agent-M --output NEW_FILE
@@ -30,7 +30,8 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts message --from agent-N --to agent-M --kind TYPE --text TEXT [--commit COMMIT] [--item ID] [--reply-to ID]
 Use a full immutable 40-character commit. Register, configure and message write only work metadata or local Git configuration.
 Only apply, merge-rows and restore-snapshot-texts write data/, and only on the registered agent's own branch.
-Merges concatenate the existing fields exactly, without inserting even a space; inspect and review them independently.`;
+MODE is exact, ar-space, fa-space or both-space. Spacing modes propose one U+0020 per selected language,
+require a reason and separate independent review, and retain exact original text and links.`;
 const project=spawnSync('git',['rev-parse','--show-toplevel'],{encoding:'utf8'});
 if(project.status!==0)throw new Error('Run inside the project Git repository');
 const root=path.resolve(project.stdout.trim());process.chdir(root);
@@ -105,7 +106,7 @@ function parseArgs(args:string[]){
   const command=args.shift(),flags:Record<string,string>={},positional:string[]=[];
   for(let i=0;i<args.length;i++){
     const value=args[i]!;if(!value.startsWith('--')){positional.push(value);continue;}
-    if(!['--base','--output','--agent','--peer','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to','--left','--right','--join'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
+    if(!['--base','--output','--agent','--peer','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to','--left','--right','--join','--reason'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
     flags[value]=args[++i]!;
   }
   return {command,flags,positional};
@@ -133,8 +134,8 @@ function main():void {
   const specs:Record<string,{count:number;flags:string[]}>={
     register:{count:0,flags:['--agent','--base']},configure:{count:0,flags:['--agent']},
     discover:{count:0,flags:['--agent','--peer']},layout:{count:1,flags:['--base','--output']},apply:{count:2,flags:['--base','--agent']},
-    'merge-preview':{count:2,flags:['--base','--agent','--left','--right']},
-    'merge-rows':{count:2,flags:['--base','--agent','--left','--right','--join']},
+    'merge-preview':{count:2,flags:['--base','--agent','--left','--right','--join','--reason']},
+    'merge-rows':{count:2,flags:['--base','--agent','--left','--right','--join','--reason']},
     'restore-snapshot-texts':{count:0,flags:['--base','--agent']},
     inspect:{count:1,flags:['--base','--result','--author']},
     'review-template':{count:1,flags:['--base','--result','--author','--reviewer','--output']},
@@ -238,9 +239,14 @@ function main():void {
     const names=filesFor(parsed.item,who);ensureExpectedPath(positional[0]!,names.plan);ensureExpectedPath(positional[1]!,names.layout);
     const merging=command!=='apply';
     const leftId=merging?Key.parse(flags['--left']):'',rightId=merging?Key.parse(flags['--right']):'';
-    if(command==='merge-rows' && flags['--join']!=='exact')throw new Error('Acknowledge literal concatenation with --join exact; no space will be inserted');
+    const join=merging?(flags['--join'] ?? (command==='merge-preview'?'exact':'')):'';
+    if(merging&&!['exact','ar-space','fa-space','both-space'].includes(join))
+      throw new Error('Choose --join exact, ar-space, fa-space or both-space explicitly');
+    if(merging&&join==='exact'&&flags['--reason']!==undefined)throw new Error('A reason is only used for a proposed spacing correction');
+    if(merging&&join!=='exact'&&!flags['--reason']?.trim())throw new Error('An explicit single-line --reason is required for a spacing correction');
+    const spacing=merging&&join!=='exact'?{mode:join,reason:flags['--reason']}:undefined;
     const layoutInput=merging?{...(oldLayoutInput as Record<string,unknown>),
-      merges:[...(oldLayout.merges ?? []),{left:leftId,right:rightId,checked:true}]}:oldLayoutInput;
+      merges:[...(oldLayout.merges ?? []),{left:leftId,right:rightId,checked:true,...(spacing?{spacing}:{})}]}:oldLayoutInput;
     const dataRoot=path.join(root,'data');
     if(fs.realpathSync(dataRoot)!==dataRoot)throw new Error('Refusing canonical writes through a data-directory symlink');
     const current=loadCorpus(dataRoot),pre=validateCorpus(current);
@@ -260,12 +266,14 @@ function main():void {
       if(position<0||!left||!right||right.id!==rightId)throw new Error('Merge requires two adjacent current rows in source order');
       const fields=Object.fromEntries((['ar','fa'] as const).map(lang=>{
         const a=text(current,left[lang]),b=text(current,right[lang]);
-        return [lang,{left:a,right:b,merged:a+b,no_whitespace_boundary:Boolean(a&&b&&!/\s$/u.test(a)&&!/^\s/u.test(b))}];
+        const inserted=join==='both-space'||join===`${lang}-space`;
+        return [lang,{left:a,right:b,merged:a+(inserted?' ':'')+b,inserted_separator:inserted?'U+0020':null,
+          no_whitespace_boundary:Boolean(a&&b&&!/[\s\u0085]$/u.test(a)&&!/^[\s\u0085]/u.test(b))}];
       }));
-      preview={left:leftId,right:rightId,fields};
+      preview={left:leftId,right:rightId,join,fields};
     }
     const compiled=compileCanonicalSplit(base,plan,layoutInput);
-    if(record&&(merging||record.format_version===2))ensurePriorAnchors(before,record,compiled.item,compiled.record);
+    if(record&&(merging||record.format_version!==1))ensurePriorAnchors(before,record,compiled.item,compiled.record);
     current.items.set(parsed.item,compiled.item);current.rowSplits.set(parsed.item,compiled.record);
     for(const [id,value] of compiled.texts){const old=current.texts.get(id);if(old!==undefined&&old!==value)throw new Error(`Text hash collision: ${id}`);current.texts.set(id,value);current.textShards.set(id,id.slice(1,3));}
     const checked=validateCorpus(current);if(checked.errors.length)throw new Error(`Refusing invalid result: ${checked.errors.join('; ')}`);
@@ -273,7 +281,8 @@ function main():void {
     const mergedRow=merging?compiled.item.rows[before.rows.findIndex(row=>row.id===leftId)]?.id:undefined;
     if(command==='merge-preview'){
       output({status:'merge-preview',item:parsed.item,author:who,merged_row:mergedRow,...preview,
-        note:'No files changed. Text is concatenated literally, without inserting a separator. Inspect both languages; independent review is required. Do not commit this text-bearing preview.'},undefined);return;
+        note:join==='exact'?'No files changed. Exact join inserts no characters; inspect both languages. Do not commit this text-bearing preview.':
+          'No files changed. The preview proposes an editorial space not present in the source; inspect both languages and request a separate independent spacing review. Do not commit this text-bearing preview.'},undefined);return;
     }
     const itemFile=path.join(dataRoot,'items',`${parsed.item}.json`),recordFile=path.join(dataRoot,'row-splits',`${parsed.item}.json`),layoutFile=path.join(root,names.layout);
     for(const file of [itemFile,recordFile,...(merging?[layoutFile]:[]),...[...compiled.texts.keys()].map(id=>path.join(dataRoot,'texts',`${id.slice(1,3)}.json`))]){
@@ -285,10 +294,12 @@ function main():void {
     ]);
     commit(current,changes,[],[...compiled.texts.keys()]);
     output({status:merging?'canonical-rows-merged':'canonical-item-applied',item:parsed.item,author:who,base:baseSha,
-      ...(merging?{left:leftId,right:rightId,merged_row:mergedRow,separator:'none'}:{}),
+      ...(merging?{left:leftId,right:rightId,merged_row:mergedRow,separator:join==='exact'?'none':join,
+        proposed_editorial_insertions:join==='both-space'?2:join==='exact'?0:1,
+        total_editorial_insertions:compiled.record.insertions?.length ?? 0}:{}),
       original_rows:baseline.rows.length,result_rows:compiled.item.rows.length,new_text_values:compiled.texts.size,
       plan_sha256:compiled.record.plan_sha256,layout_sha256:compiled.record.layout_sha256,
-      note:'Independent semantic review is still required; earlier reviews of this item are stale. No translation, scholarly approval or rights approval is claimed.'},undefined);return;
+      note:'Independent semantic review and separate review of every proposed space are still required; earlier reviews of this item are stale. No translation, scholarly approval or rights approval is claimed.'},undefined);return;
   }
   if(command==='audit-authored'||command==='audit-round'||command==='audit-squashed'){
     const who=command==='audit-authored'?agent(flags['--agent']):undefined;

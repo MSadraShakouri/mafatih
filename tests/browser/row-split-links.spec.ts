@@ -107,3 +107,35 @@ for(const [oldRow,language,oldOffset,targetOffset] of [
     await expect(reader.locator(`[data-row-id="joined"] p[lang="${language}"]`)).toBeVisible();
   });
 }
+
+const spacedMergedItem={
+  ...item,
+  rows:[{id:'joined-space',ar:'abc😀 ef',fa:'یک دو',kind:'recitation'}],
+  row_split_redirects:[
+    {original:{id:'original-second'},ar:[{row:'joined-space',language:'ar',start:0,end:2,target_start:5}],
+      fa:[{row:'joined-space',language:'fa',start:0,end:2,target_start:3}]},
+    {original:{id:'previous-output'},ar:[{row:'joined-space',language:'ar',start:0,end:2,target_start:5}],
+      fa:[{row:'joined-space',language:'fa',start:0,end:2,target_start:3}]},
+  ],
+};
+for(const [row,language,offset,target] of [['original-second','ar',0,5],['previous-output','fa',1,4]] as const){
+  test(`editorial-space merge preserves ${row}/${language} after its inserted separator`,async ({page})=>{
+    await page.route('**/data/items/dua-ahd.json',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(spacedMergedItem)}));
+    await page.goto(`./#/item/dua-ahd?row=${row}&lang=${language}&offset=${offset}`);
+    const reader=page.locator('main[data-screen="reader"]');
+    await expect(reader).toHaveAttribute('data-anchor-row','joined-space');
+    await expect(reader).toHaveAttribute('data-anchor-offset',String(target));
+    await expect(reader.locator('[data-row-id="joined-space"] p[lang="ar"]')).toHaveText('abc😀 ef');
+  });
+}
+test('in-text search uses the spaced current text and its correct code-point offset',async ({page})=>{
+  await page.route('**/data/items/dua-ahd.json',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(spacedMergedItem)}));
+  await page.goto('./#/item/dua-ahd');
+  await page.getByRole('button',{name:'جست‌وجو در متن'}).click();
+  await page.getByRole('searchbox',{name:'جست‌وجو در این متن'}).fill('ef');
+  const hit=page.locator('.result-row[data-row-id="joined-space"][data-language="ar"]');
+  await expect(hit).toBeVisible();await hit.locator('button').click();
+  const reader=page.locator('main[data-screen="reader"]');
+  await expect(reader).toHaveAttribute('data-anchor-row','joined-space');
+  await expect(reader).toHaveAttribute('data-anchor-offset','5');
+});
