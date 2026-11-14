@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "ziyarat-item-7",
   "author": "agent-6",
   "baseline_item_sha256": "cad8575ab9b57d0b5db508cc2169f0d08ca2b321f709a5318d191c9f59b71242",
   "plan_sha256": "b4ec717735c34503056471e58ed705ba1d5026ef2b479bf74e51e0811a0612aa",
-  "layout_sha256": "d52116b094edb585950be26235ea799cc1552f0d5f68ae27ef4eda1d67506969",
+  "layout_sha256": "a9bf202af76dd3f0d60093d92d40bb844f1d618ce1d9a2816ffe47805942bd24",
   "rows": [
     {
       "original": {
@@ -24,25 +24,29 @@
           "row": "r00001-sc5e9d9539705078a",
           "language": "fa",
           "start": 0,
-          "end": 85
+          "end": 85,
+          "target_start": 0
         },
         {
           "row": "r00001-s20cd347b4672299d",
           "language": "fa",
           "start": 85,
-          "end": 142
+          "end": 142,
+          "target_start": 0
         },
         {
           "row": "r00001-s8939275b275c817a",
           "language": "fa",
           "start": 142,
-          "end": 408
+          "end": 408,
+          "target_start": 0
         },
         {
           "row": "r00001-sa021c793590ec5ab",
           "language": "fa",
           "start": 408,
-          "end": 515
+          "end": 515,
+          "target_start": 0
         }
       ]
     },
@@ -63,7 +67,7 @@
         "r00002-s740cac5b8906d198",
         "r00002-s04186ca8b65c5f51",
         "r00002-sb04cd377838464a4",
-        "r00002-s819edbc260c1753e"
+        "m474e9813b4821568e592bf64"
       ],
       "ar": [],
       "fa": [
@@ -71,67 +75,78 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 48
+          "end": 48,
+          "target_start": 0
         },
         {
           "row": "r00002-s51331c3b3dd06d15",
           "language": "ar",
           "start": 48,
-          "end": 90
+          "end": 90,
+          "target_start": 0
         },
         {
           "row": "r00002-se090ec1c15d74b91",
           "language": "fa",
           "start": 90,
-          "end": 167
+          "end": 167,
+          "target_start": 0
         },
         {
           "row": "r00002-sb8a7c4ea61e1d0eb",
           "language": "fa",
           "start": 167,
-          "end": 283
+          "end": 283,
+          "target_start": 0
         },
         {
           "row": "r00002-s8453d0a88c163cb4",
           "language": "ar",
           "start": 283,
-          "end": 317
+          "end": 317,
+          "target_start": 0
         },
         {
           "row": "r00002-sd0d62521060074df",
           "language": "fa",
           "start": 317,
-          "end": 356
+          "end": 356,
+          "target_start": 0
         },
         {
           "row": "r00002-s17fe480bf86cedcb",
           "language": "fa",
           "start": 356,
-          "end": 639
+          "end": 639,
+          "target_start": 0
         },
         {
           "row": "r00002-s740cac5b8906d198",
           "language": "fa",
           "start": 639,
-          "end": 730
+          "end": 730,
+          "target_start": 0
         },
         {
           "row": "r00002-s04186ca8b65c5f51",
           "language": "fa",
           "start": 730,
-          "end": 808
+          "end": 808,
+          "target_start": 0
         },
         {
           "row": "r00002-sb04cd377838464a4",
           "language": "fa",
           "start": 808,
-          "end": 1044
+          "end": 1044,
+          "target_start": 0
         },
         {
-          "row": "r00002-s819edbc260c1753e",
+          "row": "m474e9813b4821568e592bf64",
           "language": "ar",
           "start": 1044,
-          "end": 1049
+          "end": 1049,
+          "target_start": 0
         }
       ]
     },
@@ -142,22 +157,24 @@
         "fa": "t35a5a4e0179936cdd9f617df"
       },
       "results": [
-        "r00003-s3230365f4763acdc",
+        "m474e9813b4821568e592bf64",
         "r00003-sf4b2084d004db1f5"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s3230365f4763acdc",
+          "row": "m474e9813b4821568e592bf64",
           "language": "ar",
           "start": 0,
-          "end": 56
+          "end": 56,
+          "target_start": 6
         },
         {
           "row": "r00003-sf4b2084d004db1f5",
           "language": "fa",
           "start": 56,
-          "end": 179
+          "end": 179,
+          "target_start": 0
         }
       ]
     },
@@ -176,13 +193,15 @@
           "row": "r00004-s2d6fcdaf315ab02c",
           "language": "ar",
           "start": 0,
-          "end": 60
+          "end": 60,
+          "target_start": 0
         },
         {
           "row": "r00004-s97745e24b1ee5388",
           "language": "ar",
           "start": 60,
-          "end": 146
+          "end": 146,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -190,13 +209,15 @@
           "row": "r00004-s2d6fcdaf315ab02c",
           "language": "fa",
           "start": 0,
-          "end": 41
+          "end": 41,
+          "target_start": 0
         },
         {
           "row": "r00004-s97745e24b1ee5388",
           "language": "fa",
           "start": 41,
-          "end": 106
+          "end": 106,
+          "target_start": 0
         }
       ]
     },
@@ -217,19 +238,22 @@
           "row": "r00005-s16520fa053c7f321",
           "language": "fa",
           "start": 0,
-          "end": 46
+          "end": 46,
+          "target_start": 0
         },
         {
           "row": "r00005-s8444c51363c4430d",
           "language": "ar",
           "start": 46,
-          "end": 62
+          "end": 62,
+          "target_start": 0
         },
         {
           "row": "r00005-scd6d7c0dc5e1cdcb",
           "language": "fa",
           "start": 62,
-          "end": 189
+          "end": 189,
+          "target_start": 0
         }
       ]
     },
@@ -253,43 +277,50 @@
           "row": "r00006-s3e3874d69dfd3c50",
           "language": "ar",
           "start": 0,
-          "end": 60
+          "end": 60,
+          "target_start": 0
         },
         {
           "row": "r00006-s34b02a6bb1ae0a35",
           "language": "ar",
           "start": 60,
-          "end": 120
+          "end": 120,
+          "target_start": 0
         },
         {
           "row": "r00006-sdf64bfbf42f0faf4",
           "language": "ar",
           "start": 120,
-          "end": 176
+          "end": 176,
+          "target_start": 0
         },
         {
           "row": "r00006-s089aa8d9b844e5e9",
           "language": "ar",
           "start": 176,
-          "end": 260
+          "end": 260,
+          "target_start": 0
         },
         {
           "row": "r00006-s5edb2e783973dd67",
           "language": "ar",
           "start": 260,
-          "end": 304
+          "end": 304,
+          "target_start": 0
         },
         {
           "row": "r00006-sa545bb1b2a988c82",
           "language": "ar",
           "start": 304,
-          "end": 346
+          "end": 346,
+          "target_start": 0
         },
         {
           "row": "r00006-s5c14d328c247e90f",
           "language": "ar",
           "start": 346,
-          "end": 381
+          "end": 381,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -297,43 +328,50 @@
           "row": "r00006-s3e3874d69dfd3c50",
           "language": "fa",
           "start": 0,
-          "end": 41
+          "end": 41,
+          "target_start": 0
         },
         {
           "row": "r00006-s34b02a6bb1ae0a35",
           "language": "fa",
           "start": 41,
-          "end": 82
+          "end": 82,
+          "target_start": 0
         },
         {
           "row": "r00006-sdf64bfbf42f0faf4",
           "language": "fa",
           "start": 82,
-          "end": 121
+          "end": 121,
+          "target_start": 0
         },
         {
           "row": "r00006-s089aa8d9b844e5e9",
           "language": "fa",
           "start": 121,
-          "end": 177
+          "end": 177,
+          "target_start": 0
         },
         {
           "row": "r00006-s5edb2e783973dd67",
           "language": "fa",
           "start": 177,
-          "end": 221
+          "end": 221,
+          "target_start": 0
         },
         {
           "row": "r00006-sa545bb1b2a988c82",
           "language": "fa",
           "start": 221,
-          "end": 249
+          "end": 249,
+          "target_start": 0
         },
         {
           "row": "r00006-s5c14d328c247e90f",
           "language": "fa",
           "start": 249,
-          "end": 279
+          "end": 279,
+          "target_start": 0
         }
       ]
     },
@@ -361,67 +399,78 @@
           "row": "r00007-sb13bc65dd76f169b",
           "language": "ar",
           "start": 0,
-          "end": 65
+          "end": 65,
+          "target_start": 0
         },
         {
           "row": "r00007-s4a2aa7f2dd56d14a",
           "language": "ar",
           "start": 65,
-          "end": 101
+          "end": 101,
+          "target_start": 0
         },
         {
           "row": "r00007-s09ad0225f00818de",
           "language": "ar",
           "start": 101,
-          "end": 169
+          "end": 169,
+          "target_start": 0
         },
         {
           "row": "r00007-s612834f5c13c1a1d",
           "language": "ar",
           "start": 169,
-          "end": 199
+          "end": 199,
+          "target_start": 0
         },
         {
           "row": "r00007-s6eb53056725aeb3a",
           "language": "ar",
           "start": 199,
-          "end": 252
+          "end": 252,
+          "target_start": 0
         },
         {
           "row": "r00007-s793f25ad3fcf7fe1",
           "language": "ar",
           "start": 252,
-          "end": 308
+          "end": 308,
+          "target_start": 0
         },
         {
           "row": "r00007-s08a2cfe7da7cb2ec",
           "language": "ar",
           "start": 308,
-          "end": 358
+          "end": 358,
+          "target_start": 0
         },
         {
           "row": "r00007-s4d4ca0fa3e7c27aa",
           "language": "ar",
           "start": 358,
-          "end": 438
+          "end": 438,
+          "target_start": 0
         },
         {
           "row": "r00007-sf6e2bed3291c277d",
           "language": "ar",
           "start": 438,
-          "end": 512
+          "end": 512,
+          "target_start": 0
         },
         {
           "row": "r00007-sf55c6d4500944ef2",
           "language": "ar",
           "start": 512,
-          "end": 545
+          "end": 545,
+          "target_start": 0
         },
         {
           "row": "r00007-s886aa9f22803f149",
           "language": "ar",
           "start": 545,
-          "end": 633
+          "end": 633,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -429,67 +478,78 @@
           "row": "r00007-sb13bc65dd76f169b",
           "language": "fa",
           "start": 0,
-          "end": 59
+          "end": 59,
+          "target_start": 0
         },
         {
           "row": "r00007-s4a2aa7f2dd56d14a",
           "language": "fa",
           "start": 59,
-          "end": 92
+          "end": 92,
+          "target_start": 0
         },
         {
           "row": "r00007-s09ad0225f00818de",
           "language": "fa",
           "start": 92,
-          "end": 155
+          "end": 155,
+          "target_start": 0
         },
         {
           "row": "r00007-s612834f5c13c1a1d",
           "language": "fa",
           "start": 155,
-          "end": 207
+          "end": 207,
+          "target_start": 0
         },
         {
           "row": "r00007-s6eb53056725aeb3a",
           "language": "fa",
           "start": 207,
-          "end": 255
+          "end": 255,
+          "target_start": 0
         },
         {
           "row": "r00007-s793f25ad3fcf7fe1",
           "language": "fa",
           "start": 255,
-          "end": 315
+          "end": 315,
+          "target_start": 0
         },
         {
           "row": "r00007-s08a2cfe7da7cb2ec",
           "language": "fa",
           "start": 315,
-          "end": 364
+          "end": 364,
+          "target_start": 0
         },
         {
           "row": "r00007-s4d4ca0fa3e7c27aa",
           "language": "fa",
           "start": 364,
-          "end": 424
+          "end": 424,
+          "target_start": 0
         },
         {
           "row": "r00007-sf6e2bed3291c277d",
           "language": "fa",
           "start": 424,
-          "end": 522
+          "end": 522,
+          "target_start": 0
         },
         {
           "row": "r00007-sf55c6d4500944ef2",
           "language": "fa",
           "start": 522,
-          "end": 546
+          "end": 546,
+          "target_start": 0
         },
         {
           "row": "r00007-s886aa9f22803f149",
           "language": "fa",
           "start": 546,
-          "end": 610
+          "end": 610,
+          "target_start": 0
         }
       ]
     },
@@ -514,49 +574,57 @@
           "row": "r00008-sbfc120554e3eef61",
           "language": "ar",
           "start": 0,
-          "end": 71
+          "end": 71,
+          "target_start": 0
         },
         {
           "row": "r00008-s8a39e8e01f37628b",
           "language": "ar",
           "start": 71,
-          "end": 119
+          "end": 119,
+          "target_start": 0
         },
         {
           "row": "r00008-s28bf4bcfd6629d97",
           "language": "ar",
           "start": 119,
-          "end": 165
+          "end": 165,
+          "target_start": 0
         },
         {
           "row": "r00008-s995d4cc90029e1f8",
           "language": "ar",
           "start": 165,
-          "end": 296
+          "end": 296,
+          "target_start": 0
         },
         {
           "row": "r00008-sd9b1c56b4b332205",
           "language": "ar",
           "start": 296,
-          "end": 332
+          "end": 332,
+          "target_start": 0
         },
         {
           "row": "r00008-s06a2345cea0936a9",
           "language": "ar",
           "start": 332,
-          "end": 382
+          "end": 382,
+          "target_start": 0
         },
         {
           "row": "r00008-sd4b1e3214186760b",
           "language": "ar",
           "start": 382,
-          "end": 408
+          "end": 408,
+          "target_start": 0
         },
         {
           "row": "r00008-sf7015822215fb3ac",
           "language": "ar",
           "start": 408,
-          "end": 426
+          "end": 426,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -564,49 +632,57 @@
           "row": "r00008-sbfc120554e3eef61",
           "language": "fa",
           "start": 0,
-          "end": 67
+          "end": 67,
+          "target_start": 0
         },
         {
           "row": "r00008-s8a39e8e01f37628b",
           "language": "fa",
           "start": 67,
-          "end": 105
+          "end": 105,
+          "target_start": 0
         },
         {
           "row": "r00008-s28bf4bcfd6629d97",
           "language": "fa",
           "start": 105,
-          "end": 139
+          "end": 139,
+          "target_start": 0
         },
         {
           "row": "r00008-s995d4cc90029e1f8",
           "language": "fa",
           "start": 139,
-          "end": 269
+          "end": 269,
+          "target_start": 0
         },
         {
           "row": "r00008-sd9b1c56b4b332205",
           "language": "fa",
           "start": 269,
-          "end": 305
+          "end": 305,
+          "target_start": 0
         },
         {
           "row": "r00008-s06a2345cea0936a9",
           "language": "fa",
           "start": 305,
-          "end": 351
+          "end": 351,
+          "target_start": 0
         },
         {
           "row": "r00008-sd4b1e3214186760b",
           "language": "fa",
           "start": 351,
-          "end": 368
+          "end": 368,
+          "target_start": 0
         },
         {
           "row": "r00008-sf7015822215fb3ac",
           "language": "fa",
           "start": 368,
-          "end": 383
+          "end": 383,
+          "target_start": 0
         }
       ]
     },
@@ -630,43 +706,50 @@
           "row": "r00009-s3b3375cb23a6131d",
           "language": "ar",
           "start": 0,
-          "end": 9
+          "end": 9,
+          "target_start": 0
         },
         {
           "row": "r00009-s94f3428995dfd8af",
           "language": "ar",
           "start": 9,
-          "end": 60
+          "end": 60,
+          "target_start": 0
         },
         {
           "row": "r00009-sd118dd28bca499bf",
           "language": "ar",
           "start": 60,
-          "end": 102
+          "end": 102,
+          "target_start": 0
         },
         {
           "row": "r00009-s44fe362f6fa893a5",
           "language": "ar",
           "start": 102,
-          "end": 166
+          "end": 166,
+          "target_start": 0
         },
         {
           "row": "r00009-s232e8ddcae7d1682",
           "language": "ar",
           "start": 166,
-          "end": 207
+          "end": 207,
+          "target_start": 0
         },
         {
           "row": "r00009-se53008cd94ece38a",
           "language": "ar",
           "start": 207,
-          "end": 246
+          "end": 246,
+          "target_start": 0
         },
         {
           "row": "r00009-sfa080bfec752ac26",
           "language": "ar",
           "start": 246,
-          "end": 296
+          "end": 296,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -674,37 +757,43 @@
           "row": "r00009-s94f3428995dfd8af",
           "language": "fa",
           "start": 0,
-          "end": 46
+          "end": 46,
+          "target_start": 0
         },
         {
           "row": "r00009-sd118dd28bca499bf",
           "language": "fa",
           "start": 46,
-          "end": 88
+          "end": 88,
+          "target_start": 0
         },
         {
           "row": "r00009-s44fe362f6fa893a5",
           "language": "fa",
           "start": 88,
-          "end": 144
+          "end": 144,
+          "target_start": 0
         },
         {
           "row": "r00009-s232e8ddcae7d1682",
           "language": "fa",
           "start": 144,
-          "end": 176
+          "end": 176,
+          "target_start": 0
         },
         {
           "row": "r00009-se53008cd94ece38a",
           "language": "fa",
           "start": 176,
-          "end": 215
+          "end": 215,
+          "target_start": 0
         },
         {
           "row": "r00009-sfa080bfec752ac26",
           "language": "fa",
           "start": 215,
-          "end": 260
+          "end": 260,
+          "target_start": 0
         }
       ]
     },
@@ -734,79 +823,92 @@
           "row": "r00010-s9bd4144b26ada357",
           "language": "ar",
           "start": 0,
-          "end": 38
+          "end": 38,
+          "target_start": 0
         },
         {
           "row": "r00010-s9de675ce92eabccf",
           "language": "ar",
           "start": 38,
-          "end": 77
+          "end": 77,
+          "target_start": 0
         },
         {
           "row": "r00010-s7571471556660ba7",
           "language": "ar",
           "start": 77,
-          "end": 187
+          "end": 187,
+          "target_start": 0
         },
         {
           "row": "r00010-s81654b3dfc8e4c7c",
           "language": "ar",
           "start": 187,
-          "end": 332
+          "end": 332,
+          "target_start": 0
         },
         {
           "row": "r00010-s99cbc0c414ebfe88",
           "language": "ar",
           "start": 332,
-          "end": 363
+          "end": 363,
+          "target_start": 0
         },
         {
           "row": "r00010-sbf797ece44551d41",
           "language": "ar",
           "start": 363,
-          "end": 388
+          "end": 388,
+          "target_start": 0
         },
         {
           "row": "r00010-s02807b332f13b69e",
           "language": "ar",
           "start": 388,
-          "end": 422
+          "end": 422,
+          "target_start": 0
         },
         {
           "row": "r00010-s42611f98b942bd38",
           "language": "ar",
           "start": 422,
-          "end": 455
+          "end": 455,
+          "target_start": 0
         },
         {
           "row": "r00010-s87244dbb06253e13",
           "language": "ar",
           "start": 455,
-          "end": 497
+          "end": 497,
+          "target_start": 0
         },
         {
           "row": "r00010-s0c6137c86b8e3ba8",
           "language": "ar",
           "start": 497,
-          "end": 553
+          "end": 553,
+          "target_start": 0
         },
         {
           "row": "r00010-s75a76ac96c8af62b",
           "language": "ar",
           "start": 553,
-          "end": 585
+          "end": 585,
+          "target_start": 0
         },
         {
           "row": "r00010-sd4b83d3be288a058",
           "language": "ar",
           "start": 585,
-          "end": 619
+          "end": 619,
+          "target_start": 0
         },
         {
           "row": "r00010-s75bcaa8267bd3622",
           "language": "ar",
           "start": 619,
-          "end": 660
+          "end": 660,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -814,79 +916,92 @@
           "row": "r00010-s9bd4144b26ada357",
           "language": "fa",
           "start": 0,
-          "end": 35
+          "end": 35,
+          "target_start": 0
         },
         {
           "row": "r00010-s9de675ce92eabccf",
           "language": "fa",
           "start": 35,
-          "end": 60
+          "end": 60,
+          "target_start": 0
         },
         {
           "row": "r00010-s7571471556660ba7",
           "language": "fa",
           "start": 60,
-          "end": 158
+          "end": 158,
+          "target_start": 0
         },
         {
           "row": "r00010-s81654b3dfc8e4c7c",
           "language": "fa",
           "start": 158,
-          "end": 316
+          "end": 316,
+          "target_start": 0
         },
         {
           "row": "r00010-s99cbc0c414ebfe88",
           "language": "fa",
           "start": 316,
-          "end": 346
+          "end": 346,
+          "target_start": 0
         },
         {
           "row": "r00010-sbf797ece44551d41",
           "language": "fa",
           "start": 346,
-          "end": 376
+          "end": 376,
+          "target_start": 0
         },
         {
           "row": "r00010-s02807b332f13b69e",
           "language": "fa",
           "start": 376,
-          "end": 410
+          "end": 410,
+          "target_start": 0
         },
         {
           "row": "r00010-s42611f98b942bd38",
           "language": "fa",
           "start": 410,
-          "end": 454
+          "end": 454,
+          "target_start": 0
         },
         {
           "row": "r00010-s87244dbb06253e13",
           "language": "fa",
           "start": 454,
-          "end": 495
+          "end": 495,
+          "target_start": 0
         },
         {
           "row": "r00010-s0c6137c86b8e3ba8",
           "language": "fa",
           "start": 495,
-          "end": 537
+          "end": 537,
+          "target_start": 0
         },
         {
           "row": "r00010-s75a76ac96c8af62b",
           "language": "fa",
           "start": 537,
-          "end": 569
+          "end": 569,
+          "target_start": 0
         },
         {
           "row": "r00010-sd4b83d3be288a058",
           "language": "fa",
           "start": 569,
-          "end": 599
+          "end": 599,
+          "target_start": 0
         },
         {
           "row": "r00010-s75bcaa8267bd3622",
           "language": "fa",
           "start": 599,
-          "end": 629
+          "end": 629,
+          "target_start": 0
         }
       ]
     },
@@ -905,13 +1020,15 @@
           "row": "r00011-sd4a99eeb77863809",
           "language": "fa",
           "start": 0,
-          "end": 18
+          "end": 18,
+          "target_start": 0
         },
         {
           "row": "r00011-sb8ddcde3546c4468",
           "language": "ar",
           "start": 18,
-          "end": 71
+          "end": 71,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -919,7 +1036,8 @@
           "row": "r00011-sb8ddcde3546c4468",
           "language": "fa",
           "start": 0,
-          "end": 33
+          "end": 33,
+          "target_start": 0
         }
       ]
     },
@@ -931,28 +1049,31 @@
       },
       "results": [
         "r00012-s70b98bd76381fe37",
-        "r00012-scce7b1135e7d7ce0"
+        "mad284072f10c483138795f01"
       ],
       "ar": [
         {
           "row": "r00012-s70b98bd76381fe37",
           "language": "fa",
           "start": 0,
-          "end": 17
+          "end": 17,
+          "target_start": 0
         },
         {
-          "row": "r00012-scce7b1135e7d7ce0",
+          "row": "mad284072f10c483138795f01",
           "language": "ar",
           "start": 17,
-          "end": 51
+          "end": 51,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00012-scce7b1135e7d7ce0",
+          "row": "mad284072f10c483138795f01",
           "language": "fa",
           "start": 0,
-          "end": 45
+          "end": 45,
+          "target_start": 0
         }
       ]
     },
@@ -963,22 +1084,24 @@
         "fa": "ta6e934364bd17c8027c0e658"
       },
       "results": [
-        "r00013"
+        "mad284072f10c483138795f01"
       ],
       "ar": [
         {
-          "row": "r00013",
+          "row": "mad284072f10c483138795f01",
           "language": "ar",
           "start": 0,
-          "end": 8
+          "end": 8,
+          "target_start": 35
         }
       ],
       "fa": [
         {
-          "row": "r00013",
+          "row": "mad284072f10c483138795f01",
           "language": "fa",
           "start": 0,
-          "end": 14
+          "end": 14,
+          "target_start": 46
         }
       ]
     },
@@ -1004,55 +1127,64 @@
           "row": "r00014-s587e1c0bb874220f",
           "language": "fa",
           "start": 0,
-          "end": 115
+          "end": 115,
+          "target_start": 0
         },
         {
           "row": "r00014-s6d3577567ca79464",
           "language": "ar",
           "start": 115,
-          "end": 162
+          "end": 162,
+          "target_start": 0
         },
         {
           "row": "r00014-sa082bc0a74d3f862",
           "language": "ar",
           "start": 162,
-          "end": 216
+          "end": 216,
+          "target_start": 0
         },
         {
           "row": "r00014-s06504e2d2baf84fd",
           "language": "ar",
           "start": 216,
-          "end": 272
+          "end": 272,
+          "target_start": 0
         },
         {
           "row": "r00014-s8882e3dd2efeaebd",
           "language": "ar",
           "start": 272,
-          "end": 325
+          "end": 325,
+          "target_start": 0
         },
         {
           "row": "r00014-s3342eaaeaf8c87ac",
           "language": "ar",
           "start": 325,
-          "end": 350
+          "end": 350,
+          "target_start": 0
         },
         {
           "row": "r00014-sb168fc8eb22f229c",
           "language": "ar",
           "start": 350,
-          "end": 375
+          "end": 375,
+          "target_start": 0
         },
         {
           "row": "r00014-sbe77ec0579ff6966",
           "language": "ar",
           "start": 375,
-          "end": 400
+          "end": 400,
+          "target_start": 0
         },
         {
           "row": "r00014-s671204060ac1fff8",
           "language": "ar",
           "start": 400,
-          "end": 429
+          "end": 429,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1060,49 +1192,57 @@
           "row": "r00014-s6d3577567ca79464",
           "language": "fa",
           "start": 0,
-          "end": 30
+          "end": 30,
+          "target_start": 0
         },
         {
           "row": "r00014-sa082bc0a74d3f862",
           "language": "fa",
           "start": 30,
-          "end": 63
+          "end": 63,
+          "target_start": 0
         },
         {
           "row": "r00014-s06504e2d2baf84fd",
           "language": "fa",
           "start": 63,
-          "end": 95
+          "end": 95,
+          "target_start": 0
         },
         {
           "row": "r00014-s8882e3dd2efeaebd",
           "language": "fa",
           "start": 95,
-          "end": 130
+          "end": 130,
+          "target_start": 0
         },
         {
           "row": "r00014-s3342eaaeaf8c87ac",
           "language": "fa",
           "start": 130,
-          "end": 145
+          "end": 145,
+          "target_start": 0
         },
         {
           "row": "r00014-sb168fc8eb22f229c",
           "language": "fa",
           "start": 145,
-          "end": 161
+          "end": 161,
+          "target_start": 0
         },
         {
           "row": "r00014-sbe77ec0579ff6966",
           "language": "fa",
           "start": 161,
-          "end": 177
+          "end": 177,
+          "target_start": 0
         },
         {
           "row": "r00014-s671204060ac1fff8",
           "language": "fa",
           "start": 177,
-          "end": 214
+          "end": 214,
+          "target_start": 0
         }
       ]
     },
@@ -1121,13 +1261,15 @@
           "row": "r00015-s19fb38e858599e1d",
           "language": "fa",
           "start": 0,
-          "end": 53
+          "end": 53,
+          "target_start": 0
         },
         {
           "row": "r00015-s81f1199c2466c644",
           "language": "ar",
           "start": 53,
-          "end": 90
+          "end": 90,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1135,7 +1277,8 @@
           "row": "r00015-s81f1199c2466c644",
           "language": "fa",
           "start": 0,
-          "end": 30
+          "end": 30,
+          "target_start": 0
         }
       ]
     },
@@ -1154,7 +1297,8 @@
           "row": "r00016",
           "language": "fa",
           "start": 0,
-          "end": 81
+          "end": 81,
+          "target_start": 0
         }
       ]
     },
@@ -1178,43 +1322,50 @@
           "row": "r00017-s4f19d01387165b84",
           "language": "ar",
           "start": 0,
-          "end": 23
+          "end": 23,
+          "target_start": 0
         },
         {
           "row": "r00017-s1345aa6d30f2fb2f",
           "language": "ar",
           "start": 23,
-          "end": 46
+          "end": 46,
+          "target_start": 0
         },
         {
           "row": "r00017-s19f91045021c57cf",
           "language": "ar",
           "start": 46,
-          "end": 69
+          "end": 69,
+          "target_start": 0
         },
         {
           "row": "r00017-s91564e6177e1b21d",
           "language": "ar",
           "start": 69,
-          "end": 90
+          "end": 90,
+          "target_start": 0
         },
         {
           "row": "r00017-sd80da0b529bdfa46",
           "language": "ar",
           "start": 90,
-          "end": 111
+          "end": 111,
+          "target_start": 0
         },
         {
           "row": "r00017-sbcaa7b2596aba877",
           "language": "ar",
           "start": 111,
-          "end": 132
+          "end": 132,
+          "target_start": 0
         },
         {
           "row": "r00017-s90f1cb987f0b5e64",
           "language": "ar",
           "start": 132,
-          "end": 184
+          "end": 184,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1222,43 +1373,50 @@
           "row": "r00017-s4f19d01387165b84",
           "language": "fa",
           "start": 0,
-          "end": 13
+          "end": 13,
+          "target_start": 0
         },
         {
           "row": "r00017-s1345aa6d30f2fb2f",
           "language": "fa",
           "start": 13,
-          "end": 26
+          "end": 26,
+          "target_start": 0
         },
         {
           "row": "r00017-s19f91045021c57cf",
           "language": "fa",
           "start": 26,
-          "end": 39
+          "end": 39,
+          "target_start": 0
         },
         {
           "row": "r00017-s91564e6177e1b21d",
           "language": "fa",
           "start": 39,
-          "end": 59
+          "end": 59,
+          "target_start": 0
         },
         {
           "row": "r00017-sd80da0b529bdfa46",
           "language": "fa",
           "start": 59,
-          "end": 79
+          "end": 79,
+          "target_start": 0
         },
         {
           "row": "r00017-sbcaa7b2596aba877",
           "language": "fa",
           "start": 79,
-          "end": 99
+          "end": 99,
+          "target_start": 0
         },
         {
           "row": "r00017-s90f1cb987f0b5e64",
           "language": "fa",
           "start": 99,
-          "end": 155
+          "end": 155,
+          "target_start": 0
         }
       ]
     },
@@ -1277,7 +1435,8 @@
           "row": "r00018",
           "language": "fa",
           "start": 0,
-          "end": 124
+          "end": 124,
+          "target_start": 0
         }
       ]
     },
@@ -1298,21 +1457,117 @@
           "row": "r00019-se32f9cfe77f50721",
           "language": "fa",
           "start": 0,
-          "end": 79
+          "end": 79,
+          "target_start": 0
         },
         {
           "row": "r00019-s8f99afc8febdc8ff",
           "language": "fa",
           "start": 79,
-          "end": 179
+          "end": 179,
+          "target_start": 0
         },
         {
           "row": "r00019-s7bc0e347dfa926de",
           "language": "fa",
           "start": 179,
-          "end": 399
+          "end": 399,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s819edbc260c1753e",
+        "ar": "ta14d2f4ac79cc13a3d2fb14e",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m474e9813b4821568e592bf64",
+          "language": "ar",
+          "start": 0,
+          "end": 5,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00003-s3230365f4763acdc",
+        "ar": "t94e662ccab51bc1d9b04ae51",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m474e9813b4821568e592bf64",
+          "language": "ar",
+          "start": 0,
+          "end": 56,
+          "target_start": 6
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00012-scce7b1135e7d7ce0",
+        "ar": "t983c66c033661ffe7d41ef26",
+        "fa": "t22105c8d75586b9a7a1c407e",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mad284072f10c483138795f01",
+          "language": "ar",
+          "start": 0,
+          "end": 34,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mad284072f10c483138795f01",
+          "language": "fa",
+          "start": 0,
+          "end": 45,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m474e9813b4821568e592bf64",
+      "language": "ar",
+      "target_start": 5,
+      "value": " ",
+      "left": "r00002-s819edbc260c1753e",
+      "right": "r00003-s3230365f4763acdc",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "mad284072f10c483138795f01",
+      "language": "ar",
+      "target_start": 34,
+      "value": " ",
+      "left": "r00012-scce7b1135e7d7ce0",
+      "right": "r00013",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "mad284072f10c483138795f01",
+      "language": "fa",
+      "target_start": 45,
+      "value": " ",
+      "left": "r00012-scce7b1135e7d7ce0",
+      "right": "r00013",
+      "reason": "Separate words at the original row boundary"
     }
   ]
 }

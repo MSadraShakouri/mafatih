@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-aamal-akhr-aashvra",
   "author": "agent-6",
   "baseline_item_sha256": "9ed13147dbe6f90357525ce33f4a7fe91895f71fd15788729ae65285d0fc528b",
   "plan_sha256": "369577b544b732501be95f66b14242a6bfb0df76076323e9bd19850b05232a11",
-  "layout_sha256": "b98a2985ca147bd4c4fd02259c3fb3d8665b8ba31c284311f1c2b61a6c9e9321",
+  "layout_sha256": "c4504a9c27f4dba2e1ec6945925ee0e4149b593ace69e12f4ece7985b0c997b0",
   "rows": [
     {
       "original": {
@@ -22,13 +22,15 @@
           "row": "r00001-s87a4572572fe3091",
           "language": "fa",
           "start": 0,
-          "end": 192
+          "end": 192,
+          "target_start": 0
         },
         {
           "row": "r00001-sa3fbdb6fa458720f",
           "language": "fa",
           "start": 192,
-          "end": 213
+          "end": 213,
+          "target_start": 0
         }
       ]
     },
@@ -47,7 +49,8 @@
           "row": "r00002",
           "language": "fa",
           "start": 0,
-          "end": 12
+          "end": 12,
+          "target_start": 0
         }
       ]
     },
@@ -66,7 +69,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 7
+          "end": 7,
+          "target_start": 0
         }
       ]
     },
@@ -78,20 +82,22 @@
       },
       "results": [
         "r00004-s2d6fcdaf315ab02c",
-        "r00004-s97745e24b1ee5388"
+        "mdd6139b558bed844843217b3"
       ],
       "ar": [
         {
           "row": "r00004-s2d6fcdaf315ab02c",
           "language": "ar",
           "start": 0,
-          "end": 53
+          "end": 53,
+          "target_start": 0
         },
         {
-          "row": "r00004-s97745e24b1ee5388",
+          "row": "mdd6139b558bed844843217b3",
           "language": "ar",
           "start": 53,
-          "end": 71
+          "end": 71,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -99,13 +105,15 @@
           "row": "r00004-s2d6fcdaf315ab02c",
           "language": "fa",
           "start": 0,
-          "end": 37
+          "end": 37,
+          "target_start": 0
         },
         {
-          "row": "r00004-s97745e24b1ee5388",
+          "row": "mdd6139b558bed844843217b3",
           "language": "fa",
           "start": 37,
-          "end": 47
+          "end": 47,
+          "target_start": 0
         }
       ]
     },
@@ -116,7 +124,7 @@
         "fa": "t00d1c63dbc5898590b5e00d4"
       },
       "results": [
-        "r00005-sf75a34654a0b51be",
+        "mdd6139b558bed844843217b3",
         "r00005-sef34cc78c3ba2c3e",
         "r00005-s26cb4356b4155a1c",
         "r00005-sbd99c92550db078e",
@@ -134,186 +142,216 @@
       ],
       "ar": [
         {
-          "row": "r00005-sf75a34654a0b51be",
+          "row": "mdd6139b558bed844843217b3",
           "language": "ar",
           "start": 0,
-          "end": 34
+          "end": 34,
+          "target_start": 19
         },
         {
           "row": "r00005-sef34cc78c3ba2c3e",
           "language": "ar",
           "start": 34,
-          "end": 94
+          "end": 94,
+          "target_start": 0
         },
         {
           "row": "r00005-s26cb4356b4155a1c",
           "language": "ar",
           "start": 94,
-          "end": 149
+          "end": 149,
+          "target_start": 0
         },
         {
           "row": "r00005-sbd99c92550db078e",
           "language": "ar",
           "start": 149,
-          "end": 202
+          "end": 202,
+          "target_start": 0
         },
         {
           "row": "r00005-s43c86915aa88b706",
           "language": "ar",
           "start": 202,
-          "end": 260
+          "end": 260,
+          "target_start": 0
         },
         {
           "row": "r00005-s702c785d1fc8e566",
           "language": "ar",
           "start": 260,
-          "end": 339
+          "end": 339,
+          "target_start": 0
         },
         {
           "row": "r00005-s701bee621dde9fac",
           "language": "ar",
           "start": 339,
-          "end": 415
+          "end": 415,
+          "target_start": 0
         },
         {
           "row": "r00005-s4690167e363316dd",
           "language": "ar",
           "start": 415,
-          "end": 462
+          "end": 462,
+          "target_start": 0
         },
         {
           "row": "r00005-s6c5da61e8e5dfb84",
           "language": "ar",
           "start": 462,
-          "end": 546
+          "end": 546,
+          "target_start": 0
         },
         {
           "row": "r00005-s8e54113eb27dbbb6",
           "language": "ar",
           "start": 546,
-          "end": 616
+          "end": 616,
+          "target_start": 0
         },
         {
           "row": "r00005-se2e05b5c06348f6a",
           "language": "ar",
           "start": 616,
-          "end": 661
+          "end": 661,
+          "target_start": 0
         },
         {
           "row": "r00005-sa77cdadf7ee2929f",
           "language": "ar",
           "start": 661,
-          "end": 723
+          "end": 723,
+          "target_start": 0
         },
         {
           "row": "r00005-s1342bec0684c82aa",
           "language": "ar",
           "start": 723,
-          "end": 777
+          "end": 777,
+          "target_start": 0
         },
         {
           "row": "r00005-sc0d711bc7e9f4e75",
           "language": "ar",
           "start": 777,
-          "end": 830
+          "end": 830,
+          "target_start": 0
         },
         {
           "row": "r00005-s163870813beed2e4",
           "language": "ar",
           "start": 830,
-          "end": 890
+          "end": 890,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00005-sf75a34654a0b51be",
+          "row": "mdd6139b558bed844843217b3",
           "language": "fa",
           "start": 0,
-          "end": 24
+          "end": 24,
+          "target_start": 11
         },
         {
           "row": "r00005-sef34cc78c3ba2c3e",
           "language": "fa",
           "start": 24,
-          "end": 61
+          "end": 61,
+          "target_start": 0
         },
         {
           "row": "r00005-s26cb4356b4155a1c",
           "language": "fa",
           "start": 61,
-          "end": 96
+          "end": 96,
+          "target_start": 0
         },
         {
           "row": "r00005-sbd99c92550db078e",
           "language": "fa",
           "start": 96,
-          "end": 129
+          "end": 129,
+          "target_start": 0
         },
         {
           "row": "r00005-s43c86915aa88b706",
           "language": "fa",
           "start": 129,
-          "end": 165
+          "end": 165,
+          "target_start": 0
         },
         {
           "row": "r00005-s702c785d1fc8e566",
           "language": "fa",
           "start": 165,
-          "end": 210
+          "end": 210,
+          "target_start": 0
         },
         {
           "row": "r00005-s701bee621dde9fac",
           "language": "fa",
           "start": 210,
-          "end": 254
+          "end": 254,
+          "target_start": 0
         },
         {
           "row": "r00005-s4690167e363316dd",
           "language": "fa",
           "start": 254,
-          "end": 284
+          "end": 284,
+          "target_start": 0
         },
         {
           "row": "r00005-s6c5da61e8e5dfb84",
           "language": "fa",
           "start": 284,
-          "end": 351
+          "end": 351,
+          "target_start": 0
         },
         {
           "row": "r00005-s8e54113eb27dbbb6",
           "language": "fa",
           "start": 351,
-          "end": 399
+          "end": 399,
+          "target_start": 0
         },
         {
           "row": "r00005-se2e05b5c06348f6a",
           "language": "fa",
           "start": 399,
-          "end": 428
+          "end": 428,
+          "target_start": 0
         },
         {
           "row": "r00005-sa77cdadf7ee2929f",
           "language": "fa",
           "start": 428,
-          "end": 475
+          "end": 475,
+          "target_start": 0
         },
         {
           "row": "r00005-s1342bec0684c82aa",
           "language": "fa",
           "start": 475,
-          "end": 514
+          "end": 514,
+          "target_start": 0
         },
         {
           "row": "r00005-sc0d711bc7e9f4e75",
           "language": "fa",
           "start": 514,
-          "end": 561
+          "end": 561,
+          "target_start": 0
         },
         {
           "row": "r00005-s163870813beed2e4",
           "language": "fa",
           "start": 561,
-          "end": 593
+          "end": 593,
+          "target_start": 0
         }
       ]
     },
@@ -329,44 +367,50 @@
         "r00006-sdf64bfbf42f0faf4",
         "r00006-s089aa8d9b844e5e9",
         "r00006-s5edb2e783973dd67",
-        "r00006-sa545bb1b2a988c82"
+        "m14e85f90ccf2b42370515b7e"
       ],
       "ar": [
         {
           "row": "r00006-s3e3874d69dfd3c50",
           "language": "ar",
           "start": 0,
-          "end": 39
+          "end": 39,
+          "target_start": 0
         },
         {
           "row": "r00006-s34b02a6bb1ae0a35",
           "language": "ar",
           "start": 39,
-          "end": 65
+          "end": 65,
+          "target_start": 0
         },
         {
           "row": "r00006-sdf64bfbf42f0faf4",
           "language": "ar",
           "start": 65,
-          "end": 94
+          "end": 94,
+          "target_start": 0
         },
         {
           "row": "r00006-s089aa8d9b844e5e9",
           "language": "ar",
           "start": 94,
-          "end": 167
+          "end": 167,
+          "target_start": 0
         },
         {
           "row": "r00006-s5edb2e783973dd67",
           "language": "ar",
           "start": 167,
-          "end": 204
+          "end": 204,
+          "target_start": 0
         },
         {
-          "row": "r00006-sa545bb1b2a988c82",
+          "row": "m14e85f90ccf2b42370515b7e",
           "language": "ar",
           "start": 204,
-          "end": 212
+          "end": 212,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -374,37 +418,43 @@
           "row": "r00006-s3e3874d69dfd3c50",
           "language": "fa",
           "start": 0,
-          "end": 37
+          "end": 37,
+          "target_start": 0
         },
         {
           "row": "r00006-s34b02a6bb1ae0a35",
           "language": "fa",
           "start": 37,
-          "end": 62
+          "end": 62,
+          "target_start": 0
         },
         {
           "row": "r00006-sdf64bfbf42f0faf4",
           "language": "fa",
           "start": 62,
-          "end": 89
+          "end": 89,
+          "target_start": 0
         },
         {
           "row": "r00006-s089aa8d9b844e5e9",
           "language": "fa",
           "start": 89,
-          "end": 140
+          "end": 140,
+          "target_start": 0
         },
         {
           "row": "r00006-s5edb2e783973dd67",
           "language": "fa",
           "start": 140,
-          "end": 163
+          "end": 163,
+          "target_start": 0
         },
         {
-          "row": "r00006-sa545bb1b2a988c82",
+          "row": "m14e85f90ccf2b42370515b7e",
           "language": "fa",
           "start": 163,
-          "end": 172
+          "end": 172,
+          "target_start": 0
         }
       ]
     },
@@ -415,7 +465,7 @@
         "fa": "t08f23f2ef1f18e71c37a0c77"
       },
       "results": [
-        "r00007-sb13bc65dd76f169b",
+        "m14e85f90ccf2b42370515b7e",
         "r00007-s4a2aa7f2dd56d14a",
         "r00007-s09ad0225f00818de",
         "r00007-s612834f5c13c1a1d",
@@ -427,114 +477,132 @@
       ],
       "ar": [
         {
-          "row": "r00007-sb13bc65dd76f169b",
+          "row": "m14e85f90ccf2b42370515b7e",
           "language": "ar",
           "start": 0,
-          "end": 118
+          "end": 118,
+          "target_start": 9
         },
         {
           "row": "r00007-s4a2aa7f2dd56d14a",
           "language": "ar",
           "start": 118,
-          "end": 165
+          "end": 165,
+          "target_start": 0
         },
         {
           "row": "r00007-s09ad0225f00818de",
           "language": "ar",
           "start": 165,
-          "end": 289
+          "end": 289,
+          "target_start": 0
         },
         {
           "row": "r00007-s612834f5c13c1a1d",
           "language": "ar",
           "start": 289,
-          "end": 338
+          "end": 338,
+          "target_start": 0
         },
         {
           "row": "r00007-s6eb53056725aeb3a",
           "language": "ar",
           "start": 338,
-          "end": 428
+          "end": 428,
+          "target_start": 0
         },
         {
           "row": "r00007-s793f25ad3fcf7fe1",
           "language": "ar",
           "start": 428,
-          "end": 473
+          "end": 473,
+          "target_start": 0
         },
         {
           "row": "r00007-s08a2cfe7da7cb2ec",
           "language": "ar",
           "start": 473,
-          "end": 542
+          "end": 542,
+          "target_start": 0
         },
         {
           "row": "r00007-s4d4ca0fa3e7c27aa",
           "language": "ar",
           "start": 542,
-          "end": 600
+          "end": 600,
+          "target_start": 0
         },
         {
           "row": "r00007-sf6e2bed3291c277d",
           "language": "ar",
           "start": 600,
-          "end": 632
+          "end": 632,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00007-sb13bc65dd76f169b",
+          "row": "m14e85f90ccf2b42370515b7e",
           "language": "fa",
           "start": 0,
-          "end": 73
+          "end": 73,
+          "target_start": 10
         },
         {
           "row": "r00007-s4a2aa7f2dd56d14a",
           "language": "fa",
           "start": 73,
-          "end": 117
+          "end": 117,
+          "target_start": 0
         },
         {
           "row": "r00007-s09ad0225f00818de",
           "language": "fa",
           "start": 117,
-          "end": 185
+          "end": 185,
+          "target_start": 0
         },
         {
           "row": "r00007-s612834f5c13c1a1d",
           "language": "fa",
           "start": 185,
-          "end": 221
+          "end": 221,
+          "target_start": 0
         },
         {
           "row": "r00007-s6eb53056725aeb3a",
           "language": "fa",
           "start": 221,
-          "end": 278
+          "end": 278,
+          "target_start": 0
         },
         {
           "row": "r00007-s793f25ad3fcf7fe1",
           "language": "fa",
           "start": 278,
-          "end": 301
+          "end": 301,
+          "target_start": 0
         },
         {
           "row": "r00007-s08a2cfe7da7cb2ec",
           "language": "fa",
           "start": 301,
-          "end": 348
+          "end": 348,
+          "target_start": 0
         },
         {
           "row": "r00007-s4d4ca0fa3e7c27aa",
           "language": "fa",
           "start": 348,
-          "end": 388
+          "end": 388,
+          "target_start": 0
         },
         {
           "row": "r00007-sf6e2bed3291c277d",
           "language": "fa",
           "start": 388,
-          "end": 408
+          "end": 408,
+          "target_start": 0
         }
       ]
     },
@@ -555,74 +623,85 @@
         "r00008-sf7015822215fb3ac",
         "r00008-s190e94b079186d97",
         "r00008-s63c4f02865a48fd3",
-        "r00008-s4d55eee049044907"
+        "m26105ef13903228579a91c1f"
       ],
       "ar": [
         {
           "row": "r00008-sbfc120554e3eef61",
           "language": "ar",
           "start": 0,
-          "end": 36
+          "end": 36,
+          "target_start": 0
         },
         {
           "row": "r00008-s8a39e8e01f37628b",
           "language": "ar",
           "start": 36,
-          "end": 80
+          "end": 80,
+          "target_start": 0
         },
         {
           "row": "r00008-s28bf4bcfd6629d97",
           "language": "ar",
           "start": 80,
-          "end": 113
+          "end": 113,
+          "target_start": 0
         },
         {
           "row": "r00008-s995d4cc90029e1f8",
           "language": "ar",
           "start": 113,
-          "end": 141
+          "end": 141,
+          "target_start": 0
         },
         {
           "row": "r00008-sd9b1c56b4b332205",
           "language": "ar",
           "start": 141,
-          "end": 170
+          "end": 170,
+          "target_start": 0
         },
         {
           "row": "r00008-s06a2345cea0936a9",
           "language": "ar",
           "start": 170,
-          "end": 257
+          "end": 257,
+          "target_start": 0
         },
         {
           "row": "r00008-sd4b1e3214186760b",
           "language": "ar",
           "start": 257,
-          "end": 289
+          "end": 289,
+          "target_start": 0
         },
         {
           "row": "r00008-sf7015822215fb3ac",
           "language": "ar",
           "start": 289,
-          "end": 347
+          "end": 347,
+          "target_start": 0
         },
         {
           "row": "r00008-s190e94b079186d97",
           "language": "ar",
           "start": 347,
-          "end": 413
+          "end": 413,
+          "target_start": 0
         },
         {
           "row": "r00008-s63c4f02865a48fd3",
           "language": "ar",
           "start": 413,
-          "end": 468
+          "end": 468,
+          "target_start": 0
         },
         {
-          "row": "r00008-s4d55eee049044907",
+          "row": "m26105ef13903228579a91c1f",
           "language": "ar",
           "start": 468,
-          "end": 484
+          "end": 484,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -630,67 +709,78 @@
           "row": "r00008-sbfc120554e3eef61",
           "language": "fa",
           "start": 0,
-          "end": 26
+          "end": 26,
+          "target_start": 0
         },
         {
           "row": "r00008-s8a39e8e01f37628b",
           "language": "fa",
           "start": 26,
-          "end": 59
+          "end": 59,
+          "target_start": 0
         },
         {
           "row": "r00008-s28bf4bcfd6629d97",
           "language": "fa",
           "start": 59,
-          "end": 79
+          "end": 79,
+          "target_start": 0
         },
         {
           "row": "r00008-s995d4cc90029e1f8",
           "language": "fa",
           "start": 79,
-          "end": 124
+          "end": 124,
+          "target_start": 0
         },
         {
           "row": "r00008-sd9b1c56b4b332205",
           "language": "fa",
           "start": 124,
-          "end": 159
+          "end": 159,
+          "target_start": 0
         },
         {
           "row": "r00008-s06a2345cea0936a9",
           "language": "fa",
           "start": 159,
-          "end": 214
+          "end": 214,
+          "target_start": 0
         },
         {
           "row": "r00008-sd4b1e3214186760b",
           "language": "fa",
           "start": 214,
-          "end": 234
+          "end": 234,
+          "target_start": 0
         },
         {
           "row": "r00008-sf7015822215fb3ac",
           "language": "fa",
           "start": 234,
-          "end": 265
+          "end": 265,
+          "target_start": 0
         },
         {
           "row": "r00008-s190e94b079186d97",
           "language": "fa",
           "start": 265,
-          "end": 310
+          "end": 310,
+          "target_start": 0
         },
         {
           "row": "r00008-s63c4f02865a48fd3",
           "language": "fa",
           "start": 310,
-          "end": 345
+          "end": 345,
+          "target_start": 0
         },
         {
-          "row": "r00008-s4d55eee049044907",
+          "row": "m26105ef13903228579a91c1f",
           "language": "fa",
           "start": 345,
-          "end": 352
+          "end": 352,
+          "target_start": 0
         }
       ]
     },
@@ -701,7 +791,7 @@
         "fa": "tca6caecc54d2ef5258c67609"
       },
       "results": [
-        "r00009-s509976db02c9c56c",
+        "m26105ef13903228579a91c1f",
         "r00009-sbf64e62444fe25d3",
         "r00009-sb57c5b76aef0b24b",
         "r00009-s3a0acb315419bb7b",
@@ -712,102 +802,118 @@
       ],
       "ar": [
         {
-          "row": "r00009-s509976db02c9c56c",
+          "row": "m26105ef13903228579a91c1f",
           "language": "ar",
           "start": 0,
-          "end": 37
+          "end": 37,
+          "target_start": 17
         },
         {
           "row": "r00009-sbf64e62444fe25d3",
           "language": "ar",
           "start": 37,
-          "end": 92
+          "end": 92,
+          "target_start": 0
         },
         {
           "row": "r00009-sb57c5b76aef0b24b",
           "language": "ar",
           "start": 92,
-          "end": 160
+          "end": 160,
+          "target_start": 0
         },
         {
           "row": "r00009-s3a0acb315419bb7b",
           "language": "ar",
           "start": 160,
-          "end": 224
+          "end": 224,
+          "target_start": 0
         },
         {
           "row": "r00009-sf9934108c2512c73",
           "language": "ar",
           "start": 224,
-          "end": 276
+          "end": 276,
+          "target_start": 0
         },
         {
           "row": "r00009-s220400d7df789cf6",
           "language": "ar",
           "start": 276,
-          "end": 330
+          "end": 330,
+          "target_start": 0
         },
         {
           "row": "r00009-s63fe0853eba69413",
           "language": "ar",
           "start": 330,
-          "end": 392
+          "end": 392,
+          "target_start": 0
         },
         {
           "row": "r00009-sae34d843152152de",
           "language": "ar",
           "start": 392,
-          "end": 458
+          "end": 458,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00009-s509976db02c9c56c",
+          "row": "m26105ef13903228579a91c1f",
           "language": "fa",
           "start": 0,
-          "end": 22
+          "end": 22,
+          "target_start": 8
         },
         {
           "row": "r00009-sbf64e62444fe25d3",
           "language": "fa",
           "start": 22,
-          "end": 51
+          "end": 51,
+          "target_start": 0
         },
         {
           "row": "r00009-sb57c5b76aef0b24b",
           "language": "fa",
           "start": 51,
-          "end": 89
+          "end": 89,
+          "target_start": 0
         },
         {
           "row": "r00009-s3a0acb315419bb7b",
           "language": "fa",
           "start": 89,
-          "end": 128
+          "end": 128,
+          "target_start": 0
         },
         {
           "row": "r00009-sf9934108c2512c73",
           "language": "fa",
           "start": 128,
-          "end": 159
+          "end": 159,
+          "target_start": 0
         },
         {
           "row": "r00009-s220400d7df789cf6",
           "language": "fa",
           "start": 159,
-          "end": 191
+          "end": 191,
+          "target_start": 0
         },
         {
           "row": "r00009-s63fe0853eba69413",
           "language": "fa",
           "start": 191,
-          "end": 230
+          "end": 230,
+          "target_start": 0
         },
         {
           "row": "r00009-sae34d843152152de",
           "language": "fa",
           "start": 230,
-          "end": 270
+          "end": 270,
+          "target_start": 0
         }
       ]
     },
@@ -826,62 +932,71 @@
         "r00010-sbf797ece44551d41",
         "r00010-s02807b332f13b69e",
         "r00010-s42611f98b942bd38",
-        "r00010-s87244dbb06253e13"
+        "m61def2c9b604c6cbeb198f6a"
       ],
       "ar": [
         {
           "row": "r00010-s9bd4144b26ada357",
           "language": "ar",
           "start": 0,
-          "end": 49
+          "end": 49,
+          "target_start": 0
         },
         {
           "row": "r00010-s9de675ce92eabccf",
           "language": "ar",
           "start": 49,
-          "end": 102
+          "end": 102,
+          "target_start": 0
         },
         {
           "row": "r00010-s7571471556660ba7",
           "language": "ar",
           "start": 102,
-          "end": 201
+          "end": 201,
+          "target_start": 0
         },
         {
           "row": "r00010-s81654b3dfc8e4c7c",
           "language": "ar",
           "start": 201,
-          "end": 292
+          "end": 292,
+          "target_start": 0
         },
         {
           "row": "r00010-s99cbc0c414ebfe88",
           "language": "ar",
           "start": 292,
-          "end": 397
+          "end": 397,
+          "target_start": 0
         },
         {
           "row": "r00010-sbf797ece44551d41",
           "language": "ar",
           "start": 397,
-          "end": 502
+          "end": 502,
+          "target_start": 0
         },
         {
           "row": "r00010-s02807b332f13b69e",
           "language": "ar",
           "start": 502,
-          "end": 540
+          "end": 540,
+          "target_start": 0
         },
         {
           "row": "r00010-s42611f98b942bd38",
           "language": "ar",
           "start": 540,
-          "end": 600
+          "end": 600,
+          "target_start": 0
         },
         {
-          "row": "r00010-s87244dbb06253e13",
+          "row": "m61def2c9b604c6cbeb198f6a",
           "language": "ar",
           "start": 600,
-          "end": 617
+          "end": 617,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -889,55 +1004,64 @@
           "row": "r00010-s9bd4144b26ada357",
           "language": "fa",
           "start": 0,
-          "end": 41
+          "end": 41,
+          "target_start": 0
         },
         {
           "row": "r00010-s9de675ce92eabccf",
           "language": "fa",
           "start": 41,
-          "end": 95
+          "end": 95,
+          "target_start": 0
         },
         {
           "row": "r00010-s7571471556660ba7",
           "language": "fa",
           "start": 95,
-          "end": 171
+          "end": 171,
+          "target_start": 0
         },
         {
           "row": "r00010-s81654b3dfc8e4c7c",
           "language": "fa",
           "start": 171,
-          "end": 244
+          "end": 244,
+          "target_start": 0
         },
         {
           "row": "r00010-s99cbc0c414ebfe88",
           "language": "fa",
           "start": 244,
-          "end": 323
+          "end": 323,
+          "target_start": 0
         },
         {
           "row": "r00010-sbf797ece44551d41",
           "language": "fa",
           "start": 323,
-          "end": 413
+          "end": 413,
+          "target_start": 0
         },
         {
           "row": "r00010-s02807b332f13b69e",
           "language": "fa",
           "start": 413,
-          "end": 442
+          "end": 442,
+          "target_start": 0
         },
         {
           "row": "r00010-s42611f98b942bd38",
           "language": "fa",
           "start": 442,
-          "end": 504
+          "end": 504,
+          "target_start": 0
         },
         {
-          "row": "r00010-s87244dbb06253e13",
+          "row": "m61def2c9b604c6cbeb198f6a",
           "language": "fa",
           "start": 504,
-          "end": 517
+          "end": 517,
+          "target_start": 0
         }
       ]
     },
@@ -948,61 +1072,69 @@
         "fa": "ta8a5b782e55567a6a0010e37"
       },
       "results": [
-        "r00011-seb43c5673ba605a6",
+        "m61def2c9b604c6cbeb198f6a",
         "r00011-s1a8f74e18798292c",
         "r00011-sc42a100063c7bcd6",
         "r00011-s6aefc42218e03032"
       ],
       "ar": [
         {
-          "row": "r00011-seb43c5673ba605a6",
+          "row": "m61def2c9b604c6cbeb198f6a",
           "language": "ar",
           "start": 0,
-          "end": 47
+          "end": 47,
+          "target_start": 18
         },
         {
           "row": "r00011-s1a8f74e18798292c",
           "language": "ar",
           "start": 47,
-          "end": 92
+          "end": 92,
+          "target_start": 0
         },
         {
           "row": "r00011-sc42a100063c7bcd6",
           "language": "ar",
           "start": 92,
-          "end": 142
+          "end": 142,
+          "target_start": 0
         },
         {
           "row": "r00011-s6aefc42218e03032",
           "language": "ar",
           "start": 142,
-          "end": 186
+          "end": 186,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00011-seb43c5673ba605a6",
+          "row": "m61def2c9b604c6cbeb198f6a",
           "language": "fa",
           "start": 0,
-          "end": 57
+          "end": 57,
+          "target_start": 14
         },
         {
           "row": "r00011-s1a8f74e18798292c",
           "language": "fa",
           "start": 57,
-          "end": 87
+          "end": 87,
+          "target_start": 0
         },
         {
           "row": "r00011-sc42a100063c7bcd6",
           "language": "fa",
           "start": 87,
-          "end": 122
+          "end": 122,
+          "target_start": 0
         },
         {
           "row": "r00011-s6aefc42218e03032",
           "language": "fa",
           "start": 122,
-          "end": 167
+          "end": 167,
+          "target_start": 0
         }
       ]
     },
@@ -1022,15 +1154,301 @@
           "row": "r00012-s599831169f48f4e4",
           "language": "fa",
           "start": 0,
-          "end": 17
+          "end": 17,
+          "target_start": 0
         },
         {
           "row": "r00012-s4ac36a604ee8f876",
           "language": "fa",
           "start": 17,
-          "end": 189
+          "end": 189,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00004-s97745e24b1ee5388",
+        "ar": "t93659e5d185c9b6d16fb2e32",
+        "fa": "t8201603dc8fe44adacc9ceb7",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mdd6139b558bed844843217b3",
+          "language": "ar",
+          "start": 0,
+          "end": 18,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mdd6139b558bed844843217b3",
+          "language": "fa",
+          "start": 0,
+          "end": 10,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-sf75a34654a0b51be",
+        "ar": "t37ab150de2ae27506389f714",
+        "fa": "t6ff01e5100800a70461459ec",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mdd6139b558bed844843217b3",
+          "language": "ar",
+          "start": 0,
+          "end": 34,
+          "target_start": 19
+        }
+      ],
+      "fa": [
+        {
+          "row": "mdd6139b558bed844843217b3",
+          "language": "fa",
+          "start": 0,
+          "end": 24,
+          "target_start": 11
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-sa545bb1b2a988c82",
+        "ar": "t485fa70024ca2ac6aae59df5",
+        "fa": "tb693ab5e19c55f482cd7097c",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m14e85f90ccf2b42370515b7e",
+          "language": "ar",
+          "start": 0,
+          "end": 8,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m14e85f90ccf2b42370515b7e",
+          "language": "fa",
+          "start": 0,
+          "end": 9,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00007-sb13bc65dd76f169b",
+        "ar": "t8ac3a5e921011c4ff514d0b9",
+        "fa": "tb0b88ff8e026927c631fb24d",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m14e85f90ccf2b42370515b7e",
+          "language": "ar",
+          "start": 0,
+          "end": 118,
+          "target_start": 9
+        }
+      ],
+      "fa": [
+        {
+          "row": "m14e85f90ccf2b42370515b7e",
+          "language": "fa",
+          "start": 0,
+          "end": 73,
+          "target_start": 10
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00008-s4d55eee049044907",
+        "ar": "tf5dbf7b4bad5f0c2924097a2",
+        "fa": "t3aaea1ea124c8600ad3d0dd1",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m26105ef13903228579a91c1f",
+          "language": "ar",
+          "start": 0,
+          "end": 16,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m26105ef13903228579a91c1f",
+          "language": "fa",
+          "start": 0,
+          "end": 7,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00009-s509976db02c9c56c",
+        "ar": "ta55671ac42d2e92db0a205cd",
+        "fa": "t07239a0d99c02eef628e861a",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m26105ef13903228579a91c1f",
+          "language": "ar",
+          "start": 0,
+          "end": 37,
+          "target_start": 17
+        }
+      ],
+      "fa": [
+        {
+          "row": "m26105ef13903228579a91c1f",
+          "language": "fa",
+          "start": 0,
+          "end": 22,
+          "target_start": 8
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00010-s87244dbb06253e13",
+        "ar": "t21a309fca3a46e5769aa6198",
+        "fa": "t681ef9c5ee9a29cef760c5e7",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m61def2c9b604c6cbeb198f6a",
+          "language": "ar",
+          "start": 0,
+          "end": 17,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m61def2c9b604c6cbeb198f6a",
+          "language": "fa",
+          "start": 0,
+          "end": 13,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00011-seb43c5673ba605a6",
+        "ar": "tb5184212a6e308ecb1ad2ee8",
+        "fa": "t727c3ff15b7180e44ae02537",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m61def2c9b604c6cbeb198f6a",
+          "language": "ar",
+          "start": 0,
+          "end": 47,
+          "target_start": 18
+        }
+      ],
+      "fa": [
+        {
+          "row": "m61def2c9b604c6cbeb198f6a",
+          "language": "fa",
+          "start": 0,
+          "end": 57,
+          "target_start": 14
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "mdd6139b558bed844843217b3",
+      "language": "ar",
+      "target_start": 18,
+      "value": " ",
+      "left": "r00004-s97745e24b1ee5388",
+      "right": "r00005-sf75a34654a0b51be",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "mdd6139b558bed844843217b3",
+      "language": "fa",
+      "target_start": 10,
+      "value": " ",
+      "left": "r00004-s97745e24b1ee5388",
+      "right": "r00005-sf75a34654a0b51be",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "m14e85f90ccf2b42370515b7e",
+      "language": "ar",
+      "target_start": 8,
+      "value": " ",
+      "left": "r00006-sa545bb1b2a988c82",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "m14e85f90ccf2b42370515b7e",
+      "language": "fa",
+      "target_start": 9,
+      "value": " ",
+      "left": "r00006-sa545bb1b2a988c82",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "m26105ef13903228579a91c1f",
+      "language": "ar",
+      "target_start": 16,
+      "value": " ",
+      "left": "r00008-s4d55eee049044907",
+      "right": "r00009-s509976db02c9c56c",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "m26105ef13903228579a91c1f",
+      "language": "fa",
+      "target_start": 7,
+      "value": " ",
+      "left": "r00008-s4d55eee049044907",
+      "right": "r00009-s509976db02c9c56c",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "m61def2c9b604c6cbeb198f6a",
+      "language": "ar",
+      "target_start": 17,
+      "value": " ",
+      "left": "r00010-s87244dbb06253e13",
+      "right": "r00011-seb43c5673ba605a6",
+      "reason": "Separate words at the original row boundary"
+    },
+    {
+      "row": "m61def2c9b604c6cbeb198f6a",
+      "language": "fa",
+      "target_start": 13,
+      "value": " ",
+      "left": "r00010-s87244dbb06253e13",
+      "right": "r00011-seb43c5673ba605a6",
+      "reason": "Separate words at the original row boundary"
     }
   ]
 }
