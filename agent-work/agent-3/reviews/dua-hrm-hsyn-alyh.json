@@ -4,11 +4,11 @@
   "item": "dua-hrm-hsyn-alyh",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
+  "author_commit": "775e7df579ac7278cefdb958f312e906492ade4a",
   "plan_sha256": "08b9a54d02832846444886c6e555b85204686b4485efcb18629187c0a31aa317",
-  "layout_sha256": "d30f0ac246b93928b3ba460e770f8884b63c553a5cc4813ba57e4c8bfb02f00f",
-  "result_item_sha256": "eb3b68a9a4255a16dc76b0be3aa2d27a04ad86f444a61bd8e10d11b9f1845cb0",
-  "result_record_sha256": "8b3a5569463a557b809a86a7477797f6992108baeb8872f1eefe5486122bf284",
+  "layout_sha256": "834f95fa05e2b555f1f9e536649212b1e132cd9384ff9b8b6444d40867a76d3d",
+  "result_item_sha256": "f3e58b847be637581bfa18690627c05e2fd2add6c660567e9b5c1e0d1d473046",
+  "result_record_sha256": "b00282d3b2d79147baa870f1e7e1ba1fcbce0080ce6fb50484d798c81420a4a2",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -37,14 +37,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+        "note": "RE-VERIFIED FIXED in snapshot 775e7df5: r00003 is now TWO rows, each carrying both languages, pairing ar part i with fa part i. Previously four single-language rows with zero bilingual rows. Confirmed by reading the row content, not the author description."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+        "note": "RE-VERIFIED FIXED in snapshot 775e7df5: r00003 is now TWO rows, each carrying both languages, pairing ar part i with fa part i. Previously four single-language rows with zero bilingual rows. Confirmed by reading the row content, not the author description."
       },
       {
         "row": "r00004",
@@ -65,7 +65,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "r00003 emits the two Arabic pieces and the two corresponding Persian pieces as FOUR separate single-language rows (layout output: {ar:p0},{ar:p1},{fa:p0},{fa:p1}). The cut points correspond 1:1 (ar cut at 357, fa cut at 293), and the same author pairs correctly in amal-byst-6 r00002 and dua-madr-mrz-frznd r00001, so this is inconsistent. The reader gets a block of Arabic followed by a block of Persian instead of facing paragraphs. The previous note claiming every bilingual row paired consistently was not accurate for this row."
+    "decision": "accept",
+    "note": "RE-VERIFIED FIXED in snapshot 775e7df5: r00003 is now TWO rows, each carrying both languages, pairing ar part i with fa part i. Previously four single-language rows with zero bilingual rows. Confirmed by reading the row content, not the author description."
   }
 }

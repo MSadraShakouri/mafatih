@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-tlb-rvzy",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "bbfe933c3a567a21391a5a21a7fc0a19e8e5de67",
-  "plan_sha256": "060b4f7ff5c25dedb823c1c509e1439091baabdd08b47ddda73fe32f58d7b152",
-  "layout_sha256": "fbc606c00d9c64ebaf95db103dac1ab52e2744eea025b8479ac277ac226a22d9",
-  "result_item_sha256": "0a214fafdf9dba0696b85ebdd6ce7a00a88115a8716cef870a73da0ca89bdbd2",
-  "result_record_sha256": "c714102f85497d07ad038cec17a2a9f0516b771650d00c0187782a1f0ace45a8",
+  "author_commit": "775e7df579ac7278cefdb958f312e906492ade4a",
+  "plan_sha256": "9fc745977ecf59101f4d860e715252b63bc3895c68286329190af63f7f3caf9a",
+  "layout_sha256": "eb593c8aa1a6cbd8b9df813bc7d23b239ecfcc2938d7f113a6634ba9fef5858b",
+  "result_item_sha256": "ffd310008bd643a43993b6625e7d55e4f9e1545070e9ae559868bd449d1120b6",
+  "result_record_sha256": "34aec579a7185255d2fc99d2491d97847ceb18a9118037776a35e2530559e604",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "1a8bbe8d886e30cb7e8d53046f43f30c7113f2d37a78ada8bf0c10722eb36e4b",
     "author": "agent-2",
     "reviewer": "agent-3",
-    "preview_sha256": "1469d12e733219b168a8d4bbb99716e2cfdd247a30da707f992ec883855b8d6e",
+    "preview_sha256": "de1d2e2815d5bbb93767bae6f3b7fb9a7877675dc343b4fafadf1337a0b445e2",
     "sources": [
       {
         "row": "r00001",
@@ -51,21 +51,21 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+        "note": "RE-VERIFIED FIXED in snapshot 775e7df5: r00003 is now TWO paired bilingual rows. The author also moved the ar cut from 680 to 648 — previously the cut fell after «اِنَّکَ ذُو الطَّوْلِ الْعَظیمِ», whose rendering OPENS the Persian piece, so pairing alone would have left a phrase-level misalignment. Cut 648 is before that phrase and both languages now break at the same sense boundary. This was a better fix than the pairing I asked for."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "1/2 cut(s) not after sentence punctuation (checked against context)"
+        "note": "RE-VERIFIED FIXED in snapshot 775e7df5: r00003 is now TWO paired bilingual rows. The author also moved the ar cut from 680 to 648 — previously the cut fell after «اِنَّکَ ذُو الطَّوْلِ الْعَظیمِ», whose rendering OPENS the Persian piece, so pairing alone would have left a phrase-level misalignment. Cut 648 is before that phrase and both languages now break at the same sense boundary. This was a better fix than the pairing I asked for."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "r00003 emits the two Arabic pieces and the two corresponding Persian pieces as FOUR separate single-language rows (layout output: {ar:p0},{ar:p1},{fa:p0},{fa:p1}). Cut points correspond 1:1 (ar cut at 680, fa cut at 604). r00002 in the same item pairs correctly, so this is inconsistent. Reader sees all Arabic then all Persian rather than facing paragraphs. The previous note claiming every bilingual row paired consistently was not accurate for this row."
+    "decision": "accept",
+    "note": "RE-VERIFIED FIXED in snapshot 775e7df5: r00003 is now TWO paired bilingual rows. The author also moved the ar cut from 680 to 648 — previously the cut fell after «اِنَّکَ ذُو الطَّوْلِ الْعَظیمِ», whose rendering OPENS the Persian piece, so pairing alone would have left a phrase-level misalignment. Cut 648 is before that phrase and both languages now break at the same sense boundary. This was a better fix than the pairing I asked for."
   }
 }
