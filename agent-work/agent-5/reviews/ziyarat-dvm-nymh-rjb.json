@@ -1,0 +1,159 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-dvm-nymh-rjb",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "2ac43ae3c6fb52458f23c7c64321bdd6659ea4cf9e6b0f8e4bc1ec57eed5b3a2",
+  "layout_sha256": "879ffe6efa3c1e68a1cb1a00f95054952759df52d9f6e740909bf6f8df1a49d9",
+  "result_item_sha256": "f543679ec2db444b7db50b4d404fc49ffacca26d9df3c9c75b83d543c7b44752",
+  "result_record_sha256": "648836a62efb2fc897fa94ac079ff61c119fb945019acf86686cf613d24bfc9f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-dvm-nymh-rjb",
+    "item_sha256": "723ddb4ef0c219c4aae5f676ac41ab6d73c93df6db70444357be367a7b07b557",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "d0562525d9f553f7cf4e8b646ed30b947d5c25fbe2133b1ad23b62b313a965ff",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The source begins with an attribution and explanation of the occasion, then changes to entry directions; distinguish the report from the instruction at the semantic transition."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Three Arabic greeting pieces have different boundaries from the two Persian rendering pieces. Re-align corresponding greetings, preserving published IDs."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces render the Arabic greetings, not notes; the first continues into the second Arabic piece, so align at matching greetings."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The final السلام continues with عليك at the start of r00004; group the incomplete greeting while preserving published links."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian is an existing rendering, not a note, and its ending سلام continues at r00004. Preserve both source fields and align the greeting."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first Arabic piece completes the preceding greeting; the next is testimony that continues into r00005. Pair with the corresponding Persian rather than leaving both sides detached."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces are ziyarat renderings, not note or instruction; the initial greeting begins in r00003, and the testimony continues into r00005."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00004 testimony. The split and Persian rendering boundaries differ around the request for intercession; align by corresponding clause, retaining prior links."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces render the Arabic ziyarat; neither is note or instruction. The prayer boundary crosses r00004/r00005 and within r00005 is not aligned with the Arabic."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The visitor direction continues into r00007; the cross-row boundary divides a single instruction and can be reviewed for a safe join."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The short direction completes r00006; preserve original source and links when considering a join."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic ziyarat has its corresponding Persian rendering in the same original row but is detached."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the existing rendering of the Arabic prayer, not an instruction; pair if link-preserving tooling allows."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian instruction prefix was moved to the Persian slot, followed by an Arabic recitation."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces render the Arabic greeting and prayer, not notes; their split is not reflected in the single Arabic row. Align and preserve all original IDs."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The instruction starts a direction that finishes at the start of r00011; keep it intact when considering a join."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The source finishes the preceding direction, quotes a short Arabic prayer reference, and ends with a comment; the destination slots and roles distinguish those parts."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Inspected mixed-language occurrence: the Persian direction, Arabic prayer/reference and trailing comment are placed in their appropriate destination slots; other boundary and pairing findings are recorded above."
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "Inspected mixed-language occurrence: the Persian direction, Arabic prayer/reference and trailing comment are placed in their appropriate destination slots; other boundary and pairing findings are recorded above."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "Persian renderings r00002-r00005, r00008-r00009 are detached and variously classified as note/instruction instead of recitation. r00003/r00004 split the final greeting and r00004/r00005 split the testimony. r00006/r00007 and r00010/r00011 interrupt Persian instructions. r00001 attribution and entry instruction share a role. Reconcile matching passages without changing source text or retiring published child IDs; use supported migration where required."
+  }
+}
