@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-aamal-arfh-2",
   "author": "agent-4",
-  "plan_sha256": "e927fb0f0f0d60c15aed8dc0cfb65dde3ad1c3c5e3684af0b5c3e3bffc43a31f",
+  "plan_sha256": "427a9cadb8a97cec9b41b930b1c7512e5096cee5e572f25c3da2488815705434",
   "rows": [
     {
       "row": "r00001",
@@ -28,6 +28,30 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
           },
           "kind": "note"
         }
@@ -70,6 +94,14 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "note"
         }
@@ -614,7 +646,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction"
         }
       ]
     },
@@ -659,6 +691,15 @@
       "spacing": {
         "mode": "both-space",
         "reason": "Join the praise the source split across r00030 and r00031 in both languages"
+      }
+    },
+    {
+      "left": "r00026",
+      "right": "r00027",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Join the blessing the source split across r00026 and r00027 so the Arabic and Persian break at the same phrase"
       }
     }
   ]
