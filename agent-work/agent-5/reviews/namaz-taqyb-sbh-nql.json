@@ -1,0 +1,351 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-taqyb-sbh-nql",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "cc693f503fb4cd9c38cb4bec3356b13f7e6ccac9117afa778aed85ad115679f5",
+  "layout_sha256": "233d29ad5af5dd96a705835695b9b966d76d30eeb5e68e0a7b8514bbc374ec1e",
+  "result_item_sha256": "e4d291e545d40990c444484ac246b3df95e78cd086beca754ecf72cf3e56a254",
+  "result_record_sha256": "a1dc1fa62eaa7e3790f91c086144b713cf7b7cbb508679b3383bba2cad396811",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-taqyb-sbh-nql",
+    "item_sha256": "7d2274deb61deb81b3bba9f03a117537b8c4fc54bf45af3bf7474a14a778fd42",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "b444991363bd027f32acc7ceea44d2549429c805b2ea8975183e8569d0bf35d3",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The initial paired prayer matches the existing Persian; earlier Arabic LF was a documented unreviewed punctuation-boundary correction."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The initial paired prayer matches the existing Persian; earlier Arabic LF was a documented unreviewed punctuation-boundary correction."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian repetition direction is moved from the mixed source into instruction; the blessing is paired. Prior Persian LF is documented unreviewed history."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian repetition direction is moved from the mixed source into instruction; the blessing is paired. Prior Persian LF is documented unreviewed history."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Narrative comment on the merit of the blessing is a note."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The two paired petitions about living and dying on the stated way correspond."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The two paired petitions about living and dying on the stated way correspond."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The repetition instruction is moved out of Arabic and the prayer rendering is paired."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The repetition instruction is moved out of Arabic and the prayer rendering is paired."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic source begins with a Persian repetition direction before two Arabic formulas; move the direction out and preserve both formulas and their Persian."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source begins with a Persian repetition direction before two Arabic formulas; move the direction out and preserve both formulas and their Persian."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian direction is moved from Arabic and the blessing is paired."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian direction is moved from Arabic and the blessing is paired."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic praise; move and classify it as instruction."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic praise; move and classify it as instruction."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic formula; move and classify it as instruction."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic source begins with a Persian repetition direction before the Arabic formula; move and classify it as instruction."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian introduction is separated from the Arabic prayer and the prayer is paired; the meaning continues in r00014."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian introduction is separated from the Arabic prayer and the prayer is paired; the meaning continues in r00014."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic and Persian continue the preceding prayer; prior Persian LF is documented AI-assisted unreviewed history, not a confirmed new split."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic and Persian continue the preceding prayer; prior Persian LF is documented AI-assisted unreviewed history, not a confirmed new split."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This combines a report and a subsequent reading direction; instruction is a defensible role for the combined passage."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired praise and Persian correspond."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired praise and Persian correspond."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "A reported benefit followed by the next instruction is preserved; do not split merely on length."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired invocation including its basmala has an existing corresponding Persian rendering."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired invocation including its basmala has an existing corresponding Persian rendering."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The narrative reports effects and then introduces the next prayer; preserve the existing text and recognize its instruction."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired supplication for light, insight, provision and gratitude corresponds to its rendering."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired supplication for light, insight, provision and gratitude corresponds to its rendering."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The narrative report introduces the following formula as a note."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Quranic excerpts and formulas correspond in context; prior Persian LF is documented AI-assisted unreviewed history. Retain the citation markers as source."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Quranic excerpts and formulas correspond in context; prior Persian LF is documented AI-assisted unreviewed history. Retain the citation markers as source."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired formula about reliance and sufficiency corresponds to the Persian."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired formula about reliance and sufficiency corresponds to the Persian."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired concluding formula about sufficiency and reliance corresponds."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired concluding formula about sufficiency and reliance corresponds."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "escalate",
+        "note": "Earlier AI-assisted line-break removal is documented and unreviewed; retain current source, do not silently restore it, and refer the historical editorial decision for separate adjudication."
+      },
+      {
+        "index": 1,
+        "decision": "escalate",
+        "note": "Earlier AI-assisted line-break removal is documented and unreviewed; retain current source, do not silently restore it, and refer the historical editorial decision for separate adjudication."
+      },
+      {
+        "index": 2,
+        "decision": "escalate",
+        "note": "Earlier AI-assisted line-break removal is documented and unreviewed; retain current source, do not silently restore it, and refer the historical editorial decision for separate adjudication."
+      },
+      {
+        "index": 3,
+        "decision": "escalate",
+        "note": "Earlier AI-assisted line-break removal is documented and unreviewed; retain current source, do not silently restore it, and refer the historical editorial decision for separate adjudication."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00006-r00009 and r00011-r00012 retain Persian repetition instructions in the Arabic recitation slot; split those instructions and move to Persian while preserving the paired formulas and source characters. Historical LF edits are separate unreviewed editorial decisions, not proof of the prayer alignment; no source correction is proposed."
+  }
+}
