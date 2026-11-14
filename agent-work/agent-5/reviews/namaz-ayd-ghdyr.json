@@ -1,0 +1,322 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-ayd-ghdyr",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "89a6949db9ca3d133fce5627816445605c40dfdd6d76fbdc6fc1c6f3e2149b40",
+  "layout_sha256": "8abbd1cec2c4400373831baa142b625c7b2ac6a951f7dc822a86ed1e8729edb2",
+  "result_item_sha256": "fe71c8748bbd3fb07c5bce3312bf3da512348be08cec815e7012c899d4b952de",
+  "result_record_sha256": "074e74f8837e0b003abc8826438d63b689826b212f775b7733805146b83eb730",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-ayd-ghdyr",
+    "item_sha256": "450835d5010b0ce5a31480297b0df72d1f2f50584d74389ab8a3588cbdda4f57",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "5339eaf2ab446b77f39f6caf3a6e63299fc0dcc2b309a98e155fd751b024f23e",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fifth practice gives prayer and prostration directions before the following supplication. This decision concerns the fa source."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The prayer is paired, but its final adjective ناسياً / فراموشکار continues in r00003; consider a link-safe cross-row join. This decision concerns the ar source."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The prayer is paired, but its final adjective ناسياً / فراموشکار continues in r00003; consider a link-safe cross-row join. This decision concerns the fa source."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Opening completes the previous prayer phrase; the Arabic and Persian continuation should be grouped without inventing text. This decision concerns the ar source."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Opening completes the previous prayer phrase; the Arabic and Persian continuation should be grouped without inventing text. This decision concerns the fa source."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired prayer ends inside the Quranic passage, continuing فآمنا / پس ما ایمان آوردیم in r00005; group at that source boundary if link-safe. This decision concerns the ar source."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired prayer ends inside the Quranic passage, continuing فآمنا / پس ما ایمان آوردیم in r00005; group at that source boundary if link-safe. This decision concerns the fa source."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00004 and the remainder is the paired prayer; group the interrupted passage without changing its wording. This decision concerns the ar source."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00004 and the remainder is the paired prayer; group the interrupted passage without changing its wording. This decision concerns the fa source."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired supplication concludes before the following practical direction; recitation is appropriate. This decision concerns the ar source."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired supplication concludes before the following practical direction; recitation is appropriate. This decision concerns the fa source."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening is a direction to prostrate and repeat, then a report of merit begins and continues into r00008. Separate instruction from note and do not interrupt the report mid-sentence. This decision concerns the fa source."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening completes r00007 merit report; then prayer timing and sura selections are directions. Distinguish report and instruction. This decision concerns the fa source."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The sixth numbered practice begins with actual prayer directions, followed by merit and compiler comparison with Iqbal; note alone misclassifies the directions. The final explanation continues into r00010. This decision concerns the fa source."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening completes r00009 compiler discussion; then a reading instruction and the seventh numbered practice begin. Distinguish the report, recommendation and new practice. This decision concerns the fa source."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The eighth practice directs the reader to the prayer that follows. This decision concerns the fa source."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Arabic and Persian prayer starts here and continues into r00013. Earlier Persian line-break history is separately escalated. This decision concerns the ar source."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired Arabic and Persian prayer starts here and continues into r00013. Earlier Persian line-break history is separately escalated. This decision concerns the fa source."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Both fields continue the descriptions begun in r00012 and close the passage; the pairing is retained. This decision concerns the ar source."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Both fields continue the descriptions begun in r00012 and close the passage; the pairing is retained. This decision concerns the fa source."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired invocation ends with لومة / ملامت whose complement begins r00015; group the incomplete phrase while preserving the original links. This decision concerns the ar source."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired invocation ends with لومة / ملامت whose complement begins r00015; group the incomplete phrase while preserving the original links. This decision concerns the fa source."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first word completes r00014 in both languages; group that clause at the cross-row boundary. This decision concerns the ar source."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first word completes r00014 in both languages; group that clause at the cross-row boundary. This decision concerns the fa source."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The final preposition في / در continues with its object at r00017; group this interrupted clause if link-safe. This decision concerns the ar source."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The final preposition في / در continues with its object at r00017; group this interrupted clause if link-safe. This decision concerns the fa source."
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00016 in both fields; keep the prayer and its rendering aligned. This decision concerns the ar source."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00016 in both fields; keep the prayer and its rendering aligned. This decision concerns the fa source."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The optional longer prayer recommendation is followed by a distinct ninth numbered practice and its greeting direction; split the transition if links can be preserved. This decision concerns the fa source."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The greeting is paired with its existing Persian rendering. This decision concerns the ar source."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The greeting is paired with its existing Persian rendering. This decision concerns the fa source."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This introduces the following recitation. This decision concerns the fa source."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic expression and Persian explanation continue into r00022; group the interrupted phrase and retain existing translations. This decision concerns the ar source."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic expression and Persian explanation continue into r00022; group the interrupted phrase and retain existing translations. This decision concerns the fa source."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first phrase completes r00021; its paired Arabic and Persian need to stay together across the source boundary. This decision concerns the ar source."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first phrase completes r00021; its paired Arabic and Persian need to stay together across the source boundary. This decision concerns the fa source."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The tenth practice gives a repetition instruction for the next recitation. This decision concerns the fa source."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The recitation and existing Persian rendering are paired. This decision concerns the ar source."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The recitation and existing Persian rendering are paired. This decision concerns the fa source."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The closing merit report ends with طعام دادن and continues in r00026; group that prose continuation if link-safe. This decision concerns the fa source."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first phrase completes the prior report; the historical report that follows remains narrative, not an instruction. This decision concerns the fa source."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "escalate",
+        "note": "The earlier Persian physical-separator removal is historical and unreviewed; retain the current text and refer the editorial decision for separate adjudication, without silently restoring it."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The bilingual prayers are generally paired, but complete cross-row phrases at r00002/03, r00004/05, r00014/15, r00016/17 and r00021/22 are interrupted. r00007-r00010 mix reported merit and numbered directions and misclassify instructions as notes; r00018 combines the optional prayer recommendation with the ninth practice. r00025/r00026 break a Persian report. These are concrete semantic boundaries, not requests based on length. Preserve all published links and escalate blocked joins."
+  }
+}
