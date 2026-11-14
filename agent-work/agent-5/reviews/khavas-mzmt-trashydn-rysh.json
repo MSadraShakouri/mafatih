@@ -4,7 +4,7 @@
   "item": "khavas-mzmt-trashydn-rysh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "093b74e9414c6cb37c15e102e19d8738f0177f2ece8da21b5dc6509b28666f2c",
   "layout_sha256": "f5ab202336f3795402f203e6e27acf97a63f67281837bc4239c4ca3fabdf61ad",
   "result_item_sha256": "b98ed44a1c1416d734276c27df3725b647eb5981f70bac4301ea81a30bf14ffc",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The reported quotation attribution ends mid-sentence and continues نقل‌شده at r00002; group that report if links permit."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first part completes r00001 and recounts a reported saying; the second moves into a different historical report. Preserve that transition while repairing the interrupted source boundary."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
   }
 }

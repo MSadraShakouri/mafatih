@@ -4,7 +4,7 @@
   "item": "namaz-fzylt-ayh-alkrsy",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "51c2cd0def5491b94f4ad2fb1a454e8124775c05fe43f45f72b8a1a1aeccb96e",
   "layout_sha256": "fa8250053dca6adc37e1fa9af3d36dcca7ffe8240ac36dc077421c33e8367286",
   "result_item_sha256": "35b2a5abba22b83c2db576dcdbeec245cec01bb85c2732495521c12b99b4648b",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "This Persian report is correctly placed in the Persian slot despite its original Arabic field; it ends روایت and continues شده at the start of r00002."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first piece completes the preceding attribution; the later pieces begin distinct reported merits. Consider a link-safe join at the interrupted Persian verb."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
   }
 }

@@ -4,7 +4,7 @@
   "item": "khavas-khvab-dydn-khvd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "c504df2dece813ecb41943d3a23c189f762ee9e555556fab4e5119cae128d154",
   "layout_sha256": "2b44edbc5e84ce076bf42834d8a2aad445c4d2f17a500a17420a18fde209561a",
   "result_item_sha256": "d22d126109762159a2f11c1927246673efbf7322da513f5e3cc98e2ff90821f3",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The compiler comment and source-based practice are distinguished, but the instruction ends به وقت and continues into r00002; group the complete direction without losing either child ID."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The instruction starts by completing r00001 and then describes the sleep procedure; retain source text and join the interrupted opening if possible."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
   }
 }

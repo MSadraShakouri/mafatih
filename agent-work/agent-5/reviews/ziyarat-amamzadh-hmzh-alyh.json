@@ -4,7 +4,7 @@
   "item": "ziyarat-amamzadh-hmzh-alyh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "fade9fd196c3570ca7064bb6275a5b0c97b4d975ceeb2573af86b2878eaae088",
   "layout_sha256": "d14bde9b860ce322a412a3632668506df79cbeb4941b89c0b3da3993ae008566",
   "result_item_sha256": "f4a6a12115d3e8cda5574aee7180464bd7ccec2007316b4fe6c536d04a2398c7",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The attribution ends mid-sentence at که, continued in r00002; group the report if the historical links can be preserved."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first piece finishes the historical report and includes directions about which visitation to read; the second mixes historical information and advice to visit other graves. Distinguish practical directions from notes and join the interrupted attribution where safe."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
   }
 }

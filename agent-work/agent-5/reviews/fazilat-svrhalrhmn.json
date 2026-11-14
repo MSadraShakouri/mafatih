@@ -4,7 +4,7 @@
   "item": "fazilat-svrhalrhmn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "931ed5ff8e2a776689b534c55b5f562b4e11d2554af07119d5a7baecd43c56b1",
   "layout_sha256": "d84090c0588855b817e4003af857a2309f0cf8b0eb9900fbcb89fc4ae947150e",
   "result_item_sha256": "42aa3b435bdb8fe5f96517594ad61b09e6c3b9aa1528b192170c228502eda811",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "Reported merit narrative continues mid-sentence into r00002 after پس; group the continuation without altering the source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first part completes r00001, and the second introduces a separate report. Preserve the report transition and consider a link-safe join at the interrupted first sentence."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
   }
 }

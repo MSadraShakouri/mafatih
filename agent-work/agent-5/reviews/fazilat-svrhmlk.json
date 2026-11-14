@@ -4,7 +4,7 @@
   "item": "fazilat-svrhmlk",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "434ab8fdc2f759282a58c229430a3f1f19a81dfa6fd8656bda3c658d2199ea97",
   "layout_sha256": "6bb91b3d423161ba0af6af249cac2a4fa12c834c14966d171f726d45e474e285",
   "result_item_sha256": "334ceb19db6fb025c57259c113d28cc88ff6df22b3330d5aedfca9ccd7d279bc",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The narrated report is interrupted after در and continues with نماز واجب in r00002."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "First part completes the prior narrative; the second introduces another account. Preserve this transition and group the interrupted first report if link-safe."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
   }
 }
