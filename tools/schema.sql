@@ -1,7 +1,7 @@
 -- SQLite is a generated output, never the source of truth. All text is interned.
 PRAGMA foreign_keys = ON;
--- Version 3 adds retired row identities and reversible split mappings.
-PRAGMA user_version = 3;
+-- Version 4 adds merged-row destination offsets and prior-output aliases.
+PRAGMA user_version = 4;
 CREATE TABLE corpus_meta (key TEXT PRIMARY KEY, value TEXT NOT NULL) STRICT;
 CREATE TABLE text_value (id TEXT PRIMARY KEY, value TEXT NOT NULL UNIQUE) STRICT;
 CREATE TABLE claim (id TEXT PRIMARY KEY, text_id TEXT NOT NULL REFERENCES text_value(id)) STRICT;
@@ -45,17 +45,20 @@ CREATE TABLE row_source (
   PRIMARY KEY(item_id,row_id,language,position), FOREIGN KEY(item_id,row_id) REFERENCES item_row(item_id,row_id)
 ) STRICT;
 CREATE TABLE item_split_record (
-  item_id TEXT PRIMARY KEY REFERENCES item(id), author TEXT NOT NULL,
+  item_id TEXT PRIMARY KEY REFERENCES item(id), author TEXT NOT NULL, format_version INTEGER NOT NULL CHECK(format_version IN (1,2)),
   baseline_item_sha256 TEXT NOT NULL, plan_sha256 TEXT NOT NULL, layout_sha256 TEXT NOT NULL
 ) STRICT;
+-- Alias identities are previously emitted physical rows; originals belong to the frozen baseline.
 CREATE TABLE row_split_original (
   item_id TEXT NOT NULL REFERENCES item_split_record(item_id), source_row_id TEXT NOT NULL, original_json TEXT NOT NULL,
+  origin_kind TEXT NOT NULL CHECK(origin_kind IN ('original','alias')),
   PRIMARY KEY(item_id,source_row_id), FOREIGN KEY(item_id,source_row_id) REFERENCES row_identity(item_id,row_id)
 ) STRICT;
 CREATE TABLE row_split_segment (
   item_id TEXT NOT NULL, source_row_id TEXT NOT NULL, source_language TEXT NOT NULL CHECK(source_language IN ('ar','fa')),
   position INTEGER NOT NULL CHECK(position>=0), target_row_id TEXT NOT NULL, target_language TEXT NOT NULL CHECK(target_language IN ('ar','fa')),
   start_cp INTEGER NOT NULL CHECK(start_cp>=0), end_cp INTEGER NOT NULL CHECK(end_cp>start_cp),
+  target_start_cp INTEGER NOT NULL CHECK(target_start_cp>=0),
   PRIMARY KEY(item_id,source_row_id,source_language,position),
   FOREIGN KEY(item_id,source_row_id) REFERENCES row_split_original(item_id,source_row_id),
   FOREIGN KEY(item_id,target_row_id) REFERENCES item_row(item_id,row_id)
