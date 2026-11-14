@@ -1,0 +1,2523 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-shr",
+  "author": "agent-2",
+  "reviewer": "agent-3",
+  "author_commit": "52201b994ceea119efb887c478496eb013bdc8aa",
+  "plan_sha256": "7559329dfd3efeba0bae4c9ce0b6eb1824fe6b6c1dca88a733bb99aeffe3aeff",
+  "layout_sha256": "ff7fb3aa3253f9fa87f59baac5fc59b74627287105d1b454967f2c1ffa34313d",
+  "result_item_sha256": "1507791febb435ae911c0b486907e87ae12dc532d82bdb70d6903c3c418bd074",
+  "result_record_sha256": "f08e73084ed1fd93a9ddf1af4a5489c2e87641f01041ed6603d31ed60eb029e9",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-shr",
+    "item_sha256": "64d3196f96fd7c13ed0605bc0232ac2237d03e76d0d9eabb7bca0fd0fbf1e5f0",
+    "author": "agent-2",
+    "reviewer": "agent-3",
+    "preview_sha256": "7f14613f4a8358a8704f8be2e80f64bdfff70e7c16befbf3b10987109589f256",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "2 part(s)/80 cps reconstruct exactly"
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/15 cps reconstruct exactly"
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/7 cps reconstruct exactly"
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/14 cps reconstruct exactly"
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/14 cps reconstruct exactly"
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/22 cps reconstruct exactly"
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/46 cps reconstruct exactly"
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/62 cps reconstruct exactly"
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/61 cps reconstruct exactly"
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/47 cps reconstruct exactly"
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/69 cps reconstruct exactly"
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/52 cps reconstruct exactly"
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/17 cps reconstruct exactly"
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/47 cps reconstruct exactly"
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/60 cps reconstruct exactly"
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/62 cps reconstruct exactly"
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/56 cps reconstruct exactly"
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/76 cps reconstruct exactly"
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/44 cps reconstruct exactly"
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/48 cps reconstruct exactly"
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00026",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/33 cps reconstruct exactly"
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/16 cps reconstruct exactly"
+      },
+      {
+        "row": "r00027",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/33 cps reconstruct exactly"
+      },
+      {
+        "row": "r00028",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00029",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/20 cps reconstruct exactly"
+      },
+      {
+        "row": "r00030",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00031",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/43 cps reconstruct exactly"
+      },
+      {
+        "row": "r00032",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00033",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00033",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/11 cps reconstruct exactly"
+      },
+      {
+        "row": "r00034",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00034",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00035",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00035",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00036",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/33 cps reconstruct exactly"
+      },
+      {
+        "row": "r00036",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/32 cps reconstruct exactly"
+      },
+      {
+        "row": "r00037",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/69 cps reconstruct exactly"
+      },
+      {
+        "row": "r00037",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/42 cps reconstruct exactly"
+      },
+      {
+        "row": "r00038",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00038",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/17 cps reconstruct exactly"
+      },
+      {
+        "row": "r00039",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00039",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00040",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/67 cps reconstruct exactly"
+      },
+      {
+        "row": "r00040",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/61 cps reconstruct exactly"
+      },
+      {
+        "row": "r00041",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/54 cps reconstruct exactly"
+      },
+      {
+        "row": "r00041",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/47 cps reconstruct exactly"
+      },
+      {
+        "row": "r00042",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/48 cps reconstruct exactly"
+      },
+      {
+        "row": "r00042",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/38 cps reconstruct exactly"
+      },
+      {
+        "row": "r00043",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/48 cps reconstruct exactly"
+      },
+      {
+        "row": "r00043",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00044",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/48 cps reconstruct exactly"
+      },
+      {
+        "row": "r00044",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00045",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/46 cps reconstruct exactly"
+      },
+      {
+        "row": "r00045",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/45 cps reconstruct exactly"
+      },
+      {
+        "row": "r00046",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00046",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00047",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00047",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/33 cps reconstruct exactly"
+      },
+      {
+        "row": "r00048",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00048",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00049",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00049",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00050",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00050",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00051",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/55 cps reconstruct exactly"
+      },
+      {
+        "row": "r00051",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00052",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00052",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00053",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00053",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00054",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/58 cps reconstruct exactly"
+      },
+      {
+        "row": "r00054",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/54 cps reconstruct exactly"
+      },
+      {
+        "row": "r00055",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00055",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/44 cps reconstruct exactly"
+      },
+      {
+        "row": "r00056",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00056",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00057",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/22 cps reconstruct exactly"
+      },
+      {
+        "row": "r00057",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/15 cps reconstruct exactly"
+      },
+      {
+        "row": "r00058",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00058",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00059",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00059",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/60 cps reconstruct exactly"
+      },
+      {
+        "row": "r00060",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00060",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00061",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/56 cps reconstruct exactly"
+      },
+      {
+        "row": "r00061",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/43 cps reconstruct exactly"
+      },
+      {
+        "row": "r00062",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/74 cps reconstruct exactly"
+      },
+      {
+        "row": "r00062",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00063",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/8 cps reconstruct exactly"
+      },
+      {
+        "row": "r00063",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/13 cps reconstruct exactly"
+      },
+      {
+        "row": "r00064",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/20 cps reconstruct exactly"
+      },
+      {
+        "row": "r00064",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/13 cps reconstruct exactly"
+      },
+      {
+        "row": "r00065",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00065",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/14 cps reconstruct exactly"
+      },
+      {
+        "row": "r00066",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00066",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00067",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/43 cps reconstruct exactly"
+      },
+      {
+        "row": "r00067",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00068",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/38 cps reconstruct exactly"
+      },
+      {
+        "row": "r00068",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00069",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00069",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00070",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/55 cps reconstruct exactly"
+      },
+      {
+        "row": "r00070",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/53 cps reconstruct exactly"
+      },
+      {
+        "row": "r00071",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00071",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00072",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00072",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00073",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00073",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00074",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00074",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00075",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00075",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00076",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/44 cps reconstruct exactly"
+      },
+      {
+        "row": "r00076",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/43 cps reconstruct exactly"
+      },
+      {
+        "row": "r00077",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00077",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00078",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/60 cps reconstruct exactly"
+      },
+      {
+        "row": "r00078",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/49 cps reconstruct exactly"
+      },
+      {
+        "row": "r00079",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00079",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/50 cps reconstruct exactly"
+      },
+      {
+        "row": "r00080",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/56 cps reconstruct exactly"
+      },
+      {
+        "row": "r00080",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/53 cps reconstruct exactly"
+      },
+      {
+        "row": "r00081",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/45 cps reconstruct exactly"
+      },
+      {
+        "row": "r00081",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/48 cps reconstruct exactly"
+      },
+      {
+        "row": "r00082",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/56 cps reconstruct exactly"
+      },
+      {
+        "row": "r00082",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/56 cps reconstruct exactly"
+      },
+      {
+        "row": "r00083",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/46 cps reconstruct exactly"
+      },
+      {
+        "row": "r00083",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/46 cps reconstruct exactly"
+      },
+      {
+        "row": "r00084",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/63 cps reconstruct exactly"
+      },
+      {
+        "row": "r00084",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/54 cps reconstruct exactly"
+      },
+      {
+        "row": "r00085",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00085",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/20 cps reconstruct exactly"
+      },
+      {
+        "row": "r00086",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00086",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/15 cps reconstruct exactly"
+      },
+      {
+        "row": "r00087",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00087",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/15 cps reconstruct exactly"
+      },
+      {
+        "row": "r00088",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00088",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/10 cps reconstruct exactly"
+      },
+      {
+        "row": "r00089",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00089",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00090",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/48 cps reconstruct exactly"
+      },
+      {
+        "row": "r00090",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00091",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/49 cps reconstruct exactly"
+      },
+      {
+        "row": "r00091",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/44 cps reconstruct exactly"
+      },
+      {
+        "row": "r00092",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00092",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00093",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00093",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/32 cps reconstruct exactly"
+      },
+      {
+        "row": "r00094",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00094",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00095",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00095",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00096",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00096",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00097",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/60 cps reconstruct exactly"
+      },
+      {
+        "row": "r00097",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/62 cps reconstruct exactly"
+      },
+      {
+        "row": "r00098",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00098",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00099",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00099",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00100",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00100",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00101",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00101",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00102",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00102",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00103",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/48 cps reconstruct exactly"
+      },
+      {
+        "row": "r00103",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/38 cps reconstruct exactly"
+      },
+      {
+        "row": "r00104",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00104",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/22 cps reconstruct exactly"
+      },
+      {
+        "row": "r00105",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/46 cps reconstruct exactly"
+      },
+      {
+        "row": "r00105",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/56 cps reconstruct exactly"
+      },
+      {
+        "row": "r00106",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00106",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/15 cps reconstruct exactly"
+      },
+      {
+        "row": "r00107",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00107",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/20 cps reconstruct exactly"
+      },
+      {
+        "row": "r00108",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00108",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/16 cps reconstruct exactly"
+      },
+      {
+        "row": "r00109",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/52 cps reconstruct exactly"
+      },
+      {
+        "row": "r00109",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00110",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00110",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/20 cps reconstruct exactly"
+      },
+      {
+        "row": "r00111",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/64 cps reconstruct exactly"
+      },
+      {
+        "row": "r00111",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/94 cps reconstruct exactly"
+      },
+      {
+        "row": "r00112",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00112",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00113",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00113",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00114",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00114",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00115",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/44 cps reconstruct exactly"
+      },
+      {
+        "row": "r00115",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00116",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00116",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00117",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00117",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/33 cps reconstruct exactly"
+      },
+      {
+        "row": "r00118",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00118",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00119",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/10 cps reconstruct exactly"
+      },
+      {
+        "row": "r00119",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/9 cps reconstruct exactly"
+      },
+      {
+        "row": "r00120",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/17 cps reconstruct exactly"
+      },
+      {
+        "row": "r00120",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/16 cps reconstruct exactly"
+      },
+      {
+        "row": "r00121",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00121",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/47 cps reconstruct exactly"
+      },
+      {
+        "row": "r00122",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00122",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/17 cps reconstruct exactly"
+      },
+      {
+        "row": "r00123",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00123",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00124",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/43 cps reconstruct exactly"
+      },
+      {
+        "row": "r00124",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00125",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00125",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00126",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00126",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00127",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00127",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00128",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/49 cps reconstruct exactly"
+      },
+      {
+        "row": "r00128",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/42 cps reconstruct exactly"
+      },
+      {
+        "row": "r00129",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/21 cps reconstruct exactly"
+      },
+      {
+        "row": "r00129",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00130",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00130",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/38 cps reconstruct exactly"
+      },
+      {
+        "row": "r00131",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/64 cps reconstruct exactly"
+      },
+      {
+        "row": "r00131",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/59 cps reconstruct exactly"
+      },
+      {
+        "row": "r00132",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00132",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00133",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/32 cps reconstruct exactly"
+      },
+      {
+        "row": "r00133",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00134",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00134",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00135",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/32 cps reconstruct exactly"
+      },
+      {
+        "row": "r00135",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00136",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00136",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00137",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00137",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/22 cps reconstruct exactly"
+      },
+      {
+        "row": "r00138",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/47 cps reconstruct exactly"
+      },
+      {
+        "row": "r00138",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/39 cps reconstruct exactly"
+      },
+      {
+        "row": "r00139",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00139",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00140",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/54 cps reconstruct exactly"
+      },
+      {
+        "row": "r00140",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/38 cps reconstruct exactly"
+      },
+      {
+        "row": "r00141",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00141",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00142",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/63 cps reconstruct exactly"
+      },
+      {
+        "row": "r00142",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/49 cps reconstruct exactly"
+      },
+      {
+        "row": "r00143",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/42 cps reconstruct exactly"
+      },
+      {
+        "row": "r00143",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00144",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00144",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00145",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00145",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00146",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/42 cps reconstruct exactly"
+      },
+      {
+        "row": "r00146",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/55 cps reconstruct exactly"
+      },
+      {
+        "row": "r00147",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00147",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00148",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00148",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/25 cps reconstruct exactly"
+      },
+      {
+        "row": "r00149",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/2 cps reconstruct exactly"
+      },
+      {
+        "row": "r00149",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/2 cps reconstruct exactly"
+      },
+      {
+        "row": "r00150",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/20 cps reconstruct exactly"
+      },
+      {
+        "row": "r00150",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00151",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/38 cps reconstruct exactly"
+      },
+      {
+        "row": "r00151",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/33 cps reconstruct exactly"
+      },
+      {
+        "row": "r00152",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00152",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/35 cps reconstruct exactly"
+      },
+      {
+        "row": "r00153",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00153",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00154",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/31 cps reconstruct exactly"
+      },
+      {
+        "row": "r00154",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/29 cps reconstruct exactly"
+      },
+      {
+        "row": "r00155",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/28 cps reconstruct exactly"
+      },
+      {
+        "row": "r00155",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00156",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00156",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/44 cps reconstruct exactly"
+      },
+      {
+        "row": "r00157",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/63 cps reconstruct exactly"
+      },
+      {
+        "row": "r00157",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/69 cps reconstruct exactly"
+      },
+      {
+        "row": "r00158",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/36 cps reconstruct exactly"
+      },
+      {
+        "row": "r00158",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/46 cps reconstruct exactly"
+      },
+      {
+        "row": "r00159",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00159",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00160",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/33 cps reconstruct exactly"
+      },
+      {
+        "row": "r00160",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/41 cps reconstruct exactly"
+      },
+      {
+        "row": "r00161",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/38 cps reconstruct exactly"
+      },
+      {
+        "row": "r00161",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/42 cps reconstruct exactly"
+      },
+      {
+        "row": "r00162",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00162",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00163",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00163",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/30 cps reconstruct exactly"
+      },
+      {
+        "row": "r00164",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00164",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/13 cps reconstruct exactly"
+      },
+      {
+        "row": "r00165",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/19 cps reconstruct exactly"
+      },
+      {
+        "row": "r00165",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/13 cps reconstruct exactly"
+      },
+      {
+        "row": "r00166",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00166",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00167",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00167",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/14 cps reconstruct exactly"
+      },
+      {
+        "row": "r00168",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/20 cps reconstruct exactly"
+      },
+      {
+        "row": "r00168",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/23 cps reconstruct exactly"
+      },
+      {
+        "row": "r00169",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/34 cps reconstruct exactly"
+      },
+      {
+        "row": "r00169",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/26 cps reconstruct exactly"
+      },
+      {
+        "row": "r00170",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/55 cps reconstruct exactly"
+      },
+      {
+        "row": "r00170",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/49 cps reconstruct exactly"
+      },
+      {
+        "row": "r00171",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/53 cps reconstruct exactly"
+      },
+      {
+        "row": "r00171",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/87 cps reconstruct exactly"
+      },
+      {
+        "row": "r00172",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00172",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/37 cps reconstruct exactly"
+      },
+      {
+        "row": "r00173",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/59 cps reconstruct exactly"
+      },
+      {
+        "row": "r00173",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/55 cps reconstruct exactly"
+      },
+      {
+        "row": "r00174",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/24 cps reconstruct exactly"
+      },
+      {
+        "row": "r00174",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/15 cps reconstruct exactly"
+      },
+      {
+        "row": "r00175",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00175",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/18 cps reconstruct exactly"
+      },
+      {
+        "row": "r00176",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/40 cps reconstruct exactly"
+      },
+      {
+        "row": "r00176",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/27 cps reconstruct exactly"
+      },
+      {
+        "row": "r00177",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/47 cps reconstruct exactly"
+      },
+      {
+        "row": "r00178",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "1 part(s)/81 cps reconstruct exactly"
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset restored and no marker moved"
+      },
+      {
+        "index": 1,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset restored and no marker moved"
+      },
+      {
+        "index": 2,
+        "decision": "addressed",
+        "note": "historical hint inspected; no old break offset restored and no marker moved"
+      }
+    ]
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "partial pairing where counts differ, no invented translation: r00001:1p/0a/1f"
+  }
+}
