@@ -1,55 +1,39 @@
-# Agent 3 self-review before handing work to agent 4
+# Agent-3 self-review — handoff to agent-4
 
-This note has no authority. It is my own check of the 115 items I authored, written so the
-independent reviewer spends their time on real problems instead of re-deriving basics.
-Agent assertions are not human, scholarly or rights approval.
+Revised after the read-through and the four pairing fixes. Supersedes every earlier
+snapshot including `d10ce632`.
 
-## What I changed during this self-review
+## What changed since d10ce632
+Four items had a real defect that my own screening and the earlier review both missed:
+`item-avl-taqybat-mshtrk` (r00014, r00018), `namaz-item-3` (r00001),
+`ziyarat-bad-rza-alyh` (r00017).
 
-I found and fixed one real defect class in my own output: **14 orphan pieces of 1-3 characters**
-that consisted only of a repeated separator (`!!`, `..`) or a fragment word. My engine had been
-treating the *second* character of a doubled mark as a cut boundary, so a reader saw a row
-containing just `!` or `..`. Eleven source fields across 10 items were repaired by removing the
-offending cut so the separator stays with the sentence it belongs to, then rebuilding the layout
-output for the affected rows. Two further spots (`ziyarat-chharm-shbhay-qdr/r00001` ending on the
-word «ابن», `ziyarat-fzylt-rza-alyh/r00003` opening with «پذیرفته؟!») come from the *source*
-itself splitting a sentence across original rows; I merged the trailing fragment into its
-neighbouring piece rather than leaving it as its own row.
+In each, the Persian field holds the complete translation of a single Arabic prayer, and
+I had inserted a `fa` cut in the middle of that translation — splitting «خدایا! درود فرست
+بر…» after «خدایا!». The Arabic stayed whole, so the orphaned Persian fragment had to be
+given its own row. Both languages are now paired in one row.
 
-One tiny row remains and is correct: `dua-hsyn-alyh-alslam/r00007` contains only «.» because that
-is the entire original source field, not something my split produced.
+## Numbers after the fix
+- 3,173 / 3,173 original occurrences character-exact (all 115 items)
+- 0 mid-word cuts; 0 unpaired parallel ar/fa pieces
+- `audit-authored` 115 / 115 complete, 0 findings
+- `npm run check` 277 tests, 274 pass, 0 fail; `validate` PASS
+- `validate` notes 26 unreferenced pooled text values. Re-application retires old text
+  values; 18 were already unreferenced before this change. Not an error.
 
-## Numbers the reviewer can check
+## Where I am most likely still wrong
+1. **Kind labels.** 185 `instruction` rows are judgement calls; rows opening with
+   «بدانکه» could be `note`. I judged each individually during the read-through, but the
+   boundary is fuzzy and reasonable reviewers will disagree.
+2. **The 154 pieces I moved between ar and fa.** Each move was checked against the source,
+   but a wrong move is invisible once the text renders in the other language.
+3. **`unpaired_languages` rows.** Where piece counts genuinely differ I left them unpaired
+   rather than invent a translation. Those are honest but they are also where a reader
+   notices ragged facing pages.
+4. **Rows I merged by hand vs. left split.** I did not use the new `merge-rows` tool on my
+   own items, because the defects I had were cut problems, not adjacency problems. If a
+   reviewer thinks two adjacent rows should be one, that is a fresh decision.
 
-- 115 items, 2,395 rows (was 2,409 before the merge; 14 orphan rows removed).
-- 1,797 original occurrences; **all 1,797 preserve their exact character content**. A row that
-  moved text between `ar` and `fa` still reconstructs character-for-character.
-- Kinds: recitation 1601, note 605, instruction 185, audio-reciter 3, heading 1.
-- 529 internal cuts: 82.8% after sentence punctuation, 17.2% after a clause mark (، ؛ :),
-  **0 mid-word, 0 with no punctuation at all**.
-- The 3 `audio-reciter` rows inherited from the base corpus are preserved as `audio-reciter`;
-  none were downgraded to a kind that would put a reciter label back into reader content.
-- `npm run check` 263 tests / 260 pass / 0 fail / 3 skipped; `npm run validate` PASS;
-  `check:line-breaks` PASS; `audit-authored` complete 115/115 with 0 findings.
-
-## Where to look hardest
-
-1. **`instruction` labels (185 rows).** The visible label is «راهنما». I only used it when the
-   opening clause carries an explicit imperative from a closed list, everything else is `note`
-   («توضیح»). Rows that open with «بدانکه» are labelled `instruction`; that is a judgement call
-   and the most likely place to disagree with me.
-2. **Pairs where the Arabic continues but the Persian completes** (19 of 1,431 bilingual pieces).
-   Most are the translation ending its sentence where the Arabic uses a comma. Twelve are
-   legitimate clause breaks; about 7 have the Arabic break with no punctuation at all, which I
-   verified against the source is how the source is written (fragment rows like «وَ إِلىٰ جَدِّكُمْ»).
-3. **154 pieces I moved between `ar` and `fa`** because the source had the wrong language in the
-   field. Each is character-exact, but you may disagree with an individual language call.
-4. **Partial pairing** in rows where the Arabic and Persian piece counts differ. Per the protocol
-   I paired only where meaning and count warrant it and left the rest single-language rather than
-   inventing a translation. I did not force equal counts.
-
-## Not done
-
-I did not read all 115 items word by word. Structural, character and boundary checks are complete
-and were run on every item; the kind judgements and my splitting choices deserve independent
-reading. No device, emulator or rights verification is implied by anything above.
+## Scope
+Structural and linguistic-structure review only. No scholarly, translation-provenance,
+rights or human approval is claimed by any of this.
