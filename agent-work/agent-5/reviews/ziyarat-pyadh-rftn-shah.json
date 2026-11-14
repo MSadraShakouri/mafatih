@@ -1,0 +1,154 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-pyadh-rftn-shah",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "db8b56142b5baefd960ee595a718cbb14266b40461b47d0a0165b468bd7945ca",
+  "layout_sha256": "667b11f13bca4385d0968558f1b60f14bdcd71ebd4c1478514c8be7d92b37556",
+  "result_item_sha256": "ce979f6c8c8baac5293795be022a4ea928e95d71dd712fd286769cd7b03143e7",
+  "result_record_sha256": "ee171bec47cb0f94477a28ce21a8328cf9a8c5f20331becd6bb8729e529b1006",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-pyadh-rftn-shah",
+    "item_sha256": "d35598fe4db8d2e6b03819f170b594602f05f1a5a028eb6248d81ddfd4f15e7e",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "0fe1845fd2bc7e72d5f83090e2da4af4c10fa2d9b4f3abf8aa42389c1e505d70",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The cut divides a continuous historical account and the second portion is wrongly marked instruction; it continues into r00002. Preserve the text and consider safe grouping as narrative."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The historical report continues from r00001 and introduces a poem; note fits."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The first quoted Persian couplet is correctly classified as quotation."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The second quoted Persian couplet is correctly classified as quotation."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The source reports the historical pilgrimage; it is not a direction to the reader, so note is appropriate."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The narrative introduction to the next verse is a note."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The first verse of the cited poem is a quotation."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The second verse of the cited poem is a quotation."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The short connective introducing a later extract is a note."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The cited chronogram couplet is a quotation."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The bracketed year explanation is a note."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is historical narrative, not instruction; its final phrase continues into r00013."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both outputs are historical narration introducing an inscription, not quotations. The split divides a list of calligraphers; retain coherent narrative and inspect a safe join with r00012."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The first part of the Arabic inscription is a quotation paired with its existing rendering and continues into r00015."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian inscription rendering is correctly paired with r00014/ar and continues in r00015/fa."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This field is Arabic and should stay in the Arabic destination; the current layout moves it to Persian and leaves it unpaired."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This is the Persian rendering of r00015/ar; pair the two quotations in their language slots."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "escalate",
+        "note": "The identified field is Arabic and was moved to Persian incorrectly; return it to the Arabic slot and pair its actual Persian rendering."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00015/ar is Arabic yet was moved into the Persian slot and separated from its actual Persian rendering; return it to Arabic and pair the quotation. r00001, r00005, r00012 and r00013 are historical narration, not instructions or quotations; cuts in r00001 and r00013 interrupt continuous prose and a list, with source continuations at r00001/r00002 and r00012/r00013. Preserve text and links; review any proposed spaces independently."
+  }
+}

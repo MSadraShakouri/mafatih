@@ -1,0 +1,561 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "monajat-mnajat-dvm-raz",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "b94430914409f64d5ccc6b9e51208e07928b10d2622854cca14aad290fc7d8c2",
+  "layout_sha256": "2a66ee5e5b25449183c37ec7ff6bd5538ce243990245bd00013e0fa199ba5187",
+  "result_item_sha256": "618608a35de0f58690a2682fb4c1af9cf494cd92e5bcba5bae07d3e89dbc2314",
+  "result_record_sha256": "258f54c0c1a5ad537d6baecea903613079f47a4976185d9dc6881fc3a4ef8d7c",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "monajat-mnajat-dvm-raz",
+    "item_sha256": "c1f57cce6d210dff614ffcb82042c5ed64c3bd9a4c5bf3f4be547d3f8932222d",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "ca0352a3ae47d037e564a99f58da98c4109f7e6dc0cbf5345b0b02c0a51197bf",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The bilingual title is a heading, not the prayer itself."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The bilingual title is a heading, not the prayer itself."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The source joins the basmala directly to the opening complaint in both languages; this combines two distinct recitations and needs a meaningful split."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The source joins the basmala directly to the opening complaint in both languages; this combines two distinct recitations and needs a meaningful split."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The soul hastening toward error aligns."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The soul hastening toward error aligns."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The soul inclined to disobedience aligns."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The soul inclined to disobedience aligns."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Exposure to divine displeasure aligns."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Exposure to divine displeasure aligns."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic and Persian end before the object: this is an incomplete phrase continued at r00007."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic and Persian end before the object: this is an incomplete phrase continued at r00007."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Both languages complete the phrase from r00006; a safe join should be considered."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Both languages complete the phrase from r00006; a safe join should be considered."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The statement about being among the least of the perishing aligns."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The statement about being among the least of the perishing aligns."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The many ailments align."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The many ailments align."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The long hopes align."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The long hopes align."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Distress at affliction aligns."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Distress at affliction aligns."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Withholding when good arrives aligns."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Withholding when good arrives aligns."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inclination toward play and distraction aligns."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inclination toward play and distraction aligns."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The state of heedlessness and forgetfulness aligns."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The state of heedlessness and forgetfulness aligns."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Hastening toward sin aligns."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Hastening toward sin aligns."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Postponement of repentance aligns."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Postponement of repentance aligns."
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Complaint about a misleading enemy begins here; the Persian sentence completes in the next field."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Complaint about a misleading enemy begins here; the Persian sentence completes in the next field."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The adversary leading astray and Persian complaint ending correspond in context to r00017–r00018, although their syntactic boundary differs."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The adversary leading astray and Persian complaint ending correspond in context to r00017–r00018, although their syntactic boundary differs."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Filling the breast with temptation aligns."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Filling the breast with temptation aligns."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Intrusive thoughts surrounding the heart align; apparent Persian typo is retained as source, not silently corrected."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Intrusive thoughts surrounding the heart align; apparent Persian typo is retained as source, not silently corrected."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Support for desire aligns."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Support for desire aligns."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Making worldly attachment attractive aligns."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Making worldly attachment attractive aligns."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Obstruction of obedience and nearness aligns."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Obstruction of obedience and nearness aligns."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Complaint about a hard and wavering heart begins here and continues in Persian."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Complaint about a hard and wavering heart begins here and continues in Persian."
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The description of a heart covered in sin aligns; the Persian spelling anomaly is retained as source."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The description of a heart covered in sin aligns; the Persian spelling anomaly is retained as source."
+      },
+      {
+        "row": "r00026",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Complaint about eyes dry from fear and lack of tears aligns."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Complaint about eyes dry from fear and lack of tears aligns."
+      },
+      {
+        "row": "r00027",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Eyes directed to what pleases them aligns with the end of the complaint."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Eyes directed to what pleases them aligns with the end of the complaint."
+      },
+      {
+        "row": "r00028",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "No power except through divine power aligns."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "No power except through divine power aligns."
+      },
+      {
+        "row": "r00029",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "No escape from worldly difficulties except through divine protection aligns."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "No escape from worldly difficulties except through divine protection aligns."
+      },
+      {
+        "row": "r00030",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Appeal to wisdom aligns."
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Appeal to wisdom aligns."
+      },
+      {
+        "row": "r00031",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Appeal to the efficacy of will aligns."
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Appeal to the efficacy of will aligns."
+      },
+      {
+        "row": "r00032",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request not to be exposed except to divine generosity aligns."
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request not to be exposed except to divine generosity aligns."
+      },
+      {
+        "row": "r00033",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request not to become a target of trials aligns."
+      },
+      {
+        "row": "r00033",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request not to become a target of trials aligns."
+      },
+      {
+        "row": "r00034",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request for help against enemies aligns."
+      },
+      {
+        "row": "r00034",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request for help against enemies aligns."
+      },
+      {
+        "row": "r00035",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request to cover disgrace and faults aligns."
+      },
+      {
+        "row": "r00035",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request to cover disgrace and faults aligns."
+      },
+      {
+        "row": "r00036",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request for protection from afflictions aligns."
+      },
+      {
+        "row": "r00036",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request for protection from afflictions aligns."
+      },
+      {
+        "row": "r00037",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request for protection from disobedience aligns."
+      },
+      {
+        "row": "r00037",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Request for protection from disobedience aligns."
+      },
+      {
+        "row": "r00038",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Closing appeal to compassion and mercy aligns."
+      },
+      {
+        "row": "r00038",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Closing appeal to compassion and mercy aligns."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00002 combines the basmala with the separate opening prayer in both languages; split and pair these distinct recitations if historical links can be preserved. r00006/r00007 split a single phrase across both languages; preview a safe join and independently review any proposed spaces. r00017/r00018 Persian complaint ends later than its Arabic counterpart, but reads coherently across rows; preserve the existing source and report any unresolved alignment."
+  }
+}
