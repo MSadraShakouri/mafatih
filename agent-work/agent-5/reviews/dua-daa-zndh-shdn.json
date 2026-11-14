@@ -4,7 +4,7 @@
   "item": "dua-daa-zndh-shdn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
   "plan_sha256": "ac19dcfd112a81d3048ff6bd12de7f8b6d6bacebb207a2e3e5dc6730dfe1015e",
   "layout_sha256": "ab7c581d8b00545d70a99580ab45b7c9a946707ac06a89f5105e4cc5dd6c206f",
   "result_item_sha256": "bc9fae0e5f29a9ec360a2d617079b0503b4d6ffcb7a4e7000fb6a635ee05dae0",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The narrative introduction ends mid-sentence and continues in the Persian prefix moved from r00002/ar."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian narrative prefix is correctly moved to the Persian slot and Arabic invocation retained separately; no Persian rendering of the invocation is present in this source."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "The explanatory sentence spans r00001/fa and the Persian prefix moved out of r00002/ar; inspect a safe note-to-note continuation join. The Arabic invocation has no corresponding Persian rendering here; do not invent one. Review any proposed space independently."
   }
 }
