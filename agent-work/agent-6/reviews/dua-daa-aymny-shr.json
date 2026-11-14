@@ -4,11 +4,11 @@
   "item": "dua-daa-aymny-shr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "fa04458d927c41d7ffdb23ac953d9a696cda10bb1137fef282c781e25173d26d",
-  "layout_sha256": "dcb49bd63b3e4df9a1b492f213fd7532db7a9917ad4c5efd555a8bb9057e4efa",
-  "result_item_sha256": "26809a0f3a21777ff2c37b54e997e8658dfb18202b6d552400b967c1591a0e21",
-  "result_record_sha256": "4cfde3787aff867929ef297499f1bdee341dfa5c1871f98a3295e89c42a5cdb8",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "f2cb7ddc6186e0842108e53e506a85a9ccde5b83c0b4015f8d8be887f606fc2a",
+  "layout_sha256": "988dce677238589302b45cf2be1aca277c20091be810675748c84584fb163b2c",
+  "result_item_sha256": "07c699fc9f2ba5d7dfb07b7e3694f55d96fe5e7ed8cea2c37e2ae032a0542c77",
+  "result_record_sha256": "75d9b7eb81a0a7072564f1fb135a50ef27e063ad623c6dc00b533548d7c39ca2",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,56 +16,56 @@
     "item_sha256": "096f04af5626502f141f98d56685590fff3244df326b884bb4a55d65f15772b9",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "e97a8f19941cf7a64b90e9ac2cfb455815ae1358f192279da7aba039df125fdb",
+    "preview_sha256": "9ba21db5a412e517737478a78e9f94a3689ae2902cd7435d8646ec6d471d5811",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 243 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The basmala is fused with the first clause of the prayer; cut after the basmala and after its translation."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the first clause of the prayer with its rendering."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The basmala is fused with the first clause of the prayer; cut after the basmala and after its translation."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the first clause of the prayer with its rendering."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 555 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00003), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 10 internal clause marks in one piece of 555 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 455 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00003), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 10 internal clause marks in one piece of 555 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 1 of 2 has 265 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 265 code points, 5 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 235 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 265 code points, 5 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00005",
@@ -84,23 +84,23 @@
       {
         "row": "r00006",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 1 of 2 has 397 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 397 code points, 7 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 330 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 397 code points, 7 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The piece ends with the first Arabic words of the Quran passage that continues in the ar field of r00008; cut before them and place them in the ar slot."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece ends with the first Arabic words of the Quran passage that continues in the ar field of r00008; cut before them and place them in the ar slot."
       },
       {
         "row": "r00008",
@@ -121,14 +121,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Piece 0 is a Persian fragment stored in the ar field that repeats the opening words of the Persian translation of the verse; it is not a direction to the reader, so instruction is doubtful (other with a recorded issue may fit). Piece 1 is a Quran verse recited as part of this prayer like the verses of r00008, which are classified recitation; quotation is inconsistent."
+        "note": "Open question, unchanged at 4aae1ccd. Piece 0 is a Persian fragment stored in the ar field that repeats the opening words of the Persian translation of the verse; it is not a direction to the reader, so instruction is doubtful (other with a recorded issue may fit). Piece 1 is a Quran verse recited as part of this prayer like the verses of r00008, which are classified recitation; quotation is inconsistent."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Same verse as the ar piece: recitation in r00008, quotation here."
+        "note": "Open question, unchanged at 4aae1ccd. Same verse as the ar piece: recitation in r00008, quotation here."
       }
     ],
     "punctuation": [],
@@ -136,6 +136,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised. In r00005 the two-word Arabic tail is paired with a Persian tail that translates other words (the row break falls at different points in the two languages); leave both unpaired."
+    "note": "Author fix after the first cut: r00003 pairs several complete sentences or clauses with one block of translation; pair it part by part once cut. Still open from the earlier review: In r00005 the two-word Arabic tail is paired with a Persian tail that translates other words (the row break falls at different points in the two languages); leave both unpaired."
   }
 }

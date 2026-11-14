@@ -4,11 +4,11 @@
   "item": "khavas-hrz-fatmh-alyha",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "3038ff0f85d8befa6460e7d4d33f8c0477591876ee81c1532dd5beff8ba18a6b",
-  "layout_sha256": "ee49f0d49b46923e80226be0f97b2f0f6b5aa38fad25a15aed0441e5423814d6",
-  "result_item_sha256": "fe5ef9b6882b1029f00c38c05f77d35168eea3851b50fdb0854de49dcdb6eb7e",
-  "result_record_sha256": "18002a3487248941ace904ab73b87caa848dbd5b9b4645c76bef949daf0032cd",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "3a11fec2fa82316ac17ac291d10e31cc389721b857fd8152e3f7492d1fd7c231",
+  "layout_sha256": "11ce289bab92e6aba83352df5690aeb0a232ab592aa1fbc947788681558588c1",
+  "result_item_sha256": "00e4815eae3d7d52cd8fa82737c09ed18df3912e24d95690fb59d30a9d67cac0",
+  "result_record_sha256": "fac52e5ec402fe8615a806da520150d5c8dc67b7d525c3f49b0ac6c3ae910470",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "c21be5e20527cf279b164b7e4595a554c0e7a972aa03e28511ae7b179dda49b2",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "cc5e7ef2fa15f2c3c0587cd6c170e98accc64997d7e74628b327b6bb11102fe5",
+    "preview_sha256": "16ba956f0fd8fa90353143d30eaccc70a258c077b6a096fa36f31af87d6c88f3",
     "sources": [
       {
         "row": "r00001",
@@ -28,9 +28,9 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 2 has 241 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+        "note": "Re-read at 4aae1ccd: 2 output rows (1 note, 1 recitation). Persian narration (note; prose, not judged by length) and the Arabic prayer, now in the ar slot, unpaired because the source gives it no Persian."
       },
       {
         "row": "r00003",
@@ -42,23 +42,23 @@
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The basmala is fused with the following clauses; cut after the basmala and after its translation."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the prayer with its rendering."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The basmala is fused with the following clauses; cut after the basmala and after its translation."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the prayer with its rendering."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised. This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+    "decision": "accept",
+    "note": "The slot finding on r00002 is resolved."
   }
 }

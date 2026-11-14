@@ -4,11 +4,11 @@
   "item": "khavas-ram-shdn-asb",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "9d18508c40bc8fbab9a436d6e790ad13797d932dee24ea56c6b03b9134b82426",
-  "layout_sha256": "79cb54d5dd1697c97ae6614ecc8365a31b3895a0d26ce10e6ae95d3bc14514a4",
-  "result_item_sha256": "5208361d6e0341c267243c03fe28066374befb9539b9b3314aa3f6cccf615282",
-  "result_record_sha256": "074c1929b2836f6bddf8127fd3e9700beafda3e6070822422a623fc0e134de13",
+  "layout_sha256": "e7a1cf6a570fe2e6d30a65c7fbecee12082702f74f46f0e7d2866e11ab03dda0",
+  "result_item_sha256": "e55b8c7dcbab30b39e0011af12d3dfdd4cc40756d7b338b894122f625e5a84d8",
+  "result_record_sha256": "efcbdf53ffed47610e23fb4ee8edd468621c948566ca7ff7274747f056d204c0",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,14 +23,14 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read at 4aae1ccd: 2 output rows (1 instruction, 1 quotation). The Quran quotation now sits in the ar slot, unpaired, as asked. Source defect noted, not changed: the quotation closes with a stray round bracket before the closing guillemet."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The cut and both kinds are right, but output piece 1 (the Arabic Quran quotation from the fa field) is placed in the fa slot; it belongs in the ar slot, unpaired."
+    "decision": "accept",
+    "note": "Row 0 is the Persian direction and row 1 the Arabic quotation in the ar slot."
   }
 }

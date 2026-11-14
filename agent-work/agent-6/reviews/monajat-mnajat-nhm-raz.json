@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-nhm-raz",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "ef148f433770bd4955a1eccdda48d48af60ec9469aa3fdf9ed5d602be8508e25",
-  "layout_sha256": "9dfd9297603e52c46f21905f5351415169c98ff1ea8e7114c049d493f0dbc16c",
-  "result_item_sha256": "728d01e4b08b0d402e8168eb601d76781306c324235549c6fa1ccbd5ac359d1b",
-  "result_record_sha256": "7d3a1a41b7eb60e8aedc8036c2d6253b48fd3bcf08b165d0ca9c9ffd463bb7ec",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "d70b3e7a1c344507cf1884eee76b5aec01e399e4dcec795021d4538a368df7e7",
+  "layout_sha256": "02c0da719d3f4c4096cb745562ae31b4a06ecedd26aac58ee068ed252e0fa5e2",
+  "result_item_sha256": "90ae028fe775e3b21d882d9c433ac873c5e7a527ff12845777629be044f37ff8",
+  "result_record_sha256": "204664d41fbc6339f6d22590abf06287ff1e76d85046b91764060935ea05bbde",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "367639e302a0041766fc3fa47fbed6dae72815039f6708b0c7d7f94849ba774c",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "0bd916812775760dc5442b3bbbe88c6af3c0c34f7076bf5a7216e102c646e92c",
+    "preview_sha256": "2c9f0d0bd7e6583faf104ec0bcbfac5113019c9eecccdca5b9fe255255e03c40",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "This row is the title of the munajat in both languages, not prayer text; classify it as heading."
+        "kind": "accept",
+        "note": "Re-read at 4aae1ccd: 1 output row (1 heading). Kind is now heading, as asked."
       },
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This row is the title of the munajat in both languages, not prayer text; classify it as heading."
+        "kind": "accept",
+        "note": "Re-read at 4aae1ccd: 1 output row (1 heading). Kind is now heading, as asked."
       },
       {
         "row": "r00002",

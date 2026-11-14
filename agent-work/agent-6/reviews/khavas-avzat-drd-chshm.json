@@ -4,7 +4,7 @@
   "item": "khavas-avzat-drd-chshm",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "c2ea31143af4c14f46158aabf0d08d46a49bf87425719000c95f6759f2c298a6",
   "layout_sha256": "27392143534185625b99381901844e3e35e1095313f2f7ffbcf4fdb50f0b11eb",
   "result_item_sha256": "37e089e09b59736b28112ca1c0713d345b770741fc53096b7601b5273c16edf6",
@@ -93,7 +93,7 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The field repeats the translation of the Arabic of r00005 and then translates the Arabic of this row; cut so that only the closing clauses pair with this Arabic."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The field repeats the translation of the Arabic of r00005 and then translates the Arabic of this row; cut so that only the closing clauses pair with this Arabic."
       },
       {
         "row": "r00008",
@@ -135,14 +135,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "A verse to be said daily, the same use as the verse of item-jht-drd-zanv r00005, which is classified recitation; quotation is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. A verse to be said daily, the same use as the verse of item-jht-drd-zanv r00005, which is classified recitation; quotation is inconsistent with it."
       },
       {
         "row": "r00011",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "A verse to be said daily, the same use as the verse of item-jht-drd-zanv r00005, which is classified recitation; quotation is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. A verse to be said daily, the same use as the verse of item-jht-drd-zanv r00005, which is classified recitation; quotation is inconsistent with it."
       },
       {
         "row": "r00012",
@@ -164,6 +164,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The recitation rows are no longer asked to be re-paired (length findings withdrawn after recalibration). Still open: Output row r00007 pairs four Arabic clauses with a Persian piece that also repeats the translation of r00005."
+    "note": "Still open from the earlier review: Output row r00007 pairs four Arabic clauses with a Persian piece that also repeats the translation of r00005."
   }
 }

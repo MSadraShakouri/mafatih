@@ -4,7 +4,7 @@
   "item": "item-avzh-kyk-kk",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "ccd0f7e8d3443afa307a08cd5b1936b43962d5fa5e05ec012d29dd8bf4c792c7",
   "layout_sha256": "9a2f9685c27325a946caf4571d2a8376d29f749be117ebf6b03caf5ef428987a",
   "result_item_sha256": "8d763e2133d87560b6448e3cdae638d392e8bd859a72aa85e972100e4b06a297",
@@ -51,7 +51,7 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: piece 0 holds a complete Arabic sentence inside Persian prose at code points 122-200 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Piece 0 holds a complete Arabic sentence inside Persian prose at code points 122-200 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose."
       },
       {
         "row": "r00005",
@@ -72,14 +72,14 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: a numbered list section begins inside piece 0 at code point 39 of the field; cut before each numbered marker so that every section opens its own piece; piece 0 holds a complete Arabic sentence inside Persian prose at code points 195-302 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code point 39 of the field; cut before each numbered marker so that every section opens its own piece; piece 0 holds a complete Arabic sentence inside Persian prose at code points 195-302 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The recitation rows are no longer asked to be re-paired (length findings withdrawn after recalibration). Layout stays revise for the slot placements named in the source notes of r00004, r00006."
+    "decision": "accept",
+    "note": "The request to re-pair long rows is withdrawn with the length findings. The cut changes asked for on r00004, r00006 are recorded in the source notes; the rows as they stand are placed and paired consistently."
   }
 }

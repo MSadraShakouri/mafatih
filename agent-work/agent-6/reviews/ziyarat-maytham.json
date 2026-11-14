@@ -4,7 +4,7 @@
   "item": "ziyarat-maytham",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "9fd0ad06f750251ac0ef479aeba49753afb129ce5f5cd5647bbdf43929d1d2b6",
   "layout_sha256": "32494d45ebb8410fb412835e78e0a740481dab6513ee232455d031b810ce9f7e",
   "result_item_sha256": "45937b986cad950bbe940942b2b5eb2edf56644bab192b4b7f971ba6493e41d1",
@@ -70,16 +70,16 @@
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 434 code points and 7 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 434 code points, 6 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 310 code points and 6 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 434 code points, 6 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00006",
@@ -100,7 +100,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised."
+    "decision": "accept",
+    "note": "The request to re-pair long rows is withdrawn with the length findings. Read again at 4aae1ccd: every Arabic passage sits beside its own translation and slots are right."
   }
 }

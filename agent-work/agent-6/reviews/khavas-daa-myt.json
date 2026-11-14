@@ -4,11 +4,11 @@
   "item": "khavas-daa-myt",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "7d6cd6e722b9afa461d7cfc73a0a22eb7b79fcc11f2207b1edc7ac5babae8aa3",
-  "layout_sha256": "563dd11914dd30542eefccafeaa77186b3a731f0bc221bb07a69ee082212befe",
-  "result_item_sha256": "a335df4f42eed3fa2643c3a937cfa58325ac888aeb4218e7c777a8afcb6c4119",
-  "result_record_sha256": "226c4b675019438050b7c1814a6173b669c8cfc8a725c44caf48b65b44b11ea5",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "57b11f391f3479b53d3092c47dc3c03b1e21e5b9b4de109a274c1e4a04a1df9f",
+  "layout_sha256": "6079cea0bd2fb9a4e93e653eb3b5e10c83c9dca5d0516ecbc1d13a81956519b8",
+  "result_item_sha256": "69d8c2b0dda971b021cce6c468888989b8cc3eac2265e0b7ceb0fa4561c1a327",
+  "result_record_sha256": "d75cdbc5432e2bcc3c5d319ad7f58509e692d8be952edeaae29bc6e447a3173d",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "155f1f22ef82a052fb5a4bc0cecddb605ea60307b6a49ea173a6aa164ec95b3d",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "2ffd8846669a07cdc11aba6a52080067f0c23ef5536b65dcd506f4abf02f0fc2",
+    "preview_sha256": "56ecf1c8889d144789a225a54008bd73282ffc8e3d71558936f08e58535c7595",
     "sources": [
       {
         "row": "r00001",
@@ -28,30 +28,30 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 232 code points and 3 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 232 code points, 3 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 142 code points with 3 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 232 code points, 3 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 407 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. Read by the reviewer: Arabic recitation and Persian instruction or narration are fused in this one piece; cut between them, give each piece its own kind and put the Arabic in the ar slot."
+        "note": "Re-read at 4aae1ccd: 6 output rows (3 instruction, 3 recitation). Cut as asked into alternating Persian directions (instruction, fa slot) and Arabic formulae (recitation, ar slot, unpaired because the source gives them no Persian)."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised."
+    "decision": "accept",
+    "note": "Read the changed rows at 4aae1ccd; slots and pairings are right."
   }
 }

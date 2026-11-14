@@ -4,11 +4,11 @@
   "item": "ziyarat-adab",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "915df8824f8877f0326684b6ca1b5152bdddd8c879cd3cc290fc161bc724d7d3",
-  "layout_sha256": "134b22e9dc15a4b2867cde958da89a76e24d98a68f78a76b44a23ff21d3b6f47",
-  "result_item_sha256": "2371c6f68e3eea7cedbb409757b9f9db79e5b8d4e3e02d323f34c4e70775d02a",
-  "result_record_sha256": "994f24bc025130b8900bd845747da88ef4a4905ba51c5a92896ae2e4b12a4ac2",
+  "layout_sha256": "0f1f1915bbf19f07e5e825d0bb555a2da5303b7fa819b027420570a2afe44585",
+  "result_item_sha256": "1e48ea13cd296e59e717f3732a891c5f26136bed7d1be432a4850e218a210049",
+  "result_record_sha256": "551fa20a8b41e8e26dc42a8fe66d7fb80d1a88fbff2d12cb8db5d817e97e8c44",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,28 +23,28 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 387 code points and 15 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 5 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 228 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 266 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 654 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00005",
@@ -135,21 +135,21 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The verse now sits in the ar slot, unpaired because the source gives it no Persian, as asked."
       },
       {
         "row": "r00013",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The verse now sits in the ar slot, unpaired because the source gives it no Persian, as asked."
       },
       {
         "row": "r00014",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The verse now sits in the ar slot, unpaired because the source gives it no Persian, as asked."
       },
       {
         "row": "r00015",
@@ -196,149 +196,149 @@
       {
         "row": "r00021",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1012 code points and 35 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00022",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1009 code points and 24 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00023",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1025 code points and 25 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 5 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00024",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 908 code points and 24 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00025",
         "language": "ar",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00025",
         "language": "fa",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00026",
         "language": "ar",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00026",
         "language": "fa",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00027",
         "language": "ar",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00027",
         "language": "fa",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00028",
         "language": "ar",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00028",
         "language": "fa",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00029",
         "language": "ar",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00029",
         "language": "fa",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00030",
         "language": "ar",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00030",
         "language": "fa",
         "split": "accept",
         "kind": "revise",
-        "note": "Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
       },
       {
         "row": "r00031",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 621 code points and 19 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00032",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1009 code points and 27 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 6 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00033",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 978 code points and 21 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00034",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 333 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The verse rows that have a translation are each paired correctly. This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+    "decision": "accept",
+    "note": "The slot findings on r00012 to r00014 are resolved. Prose rows r00001, r00002, r00003, r00022, r00023, r00024, r00031, r00032, r00033 hold numbered sections to be opened as their own rows (Persian only, nothing to pair)."
   }
 }

@@ -4,7 +4,7 @@
   "item": "ziyarat-fzylt-jafr-hrm",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "e66b21e71aa030d86b8a5b4074a3712cbf00f8aa1977672316e72b8f0df1019f",
   "layout_sha256": "76593944f360c0224d4572fc8a2c32c8ac09e8d4cc506518435e1150451a3541",
   "result_item_sha256": "e91b4f302cb8f26619ea82d7d370317f10a11e6788daf9e81d5f09ed96833f9a",
@@ -23,14 +23,14 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: a numbered list section begins inside piece 0 at code points 81, 571 of the field; cut before each numbered marker so that every section opens its own piece. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code points 81, 571 of the field; cut before each numbered marker so that every section opens its own piece."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: a numbered list section begins inside piece 0 at code point 315 of the field; cut before each numbered marker so that every section opens its own piece. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code point 315 of the field; cut before each numbered marker so that every section opens its own piece."
       },
       {
         "row": "r00003",
@@ -45,6 +45,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian only; nothing to pair."
+    "note": "Persian only; nothing to pair. The cut changes asked for on r00001, r00002 are recorded in the source notes; the rows as they stand are placed and paired consistently."
   }
 }

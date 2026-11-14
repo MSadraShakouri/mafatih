@@ -4,7 +4,7 @@
   "item": "amal-byan-nhvst-sfr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "120ea7eda586c20c670bce4ebdf69602ead9ad10da77dce619421261a44f69ee",
   "layout_sha256": "267de28052cfbbac000e6ff90e26d258dd11cccde32546ac415e4b5007a73ce6",
   "result_item_sha256": "de5bd4a7a7abc5f5503902c1c3458ccd968a135cb7e6fed0241300168899c082",
@@ -30,14 +30,14 @@
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 435 code points and 12 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00002), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 3 sentences (2 internal sentence-final marks) and 11 internal clause marks in one piece of 435 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 396 code points and 18 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00002), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 3 sentences (2 internal sentence-final marks) and 11 internal clause marks in one piece of 435 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
       },
       {
         "row": "r00003",
@@ -101,6 +101,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Row r00002 pairs a multi-clause Arabic block with its whole translation; redo the pairing clause by clause after the split is revised. The verse row r00006 is paired correctly."
+    "note": "Author fix after the first cut: r00002 pairs several complete sentences or clauses with one block of translation; pair it part by part once cut. The verse row r00006 is paired correctly."
   }
 }

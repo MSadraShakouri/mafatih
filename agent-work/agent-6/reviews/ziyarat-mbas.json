@@ -4,11 +4,11 @@
   "item": "ziyarat-mbas",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "0367d40cb0d980041d75910de065a653572d4e20ef0150e55dce39f84166aba3",
-  "layout_sha256": "984c77dd435ebc0d072af3d818193a014729988bfd9edfed12e1a1ab586379bb",
-  "result_item_sha256": "206b9e837ccc6ae88f88a65a664c522a73d054571ce0c98f96c5aeffacb75040",
-  "result_record_sha256": "c35fa2d4ee29aedcf65d5584250e4f6454f2fe221fef5dbc8d925702a16cdd4e",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "df634769c95d2f34e7c19af411b9613f35cb99f900cab575a3db301f91753d02",
+  "layout_sha256": "8d89200820a9dcdb9c20f0394e4826dbab366e6416163165f420fe3104584fce",
+  "result_item_sha256": "c30c0650ecb452e18fa1c072af7a2103ff41a6c1fb0aa27a00fe8b086fbdc48d",
+  "result_record_sha256": "cfdbf5167d9e6cb8adf6f41503b7c37cb3da7478ffd740e8b35a19109eb499f5",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "e07aefb5e04c63539d41100d606aeb21fc28c6dbbedede4acf5b07f840cb2293",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "abea95deb45d231a33d1bd45f2984913c14e161ab8ab2e5310b6bc3fc5f732f1",
+    "preview_sha256": "11dfc6d00206cbedcdf12e76b4b270df7ae283d3b92e2ff81e825292c45f9a93",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 509 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 4 output rows (2 note, 1 heading, 1 instruction). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 411 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (2 heading, 2 note, 1 instruction). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00003",
@@ -42,219 +42,219 @@
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 290 code points and 3 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 4 output rows (4 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 173 code points with 3 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Re-read at 4aae1ccd: 4 output rows (4 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 1 of 2 has 449 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (1 instruction, 4 recitation). Direction and four recitation rows; the last ends with the opening word of the salutation completed in r00006, with the Persian cut at the same point (join held by the pinned test, r00006/ar is punctuation-normalized). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 282 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (1 instruction, 4 recitation). Direction and four recitation rows; the last ends with the opening word of the salutation completed in r00006, with the Persian cut at the same point (join held by the pinned test, r00006/ar is punctuation-normalized). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 268 code points and 4 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Three rows. In the second the Persian renders only the first of the two coordinated nouns of the Arabic; that is a gap in the source Persian and nothing is changed. Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 165 code points with 4 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Three rows. In the second the Persian renders only the first of the two coordinated nouns of the Arabic; that is a gap in the source Persian and nothing is changed. Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00007",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 846 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 537 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00008",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1072 code points and 24 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 7 output rows (7 recitation). Seven rows. The Persian of the last piece already contains the meaning of the two Arabic words that open r00009, as the author's issue 1 records; the join that would repair it is held by the pinned test (r00008/ar and r00009/ar are punctuation-normalized). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1067 code points and 31 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 7 output rows (7 recitation). Seven rows. The Persian of the last piece already contains the meaning of the two Arabic words that open r00009, as the author's issue 1 records; the join that would repair it is held by the pinned test (r00008/ar and r00009/ar are punctuation-normalized). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00009",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 440 code points and 14 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 456 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00010",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 605 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 6 output rows (6 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 592 code points and 18 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 6 output rows (6 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00011",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1085 code points and 28 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 6 output rows (6 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 974 code points and 31 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 6 output rows (6 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00012",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 795 code points and 15 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00012",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 721 code points and 20 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 311 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). Two rows. The second ends inside a vocative phrase completed by the first word of r00014, and its Persian already includes that word. A join with the first piece of r00014 would repair this and is not held by the pinned test. Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 313 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). Two rows. The second ends inside a vocative phrase completed by the first word of r00014, and its Persian already includes that word. A join with the first piece of r00014 would repair this and is not held by the pinned test. Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00014",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 613 code points and 17 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 396 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00015",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 491 code points and 17 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Three rows; the last ends with a noun whose complement opens r00016, with the Persian cut at the same point. A join is available. Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00015",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 370 code points and 14 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Three rows; the last ends with a noun whose complement opens r00016, with the Persian cut at the same point. A join is available. Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00016",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 336 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00016",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 317 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (3 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00017",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 730 code points and 21 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00017",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 744 code points and 23 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00018",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 707 code points and 13 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00018",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 659 code points and 18 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00019",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read at 4aae1ccd: 4 output rows (4 instruction). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00020",
@@ -273,30 +273,30 @@
       {
         "row": "r00021",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 1092 code points and 12 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 6 output rows (6 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00021",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 963 code points and 28 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 6 output rows (6 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00022",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 538 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 4 output rows (4 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00022",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 434 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 4 output rows (4 recitation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00023",
@@ -310,14 +310,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read at 4aae1ccd: 1 output row (1 quotation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00024",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read at 4aae1ccd: 1 output row (1 quotation). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       },
       {
         "row": "r00025",
@@ -329,9 +329,9 @@
       {
         "row": "r00026",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 261 code points and 3 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 4 output rows (2 note, 2 instruction). Read every output row of this source in both languages: labels are heading rows, the visitor's directions instruction rows, and the ziyarat is cut at clause ends with each Arabic piece beside its own rendering. My earlier length finding is resolved by the new cuts."
       }
     ],
     "punctuation": [],
@@ -339,12 +339,17 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "Checked: the output field has no physical separator and no earlier separator is restored (the line-break guard reports none). Whether the earlier break position should also be a cut is covered by the split decision for this source."
+        "note": "Checked at 4aae1ccd: no output piece of this field contains a physical separator and no earlier separator is restored. Whether the earlier break position should also be a cut is judged in the split decision for the field."
+      },
+      {
+        "index": 1,
+        "decision": "escalate",
+        "note": "Tooling-blocked. Confirmed by reading: the Persian at the end of r00008 already renders the two Arabic words that open r00009. The repair is a join of the last piece of r00008 with the first piece of r00009; both Arabic fields carry punctuation normalizations, so the pinned audio test refuses it until the test fix lands on main. Nothing for the author to do now."
       }
     ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised."
+    "decision": "accept",
+    "note": "Read all 97 output rows. Every recitation row pairs its Arabic with its own rendering, apart from the two source-row breaks named here. Tooling-blocked joins (pinned audio test): r00005|r00006, r00008|r00009, r00010|r00011, r00011|r00012. Available joins, non-blocking: r00013|r00014 (the Persian of the left row runs one word ahead) and r00015|r00016."
   }
 }

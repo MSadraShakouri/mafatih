@@ -4,11 +4,11 @@
   "item": "dua-ilhah",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "9827e781e6d5bd79993e4f724644a20a890b53b719d019cb59a27931da251817",
-  "layout_sha256": "b0c73789f791bfa2d3a8700144dbcae663218d6591b548396a3909dad8595dd0",
-  "result_item_sha256": "9d6a24f0206ae26ca3bd1665a3df9390f2a349020a5c3a413fd36163b2a8d7c3",
-  "result_record_sha256": "6d02cb4d3947009b15107dcb19883d55060bb1d6dedadb7ebf5ded559e39ce0a",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "03d157f6a095451aec25b65f72bf5c4a7a45f7d3b28fe0f7ebf62f1bae60906b",
+  "layout_sha256": "d02a9f72149f4d1fec07dce8a97649f39f95b4814ddf7a865f9ed8fe4ac015e5",
+  "result_item_sha256": "a60e6395df4793d6ba4c0f9561487122ef90a7916450ec9d0224a66e70c35131",
+  "result_record_sha256": "7091797de9b4c689574b7ece0fe10f22e32a4ba4a384a0e7565d901dce5117b8",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "9506e3de5157741acb34cecc422d179be49a5021892b4ae292f4ce7ce2491722",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "65d7e179cd7cadb7e300beee9527ee90e648a35b1f441050cc70dfdea1535bee",
+    "preview_sha256": "703321dea05e21689f07d191225ee6c0328a24f345ad13dbb909a345e2664bea",
     "sources": [
       {
         "row": "r00001",
@@ -184,7 +184,7 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Read by the reviewer: The instruction is followed in the same piece by the numbered lead-in of the next prayer; cut between them and classify the second piece as note."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The instruction is followed in the same piece by the numbered lead-in of the next prayer; cut between them and classify the second piece as note."
       },
       {
         "row": "r00014",
@@ -1185,7 +1185,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+        "note": "Re-read at 4aae1ccd: 2 output rows (1 note, 1 recitation). Cut as asked: Persian lead-in (note, fa slot) and the Arabic prayer in the ar slot, unpaired because the source gives it no Persian."
       },
       {
         "row": "r00087",
@@ -2653,9 +2653,9 @@
       {
         "row": "r00193",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Read by the reviewer: Piece 1 holds the Arabic prayer followed by a Persian sentence about its origin; cut between them, classify the Persian as note and place the Arabic in the ar slot."
+        "note": "Re-read at 4aae1ccd: 3 output rows (2 note, 1 recitation). Cut as asked into Persian lead-in, Arabic prayer (ar slot, unpaired) and the Persian sentence about its origin (note)."
       },
       {
         "row": "r00194",
@@ -4622,7 +4622,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all 337 rows. The clause pairing is right throughout, allowing for a few places where the Persian runs a phrase past the Arabic row end (r00191 and r00192, r00209 and r00210); the only layout changes needed are those for the sources marked revise. This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+    "decision": "accept",
+    "note": "The two slot and cut findings (r00086, r00193) are resolved; the clause pairing of the other rows was read earlier and is unchanged. The cut changes asked for on r00013 are recorded in the source notes; the rows as they stand are placed and paired consistently."
   }
 }

@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-dhm-raz",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "38870d09c11f431d423e33334050f63e18d1680d04da7adf13b794b85ab819d9",
-  "layout_sha256": "43618bf35056ba6558d846a38ff2508a868eb1ca1be13a7c2229133152897947",
-  "result_item_sha256": "f58bf7eaea76f34c0e751fd770c2ab2e5a809b7e06e8a8340172d916956490ba",
-  "result_record_sha256": "a98a7b504d5c56a3077544c228b7f3173505a4d904bb9c01c1993a4ac2975b4e",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "a4500149780046c92caea0d2754a5cdf808b296a4e7baf20a9b89931000029e1",
+  "layout_sha256": "ee8f807d0a10de2482b5de7efeeb3f4e0a57b4cc596f55a57cf38c1545653def",
+  "result_item_sha256": "390197bba5c9916b9ef3ddc3dda9a859b42557c021d48fcfd2f33af6d2b6b976",
+  "result_record_sha256": "3ba54cf6e3ddc2be67579bd0a2e031e3581f4b70d76d369c66e10b3514fcebf6",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,35 +16,35 @@
     "item_sha256": "a4155f1af1c12cd1c78f34c3b103be49a23775e2176562fef259c9b3fcdf288e",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "df0828c55256443942c2c5b40f463847fa693521d98c4075ee02269dd92cbb38",
+    "preview_sha256": "2bd3a980e484f811e96f90b88f79c90c0c457489083cf6133cf159f6b910c3f1",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "This row is the title of the munajat in both languages, not prayer text; classify it as heading."
+        "kind": "accept",
+        "note": "Re-read at 4aae1ccd: 1 output row (1 heading). Kind is now heading, as asked."
       },
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This row is the title of the munajat in both languages, not prayer text; classify it as heading."
+        "kind": "accept",
+        "note": "Re-read at 4aae1ccd: 1 output row (1 heading). Kind is now heading, as asked."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The basmala is fused with the first clause of the prayer; cut after the basmala (and after its translation) as in monajat-mnajat-svm-raz r00002 and monajat-mnajat-nhm-raz r00002, where it already stands alone."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the first clause with its rendering."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The basmala is fused with the first clause of the prayer; cut after the basmala (and after its translation) as in monajat-mnajat-svm-raz r00002 and monajat-mnajat-nhm-raz r00002, where it already stands alone."
+        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the first clause with its rendering."
       },
       {
         "row": "r00003",
@@ -387,7 +387,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Row pairings read line by line and found right, except output row 2, which must be re-paired after the basmala is cut off."
+    "decision": "accept",
+    "note": "Read the changed rows at 4aae1ccd; slots and pairings are right."
   }
 }

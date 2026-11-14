@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-mnzvm-mnsvb",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "db030006199052773ae8b4373f13540c081d8321633ca1068d676feb2381646e",
-  "layout_sha256": "cb3907c9c22115c7b604a0c412f6c7a63fd0faa716905a1dd33f5abe41c71b4d",
-  "result_item_sha256": "0b21a258b3f1c35dad95b6254822c8447a53ee08797c3b4a0f2a8e9d2a4dd42a",
-  "result_record_sha256": "4c71c790b43f6d7ccf25404c6c2691b27f2731d8c072c982136a46fa09caa00e",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "44ef3791f8e41cba41bcd22d79f714948b226b279962020a332e6ee8350d74d2",
+  "layout_sha256": "bb3fc504be87932c25ac36560f695ac792408fc6042893025258cadb39d4842e",
+  "result_item_sha256": "90771d40b75fe384820b8b6d7e48e32f2e4bf50fab062742134287aebee15da8",
+  "result_record_sha256": "586678e0d43fd3133920b7735ace390ccce6a10c90cd52aa0244dd39bd55506b",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "64d5e9d00b7a4affc202e54b4c83f09afe6f6eff73d491a85bdbe3095d643d96",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "3da040d5a831c1b29816ed47063f2eefb714582ed59accb5db1e6cd2d999da0e",
+    "preview_sha256": "728d7abef4b7af7c8adbd231c3eeecb4fd169d9d804d9e0b7e0e645a09a717c1",
     "sources": [
       {
         "row": "r00001",
@@ -883,22 +883,22 @@
         "row": "r00063",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This fa field holds an Arabic caption that introduces the three sayings; it is not recitation. Classify it as heading and place it in the ar slot."
+        "kind": "accept",
+        "note": "Re-read at 4aae1ccd: 1 output row (1 heading). The Arabic caption is now a heading in the ar slot, as asked."
       },
       {
         "row": "r00064",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read at 4aae1ccd: 2 output rows (1 heading, 1 recitation). Cut as asked: the Persian rendering of the caption is its own heading row and the first saying is paired with its own rendering."
       },
       {
         "row": "r00064",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The field starts with the Persian translation of the caption in r00063 and continues with the translation of the first saying; cut between the two so that the first saying pairs with its own translation."
+        "note": "Re-read at 4aae1ccd: 2 output rows (1 heading, 1 recitation). Cut as asked: the Persian rendering of the caption is its own heading row and the first saying is paired with its own rendering."
       },
       {
         "row": "r00065",
@@ -933,7 +933,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Rows 1 to 62 read line by line and found right (verse half-lines paired with their translation; r00062 is a Persian note). Output rows 63 and 64 need the changes named in the source notes."
+    "decision": "accept",
+    "note": "Rows 62 to 64 now carry the changes asked for. Optional: the Arabic caption (r00063) and its Persian rendering (first piece of r00064) are adjacent heading rows that a join would turn into one paired row."
   }
 }

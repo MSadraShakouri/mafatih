@@ -4,11 +4,11 @@
   "item": "item-mrsyh-am-albnyn",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "2cd2ee554e92df5c8ee3abfae8fc665d774fc9a9209bfcee6523f7ae4f9623b0",
-  "layout_sha256": "6f41216fdc126a8d48f0cc637dde70ce6f135515e81e69b3c65549d6c346c948",
-  "result_item_sha256": "633a601b537ae0bf38ad8c9e5bda40a178c162e1824853af9bce5cbc9502698c",
-  "result_record_sha256": "d2f01a55e407bea91184a88184693d932e8d56729583b9b3d1a1091c6c293ff1",
+  "layout_sha256": "e3e22bae20697e262f095756d23592e5d7b7d4614178d4f8aae3c5a276a891f4",
+  "result_item_sha256": "f61e2bf04d8faeeb4d870e4738432d7a6046a1889d04e36252555f0477c6903b",
+  "result_record_sha256": "8583c4aa9519c570de27534269723d66aa53d465097ec192059e26feed4cc93e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,72 +21,72 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 328 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 549 code points and 10 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The Arabic half-line now sits in the ar slot as asked. Kind still open, unchanged from my earlier note: these are elegy verses quoted inside the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation and recitation here is inconsistent with it. Either kind can be argued, so this needs one decision for both items."
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "uncertain",
-        "note": "The field translates the Arabic half-line that stands in the fa field of r00003 and then the half-line of this row; cut between the two translations. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "The cut of this field is accepted: the first half-line of the couplet now stands in the ar slot of the row before, so the repair is the join named in the layout decision (the Persian here renders both half-lines), not a cut between the two renderings. Kind still open, unchanged: elegy verses quoted inside the author's narrative; quotation in amal-byan-nhvst-sfr r00006, recitation here."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The Arabic half-line now sits in the ar slot as asked. Kind still open, unchanged from my earlier note: elegy verses quoted inside the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation."
       },
       {
         "row": "r00006",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "uncertain",
-        "note": "The field translates the Arabic half-line that stands in the fa field of r00005 and then the half-line of this row; cut between the two translations. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "The cut of this field is accepted: the first half-line of the couplet now stands in the ar slot of the row before, so the repair is the join named in the layout decision (the Persian here renders both half-lines), not a cut between the two renderings. Kind still open, unchanged: elegy verses quoted inside the author's narrative; quotation in amal-byan-nhvst-sfr r00006, recitation here."
       },
       {
         "row": "r00007",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00008",
@@ -100,70 +100,70 @@
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00010",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00010",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00011",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00011",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00012",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00012",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00013",
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       },
       {
         "row": "r00013",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
+        "note": "Open question, unchanged at 4aae1ccd. Elegy verses quoted in the author's narrative; the couplet in amal-byan-nhvst-sfr r00006 is classified quotation, and recitation here is inconsistent with it."
       }
     ],
     "punctuation": [],
@@ -171,6 +171,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Output rows r00004 and r00006 pair one Arabic half-line with a Persian piece that translates two half-lines; pair each half-line with its own translation after the cuts. This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+    "note": "Author fix by a join, link-safe. The first half-line of each couplet (r00003, r00005) is now in the ar slot without Persian, while r00004 and r00006 pair the second half-line with a Persian piece that renders both half-lines. Joining r00003 with r00004 and r00005 with r00006 (same kind, no punctuation normalization on these fields, so the pinned test does not block it) gives each couplet beside its own rendering. The slot findings are resolved."
   }
 }

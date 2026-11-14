@@ -4,11 +4,11 @@
   "item": "amal-daahay-sjdh-shkr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "e5099796475c92da39b0dd88a2d3881ed67f0b46e5d681336507eafcef569c45",
-  "layout_sha256": "fadfc6b36244b0a12e599484135e307ce585e6fd3a3e93fe4106c47514475aa1",
-  "result_item_sha256": "bf8a2f06422707cf9fae9e5b3528f9a8ab1ba62bf81e57c74d52c653b097fbae",
-  "result_record_sha256": "bd3f4e1a16c24220fe5751240d7bf2eee035e9aca109e276a73f2d1e6429897d",
+  "layout_sha256": "080d5b6a6af6020434aba5d7dbc033cbe5dec38053ad2805b00d8ab8f39475dd",
+  "result_item_sha256": "2b4b52cc77004950a63903e4587cba13d518a865a8c277eb1454e86d08170f6c",
+  "result_record_sha256": "db7e4f834e4a80ca60757b04336006bd434c9f899c7e547aa675d6219e8d7ceb",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -30,21 +30,21 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 599 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 109 code points with 5 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 173 code points, 5 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 109 code points with 5 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 173 code points, 5 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00004",
@@ -72,21 +72,21 @@
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The piece holds the end of an instruction and then the opening of the next numbered narration, which continues in r00007; cut before the ordinal and classify the second piece as note."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece holds the end of an instruction and then the opening of the next numbered narration, which continues in r00007; cut before the ordinal and classify the second piece as note."
       },
       {
         "row": "r00007",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 1 of 2 has 255 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 255 code points, 5 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 250 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 255 code points, 5 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00008",
@@ -98,16 +98,16 @@
       {
         "row": "r00009",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 126 code points with 3 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 193 code points, 3 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split recitation row: output piece of 126 code points with 3 internal clause marks; cut at the clause boundaries and pair clause by clause. Read by the reviewer."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 193 code points, 3 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional."
       },
       {
         "row": "r00010",
@@ -121,21 +121,21 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 633 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 3 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00012",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Read by the reviewer: This fa field holds Arabic prayer or verse text with no Persian beside it, and the output row keeps it in the fa slot; place it in the ar slot, unpaired."
+        "note": "Re-read at 4aae1ccd: 1 output row (1 recitation). The Arabic piece now sits in the ar slot, unpaired, as asked."
       },
       {
         "row": "r00013",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The piece ends with the first Arabic words of the prayer that continues in the ar field of r00014; cut before them and place them in the ar slot as recitation."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece ends with the first Arabic words of the prayer that continues in the ar field of r00014; cut before them and place them in the ar slot as recitation."
       },
       {
         "row": "r00014",
@@ -170,21 +170,21 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 501 code points and 15 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
       },
       {
         "row": "r00017",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 2 has 246 code points and 6 internal clause marks; piece 1 of 2 has 284 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 284 code points, 7 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00017",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 249 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 284 code points, 7 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
       },
       {
         "row": "r00018",
@@ -198,7 +198,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised. The Arabic piece of r00012 sits in the fa slot."
+    "decision": "accept",
+    "note": "The slot finding on r00012 is resolved. Prose rows r00002, r00011, r00016 hold numbered sections to be opened as their own rows (Persian only, nothing to pair). The cut changes asked for on r00006, r00013 are recorded in the source notes; the rows as they stand are placed and paired consistently."
   }
 }

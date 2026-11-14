@@ -4,11 +4,11 @@
   "item": "amal-aamal-ayd-qrban",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "dfb6fbb86a32c363e532580336f3017b08dd128bd330a675d1acbc9b9b627d1b",
-  "layout_sha256": "1ec8fd07ce13432969715aaab77aec4db6ead3b6decc627165f1667bfab90876",
-  "result_item_sha256": "fd5bc3a8239b5fae896267da2286f35ebf4a09244a88d336abe2aa3b55bfeb1c",
-  "result_record_sha256": "d6b9c5f0b35e0d63d2605c9b435e52389340761a43cb02463ce26c46d759a758",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "6883b6525f582660fb913b97c1bf31660ca587f3939d7f8747513398c71047f8",
+  "layout_sha256": "757f0c164ea72827d65c8a6e0504689a06068c54162e50f476c6635aa37ffaf0",
+  "result_item_sha256": "139ec5a32aee0a7c2a5f4ec8957a334b9258cb8af89ec7258d136e27b54c656b",
+  "result_record_sha256": "2de64816e9124bac73daf0f3e1ef71130d53b9755346bc1b4ef60715dd40d05f",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,56 +16,56 @@
     "item_sha256": "a7832fe840ce8ac14bf2346b33386610c498ef26a9b9c71963f998c0292f513f",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "7d2cb73902be2511a7b4175b2b486bda3c1f556d0f5c472267aac491d6552e19",
+    "preview_sha256": "37835e9e0772ef7ca4777de85afe19d74fc8fa4d3b26f213b0613a6c32379e1d",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 2 has 259 code points and 4 internal clause marks; piece 1 of 2 has 696 code points and 25 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. The single existing cut (offset 259) falls after the day label that opens the second passage, so the label is detached from the text it introduces; move the cut before the label."
+        "note": "Re-read at 4aae1ccd: 16 output rows (8 heading, 2 note, 6 instruction). Sixteen pieces: two day labels, six ordinal labels and their texts. The last piece (the opening words of the sixth act) is completed by r00002; both are Persian only, so nothing is mispaired. The numbered sections now open their own rows: each ordinal label is a heading row and its text an instruction or note row; the takbir of r00003 is cut into five clause rows, each beside its own rendering."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 243 code points and 6 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 1 output row (1 instruction). The numbered sections now open their own rows: each ordinal label is a heading row and its text an instruction or note row; the takbir of r00003 is cut into five clause rows, each beside its own rendering."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 242 code points and 5 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Five rows; I compared each Arabic clause with its Persian piece and they match one to one. The numbered sections now open their own rows: each ordinal label is a heading row and its text an instruction or note row; the takbir of r00003 is cut into five clause rows, each beside its own rendering."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 242 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 5 output rows (5 recitation). Five rows; I compared each Arabic clause with its Persian piece and they match one to one. The numbered sections now open their own rows: each ordinal label is a heading row and its text an instruction or note row; the takbir of r00003 is cut into five clause rows, each beside its own rendering."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read at 4aae1ccd: 1 output row (1 instruction). The numbered sections now open their own rows: each ordinal label is a heading row and its text an instruction or note row; the takbir of r00003 is cut into five clause rows, each beside its own rendering."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read at 4aae1ccd: 2 output rows (1 heading, 1 note). The numbered sections now open their own rows: each ordinal label is a heading row and its text an instruction or note row; the takbir of r00003 is cut into five clause rows, each beside its own rendering."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Row r00003 pairs a six-clause Arabic block with its whole translation; redo the pairing clause by clause after the split is revised. The other rows are Persian only."
+    "decision": "accept",
+    "note": "Read all 25 output rows. Rows 17 to 21 pair the five takbir clauses with their own renderings; every other row is Persian only and sits in the fa slot."
   }
 }

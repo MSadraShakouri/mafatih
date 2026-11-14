@@ -4,7 +4,7 @@
   "item": "ziyarat-fzylt-nymh-an",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "90826c1b4be4a0723e6256e88d773f2f1c22f28a9511f11e952391cc274b7615",
   "layout_sha256": "4f91a7f0b171eac49d3991f426a74aadca1ad706ac77c6c6f389f98bab489e5a",
   "result_item_sha256": "2cff944d1200550476d28b20b3781a2eeed9864b45b949d18c3159cc1539bff6",
@@ -49,23 +49,23 @@
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "revise",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 328 code points and 5 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length. Arabic prose statement of a scholar quoted by the author and translated beside it, not a prayer text; classify quotation."
+        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 328 code points, 4 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional. Kind, still open: Arabic prose statement of a scholar quoted by the author and translated beside it, not a prayer text; classify quotation."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "revise",
-        "note": "Arabic prose statement of a scholar quoted by the author and translated beside it, not a prayer text; classify quotation."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Arabic prose statement of a scholar quoted by the author and translated beside it, not a prayer text; classify quotation."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Row r00005 pairs the whole Arabic passage with its whole translation; redo it sentence by sentence after the split is revised."
+    "decision": "accept",
+    "note": "The request to re-pair long rows is withdrawn with the length findings. Read again at 4aae1ccd: every Arabic passage sits beside its own translation and slots are right."
   }
 }

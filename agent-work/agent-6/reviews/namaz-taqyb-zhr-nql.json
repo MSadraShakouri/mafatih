@@ -4,11 +4,11 @@
   "item": "namaz-taqyb-zhr-nql",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "85417dde6db7a0331f519e57b85a4556b1d97dd09644479b58ee615eab016b3c",
-  "layout_sha256": "a09b7fcf06c270eda58ebb6b1a5fe92a85e9418133a179bf00b64eea441ff9d7",
-  "result_item_sha256": "5388ef508ddecd182608ea89043b9cddfcd3b8bae9b0a4e35c709a1e2e96b5a3",
-  "result_record_sha256": "fd944ae93fcb2c204ac48b518f9b07ef4ca37d56673927fce33b80fc2d000433",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "1076703447f81a86d0b7579629015757502f434933563052c98e07a2673f1f50",
+  "layout_sha256": "cd5f7021922f25d2f2f21da5afc81752f0dc1a984eeda985199c922edbd77b54",
+  "result_item_sha256": "2a079806a9b23d755fe9edbdaee7fccdf5357a7f008e47ab3086eafb0a0ad381",
+  "result_record_sha256": "2887079ffe1d6d7be3252d0ed47baa418aa635e91ef85761bd46da8e0e7e626e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "bc7fa2bfd5fc052e58abd99b7ac0a2c3fd4c25bc419345676a386fed1cac1d2d",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "da0c22a52eba3c030c1b6b222601c761350765269723e4a611a0333ae28a360e",
+    "preview_sha256": "4766dfc9e5bbe99bf4f3ef1ca5aa8a5c7dcc706621d54b3aefbea345c2182722",
     "sources": [
       {
         "row": "r00001",
@@ -30,14 +30,14 @@
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 639 code points and 16 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00002), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 2 sentences (1 internal sentence-final mark) and 16 internal clause marks in one piece of 639 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 656 code points and 9 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Author fix, link-safe. Read again at 4aae1ccd: this row has never been cut (it is still output row r00002), so a first cut keeps its id as the mapping original and retires nothing. Its Arabic holds 2 sentences (1 internal sentence-final mark) and 16 internal clause marks in one piece of 639 code points, paired with the whole translation. Cut it at the sentence ends, and at clause marks where the Persian follows them, so that each part sits beside its own rendering. The ground is the number of complete sentences or clauses in one pair, not the length; my earlier 300-code-point threshold is withdrawn."
       },
       {
         "row": "r00003",
@@ -56,16 +56,16 @@
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 2 of 3 has 386 code points and 8 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items. Read by the reviewer: Persian text from the ar field is kept in the ar slot of its output row; place that piece in the fa slot with its instruction or note kind."
+        "note": "Re-read at 4aae1ccd: 3 output rows (2 recitation, 1 instruction). The Persian direction now sits in the fa slot as asked. The last piece holds three short supplications in one row; my length finding on it is withdrawn: the row is already cut into three output rows, so a further cut would renumber its split ids, and it is not asked to be re-split because it is long."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 1 of 2 has 363 code points and 7 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read at 4aae1ccd: 3 output rows (2 recitation, 1 instruction). The Persian direction now sits in the fa slot as asked. The last piece holds three short supplications in one row; my length finding on it is withdrawn: the row is already cut into three output rows, so a further cut would renumber its split ids, and it is not asked to be re-split because it is long."
       }
     ],
     "punctuation": [],
@@ -82,13 +82,13 @@
       },
       {
         "index": 2,
-        "decision": "escalate",
-        "note": "The issue text does not match the plan: this field is in fact cut into an Arabic clause, the Persian instruction and the second supplication, and the fa field is cut to match. Correct or remove the issue text; the Persian instruction piece still has to move to the fa slot (see the layout decision)."
+        "decision": "addressed",
+        "note": "Resolved at 4aae1ccd: the issue text now describes the plan, and the Persian direction stands in the fa slot between the two paired recitation rows."
       }
     ]
   },
   "layout": {
     "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised. Persian text from the ar field is kept in the ar slot of its output row; place that piece in the fa slot with its instruction or note kind."
+    "note": "The slot finding on r00004 is resolved. Author fix after the first cut: r00002 pairs several complete sentences or clauses with one block of translation; pair it part by part once cut."
   }
 }

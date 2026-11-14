@@ -4,7 +4,7 @@
   "item": "fazilat-svrhnba",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "72d266257da2c8afd9e49d5d6ee677cf8d8a34a56a953e573328b187ab1e880a",
   "layout_sha256": "2529a4b85ced85d9e380cd4a032def3ff6c416933f282d040ef48dd6f279e69a",
   "result_item_sha256": "5bfc452b268a48168b96f75a331119f4633f47a2d2fe0866b891a9fa45d96437",
@@ -23,7 +23,7 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: piece 0 holds a complete Arabic sentence inside Persian prose at code points 534-614 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Piece 0 holds a complete Arabic sentence inside Persian prose at code points 534-614 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose."
       }
     ],
     "punctuation": [],
@@ -31,6 +31,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian only; nothing to pair."
+    "note": "Persian only; nothing to pair. The cut changes asked for on r00001 are recorded in the source notes; the rows as they stand are placed and paired consistently."
   }
 }

@@ -4,7 +4,7 @@
   "item": "namaz-item",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
   "plan_sha256": "8355b1915cee759383b9e10b8fa00bfb2a3ad81c6f8cbe894322c88236b6c1b3",
   "layout_sha256": "c2f0a308e3181609f282060f712abb0925b3861ee62bc02af376d2df33f7de4d",
   "result_item_sha256": "1222c93c040cf9fc506888f52d7ed9b403b9bc5816f082f346f309000e23f6b8",
@@ -30,7 +30,7 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The last sentence of this field is a transition that announces the next prayer and is unrelated to the narration before it; cut before that sentence."
+        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The last sentence of this field is a transition that announces the next prayer and is unrelated to the narration before it; cut before that sentence."
       }
     ],
     "punctuation": [],
@@ -38,6 +38,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Both rows are Persian only; nothing to pair."
+    "note": "Both rows are Persian only; nothing to pair. The cut changes asked for on r00002 are recorded in the source notes; the rows as they stand are placed and paired consistently."
   }
 }

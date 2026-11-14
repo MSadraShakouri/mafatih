@@ -4,11 +4,11 @@
   "item": "sura-svrh-alvaqah",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "7909f58612c2de6b9ef47c79e21f1d3b7b1bddac89fc09b7903f44a0e89ca5a9",
-  "layout_sha256": "2fdce5e772698ef0428838b7b039e779dba8a9787f355ad577fa3db9949f33d8",
-  "result_item_sha256": "4f7ea95fa560db44ac1da13eb39f5f799ed6598ccc1167a517ead7912b3a67eb",
-  "result_record_sha256": "188edc6acf7df97b0c5e69c9b6cb6a069db233c69b518bbb96c01bf02a37b78e",
+  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "plan_sha256": "44193c6ba919193abfbe141e85ae39bcb2325ff5e6e53eddb5abb601fab21355",
+  "layout_sha256": "200036055d81d537894604c695cc9350a34941c377062446e4f29e81ecd98aac",
+  "result_item_sha256": "ad22bbf1addf8c1710ebd3ffea348b5ef328b0e067ce391664c21c3fe6e3a138",
+  "result_record_sha256": "1b7fa281f12d9ea55a2f3fee99b09231ae93c3cc28e871eec15ffee79757116d",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "4bbe397909184673aeeeb9b87f846bcfbf787fa4d150196711c281da52af5471",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "51a77360db28c07c8f8aa5486b2f6d98fa5091ac2db5a143ef5004a0082ed8dc",
+    "preview_sha256": "4404e8efacd1c121c5333077adcdc534fbb2f66d34cedddd51e1a8e33bd71cbe",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Name-only row. The same name in sura-svrh-alakhlas r00001 already carries the audio-reciter kind; note is not right here. Use audio-reciter, or record an uncertain-classification issue."
+        "kind": "accept",
+        "note": "Re-read at 4aae1ccd: 1 output row (1 audio-reciter). Kind is now audio-reciter, as asked."
       },
       {
         "row": "r00002",
