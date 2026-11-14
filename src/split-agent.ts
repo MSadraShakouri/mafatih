@@ -157,10 +157,11 @@ function historyHints(c: Corpus, itemId: string): Map<string, HistoryHint> {
   // bounds refer to the original field at split time, not necessarily the
   // correction's replacement; previous_breaks refer to the still earlier
   // previous_text and must never be treated as current-field offsets.
-  const mappedOrigins = new Set(record.rows.flatMap(entry =>
+  const origins = [...record.rows,...(record.aliases ?? [])];
+  const mappedOrigins = new Set(origins.flatMap(entry =>
     (['ar', 'fa'] as const).map(language => sourceKey({row:entry.original.id,language}))));
   const inherited = new Map([...hints].filter(([key]) => !mappedOrigins.has(key)));
-  for (const entry of record.rows) for (const language of ['ar', 'fa'] as const) {
+  for (const entry of origins) for (const language of ['ar', 'fa'] as const) {
     const origin = hints.get(sourceKey({row:entry.original.id,language}));
     if (!origin) continue;
     for (const segment of entry[language]) {

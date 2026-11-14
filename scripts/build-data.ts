@@ -46,7 +46,9 @@ export function buildData(options: BuildDataOptions = {}): void {
     });
     catalog.push({id,title,category:item.category,...(item.quran?{quran:item.quran}:{}),tags,featured:featured.has(id),row_count:rows.length,
       excluded_audio_rows:excludedAudioRows,alignment_claim:item.legacy_alignment, titles_reviewed:Boolean(item.review?.titles),english:links});
-    const redirects=c.rowSplits.get(id)?.rows.map(entry=>({original:{id:entry.original.id},ar:entry.ar,fa:entry.fa}))??[];
+    const split=c.rowSplits.get(id);
+    const redirects=[...(split?.rows ?? []),...(split?.aliases ?? [])]
+      .map(entry=>({original:{id:entry.original.id},ar:entry.ar,fa:entry.fa}));
     write(`items/${id}.json`,{id,legacy_id:item.legacy_id,title,featured:featured.has(id),category:item.category,...(item.quran?{quran:item.quran}:{}),tags,
       alignment_claim:item.legacy_alignment,ar_fa_reviewed:Boolean(item.review?.ar_fa),sources:item.sources??{},excluded_audio_rows:excludedAudioRows,rows,english:links,
       ...(redirects.length?{row_split_redirects:redirects}:{}),reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});

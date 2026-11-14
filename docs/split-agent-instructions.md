@@ -89,6 +89,8 @@ If the command fails or conflicts, preserve the merge state and report; do not f
 
 Install the existing locked dependencies with `npm ci` if needed, without changing package or lock files. This round is pinned to **Node v22.22.3, ICU 78.2 and Unicode 17.0**: use that exact runtime, not the earlier Node 20 pin. If the runtime or another pin differs, `verify-tool-info` reports the differing fields; do not bypass it. On resume, keep the original registration and base; if a legacy `agent-work/$ME/base.txt` or existing plans record a different or unverifiable base, preserve them and report instead of silently migrating them.
 
+**Mid-round tool upgrade:** merge the coordinator's updated `main` into your own branch before using or reviewing merged-row V2 or V3 records. The updated `tool-info.json` pins the upgraded files; verify it in your worktree as shown below. Keep your existing `$BASE`, registration, assignments, plans and old reviews—this upgrade does **not** move the frozen launch marker or change the assignment manifest. Unchanged V1/V2 results and their matching reviews remain valid; an item changed by a merge needs a fresh independent review. Old clients cannot read V3 records, so the author, reviewer and eventual integrator must all upgrade. Preserve/report any Git conflict; do not force or discard work.
+
 ```bash
 node --version                 # must print v22.22.3
 node --import tsx scripts/split-agent.ts verify-tool-info docs/split-assignments/tool-info.json
@@ -149,6 +151,51 @@ A layout's `rows` follow the original row order. Each `output` row has `ar` and 
 The tool checks a frozen item fingerprint, author assignment, complete occurrence coverage, Unicode/marker boundaries, source-order reconstruction, row roles and shared-text copy-on-write. It writes your `data/items/ITEM.json`, a reversible `data/row-splits/ITEM.json` and any necessary `data/texts/*.json` additions. It preserves original references and historical row identities and supports old row/language/offset reading links. When an export contains `inherited_from`, a historical hint is conservatively attached to every mapped descendant of the old occurrence, including pieces moved between languages. The original event may affect only part of that occurrence; old break offsets are not offsets into the current field. Inspect the history instead of treating this inheritance as an automatic boundary. It refuses to overwrite unrelated or non-reconstructible prior item work; preserve and reconcile such work, don't force it. Mechanical checks do not establish correct meaning or rights.
 
 Review `git status` and the actual diff. Stage and commit only your own plans/layouts, changed assigned items, their split records and the affected text shards; never `git add` ignored inputs/previews or an unrelated user's file. Use the two co-author trailers. Before every push, confirm `git branch --show-current` still equals the verified `$OWN_BRANCH`; then push only that branch with `git push origin "$OWN_BRANCH"` (never force). If a push is rejected or branch ownership is unclear, stop and preserve/report the state.
+
+### Merge adjacent rows, including across original rows
+
+First apply your fully checked plan/layout normally and inspect the **current** row IDs and both languages. If finer cuts are needed, make them before merging. Select two adjacent current output rows in source order; they can come from different frozen original rows. Do not infer that the languages correspond just because they are adjacent. Preview without changing any files:
+
+```bash
+LEFT=first-current-row-id
+RIGHT=next-current-row-id
+node --import tsx scripts/six-agent.ts merge-preview "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME" --left "$LEFT" --right "$RIGHT"
+```
+
+Inspect the complete Arabic and Persian `left`, `right`, `merged`, and `no_whitespace_boundary` fields. The default preview and `--join exact` concatenate literally, without adding or removing a character. If `no_whitespace_boundary` is true, the pieces touch; this applies to both languages at the Faraj `r00003`/`r00004` boundary. The preview contains text: do not commit it or send it in coordination messages.
+
+For an exact join after inspection:
+
+```bash
+node --import tsx scripts/six-agent.ts merge-rows "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME" --left "$LEFT" --right "$RIGHT" --join exact
+```
+
+If a space is needed, the upgraded tool can **propose an explicit editorial correction** rather than claiming the space existed in the source. Preview it first; choose `ar-space`, `fa-space`, or `both-space` deliberately, and give a short ID/context-based reason without quoting passages:
+
+```bash
+WHY='Separate words at the original row boundary'
+node --import tsx scripts/six-agent.ts merge-preview "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME" --left "$LEFT" --right "$RIGHT" --join both-space --reason "$WHY"
+# Only after inspecting the exact before/after fields and deciding to propose it:
+node --import tsx scripts/six-agent.ts merge-rows "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME" --left "$LEFT" --right "$RIGHT" --join both-space --reason "$WHY"
+```
+
+Each selected language receives exactly one ordinary U+0020 space **in the current canonical text**. This is a proposed text correction, not an original source character or an automatic approval. It is refused if either side is absent, boundary whitespace already exists, or insertion would divide a Unicode grapheme or protected Quran marker. The V3 mapping records each inserted space, its exact destination code-point offset, source-side row IDs and reason, while retaining both exact original texts and their provenance. The reader/search use the corrected current text; old original/output links map around the insertion. V1 and exact V2 remain unchanged.
+
+The command checks ownership, the frozen plan, current result and adjacency; it refuses different row kinds or conflicting row-level source attributions. It writes the layout, item, mapping and pooled values as one guarded worktree operation; it does not `git add` or commit them. A sequence of merges can use the returned `merged_row` with its next neighbor; intermediate links are preserved. Once V2/V3 exists, ordinary `apply` refuses a later revision that would orphan prior row links; request a mapping migration rather than bypassing it. Already-retired V1 revision links that were never recorded cannot be reconstructed.
+
+The author must review the grouping and ask the assigned independent reviewer to review the new snapshot. For each V3 inserted space, the reviewer must make a **separate** `spacing_review` decision with a note; accepting only the layout and source reviews is insufficient. Previous reviews for this changed item are stale; unchanged items' reviews remain bound to their existing results. Agent assertions are not human scholarly or rights approval.
+
+### Prior snapshot text-pool repair
+
+Snapshots retain immutable text-pool values from their parent. If the branch no longer contains any of those values, snapshot creation now **stops before starting a Git merge**. On your registered own branch, with tracked changes committed and no merge in progress, run:
+
+```bash
+node --import tsx scripts/six-agent.ts restore-snapshot-texts --base "$BASE" --agent "$ME"
+# Inspect the listed data/texts/*.json shards, then commit only those restored shards.
+# Retry scripts/six-agent-snapshot.ts with the same frozen BASE and agent.
+```
+
+This explicitly restores missing, hash-checked immutable parent values without deleting or overwriting other values; it lists every restored ID and shard. Some may be unreferenced and cause validation warnings. Keep them while parallel snapshot merges are underway; do not prune the pool or choose ours/theirs blindly. If there is already an unresolved merge, preserve and resolve that state first.
 
 ## 4. Parallel ring, two communication files, and independent review
 
@@ -219,7 +266,7 @@ node --import tsx scripts/six-agent.ts review-template "$ITEM" --base "$BASE" --
 node --import tsx scripts/six-agent.ts verify-review "$ITEM" "$REVIEW" --base "$BASE" --result "$RESULT" --author "$AUTHOR"
 ```
 
-Set each `semantic_review.sources` split and kind decision to `accept`, `revise` or `uncertain`; explain findings. Resolve each historical or other issue with a note, and set the separate `layout.decision` after checking actual row pairings. `pending`, `revise`, `uncertain` or an escalated issue is not complete. Commit the review to **your own branch** and communicate findings through your shared neighbor file. An author revises on its own branch, commits, publishes a new isolated snapshot, and notifies its successor. A review is bound to exact plan, layout and canonical item/mapping hashes: changes to those invalidate it; unrelated commits do not. Repeat the affected review and merge after a revision. Agent checks are not human, scholarly or rights approval.
+Set each `semantic_review.sources` split and kind decision to `accept`, `revise` or `uncertain`; explain findings. Resolve each historical or other issue with a note, and set the separate `layout.decision` after checking actual row pairings. For V3 mappings, independently inspect **each** `spacing_review` entry, set its `decision`, and add a note; all proposed spaces require separate acceptance. `pending`, `revise`, `uncertain` or an escalated issue is not complete. Commit the review to **your own branch** and communicate findings through your shared neighbor file. An author revises on its own branch, commits, publishes a new isolated snapshot, and notifies its successor; if a change would orphan an already exposed V2/V3 link, preserve it and request a mapping migration instead of bypassing the guard. A review is bound to exact plan, layout and canonical item/mapping hashes: changes to those invalidate it; unrelated commits do not. Repeat the affected review and merge after a revision. Agent checks are not human, scholarly or rights approval.
 
 ## 5. Finish and hand off
 

@@ -82,3 +82,60 @@ for(const mode of ['wide-25','wide-50'] as const){
     await expect(reader).toHaveAttribute('data-anchor-offset','3');
   });
 }
+
+const mergedItem={
+  ...item,
+  rows:[{id:'joined',ar:'abc😀ef',fa:'یکدو',kind:'recitation'}],
+  row_split_redirects:[
+    {original:{id:'original-first'},ar:[{row:'joined',language:'ar',start:0,end:4,target_start:0}],
+      fa:[{row:'joined',language:'fa',start:0,end:2,target_start:0}]},
+    {original:{id:'original-second'},ar:[{row:'joined',language:'ar',start:0,end:2,target_start:4}],
+      fa:[{row:'joined',language:'fa',start:0,end:2,target_start:2}]},
+    {original:{id:'previous-output'},ar:[{row:'joined',language:'ar',start:0,end:2,target_start:4}],
+      fa:[{row:'joined',language:'fa',start:0,end:2,target_start:2}]},
+  ],
+};
+for(const [oldRow,language,oldOffset,targetOffset] of [
+  ['original-second','ar',0,4],['previous-output','ar',1,5],['original-second','fa',1,3],
+] as const){
+  test(`merged row preserves ${oldRow}/${language} at its nonzero destination offset`,async ({page})=>{
+    await page.route('**/data/items/dua-ahd.json',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(mergedItem)}));
+    await page.goto(`./#/item/dua-ahd?row=${oldRow}&lang=${language}&offset=${oldOffset}`);
+    const reader=page.locator('main[data-screen="reader"]');
+    await expect(reader).toHaveAttribute('data-anchor-row','joined');
+    await expect(reader).toHaveAttribute('data-anchor-offset',String(targetOffset));
+    await expect(reader.locator(`[data-row-id="joined"] p[lang="${language}"]`)).toBeVisible();
+  });
+}
+
+const spacedMergedItem={
+  ...item,
+  rows:[{id:'joined-space',ar:'abc😀 ef',fa:'یک دو',kind:'recitation'}],
+  row_split_redirects:[
+    {original:{id:'original-second'},ar:[{row:'joined-space',language:'ar',start:0,end:2,target_start:5}],
+      fa:[{row:'joined-space',language:'fa',start:0,end:2,target_start:3}]},
+    {original:{id:'previous-output'},ar:[{row:'joined-space',language:'ar',start:0,end:2,target_start:5}],
+      fa:[{row:'joined-space',language:'fa',start:0,end:2,target_start:3}]},
+  ],
+};
+for(const [row,language,offset,target] of [['original-second','ar',0,5],['previous-output','fa',1,4]] as const){
+  test(`editorial-space merge preserves ${row}/${language} after its inserted separator`,async ({page})=>{
+    await page.route('**/data/items/dua-ahd.json',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(spacedMergedItem)}));
+    await page.goto(`./#/item/dua-ahd?row=${row}&lang=${language}&offset=${offset}`);
+    const reader=page.locator('main[data-screen="reader"]');
+    await expect(reader).toHaveAttribute('data-anchor-row','joined-space');
+    await expect(reader).toHaveAttribute('data-anchor-offset',String(target));
+    await expect(reader.locator('[data-row-id="joined-space"] p[lang="ar"]')).toHaveText('abc😀 ef');
+  });
+}
+test('in-text search uses the spaced current text and its correct code-point offset',async ({page})=>{
+  await page.route('**/data/items/dua-ahd.json',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(spacedMergedItem)}));
+  await page.goto('./#/item/dua-ahd');
+  await page.getByRole('button',{name:'جست‌وجو در متن'}).click();
+  await page.getByRole('searchbox',{name:'جست‌وجو در این متن'}).fill('ef');
+  const hit=page.locator('.result-row[data-row-id="joined-space"][data-language="ar"]');
+  await expect(hit).toBeVisible();await hit.locator('button').click();
+  const reader=page.locator('main[data-screen="reader"]');
+  await expect(reader).toHaveAttribute('data-anchor-row','joined-space');
+  await expect(reader).toHaveAttribute('data-anchor-offset','5');
+});

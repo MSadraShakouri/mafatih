@@ -206,21 +206,48 @@ export const AlignmentFileSchema = z.object({
   }))
 }).strict();
 
-// Per-item reversible record for a physical AR/FA split.  The source row is
-// retained here when its occurrence ID is retired; each segment is an exact
-// code-point slice, possibly moved to the other language field after review.
+// Per-item reversible record. Source and destination offsets count Unicode
+// code points. V1 always targets offset zero; V2 also permits concatenation.
 export const RowSplitSegmentSchema = z.object({
   row: Key, language: z.enum(['ar', 'fa']),
   start: z.number().int().nonnegative(), end: z.number().int().positive(),
+  target_start: z.number().int().nonnegative().optional(),
+}).strict();
+const SplitOriginal = z.object({
+  original: RowSchema, results: z.array(Key).min(1),
+  ar: z.array(RowSplitSegmentSchema), fa: z.array(RowSplitSegmentSchema),
+}).strict();
+const SplitAlias = z.object({
+  original: RowSchema, ar: z.array(RowSplitSegmentSchema), fa: z.array(RowSplitSegmentSchema),
+}).strict();
+/** Count Unicode code points consistently with SQLite, and disallow controls. */
+export function validMergeInsertionReason(value:string):boolean {
+  const length=Array.from(value).length;
+  return length>=3 && length<=240 && value===value.trim() && !/[\u0000-\u001f\u007f-\u009f\u2028\u2029\ud800-\udfff]/u.test(value);
+}
+// An explicitly proposed editorial insertion, not part of either source.
+export const RowMergeInsertionSchema = z.object({
+  row:Key, language:z.enum(['ar','fa']), target_start:z.number().int().nonnegative(),
+  value:z.literal(' '), left:Key, right:Key,
+  reason:z.string().refine(validMergeInsertionReason,'reason must be a single nonempty line of 3–240 Unicode code points, without controls or unpaired surrogates'),
 }).strict();
 export const RowSplitRecordSchema = z.object({
-  format_version: z.literal(1), item: Key, author: Key,
+  format_version: z.union([z.literal(1), z.literal(2), z.literal(3)]), item: Key, author: Key,
   baseline_item_sha256: Hash, plan_sha256: Hash, layout_sha256: Hash,
-  rows: z.array(z.object({
-    original: RowSchema, results: z.array(Key).min(1),
-    ar: z.array(RowSplitSegmentSchema), fa: z.array(RowSplitSegmentSchema),
-  }).strict()),
-}).strict();
+  rows: z.array(SplitOriginal), aliases: z.array(SplitAlias).optional(), insertions:z.array(RowMergeInsertionSchema).optional(),
+}).strict().superRefine((record,ctx) => {
+  if (record.format_version === 1 && record.aliases !== undefined)
+    ctx.addIssue({code:'custom',message:'V1 mappings cannot have aliases'});
+  if (record.format_version !== 1 && record.aliases === undefined)
+    ctx.addIssue({code:'custom',message:'V2 and V3 mappings require an aliases array'});
+  if (record.format_version === 3 ? !record.insertions?.length : record.insertions !== undefined)
+    ctx.addIssue({code:'custom',message:'V3 requires explicit insertions; V1 and V2 must omit them'});
+  for (const entry of [...record.rows,...(record.aliases ?? [])]) for (const lang of ['ar','fa'] as const)
+    for (const segment of entry[lang]) {
+      if ((record.format_version !== 1) !== (segment.target_start !== undefined))
+        ctx.addIssue({code:'custom',message:'V2/V3 segments require target_start; V1 segments must omit it'});
+    }
+});
 export type RowSplitRecord = z.infer<typeof RowSplitRecordSchema>;
 export type Item = z.infer<typeof ItemSchema>;
 export type Row = z.infer<typeof RowSchema>;

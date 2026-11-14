@@ -42,11 +42,13 @@ const files = [
   'src/punctuation.ts', 'src/quran-markers.ts', 'src/normalize.ts', 'src/schema.ts', 'src/text-ids.ts',
   'web/data.ts', 'web/main.ts', 'web/row-split-anchor.ts', 'tools/schema.sql', 'tools/export_sqlite.py',
   'tests/split-agent.test.ts', 'tests/split-plans.test.ts', 'tests/six-agent-split.test.ts', 'tests/six-agent-build.test.ts',
-  'tests/six-agent-sqlite.test.ts', 'tests/six-agent-merge.test.ts', 'tests/six-agent-cli.test.ts', 'tests/six-agent-arena.test.ts', 'tests/browser/row-split-links.spec.ts',
+  'tests/six-agent-sqlite.test.ts', 'tests/six-agent-merge.test.ts', 'tests/six-agent-cli.test.ts', 'tests/six-agent-arena.test.ts',
+  'tests/six-agent-row-merge.test.ts', 'tests/six-agent-merge-cli.test.ts', 'tests/browser/row-split-links.spec.ts',
   'tests/helpers/row-split-history.ts', 'tests/explanation-classification.test.ts', 'tests/item-search-records.test.ts',
-  'tests/line-breaks.test.ts', 'tests/quran-markers.test.ts', 'tests/runtime-audio.test.ts',
+  'tests/line-breaks.test.ts', 'tests/quran-markers.test.ts', 'tests/runtime-audio.test.ts', 'tests/source-pages.test.ts',
   'tests/search-real-relevance.test.ts', 'tests/substantive-audit.test.ts',
-  'docs/split-agent-instructions.md', 'docs/split-assignments/launch.json', 'docs/split-assignments/assignments.json',
+  'docs/split-agent-instructions.md', 'docs/data-model.md', 'docs/source-pages.md',
+  'docs/split-assignments/launch.json', 'docs/split-assignments/assignments.json',
   'AGENTS.md', 'CONTENT_POLICY.md', 'package.json', 'package-lock.json',
 ];
 function toolInfo() {
