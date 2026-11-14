@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-slvat-shaban",
   "author": "agent-4",
-  "plan_sha256": "5d664a4b6e242dd795b28939bd8b054f64ec51bb435750d128ec1c6769646059",
+  "plan_sha256": "b06583ee1bd63c7eee99b2fb5e0d5b301c74bb98d9dc0b59f726b98b9eacf592",
   "rows": [
     {
       "row": "r00001",
@@ -43,7 +43,23 @@
             "source": "fa",
             "part": 0
           },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -64,16 +80,11 @@
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "recitation"
         }
       ]
     },
@@ -86,48 +97,55 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 1
-          },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 2
-          },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "recitation"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "note"
+          "kind": "recitation"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
           "fa": {
             "source": "fa",
             "part": 2
           },
-          "kind": "note"
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 3
+          },
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 4
+          },
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "recitation"
         }
       ]
     },
@@ -140,7 +158,10 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
           "kind": "recitation"
         },
         {
@@ -148,16 +169,11 @@
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
-            "part": 0
+            "part": 1
           },
-          "kind": "instruction"
+          "kind": "recitation"
         }
       ]
     },
@@ -170,7 +186,10 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
           "kind": "recitation"
         },
         {
@@ -178,24 +197,22 @@
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
-          "fa": {
-            "source": "fa",
-            "part": 0
-          },
-          "kind": "instruction"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "instruction"
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "recitation"
         }
       ]
     }
