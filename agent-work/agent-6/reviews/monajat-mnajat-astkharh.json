@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-astkharh",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "21afaf72873e4fa9e1970a436035ae0651709797acf766ebb28a4251ac6442aa",
-  "layout_sha256": "1920d49ed3f5b709690a2c73c31ce02d66d0e25e1122669f48be9290bfa4ea32",
-  "result_item_sha256": "ac03a864bec41e04aaaba9e7e794eedbc404727f2a6149bf5f78a2e54c711201",
-  "result_record_sha256": "6c391dc79470906319ae4f05ed0d2fed408da1da2ee06112294bc8c8e82502fc",
+  "author_commit": "a03b7cd8de6c897d39978d83132be0d37ae4d658",
+  "plan_sha256": "9f9c0ef3b0dbd4c966111386240e7b4c8de2607578a188e78aa6053880502a67",
+  "layout_sha256": "328920f8cef363bf752e23e9a8261947c6291a1c910acc96180ea4cfd9a1f934",
+  "result_item_sha256": "077de6856956a71950e90066d6ae4683390f1b1a500cef13fe3dcf7c84e2bc93",
+  "result_record_sha256": "0407249f95253d7247890ad2ba9cbe781935f5cc8f56639ab0f69518bbda04a2",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,42 +16,72 @@
     "item_sha256": "40824bffebbe4e4103969e6da5eb43f3c7194f3cf029414c4aefc57ef5a10a13",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "cc8549fbab18dac2ea02af2e30b398e6ecc65f8590cd2320c6f155b9e45cfff9",
+    "preview_sha256": "22127a3dddc1ebea8f13681aaa3fcf69e31c7d7529fa8d8dbf247e91151822ea",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 836 code points and 24 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Re-read every piece at this snapshot. 23 cuts give 24 pieces, each one clause; cuts fall at the clause marks. The last piece is the two-word opening of a phrase that the original row boundary cut off; it is joined to the head of r00002 (see layout and spacing). My earlier under-split finding is resolved."
       },
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 826 code points and 27 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Re-read every piece. 23 cuts; each Persian piece renders the Arabic piece of the same position, including the places where the Persian verb closes a series (pieces 14 to 17). The last piece is the two-word opening continued in r00002. Earlier finding resolved."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 534 code points and 17 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Re-read every piece. 16 cuts give 17 pieces, one clause or one short attribute phrase each. The first piece completes the phrase begun at the end of r00001. Earlier finding resolved."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Revise, reason restated after recalibration: recitation piece 0 has 521 code points and 15 clause marks and holds several clauses or sentences; cut it at clause or sentence boundaries and pair each part with its own translation. Basis after recalibration: paired recitation rows of the 54 manual-v1 items are 39 code points at the median and 229 at the 99th percentile, so a recitation piece above 300 code points is asked to be cut; prose is not judged by length."
+        "note": "Re-read every piece. 16 cuts matching the Arabic pieces one to one. Earlier finding resolved."
       }
     ],
     "punctuation": [],
-    "issues": []
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "Inspected the boundary in the frozen sources: in both languages r00001 ends mid-phrase with no closing mark and no whitespace, and r00002 starts with the word that completes it. The author cut the trailing fragment and the leading fragment and joined them into one paired row; both original occurrences stay recorded in the mapping. The two proposed spaces are decided separately below."
+      }
+    ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised."
-  }
+    "decision": "accept",
+    "note": "Read all 40 output rows in both languages. r00001 gives 23 paired rows, piece n with piece n; the 24th pieces of r00001 and the first pieces of r00002 form one merged paired row, so the phrase cut by the original row boundary reads whole in Arabic and in Persian; r00002 then gives 16 paired rows. All rows are recitation, source order is kept, and removing the two recorded spaces reconstructs both original fields exactly. This is the clause level asked for."
+  },
+  "spacing_review": [
+    {
+      "row": "m6d109431c989dd968fc2e4d9",
+      "language": "ar",
+      "target_start": 10,
+      "value": " ",
+      "left": "r00001-s5dc341aff421a2c2",
+      "right": "r00002-se78f6df715196b3d",
+      "reason": "Separate words at r00001/r00002 continuation boundary",
+      "decision": "accept",
+      "note": "Inspected the merged Arabic field and both frozen sources: r00001 ends with a noun in construct state and no trailing whitespace, r00002 begins with the noun it governs, so without a separator two words run together. One U+0020 at code point 10 separates them; removing it reconstructs the two source fields exactly. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "m6d109431c989dd968fc2e4d9",
+      "language": "fa",
+      "target_start": 6,
+      "value": " ",
+      "left": "r00001-s5dc341aff421a2c2",
+      "right": "r00002-se78f6df715196b3d",
+      "reason": "Separate words at r00001/r00002 continuation boundary",
+      "decision": "accept",
+      "note": "Inspected the merged Persian field and both frozen sources: r00001 ends with the first word of a two-word noun phrase and no trailing whitespace, r00002 begins with the second word. One U+0020 at code point 6 separates them; removing it reconstructs the two source fields exactly. Accepted as an editorial space, not as a source character."
+    }
+  ]
 }
