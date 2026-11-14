@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-item-2",
   "author": "agent-5",
-  "plan_sha256": "4cf7d569379a11d20584d88c5e892cce3a922ca107f7782295c00daf8131c073",
+  "plan_sha256": "14614b44cdb0ca0d4eb155386fd1445d243fde30c46eab4138dbb82923eb9866",
   "rows": [
     {
       "row": "r00001",
@@ -64,6 +64,22 @@
             "part": 0
           },
           "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 1
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -105,6 +121,17 @@
           "kind": "instruction"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00004-sb6675ab1151072b8",
+      "right": "r00005-s1461543daf3ad696",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original source text."
+      }
     }
   ]
 }
