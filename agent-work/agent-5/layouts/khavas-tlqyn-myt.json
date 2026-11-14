@@ -234,11 +234,11 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "fa",
             "part": 0
           },
+          "fa": null,
           "kind": "note"
         }
       ]
@@ -248,11 +248,11 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "fa",
             "part": 0
           },
+          "fa": null,
           "kind": "note"
         }
       ]
@@ -270,6 +270,22 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00013-s3d5f93a42f982bcb",
+      "right": "r00014-sdbbf718084a78ff7",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts."
+      }
+    },
+    {
+      "left": "mbfcc7e39b6e3075ef780c623",
+      "right": "r00015",
+      "checked": true
     }
   ]
 }

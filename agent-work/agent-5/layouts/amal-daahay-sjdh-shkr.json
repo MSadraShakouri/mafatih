@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-daahay-sjdh-shkr",
   "author": "agent-5",
-  "plan_sha256": "e5099796475c92da39b0dd88a2d3881ed67f0b46e5d681336507eafcef569c45",
+  "plan_sha256": "5fd22b78d817fad671bfa00dda5d2d7d0fad519556fc6d1681a0bb5f8c06b7b3",
   "rows": [
     {
       "row": "r00001",
@@ -30,6 +30,46 @@
             "part": 0
           },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 5
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -92,6 +132,22 @@
             "part": 0
           },
           "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
         }
       ]
     },
@@ -176,6 +232,86 @@
             "part": 0
           },
           "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 1
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 5
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 6
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 7
+          },
+          "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 8
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 9
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 10
+          },
+          "kind": "note"
         }
       ]
     },
@@ -203,7 +339,23 @@
             "source": "fa",
             "part": 0
           },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
           "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 2
+          },
+          "fa": null,
+          "kind": "recitation"
         }
       ]
     },
@@ -260,6 +412,38 @@
             "part": 0
           },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 3
+          },
+          "fa": null,
+          "kind": "recitation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "note"
         }
       ]
     },
@@ -301,6 +485,44 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text."
+      }
+    },
+    {
+      "left": "r00006-saa9b9be4b3d5606d",
+      "right": "r00007-s94954aa661bd7576",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text."
+      }
+    },
+    {
+      "left": "r00010",
+      "right": "r00011-sff3d5cac0f1b50db",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text."
+      }
+    },
+    {
+      "left": "r00013-sd34abb5117ef22c1",
+      "right": "r00014",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text."
+      }
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "dua-iftitah",
   "author": "agent-5",
   "baseline_item_sha256": "cca13fdf83a223623fd75a35d681961ef950db1109b6b10d7a32b74565a93037",
-  "plan_sha256": "6c4ff7bf680038e3a08385ce884af6363ff095aedf98cdd9067cd1f7e67fcc18",
-  "layout_sha256": "f259ffc673d7f330b879c428d21c33c5ae85f92018a7ff667e9bb148de63ef22",
+  "plan_sha256": "5377aab8203915b81eaea3d093a71ad7ca47444e97fab3146f382ff483357313",
+  "layout_sha256": "b8120c977d54d21270a722bed62f24c0feae3b5c6480d2b1450184ddd9d4bed5",
   "rows": [
     {
       "original": {
@@ -21,7 +21,61 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 11
+          "end": 11,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002",
+        "ar": null,
+        "fa": "t18827c2b8d523ae434290dfb",
+        "kind": "note"
+      },
+      "results": [
+        "r00002-s16b235f3fb54b1a5",
+        "r00002-s6ee40c2fb159f15e",
+        "r00002-sefe2b44d479f4e2b",
+        "r00002-s66b01c3448941be8",
+        "r00002-sd76a281bc67a885e"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00002-s16b235f3fb54b1a5",
+          "language": "fa",
+          "start": 0,
+          "end": 72,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-s6ee40c2fb159f15e",
+          "language": "fa",
+          "start": 72,
+          "end": 78,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-sefe2b44d479f4e2b",
+          "language": "fa",
+          "start": 78,
+          "end": 196,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-s66b01c3448941be8",
+          "language": "fa",
+          "start": 196,
+          "end": 202,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-sd76a281bc67a885e",
+          "language": "fa",
+          "start": 202,
+          "end": 399,
+          "target_start": 0
         }
       ]
     },
@@ -40,13 +94,15 @@
           "row": "r00003-s77194eb67ae6c13d",
           "language": "fa",
           "start": 0,
-          "end": 59
+          "end": 59,
+          "target_start": 0
         },
         {
           "row": "r00003-s8a68ed4afb081fe5",
           "language": "ar",
           "start": 59,
-          "end": 135
+          "end": 135,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -54,7 +110,50 @@
           "row": "r00003-s8a68ed4afb081fe5",
           "language": "fa",
           "start": 0,
-          "end": 70
+          "end": 70,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004",
+        "ar": null,
+        "fa": "t3e66a76d19b0e1b9c8dc5bbe",
+        "kind": "note"
+      },
+      "results": [
+        "m4ce4ba26d344c902037c3cf9"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "m4ce4ba26d344c902037c3cf9",
+          "language": "fa",
+          "start": 0,
+          "end": 230,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005",
+        "ar": null,
+        "fa": "tfad8fcc5b78e64d1ffd872c7",
+        "kind": "note"
+      },
+      "results": [
+        "m4ce4ba26d344c902037c3cf9"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "m4ce4ba26d344c902037c3cf9",
+          "language": "fa",
+          "start": 0,
+          "end": 11,
+          "target_start": 231
         }
       ]
     },
@@ -72,7 +171,8 @@
           "row": "r00006",
           "language": "ar",
           "start": 0,
-          "end": 124
+          "end": 124,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -80,7 +180,8 @@
           "row": "r00006",
           "language": "fa",
           "start": 0,
-          "end": 103
+          "end": 103,
+          "target_start": 0
         }
       ]
     },
@@ -99,13 +200,15 @@
           "row": "r00007-s437311542faefd68",
           "language": "fa",
           "start": 0,
-          "end": 37
+          "end": 37,
+          "target_start": 0
         },
         {
           "row": "r00007-sed774e7124c80656",
           "language": "ar",
           "start": 37,
-          "end": 73
+          "end": 73,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -113,7 +216,8 @@
           "row": "r00007-sed774e7124c80656",
           "language": "fa",
           "start": 0,
-          "end": 50
+          "end": 50,
+          "target_start": 0
         }
       ]
     },
@@ -131,7 +235,8 @@
           "row": "r00008",
           "language": "ar",
           "start": 0,
-          "end": 39
+          "end": 39,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -139,7 +244,98 @@
           "row": "r00008",
           "language": "fa",
           "start": 0,
-          "end": 27
+          "end": 27,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00010",
+        "ar": null,
+        "fa": "t34f7ec18f4d89b2263b7baa7",
+        "kind": "note"
+      },
+      "results": [
+        "r00010-seb219ae3b3f3af47",
+        "r00010-s0df7b38f9b05a58b",
+        "r00010-sf86a65be57f77508",
+        "r00010-s53911891d1a9cf8a",
+        "r00010-s984bfbcfd2ade804",
+        "r00010-s3f81ade471b3b69f",
+        "m5bc362a743b421196c1cb165"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00010-seb219ae3b3f3af47",
+          "language": "fa",
+          "start": 0,
+          "end": 97,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s0df7b38f9b05a58b",
+          "language": "fa",
+          "start": 97,
+          "end": 146,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-sf86a65be57f77508",
+          "language": "fa",
+          "start": 146,
+          "end": 152,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s53911891d1a9cf8a",
+          "language": "fa",
+          "start": 152,
+          "end": 188,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s984bfbcfd2ade804",
+          "language": "fa",
+          "start": 188,
+          "end": 193,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s3f81ade471b3b69f",
+          "language": "fa",
+          "start": 193,
+          "end": 294,
+          "target_start": 0
+        },
+        {
+          "row": "m5bc362a743b421196c1cb165",
+          "language": "fa",
+          "start": 294,
+          "end": 685,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00011",
+        "ar": null,
+        "fa": "t9585dfa9c23a651f6f4171d2",
+        "kind": "note"
+      },
+      "results": [
+        "m5bc362a743b421196c1cb165"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "m5bc362a743b421196c1cb165",
+          "language": "fa",
+          "start": 0,
+          "end": 111,
+          "target_start": 392
         }
       ]
     },
@@ -159,13 +355,15 @@
           "row": "r00012-see0b914a9a4e1d79",
           "language": "fa",
           "start": 0,
-          "end": 6
+          "end": 6,
+          "target_start": 0
         },
         {
           "row": "r00012-s43632e7632bcf6c5",
           "language": "fa",
           "start": 6,
-          "end": 61
+          "end": 61,
+          "target_start": 0
         }
       ],
       "fa": []
@@ -184,7 +382,8 @@
           "row": "r00015",
           "language": "ar",
           "start": 0,
-          "end": 118
+          "end": 118,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -192,7 +391,8 @@
           "row": "r00015",
           "language": "fa",
           "start": 0,
-          "end": 94
+          "end": 94,
+          "target_start": 0
         }
       ]
     },
@@ -210,7 +410,8 @@
           "row": "r00016",
           "language": "ar",
           "start": 0,
-          "end": 39
+          "end": 39,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -218,7 +419,8 @@
           "row": "r00016",
           "language": "fa",
           "start": 0,
-          "end": 34
+          "end": 34,
+          "target_start": 0
         }
       ]
     },
@@ -236,7 +438,8 @@
           "row": "r00017",
           "language": "ar",
           "start": 0,
-          "end": 77
+          "end": 77,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -244,7 +447,8 @@
           "row": "r00017",
           "language": "fa",
           "start": 0,
-          "end": 55
+          "end": 55,
+          "target_start": 0
         }
       ]
     },
@@ -262,7 +466,8 @@
           "row": "r00018",
           "language": "ar",
           "start": 0,
-          "end": 79
+          "end": 79,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -270,7 +475,8 @@
           "row": "r00018",
           "language": "fa",
           "start": 0,
-          "end": 57
+          "end": 57,
+          "target_start": 0
         }
       ]
     },
@@ -288,7 +494,8 @@
           "row": "r00019",
           "language": "ar",
           "start": 0,
-          "end": 26
+          "end": 26,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -296,7 +503,8 @@
           "row": "r00019",
           "language": "fa",
           "start": 0,
-          "end": 36
+          "end": 36,
+          "target_start": 0
         }
       ]
     },
@@ -315,7 +523,8 @@
           "row": "r00021",
           "language": "fa",
           "start": 0,
-          "end": 12
+          "end": 12,
+          "target_start": 0
         }
       ]
     },
@@ -334,7 +543,8 @@
           "row": "r00022",
           "language": "fa",
           "start": 0,
-          "end": 12
+          "end": 12,
+          "target_start": 0
         }
       ]
     },
@@ -353,7 +563,8 @@
           "row": "r00023",
           "language": "fa",
           "start": 0,
-          "end": 10
+          "end": 10,
+          "target_start": 0
         }
       ]
     },
@@ -372,13 +583,15 @@
           "row": "r00024-scb212156de5c465a",
           "language": "fa",
           "start": 0,
-          "end": 38
+          "end": 38,
+          "target_start": 0
         },
         {
           "row": "r00024-s3519df7f31f3dd6d",
           "language": "ar",
           "start": 38,
-          "end": 367
+          "end": 367,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -386,7 +599,8 @@
           "row": "r00024-s3519df7f31f3dd6d",
           "language": "fa",
           "start": 0,
-          "end": 236
+          "end": 236,
+          "target_start": 0
         }
       ]
     },
@@ -404,7 +618,8 @@
           "row": "r00025",
           "language": "ar",
           "start": 0,
-          "end": 151
+          "end": 151,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -412,7 +627,8 @@
           "row": "r00025",
           "language": "fa",
           "start": 0,
-          "end": 143
+          "end": 143,
+          "target_start": 0
         }
       ]
     },
@@ -430,7 +646,8 @@
           "row": "r00026",
           "language": "ar",
           "start": 0,
-          "end": 177
+          "end": 177,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -438,7 +655,8 @@
           "row": "r00026",
           "language": "fa",
           "start": 0,
-          "end": 132
+          "end": 132,
+          "target_start": 0
         }
       ]
     },
@@ -456,7 +674,8 @@
           "row": "r00027",
           "language": "ar",
           "start": 0,
-          "end": 173
+          "end": 173,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -464,7 +683,8 @@
           "row": "r00027",
           "language": "fa",
           "start": 0,
-          "end": 140
+          "end": 140,
+          "target_start": 0
         }
       ]
     },
@@ -482,7 +702,8 @@
           "row": "r00028",
           "language": "ar",
           "start": 0,
-          "end": 78
+          "end": 78,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -490,7 +711,8 @@
           "row": "r00028",
           "language": "fa",
           "start": 0,
-          "end": 51
+          "end": 51,
+          "target_start": 0
         }
       ]
     },
@@ -508,7 +730,8 @@
           "row": "r00029",
           "language": "ar",
           "start": 0,
-          "end": 88
+          "end": 88,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -516,7 +739,8 @@
           "row": "r00029",
           "language": "fa",
           "start": 0,
-          "end": 80
+          "end": 80,
+          "target_start": 0
         }
       ]
     },
@@ -534,7 +758,8 @@
           "row": "r00030",
           "language": "ar",
           "start": 0,
-          "end": 98
+          "end": 98,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -542,7 +767,8 @@
           "row": "r00030",
           "language": "fa",
           "start": 0,
-          "end": 69
+          "end": 69,
+          "target_start": 0
         }
       ]
     },
@@ -560,7 +786,8 @@
           "row": "r00031",
           "language": "ar",
           "start": 0,
-          "end": 122
+          "end": 122,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -568,7 +795,8 @@
           "row": "r00031",
           "language": "fa",
           "start": 0,
-          "end": 110
+          "end": 110,
+          "target_start": 0
         }
       ]
     },
@@ -586,7 +814,8 @@
           "row": "r00032",
           "language": "ar",
           "start": 0,
-          "end": 128
+          "end": 128,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -594,7 +823,8 @@
           "row": "r00032",
           "language": "fa",
           "start": 0,
-          "end": 107
+          "end": 107,
+          "target_start": 0
         }
       ]
     },
@@ -612,7 +842,8 @@
           "row": "r00033",
           "language": "ar",
           "start": 0,
-          "end": 170
+          "end": 170,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -620,7 +851,8 @@
           "row": "r00033",
           "language": "fa",
           "start": 0,
-          "end": 157
+          "end": 157,
+          "target_start": 0
         }
       ]
     },
@@ -638,7 +870,8 @@
           "row": "r00034",
           "language": "ar",
           "start": 0,
-          "end": 180
+          "end": 180,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -646,7 +879,8 @@
           "row": "r00034",
           "language": "fa",
           "start": 0,
-          "end": 124
+          "end": 124,
+          "target_start": 0
         }
       ]
     },
@@ -664,7 +898,8 @@
           "row": "r00035",
           "language": "ar",
           "start": 0,
-          "end": 99
+          "end": 99,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -672,7 +907,8 @@
           "row": "r00035",
           "language": "fa",
           "start": 0,
-          "end": 118
+          "end": 118,
+          "target_start": 0
         }
       ]
     },
@@ -690,7 +926,8 @@
           "row": "r00036",
           "language": "ar",
           "start": 0,
-          "end": 128
+          "end": 128,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -698,7 +935,8 @@
           "row": "r00036",
           "language": "fa",
           "start": 0,
-          "end": 116
+          "end": 116,
+          "target_start": 0
         }
       ]
     },
@@ -716,7 +954,8 @@
           "row": "r00037",
           "language": "ar",
           "start": 0,
-          "end": 103
+          "end": 103,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -724,7 +963,8 @@
           "row": "r00037",
           "language": "fa",
           "start": 0,
-          "end": 109
+          "end": 109,
+          "target_start": 0
         }
       ]
     },
@@ -742,7 +982,8 @@
           "row": "r00038",
           "language": "ar",
           "start": 0,
-          "end": 136
+          "end": 136,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -750,7 +991,8 @@
           "row": "r00038",
           "language": "fa",
           "start": 0,
-          "end": 156
+          "end": 156,
+          "target_start": 0
         }
       ]
     },
@@ -768,7 +1010,8 @@
           "row": "r00039",
           "language": "ar",
           "start": 0,
-          "end": 85
+          "end": 85,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -776,7 +1019,8 @@
           "row": "r00039",
           "language": "fa",
           "start": 0,
-          "end": 63
+          "end": 63,
+          "target_start": 0
         }
       ]
     },
@@ -794,7 +1038,8 @@
           "row": "r00040",
           "language": "ar",
           "start": 0,
-          "end": 47
+          "end": 47,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -802,7 +1047,8 @@
           "row": "r00040",
           "language": "fa",
           "start": 0,
-          "end": 58
+          "end": 58,
+          "target_start": 0
         }
       ]
     },
@@ -820,7 +1066,8 @@
           "row": "r00041",
           "language": "ar",
           "start": 0,
-          "end": 127
+          "end": 127,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -828,7 +1075,8 @@
           "row": "r00041",
           "language": "fa",
           "start": 0,
-          "end": 110
+          "end": 110,
+          "target_start": 0
         }
       ]
     },
@@ -846,7 +1094,8 @@
           "row": "r00042",
           "language": "ar",
           "start": 0,
-          "end": 116
+          "end": 116,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -854,7 +1103,8 @@
           "row": "r00042",
           "language": "fa",
           "start": 0,
-          "end": 96
+          "end": 96,
+          "target_start": 0
         }
       ]
     },
@@ -872,7 +1122,8 @@
           "row": "r00043",
           "language": "ar",
           "start": 0,
-          "end": 88
+          "end": 88,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -880,7 +1131,8 @@
           "row": "r00043",
           "language": "fa",
           "start": 0,
-          "end": 77
+          "end": 77,
+          "target_start": 0
         }
       ]
     },
@@ -898,7 +1150,8 @@
           "row": "r00044",
           "language": "ar",
           "start": 0,
-          "end": 135
+          "end": 135,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -906,7 +1159,8 @@
           "row": "r00044",
           "language": "fa",
           "start": 0,
-          "end": 115
+          "end": 115,
+          "target_start": 0
         }
       ]
     },
@@ -924,7 +1178,8 @@
           "row": "r00045",
           "language": "ar",
           "start": 0,
-          "end": 107
+          "end": 107,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -932,7 +1187,8 @@
           "row": "r00045",
           "language": "fa",
           "start": 0,
-          "end": 101
+          "end": 101,
+          "target_start": 0
         }
       ]
     },
@@ -950,7 +1206,8 @@
           "row": "r00046",
           "language": "ar",
           "start": 0,
-          "end": 91
+          "end": 91,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -958,7 +1215,8 @@
           "row": "r00046",
           "language": "fa",
           "start": 0,
-          "end": 84
+          "end": 84,
+          "target_start": 0
         }
       ]
     },
@@ -976,7 +1234,8 @@
           "row": "r00047",
           "language": "ar",
           "start": 0,
-          "end": 211
+          "end": 211,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -984,7 +1243,8 @@
           "row": "r00047",
           "language": "fa",
           "start": 0,
-          "end": 220
+          "end": 220,
+          "target_start": 0
         }
       ]
     },
@@ -1002,7 +1262,8 @@
           "row": "r00048",
           "language": "ar",
           "start": 0,
-          "end": 113
+          "end": 113,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1010,7 +1271,8 @@
           "row": "r00048",
           "language": "fa",
           "start": 0,
-          "end": 124
+          "end": 124,
+          "target_start": 0
         }
       ]
     },
@@ -1028,7 +1290,8 @@
           "row": "r00049",
           "language": "ar",
           "start": 0,
-          "end": 105
+          "end": 105,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1036,7 +1299,8 @@
           "row": "r00049",
           "language": "fa",
           "start": 0,
-          "end": 106
+          "end": 106,
+          "target_start": 0
         }
       ]
     },
@@ -1054,7 +1318,8 @@
           "row": "r00050",
           "language": "ar",
           "start": 0,
-          "end": 159
+          "end": 159,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1062,7 +1327,8 @@
           "row": "r00050",
           "language": "fa",
           "start": 0,
-          "end": 170
+          "end": 170,
+          "target_start": 0
         }
       ]
     },
@@ -1080,7 +1346,8 @@
           "row": "r00051",
           "language": "ar",
           "start": 0,
-          "end": 175
+          "end": 175,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1088,7 +1355,8 @@
           "row": "r00051",
           "language": "fa",
           "start": 0,
-          "end": 198
+          "end": 198,
+          "target_start": 0
         }
       ]
     },
@@ -1106,7 +1374,8 @@
           "row": "r00052",
           "language": "ar",
           "start": 0,
-          "end": 136
+          "end": 136,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1114,7 +1383,8 @@
           "row": "r00052",
           "language": "fa",
           "start": 0,
-          "end": 104
+          "end": 104,
+          "target_start": 0
         }
       ]
     },
@@ -1132,7 +1402,8 @@
           "row": "r00053",
           "language": "ar",
           "start": 0,
-          "end": 207
+          "end": 207,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1140,7 +1411,8 @@
           "row": "r00053",
           "language": "fa",
           "start": 0,
-          "end": 185
+          "end": 185,
+          "target_start": 0
         }
       ]
     },
@@ -1158,7 +1430,8 @@
           "row": "r00054",
           "language": "ar",
           "start": 0,
-          "end": 198
+          "end": 198,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1166,7 +1439,8 @@
           "row": "r00054",
           "language": "fa",
           "start": 0,
-          "end": 156
+          "end": 156,
+          "target_start": 0
         }
       ]
     },
@@ -1184,7 +1458,8 @@
           "row": "r00055",
           "language": "ar",
           "start": 0,
-          "end": 181
+          "end": 181,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1192,7 +1467,8 @@
           "row": "r00055",
           "language": "fa",
           "start": 0,
-          "end": 128
+          "end": 128,
+          "target_start": 0
         }
       ]
     },
@@ -1210,7 +1486,8 @@
           "row": "r00056",
           "language": "ar",
           "start": 0,
-          "end": 99
+          "end": 99,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1218,7 +1495,8 @@
           "row": "r00056",
           "language": "fa",
           "start": 0,
-          "end": 99
+          "end": 99,
+          "target_start": 0
         }
       ]
     },
@@ -1236,7 +1514,8 @@
           "row": "r00057",
           "language": "ar",
           "start": 0,
-          "end": 241
+          "end": 241,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1244,7 +1523,8 @@
           "row": "r00057",
           "language": "fa",
           "start": 0,
-          "end": 245
+          "end": 245,
+          "target_start": 0
         }
       ]
     },
@@ -1262,7 +1542,8 @@
           "row": "r00058",
           "language": "ar",
           "start": 0,
-          "end": 180
+          "end": 180,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1270,7 +1551,8 @@
           "row": "r00058",
           "language": "fa",
           "start": 0,
-          "end": 115
+          "end": 115,
+          "target_start": 0
         }
       ]
     },
@@ -1288,7 +1570,8 @@
           "row": "r00059",
           "language": "ar",
           "start": 0,
-          "end": 327
+          "end": 327,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1296,7 +1579,8 @@
           "row": "r00059",
           "language": "fa",
           "start": 0,
-          "end": 257
+          "end": 257,
+          "target_start": 0
         }
       ]
     },
@@ -1314,7 +1598,8 @@
           "row": "r00060",
           "language": "ar",
           "start": 0,
-          "end": 214
+          "end": 214,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1322,7 +1607,8 @@
           "row": "r00060",
           "language": "fa",
           "start": 0,
-          "end": 149
+          "end": 149,
+          "target_start": 0
         }
       ]
     },
@@ -1340,7 +1626,8 @@
           "row": "r00061",
           "language": "ar",
           "start": 0,
-          "end": 100
+          "end": 100,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1348,7 +1635,8 @@
           "row": "r00061",
           "language": "fa",
           "start": 0,
-          "end": 56
+          "end": 56,
+          "target_start": 0
         }
       ]
     },
@@ -1366,7 +1654,8 @@
           "row": "r00062",
           "language": "ar",
           "start": 0,
-          "end": 121
+          "end": 121,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1374,7 +1663,8 @@
           "row": "r00062",
           "language": "fa",
           "start": 0,
-          "end": 96
+          "end": 96,
+          "target_start": 0
         }
       ]
     },
@@ -1392,7 +1682,8 @@
           "row": "r00063",
           "language": "ar",
           "start": 0,
-          "end": 367
+          "end": 367,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1400,7 +1691,8 @@
           "row": "r00063",
           "language": "fa",
           "start": 0,
-          "end": 260
+          "end": 260,
+          "target_start": 0
         }
       ]
     },
@@ -1418,7 +1710,8 @@
           "row": "r00064",
           "language": "ar",
           "start": 0,
-          "end": 208
+          "end": 208,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1426,7 +1719,8 @@
           "row": "r00064",
           "language": "fa",
           "start": 0,
-          "end": 155
+          "end": 155,
+          "target_start": 0
         }
       ]
     },
@@ -1444,7 +1738,8 @@
           "row": "r00065",
           "language": "ar",
           "start": 0,
-          "end": 272
+          "end": 272,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1452,7 +1747,8 @@
           "row": "r00065",
           "language": "fa",
           "start": 0,
-          "end": 257
+          "end": 257,
+          "target_start": 0
         }
       ]
     },
@@ -1470,7 +1766,8 @@
           "row": "r00066",
           "language": "ar",
           "start": 0,
-          "end": 192
+          "end": 192,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1478,7 +1775,8 @@
           "row": "r00066",
           "language": "fa",
           "start": 0,
-          "end": 197
+          "end": 197,
+          "target_start": 0
         }
       ]
     },
@@ -1496,7 +1794,8 @@
           "row": "r00067",
           "language": "ar",
           "start": 0,
-          "end": 134
+          "end": 134,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1504,7 +1803,8 @@
           "row": "r00067",
           "language": "fa",
           "start": 0,
-          "end": 97
+          "end": 97,
+          "target_start": 0
         }
       ]
     },
@@ -1522,7 +1822,8 @@
           "row": "r00068",
           "language": "ar",
           "start": 0,
-          "end": 138
+          "end": 138,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1530,7 +1831,8 @@
           "row": "r00068",
           "language": "fa",
           "start": 0,
-          "end": 126
+          "end": 126,
+          "target_start": 0
         }
       ]
     },
@@ -1548,7 +1850,8 @@
           "row": "r00069",
           "language": "ar",
           "start": 0,
-          "end": 134
+          "end": 134,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1556,7 +1859,8 @@
           "row": "r00069",
           "language": "fa",
           "start": 0,
-          "end": 129
+          "end": 129,
+          "target_start": 0
         }
       ]
     },
@@ -1574,7 +1878,8 @@
           "row": "r00070",
           "language": "ar",
           "start": 0,
-          "end": 94
+          "end": 94,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1582,7 +1887,8 @@
           "row": "r00070",
           "language": "fa",
           "start": 0,
-          "end": 115
+          "end": 115,
+          "target_start": 0
         }
       ]
     },
@@ -1600,7 +1906,8 @@
           "row": "r00071",
           "language": "ar",
           "start": 0,
-          "end": 112
+          "end": 112,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1608,7 +1915,8 @@
           "row": "r00071",
           "language": "fa",
           "start": 0,
-          "end": 133
+          "end": 133,
+          "target_start": 0
         }
       ]
     },
@@ -1626,7 +1934,8 @@
           "row": "r00072",
           "language": "ar",
           "start": 0,
-          "end": 109
+          "end": 109,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1634,7 +1943,8 @@
           "row": "r00072",
           "language": "fa",
           "start": 0,
-          "end": 127
+          "end": 127,
+          "target_start": 0
         }
       ]
     },
@@ -1652,7 +1962,8 @@
           "row": "r00073",
           "language": "ar",
           "start": 0,
-          "end": 101
+          "end": 101,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1660,7 +1971,8 @@
           "row": "r00073",
           "language": "fa",
           "start": 0,
-          "end": 149
+          "end": 149,
+          "target_start": 0
         }
       ]
     },
@@ -1678,7 +1990,8 @@
           "row": "r00074",
           "language": "ar",
           "start": 0,
-          "end": 88
+          "end": 88,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1686,7 +1999,8 @@
           "row": "r00074",
           "language": "fa",
           "start": 0,
-          "end": 106
+          "end": 106,
+          "target_start": 0
         }
       ]
     },
@@ -1704,7 +2018,8 @@
           "row": "r00075",
           "language": "ar",
           "start": 0,
-          "end": 82
+          "end": 82,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1712,7 +2027,8 @@
           "row": "r00075",
           "language": "fa",
           "start": 0,
-          "end": 89
+          "end": 89,
+          "target_start": 0
         }
       ]
     },
@@ -1730,7 +2046,8 @@
           "row": "r00076",
           "language": "ar",
           "start": 0,
-          "end": 89
+          "end": 89,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1738,7 +2055,8 @@
           "row": "r00076",
           "language": "fa",
           "start": 0,
-          "end": 96
+          "end": 96,
+          "target_start": 0
         }
       ]
     },
@@ -1756,7 +2074,8 @@
           "row": "r00077",
           "language": "ar",
           "start": 0,
-          "end": 56
+          "end": 56,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1764,7 +2083,8 @@
           "row": "r00077",
           "language": "fa",
           "start": 0,
-          "end": 65
+          "end": 65,
+          "target_start": 0
         }
       ]
     },
@@ -1782,7 +2102,8 @@
           "row": "r00078",
           "language": "ar",
           "start": 0,
-          "end": 117
+          "end": 117,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1790,7 +2111,8 @@
           "row": "r00078",
           "language": "fa",
           "start": 0,
-          "end": 136
+          "end": 136,
+          "target_start": 0
         }
       ]
     },
@@ -1808,7 +2130,8 @@
           "row": "r00079",
           "language": "ar",
           "start": 0,
-          "end": 84
+          "end": 84,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1816,7 +2139,8 @@
           "row": "r00079",
           "language": "fa",
           "start": 0,
-          "end": 74
+          "end": 74,
+          "target_start": 0
         }
       ]
     },
@@ -1834,7 +2158,8 @@
           "row": "r00080",
           "language": "ar",
           "start": 0,
-          "end": 223
+          "end": 223,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1842,7 +2167,8 @@
           "row": "r00080",
           "language": "fa",
           "start": 0,
-          "end": 191
+          "end": 191,
+          "target_start": 0
         }
       ]
     },
@@ -1860,7 +2186,8 @@
           "row": "r00081",
           "language": "ar",
           "start": 0,
-          "end": 289
+          "end": 289,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1868,7 +2195,8 @@
           "row": "r00081",
           "language": "fa",
           "start": 0,
-          "end": 297
+          "end": 297,
+          "target_start": 0
         }
       ]
     },
@@ -1887,13 +2215,15 @@
           "row": "r00082-sa084ffb644d804d5",
           "language": "fa",
           "start": 0,
-          "end": 36
+          "end": 36,
+          "target_start": 0
         },
         {
           "row": "r00082-s2b306bed601c16e9",
           "language": "ar",
           "start": 36,
-          "end": 184
+          "end": 184,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1901,7 +2231,8 @@
           "row": "r00082-s2b306bed601c16e9",
           "language": "fa",
           "start": 0,
-          "end": 117
+          "end": 117,
+          "target_start": 0
         }
       ]
     },
@@ -1919,7 +2250,8 @@
           "row": "r00083",
           "language": "ar",
           "start": 0,
-          "end": 135
+          "end": 135,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1927,7 +2259,8 @@
           "row": "r00083",
           "language": "fa",
           "start": 0,
-          "end": 105
+          "end": 105,
+          "target_start": 0
         }
       ]
     },
@@ -1945,7 +2278,8 @@
           "row": "r00084",
           "language": "ar",
           "start": 0,
-          "end": 138
+          "end": 138,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1953,7 +2287,8 @@
           "row": "r00084",
           "language": "fa",
           "start": 0,
-          "end": 96
+          "end": 96,
+          "target_start": 0
         }
       ]
     },
@@ -1971,7 +2306,8 @@
           "row": "r00085",
           "language": "ar",
           "start": 0,
-          "end": 150
+          "end": 150,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -1979,7 +2315,8 @@
           "row": "r00085",
           "language": "fa",
           "start": 0,
-          "end": 126
+          "end": 126,
+          "target_start": 0
         }
       ]
     },
@@ -1997,7 +2334,8 @@
           "row": "r00086",
           "language": "ar",
           "start": 0,
-          "end": 80
+          "end": 80,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -2005,7 +2343,8 @@
           "row": "r00086",
           "language": "fa",
           "start": 0,
-          "end": 68
+          "end": 68,
+          "target_start": 0
         }
       ]
     },
@@ -2023,7 +2362,8 @@
           "row": "r00087",
           "language": "ar",
           "start": 0,
-          "end": 125
+          "end": 125,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -2031,7 +2371,8 @@
           "row": "r00087",
           "language": "fa",
           "start": 0,
-          "end": 103
+          "end": 103,
+          "target_start": 0
         }
       ]
     },
@@ -2049,7 +2390,8 @@
           "row": "r00088",
           "language": "ar",
           "start": 0,
-          "end": 155
+          "end": 155,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -2057,7 +2399,8 @@
           "row": "r00088",
           "language": "fa",
           "start": 0,
-          "end": 98
+          "end": 98,
+          "target_start": 0
         }
       ]
     },
@@ -2075,7 +2418,8 @@
           "row": "r00089",
           "language": "ar",
           "start": 0,
-          "end": 158
+          "end": 158,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -2083,9 +2427,50 @@
           "row": "r00089",
           "language": "fa",
           "start": 0,
-          "end": 146
+          "end": 146,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00010-sec019e51e0fab113",
+        "ar": null,
+        "fa": "t584fe7e7d5268545afc0aa2e",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m5bc362a743b421196c1cb165",
+          "language": "fa",
+          "start": 0,
+          "end": 391,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m5bc362a743b421196c1cb165",
+      "language": "fa",
+      "target_start": 391,
+      "value": " ",
+      "left": "r00010-sec019e51e0fab113",
+      "right": "r00011",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text."
+    },
+    {
+      "row": "m4ce4ba26d344c902037c3cf9",
+      "language": "fa",
+      "target_start": 230,
+      "value": " ",
+      "left": "r00004",
+      "right": "r00005",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text."
     }
   ]
 }

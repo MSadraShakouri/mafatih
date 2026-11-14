@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "item-asharh-5",
   "author": "agent-5",
-  "plan_sha256": "6cc0c6087bb2f53986f312d3b054eacf49d0fd7b514952fc2696d4afce6ecfcc",
+  "plan_sha256": "8c2d237d4b1bad1a236d3cffc37cb10951f26e2efad58fb177b863034624b34b",
   "rows": [
     {
       "row": "r00001",
@@ -72,6 +72,38 @@
             "part": 0
           },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -218,6 +250,17 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00004",
+      "right": "r00005-saba56576a8f4a2e8",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text."
+      }
     }
   ]
 }
