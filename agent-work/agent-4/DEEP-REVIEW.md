@@ -26,6 +26,8 @@ This pass read all 115 Agent-3 plans, layouts, canonical items and split records
 
 No cut is mid-word, no cut lacks a punctuation/whitespace boundary, and every planned part is used exactly once. The 154 language moves and 85 unequal-piece bilingual rows are recorded explicitly; they are not automatically defects, but they are the places where a future reviewer should read facing languages.
 
+**These counts are not the review.** They are a screen, not a conclusion. Every one of the 49 flagged items has since been read case by case, with the pairing evidence, the role evidence and the uncertainty recorded per flagged source row in `DEEP-REVIEW-EVIDENCE.md`, and the same fields in machine-readable form in `deep-review-evidence.json`. The flagged set expands to 134 source rows (154 slot-move events and 85 unequal-piece rows, overlapping on 105 rows), and the reading changed the picture in three ways: 104 of the 134 rows are explained by a direction or report that legitimately has no counterpart, 112 rows publish the Arabic prayer and its Persian rendering in separate rows, and three rows publish content in the wrong destination slot.
+
 All 115 `agent-work/agent-4/reviews/*.json` records now have row/language-specific notes with cut offsets, piece counts, kind distribution, part usage, and item-level pairing/move counts. Full machine-readable findings are in `agent-work/agent-4/deep-review-findings.json`.
 
 ## Items with language moves or unequal bilingual piece counts
