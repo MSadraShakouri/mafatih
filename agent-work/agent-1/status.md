@@ -188,12 +188,19 @@ remaining 81 records still valid at `36f89c8b` because their content is unchange
 
 Open items, none of them mine to close:
 
-1. agent-2 must re-review `namaz-slman` at `bfa51744` and rebind that one record;
-   their other 111 reviews remain valid. My correction message with the right
-   snapshot SHA follows the one in which I typed a wrong id.
-2. agent-6 may publish another revision after its agent-5 work; anything new there
+1. Closed: agent-2 re-reviewed `namaz-slman` at `bfa51744` and rebound the other
+   111 records; all 112 of their records verify complete and they report nothing
+   open between us.
+2. Open upstream: agent-6 is holding 45 prepared cross-row joins because
+   `tests/runtime-audio.test.ts` lines 156-158 require a built row field to equal
+   the piece text. In a merged row that field is the concatenation of several
+   original rows' slices, so the assertion fails for any punctuation-normalised
+   row, although the slices and the source reconstruction are intact. The fix is a
+   coordinator-side test change plus a `tool-info` re-pin; editing the pinned test
+   here would fail `verify-tool-info`. Reported to agent-6 with the exact lines.
+3. agent-6 may publish another revision after its agent-5 work; anything new there
    gets re-reviewed against its exact snapshot before merging, spaces included.
-3. `validate` keeps warning about 83 unreferenced pooled values created by the V3
+4. `validate` keeps warning about 83 unreferenced pooled values created by the V3
    rewrites. They are extras, not losses, and no tool prunes them; the final
    integrator should decide whether to leave them.
 
