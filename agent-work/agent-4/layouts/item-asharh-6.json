@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "item-asharh-6",
   "author": "agent-4",
-  "plan_sha256": "684793812811c6bca3a506ae44a31ae362d8c228ad3f2c890f3cbc3584b807fb",
+  "plan_sha256": "c0aacc900e29398de04c32e686ec318719a51208bb5d654cb0baeada5d106129",
   "rows": [
     {
       "row": "r00001",
@@ -24,18 +24,21 @@
       "checked": true,
       "output": [
         {
-          "ar": {
-            "source": "ar",
-            "part": 0
-          },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
           "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 0
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "recitation"
         }
@@ -82,11 +85,11 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "ar",
             "part": 0
           },
+          "fa": null,
           "kind": "note"
         },
         {
