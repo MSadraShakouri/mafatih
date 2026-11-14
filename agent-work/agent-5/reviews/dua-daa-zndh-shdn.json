@@ -4,11 +4,11 @@
   "item": "dua-daa-zndh-shdn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
   "plan_sha256": "ac19dcfd112a81d3048ff6bd12de7f8b6d6bacebb207a2e3e5dc6730dfe1015e",
-  "layout_sha256": "ab7c581d8b00545d70a99580ab45b7c9a946707ac06a89f5105e4cc5dd6c206f",
-  "result_item_sha256": "bc9fae0e5f29a9ec360a2d617079b0503b4d6ffcb7a4e7000fb6a635ee05dae0",
-  "result_record_sha256": "cb4795e55f69ecec79a0f4e187b150ed1336f1a3671fb1b96e5b1f3a04ea95ce",
+  "layout_sha256": "c947bb0931e8f84543e5c168ba0299a238a8f03819970fa66b79e479bf197776",
+  "result_item_sha256": "a3c06d8138014572706a398f92ccd6a0ddad49898e1adfc61e3584ad95c2174b",
+  "result_record_sha256": "d60e9f5b039d3a3a3eec51bb6ce281033881efd2a17f1aebedd207a48fd4a149",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,21 +23,34 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The narrative introduction ends mid-sentence and continues in the Persian prefix moved from r00002/ar."
+        "note": "The narrative introduction ends mid-sentence and continues in the Persian prefix moved from r00002/ar. The Persian narrative prefix is now joined to the prior source row without inventing a translation."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Persian narrative prefix is correctly moved to the Persian slot and Arabic invocation retained separately; no Persian rendering of the invocation is present in this source."
+        "note": "Persian narrative prefix is correctly moved to the Persian slot and Arabic invocation retained separately; no Persian rendering of the invocation is present in this source. The Persian narrative prefix is now joined to the prior source row without inventing a translation."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The explanatory sentence spans r00001/fa and the Persian prefix moved out of r00002/ar; inspect a safe note-to-note continuation join. The Arabic invocation has no corresponding Persian rendering here; do not invent one. Review any proposed space independently."
-  }
+    "decision": "accept",
+    "note": "The Persian narrative is now grouped across the two source rows; the Arabic prayer remains correctly unpaired because no Persian translation is supplied. The proposed Persian space is individually accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m25f8aba9778a65efac295c45",
+      "language": "fa",
+      "target_start": 184,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s0b1d6d51987de706",
+      "reason": "Join the Persian prefix the source split from the preceding report",
+      "decision": "accept",
+      "note": "Separate the object marker from the Persian verb at the narrative continuation. The U+0020 is a proposed editorial correction, not an original source character."
+    }
+  ]
 }

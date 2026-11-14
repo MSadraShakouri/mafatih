@@ -4,11 +4,11 @@
   "item": "ziyarat-pyadh-rftn-shah",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
-  "plan_sha256": "db8b56142b5baefd960ee595a718cbb14266b40461b47d0a0165b468bd7945ca",
-  "layout_sha256": "667b11f13bca4385d0968558f1b60f14bdcd71ebd4c1478514c8be7d92b37556",
-  "result_item_sha256": "ce979f6c8c8baac5293795be022a4ea928e95d71dd712fd286769cd7b03143e7",
-  "result_record_sha256": "ee171bec47cb0f94477a28ce21a8328cf9a8c5f20331becd6bb8729e529b1006",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
+  "plan_sha256": "3d9c7bdebb56c3ad6b018d2dd97a7c91150fcf67574cf04a70e836b480a6df23",
+  "layout_sha256": "5a6689214cc2e755699102dd39d7afc3ef8226bf91065d307416bbab460d8605",
+  "result_item_sha256": "53c01880fbb14f5a812c6b429a67b8c6db2f50242c61fe6897d0ffcf44523da0",
+  "result_record_sha256": "1f9d94d1c7323ff3572e3304ae9e7a0846453a1c10fdcbf75fefb9fcd96f7c1b",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "d35598fe4db8d2e6b03819f170b594602f05f1a5a028eb6248d81ddfd4f15e7e",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "0fe1845fd2bc7e72d5f83090e2da4af4c10fa2d9b4f3abf8aa42389c1e505d70",
+    "preview_sha256": "ad10725f50c2635daf97328f4631352296a23298ba264af489c7ca47740ff875",
     "sources": [
       {
         "row": "r00001",
@@ -50,8 +50,8 @@
         "row": "r00005",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "The source reports the historical pilgrimage; it is not a direction to the reader, so note is appropriate."
+        "kind": "accept",
+        "note": "The historical account is now correctly classified as note."
       },
       {
         "row": "r00006",
@@ -99,8 +99,8 @@
         "row": "r00012",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is historical narrative, not instruction; its final phrase continues into r00013."
+        "kind": "accept",
+        "note": "The historical narrative is now a note; its continuation in r00013 is still not correctly classified or grouped."
       },
       {
         "row": "r00013",
@@ -149,6 +149,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00015/ar is Arabic yet was moved into the Persian slot and separated from its actual Persian rendering; return it to Arabic and pair the quotation. r00001, r00005, r00012 and r00013 are historical narration, not instructions or quotations; cuts in r00001 and r00013 interrupt continuous prose and a list, with source continuations at r00001/r00002 and r00012/r00013. Preserve text and links; review any proposed spaces independently."
+    "note": "r00005 and r00012 narrative roles are now corrected, but r00001/r00013 historical narrative is still misclassified and interrupted, and r00015/ar is still in the Persian slot, unpaired with its rendering. The author reports this requires a link-preserving mapping migration."
   }
 }

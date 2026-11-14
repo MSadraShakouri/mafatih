@@ -4,11 +4,11 @@
   "item": "namaz-kyfyt-astkharh-tsbyh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
   "plan_sha256": "d40d06e2de85858a4d60a86cd31118e0e6c3c07632058efeaa43e349efb861d6",
-  "layout_sha256": "76d625f4d96810fb5e1cf293142e8dcd6432718ad209fe367839dea47897e4bd",
-  "result_item_sha256": "27752c4767b1922dbec19da73ec3a97e76890f8bf260ab22010823569055bd53",
-  "result_record_sha256": "493c913f6c134631c52ce904b87e3a4b2e73f6fa6d59ea93429464f9a9944b95",
+  "layout_sha256": "ba65e67566eb66106bfedc1e776a21bca8a91f58a006c9af686283072c9f2bf6",
+  "result_item_sha256": "3a6bb03210ccc0452a37a65f6ca8bc9dea4d735fc8a25ce889d80d56d680d180",
+  "result_record_sha256": "13a22213481c3a8a94bb9d9e126772fc9987bc4efd143205c76a10c9c78bf9de",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,21 +23,34 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The narrated instruction ends with a number that continues in r00002/fa."
+        "note": "The narrated instruction ends with a number that continues in r00002/fa. The interrupted Persian instruction is now joined to the adjacent source row."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The first word completes the count begun in r00001/fa and continues the same instruction."
+        "note": "The first word completes the count begun in r00001/fa and continues the same instruction. The interrupted Persian instruction is now joined to the adjacent source row."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "r00001/fa ends within the count completed by r00002/fa; inspect a safe instruction-to-instruction join and separately review any inserted space. Preserve the original source and links."
-  }
+    "decision": "accept",
+    "note": "The interrupted Persian count is now joined within the instruction; its proposed space is individually accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m194e5b45e984e2679dfd6ab0",
+      "language": "fa",
+      "target_start": 217,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Join the instruction the source split across r00001 and r00002",
+      "decision": "accept",
+      "note": "Separate the Persian count from its following unit. The U+0020 is a proposed editorial correction, not an original source character."
+    }
+  ]
 }

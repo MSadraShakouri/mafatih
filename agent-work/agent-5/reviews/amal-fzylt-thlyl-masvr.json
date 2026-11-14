@@ -4,11 +4,11 @@
   "item": "amal-fzylt-thlyl-masvr",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
-  "plan_sha256": "25640cf31e37e521cc252cb847ab04451b94706bcd562e68796eca8295f83f0a",
-  "layout_sha256": "20f1097a06bdb01c986b62a67b2df0dfe2f098b77968c0374818c93d2be4d4c0",
-  "result_item_sha256": "7ed2ad858a7f5dc1858c3c1af6b2a64192695923ac9bbea0add4f9a98ff73afe",
-  "result_record_sha256": "d2c37e5d9005d9454c043d55461ef3dac40cde3b8c3c23f315091eef932d38dd",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
+  "plan_sha256": "92edf48ee1645c075770907bd5e0c7a76335006080bb3c1fa633bf0991ffe1c2",
+  "layout_sha256": "e43ac91509beccc1178cbd73a05d3d141ea03b243ca3a946f081d2f365cbe1c8",
+  "result_item_sha256": "d279692750a75ad171d9a6704fa82680a9af8b7dbd6d1ad9a62e00e0f5b3fd08",
+  "result_record_sha256": "8be3f81017c93a06ce91f04c46f4cc51be27c4b81a518ecc19f3613123321d9d",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "6ad94874ba7c91ad5e13c5160c002626075287719d3a81ade24dc6418e085196",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "964f39115997f6fa01f3214066fa87b780e1ab9635cf5915487eedcb0ac2c616",
+    "preview_sha256": "c5949e8f56d9d4b2f40448449829e3875a51fcdced51d80212037572f40c4e05",
     "sources": [
       {
         "row": "r00001",
@@ -99,8 +99,8 @@
         "row": "r00008",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This field reports a saying and information about the prayer; note or quotation is more appropriate than a direct instruction."
+        "kind": "accept",
+        "note": "Reported speech and source information are now classified as note; other unpaired renderings remain open."
       },
       {
         "row": "r00009",
@@ -157,6 +157,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The Persian fields r00002, r00003, r00004, r00006, r00009 and r00010 render corresponding Arabic prayers but are classified note/instruction and placed separately. Pair as recitation; retain the unmatched Persian descriptors in r00009 as a source discrepancy. r00001 is cut inside one sentence, while r00009/r00010 split a narrative introduction across source fields; inspect safe role and boundary adjustments. Reported speech r00008 is not a direct instruction."
+    "note": "r00008 is now correctly classified as note. The r00001 interrupted report, r00009/r00010 continuation and r00002-r00004, r00006, r00009 and r00010 misclassified and unpaired renderings remain; r00009 Persian includes extra descriptors absent in Arabic and must not be invented. Preserve prior links."
   }
 }

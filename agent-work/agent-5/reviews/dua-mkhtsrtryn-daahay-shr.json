@@ -4,11 +4,11 @@
   "item": "dua-mkhtsrtryn-daahay-shr",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
   "plan_sha256": "2a52aa585c50686055addd8f8e0683b3cf655ddf9f120b09bdf70b02c3b4d1e2",
-  "layout_sha256": "b7e712d7f64abfbb5d75dd6f1166295abf2c36589804ae0cc7a0cb432f4ab19b",
-  "result_item_sha256": "a5424559a5a914703a84ddf904077caa5715d4a995ca12a1c74312c18fb699cb",
-  "result_record_sha256": "bb63d78e674ae98eaa6a91e8a75a0a1779c3ddfb346b5b34bc49f7d9b54c7678",
+  "layout_sha256": "88fb52acc64f5c3e8e1ecfb7868a97b491bdc14557014a65206e81d6d19bc2cd",
+  "result_item_sha256": "ceab85ceac547e274d02af25dd47d20a96b168ffdc2e745f67d10dbe3749c1a8",
+  "result_record_sha256": "7f6f95aff55fdab9b54b512d4a5315ba03d689162782b8a802c271894ce75cfb",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -212,70 +212,70 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Request for faith aligns but continues into r00016 in both fields."
+        "note": "Request for faith aligns but continues into r00016 in both fields. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00015",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Request for faith aligns but continues into r00016 in both fields."
+        "note": "Request for faith aligns but continues into r00016 in both fields. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00016",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Faith accompanying the heart completes r00015 in both fields."
+        "note": "Faith accompanying the heart completes r00015 in both fields. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00016",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Faith accompanying the heart completes r00015 in both fields."
+        "note": "Faith accompanying the heart completes r00015 in both fields. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00017",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The request for certainty is a fragment continuing into r00018."
+        "note": "The request for certainty is a fragment continuing into r00018. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00017",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The request for certainty is a fragment continuing into r00018."
+        "note": "The request for certainty is a fragment continuing into r00018. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00018",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The certainty that nothing will befall continues from r00017 and into r00019."
+        "note": "The certainty that nothing will befall continues from r00017 and into r00019. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00018",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The certainty that nothing will befall continues from r00017 and into r00019."
+        "note": "The certainty that nothing will befall continues from r00017 and into r00019. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00019",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Exception for what is written completes the preceding statement."
+        "note": "Exception for what is written completes the preceding statement. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00019",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Exception for what is written completes the preceding statement."
+        "note": "Exception for what is written completes the preceding statement. These parts are now grouped at the source boundaries, with each proposed space separately reviewed."
       },
       {
         "row": "r00020",
@@ -436,7 +436,75 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "r00015/r00016 form one faith request across both languages and r00017–r00019 form a continuous certainty request; inspect safe joins of these partial phrases and separately review any proposed spaces. All other existing paired clauses, the instruction and repetitions were read in context. Do not drop or rewrite source text."
-  }
+    "decision": "accept",
+    "note": "The faith and certainty requests are now grouped at matching bilingual source boundaries; all six spaces are individually accepted. Remaining clauses were previously read in context."
+  },
+  "spacing_review": [
+    {
+      "row": "m2755db25f9718c52d1ff2976",
+      "language": "ar",
+      "target_start": 36,
+      "value": " ",
+      "left": "r00015",
+      "right": "r00016",
+      "reason": "Join the faith request the source split across r00015 and r00016 in both languages",
+      "decision": "accept",
+      "note": "Separate the Arabic noun for faith from the following verb. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m2755db25f9718c52d1ff2976",
+      "language": "fa",
+      "target_start": 27,
+      "value": " ",
+      "left": "r00015",
+      "right": "r00016",
+      "reason": "Join the faith request the source split across r00015 and r00016 in both languages",
+      "decision": "accept",
+      "note": "Separate the Persian faith request from its relative clause. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m72987a32272c942322821a04",
+      "language": "ar",
+      "target_start": 11,
+      "value": " ",
+      "left": "r00017",
+      "right": "r00018",
+      "reason": "Join the certainty request the source split across r00017 and r00018 in both languages",
+      "decision": "accept",
+      "note": "Separate the Arabic noun for certainty from the following clause. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m72987a32272c942322821a04",
+      "language": "fa",
+      "target_start": 15,
+      "value": " ",
+      "left": "r00017",
+      "right": "r00018",
+      "reason": "Join the certainty request the source split across r00017 and r00018 in both languages",
+      "decision": "accept",
+      "note": "Separate the Persian certainty request from its dependent clause. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m72987a32272c942322821a04",
+      "language": "ar",
+      "target_start": 51,
+      "value": " ",
+      "left": "m2dbdf747a3155e7a362eb925",
+      "right": "r00019",
+      "reason": "Join the final clause of the certainty request that the source split at r00019 in both languages",
+      "decision": "accept",
+      "note": "Separate the Arabic verb from the exception particle. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m72987a32272c942322821a04",
+      "language": "fa",
+      "target_start": 49,
+      "value": " ",
+      "left": "m2dbdf747a3155e7a362eb925",
+      "right": "r00019",
+      "reason": "Join the final clause of the certainty request that the source split at r00019 in both languages",
+      "decision": "accept",
+      "note": "Separate the Persian verbal phrase from the exception phrase. The U+0020 is a proposed editorial correction, not an original source character."
+    }
+  ]
 }

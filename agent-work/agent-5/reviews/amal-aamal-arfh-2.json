@@ -4,11 +4,11 @@
   "item": "amal-aamal-arfh-2",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
-  "plan_sha256": "9ab395904c512a9786a2f2468a1d7398ae8c88025c7571ac8bcebb47a354fa23",
-  "layout_sha256": "74f5330687aff2a9cf07b909be1a54ddcd674d8e589033178b3b9d77d269b18e",
-  "result_item_sha256": "1992c2c36658aebdcadb905c0a5a4e016277bad475f3ea0120f8eaff68c6b1e7",
-  "result_record_sha256": "ad8139a4067c7e180adc2c6da78ea9ea2b7939cb5f81c84aad23e3f8c632cd8c",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
+  "plan_sha256": "e927fb0f0f0d60c15aed8dc0cfb65dde3ad1c3c5e3684af0b5c3e3bffc43a31f",
+  "layout_sha256": "502abd93797fc69404e92b0dad960e48f1fa6da540d943a67faf11d8298f5ec0",
+  "result_item_sha256": "7d9d06083f9e49cc3e79c3b13d2b49878d16ab9ddaa5e9fb2d4f59634a0addd7",
+  "result_record_sha256": "91f7fca0f51129010914d0988f5f56547632467f559aa217f635a684e922a024",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "77fcd48509b5171bedc618132473c79c2a1da6e2872a4c7b933806b2278d8419",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "7cc7c0ae82ac2ba3bd68cfabf3c6f790c0e578f87e3c047bd421f567588419f6",
+    "preview_sha256": "c5fc9e787cb1d068dc8ff6de91ac7710fcf6564cf376082784a330c223847ec7",
     "sources": [
       {
         "row": "r00001",
@@ -72,28 +72,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Several corresponding praises are paired, but the final praise continues into r00009 in both fields."
+        "note": "Several corresponding praises are paired, but the final praise continues into r00009 in both fields. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00008",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Several corresponding praises are paired, but the final praise continues into r00009 in both fields."
+        "note": "Several corresponding praises are paired, but the final praise continues into r00009 in both fields. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00009",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the preceding praise and the remaining praises correspond to their existing Persian."
+        "note": "The opening completes the preceding praise and the remaining praises correspond to their existing Persian. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the preceding praise and the remaining praises correspond to their existing Persian."
+        "note": "The opening completes the preceding praise and the remaining praises correspond to their existing Persian. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00010",
@@ -133,9 +133,9 @@
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the actual Arabic formula; move and classify it as an instruction without discarding it."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00013/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00013",
@@ -147,9 +147,9 @@
       {
         "row": "r00014",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; separate and classify that instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00014/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00014",
@@ -161,9 +161,9 @@
       {
         "row": "r00015",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; separate and classify that instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00015/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00015",
@@ -175,9 +175,9 @@
       {
         "row": "r00016",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; separate and classify that instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00016/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00016",
@@ -189,37 +189,37 @@
       {
         "row": "r00017",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; the actual Arabic/Persian phrase continues in r00018."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00017/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00017",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; the actual Arabic/Persian phrase continues in r00018."
+        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; the actual Arabic/Persian phrase continues in r00018. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00018",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Both fields complete the divine address begun in r00017; inspect a safe merge of the continuation."
+        "note": "Both fields complete the divine address begun in r00017; inspect a safe merge of the continuation. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00018",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Both fields complete the divine address begun in r00017; inspect a safe merge of the continuation."
+        "note": "Both fields complete the divine address begun in r00017; inspect a safe merge of the continuation. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00019",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; separate and classify it."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00019/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00019",
@@ -252,9 +252,9 @@
       {
         "row": "r00022",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; separate and classify it."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00022/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00022",
@@ -266,9 +266,9 @@
       {
         "row": "r00023",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition instruction before the invocation; separate and classify it."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00023/ar: the Persian repetition direction is now moved to an instruction row, and the remaining Arabic invocation is paired with the existing Persian."
       },
       {
         "row": "r00023",
@@ -352,28 +352,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The praises correspond in sequence and end in a phrase completed at r00031. The prior Persian LF is documented AI-assisted unreviewed history and must not be silently restored or certified."
+        "note": "The praises correspond in sequence and end in a phrase completed at r00031. The prior Persian LF is documented AI-assisted unreviewed history and must not be silently restored or certified. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00030",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The praises correspond in sequence and end in a phrase completed at r00031. The prior Persian LF is documented AI-assisted unreviewed history and must not be silently restored or certified."
+        "note": "The praises correspond in sequence and end in a phrase completed at r00031. The prior Persian LF is documented AI-assisted unreviewed history and must not be silently restored or certified. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00031",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The two fields each finish the phrase begun at r00030; inspect a safe grouping with separate spacing decisions."
+        "note": "The two fields each finish the phrase begun at r00030; inspect a safe grouping with separate spacing decisions. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00031",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The two fields each finish the phrase begun at r00030; inspect a safe grouping with separate spacing decisions."
+        "note": "The two fields each finish the phrase begun at r00030; inspect a safe grouping with separate spacing decisions. The corresponding continuation is now joined; each proposed space was reviewed separately."
       },
       {
         "row": "r00032",
@@ -415,6 +415,74 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00013-r00017, r00019 and r00022-r00023 include Persian repetition instructions in Arabic recitation slots; separate and move those instructions without changing words. r00002 contains three distinct numbered practices and r00005 mixes instructions with a compiler note. Inspect continuation pairing at r00008/r00009, r00017/r00018 and r00030/r00031; r00026/r00027 have unequal semantic boundary placement. r00033 is a sequence of instructions. Historical LF and any newly proposed spaces require separate adjudication; do not bypass link guards."
-  }
+    "note": "The eight Persian repetition directions and three continuation joins are now corrected, with six spaces individually accepted. r00002 still combines numbered practices, r00005 mixes instruction and compiler note, and r00033 is instruction rather than note; r00026/r00027 have an unequal pairing boundary. These source-specific issues remain. Preserve historical links; the earlier unreviewed LF decision remains separately escalated."
+  },
+  "spacing_review": [
+    {
+      "row": "m7553b0a83167f086e7dc763c",
+      "language": "ar",
+      "target_start": 150,
+      "value": " ",
+      "left": "r00008",
+      "right": "r00009",
+      "reason": "Join the praise the source split across r00008 and r00009 in both languages",
+      "decision": "accept",
+      "note": "Separate the Arabic preposition from the noun beginning r00009. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m7553b0a83167f086e7dc763c",
+      "language": "fa",
+      "target_start": 132,
+      "value": " ",
+      "left": "r00008",
+      "right": "r00009",
+      "reason": "Join the praise the source split across r00008 and r00009 in both languages",
+      "decision": "accept",
+      "note": "Separate the relative clause from the Persian subject beginning r00009. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "mdbec1e72761d371d2829b9b7",
+      "language": "ar",
+      "target_start": 24,
+      "value": " ",
+      "left": "r00017-s18f0993006f44169",
+      "right": "r00018",
+      "reason": "Join the praise the source split across r00017 and r00018 in both languages",
+      "decision": "accept",
+      "note": "Separate the Arabic heavens from the conjunction for the earth. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "mdbec1e72761d371d2829b9b7",
+      "language": "fa",
+      "target_start": 23,
+      "value": " ",
+      "left": "r00017-s18f0993006f44169",
+      "right": "r00018",
+      "reason": "Join the praise the source split across r00017 and r00018 in both languages",
+      "decision": "accept",
+      "note": "Separate the Persian heavens from the conjunction for the earth. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "mfea91ea451eede4b236a077c",
+      "language": "ar",
+      "target_start": 609,
+      "value": " ",
+      "left": "r00030",
+      "right": "r00031",
+      "reason": "Join the praise the source split across r00030 and r00031 in both languages",
+      "decision": "accept",
+      "note": "Separate the Arabic superlative from the noun in r00031. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "mfea91ea451eede4b236a077c",
+      "language": "fa",
+      "target_start": 533,
+      "value": " ",
+      "left": "r00030",
+      "right": "r00031",
+      "reason": "Join the praise the source split across r00030 and r00031 in both languages",
+      "decision": "accept",
+      "note": "Separate the Persian superlative from the noun in r00031. The U+0020 is a proposed editorial correction, not an original source character."
+    }
+  ]
 }

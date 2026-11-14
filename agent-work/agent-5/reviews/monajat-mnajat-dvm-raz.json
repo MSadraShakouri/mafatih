@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-dvm-raz",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
-  "plan_sha256": "b94430914409f64d5ccc6b9e51208e07928b10d2622854cca14aad290fc7d8c2",
-  "layout_sha256": "2a66ee5e5b25449183c37ec7ff6bd5538ce243990245bd00013e0fa199ba5187",
-  "result_item_sha256": "618608a35de0f58690a2682fb4c1af9cf494cd92e5bcba5bae07d3e89dbc2314",
-  "result_record_sha256": "258f54c0c1a5ad537d6baecea903613079f47a4976185d9dc6881fc3a4ef8d7c",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
+  "plan_sha256": "2c981cac68a9cc0b0564b65a7ea5c2529e13e2baa1836679d5b210f961fcd6fd",
+  "layout_sha256": "c27a09c3195691edc26fd9dab459fba8afe4c126f932997fd4f08d9a3409795c",
+  "result_item_sha256": "44c219cb8c6f011b7b2c93e8c3a87e0f6a8d82ad6a2efb80afcf788fd6e9fa00",
+  "result_record_sha256": "9fb245d2b4420d22622be5159206c9fd625cea063e61975cf655bc66315379bd",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "c1f57cce6d210dff614ffcb82042c5ed64c3bd9a4c5bf3f4be547d3f8932222d",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "ca0352a3ae47d037e564a99f58da98c4109f7e6dc0cbf5345b0b02c0a51197bf",
+    "preview_sha256": "09c14b0adfab61f553672e90b1576bf365d36287936d8a20fac7a32c67c70278",
     "sources": [
       {
         "row": "r00001",
@@ -35,16 +35,16 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The source joins the basmala directly to the opening complaint in both languages; this combines two distinct recitations and needs a meaningful split."
+        "note": "The basmala and opening complaint are now separate bilingual recitation pieces at the corresponding source transitions."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The source joins the basmala directly to the opening complaint in both languages; this combines two distinct recitations and needs a meaningful split."
+        "note": "The Persian basmala and opening complaint are now separated at the corresponding source transitions."
       },
       {
         "row": "r00003",
@@ -93,28 +93,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Arabic and Persian end before the object: this is an incomplete phrase continued at r00007."
+        "note": "The incomplete phrase is now grouped with its adjacent continuation; the Arabic and Persian spaces were individually reviewed."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Arabic and Persian end before the object: this is an incomplete phrase continued at r00007."
+        "note": "The incomplete phrase is now grouped with its adjacent continuation; the Arabic and Persian spaces were individually reviewed."
       },
       {
         "row": "r00007",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Both languages complete the phrase from r00006; a safe join should be considered."
+        "note": "The incomplete phrase is now grouped with its adjacent continuation; the Arabic and Persian spaces were individually reviewed."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Both languages complete the phrase from r00006; a safe join should be considered."
+        "note": "The incomplete phrase is now grouped with its adjacent continuation; the Arabic and Persian spaces were individually reviewed."
       },
       {
         "row": "r00008",
@@ -555,7 +555,31 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "r00002 combines the basmala with the separate opening prayer in both languages; split and pair these distinct recitations if historical links can be preserved. r00006/r00007 split a single phrase across both languages; preview a safe join and independently review any proposed spaces. r00017/r00018 Persian complaint ends later than its Arabic counterpart, but reads coherently across rows; preserve the existing source and report any unresolved alignment."
-  }
+    "decision": "accept",
+    "note": "The basmala is now separate from the opening complaint in both languages and the r00006/r00007 phrase is grouped. Both spaces are individually accepted; r00017/r00018 remain a coherent cross-row Persian sentence."
+  },
+  "spacing_review": [
+    {
+      "row": "m61e5472656670603f3bf8778",
+      "language": "ar",
+      "target_start": 22,
+      "value": " ",
+      "left": "r00006",
+      "right": "r00007",
+      "reason": "Join the phrase the source split across r00006 and r00007 in both languages",
+      "decision": "accept",
+      "note": "Separate the Arabic path noun from its complement. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m61e5472656670603f3bf8778",
+      "language": "fa",
+      "target_start": 18,
+      "value": " ",
+      "left": "r00006",
+      "right": "r00007",
+      "reason": "Join the phrase the source split across r00006 and r00007 in both languages",
+      "decision": "accept",
+      "note": "Separate the Persian path noun from its complement. The U+0020 is a proposed editorial correction, not an original source character."
+    }
+  ]
 }

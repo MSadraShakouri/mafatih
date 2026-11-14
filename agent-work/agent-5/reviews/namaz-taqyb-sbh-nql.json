@@ -4,11 +4,11 @@
   "item": "namaz-taqyb-sbh-nql",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
-  "plan_sha256": "cc693f503fb4cd9c38cb4bec3356b13f7e6ccac9117afa778aed85ad115679f5",
-  "layout_sha256": "233d29ad5af5dd96a705835695b9b966d76d30eeb5e68e0a7b8514bbc374ec1e",
-  "result_item_sha256": "e4d291e545d40990c444484ac246b3df95e78cd086beca754ecf72cf3e56a254",
-  "result_record_sha256": "a1dc1fa62eaa7e3790f91c086144b713cf7b7cbb508679b3383bba2cad396811",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
+  "plan_sha256": "559fb788582f1adfac4180f4e64f50a196b7a34c1d4e99f5ff44a47b390f6aa2",
+  "layout_sha256": "6e42d8a2581c483312d5cc46509e229470fdb56f91aa6c6f0e88c386b69492d3",
+  "result_item_sha256": "3eae45f1401d71cd70583c12d8efebc43028b40de3168a8b5c27c08a761afa4e",
+  "result_record_sha256": "1437056421987bcf108a0aca6337b7ddc97e8149771ec59b20db0b8fa2e2411a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "7d2274deb61deb81b3bba9f03a117537b8c4fc54bf45af3bf7474a14a778fd42",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "b444991363bd027f32acc7ceea44d2549429c805b2ea8975183e8569d0bf35d3",
+    "preview_sha256": "7bd74b8aad53567e440a8af0ac96b7c815d328d9b16700e49d0411230c575abb",
     "sources": [
       {
         "row": "r00001",
@@ -84,9 +84,9 @@
       {
         "row": "r00006",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00006/ar: the Persian repetition instruction is moved to its own Persian instruction row, and the Arabic formula remains paired with its rendering."
       },
       {
         "row": "r00006",
@@ -98,9 +98,9 @@
       {
         "row": "r00007",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00007/ar: the Persian repetition instruction is moved to its own Persian instruction row, and the Arabic formula remains paired with its rendering."
       },
       {
         "row": "r00007",
@@ -112,9 +112,9 @@
       {
         "row": "r00008",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition direction before the Arabic request; move and classify it as instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00008/ar: the Persian repetition instruction is moved to its own Persian instruction row, and the Arabic formula remains paired with its rendering."
       },
       {
         "row": "r00008",
@@ -126,9 +126,9 @@
       {
         "row": "r00009",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition direction before two Arabic formulas; move the direction out and preserve both formulas and their Persian."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00009/ar: the Persian repetition instruction is moved to its own Persian instruction row, and the Arabic formula remains paired with its rendering."
       },
       {
         "row": "r00009",
@@ -154,9 +154,9 @@
       {
         "row": "r00011",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition direction before the Arabic praise; move and classify it as instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00011/ar: the Persian repetition instruction is moved to its own Persian instruction row, and the Arabic formula remains paired with its rendering."
       },
       {
         "row": "r00011",
@@ -168,9 +168,9 @@
       {
         "row": "r00012",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Arabic source begins with a Persian repetition direction before the Arabic formula; move and classify it as instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Inspected revised r00012/ar: the Persian repetition instruction is moved to its own Persian instruction row, and the Arabic formula remains paired with its rendering."
       },
       {
         "row": "r00012",
@@ -184,28 +184,28 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The Persian introduction is separated from the Arabic prayer and the prayer is paired; the meaning continues in r00014."
+        "note": "The Persian introduction is separated from the Arabic prayer and the prayer is paired; the meaning continues in r00014. The continuation is now joined; the proposed spaces were assessed independently."
       },
       {
         "row": "r00013",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The Persian introduction is separated from the Arabic prayer and the prayer is paired; the meaning continues in r00014."
+        "note": "The Persian introduction is separated from the Arabic prayer and the prayer is paired; the meaning continues in r00014. The continuation is now joined; the proposed spaces were assessed independently."
       },
       {
         "row": "r00014",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The Arabic and Persian continue the preceding prayer; prior Persian LF is documented AI-assisted unreviewed history, not a confirmed new split."
+        "note": "The Arabic and Persian continue the preceding prayer; prior Persian LF is documented AI-assisted unreviewed history, not a confirmed new split. The continuation is now joined; the proposed spaces were assessed independently."
       },
       {
         "row": "r00014",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The Arabic and Persian continue the preceding prayer; prior Persian LF is documented AI-assisted unreviewed history, not a confirmed new split."
+        "note": "The Arabic and Persian continue the preceding prayer; prior Persian LF is documented AI-assisted unreviewed history, not a confirmed new split. The continuation is now joined; the proposed spaces were assessed independently."
       },
       {
         "row": "r00015",
@@ -345,7 +345,31 @@
     ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "r00006-r00009 and r00011-r00012 retain Persian repetition instructions in the Arabic recitation slot; split those instructions and move to Persian while preserving the paired formulas and source characters. Historical LF edits are separate unreviewed editorial decisions, not proof of the prayer alignment; no source correction is proposed."
-  }
+    "decision": "accept",
+    "note": "Six Persian repetition directions are moved to instruction slots and the recitations remain paired; the later cross-row prayer is joined with two individually accepted spaces. The four earlier AI-assisted historical LF removals remain separate escalated editorial decisions."
+  },
+  "spacing_review": [
+    {
+      "row": "m6f806b216ef2dc2747e63197",
+      "language": "ar",
+      "target_start": 248,
+      "value": " ",
+      "left": "r00013-sd2a7a94bd2258f18",
+      "right": "r00014",
+      "reason": "Join the prayer the source split across r00013 and r00014 in both languages",
+      "decision": "accept",
+      "note": "Separate the preceding Arabic phrase from the following prepositional phrase. The U+0020 is a proposed editorial correction, not an original source character."
+    },
+    {
+      "row": "m6f806b216ef2dc2747e63197",
+      "language": "fa",
+      "target_start": 242,
+      "value": " ",
+      "left": "r00013-sd2a7a94bd2258f18",
+      "right": "r00014",
+      "reason": "Join the prayer the source split across r00013 and r00014 in both languages",
+      "decision": "accept",
+      "note": "Separate the preceding Persian phrase from the following accompaniment phrase. The U+0020 is a proposed editorial correction, not an original source character."
+    }
+  ]
 }

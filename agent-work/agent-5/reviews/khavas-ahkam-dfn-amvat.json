@@ -4,11 +4,11 @@
   "item": "khavas-ahkam-dfn-amvat",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "author_commit": "c23c83c4c97eb442bf2a9aa3495458bb73210e26",
   "plan_sha256": "1d015688ec8921305b3af6007f272e08845ed1be67f11ca8d9c3ca9f58e3975c",
-  "layout_sha256": "88f9afc8e26381a864f1e56e6558746246a7e2bbe0f9d4348cccb52f7d351858",
-  "result_item_sha256": "c4242febeed404b7fb77b483880bbbdb7b6896db10f2674c297f170f10fe7c8c",
-  "result_record_sha256": "3eea10fbf9c9b8df8ddf177ba660d25d335009fd86ca3ee06f84d42b52183991",
+  "layout_sha256": "b426a8d3340e3534a00c6d72c3847d5ba045e9c5c3a27315e0751c2ab149324c",
+  "result_item_sha256": "2ccb18737701f1772ed4faf3ca24ac93fa69d35e2d595c060426cbd8fafd2244",
+  "result_record_sha256": "a800b93eb76213e60300b8a2f65ff50fc619be22c872a4c33e2f1f3c04797f9a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,21 +23,34 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The burial instruction ends inside a verbal phrase continued in r00002/fa."
+        "note": "The burial instruction ends inside a verbal phrase continued in r00002/fa. The interrupted Persian instruction is now joined to the adjacent source row."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the r00001 verbal phrase and continues the burial directions."
+        "note": "The opening completes the r00001 verbal phrase and continues the burial directions. The interrupted Persian instruction is now joined to the adjacent source row."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The burial instruction is interrupted between r00001/fa and r00002/fa; inspect a safe continuation join and separately review any proposed space, preserving source and links."
-  }
+    "decision": "accept",
+    "note": "The single Persian burial instruction is now grouped across its prior boundary; its proposed Persian space is individually accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m6dbfd6b323e414d0a8b2579f",
+      "language": "fa",
+      "target_start": 75,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Join the instruction the source split across r00001 and r00002",
+      "decision": "accept",
+      "note": "Separate the two words of the Persian burial instruction. The U+0020 is a proposed editorial correction, not an original source character."
+    }
+  ]
 }
