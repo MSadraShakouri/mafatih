@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "item-asharh-6",
   "author": "agent-4",
   "baseline_item_sha256": "1770c16687fb1297e463befa6304956e8b2b88f8937245a36bd131bf1413862a",
   "plan_sha256": "c0aacc900e29398de04c32e686ec318719a51208bb5d654cb0baeada5d106129",
-  "layout_sha256": "b717b0e31965ee594003ac1e59fa554bda8ea049d05505be06d7b042a3e1fd26",
+  "layout_sha256": "9ce2bc1f17b52b44029d602d76954e910fb3560c666bafe6ddd092add8185a6b",
   "rows": [
     {
       "original": {
@@ -274,12 +274,12 @@
         "fa": "t2937ef9ac5e11bc5509405e5"
       },
       "results": [
-        "r00012"
+        "m7aada489c3a8236a60d4132b"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00012",
+          "row": "m7aada489c3a8236a60d4132b",
           "language": "fa",
           "start": 0,
           "end": 50,
@@ -294,15 +294,15 @@
         "fa": null
       },
       "results": [
-        "r00013-sbada6bac666ff1e1"
+        "m7aada489c3a8236a60d4132b"
       ],
       "ar": [
         {
-          "row": "r00013-sbada6bac666ff1e1",
+          "row": "m7aada489c3a8236a60d4132b",
           "language": "fa",
           "start": 0,
           "end": 30,
-          "target_start": 0
+          "target_start": 51
         }
       ],
       "fa": []
@@ -366,6 +366,35 @@
           "target_start": 0
         }
       ]
+    },
+    {
+      "original": {
+        "id": "r00013-sbada6bac666ff1e1",
+        "ar": null,
+        "fa": "tcc25d418374403a6270d4e0f",
+        "kind": "heading"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m7aada489c3a8236a60d4132b",
+          "language": "fa",
+          "start": 0,
+          "end": 30,
+          "target_start": 51
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m7aada489c3a8236a60d4132b",
+      "language": "fa",
+      "target_start": 50,
+      "value": " ",
+      "left": "r00012",
+      "right": "r00013-sbada6bac666ff1e1",
+      "reason": "Join interrupted r00012/r00013 heading at original boundary"
     }
   ]
 }
