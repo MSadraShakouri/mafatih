@@ -4,11 +4,11 @@
   "item": "amal-aamal-rmzan-2",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "12741e29e859d8ec0fea49dee8123bf4cc658d0853c6a0e9e7c9fe95fb18f9bc",
-  "layout_sha256": "fee5a1eb68adafc7ef4bce61aee6412fb673ce2fa57f616b977c8e7f319cb1b7",
-  "result_item_sha256": "c4a1466248d4e461349888fc5ee52a6e474b4b2f69e6488da471e150ecaeef54",
-  "result_record_sha256": "c4545a6563691bcad21a73880882056ab79d5f3f15eb75b7682778f56b6f5774",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "b50aa77da9f46cc0f1aae4ad57f7ba1cf0601b1530002d4cc009fb7605a4e92c",
+  "layout_sha256": "9f12712ac82cc1c1fa9f5e4e335fffbb422f7f87698addf5a34abfe4a5282741",
+  "result_item_sha256": "a74287b42b0e6a940a3f094332aed52b832c379d7cca87b058648dcf10792f08",
+  "result_record_sha256": "63ed89496079fea4cc0b9c57d9e1fab57ee54b30fb6221dbc42728f960678c22",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "fa15c9e22182eb5ca3401024169254bb208f886abee5bdd625834a8c54e1d859",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "afd610100422e246670cbdd3429b4328d6d4d16933a2a6eaa7b52d82782cafaf",
+    "preview_sha256": "5abfc0742571168d1857222bc93e3348d01627e83f170e90bd5d7a54bcb08e01",
     "sources": [
       {
         "row": "r00001",
@@ -35,16 +35,16 @@
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code points 73, 125 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot b81241ae. The labels سوّم: and چهارم: now open their own heading rows, each followed by its practice (instruction). The first piece is the end of the sentence that begins in r00002; see the layout note."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). This piece is a direction to recite the prayer that follows; classify it as instruction, as the like pieces in r00001 and r00002 are."
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. The row is now instruction."
       },
       {
         "row": "r00005",
@@ -63,9 +63,9 @@
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code point 66 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot b81241ae. The label هفتم: is its own heading row after the sixth practice, and the report that follows is a note row. That report stops in the middle of its sentence, which continues in r00007; see the layout note."
       },
       {
         "row": "r00007",
@@ -105,9 +105,9 @@
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The first clause of this fa field has no Arabic counterpart in the source (the Arabic of that clause is missing between r00009 and r00010); cut it off and leave it unpaired, then pair the remaining clauses one by one."
+        "note": "Fixed at snapshot b81241ae. The first Persian clause, whose Arabic is missing in the source, is now its own Persian-only row, and the rest of the Persian stands beside the Arabic it renders: three clauses in each language, in the same order. Source defect, recorded and not fixed: between r00009 and r00010 the Arabic of one clause and the opening words of the next are missing, while the Persian has them."
       },
       {
         "row": "r00011",
@@ -226,7 +226,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Still open from the earlier review: In r00010 the pairing is shifted by one clause. Withdrawn: my request to re-pair r00009, r00011, r00012, r00013, r00015, r00017 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "decision": "accept",
+    "note": "Read the four changed sources and their neighbours at snapshot b81241ae (26 output rows); the other rows are unchanged since my last review. The open layout point is met: in r00010 the Persian clause without Arabic stands alone and the rest is paired clause by clause. Offered, not required: two sentences are still broken across source rows, r00002 with r00003 (… تا در | آن سال از سرسام … ایمن گردد) and r00006 with r00007 (… فرمود: در | ماه مبارک رمضان …); a join like the one made in amal-aamal-mkhsvs-rvzha r00006 with r00007 would mend them. My own items keep Persian-only breaks of this sort as well, so I do not hold the item for it."
   }
 }

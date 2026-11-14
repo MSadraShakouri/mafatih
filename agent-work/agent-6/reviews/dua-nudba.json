@@ -4,11 +4,11 @@
   "item": "dua-nudba",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "68c51f4c8b739f64508076912012bcf82e489af202f5a5d781d09219920841f8",
-  "layout_sha256": "7a06a753fd621f506b1d86a44a84ea14ced36593886b6534ff97b5752677deb1",
-  "result_item_sha256": "b14e5bc77d2d07a29e1940a0cfca751e5da38c28c82fd0e35fcf31a9881d43f3",
-  "result_record_sha256": "a33146923d09c8c5bbcd6b27e044234c455c4eadf03a44e9d00ff982d8a5f643",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "f8f951fc8eac05477bafbea3faacdb57ec4f1c75585fa2e992bce00b5db6f55a",
+  "layout_sha256": "ec5dd172060f3e062f1c7d02fb8510d991247b53c11f6f3ad8f19c231e91a603",
+  "result_item_sha256": "428c56594ffed9095237cdc9bdb3e754720074e895ade914e907fd8791119302",
+  "result_record_sha256": "08dab1e3e97f5e545b72fd3d36fa6dbc84cf8054ecd7f303fa4848868def07b7",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "715988ab5605bb926fe583d321dbd7b8ea2a0821018a39bd6e4f949688ba5de8",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "cacb0556a7343b05438f4e59c0969a8668df676e78cd3f3b3011aecae5aecb3e",
+    "preview_sha256": "b945d0e8c23dc761a3df21cd74a39e510101dc21598f29a217dde760d5f45dde",
     "sources": [
       {
         "row": "r00001",
@@ -520,7 +520,7 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at this snapshot. As asked: the trailing speech lead-in is cut off; it stands alone without Persian because its join with r00040 is blocked (issue 24). Earlier finding resolved."
+        "note": "Updated at snapshot b81241ae: the join named in this note is now in place, so the piece no longer stands apart from the rest of its phrase; I read the merged row in both languages (see the layout note and the spacing review). Earlier note, kept for the record: Re-read at this snapshot. As asked: the trailing speech lead-in is cut off; it stands alone without Persian because its join with r00040 is blocked (issue 24). Earlier finding resolved."
       },
       {
         "row": "r00039",
@@ -744,7 +744,7 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at this snapshot. As asked: the trailing speech lead-in is cut off; it stands alone without Persian because its join with r00056 is blocked (issue 28). Earlier finding resolved."
+        "note": "Updated at snapshot b81241ae: the join named in this note is now in place, so the piece no longer stands apart from the rest of its phrase; I read the merged row in both languages (see the layout note and the spacing review). Earlier note, kept for the record: Re-read at this snapshot. As asked: the trailing speech lead-in is cut off; it stands alone without Persian because its join with r00056 is blocked (issue 28). Earlier finding resolved."
       },
       {
         "row": "r00055",
@@ -1682,7 +1682,7 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at this snapshot. As asked: the trailing opening of the next question is cut off; it stands alone without Persian because its join with r00123 is blocked (issue 30). Earlier finding resolved."
+        "note": "Updated at snapshot b81241ae: the join named in this note is now in place, so the piece no longer stands apart from the rest of its phrase; I read the merged row in both languages (see the layout note and the spacing review). Earlier note, kept for the record: Re-read at this snapshot. As asked: the trailing opening of the next question is cut off; it stands alone without Persian because its join with r00123 is blocked (issue 30). Earlier finding resolved."
       },
       {
         "row": "r00122",
@@ -2144,7 +2144,7 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at this snapshot. As asked: the trailing vocative is cut off; it stands alone without Persian because its join with r00156 is blocked (issue 31). Earlier finding resolved."
+        "note": "Updated at snapshot b81241ae: the join named in this note is now in place, so the piece no longer stands apart from the rest of its phrase; I read the merged row in both languages (see the layout note and the spacing review). Earlier note, kept for the record: Re-read at this snapshot. As asked: the trailing vocative is cut off; it stands alone without Persian because its join with r00156 is blocked (issue 31). Earlier finding resolved."
       },
       {
         "row": "r00155",
@@ -2158,7 +2158,7 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at this snapshot. As asked: the trailing vocative is cut off; it stands alone without Persian because its join with r00157 is blocked (issue 32). Earlier finding resolved."
+        "note": "Updated at snapshot b81241ae: the join named in this note is now in place, so the piece no longer stands apart from the rest of its phrase; I read the merged row in both languages (see the layout note and the spacing review). Earlier note, kept for the record: Re-read at this snapshot. As asked: the trailing vocative is cut off; it stands alone without Persian because its join with r00157 is blocked (issue 32). Earlier finding resolved."
       },
       {
         "row": "r00156",
@@ -3391,8 +3391,8 @@
       },
       {
         "index": 24,
-        "decision": "escalate",
-        "note": "Confirmed: the trailing Arabic piece of r00039 belongs with the next row, where its Persian stands. The join is withheld because r00040/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row m90b8d19a8dca85989a8b5d7c (r00039 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (و قلت: «ما أسئلكم عليه من أجر إلا من شاء أن يتخذ إلى ربه سبيلا»؛) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The proposed space is reviewed separately in the spacing review."
       },
       {
         "index": 25,
@@ -3411,8 +3411,8 @@
       },
       {
         "index": 28,
-        "decision": "escalate",
-        "note": "Confirmed: the trailing Arabic piece of r00055 belongs with the next row, where its Persian stands. The join is withheld because r00055/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row m7c9f9387d8cd87bfdd0665e6 (r00055 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (فقال: أنا مدينة العلم و علي بابها،) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The proposed space is reviewed separately in the spacing review."
       },
       {
         "index": 29,
@@ -3421,18 +3421,18 @@
       },
       {
         "index": 30,
-        "decision": "escalate",
-        "note": "Confirmed: the trailing Arabic piece of r00122 belongs with the next row, where its Persian stands. The join is withheld because r00122/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row mee503859b367c02af7e3b4f2 (r00122 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (أين الطالب (المطالب) بدم المقتول بكربلاء؟) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The proposed space is reviewed separately in the spacing review."
       },
       {
         "index": 31,
-        "decision": "escalate",
-        "note": "Confirmed: the trailing Arabic piece of r00155 belongs with the next row, where its Persian stands. The join is withheld because r00156/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row m19cfbaa4e503198b6d71719c (r00155 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (يا ابن طه (طا، ها) و المحكمات؛) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The proposed space is reviewed separately in the spacing review."
       },
       {
         "index": 32,
-        "decision": "escalate",
-        "note": "Confirmed: the trailing Arabic piece of r00156 belongs with the next row, where its Persian stands. The join is withheld because r00156/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. Needs the coordinator's test change; nothing further is asked of the author."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row m119af7a4b18e73b9614ab493 (r00156 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (یا ابن یس (یا، سین) و الذاريات،) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The proposed space is reviewed separately in the spacing review."
       },
       {
         "index": 33,
@@ -3448,7 +3448,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read the changed rows and every merged row in both languages at this snapshot, 285 output rows in all; the unchanged rows were read in full for my previous review. All points of that review are met: r00013 and r00047 are cut to single clauses, eight of the twelve trailing Arabic pieces are joined to the row that carries their Persian, and the author found and joined one more continuation on the Persian side (r00124 with r00125). The recitation is now at the pilot level throughout (longest Arabic row 140 code points). Five trailing pieces remain as Arabic-only rows (end of r00039, r00055, r00122, r00155, r00156); their joins are blocked by the pinned test, see the escalated issues. The three Arabic-only rows of r00014 are a gap of the source translation."
+    "note": "Read at snapshot b81241ae the five merged rows that are new and their neighbours, in both languages (280 output rows); the plan and all cuts are unchanged since my last review, so the other rows are as I read them. The five joins that the pinned test used to block are in place (r00039 with r00040, r00055 with r00056, r00122 with r00123, r00155 with r00156, r00156 with r00157): each trailing Arabic piece now stands with the rest of its phrase and beside its own Persian. Fourteen proposed spaces in all, each reviewed separately and accepted. Three Arabic-only rows remain in r00014; they belong to the source defect recorded earlier (Persian missing in the source), not to the layout. Source defects recorded, not fixed: r00014, r00022."
   },
   "spacing_review": [
     {
@@ -3549,6 +3549,61 @@
       "reason": "Separate words at original source row continuation",
       "decision": "accept",
       "note": "Inspected the merged Arabic field and both frozen sources: the text before code point 16 is exactly the end of r00185, the text after it is exactly the start of r00186, and neither side carries whitespace at the boundary, so without a separator two words run together. The left side is a short piece (speech lead-in or opening words) whose continuation and Persian are in the next row. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "m90b8d19a8dca85989a8b5d7c",
+      "language": "ar",
+      "target_start": 10,
+      "value": " ",
+      "left": "r00039-sb95e8330b98b3873",
+      "right": "r00040",
+      "reason": "Separate the complete words at the r00039/r00040 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with قلت: and the right piece begins with «ما; the lead-in و قلت: ends with its colon and the quoted verse opens with its quotation mark; the row before has the same lead-in with a space after the colon, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 10 of 107; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00040), so it has no junction and needs no space; it renders the whole joined Arabic."
+    },
+    {
+      "row": "m7c9f9387d8cd87bfdd0665e6",
+      "language": "ar",
+      "target_start": 8,
+      "value": " ",
+      "left": "r00055-sa9848df065092bea",
+      "right": "r00056",
+      "reason": "Separate the complete words at the r00055/r00056 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with فقال: and the right piece begins with أنا; the lead-in فقال: ends with its colon and the quoted saying begins with أنا, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 8 of 53; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00056), so it has no junction and needs no space; it renders the whole joined Arabic."
+    },
+    {
+      "row": "mee503859b367c02af7e3b4f2",
+      "language": "ar",
+      "target_start": 32,
+      "value": " ",
+      "left": "r00122-s90ab492204f4457b",
+      "right": "r00123",
+      "reason": "Separate the complete words at the r00122/r00123 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with (المطالب) and the right piece begins with بدم; the variant reading in brackets (المطالب) closes and the complement بدم المقتول begins, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 32 of 66; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00123), so it has no junction and needs no space; it renders the whole joined Arabic."
+    },
+    {
+      "row": "m19cfbaa4e503198b6d71719c",
+      "language": "ar",
+      "target_start": 23,
+      "value": " ",
+      "left": "r00155-sfab63c002f88b161",
+      "right": "r00156-s6801796ad27c2ec9",
+      "reason": "Separate the complete words at the r00155/r00156 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with ها) and the right piece begins with و; the spelled-out letters in brackets (طا، ها) close and و المحكمات continues the address, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 23 of 42; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00156), so it has no junction and needs no space; it renders the whole joined Arabic."
+    },
+    {
+      "row": "m119af7a4b18e73b9614ab493",
+      "language": "ar",
+      "target_start": 22,
+      "value": " ",
+      "left": "r00156-s94fdf1b82fabbe7d",
+      "right": "r00157",
+      "reason": "Separate the complete words at the r00156/r00157 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with سین) and the right piece begins with و; the spelled-out letters in brackets (یا، سین) close and و الذاريات continues the address, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 22 of 39; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00157), so it has no junction and needs no space; it renders the whole joined Arabic."
     }
   ]
 }

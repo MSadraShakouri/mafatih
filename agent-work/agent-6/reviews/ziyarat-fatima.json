@@ -4,11 +4,11 @@
   "item": "ziyarat-fatima",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "99bbbea50750e5689b5a3a76a107c0d75ed33141e9654a8f9e9985ccc1f16ce0",
-  "layout_sha256": "b59ebb0c4eed866c23deff3b56f4337bf186ca9953dd8e73c2a8766a6c0b072b",
-  "result_item_sha256": "a42a39b50f896235d392d79417e111f309aace59b8f5727ea061dd73dec71cf3",
-  "result_record_sha256": "dd3e4d82b9c9dd1a5f7a7bf09d3e1e7a0f32e427450f63de8594b0b54c790078",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "28bcc168d31deeddb94daf52396eb78a748c021ca90f5773f42c1a94ce1ca67d",
+  "layout_sha256": "9943598f25e43fedd852f0fe3651ff94aa009dddca028ffe6bfc5f75c36d7724",
+  "result_item_sha256": "666ec22fe52b508d398f8a05f719d9d6b7dc024e21301665ac154ab88d4c4f18",
+  "result_record_sha256": "e1add7b2b2696b80628365a676e6040b74b31f96e7b0a096b53beed132e85376",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "71b2b4ef6abcfe2ed5445050d522fa31493356a5d2890e22bc50f494d07a2d72",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "7a914db197d09431c7c07a1efd2a8a8adae6cacb914faab20de67169a03e4c8c",
+    "preview_sha256": "19271750d7ccc1ff8ad59265ba3164d9edf94ed9bf8b502c8563466c1f577036",
     "sources": [
       {
         "row": "r00001",
@@ -43,8 +43,8 @@
         "row": "r00004",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A direction to the visitor (stand and say); classify instruction, as r00007 is."
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. The row is now instruction."
       },
       {
         "row": "r00005",
@@ -220,6 +220,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00010, r00013, r00014, r00015 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "note": "Read the changed row r00004 and its neighbours at snapshot b81241ae (18 output rows); the other rows are unchanged since my last review. The direction to the visitor is instruction. No join and no proposed space."
   }
 }

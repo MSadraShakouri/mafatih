@@ -4,11 +4,11 @@
   "item": "dua-ilhah",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "03d157f6a095451aec25b65f72bf5c4a7a45f7d3b28fe0f7ebf62f1bae60906b",
-  "layout_sha256": "d02a9f72149f4d1fec07dce8a97649f39f95b4814ddf7a865f9ed8fe4ac015e5",
-  "result_item_sha256": "a60e6395df4793d6ba4c0f9561487122ef90a7916450ec9d0224a66e70c35131",
-  "result_record_sha256": "7091797de9b4c689574b7ece0fe10f22e32a4ba4a384a0e7565d901dce5117b8",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "8faf99e9a74b97346c594e33109bf9fc346fea200b790e70c0ad1b38dc616ace",
+  "layout_sha256": "748e00db921aa255f6352d793223ee485f69426d404fbe8b6c21427727e7acc0",
+  "result_item_sha256": "de472474c80375137837b80e9f84bf3dc349645e1b744cfc8d1d393ce243192a",
+  "result_record_sha256": "5691df8b6b0e77a60e60bed036fb5644444f01f2a11ef769a7969efc8680b5f5",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "9506e3de5157741acb34cecc422d179be49a5021892b4ae292f4ce7ce2491722",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "703321dea05e21689f07d191225ee6c0328a24f345ad13dbb909a345e2664bea",
+    "preview_sha256": "ac369df4845b2f496867e717779d973414878dc608ff5250743e900f48e0c4f9",
     "sources": [
       {
         "row": "r00001",
@@ -182,9 +182,9 @@
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The instruction is followed in the same piece by the numbered lead-in of the next prayer; cut between them and classify the second piece as note."
+        "note": "Fixed at snapshot b81241ae. Two pieces: the closing direction of the nineteenth prayer (instruction) and the numbered lead-in of the twentieth (note)."
       },
       {
         "row": "r00014",
@@ -4623,6 +4623,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The two slot and cut findings (r00086, r00193) are resolved; the clause pairing of the other rows was read earlier and is unchanged. The cut changes asked for on r00013 are recorded in the source notes; the rows as they stand are placed and paired consistently."
+    "note": "Read the changed source r00013 and its neighbours at snapshot b81241ae (339 output rows); the other rows are unchanged since my last review. The direction and the lead-in of the next prayer are separate rows. No join and no proposed space in this item."
   }
 }

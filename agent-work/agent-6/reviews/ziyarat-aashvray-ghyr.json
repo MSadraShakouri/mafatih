@@ -4,11 +4,11 @@
   "item": "ziyarat-aashvray-ghyr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "79b680cd5c8c1930c836bee5d9b787918840057a4db8d1d5b10cc4ae1042b04f",
-  "layout_sha256": "a27fb4dd10dec6d08816222917c953cd0631fdc64b3d8fc935613217d2b8daa8",
-  "result_item_sha256": "87e70f93d4947743adf66cfe83cfbe8b4859ad79c791a73e06e6624314b38f7f",
-  "result_record_sha256": "333270fb190944f24b72fd5c35caaad34426949b8ec13562fc6c31c344b919c8",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "808b526cb89dccc92d742940243305b81fbc6305b1533dc083752532cadf7624",
+  "layout_sha256": "4333e07ae870415c37ba84bfb21527d554d9b467482cb261639ac5bfd780094f",
+  "result_item_sha256": "85acae0617f8230e6f235ec40335e3c37e1fb944f44b219ed45102f0f0c5cf05",
+  "result_record_sha256": "aa371008607687dc824bebcb762a2e0ee2aaabe4ba9350d064a84e5b7bcc2252",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "a812489ac82163aa0e6468793779c27c876af308f5976004516914205a9fcea4",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "a4f69986ac97da14c9cb6c6acf2318782094c3bffc1a127118a9bba853d2cfc4",
+    "preview_sha256": "91010aaf5e3fe468ec2eb49ebf8acb8de452918b4c6d8f9ca07a0fa14c211255",
     "sources": [
       {
         "row": "r00001",
@@ -219,8 +219,8 @@
     "issues": [
       {
         "index": 0,
-        "decision": "escalate",
-        "note": "Confirmed in the frozen sources: r00002 ends with the first word of a two-word epithet in both languages and r00003 begins with the second, so the two rows should be one. The author prepared but withheld the join because r00003/ar carries a recorded punctuation normalization and the pinned test tests/runtime-audio.test.ts (lines 156 to 158) requires a built field to equal one mapped piece. I hit the same limit on my own items. This needs the coordinator's test change; nothing further is asked of the author."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row m09865538e08d37633bac0a0d (r00002 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (السلام عليك أيها الوتر الموتور،) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The two proposed spaces are reviewed separately in the spacing review."
       },
       {
         "index": 1,
@@ -234,8 +234,8 @@
       },
       {
         "index": 3,
-        "decision": "escalate",
-        "note": "Confirmed in the frozen sources: the last piece of r00006 is a main clause whose prepositional complement opens r00007 in both languages. The join is withheld for the same reason as issue 0 (r00006/ar has punctuation history). Needs the coordinator's test change."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row m3dcecbf328673065ce3cf9a2 (r00006 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (اللهم و إني أتوسل و أتوجه بصفوتك من خلقك، و خيرتك من خلقك، محمد و علي  …) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The two proposed spaces are reviewed separately in the spacing review."
       },
       {
         "index": 4,
@@ -249,14 +249,14 @@
       },
       {
         "index": 6,
-        "decision": "escalate",
-        "note": "Confirmed: the Arabic words left at the end of r00014 are rendered at the head of r00015/fa, so they belong with the first piece of r00015. The join is withheld because r00015/ar has punctuation history. Needs the coordinator's test change."
+        "decision": "addressed",
+        "note": "Resolved at snapshot b81241ae. The join that the pinned test used to block is now in place as row m79b53c0765e25b70830ff9fa (r00014 with the next source row). Read the merged row and the rows before and after it in both languages: the Arabic phrase is whole again (اللهم لک الحمد علی [جمیع] ما ناب (یأتی) من خطب،) and stands beside its own Persian, and the row before keeps only the Persian of its own Arabic. The proposed space is reviewed separately in the spacing review."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "Read all 120 output rows in both languages. Every paired row holds an Arabic piece and its own Persian rendering; the heading, note and two instruction rows are Persian only. Four cross-row joins are in place and correct: the exact pairing of r00003/fa with r00004/ar, and the joins r00004 with r00005, r00007 with r00008 and r00011 with r00012. Three boundaries still split a phrase across rows (r00002 with r00003, r00006 with r00007, r00014 with r00015); they are correctly identified and are blocked by the pinned test, not by the author. One merged row is long and cannot be re-cut without a mapping migration; accepted, see r00004/ar."
+    "note": "Read at snapshot b81241ae the three merged rows that are new and their neighbours, in both languages (117 output rows); the plan and all cuts are unchanged since my last review. The three joins that the pinned test used to block are in place (r00002 with r00003, r00006 with r00007, r00014 with r00015): no phrase is split across rows now, and every recitation row has Arabic and its own Persian. Eleven proposed spaces in all, each reviewed separately and accepted."
   },
   "spacing_review": [
     {
@@ -324,6 +324,61 @@
       "reason": "Separate words at original r00011/r00012 continuation",
       "decision": "accept",
       "note": "Inspected the merged Persian field and both frozen sources: the text before code point 20 is exactly the end of r00011, the text after it is exactly the start of r00012, and neither side carries whitespace at the boundary, so without a separator two words run together. The boundary falls between a verb phrase and its object. One U+0020 here is right; removing it reconstructs both source fields. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "m09865538e08d37633bac0a0d",
+      "language": "ar",
+      "target_start": 38,
+      "value": " ",
+      "left": "r00002-sef600e9602dc9c39",
+      "right": "r00003-s3a5c66537d9f28c5",
+      "reason": "Separate the complete words at the r00002/r00003 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with الوتر and the right piece begins with الموتور،; الوتر and الموتور are the two words of one epithet, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 38 of 53; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    },
+    {
+      "row": "m09865538e08d37633bac0a0d",
+      "language": "fa",
+      "target_start": 19,
+      "value": " ",
+      "left": "r00002-sef600e9602dc9c39",
+      "right": "r00003-s3a5c66537d9f28c5",
+      "reason": "Separate the complete words at the r00002/r00003 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with تنهای and the right piece begins with مظلوم،; تنهای and مظلوم are the two words that render the epithet, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 19 of 27; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Arabic field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    },
+    {
+      "row": "m3dcecbf328673065ce3cf9a2",
+      "language": "ar",
+      "target_start": 48,
+      "value": " ",
+      "left": "r00006-se56c0bd8af03b316",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate the complete words at the r00006/r00007 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with أتوجه and the right piece begins with بصفوتك; the verb أتوجه is followed by its complement بصفوتك, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 48 of 164; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    },
+    {
+      "row": "m3dcecbf328673065ce3cf9a2",
+      "language": "fa",
+      "target_start": 23,
+      "value": " ",
+      "left": "r00006-se56c0bd8af03b316",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate the complete words at the r00006/r00007 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with می‌شوم، and the right piece begins with به; the comma after می‌شوم closes the verb and به برگزیده begins the complement, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 23 of 111; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Arabic field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    },
+    {
+      "row": "m79b53c0765e25b70830ff9fa",
+      "language": "ar",
+      "target_start": 23,
+      "value": " ",
+      "left": "r00014-s30d7521ced3cc2a9",
+      "right": "r00015-s847abda1272bdf4e",
+      "reason": "Separate the complete words at the r00014/r00015 source-row boundary when grouping the interrupted passage; retain all original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with الحمد and the right piece begins with علی; لک الحمد is followed by the preposition علی (praise is yours for), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 23 of 73; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00015), so it has no junction and needs no space; it renders the whole joined Arabic."
     }
   ]
 }

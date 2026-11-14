@@ -4,11 +4,11 @@
   "item": "namaz-item",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "8355b1915cee759383b9e10b8fa00bfb2a3ad81c6f8cbe894322c88236b6c1b3",
-  "layout_sha256": "c2f0a308e3181609f282060f712abb0925b3861ee62bc02af376d2df33f7de4d",
-  "result_item_sha256": "1222c93c040cf9fc506888f52d7ed9b403b9bc5816f082f346f309000e23f6b8",
-  "result_record_sha256": "d1fbb200e2b58d9bd02c8ca660d0176276f1f40d8a2d0a4aa64ff5740b2b0e8c",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "ba81ad04f61f542d8a4cc41060f4368ebe0df8a1a107f993ee80d675a9742fe4",
+  "layout_sha256": "e9fdf02de214619953212ab91e41ffcc37c06ce89e410c063be317ef6b457fcf",
+  "result_item_sha256": "e1b116da03197352afcdb5a2da16b6136ae61423ab71ecb32c046bc2fec96d36",
+  "result_record_sha256": "97f90fdca62a03c5ec325b604c30f3b2069f014c1e5a41b63cdf23abe07a6151",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "f635ad0997585aad21fd204f68a3070a5b47859605d0f667bd70ef93fd51d388",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "95ca928f5ec9013c842e5b0cc739629b7988874763254a20a26c30e5b2f11285",
+    "preview_sha256": "45644491df6c10d1a6f0a97360df56fa01ea5ed2b888e8b7712bfa7f0bc2bd07",
     "sources": [
       {
         "row": "r00001",
@@ -28,9 +28,9 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The last sentence of this field is a transition that announces the next prayer and is unrelated to the narration before it; cut before that sentence."
+        "note": "Fixed at snapshot b81241ae. Two pieces: the end of the narration (note) and the transition that announces the next prayer (note)."
       }
     ],
     "punctuation": [],
@@ -38,6 +38,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Both rows are Persian only; nothing to pair. The cut changes asked for on r00002 are recorded in the source notes; the rows as they stand are placed and paired consistently."
+    "note": "Read all 3 output rows at snapshot b81241ae. The narration and the transition to the next prayer are separate rows. No join and no proposed space."
   }
 }

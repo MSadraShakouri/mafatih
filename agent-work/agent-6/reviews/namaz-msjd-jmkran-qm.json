@@ -4,11 +4,11 @@
   "item": "namaz-msjd-jmkran-qm",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "9841e75ecbf82b88e6c10f6f62a44d717454bd827f72d42788910a8350651c7f",
-  "layout_sha256": "31f9633d551c290922dc0b6444f5f64ca1c2cdd26d8b7bed726bfdd40936cd6c",
-  "result_item_sha256": "e1cb516bb7ac6abf7d39338a9d6d5b35fb7302ca04396e91b967599b0bc58e81",
-  "result_record_sha256": "72c2a1bc6c3b17a168effecb9f0c4a90ba6fcaa86a23e62eacafe1838ac7487b",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "99094405c3d5720f148fe8893a744ee72f0637c748cefe7e9509fa95b2cbc524",
+  "layout_sha256": "f1e61fa29fa182b0bb78d1930e414e0bb8d365ee549c0cca3c4917367039e954",
+  "result_item_sha256": "fca580e26d47c11089feae912faa4a5c2e5d599647f0331464fff771142254fc",
+  "result_record_sha256": "8e02dae49d7d7438559a2b9fcb9c34992c3116458d1536ad9a3d86441d7378ee",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "c7b7eee26d0ce89787fe0f6ea41a9cbc8061e2afa39df6792676b95072e93641",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "4a44300f6a6859143a4d10aa85d8126eb8262874c9513e4914039eb9d178249f",
+    "preview_sha256": "a38edc08e4b7df6daacff2b307e64da30cfed41ab1bccca3c7306a392bbfb219",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The title is fused with the opening words of the narration that continues in r00002; cut after the colon and classify the second piece note."
+        "note": "Fixed at snapshot b81241ae. The title is its own heading row. The opening words of the narration are joined to their continuation in r00002 as one note row, with one proposed space reviewed separately."
       },
       {
         "row": "r00002",
@@ -45,6 +45,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The one quotation row is paired with its own translation. The cut changes asked for on r00001 are recorded in the source notes; the rows as they stand are placed and paired consistently."
-  }
+    "note": "Read all 3 output rows at snapshot b81241ae. The title is a heading row; the narration broken between r00001 and r00002 is one note row; the Arabic sentence at the end stays paired with its Persian. One proposed Persian space, reviewed separately and accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m45b4174f0b8eba64ba410021",
+      "language": "fa",
+      "target_start": 17,
+      "value": " ",
+      "left": "r00001-sd0076416ed435839",
+      "right": "r00002-s0b1d6d51987de706",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original source text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with کتاب and the right piece begins with «نجم; کتاب is followed by the title of the book in quotation marks, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 17 of 937; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row is Persian prose and has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

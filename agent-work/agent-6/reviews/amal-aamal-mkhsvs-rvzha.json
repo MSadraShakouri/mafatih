@@ -4,11 +4,11 @@
   "item": "amal-aamal-mkhsvs-rvzha",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "8fcd303b8abd6b409e6784b75ea48544c43b775c94fdd7149cbc880645946bd9",
-  "layout_sha256": "3c1577c22705d9a0663fd23572a3fa24fcfc83d1b760490f3a057199b47e9b7c",
-  "result_item_sha256": "6beeb582d66e6657c27df136d875ed3bbc6b63624c7e3f57a183adf7efe05623",
-  "result_record_sha256": "a21d754a5080f49e06e6f52e7fef39ff1a4abf87d09ff8fa8436a206c71cbf86",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "e30dc8f7d4c05cc3aff3755056a4e72ccff74e627de0d6065dc696e645bf59cc",
+  "layout_sha256": "44a6584011aa798cf831298343b5eab6a8b16d465964fd926728bc735024ba39",
+  "result_item_sha256": "2edb01d531d6afb8fe094cdcf5ce79e707f70b37c7357041fbade015903edcef",
+  "result_record_sha256": "da3637f5cbc293c667528155c60c7d90bc2bdaf3746d09d982a2a20ff4f8c6fa",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "7f07fc52f037b2cd6e263a12441d1d14b96fefa418b9cc35053b890c7db1b7e9",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "5be19630e774c9298c3eb72735fa9d18b55ba725ebf6a5ea30b370f4936516ba",
+    "preview_sha256": "67a6dde57944a0db1185fc1e5b23e7b28003afad14c3bcd0dff14866b15e2322",
     "sources": [
       {
         "row": "r00001",
@@ -49,9 +49,9 @@
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code point 260 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot b81241ae. Five pieces in source order: دوّم: (heading), the washing (instruction), its report (note), سوم: (heading) and the visit (instruction)."
       },
       {
         "row": "r00004",
@@ -70,9 +70,9 @@
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code point 157 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot b81241ae. The label هفتم: now opens its own heading row after the sixth practice, and the seventh practice is an instruction row. The last word of the field, شیخ, begins the sentence that continues in r00007; it is joined to r00007 as one note row with one proposed space, which I reviewed separately in the spacing review."
       },
       {
         "row": "r00007",
@@ -105,9 +105,9 @@
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece holds a closing instruction and then the narration that introduces the next prayer; cut at the sentence boundary and classify the first piece as instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. Two pieces: the closing direction (instruction) and the narration that introduces the next prayer (note)."
       },
       {
         "row": "r00011",
@@ -198,6 +198,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00009, r00011, r00013 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
-  }
+    "note": "Read the three changed sources and their neighbours at snapshot b81241ae (27 output rows); the other rows are unchanged since my last review. The numbered sections open their own rows; the sentence broken between r00006 and r00007 is one note row; one proposed Persian space, reviewed separately and accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m0c0fc9cef764c0c5a2070fdc",
+      "language": "fa",
+      "target_start": 3,
+      "value": " ",
+      "left": "r00006-s301ee66f47674098",
+      "right": "r00007",
+      "reason": "Separate شیخ from در when joining the source narrative across r00006 and r00007.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with شیخ and the right piece begins with در; شیخ is the subject and در آن کتاب فرموده is the rest of the sentence (the Shaykh said in that book), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 3 of 409; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row is Persian prose and has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "amal-aamal-mhrm",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "5e68ca2b6bc5cd81a286413b575b785e6c69b21d0fae5b4755f9c1d66b12adc2",
-  "layout_sha256": "a3b47d19ff011e0d3c5254e39c530683818604509265580260f1c87dcd105ba6",
-  "result_item_sha256": "8f9d577cd9d46c276f152ddfc97c56f75dda0181f3ccee1752d3b8f551103d55",
-  "result_record_sha256": "22a3b250575816cac73b9a1d6ee2d31957c34d040ac69742deb2e7bef89036bf",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "84b326c36696913e2a6de8c999c6ab30d657d17e6c62b3d9a9986278100a2597",
+  "layout_sha256": "f4316b7c7a02ac1bf8b1897002ba5a249b2d39aaa55d8075cfab3908d936f12c",
+  "result_item_sha256": "981c1a013c722a5fd1ed0199f3df0f4f8d668f8957a4298227a9ee1ae7596135",
+  "result_record_sha256": "4827732eef5c2bb7795b65e666ce7cfb605e562a14da06422a9495e5fe418c4f",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "5d4062c835e8b706e2673ee87ae7da5490bd556cef5fd34cd88c3bea17d55fe7",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "812fde08161aca37a99e97ad76d32da0fe825a488ecb4779245e2cbbb99f1bac",
+    "preview_sha256": "4f3e1257c86747ef06b4a4d671a468cff56f483fd64c9f25f0beb70fa8350eba",
     "sources": [
       {
         "row": "r00001",
@@ -28,9 +28,9 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code points 73, 147, 255 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot b81241ae. Nine pieces in source order: the opening of the first night (note), then for each of the three prayers its label (heading) and its description (instruction), then the report of merit (note). A spelling slip of the source inside the first prayer (صدر for صد, and a missing closing quotation mark) is kept as it stands, which is right."
       },
       {
         "row": "r00003",
@@ -42,9 +42,9 @@
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code points 75, 266 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot b81241ae. Seven pieces in source order: روز اول: (heading), the introduction (note), اول: (heading), the fast (instruction), its report (note), دوم: (heading) and the report that introduces the prayer (note)."
       },
       {
         "row": "r00005",
@@ -128,6 +128,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00005, r00007 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "note": "Read the two changed sources and their neighbours at snapshot b81241ae (24 output rows); the other rows are unchanged since my last review. The numbered prayers of the first night and the numbered practices of the first day each open their own row. No join and no proposed space."
   }
 }

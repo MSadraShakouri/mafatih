@@ -4,11 +4,11 @@
   "item": "khavas-tlqyn-myt",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "43ea6f55b897a8ad834f2e67348313b0ce864f4fca515a311dd1c5827ba8357a",
-  "layout_sha256": "32197b9c5698f1e828e8a2baa3007ec4f3598c050e79e1d3fac2faf498eefb03",
-  "result_item_sha256": "a8854a6434662729e278a4b791a041a56c7def944c72a7d7dae089330033b3a1",
-  "result_record_sha256": "05c96dea4d1cdb4032807eccaaecc9eb8247924046a5c941e256c3213bc92c19",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "ee16a320df316ad499abdded37506bef7b50a542e1172cd3aaa105e4b67755ee",
+  "layout_sha256": "2d23fa32582d0d0110cbb0a792d7511cb50374d4f646eb66d2d242df3f74b79f",
+  "result_item_sha256": "38f8973ca9c73b2a2a06895d0961c50362ba859ab8db013906fae26f66f5bd3f",
+  "result_record_sha256": "04c0bc729de3f858808e23b6eda767d5b40a6237584d836aba94c73881fb7553",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "94cded7aecd55ab652a296b9785d931ccc9306a5728a62f23200b1a639e8b576",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "89522dc69cf8550c53c01978862f5ee0852a63a86d04f9cd36c480d15b55458e",
+    "preview_sha256": "2cb752007f39ba54bdf44c91432ea0ff15015be5c1c6139d856928174dbdc093",
     "sources": [
       {
         "row": "r00001",
@@ -119,9 +119,9 @@
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece holds the end of the narration that starts in r00008 and then a direction; cut before the direction and classify the first piece note."
+        "note": "Withdrawn. I asked for a cut before the two-word direction سپس بگوید:. Read again: the row is one short sentence of 36 code points, the reply and the direction to go on. A cut would rest on the number of clauses alone and gives no gain in reading or in pairing. Accepted as one instruction row."
       },
       {
         "row": "r00010",
@@ -162,15 +162,15 @@
         "row": "r00013",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Length finding withdrawn after recalibration. The prose here (up to 382 code points) is one passage; Persian-only rows of the manual-v1 items reach 410 code points at the 90th percentile and 1043 at most, and the reviewer's own accepted items keep prose of this size whole. Read again: no numbered section starts inside it and it holds no complete Arabic recitation. Arabic colophon of the author (date, place and signature), translated in r00015; classify note, the kind given to r00015."
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. The row is now note. Its slot is a layout point, see the layout note."
       },
       {
         "row": "r00014",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Arabic colophon of the author (date, place and signature), translated in r00015; classify note, the kind given to r00015."
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. The row is now note. Its slot is a layout point, see the layout note."
       },
       {
         "row": "r00015",
@@ -185,6 +185,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Still open from the earlier review: The Arabic colophon of r00013 and r00014 sits in the fa slot; place it in the ar slot. Withdrawn: my request to re-pair r00004, r00005, r00006 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "note": "Read the changed rows and their neighbours at snapshot b81241ae (19 output rows). Done: r00013 and r00014 are note. Still open, an author fix: r00013 and r00014 hold the compiler's Arabic colophon but stand in the Persian slot, and r00015, two rows later, is its Persian rendering (date and place first, signature last). So the Arabic shows as if it were Persian and is not beside its rendering. Place the Arabic of r00013 and r00014 in the Arabic slot and bring r00015 beside it: join r00013 with r00014 (one Arabic space) and then with r00015, in the way namaz-item-2 r00004 (Arabic taken out of a Persian field) and item-asharh r00001 (rendering joined to its Arabic) were treated in this same snapshot. Link-safe: the three rows have never been cut, so their IDs stay in the mapping as originals. If the tool refuses this join, tell me and I will mark the point as blocked by tooling. My request for a cut in r00009 is withdrawn."
   }
 }

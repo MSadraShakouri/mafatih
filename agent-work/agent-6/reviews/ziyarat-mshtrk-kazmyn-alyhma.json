@@ -4,11 +4,11 @@
   "item": "ziyarat-mshtrk-kazmyn-alyhma",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "2eb77999902ebda5ea50e91667aa5c3ad4356164218865ce8d214a5f40c25ced",
-  "layout_sha256": "439a60fbce464ccdb54dc5023bad081d626a12d869d9eee30af08086141a4d65",
-  "result_item_sha256": "3fea0a893186515f3fc637b72530cde4050c58c88e9af34a5019863dff002436",
-  "result_record_sha256": "24e795139c1a356605729a2afc38e1874c2f3277c227e5745ae8c4f57653495d",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "a608473739e41fd54e6e207cf9ebd49884ca928b26e23c8a75ef39939a4c6af2",
+  "layout_sha256": "95363a3e6612e0d5085a39b217843d8a10950ff31e8ffb97902b4478fb749757",
+  "result_item_sha256": "8e2cd027bb2c8ad0a09ed682f623effbb2c3cd9ab1ba656043dd3d8b1f4e6b89",
+  "result_record_sha256": "298ece5b8fcfa0c1204781b4b838c40744083360b2d4df0106ab34ca4ab3d7f3",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "9572752a86d7f4f328f5acb5fac20a047fa23722492becc180923f04502b43f3",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "5a3bde29fd023700e7fdf3d0aa728740c9c5213db90ce0ec397d8b2af1bdf805",
+    "preview_sha256": "107cd54857c7bb799a4aabec6f83aa419fe5407f2bda8f241c2eabc105ad7215",
     "sources": [
       {
         "row": "r00001",
@@ -43,8 +43,8 @@
         "row": "r00003",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The row is the first two words of the sentence that continues in r00004, not a title; classify note, the kind of r00004."
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. The row is now note, the kind of r00004. It is still only the first two words (این زیارت) of the sentence that goes on in r00004; a join with r00004, with one proposed space, would make it one row. Offered, not required."
       },
       {
         "row": "r00004",
@@ -192,6 +192,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00002, r00006, r00009 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "note": "Read the changed row r00003 and its neighbours at snapshot b81241ae (17 output rows); the other rows are unchanged since my last review. r00003 is note. Offered, not required: r00003 is two words and r00004 is the rest of the same sentence; a join would make one row."
   }
 }

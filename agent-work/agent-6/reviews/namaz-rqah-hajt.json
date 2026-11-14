@@ -4,11 +4,11 @@
   "item": "namaz-rqah-hajt",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "9389ad27738afb906556ab4cc7cc1c3b13406706507c99e07259d27641cb9ce5",
-  "layout_sha256": "752f09cbe39ed1bb148151ec5b920fce8117f7f8db70f012411ff2420baf5fc2",
-  "result_item_sha256": "cd3d70dba30352c86443a323bb06470422cb41c6e43ca8121695c32ebc692956",
-  "result_record_sha256": "bdf77526001e547b9c6a4fc36e95cbba8a48081df7186e0011954b143a568dac",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "5c305bb23395c159f284ac49ad5efa655b6793b61c5f1142245cdd6604dc7e50",
+  "layout_sha256": "5fa3231d066f702a775962476c2fbbd2e465a55fe7957b2a218e4bf15d5e616b",
+  "result_item_sha256": "e4964f368fac6e7078ad6d7fe25e6bbe038109efba36a7f2170868313f98bc8d",
+  "result_record_sha256": "3f90ffaf65a5d6ccd3cb0014246c11b99312f59321ec1f2d7f62d49ec7263084",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,28 +16,28 @@
     "item_sha256": "4cc57ead678066e19077b8ba8240c1a6e6d072583e4aaca3c7fd214d7066e061",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "2a7d5dc0cbbbaf22df6215e4c45f047cb2f61f947105b9fd7ed75ce377032e12",
+    "preview_sha256": "e7f83065a2fd5c92552209bb9c17d67089a2f919c36b460d8bda66f18db002b3",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The field holds an author remark (first sentence) and then the instruction with its source; cut at that sentence boundary and classify the first piece as note."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. Two pieces: the compiler's remark (note) and the direction with its source (instruction)."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The basmala is fused with the first clause; cut after the basmala."
+        "note": "Fixed at snapshot b81241ae. The basmala is its own piece, paired with its Persian rendering; the first clause of the petition is the next pair."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The translation of the basmala is fused with the first clause; cut after it. The recorded earlier line break in this field supports a boundary here."
+        "note": "Fixed at snapshot b81241ae. The rendering of the basmala is its own piece beside the Arabic basmala; the rendering of the first clause is the next pair."
       },
       {
         "row": "r00003",
@@ -65,6 +65,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The request to re-pair long rows is withdrawn with the length findings. The cut changes asked for on r00001, r00002 are recorded in the source notes; the rows as they stand are placed and paired consistently. Withdrawn: my request to re-pair r00003 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
+    "note": "Read all 5 output rows at snapshot b81241ae. The compiler's remark and the direction are separate rows, and the basmala with its rendering is its own pair before the petition. No join and no proposed space."
   }
 }

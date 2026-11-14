@@ -4,11 +4,11 @@
   "item": "amal-aamal-mbas-2",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "7af7ba12dcabb4f904f0b390f63bd7af29b5dc5f8ccb15201bf70953df548971",
-  "layout_sha256": "6d118088c1decc4c1d73c6cf42ee79ac0305cf5bb7e79386621453bad1b4868a",
-  "result_item_sha256": "5464d829edda29a362e7ff0733dde7d8ee8af32b0606b3f08ecdf220449ed66b",
-  "result_record_sha256": "d8c22d869f71c44dab9d81eaeb373feb08e78b495f652427408b0336fb60fb36",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "f594776bd9d948af8d02d8c8814f7f84cbc493a61d4ea40e76a8f2c7a121855d",
+  "layout_sha256": "155a5f024d268b4d932710ab5e7c6d531dbc228e81811ae793ffe481bf60b4fd",
+  "result_item_sha256": "6f677be67f7ad234eb78902b00dd52a35d8843217b1cb415fb39e8f3127e8254",
+  "result_record_sha256": "43fb09ae537c02cfc66ae858c72c3e82c978c4ede78b84570c47136f6c7888f9",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "4f65c1c7544bfcad546ad4871805764c962816763273c54df614a860b4e8316b",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "5953fa6014be09f229a771485e486d4ded23a0d51d8d45bfdd888a0f99c6dd82",
+    "preview_sha256": "d4f427c62f509b310f9720ac5ed27688cc6de3163b78d43eeab637f32d1f8ecf",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot b81241ae. The field is now six pieces in source order: the introduction of the day (note), the label اوّل: (heading), the first practice (instruction), the label دوّم: (heading), the second practice (instruction) and the report of its merit (note). Each numbered section opens its own row."
       },
       {
         "row": "r00002",
@@ -147,9 +147,9 @@
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A short Persian lead-in (a repetition count) is fused to the start of the Arabic and the whole piece is classified as recitation; cut after it and place it in the fa slot as instruction."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Fixed at snapshot b81241ae. The Persian count و هفت بار is now its own instruction row in the Persian slot, and the Arabic formula stands alone in the Arabic slot beside its own Persian rendering."
       },
       {
         "row": "r00013",
@@ -259,9 +259,9 @@
       {
         "row": "r00022",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot b81241ae. Three pieces: the compiler's remark on the prayer before it (note), the label هشتم: (heading) and the eighth practice (instruction)."
       },
       {
         "row": "r00023",
@@ -283,6 +283,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Row r00002 no longer keeps Persian text in the ar slot. Prose rows r00001, r00022 hold numbered sections to be opened as their own rows (Persian only, nothing to pair). Withdrawn: my request to re-pair r00010, r00017, r00018, r00021 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "note": "Read the three changed sources and their neighbours at snapshot b81241ae (36 output rows); the other rows are unchanged since my last review. Every numbered section named in my findings now opens its own row, and the Arabic formula of r00013 is paired with its own Persian. No join and no proposed space in this item."
   }
 }

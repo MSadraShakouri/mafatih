@@ -4,11 +4,11 @@
   "item": "namaz-item-2",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "4cf7d569379a11d20584d88c5e892cce3a922ca107f7782295c00daf8131c073",
-  "layout_sha256": "6429bb325d8c4ce8c2ac3e7bf611b673d48ae8bf7ba1bba083a04e3c849851ed",
-  "result_item_sha256": "4387d4fbeddef7c6c5b2a703c4340caf422add43bc7b5d189a9614c1d47afc76",
-  "result_record_sha256": "201352d9243f31f9bdbc7525b43ddbd57d2b8f4bff1562d3068a5d3f189c8514",
+  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "plan_sha256": "14614b44cdb0ca0d4eb155386fd1445d243fde30c46eab4138dbb82923eb9866",
+  "layout_sha256": "3146004cdaf03372e91536d83070571fd30f0c41e609d4cf41410af91bda08ba",
+  "result_item_sha256": "7a8636f703ccd007319aaf518c3aaf274a8052bc90b985b8189297ce91410ea0",
+  "result_record_sha256": "038e0bd007f41c50a33dd66027a16df739d0e89b366f59b11d00f2ca71730031",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "be8fae7a1429a2deef944dd5e35495d9d36a099e15716f974ba93c34f39b9fae",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "f7551f2947a7c860d12f913ca509c8fce16f44ba2105768d1099875b22d11d3a",
+    "preview_sha256": "822397597f4bdd2b6114dd76fb642d0debadc7634b4b0d27c6ee6b0e0a93197a",
     "sources": [
       {
         "row": "r00001",
@@ -56,9 +56,9 @@
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Piece 0 holds a complete Arabic sentence inside Persian prose at code points 43-198 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose."
+        "note": "Fixed at snapshot b81241ae. The Arabic invocation is now its own recitation row in the Arabic slot (the source gives no Persian for it); the direction before it is an instruction row; the directions after it are joined to the direction that opens r00005 as one instruction row, with one proposed space reviewed separately. Small remark, no change asked: the cut after the invocation leaves the following space at the head of the merged row, so its Persian begins with a space; elsewhere the space stays with the piece on the left. The words are not affected."
       },
       {
         "row": "r00005",
@@ -87,6 +87,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00003 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
-  }
+    "note": "Read all 8 output rows at snapshot b81241ae. The Arabic invocation of r00004 is in the Arabic slot as its own row, and the directions around it are Persian instruction rows; the directions broken between r00004 and r00005 are one row. One proposed Persian space, reviewed separately and accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m84503e1793cfda16fbd208ef",
+      "language": "fa",
+      "target_start": 348,
+      "value": " ",
+      "left": "r00004-sb6675ab1151072b8",
+      "right": "r00005-s1461543daf3ad696",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original source text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with خود and the right piece begins with را; خود and the object marker را are separate words (محاسن خود را با دست چپ می گیری), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 348 of 421; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row is Persian prose and has no Arabic field, so only this one space is in question."
+    }
+  ]
 }
