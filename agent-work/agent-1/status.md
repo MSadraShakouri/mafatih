@@ -392,3 +392,29 @@ it rejoins the two pieces exactly. 0 verify failures.
 Gates after the merges: `npm run validate` PASS, `check:line-breaks` PASS,
 `npm run check` 278 tests / 275 pass / 0 fail / 3 skipped, runtime-audio 6/6,
 `audit-authored` complete 112/112, `verify-tool-info` `tool-version-matches`.
+
+## Agent-6's updated head: their link deliverables verified, my reviews stand
+
+Their branch has moved on (`b2a5f539`): more agent-5 snapshots merged and their
+link audit recomputed against `3e35f4ca`. Checked without taking anything on trust:
+
+- **Their own 115 items are byte-identical to `3e35f4ca`**, so all 115 of my
+  review records still stand and no rebind is due. The moved data belongs to
+  agent-5's items, which are agent-6's to review, not mine.
+- **Their head is green**: built in a detached worktree, runtime-audio 6/6,
+  `npm run validate` PASS, `verify-tool-info` `tool-version-matches`.
+- **The 142-id alias proposal holds.** The 142 old ids are exactly the set that is
+  unreachable at `3e35f4ca`; every proposed alias rebuilds its retired text
+  byte-for-byte from the segments it names (using each segment's `target_start`);
+  and adding all 142 to the records leaves `validateCorpus` at 0 errors, before
+  and after. Their claim of "0 problems" reproduces.
+- **The 93-id versioned map holds.** 93 entries in 9 items, 93 versions; every
+  current destination and every version destination is a live row (or resolves
+  through an alias into one), and every old text they cite is still in the pool.
+  Their `resolves_through: alias-or-original` entry for
+  `ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcda…` is correct — that id was retired by
+  their own joins, and the map says so.
+
+Twenty of their items stay held from final release pending the coordinator's link
+migration; nothing is asked of me until their next snapshot, when the 16 items with
+retired ids will need a rebind.
