@@ -80,3 +80,27 @@ Full re-verification at 775e7df5: 3,543/3,543 original occurrences character-exa
 ### Remaining work on MY side
 My own 4 unpaired rows (item-avl-taqybat-mshtrk r00014/r00018, namaz-item-3 r00001,
 ziyarat-bad-rza-alyh r00017) are still unfixed. See "Same defect class in MY OWN output".
+
+## My own four pairing defects — FIXED
+`item-avl-taqybat-mshtrk` r00014, r00018; `namaz-item-3` r00001; `ziyarat-bad-rza-alyh` r00017.
+
+**Diagnosis (I initially misread this).** I first assumed these were like agent-2's cases —
+parallel pieces emitted as four single-language rows, fixable with `merge-rows`. Wrong.
+Previewing `merge-rows` on r00014 showed it would have produced one row holding the Arabic
+prayer plus only «خدایا!» and orphaned the rest of the Persian.
+
+**Actual defect:** the `fa` field is the complete translation of a *single* Arabic prayer,
+and I had inserted a gratuitous `fa` cut in the middle of that translation (e.g. splitting
+«خدایا! درود فرست بر…» after «خدایا!»). That made the Persian look like two pieces while
+the Arabic stayed one, so the layout had nowhere to put `fa` part 1 except its own row.
+
+**Fix:** removed the `fa` cut in the plan (cuts `[]`, kinds `[recitation]`), rebuilt each
+layout to two rows — `{fa: ar#0}` instruction/note, `{ar: ar#1, fa: fa#0}` recitation — and
+re-applied. Result is two rows, the second carrying both languages.
+
+Re-verified: 3,173/3,173 original occurrences character-exact across all 115 of my items,
+0 mid-word cuts, unpaired-parallel-pieces detector now returns 0.
+`audit-authored` 115/115 complete, 0 findings; `npm run check` 277 tests 274 pass 0 fail.
+
+NOTE: `validate` reports 18 unreferenced pooled texts at HEAD and 26 after this fix.
+That pre-existed my change; re-application retires old text values. Not an error.
