@@ -4,7 +4,7 @@
   "item": "amal-aamal-sy-am",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "dec15e17297785d045052bde98f59dcbff71f730b51f3c3585095c2323a04713",
   "layout_sha256": "ad8460bd3f0973e07ec509895056bc9b8bad28fbc6d00c51fdb30c931c2faac3",
   "result_item_sha256": "ad0461188ee7b8df95f75f6a345bbedc58e3a4bb80db6534f0751ac1c9e64389",
@@ -21,37 +21,37 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian title is correctly moved and internal prayer parts correspond; the final Arabic phrase is unfinished and the completion plus complete Persian rendering are in r00002. Reviewed ar source."
       },
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian title is correctly moved and internal prayer parts correspond; the final Arabic phrase is unfinished and the completion plus complete Persian rendering are in r00002. Reviewed fa source."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic beginning completes r00001’s prayer, while its Persian phrase renders the whole request; align them without altering the source. Reviewed ar source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Arabic beginning completes r00001’s prayer, while its Persian phrase renders the whole request; align them without altering the source. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "The Persian heading and internal paired prayer segments are sound. The last Arabic invocation crosses r00001/02 and its complete Persian appears only in r00002; group that passage and retain bracketed variants and links."
   }
 }

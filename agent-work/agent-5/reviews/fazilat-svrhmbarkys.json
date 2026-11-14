@@ -4,7 +4,7 @@
   "item": "fazilat-svrhmbarkys",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "58c33f3ee5b8883498edee6d5c59d61c14b3a4685a8e158d54d5014a635ce57d",
   "layout_sha256": "dfc971da88fd11721aed6849557c3b119ed6c4ad52a92204c9d109b30dd6854d",
   "result_item_sha256": "40f4ebc70b88c330aafda8162814506a63b01172b13ea2967dbfe7fd802fb330",
@@ -21,30 +21,30 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The report cuts are sensible but its third report is interrupted mid-predicate and continues in r00002. Reviewed fa source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "This continues the report introduced at the end of r00001; keep its claims attributed and unverified. Reviewed fa source."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Two separately attributed reports are divided at their boundary; retain their wording as claims, not verified outcomes. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "The third attributed report is interrupted across r00001/02. Group its continuation and keep the other report boundaries and health-related claims as attributed, not verified."
   }
 }
