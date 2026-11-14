@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "khavas-hrz-fatmh-alyha",
   "author": "agent-5",
-  "plan_sha256": "3038ff0f85d8befa6460e7d4d33f8c0477591876ee81c1532dd5beff8ba18a6b",
+  "plan_sha256": "3a11fec2fa82316ac17ac291d10e31cc389721b857fd8152e3f7492d1fd7c231",
   "rows": [
     {
       "row": "r00001",
@@ -32,11 +32,11 @@
           "kind": "note"
         },
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "fa",
             "part": 1
           },
+          "fa": null,
           "kind": "recitation"
         }
       ]
@@ -67,6 +67,17 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "recitation"
         }

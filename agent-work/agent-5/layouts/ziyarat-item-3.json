@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-item-3",
   "author": "agent-5",
-  "plan_sha256": "76c5f0f1e54483b1fd99feccf6b8982632590a2babf07c6fa227d87347bac08e",
+  "plan_sha256": "d67fd36be8e9418cb5a152fecc2fc984f77fec3b1ec7f9155d01bb36251a178a",
   "rows": [
     {
       "row": "r00001",
@@ -35,11 +35,19 @@
           "kind": "recitation"
         },
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 1
           },
-          "fa": null,
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
           "kind": "note"
         },
         {
@@ -47,7 +55,10 @@
             "source": "ar",
             "part": 2
           },
-          "fa": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
           "kind": "recitation"
         }
       ]

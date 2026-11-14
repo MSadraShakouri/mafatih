@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-ttmh-aamal-mbas",
   "author": "agent-5",
-  "plan_sha256": "81dbd69b861a5b2761b73121c9dddccaf59bbc27c37a5a627201602fafcf365b",
+  "plan_sha256": "2a3c9030b3dad398d881549444309fefde3438a8f2dc81edccb0f1d3db44de68",
   "rows": [
     {
       "row": "r00001",
@@ -38,12 +38,12 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "fa",
             "part": 0
           },
-          "kind": "recitation"
+          "fa": null,
+          "kind": "note"
         }
       ]
     },
@@ -52,15 +52,23 @@
       "checked": true,
       "output": [
         {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "note"
+        },
+        {
           "ar": {
             "source": "ar",
             "part": 0
           },
           "fa": {
             "source": "fa",
-            "part": 0
+            "part": 1
           },
-          "kind": "recitation"
+          "kind": "quotation"
         }
       ]
     },
@@ -77,7 +85,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "recitation"
+          "kind": "quotation"
         }
       ]
     },
