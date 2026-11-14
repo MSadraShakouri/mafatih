@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "item-asharh",
   "author": "agent-5",
   "baseline_item_sha256": "36779002346d047c6cf69ce8c1dcee96260dc738c2297a4d32182bc675381684",
-  "plan_sha256": "cd7f54ba6d0338efeb673d515140580928899a71d32f3be54e6ca6fb68275537",
-  "layout_sha256": "8359a62dd32338897d16c434dfbde1c7622161e2193e3cc415776d595b5f12eb",
+  "plan_sha256": "ce3dc558dd6984f00b5f4de20d118db74d0a2b521b576fe7bfe51ec5566e845c",
+  "layout_sha256": "88a10813ce58e33d78abf5289341764e1ccdc30147329d565374c9025bd26873",
   "rows": [
     {
       "original": {
@@ -13,14 +13,15 @@
         "fa": null
       },
       "results": [
-        "r00001"
+        "m60ad04aa978446f7b35f44b8"
       ],
       "ar": [
         {
-          "row": "r00001",
+          "row": "m60ad04aa978446f7b35f44b8",
           "language": "ar",
           "start": 0,
-          "end": 34
+          "end": 34,
+          "target_start": 0
         }
       ],
       "fa": []
@@ -32,22 +33,32 @@
         "fa": "t4766f4e53cf08764be5290cb"
       },
       "results": [
-        "r00002"
+        "m60ad04aa978446f7b35f44b8",
+        "r00002-s35a4887b4dbd274f"
       ],
       "ar": [
         {
-          "row": "r00002",
+          "row": "r00002-s35a4887b4dbd274f",
           "language": "ar",
           "start": 0,
-          "end": 282
+          "end": 282,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m60ad04aa978446f7b35f44b8",
           "language": "fa",
           "start": 0,
-          "end": 302
+          "end": 49,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-s35a4887b4dbd274f",
+          "language": "fa",
+          "start": 49,
+          "end": 302,
+          "target_start": 0
         }
       ]
     },
@@ -66,7 +77,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 546
+          "end": 546,
+          "target_start": 0
         }
       ]
     },
@@ -85,7 +97,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 343
+          "end": 343,
+          "target_start": 0
         }
       ]
     },
@@ -104,7 +117,28 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 114
+          "end": 114,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s33d1515313a177c7",
+        "ar": null,
+        "fa": "t6dc36e41c886f99dde532253",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m60ad04aa978446f7b35f44b8",
+          "language": "fa",
+          "start": 0,
+          "end": 49,
+          "target_start": 0
         }
       ]
     }

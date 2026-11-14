@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "namaz-msjd-jmkran-qm",
   "author": "agent-5",
   "baseline_item_sha256": "c7b7eee26d0ce89787fe0f6ea41a9cbc8061e2afa39df6792676b95072e93641",
-  "plan_sha256": "9841e75ecbf82b88e6c10f6f62a44d717454bd827f72d42788910a8350651c7f",
-  "layout_sha256": "31f9633d551c290922dc0b6444f5f64ca1c2cdd26d8b7bed726bfdd40936cd6c",
+  "plan_sha256": "99094405c3d5720f148fe8893a744ee72f0637c748cefe7e9509fa95b2cbc524",
+  "layout_sha256": "f1e61fa29fa182b0bb78d1930e414e0bb8d365ee549c0cca3c4917367039e954",
   "rows": [
     {
       "original": {
@@ -13,15 +13,24 @@
         "fa": "t23ba89e748705c36bb0da5f1"
       },
       "results": [
-        "r00001"
+        "r00001-sac8d3a493e4cbc88",
+        "m45b4174f0b8eba64ba410021"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "r00001-sac8d3a493e4cbc88",
           "language": "fa",
           "start": 0,
-          "end": 107
+          "end": 90,
+          "target_start": 0
+        },
+        {
+          "row": "m45b4174f0b8eba64ba410021",
+          "language": "fa",
+          "start": 90,
+          "end": 107,
+          "target_start": 0
         }
       ]
     },
@@ -32,21 +41,23 @@
         "fa": "t69a389e1e0dc3d35a67e2526"
       },
       "results": [
-        "r00002-s0b1d6d51987de706",
+        "m45b4174f0b8eba64ba410021",
         "r00002-s1b6302827d557dfb"
       ],
       "ar": [
         {
-          "row": "r00002-s0b1d6d51987de706",
+          "row": "m45b4174f0b8eba64ba410021",
           "language": "fa",
           "start": 0,
-          "end": 919
+          "end": 919,
+          "target_start": 18
         },
         {
           "row": "r00002-s1b6302827d557dfb",
           "language": "ar",
           "start": 919,
-          "end": 982
+          "end": 982,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -54,9 +65,59 @@
           "row": "r00002-s1b6302827d557dfb",
           "language": "fa",
           "start": 0,
-          "end": 65
+          "end": 65,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-sd0076416ed435839",
+        "ar": null,
+        "fa": "t085b69a52e09e07b8c86098f",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m45b4174f0b8eba64ba410021",
+          "language": "fa",
+          "start": 0,
+          "end": 17,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-s0b1d6d51987de706",
+        "ar": null,
+        "fa": "t5f4e81f1517f0f773a159aed",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m45b4174f0b8eba64ba410021",
+          "language": "fa",
+          "start": 0,
+          "end": 919,
+          "target_start": 18
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m45b4174f0b8eba64ba410021",
+      "language": "fa",
+      "target_start": 17,
+      "value": " ",
+      "left": "r00001-sd0076416ed435839",
+      "right": "r00002-s0b1d6d51987de706",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original source text."
     }
   ]
 }

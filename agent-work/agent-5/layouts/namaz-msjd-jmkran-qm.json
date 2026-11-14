@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-msjd-jmkran-qm",
   "author": "agent-5",
-  "plan_sha256": "9841e75ecbf82b88e6c10f6f62a44d717454bd827f72d42788910a8350651c7f",
+  "plan_sha256": "99094405c3d5720f148fe8893a744ee72f0637c748cefe7e9509fa95b2cbc524",
   "rows": [
     {
       "row": "r00001",
@@ -16,6 +16,14 @@
             "part": 0
           },
           "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
         }
       ]
     },
@@ -43,6 +51,17 @@
           "kind": "quotation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-sd0076416ed435839",
+      "right": "r00002-s0b1d6d51987de706",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original source text."
+      }
     }
   ]
 }
