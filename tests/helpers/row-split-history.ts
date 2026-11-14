@@ -24,7 +24,7 @@ export function currentPieces(c: Corpus, item: string, row: string, language: 'a
     const target = current.rows.find(value => value.id === segment.row);
     assert.ok(target && target[segment.language] !== null, `missing mapped field ${item}/${segment.row}/${segment.language}`);
     const start=segment.target_start ?? 0;
-    return { row: target, language: segment.language,
+    return { row: target, language: segment.language, target_start: start,
       text: slicePoints(text(c,target[segment.language]),start,start+segment.end-segment.start) };
   });
   assert.equal(pieces.map(piece => piece.text).join(''), text(c, source[language]),
