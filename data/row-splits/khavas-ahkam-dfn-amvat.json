@@ -1,0 +1,62 @@
+{
+  "format_version": 3,
+  "item": "khavas-ahkam-dfn-amvat",
+  "author": "agent-4",
+  "baseline_item_sha256": "a7eceec19d2dfcf027af1f75e39b18626ef6940e8171baea6e7336338fc793fe",
+  "plan_sha256": "1d015688ec8921305b3af6007f272e08845ed1be67f11ca8d9c3ca9f58e3975c",
+  "layout_sha256": "b426a8d3340e3534a00c6d72c3847d5ba045e9c5c3a27315e0751c2ab149324c",
+  "rows": [
+    {
+      "original": {
+        "id": "r00001",
+        "ar": null,
+        "fa": "tb196cd829fc1ebef80516420"
+      },
+      "results": [
+        "m6dbfd6b323e414d0a8b2579f"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "m6dbfd6b323e414d0a8b2579f",
+          "language": "fa",
+          "start": 0,
+          "end": 75,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002",
+        "ar": null,
+        "fa": "t22153e442b0b20444e77e5be"
+      },
+      "results": [
+        "m6dbfd6b323e414d0a8b2579f"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "m6dbfd6b323e414d0a8b2579f",
+          "language": "fa",
+          "start": 0,
+          "end": 334,
+          "target_start": 76
+        }
+      ]
+    }
+  ],
+  "aliases": [],
+  "insertions": [
+    {
+      "row": "m6dbfd6b323e414d0a8b2579f",
+      "language": "fa",
+      "target_start": 75,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Join the instruction the source split across r00001 and r00002"
+    }
+  ]
+}

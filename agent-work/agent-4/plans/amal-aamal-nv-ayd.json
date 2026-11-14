@@ -1,0 +1,120 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "amal-aamal-nv-ayd",
+  "item_sha256": "23ebfad4762c988f32b3aea6198a7c90e8947638035c8a669f28a50435131251",
+  "author": "agent-4",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "0aff3a07719572300b5c9b2f99091487b0a4047e0bf34185dfb1ea01a9c5058b",
+      "checked": true,
+      "cuts": [
+        21
+      ],
+      "kinds": [
+        "heading",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "5c26902ddba76bcaf20a15c8dea210fa51585ec360f67294dbb5515d85922354",
+      "checked": true,
+      "cuts": [
+        14,
+        64,
+        185
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "7c18fadb4b01bdf225e67559a81f18caaf65735abb6536dd04ad31e7ecce169e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "0d5b623e26b32548a684137e1724705df993db9235887cfb12072c32bf3c18ca",
+      "checked": true,
+      "cuts": [
+        54,
+        231
+      ],
+      "kinds": [
+        "instruction",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "4439e4c73f17f91217b251b0bc969e1ddc2d32012395b36ba1b490345c17ad0c",
+      "checked": true,
+      "cuts": [
+        174
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "d536ff95546b37549f56d143e5855d5dd31c068f652d52a2fe0407064df06edd",
+      "checked": true,
+      "cuts": [
+        140,
+        219,
+        372
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "ac85b2b1d3c024ffb944d524e6b438845bc9433e0c25763c6425f23ddf4fce9b",
+      "checked": true,
+      "cuts": [
+        155,
+        250,
+        392
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00005",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Inspected historical line-break hint at r00005:fa; current boundary and piece semantics verified."
+    }
+  ]
+}

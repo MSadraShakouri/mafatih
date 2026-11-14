@@ -1,0 +1,202 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "ziyarat-amamyn-askryyn-alyhma",
+  "item_sha256": "152f0b110907d07c9487137c74f455c6cdbb9edc66ab53d2a53e2c9b183795b1",
+  "author": "agent-4",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "057cb30f45a64e4543f046290f51ee8934b54a031fd47011c40e8b2d9c9e2949",
+      "checked": true,
+      "cuts": [
+        196
+      ],
+      "kinds": [
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "ff13a0aa145d40012e068025b72792aa0fd1a0a33aa28e6ec615f077c541df1d",
+      "checked": true,
+      "cuts": [
+        156
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "4146d86677caeac1a5dc9af4c9046e88eba850c9f4e494fb0b029210643b4b3f",
+      "checked": true,
+      "cuts": [
+        106
+      ],
+      "kinds": [
+        "note",
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "2802caf2c572aed17ed6d1388e4644bf2d483795f928e6a1da934fda6d59b012",
+      "checked": true,
+      "cuts": [
+        100
+      ],
+      "kinds": [
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "bd3a41518e363dee04a99e9e52c1e5167e42dcfb2863a9216303affb21b5da79",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "ar",
+      "source_sha256": "75c8e9d6708a9f86b1a06e873af99fe78cae7a8a49288e17f8493428eb06000f",
+      "checked": true,
+      "cuts": [
+        213,
+        547
+      ],
+      "kinds": [
+        "recitation",
+        "recitation",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "ed793fddf8a7862e59f7435e6da2a398f185664afe35fff86800eaaa65c811c5",
+      "checked": true,
+      "cuts": [
+        239
+      ],
+      "kinds": [
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "db7f4d80985d69556330f4c76706bb2ff947610b17984e38ec60c19622ae3ef6",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00006",
+      "language": "fa",
+      "source_sha256": "0f545f63ce72485bd3239a7a6c4d51df27cf165001211e2e0842db65d49b6234",
+      "checked": true,
+      "cuts": [
+        287,
+        521,
+        729,
+        960
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction",
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00007",
+      "language": "fa",
+      "source_sha256": "05db1d1bbc2c3943b5c3067ebe9b207a2452feddafed50fe13055234ecb53729",
+      "checked": true,
+      "cuts": [
+        236,
+        445,
+        649,
+        861
+      ],
+      "kinds": [
+        "instruction",
+        "instruction",
+        "note",
+        "instruction",
+        "note"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "ar",
+      "source_sha256": "3a9f3542aebc253151a897b10a3858e4f9ef5dc36bc09cd566b719f0b867e3bd",
+      "checked": true,
+      "cuts": [
+        375
+      ],
+      "kinds": [
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00008",
+      "language": "fa",
+      "source_sha256": "f9ef885a45da124be1524f0b350e85a0908024b9a1bf38b8711c11b6033ac3a5",
+      "checked": true,
+      "cuts": [
+        140
+      ],
+      "kinds": [
+        "note",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00009",
+      "language": "ar",
+      "source_sha256": "c794e82b5934e1b2543a335661780f2d52a32a8a3c3b8da722280760db297947",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00009",
+      "language": "fa",
+      "source_sha256": "ea005a3f8d71327a275c0bd0762b17240da9b414cb0a0fb45ffd446d8acb8604",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00008",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Exact code-point cuts 375; moved parts to destination fields shown in the layout."
+    }
+  ]
+}
