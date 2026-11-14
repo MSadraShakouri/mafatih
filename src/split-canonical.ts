@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { Corpus } from './corpus.js';
-import { ItemSchema, Key, RowFieldsSchema, RowSplitRecordSchema, type Item, type Row, type RowSplitRecord } from './schema.js';
+import { ItemSchema, Key, RowFieldsSchema, RowMergeInsertionSchema, RowSplitRecordSchema, type Item, type Row, type RowSplitRecord } from './schema.js';
 import { AgentPreviewSchema, splitAgentPlan, verifyAgentPreview, type AgentPreview } from './split-agent.js';
-import { validateRowSplitRecords } from './row-splits.js';
+import { spacingBoundaryIssue, validateRowSplitRecords } from './row-splits.js';
 import { codePoints, sha256, slicePoints, textId } from './text-ids.js';
 
 const Language = z.enum(['ar','fa']);
@@ -14,9 +14,11 @@ export const CanonicalLayoutSchema = z.object({
   format_version: z.literal(1), protocol: z.literal('ar-fa-canonical-v1'), item: Key, author: Key,
   plan_sha256: z.string().regex(/^[a-f0-9]{64}$/),
   rows: z.array(z.object({ row: Key, checked: z.boolean(), output: z.array(OutputRow).min(1) }).strict()),
-  // Applied in order to the preceding result. IDs are current physical rows,
-  // and every decision is explicit; no separator is added to either field.
-  merges: z.array(z.object({left:Key,right:Key,checked:z.literal(true)}).strict()).min(1).optional(),
+  // Applied in order to the preceding result. A spacing correction is an
+  // explicit separate editorial proposal; absence means exact concatenation.
+  merges: z.array(z.object({left:Key,right:Key,checked:z.literal(true),spacing:z.object({
+    mode:z.enum(['ar-space','fa-space','both-space']),reason:RowMergeInsertionSchema.shape.reason,
+  }).strict().optional()}).strict()).min(1).optional(),
 }).strict();
 export type CanonicalLayout = z.infer<typeof CanonicalLayoutSchema>;
 
@@ -151,6 +153,7 @@ function mergeCompiledRows(c:Corpus, baseline:Item, initial:Item, split:RowSplit
   });
   const touched = new Set(split.rows.map(entry=>entry.original.id));
   const aliases:NonNullable<RowSplitRecord['aliases']> = [];
+  const insertions:NonNullable<RowSplitRecord['insertions']> = [];
   const value = (ref:string|null):string => {
     if (ref===null) return '';
     const found = texts.get(ref) ?? c.texts.get(ref);
@@ -165,14 +168,20 @@ function mergeCompiledRows(c:Corpus, baseline:Item, initial:Item, split:RowSplit
     const index=rows.findIndex(row=>row.id===decision.left), left=rows[index], right=rows[index+1];
     if (index<0 || !left || !right || right.id!==decision.right) throw new Error('Merge requires two adjacent current rows in source order');
     if (left.kind!==right.kind) throw new Error('Merge requires matching reviewed row kinds');
-    const offsets:Record<Lang,number>={ar:codePoints(value(left.ar)).length,fa:codePoints(value(left.fa)).length};
+    const leftLengths:Record<Lang,number>={ar:codePoints(value(left.ar)).length,fa:codePoints(value(left.fa)).length};
+    const offsets:Record<Lang,number>={...leftLengths}, inserted:Lang[]=[];
     const fields:Record<Lang,string|null>={ar:null,fa:null}, sources:Partial<Record<Lang,string[]>>={};
     for (const lang of ['ar','fa'] as const) {
       if (left[lang]!==null && right[lang]!==null &&
           JSON.stringify(left.sources?.[lang] ?? [])!==JSON.stringify(right.sources?.[lang] ?? []))
         throw new Error(`${lang}: merge would combine different row-level source attributions`);
+      const a=value(left[lang]),b=value(right[lang]);
+      const space=decision.spacing?.mode==='both-space'||decision.spacing?.mode===`${lang}-space`;
+      const boundaryIssue=space?spacingBoundaryIssue(a,b):undefined;
+      if (boundaryIssue) throw new Error(`${lang}: ${boundaryIssue}`);
+      if (space) { offsets[lang]++;inserted.push(lang); }
       if (left[lang]!==null || right[lang]!==null) {
-        fields[lang]=addText(value(left[lang])+value(right[lang]));
+        fields[lang]=addText(a+(space?' ':'')+b);
         const attribution=left[lang]!==null ? left.sources?.[lang] : right.sources?.[lang];
         if (attribution!==undefined) sources[lang]=[...attribution];
       }
@@ -193,6 +202,12 @@ function mergeCompiledRows(c:Corpus, baseline:Item, initial:Item, split:RowSplit
       remap(entry.ar);remap(entry.fa);
     }
     for (const alias of aliases) { remap(alias.ar);remap(alias.fa); }
+    for (const insertion of insertions) if (insertion.row===left.id || insertion.row===right.id) {
+      if (insertion.row===right.id) insertion.target_start+=offsets[insertion.language];
+      insertion.row=id;
+    }
+    for (const language of inserted) insertions.push({row:id,language,target_start:leftLengths[language],value:' ',
+      left:left.id,right:right.id,reason:decision.spacing!.reason});
     for (const [child,second] of [[left,false],[right,true]] as const) {
       // Frozen original IDs already have complete mappings in entries.
       if (originalIds.has(child.id)) continue;
@@ -203,7 +218,8 @@ function mergeCompiledRows(c:Corpus, baseline:Item, initial:Item, split:RowSplit
     rows.splice(index,2,joined);
   }
   const result=ItemSchema.parse({...structuredClone(initial),rows});
-  const record=RowSplitRecordSchema.parse({...split,format_version:2,rows:entries.filter(entry=>touched.has(entry.original.id)),aliases});
+  const record=RowSplitRecordSchema.parse({...split,format_version:insertions.length?3:2,
+    rows:entries.filter(entry=>touched.has(entry.original.id)),aliases,...(insertions.length?{insertions}:{})});
   return {itemId:split.item,item:result,record,texts};
 }
 
