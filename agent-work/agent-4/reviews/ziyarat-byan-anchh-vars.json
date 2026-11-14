@@ -4,11 +4,11 @@
   "item": "ziyarat-byan-anchh-vars",
   "author": "agent-3",
   "reviewer": "agent-4",
-  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
-  "plan_sha256": "e0079a6714f4d0b44408b6a19d733696f7f49a1b2785e3a092c6f5c140068233",
-  "layout_sha256": "1bfb852049f3fcafffcbeb0ca312392edcfe0141c3adf6d9e87acea92e72c314",
-  "result_item_sha256": "f16a93ab6e04dc8f9dd9f5c1f400a8089088604114ec1d81781d1851fd50e6bf",
-  "result_record_sha256": "e223e25d41e4809bc1a038c404f1bb1979584a25cf20c0e7cb3907d0dcad1a0c",
+  "author_commit": "d10ce632b8c86ad825bbc6cc83b6e3a9810c1a86",
+  "plan_sha256": "fc838a067962782fb2ace77639493f156cbd951e64697696af605bf356121f69",
+  "layout_sha256": "a37bb7d4d06a9012afe3c5d1096de48ffe51f2607a66efb463e2b6d30fc305f9",
+  "result_item_sha256": "85eef40001fbec387ebb178ffc60e9002d7a08625274c68fcc98b366a5c8b7f6",
+  "result_record_sha256": "0f4aff5544f4a03da9aa0f57fb1060c75234449111f37d4f3a03baac56860c52",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,28 +16,28 @@
     "item_sha256": "0f09436e20ed05cbaafc086e62e000518d90e77ba3be89e2bee93856f7c145a3",
     "author": "agent-3",
     "reviewer": "agent-4",
-    "preview_sha256": "c42c5c8a00a7514d16d556ff0d0085228ad506e7c3b16193b444be2d9a5a839d",
+    "preview_sha256": "115a16a839f9457d93266680514a1246efdfa6da0f4272caf44e058218c891d0",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Checked r00001/fa: 5 code-point cut(s) 282,461,570,572,603; 6 pieces in source order (note/recitation)."
+        "note": "Rebound to d10ce632; r00001/fa: 5 text piece(s); 4 cut(s) after punctuation punctuation; 0 retained separator(s) attached to preceding piece; kind(s) note/recitation checked against opening clause and reader role; no special reciter/heading label; no orphan piece; 1 language move(s) character-exact; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Checked r00002/fa: 5 code-point cut(s) 373,489,641,662,721; 6 pieces in source order (note)."
+        "note": "Rebound to d10ce632; r00002/fa: 6 text piece(s); 5 cut(s) after punctuation punctuation; 0 retained separator(s) attached to preceding piece; kind(s) note checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Checked r00003/fa: one uncut note piece."
+        "note": "Rebound to d10ce632; r00003/fa: 1 text piece(s); no internal cut; 0 retained separator(s) attached to preceding piece; kind(s) note checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
       }
     ],
     "punctuation": [],
@@ -45,6 +45,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+    "note": "Accepted original row order, explicit source-part destinations, pairings and output kinds for ziyarat-byan-anchh-vars against exact snapshot d10ce632b8c86ad825bbc6cc83b6e3a9810c1a86. Rechecked all four flagged areas: 529 cuts with 0 mid-word and 0 punctuation-free, 0 orphan pieces, 154 language moves, 524 partial-pairing rows and 13 Arabic/Persian boundary mismatches inspected against source boundaries. Kind labels remain conservative agent judgement calls on opening-clause imperative evidence; no unresolved structural defect found. Independent agent assertion only; not human, scholarly, translation-provenance or rights approval."
   }
 }

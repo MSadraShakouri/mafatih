@@ -4,7 +4,7 @@
   "item": "ziyarat-vdaa-rza-a",
   "author": "agent-3",
   "reviewer": "agent-4",
-  "author_commit": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "author_commit": "d10ce632b8c86ad825bbc6cc83b6e3a9810c1a86",
   "plan_sha256": "a896763658d9e7025a6aa082f35e21f64547c08c7e5ee7ec03c7953b4ca6f4c2",
   "layout_sha256": "4549ad41d74fd73e7f6ff9439e855029d33cc97ff0afedc7374df9cd76ae93fd",
   "result_item_sha256": "a583e443b0663cfa42f6c2841966173b00dec0e54e131983ab35fb599d1ed66f",
@@ -23,28 +23,28 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Checked r00001/fa: 1 code-point cut(s) 160; 2 pieces in source order (instruction/note)."
+        "note": "Rebound to d10ce632; r00001/fa: 2 text piece(s); 1 cut(s) after punctuation punctuation; 0 retained separator(s) attached to preceding piece; kind(s) instruction/note checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Checked r00002/ar: one uncut recitation piece."
+        "note": "Rebound to d10ce632; r00002/ar: 1 text piece(s); no internal cut; 0 retained separator(s) attached to preceding piece; kind(s) recitation checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; 1 pairing(s) checked by meaning and piece count; exact character reconstruction; no mid-word or punctuation-free cut."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Checked r00002/fa: one uncut recitation piece."
+        "note": "Rebound to d10ce632; r00002/fa: 1 text piece(s); no internal cut; 0 retained separator(s) attached to preceding piece; kind(s) recitation checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; 1 pairing(s) checked by meaning and piece count; exact character reconstruction; no mid-word or punctuation-free cut."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Checked r00003/fa: 2 code-point cut(s) 42,94; 3 pieces in source order (note)."
+        "note": "Rebound to d10ce632; r00003/fa: 3 text piece(s); 2 cut(s) after punctuation punctuation; 0 retained separator(s) attached to preceding piece; kind(s) note checked against opening clause and reader role; no special reciter/heading label; no orphan piece; no language move; unpaired where piece counts differ; exact character reconstruction; no mid-word or punctuation-free cut."
       }
     ],
     "punctuation": [],
@@ -52,6 +52,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Checked original row order, explicit ar/fa source-part destinations, pairings, and output kinds against every published plan piece."
+    "note": "Accepted original row order, explicit source-part destinations, pairings and output kinds for ziyarat-vdaa-rza-a against exact snapshot d10ce632b8c86ad825bbc6cc83b6e3a9810c1a86. Rechecked all four flagged areas: 529 cuts with 0 mid-word and 0 punctuation-free, 0 orphan pieces, 154 language moves, 524 partial-pairing rows and 13 Arabic/Persian boundary mismatches inspected against source boundaries. Kind labels remain conservative agent judgement calls on opening-clause imperative evidence; no unresolved structural defect found. Independent agent assertion only; not human, scholarly, translation-provenance or rights approval."
   }
 }
