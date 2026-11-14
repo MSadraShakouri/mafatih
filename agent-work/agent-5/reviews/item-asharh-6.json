@@ -21,58 +21,58 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "Standalone invocation; the corresponding Persian opening is at the beginning of r00002/fa, so cross-row mapping needs separate consideration."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "accept",
+        "note": "Arabic introductory recitation; inspect whether smaller meaningful passages are warranted."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "The opening corresponds to r00001/ar; the remainder corresponds to r00002/ar, but the entire Persian field is labeled instruction and placed unpaired. Split at the transition and classify as recitation; cross-row pairing is not directly supported."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "This is the author’s explanatory introduction, not instructions to the reader; the existing cut divides an ongoing list. Reconsider boundaries and note classification, including continuation in r00004."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "Persian narrative in an Arabic field is moved to Persian and classified note."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "revise",
+        "note": "The standalone Persian title or title rendering is not an instruction; note or heading should be considered in context."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "The introductory formula and quoted verse are separated into note and quotation; the Arabic introductory formula was moved to Persian and needs a destination review."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "accept",
+        "note": "The translation includes an introductory formula and verse reference; inspect whether the boundaries and pairing match the Arabic pieces."
       },
       {
         "row": "r00006",
@@ -84,65 +84,65 @@
       {
         "row": "r00007",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "Chapter heading moved to the Persian field."
       },
       {
         "row": "r00008",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "Chapter heading moved to the Persian field."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "A chapter heading is cut between its first word and ordinal, and classified note then instruction. Reconsider as one heading."
       },
       {
         "row": "r00010",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "A chapter heading is cut between its first word and ordinal, and classified note then instruction. Reconsider as one heading."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "A chapter heading is cut between its first word and ordinal, and classified note then instruction. Reconsider as one heading."
       },
       {
         "row": "r00012",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "revise",
+        "kind": "revise",
+        "note": "A chapter heading is cut between its first word and ordinal and labeled note; r00013 continues this same heading. Preserve the cross-row continuation."
       },
       {
         "row": "r00013",
         "language": "ar",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "revise",
+        "note": "Persian continuation of the preceding chapter heading is moved to Persian but classified instruction; heading is more consistent."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "accept",
+        "kind": "accept",
+        "note": "Closing-section heading."
       },
       {
         "row": "r00015",
         "language": "fa",
-        "split": "pending",
-        "kind": "pending",
-        "note": ""
+        "split": "uncertain",
+        "kind": "uncertain",
+        "note": "Closing authorial request: inspect whether it should be note or instruction and whether further cuts are useful."
       }
     ],
     "punctuation": [],
@@ -181,6 +181,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00006/ar: Persian editorial prose is classified as recitation; note is more appropriate. Other rows remain pending."
+    "note": "r00002/fa mixes the translation of r00001 and r00002 and is labeled instruction; r00005/ar part 0 moves an Arabic formula to fa; r00006 and r00009–r00013 have incorrect prose/heading labels and heading cuts. Cross-row pairing is not directly supported; inspect before revising."
   }
 }
