@@ -6,6 +6,7 @@ import {loadCorpus,text} from '../src/corpus.js';
 import {normalizeSearch} from '../src/normalize.js';
 import {IncrementalSearch,type SearchIndex,type SearchShard} from '../src/search.js';
 import {corpusBeforeRowSplits,currentPieces,historicalRow} from './helpers/row-split-history.js';
+import {codePoints,slicePoints} from '../src/text-ids.js';
 
 // Build now, rather than relying on potentially stale generated artifacts.
 before(()=>{execFileSync(process.execPath,['--import','tsx','scripts/build-data.ts'],{stdio:'pipe'});});
@@ -153,9 +154,14 @@ test('generated reader, search, navigation and English data use the corrected ca
         if (piece.row.kind === 'audio-reciter') {
           assert.equal(built, undefined); assert.equal(indexed, undefined); continue;
         }
-        assert.equal(built?.[piece.language], piece.text);
-        assert.equal(indexed?.text, piece.text);
-        assert.equal(indexed?.normalized, normalizeSearch(piece.text));
+        // A piece may be a slice of a row that later merged with neighbours:
+        // the corrected occurrence must sit verbatim at its recorded offset,
+        // while the built row and the search record carry the whole row text.
+        const whole: string | undefined = built?.[piece.language];
+        assert.ok(whole !== undefined, `missing built field ${location.item}/${piece.row.id}/${piece.language}`);
+        assert.equal(slicePoints(whole, piece.target_start, piece.target_start + codePoints(piece.text).length), piece.text);
+        assert.equal(indexed?.text, whole);
+        assert.equal(indexed?.normalized, normalizeSearch(whole));
         rows += 1;
       }
     } else if (location.kind === 'english-paragraph') {
