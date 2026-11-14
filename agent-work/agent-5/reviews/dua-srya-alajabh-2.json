@@ -1,0 +1,246 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "dua-srya-alajabh-2",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "600f0c36774894d3d1acf50c66c469a6ced6d7d778794e6426e14a7bdf6c3048",
+  "layout_sha256": "100a45cad37cdcdb4ffa476494c9b56bf2405f4d22021148447a631a0c4ac6c4",
+  "result_item_sha256": "a318cdac0a91223dc29680c24abad8aa7b544204f30bd5a737078354ab65d8fd",
+  "result_record_sha256": "10af2f1802d36c54ab92f94fa729049bb82623faefa78231f0131e1d242ce4b3",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "dua-srya-alajabh-2",
+    "item_sha256": "7d718839c065cef6687d9dbf8316b680985909922f0e00a2205a99370a218828",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "459c7537ada1392b0dbfec5c1afaf3dc042c6afb04938fe971172c26378bb2a6",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Fourteenth label, reported conversation and the final instruction to say the prayer are combined in one instruction; distinguish the heading, report and direction. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired prayer ends with a noun whose relative clause begins r00003; consider a link-safe join at that actual clause boundary. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired prayer ends with a noun whose relative clause begins r00003; consider a link-safe join at that actual clause boundary. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin by continuing the previous prayer phrase; preserve source text when regrouping. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin by continuing the previous prayer phrase; preserve source text when regrouping. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The Persian explicitly tells the reader to substitute a personal request; this is an instruction rather than note. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The fifteenth label and reported attribution are followed by a recitation direction; distinguish the roles. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired invocation ends الْغَفُورُ / آمرزنده and its companion attribute begins r00007. Group the interrupted sequence if link-safe. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired invocation ends الْغَفُورُ / آمرزنده and its companion attribute begins r00007. Group the interrupted sequence if link-safe. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Opening completes the invocation begun r00006; no translation needs to be invented. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Opening completes the invocation begun r00006; no translation needs to be invented. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired prayer ends at اللهم صل / خدایا and r00009 continues the blessing. Group the interrupted supplication while preserving links. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The paired prayer ends at اللهم صل / خدایا and r00009 continues the blessing. Group the interrupted supplication while preserving links. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes the blessing begun r00008 and the closing phrase continues in r00010. Keep matched Arabic and Persian when joining. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes the blessing begun r00008 and the closing phrase continues in r00010. Keep matched Arabic and Persian when joining. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This short Arabic and Persian continuation completes r00009; it should not stand as an incomplete fragment. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This short Arabic and Persian continuation completes r00009; it should not stand as an incomplete fragment. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The sixteenth label and narrated conversation precede a recitation lead-in; distinguish the reported account and practice heading from reader instruction. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer and existing Persian rendering are paired as one coherent passage. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer and existing Persian rendering are paired as one coherent passage. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "This is a reported transition attributing the next words; note is appropriate. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer and existing Persian rendering are paired; its final request uses the source placeholder. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic prayer and existing Persian rendering are paired; its final request uses the source placeholder. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The seventeenth label and narrated request precede the brief recitation direction; distinguish them by content rather than treating all as instruction. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its existing Persian rendering correspond and are paired. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its existing Persian rendering correspond and are paired. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The eighteenth label introduces a narrated attribution; separating the label from the report would expose the new practice without a length-only cut. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The final Arabic verb واحطط and Persian سنگینی are completed in r00019; group the interrupted prayer with its matching Persian. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The final Arabic verb واحطط and Persian سنگینی are completed in r00019; group the interrupted prayer with its matching Persian. Assessment applies to the fa source."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This short continuation completes the prior Arabic and Persian clause; retain all source words. Assessment applies to the ar source."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This short continuation completes the prior Arabic and Persian clause; retain all source words. Assessment applies to the fa source."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "Existing Arabic/Persian prayers are paired, but r00002/03, r00006/07, r00008/09, r00009/10 and r00018/19 interrupt specific phrases across source rows. r00004 is a substitution instruction misclassified as note; r00001/r00005/r00011/r00015 mix numbered headings, reported speech and directions, and r00017 embeds a label in a report. Preserve old row IDs; requests are based on precise transitions, not length."
+  }
+}

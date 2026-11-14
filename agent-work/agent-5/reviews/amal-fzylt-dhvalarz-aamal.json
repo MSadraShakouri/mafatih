@@ -1,0 +1,189 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-fzylt-dhvalarz-aamal",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "e9c5f9f35c206b5c793e538ba875c29e123187291341108b47f3a2436d7e5c7b",
+  "layout_sha256": "7d09d2105bf0305f0a4df7ac8f5b63df7b724c0fa607ae2da7c0d85c7b86ad73",
+  "result_item_sha256": "d8f37e933ed2c9057ef04636aff35f38a30b7de20fa48681a9f29429d90253d4",
+  "result_record_sha256": "c0b91c8c6cf2c73b9994829b97bc4d454d2e672cdd9addb349cd0005947e0c2f",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-fzylt-dhvalarz-aamal",
+    "item_sha256": "39d663557477ea358d9509c34f9addae9d005d8a0871f31b83e8938bc533d6e7",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "ccbdb598bd889abae0d23636a801019311d61ab99ec4dee1573e9ee93beab933",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The night heading and narrated account are followed by a report of merit and another prediction; the final part is reported narrative rather than instruction. It also continues the preceding sentence."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The day heading and reported merits are classified instruction despite being narrative; both pieces and r00003 form a continuous account. Distinguish the label and report."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Opening completes the r00002 report, then the text introduces two practices. Classify the report separately from the practical list."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first practice label and actual prayer directions share one row; distinguish the label and the directions while retaining the source."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The formula is Arabic recitation; it has an existing Persian rendering currently detached."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the Persian rendering of the formula, not a note; pair it with r00005/ar if link-safe."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian direction is moved into the Persian slot and the Arabic prayer remains recitation."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The Persian is the existing rendering of the following Arabic supplication, not an instruction."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The second numbered label and a recommendation to read a specific prayer share a heading; distinguish heading from the instruction or source report."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "This Arabic invocation ends كاشف and continues in r00009 with كل كربة; its existing Persian is detached."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The Persian is the prayer rendering, not a note; برطرف‌کننده continues هر گرفتاری in r00009."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first piece completes r00008 and three Arabic pieces have different boundaries from the Persian rendering; regroup matching clauses while preserving IDs."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces render the Arabic prayer, not instruction or note; opening continues r00008 and boundaries differ."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic invocation and later petition correspond to the existing Persian pieces, but are detached. Its final اللهم continues into r00011."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces are Persian prayer renderings, not note/instruction; the final خدایا continues the prayer in r00011."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first piece continues r00010; four Arabic pieces do not all match the four Persian boundaries. The final prayer continues r00012."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "These pieces render the prayer, not notes/instructions. Their boundaries cross the Arabic divisions and the ending continues into r00012."
+      },
+      {
+        "row": "r00012",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening continues r00011 and the three Arabic pieces should be aligned to corresponding existing Persian."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "These are prayer renderings rather than note/instruction; the first completes r00011 and cut positions differ from Arabic."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "The author reports Mirdamad’s assessment of the visitation’s merit; the current instruction label does not match its narrated form."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The historical sentence ends امام جواد and continues with his honorific and death report in r00015; preserve and regroup the source boundary."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first piece completes r00014 historical report, not instruction; later pieces include narrative and a reported prayer embedded within narrative. Distinguish quotation from account and preserve all published child IDs."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The Persian instruction prefix was correctly relocated from the Arabic source to the Persian slot; the existing Persian rendering of the following prayer still needs appropriate role and pairing."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The existing Persian prayer renderings r00005/r00006 and r00008-r00012 are detached and misclassified as notes/instructions; Arabic and Persian cuts must be aligned, especially source continuations r00008/09, r00010/11 and r00011/12. r00001-r00003 and r00013-r00015 include historical reports classified as instructions, with r00014/15 interrupting the name. Distinguish numbered headings, narrative and actual directions. Preserve all previously published IDs and escalate migration or adjacency blockers."
+  }
+}
