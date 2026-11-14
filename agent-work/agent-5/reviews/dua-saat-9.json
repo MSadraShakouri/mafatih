@@ -4,7 +4,7 @@
   "item": "dua-saat-9",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "08b53e1f4baf13185d55eafbde91ae3f6b244c098242c0bccaa99e367231bf22",
   "layout_sha256": "3ab10fd31fb6510b8cce88d6fdecda8093cee0d499bbc85306e9cd24407b0857",
   "result_item_sha256": "4b6ef862318df8d2344a11f3a1eb1d951a0620003364a38b1db81fd8c13f157f",
@@ -21,44 +21,44 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ninth-hour timing and attribution are source context. Reviewed fa source."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The internal cut marks the request; its Arabic salutation is incomplete at the end and is completed in r00003 while Persian already renders it here. Reviewed ar source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The internal cut marks the request; its Arabic salutation is incomplete at the end and is completed in r00003 while Persian already renders it here. Reviewed fa source."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first Arabic word completes the blessing begun in r00002 while the Persian has rendered it there; keep the passage together and align the attributes. Reviewed ar source."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first Arabic word completes the blessing begun in r00002 while the Persian has rendered it there; keep the passage together and align the attributes. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "The timing and prayer transition are sound, but the Arabic honorific is interrupted between r00002 and r00003 while the Persian keeps its full rendering in r00002. Group coherently and retain IDs."
   }
 }
