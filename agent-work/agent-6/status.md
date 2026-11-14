@@ -1,7 +1,8 @@
 # agent-6 status
 
-**State: 45 JOINS APPLIED AND WAITING FOR AGENT-1'S REVIEW; LINK MAPPINGS RECOMPUTED
-AND WAITING FOR THE COORDINATOR'S MIGRATION; 20 ITEMS HELD FROM FINAL RELEASE.**
+**State: 45 JOINS ACCEPTED BY AGENT-1; AGENT-5 SNAPSHOTS UP TO `f192ee09` MERGED AND
+REVIEWED (101 COMPLETE, 14 NEED WORK); LINK MAPPINGS RECOMPUTED AND WAITING FOR THE
+COORDINATOR'S MIGRATION; 20 ITEMS HELD FROM FINAL RELEASE.**
 Updated 2026-11-14 (UTC).
 
 - Branch: `arena/1a493a80-mafatih`
@@ -26,7 +27,11 @@ Updated 2026-11-14 (UTC).
 - Published the isolated snapshot and asked agent-1 to review every one of the
   84 spaces separately, and to judge the six Arabic-only joins against the
   actual merged rows (he had argued that five of them need a space in Persian
-  too). If he rejects a mode I redo that join and send a new snapshot.
+  too).
+- Result: agent-1 accepted all 45 joins and all 84 spaces (his message
+  `a1f21241`). He withdrew his five corrections after checking the merged rows,
+  checked every junction (82 Arabic, 73 Persian), and rebound all 115 of his
+  review records to `3e35f4ca` with 178 spacing decisions and no failure.
 - The table of joins, with the merged row IDs and the offset of every space, is
   `agent-work/agent-6/proposals/held-joins.json`.
 
@@ -79,36 +84,65 @@ with `historical-row-links.json`, `reused-row-ids.json` and
 ## Where my own 115 items stand
 
 - All 115 are authored; `audit-authored` reports 115 of 115 complete.
-- Latest isolated snapshot: `3e35f4ca2d8491e2e3b3111672a42edb84b1e619`, sent to
-  agent-1 and not reviewed yet. The one before, `df85a685`, was accepted and
-  merged by agent-1; 93 of the 115 items are unchanged since it.
+- Latest isolated snapshot: `3e35f4ca2d8491e2e3b3111672a42edb84b1e619`. agent-1
+  reviewed and accepted it; nothing is open between us on the joins.
 - Of 243 places where an original row boundary cuts an Arabic sentence: 97 joins
   are applied (52 earlier, 45 now), 146 are left as they are.
-- agent-1 pre-read the 45 pairs and found all 45 justified. His one objection
-  (five Arabic-only joins would glue Persian words) is open: I believe it does
-  not apply, because each join merges only the last piece of one row with the
-  first piece of the next and one of the two has no Persian. The decision is
-  his, on the actual merged rows.
+- 20 items stay held from final release until the coordinator's link migration
+  is applied and validated (list in the section on historical links). After the
+  migration I publish a new snapshot and agent-1 rebinds the items concerned.
 
 ## Where my review of agent-5's 115 items stands
 
-- 80 complete, 35 need work, 0 errors (`verify-review`).
-- Every record names an isolated agent-5 snapshot that is merged here, so
-  `audit-round` can reach all of them: 112 name `4aae1ccd`, 2 name `8121f9b2`,
-  1 names `48f3ea69`.
-- Merges of agent-5's snapshots: `fe5d86d0` and `fe0f3878`. No conflicts. Only
-  agent-5's files changed. `npm run check` passed after each (277 tests, 274
-  pass, 0 fail, 3 skipped).
-- The 35 open records each carry a specific pairing, slot or kind finding. All
-  181 of my earlier requests that rested on sentence and clause counts are
-  withdrawn, as the coordinator directed.
-- 13 joins that I asked for in agent-5's items were held by the same pinned test.
-  With `55ef3fe4` they should no longer be blocked; agent-5 has not applied them
-  yet.
+- 101 complete, 14 need work, 0 errors (`verify-review`, all 115 records).
+- Every record names an isolated agent-5 snapshot that is merged here: 89 name
+  `4aae1ccd`, 2 name `8121f9b2`, 1 names `48f3ea69`, 17 name `b81241ae`,
+  6 name `f192ee09`.
+- Merges of agent-5's snapshots: `fe5d86d0`, `fe0f3878`, `6f178ea2` (the chain
+  `5fdda3a7`, `1bf2e925`, `d28d23e5`, `85268da2`, `b81241ae`) and `175d6327`
+  (`f192ee09`). No conflicts. Only agent-5's files changed; every changed file
+  equals the snapshot; no pooled value was lost. `npm run check` passed after
+  each of the last two (278 tests, 275 pass, 0 fail, 3 skipped).
+- Last round (23 changed items): 21 complete, 2 need work. All 34 new proposed
+  spaces are accepted, each checked against the two joined pieces and by code
+  point. The 13 joins that the pinned test used to hold are applied and correct.
+  No row ID published in agent-5's earlier snapshots was lost (1,259 checked).
+- The 14 open records:
+  - Author fixes, link-safe (12): `amal-ahd-bhshty`, `amal-daahay-sjdh-shkr`,
+    `dua-daa-aymny-shr`, `dua-iftitah`,
+    `fazilat-svrhqdrvtryqtfryqmrtbhmrtbhanbrshbanhrvz`, `item-asharh-5`,
+    `item-avzh-kyk-kk`, `item-azn-dkhvl-hrmhay`, `khavas-avzat-drd-chshm`,
+    `khavas-tlqyn-myt`, `ziyarat-adab`, `ziyarat-fzylt-jafr-hrm`. Each rests on
+    a specific point: a numbered section that starts inside a prose row, an
+    Arabic sentence left in the Persian slot, or an Arabic piece beside Persian
+    that renders other words. None rests on length or on counts.
+  - Kind questions for the coordinator, nothing for the author (2):
+    `dua-vdaa-hsyn-alyh`, `item-mrsyh-am-albnyn`.
+  - Waiting for alias tooling: the kind of `dua-daa-aymny-shr` r00009 and of
+    `khavas-avzat-drd-chshm` r00011. A kind change on a cut piece gives it a new
+    row ID and retires the published one, so I ask agent-5 not to change them
+    yet.
+- Offered to agent-5 and not required: four more joins of sentences broken
+  across source rows (`amal-aamal-rmzan-2` r00002 with r00003 and r00006 with
+  r00007, `ziyarat-mshtrk-kazmyn-alyhma` r00003 with r00004,
+  `ziyarat-mvsy-kazm-rza` r00003 with r00004). My own items keep breaks of the
+  same sort, so I do not hold his items for them.
+- The earlier link audit of agent-5's items stands: 16 retired row IDs in 12
+  items still do not resolve. That is the same tooling gap as in my items.
+- A warning that is not new: `npm run validate` reports 85 unreferenced pooled
+  text values. It was 86 before this round, and this round added none. I traced
+  71 of the 85 to earlier isolated snapshots (64 to my `561fdfb0`, the rest to
+  my other early snapshots and to agent-5's first one): they are the texts of
+  rows that were later cut again. 14 I did not trace. Nothing is missing. I
+  suggest keeping them until the link migration is validated, because they are
+  the old texts behind the retired row IDs; removing them is a step for the
+  coordinator's final integration, not for one agent's branch.
 
 ## What I am waiting for
 
-- agent-1: the review of snapshot `3e35f4ca`, one decision per proposed space.
+- agent-1: nothing. His review of snapshot `3e35f4ca` is done.
+- agent-5: the two fixes of the last round (`khavas-tlqyn-myt`,
+  `dua-daa-aymny-shr`) and the ten older author fixes, as isolated snapshots.
 - The coordinator: the link migration (points 2 and 3) and points 4 to 6 above.
 
 I have no other task I am allowed to start; the remaining join candidates were
