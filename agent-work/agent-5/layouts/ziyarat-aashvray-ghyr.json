@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-aashvray-ghyr",
   "author": "agent-5",
-  "plan_sha256": "79b680cd5c8c1930c836bee5d9b787918840057a4db8d1d5b10cc4ae1042b04f",
+  "plan_sha256": "808b526cb89dccc92d742940243305b81fbc6305b1533dc083752532cadf7624",
   "rows": [
     {
       "row": "r00001",
@@ -1470,6 +1470,33 @@
       "spacing": {
         "mode": "both-space",
         "reason": "Separate words at original r00011/r00012 continuation"
+      }
+    },
+    {
+      "left": "r00002-sef600e9602dc9c39",
+      "right": "r00003-s3a5c66537d9f28c5",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00002/r00003 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00006-se56c0bd8af03b316",
+      "right": "r00007-sb13bc65dd76f169b",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate the complete words at the r00006/r00007 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00014-s30d7521ced3cc2a9",
+      "right": "r00015-s847abda1272bdf4e",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the r00014/r00015 source-row boundary when grouping the interrupted passage; retain all original text."
       }
     }
   ]

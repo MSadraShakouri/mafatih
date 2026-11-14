@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-nudba",
   "author": "agent-5",
-  "plan_sha256": "68c51f4c8b739f64508076912012bcf82e489af202f5a5d781d09219920841f8",
+  "plan_sha256": "f8f951fc8eac05477bafbea3faacdb57ec4f1c75585fa2e992bce00b5db6f55a",
   "rows": [
     {
       "row": "r00001",
@@ -4661,6 +4661,51 @@
       "spacing": {
         "mode": "ar-space",
         "reason": "Separate words at original source row continuation"
+      }
+    },
+    {
+      "left": "r00039-sb95e8330b98b3873",
+      "right": "r00040",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the r00039/r00040 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00055-sa9848df065092bea",
+      "right": "r00056",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the r00055/r00056 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00122-s90ab492204f4457b",
+      "right": "r00123",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the r00122/r00123 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00155-sfab63c002f88b161",
+      "right": "r00156-s6801796ad27c2ec9",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the r00155/r00156 source-row boundary when grouping the interrupted passage; retain all original text."
+      }
+    },
+    {
+      "left": "r00156-s94fdf1b82fabbe7d",
+      "right": "r00157",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "Separate the complete words at the r00156/r00157 source-row boundary when grouping the interrupted passage; retain all original text."
       }
     }
   ]
