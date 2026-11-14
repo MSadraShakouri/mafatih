@@ -1,0 +1,603 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-mtlqh-amyrmvmnyn-alyh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "plan_sha256": "c927f8f7c85b5dfe9c58d36c2713bd08bd19ed8c5ef466bd65aaff1bb1a48cf0",
+  "layout_sha256": "9b5d05d8c4fa18266542b79f59586af20732374787c1a30ce81f2bad1e3f2ce9",
+  "result_item_sha256": "bff74a20752539b20745afc5d07b7acdb8f17f09ce693cd6c7d215b3d26989bb",
+  "result_record_sha256": "672b7827ec246dc111a2844f53c63d08fb648ea246c86efd4265be53918e3543",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-mtlqh-amyrmvmnyn-alyh",
+    "item_sha256": "84d5ec49f5cdc5ad8a88feef235729f137ccbbd3196d93ad4b666ec3c79cdda3",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "2df4230a0b997f544e0b62bfea699aa639b37254785aedf034d1b2514bcbb0b5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: چون به دروازه نجف برسی بگو: «الْحَمْدُ للّه الَّذِی هَدَان Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: خدا را سپاس که ما را به این جایگاه راهنمایی کرد، و نمی‌توا Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: پس داخل شهر شو، و بگو: Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: اَلْحَمْدُ للّه الَّذِی أَدْخَلَنِی هَذِهِ الْبُقْعَةَ الْ Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: سپاس خدای را که مرا وارد کرد به این بقعه مبارکه‌ای که خدا  Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The instruction is correctly separated and moved to Persian, but both prayer fields stop mid-phrase and continue in r00005. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The instruction is correctly separated and moved to Persian, but both prayer fields stop mid-phrase and continue in r00005. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial Arabic verb and Persian آمدم complete the paired invocation in r00004. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial Arabic verb and Persian آمدم complete the paired invocation in r00004. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: چون به در صحن رسیدی بگو: Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: اَللّٰهُمَّ إِنَّ هٰذَا الْحَرَمَ حَرَمُكَ، وَ الْمَقامَ م Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: خدایا این حرم، حرم توست، و مقام، مقام توست، و من وارد آن م Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00008",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The courtyard direction is correctly separated, but the final praise of God continues in both languages into r00009. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The courtyard direction is correctly separated, but the final praise of God continues in both languages into r00009. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00009",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin with the relative clause completing r00008’s final praise. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00009",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin with the relative clause completing r00008’s final praise. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00010",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: چون به رواق برسی بایست و بگو: اَلسَّلامُ عَلَیٰ رَسُولِ ال Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00010",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: سلام بر رسول خدا، امین خدا بر وحی‌اش، و واجبات دستورش، ختم Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00011",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: اَلسَّلامُ عَلَیٰ صاحِبِ السَّكِينَةِ؛ اَلسَّلامُ عَلَیٰ ا Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00011",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: سلام بر دارنده آرامش، سلام بر دفن شده در مدینه، سلام بر یا Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00012",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: پس وارد رواق شو، و وقت ورود پای راست را مقدّم بدار، و بر د Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00013",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The entry invocation ends before the description of the resident angels is complete in both languages; r00014 continues it. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00013",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The entry invocation ends before the description of the resident angels is complete in both languages; r00014 continues it. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00014",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin by completing r00013’s incomplete entry request; preserve the bracketed variant. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both fields begin by completing r00013’s incomplete entry request; preserve the bracketed variant. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: پس عتبه را ببوس، و پای راست را برای وارد شدن مقدّم بدار، و Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: بِسْمِ اللّه وَ بِاللّه، وَ فِی سَبِیلِ اللّه، وَ عَلَی مِ Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: به نام خدا، و با خدا، و در راه خدا، و بر کیش رسول خدا (درو Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00017",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction was correctly moved to Persian, but the salutation’s sequence of descriptions continues in r00018. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00017",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction was correctly moved to Persian, but the salutation’s sequence of descriptions continues in r00018. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00018",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial descriptors and blessing complete the paired salutation started in r00017. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00018",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial descriptors and blessing complete the paired salutation started in r00017. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00019",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The blessing after the salutation ends at Arabic رحمة and Persian رحمت, completed in r00020. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00019",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The blessing after the salutation ends at Arabic رحمة and Persian رحمت, completed in r00020. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00020",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first words complete r00019’s paired blessing; the rest of the salutations remain in order. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00020",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first words complete r00019’s paired blessing; the rest of the salutations remain in order. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00021",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: اَلسَّلامُ عَلَىٰ خاصَّةِ اللّٰهِ مِنْ خَلْقِهِ، اَلسَّلام Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00021",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: سلام بر خاصّه خدا از میان خلقش، سلام بر دارندگان صفات شایس Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00022",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The instruction is moved correctly; both fields split the greeting after سلام, before its continuation in r00023. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00022",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The instruction is moved correctly; both fields split the greeting after سلام, before its continuation in r00023. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00023",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00022’s greeting; the description continues from this row into r00024. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00023",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00022’s greeting; the description continues from this row into r00024. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00024",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first coordinated descriptions continue r00023; the end leaves the phrase for successors of prophets incomplete until r00025. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00024",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first coordinated descriptions continue r00023; the end leaves the phrase for successors of prophets incomplete until r00025. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00025",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial word completes r00024 in both fields; the following grave prayer and farewell remain paired. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00025",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial word completes r00024 in both fields; the following grave prayer and farewell remain paired. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00026",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction is separated correctly but the paired petition ends at the incomplete وسعة / وسعت, continued in r00027. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00026",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction is separated correctly but the paired petition ends at the incomplete وسعة / وسعت, continued in r00027. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00027",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial phrase completes r00026’s petition in both languages; retain the wording of the supplied rendering. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00027",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The initial phrase completes r00026’s petition in both languages; retain the wording of the supplied rendering. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00028",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The last paired invocation begins a contrasting phrase continued in r00029. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00028",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The last paired invocation begins a contrasting phrase continued in r00029. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00029",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00028’s paired invocation before a new supplication. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00029",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00028’s paired invocation before a new supplication. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00030",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction was correctly moved; the last paired testimony is unfinished after وجعلك / تو را and continues in r00031. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00030",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction was correctly moved; the last paired testimony is unfinished after وجعلك / تو را and continues in r00031. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00031",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both openings complete the testimony from r00030. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00031",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both openings complete the testimony from r00030. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00032",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: پس پایین پا بایست، و بگو: اَلسَّلامُ عَلَىٰ أَبِي الْأَئِم Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00032",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: سلام بر پدر امامان، و همراه نبوت، و اختصاص‌یافته به برادری Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00033",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The one-word Persian transition is unfinished and continued by the instruction fragment in r00034. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00034",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian instruction begins by completing r00033; the following prayer and supplied rendering remain paired. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00034",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian instruction begins by completing r00033; the following prayer and supplied rendering remain paired. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00035",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: پس به جانب سر برگرد برای زیارت حضرت آدم (عَلَیهِ السَّلَام Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00036",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The greeting is interrupted after السلام / سلام and completed in r00037. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00036",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The greeting is interrupted after السلام / سلام and completed in r00037. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00037",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00036’s paired greeting. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00037",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00036’s paired greeting. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00038",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: و در زیارت نوح (عَلَيهِ السَّلَامُ) نیز بگو: اَلسَّلامُ عَ Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00038",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: سلام بر تو ای پیامبر خدا، سلام بر تو ای برگزیده خدا، سلام  Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00039",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: آنگاه شش رکعت نماز بخوان، دو رکعت برای امیر مؤمنان (عَلَیه Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00040",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: اَللّٰهُمَّ إِنِّي صَلَّيْتُ هاتَيْنِ الرَّكْعَتَيْنِ، هَد Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00040",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The practical direction or devotional text and its supplied rendering remain in source order: خدایا من این دو رکعت نماز را خواندم، به عنوان هدیه‌ای از م Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00041",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction is properly moved to Persian, but the supplication ends at an incomplete clause in both languages, continued in r00042. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00041",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The direction is properly moved to Persian, but the supplication ends at an incomplete clause in both languages, continued in r00042. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00042",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00041’s paired request; preserve the supplied imperfect Persian without invention. Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00042",
+        "language": "fa",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The opening completes r00041’s paired request; preserve the supplied imperfect Persian without invention. Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00043",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: پس طرف راست صورت را بر زمین بگذار و بگو:ارْحَمْ ذُلِّی بَی Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00043",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: رحم کن به خواری‌ام در برابرت، و زاری‌ام به درگاهت و به ترس Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00044",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: آنگاه جانب چپ صورت را بر زمین بگذار و بگو:لا إِلَهَ إِلّا  Reviewed ar source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00044",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The separated practical direction and paired recitation remain in source order: معبودی جز تو نیست به راستی به راستی، ای پروردگارم از باب ب Reviewed fa source; preserve original wording and reported variations."
+      },
+      {
+        "row": "r00045",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Practical steps are mixed with explanations that this is a place of supplication and forgiveness; distinguish instructions from explanatory comment without treating the source as verification. Reviewed fa source; preserve original wording and reported variations."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "The directions are generally moved to Persian and prayers paired. However unfinished paired phrases cross r00004/05, 08/09, 13/14, 17/18, 19/20, 22/23, 23/24/25, 26/27, 28/29, 30/31, 36/37 and 41/42; the short instruction r00033 also continues into r00034. Separate r00045 directions from explanations. Keep source imperfections and bracketed variants, preserve published IDs and escalate unsupported migration."
+  }
+}
