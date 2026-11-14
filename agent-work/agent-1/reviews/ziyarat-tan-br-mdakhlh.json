@@ -23,49 +23,49 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 2 pieces (2 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 2 pieces (1 cut), kind note; single-language; 2 in a row the source stores in this language only; lengths 511/161. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 8 pieces (4 explanatory note + 4 quotation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 6 pieces (7 cuts), kind note+quotation; single-language; 6 in a row the source stores in this language only; lengths 126/258/51/176/300/3; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 4 pieces (1 quotation + 3 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 4 pieces (3 cuts), kind quotation+note; single-language; 4 in a row the source stores in this language only; lengths 41/444/318/245; 1 piece carry more than one sentence and are kept as one passage in the manual-v1 style. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 1 piece (1 explanatory note); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 1 piece (0 cuts), kind note; single-language; 1 in a row the source stores in this language only; lengths 36. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00005",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 4 pieces (2 devotional recitation + 1 explanatory note + 1 quotation); 3 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 3 pieces (3 cuts), kind recitation+quotation; 3 paired with the other language in the same output rows; lengths 39/56/69. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 4 pieces (2 devotional recitation + 1 explanatory note + 1 quotation); 3 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 5 pieces (3 cuts), kind recitation+note+quotation; 3 paired with the other language in the same output rows; 2 left unpaired where the language rows cross; lengths 30/49/8/9/59. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 3 pieces (2 explanatory note + 1 devotional recitation); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 2 pieces (2 cuts), kind note; single-language; 2 in a row the source stores in this language only; lengths 79/151. Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -73,27 +73,27 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The recorded mixed-language at r00002/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The recorded mixed-language at r00002/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The recorded mixed-language at r00005/ar is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+        "note": "The ar field holds text in the other language here; it is placed in that language's slot as recitation with its wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 3,
         "decision": "addressed",
-        "note": "The recorded mixed-language at r00006/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+        "note": "The fa field holds text in the other language here; it is placed in that language's slot as note with its wording and word order untouched, so nothing is translated or reordered."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "5 of 6 rows are split and 1 kept whole. 4 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 20 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+    "note": "All 7 sources are placed once, in order: 23 output rows, 3 of them carrying Arabic and Persian together. Piece lengths run 56 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
   }
 }

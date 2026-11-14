@@ -23,35 +23,35 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 heading + 1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 2 pieces (1 cut), kind heading+instruction; single-language; 2 in a row the source stores in this language only; lengths 12/104. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 12 pieces (12 devotional recitation); 12 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 12 pieces (11 cuts), kind recitation; 12 paired with the other language in the same output rows; lengths 41/26/32/52/54/77/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 12 pieces (12 devotional recitation); 12 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 12 pieces (11 cuts), kind recitation; 12 paired with the other language in the same output rows; lengths 23/23/29/44/60/66/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 devotional recitation); 4 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 4 pieces (3 cuts), kind recitation; 4 paired with the other language in the same output rows; lengths 15/49/78/44. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 4 pieces (4 devotional recitation); 4 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 4 pieces (3 cuts), kind recitation; 4 paired with the other language in the same output rows; lengths 24/36/67/38. Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -59,12 +59,12 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The recorded historical-line-break at r00002/fa is accurate and no earlier physical separator is restored; the old break is used only as an ordinary piece boundary."
+        "note": "An earlier stored value of this field carried physical separators. Nothing is restored from it: the current text stands with its own punctuation and the finding stays on record for the editorial pass."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "3 of 3 rows are split and 0 kept whole. 2 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+    "note": "All 5 sources are placed once, in order: 18 output rows, 16 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
   }
 }

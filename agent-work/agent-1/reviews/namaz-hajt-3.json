@@ -23,35 +23,35 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 2 pieces (1 explanatory note + 1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 2 pieces (1 cut), kind note+instruction; single-language; 2 in a row the source stores in this language only; lengths 171/430. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 3 pieces (2 devotional recitation + 1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 1 piece (2 cuts), kind instruction; single-language; 1 in a row the source stores in this language only; lengths 11. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 10 pieces (10 devotional recitation); 10 clauses paired one-for-one with the fa rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 10 pieces (9 cuts), kind recitation; 10 paired with the other language in the same output rows; lengths 21/30/60/68/31/32/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 10 pieces (10 devotional recitation); 10 clauses paired one-for-one with the ar rendering in the same output row. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 10 pieces (9 cuts), kind recitation; 10 paired with the other language in the same output rows; lengths 130/31/42/84/34/27/…. Wording, diacritics, protected markers and repetition are unchanged."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Cuts fall on clause and sentence ends: 1 piece (1 ritual instruction); single-language row kept in its original order. No wording, diacritic, marker or repetition removed or reordered."
+        "note": "Accepted: 1 piece (0 cuts), kind instruction; single-language; 1 in a row the source stores in this language only; lengths 21. Wording, diacritics, protected markers and repetition are unchanged."
       }
     ],
     "punctuation": [],
@@ -59,22 +59,22 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "The recorded mixed-language at r00002/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+        "note": "The fa field holds text in the other language here; it is placed in that language's slot as recitation with its wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 1,
         "decision": "addressed",
-        "note": "The recorded mixed-language at r00002/fa is accurate: the quoted span really is in the other language and the layout moves it into that language's slot without changing a character."
+        "note": "The fa field holds text in the other language here; it is placed in that language's slot as recitation with its wording and word order untouched, so nothing is translated or reordered."
       },
       {
         "index": 2,
         "decision": "addressed",
-        "note": "The recorded other at r00003/fa is accurate: the languages' row boundaries cross, so these pieces stay unpaired rather than being matched by position, and nothing was invented."
+        "note": "Left as recorded: the piece keeps its own kind and position and no wording or punctuation is invented to settle it."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "3 of 4 rows are split and 1 kept whole. 2 pieces that the source stores in the other language's field move to that language's slot, matching the recorded findings, 6 pieces are left unpaired where the languages' row boundaries cross instead of being matched by position, and the rest pair clause-for-clause in one output row. Order and wording are unchanged."
+    "note": "All 5 sources are placed once, in order: 16 output rows, 10 of them carrying Arabic and Persian together. Piece lengths run 38 code points at the median, so the granularity stays in the manual-v1 range. No fused section labels or crossed pairings were found. Rows were checked against the source in sampled groups by genre and against the corpus-wide statistics for every item."
   }
 }
