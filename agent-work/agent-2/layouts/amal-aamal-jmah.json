@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-aamal-jmah",
   "author": "agent-2",
-  "plan_sha256": "0c88602d1db96dff6bc4f6636e0664e46dea15d13ac6023a603661ab25337269",
+  "plan_sha256": "73478c26b08e4a26f744d161ec92ed771e9e3ea59c986e4cb619bcd8a6de11cb",
   "rows": [
     {
       "row": "r00001",
@@ -889,6 +889,22 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00030-se5d26f3a5d7775a8",
+      "right": "r00030-se89869fe0a1a73b3",
+      "checked": true
+    },
+    {
+      "left": "m4d5600de117f573632f08fcc",
+      "right": "r00031",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "The base rows split the phrase wa maakifu al-hamam across r00030 and r00031 without a space; one U+0020 restores the continuous dua text."
+      }
     }
   ]
 }

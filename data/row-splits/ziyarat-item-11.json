@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "ziyarat-item-11",
   "author": "agent-2",
   "baseline_item_sha256": "7eabb89a4b70a87f3d15e2dbb2aba34f6a1d1692f18603497c6e10803462e41a",
-  "plan_sha256": "6d73e3b3cc7be4b06aa728d3c5438826d55cfa12963a500d764bddbca7d7b87b",
-  "layout_sha256": "277afc803d28ec236bf7b52104a2036e87c05cbe26ea2cb5b368d73ff75acb61",
+  "plan_sha256": "4a4f641b2c9924121502b5491ebfda2a7b29d884a39ffc87a08c976025c6f593",
+  "layout_sha256": "d934e9391b9fbb1ec054918f12ec24791f6c3df4357468ca092e6483159248ea",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 57
+          "end": 57,
+          "target_start": 0
         }
       ]
     },
@@ -33,7 +34,7 @@
       },
       "results": [
         "r00002-s16b235f3fb54b1a5",
-        "r00002-s51331c3b3dd06d15"
+        "m3ec38f557321b82eaeb91a44"
       ],
       "ar": [],
       "fa": [
@@ -41,13 +42,15 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 176
+          "end": 176,
+          "target_start": 0
         },
         {
-          "row": "r00002-s51331c3b3dd06d15",
+          "row": "m3ec38f557321b82eaeb91a44",
           "language": "ar",
           "start": 176,
-          "end": 187
+          "end": 187,
+          "target_start": 0
         }
       ]
     },
@@ -58,22 +61,24 @@
         "fa": "tffc843e6e3b0feb102a89571"
       },
       "results": [
-        "r00003"
+        "m3ec38f557321b82eaeb91a44"
       ],
       "ar": [
         {
-          "row": "r00003",
+          "row": "m3ec38f557321b82eaeb91a44",
           "language": "ar",
           "start": 0,
-          "end": 467
+          "end": 467,
+          "target_start": 12
         }
       ],
       "fa": [
         {
-          "row": "r00003",
+          "row": "m3ec38f557321b82eaeb91a44",
           "language": "fa",
           "start": 0,
-          "end": 370
+          "end": 370,
+          "target_start": 0
         }
       ]
     },
@@ -92,9 +97,41 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 24
+          "end": 24,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s51331c3b3dd06d15",
+        "ar": "tfe21c11807e5f80bf0ab8dc7",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m3ec38f557321b82eaeb91a44",
+          "language": "ar",
+          "start": 0,
+          "end": 11,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m3ec38f557321b82eaeb91a44",
+      "language": "ar",
+      "target_start": 11,
+      "value": " ",
+      "left": "r00002-s51331c3b3dd06d15",
+      "right": "r00003",
+      "reason": "The base rows split the ziyarat opening al-salamu alayka without a space; one U+0020 restores the salam phrase."
     }
   ]
 }
