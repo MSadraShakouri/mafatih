@@ -4,11 +4,11 @@
   "item": "dua-frj-zman-ajl",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "02857cf84eea4298117ae1e89c8eb9497f5ef2a93fbd3325f2c9646e0a93c243",
-  "layout_sha256": "d473caac194acb1d488a4e0a12984edbcff002f507c270cb7188f4794083ec60",
-  "result_item_sha256": "6f8910998fda82fc08695eeaca17392a0645d1234a79a7dfac58cd566d348d18",
-  "result_record_sha256": "01f0fc293cbc6c4a52b72651dca7c54edc76c529fc4bb8bc8396281cc3d0f034",
+  "author_commit": "40eb177d8140687f30427e939b4ca02a852011ad",
+  "plan_sha256": "5be455ff683a95753fd9f0014a3a13ebd5d1f25181ff688d8db7711c0f7413a0",
+  "layout_sha256": "de9582e14ac237378d4f5341aa5e3b96905dce5e7cfffc13d9c5022ef22195ab",
+  "result_item_sha256": "f168f8462c966c57d901a899dece5fbb50fa5999991a655a8bc057605a5c0ef7",
+  "result_record_sha256": "2ab2dd7670cdc1d94d0d8d5337eab22dbf3ab263e654fe66b34825aed1be2f0e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,56 +16,80 @@
     "item_sha256": "fe5f8b62beef36206d84a0209236b94415a00ea9e3053f5b9d8bac7654c63fee",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "67969214d8d3278e64d4de530befd6565372a7401f91cbe7f013bba4d094c38a",
+    "preview_sha256": "644a57e604db6cd1ab63e753139d95609b586be46bce444bbc2d4ee2da4f87d3",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Read by the reviewer: Name-only row shaped like the audio-reciter labels that already exist in other items of this snapshot (for example dua-tawassul r00001 to r00003); the kind other hides that. Use audio-reciter, or record an uncertain-classification issue."
+        "kind": "accept",
+        "note": "Re-read in this snapshot. One name-only field now classed audio-reciter, matching the reciter labels elsewhere in the corpus. My earlier kind finding is resolved."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read. One cut separates the ordinal label (heading) from the transmission note. Accepted. Non-blocking style point: the base corpus more often keeps such a label fused with the passage it opens; either form is acceptable here."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 764 code points and 22 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read every piece. 22 cuts give 23 pieces, each a single clause or one triple repetition; cuts fall at the clause marks. This is the level asked for. My earlier under-split finding is resolved."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 676 code points and 29 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read every piece. 22 cuts, each Persian piece renders the Arabic piece of the same position; no clause is shifted to a neighbour. Earlier under-split finding resolved."
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read. Two cuts: the third repetition that completes the triple begun at the end of r00003, then two closing clauses. Cuts are at clause boundaries."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read. Two cuts matching the Arabic pieces one to one."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Recitation rows pair whole multi-clause Arabic blocks with whole translations; redo the pairing clause by clause after the split is revised."
-  }
+    "decision": "accept",
+    "note": "Read all 28 output rows in both languages. r00001 reciter label; r00002 label row and note row, Persian only; r00003 gives 22 paired rows, piece n with piece n; the last piece of r00003 and the first piece of r00004 are joined into one paired row so the triple repetition stands whole, as the neighbouring triples do; r00004 then gives two paired rows. Same kind on both sides of the join, source order kept, nothing omitted or added apart from the two recorded spaces reviewed separately below."
+  },
+  "spacing_review": [
+    {
+      "row": "ma7660d75d9fd1def6c93f458",
+      "language": "ar",
+      "target_start": 19,
+      "value": " ",
+      "left": "r00003-s9dbf666237d7dacf",
+      "right": "r00004-s2d6fcdaf315ab02c",
+      "reason": "Separate repetitions at the original r00003/r00004 boundary",
+      "decision": "accept",
+      "note": "Inspected the merged Arabic field: the left piece ends with the second repetition and carries no trailing whitespace, the right piece starts with the third repetition; without the space two words would run together. One U+0020 at code point 19 separates them exactly as the two earlier repetitions in the same field are separated. Accepted as an editorial space, not as a source character."
+    },
+    {
+      "row": "ma7660d75d9fd1def6c93f458",
+      "language": "fa",
+      "target_start": 17,
+      "value": " ",
+      "left": "r00003-s9dbf666237d7dacf",
+      "right": "r00004-s2d6fcdaf315ab02c",
+      "reason": "Separate repetitions at the original r00003/r00004 boundary",
+      "decision": "accept",
+      "note": "Inspected the merged Persian field: the left piece ends with a comma directly after the second repetition, the right piece starts with the third; one U+0020 at code point 17 restores the comma-space pattern used between the first two repetitions. Accepted as an editorial space, not as a source character."
+    }
+  ]
 }

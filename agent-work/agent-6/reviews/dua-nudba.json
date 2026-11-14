@@ -4,11 +4,11 @@
   "item": "dua-nudba",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b537ded9985f7829ef60efa70d29040fa403bc9d",
-  "plan_sha256": "537a4108c305f3b083d43b6b1dc2b3f12acfaf0b46526624b3898bfa84545752",
-  "layout_sha256": "329b6cda2d4a2f5463276b8a9d355da79690406a46a77a96887add16da1aa41e",
-  "result_item_sha256": "82773654a7f87c9a234f850e375f2de333cef9918967a952ec8480c727f0a9e7",
-  "result_record_sha256": "09f3cfd129aeab37a96f73de813fe4d3509d63b89006e9328ce9b4fe5a6bb150",
+  "author_commit": "40eb177d8140687f30427e939b4ca02a852011ad",
+  "plan_sha256": "8cc47978a4baa5d25982efe8440f4ad8af8160de361c7eeac617788a192a5769",
+  "layout_sha256": "d2eaec6e811d077e7826ea099237b7d3b2aa67f1e9e9ed5ded0bc23bac6719df",
+  "result_item_sha256": "6932bf3368e74737fc7a65606b0b6f02910a3eef545fa54b9762606ce9e575de",
+  "result_record_sha256": "9f976dc034f12606b09b18298ae3c66e0b8eb691f4d5878ac3850bb111e4140c",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,28 +16,28 @@
     "item_sha256": "715988ab5605bb926fe583d321dbd7b8ea2a0821018a39bd6e4f949688ba5de8",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "08c0fbaabab3defe646615cbb1e7b37c5f6b084d04f80fff9824989e7182dae6",
+    "preview_sha256": "ca46c322280f959e021be6b0c29399b4673c92b8346a4d95266b98058e4cdd01",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Read by the reviewer: Name-only row shaped like the audio-reciter labels that already exist in other items of this snapshot (for example dua-tawassul r00001 to r00003); the kind other hides that. Use audio-reciter, or record an uncertain-classification issue."
+        "kind": "accept",
+        "note": "Re-read. Name-only field now classed audio-reciter; my earlier kind finding is resolved."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Read by the reviewer: Name-only row shaped like the audio-reciter labels that already exist in other items of this snapshot (for example dua-tawassul r00001 to r00003); the kind other hides that. Use audio-reciter, or record an uncertain-classification issue."
+        "kind": "accept",
+        "note": "Re-read. Name-only field now classed audio-reciter; my earlier kind finding is resolved."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Under-split: piece 0 of 1 has 719 code points and 18 internal clause marks. It holds several sentences or clauses in one row; the manual-v1 row style needs cuts at the clause or sentence boundaries, and the pairing and kinds need redoing per piece. Found by a length and punctuation screen over every source; the screen criterion was confirmed by reading sample items."
+        "note": "Re-read. Persian-only introductory prose kept as one note. I withdraw the earlier under-split finding: it came from a length screen that no longer applies to prose. Non-blocking suggestion: the field holds the close of the preceding visitation notice and then the compiler's own remark; a cut where the compiler's remark begins would follow the usual row style."
       },
       {
         "row": "r00004",
@@ -154,65 +154,65 @@
       {
         "row": "r00013",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. One piece with four clause marks and two sentences: a semicolon closes the second clause and a new predicate follows. Under the pilot level (one to three short clauses per row) cut at that mark and pair each half with its Persian."
       },
       {
         "row": "r00013",
         "language": "fa",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The Persian has a matching clause boundary after its second verb; cut there to pair with the two Arabic halves."
       },
       {
         "row": "r00014",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Re-read. Three cuts at the clause boundaries; only the first piece has a Persian counterpart. Earlier finding resolved; see the issue decision for the unpaired pieces."
+      },
+      {
+        "row": "r00014",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Re-read. One piece, the rendering of the first Arabic clause only; nothing in it corresponds to the later Arabic pieces."
+      },
+      {
+        "row": "r00015",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Re-read. Three cuts, four single clauses."
+      },
+      {
+        "row": "r00015",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Re-read. Three cuts matching the Arabic pieces one to one."
+      },
+      {
+        "row": "r00016",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Re-read. One cut between the two clauses."
+      },
+      {
+        "row": "r00016",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Re-read. One cut matching the Arabic."
+      },
+      {
+        "row": "r00017",
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Read by the reviewer: The ar field holds three clauses while the fa field of this row translates only the first; cut the Arabic at its clause boundaries and leave the later clauses unpaired in this row."
-      },
-      {
-        "row": "r00014",
-        "language": "fa",
-        "split": "accept",
-        "kind": "accept",
-        "note": ""
-      },
-      {
-        "row": "r00015",
-        "language": "ar",
-        "split": "accept",
-        "kind": "accept",
-        "note": ""
-      },
-      {
-        "row": "r00015",
-        "language": "fa",
-        "split": "accept",
-        "kind": "accept",
-        "note": ""
-      },
-      {
-        "row": "r00016",
-        "language": "ar",
-        "split": "accept",
-        "kind": "accept",
-        "note": ""
-      },
-      {
-        "row": "r00016",
-        "language": "fa",
-        "split": "accept",
-        "kind": "accept",
-        "note": ""
-      },
-      {
-        "row": "r00017",
-        "language": "ar",
-        "split": "accept",
-        "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the opening words of the next sentence (the quantifier and its bracketed variant), while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00017",
@@ -266,9 +266,9 @@
       {
         "row": "r00021",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the negative particle and its bracketed variant that open the clause continued in r00022, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00021",
@@ -504,9 +504,9 @@
       {
         "row": "r00038",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the speech lead-in for the quotation in r00039, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00038",
@@ -518,9 +518,9 @@
       {
         "row": "r00039",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the speech lead-in for the quotation in r00040, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00039",
@@ -630,23 +630,23 @@
       {
         "row": "r00047",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the speech lead-in for the saying in r00048, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout). In addition the body of this field is four full imperative clauses; under the pilot level cut it into two pairs (or four rows) with the Persian cut to match."
       },
       {
         "row": "r00047",
         "language": "fa",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. Four full imperative clauses in one piece; cut to match the Arabic cuts requested for this row."
       },
       {
         "row": "r00048",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the speech lead-in for the saying in r00049, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00048",
@@ -672,9 +672,9 @@
       {
         "row": "r00050",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the speech lead-in for the saying in r00051, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00050",
@@ -742,9 +742,9 @@
       {
         "row": "r00055",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the speech lead-in for the saying in r00056, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00055",
@@ -770,9 +770,9 @@
       {
         "row": "r00057",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the speech lead-in for the saying in r00058, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00057",
@@ -1752,14 +1752,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read. Three cuts, four parallel phrases."
       },
       {
         "row": "r00127",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Re-read. Three cuts matching the Arabic pieces one to one."
       },
       {
         "row": "r00128",
@@ -2142,9 +2142,9 @@
       {
         "row": "r00155",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the vocative phrase (with its bracketed reading) whose second half and translation are in r00156, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00155",
@@ -2156,9 +2156,9 @@
       {
         "row": "r00156",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the vocative phrase (with its bracketed reading) whose second half and translation are in r00157, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00156",
@@ -2562,9 +2562,9 @@
       {
         "row": "r00185",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": ""
+        "note": "Read. The field ends with the two words that open the question continued and translated in r00186, while its Persian is at the head of the next row. Cut that trailing piece off this field so it can be joined to the next row (see layout)."
       },
       {
         "row": "r00185",
@@ -3368,11 +3368,16 @@
         "index": 19,
         "decision": "addressed",
         "note": "Checked: the output field has no physical separator and no earlier separator is restored (the line-break guard reports none). Whether the earlier break position should also be a cut is covered by the split decision for this source."
+      },
+      {
+        "index": 20,
+        "decision": "addressed",
+        "note": "Checked against every Persian field of the item at this snapshot: no field renders the three later Arabic clauses of r00014 (the leaving of the garden, the ark, the rescue), neither in r00014 nor in the neighbouring rows. The translation is absent from the source, so the three Arabic pieces are rightly left unpaired and no Persian was written. Recorded as a gap of the source translation for the coordinator."
       }
     ]
   },
   "layout": {
     "decision": "revise",
-    "note": "Read all 235 rows. Apart from the row named below the clause pairing is right, allowing for the places where a closing Arabic lead-in is translated at the head of the next Persian row (r00038 to r00040, r00047 to r00058) and for the phrase shift in r00155 to r00157. Output row r00014 pairs a three-clause Arabic block with the translation of its first clause only."
+    "note": "Read all 245 output rows in both languages. The four refined rows are right: r00014 one paired row then three Arabic-only rows; r00015 four pairs; r00016 two pairs; r00127 four pairs. Remaining pairing defects, all at original row boundaries and now fixable with the merge tool: in r00017, r00021, r00038, r00039, r00047, r00048, r00050, r00055, r00057, r00155, r00156 and r00185 the Arabic ends with a piece whose Persian stands at the head of the following row. After cutting that trailing piece off (see the source notes), join it to the first row of the next original row with merge-rows, Arabic space only, since the trailing piece has no Persian of its own. In my earlier review I tolerated these because no cross-row tool existed. Also r00013 and r00047 need the finer cuts named in their notes. The remaining rows are at the pilot level and their pairing is accepted."
   }
 }
