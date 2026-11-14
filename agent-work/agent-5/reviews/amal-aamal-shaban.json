@@ -1,0 +1,133 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "amal-aamal-shaban",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "33bd98ce65295dcdc7844b7190cce9fb6f4bec5db2d7b942f59d75a76f9ec53b",
+  "layout_sha256": "3b31b952f55020cf3b9be039f9aacfa45fba82578c336d11fdf5bee5e54351df",
+  "result_item_sha256": "1827bfcf505bca231f00b6018450d98369845f29de0f9ef04f523a94cee595b7",
+  "result_record_sha256": "13aaa34ddedc8a34019dd4373feeaa093af1d40218eab3a0ba53f6fae829fc13",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "amal-aamal-shaban",
+    "item_sha256": "4ec89f1319a566d5abb1c214ecb025b268f902fb88438b3c139b8825b8d5756e",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "4a8c3ba8ff535ae22829c75c11fc01215cb7589269610696816f41bd2027973f",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first cut isolates one word of the day label, while the instruction starts inside the narrative report; preserve a coherent label and distinguish report from actual direction."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The first Arabic prayer has a Persian rendering in r00002/fa, currently not paired."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is the existing rendering of r00002/ar, not a note; classify and pair as recitation."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first Arabic cut falls inside the first Persian part; align the existing pair boundaries on meaning before pairing, retaining the prayer continuation."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both parts are prayer renderings, not instruction. First part covers both initial Arabic fragments; align the semantic boundaries and pair without inventing words."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first cut falls before the Arabic consequence while Persian part 0 includes it; align the boundaries, and inspect the final invocation continuing into r00005."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both parts are prayer renderings, not note/instruction. Match the Arabic clause boundary and handle the final invocation continuing into r00005."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Prayer text continues the invocation at end of r00004 and has Persian in r00005/fa."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This continues the prior invocation and renders r00005/ar; classify and pair as recitation."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Persian introductory direction is moved into its language slot; the remaining Arabic prayer has a matching rendering."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both Persian parts are renderings of the Arabic prayer rather than instructions; align their cuts with corresponding Arabic and pair as recitation."
+      },
+      {
+        "row": "r00007",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The present Arabic cut is after the command whereas the first Persian part ends before it; align the two source boundaries."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "These are prayer renderings, not notes; the command begins the second Persian part but ends the first Arabic part, so align and pair."
+      },
+      {
+        "row": "r00008",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is a report about the prayer and its attribution, rather than a direction to the reader; classify as note."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language transition and destination were inspected; the remaining classification and pairing concerns are recorded on the affected sources."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00001 opens with an isolated word and cuts the narrative-to-instruction transition too early. r00002-r00007 have matching Persian prayer renderings classified as notes/instructions and placed apart from Arabic; align the mismatched cuts in r00003, r00004, r00006 and r00007, pair where supported, and inspect the r00004/r00005 continuation. r00008 is attribution prose rather than instruction. Preserve source and previously published links; review spacing proposals independently."
+  }
+}

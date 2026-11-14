@@ -1,0 +1,119 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-daahay-bad-alyh",
+  "author": "agent-4",
+  "reviewer": "agent-5",
+  "author_commit": "6bbdf5203769db86dd7ba9183eaafb9829ec31f1",
+  "plan_sha256": "05ad3deae9beb05cd19ae1151d1c80d8bd9a94e565574f1442588f9650b04499",
+  "layout_sha256": "38486b9b7e4da6d22bb78720c2cb4e859f7ca46bb0613762506de8e4a081a3af",
+  "result_item_sha256": "b649577e211913ac940bac05fd406bc57ac526d3505f12ca707995fd9657c654",
+  "result_record_sha256": "9ad6cf37387c0b3b3e45e9438d5b0767fa0acee6c22e2f235469316a37b91e63",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-daahay-bad-alyh",
+    "item_sha256": "220e7682cd2b8bec5a8b7de8cc966a7d0ea8c12244aa98d4695e8c7e0ded5a8a",
+    "author": "agent-4",
+    "reviewer": "agent-5",
+    "preview_sha256": "4a7afa261b8d34d924a744e5cdae1a96ed0bb2096f463b9c719824eb17999ce5",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The opening directs the reader to say the prayer after prayer; instruction fits."
+      },
+      {
+        "row": "r00002",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "Arabic sentence cuts do not correspond to the Persian cuts: the first Persian part includes most of the second Arabic part, and the next includes the start of the third. Align at meaningful corresponding clauses."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "The three pieces are all prayer rendering, not two notes followed by recitation. Their boundaries do not match Arabic; adjust and pair."
+      },
+      {
+        "row": "r00003",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Prayer text and corresponding Persian are paired; final phrase continues in r00004."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Prayer rendering is paired; its final phrase continues in r00004/fa."
+      },
+      {
+        "row": "r00004",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Arabic recitation pieces correspond to two Persian portions, and the opening completes r00003."
+      },
+      {
+        "row": "r00004",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "Both pieces render Arabic supplication; the second is recitation, not instruction, and both should be paired with corresponding Arabic."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "revise",
+        "kind": "accept",
+        "note": "The first Persian piece contains the beginning of the second Arabic part, so adjust the cut and align them; preserve all text."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "revise",
+        "kind": "revise",
+        "note": "Both pieces are prayer renderings, not recitation then note; align the Persian boundary with Arabic and pair."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The Arabic supplication has a Persian rendering in the same source row."
+      },
+      {
+        "row": "r00006",
+        "language": "fa",
+        "split": "accept",
+        "kind": "revise",
+        "note": "This is a rendering of the Arabic prayer, not an instruction; pair as recitation."
+      },
+      {
+        "row": "r00007",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The existing narrative introduction and subsequent reference are notes; the quoted Arabic invocation is correctly moved out into the Arabic quotation slot."
+      }
+    ],
+    "punctuation": [],
+    "issues": [
+      {
+        "index": 0,
+        "decision": "addressed",
+        "note": "The recorded mixed-language transition and destination were inspected; the remaining classification and pairing concerns are recorded on the affected sources."
+      }
+    ]
+  },
+  "layout": {
+    "decision": "revise",
+    "note": "r00002, r00004-r00006 leave existing Persian prayer renderings unpaired, with several wrongly marked note or instruction. Align nonmatching clause boundaries in r00002 and r00005 before pairing. r00003/r00004 continue across rows in both languages; inspect a safe join. r00007 moves its mixed-language quotation correctly. Preserve prior links and separately review proposed spaces."
+  }
+}
