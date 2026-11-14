@@ -4,11 +4,11 @@
   "item": "ziyarat-mvsy-kazm-rza",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "383c4fe81dbf1b607dd306a503d04cc3a26fb4a09a19c4219b090a2ad66efc95",
-  "layout_sha256": "ccc5507fcc7729aefe3a616039412a8f3caaf89833c6183320922e9bfb6f39d2",
-  "result_item_sha256": "49ff011c9b064212b536e4b6fc63c983338fd94851494f04f27a3888d6c2bec1",
-  "result_record_sha256": "e0ee400904279885413010c0b253a375bd9c585a6687d047c017bc81b4d9effa",
+  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "plan_sha256": "72f567ba4c61c9e0bf3b3149672bbef68a1df811341c0c2faa6277e0c8db9698",
+  "layout_sha256": "e5cad8038c39d0f83eff8dce425fd3e77c088978393412add02a33871a3297bc",
+  "result_item_sha256": "695fdb34d73bf40b9be6d78500229c9e8ded0ad5fb42b9cbeaffc9e603a73c6a",
+  "result_record_sha256": "5693ef348b90aa2ffe1f6cf6c83c1078286c28c818c1b34ec521ed1e17af7a6f",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "e907deddb15bd91a5ef4a4cfa03a94620a4fc992096b03d11b76b0acac9bba00",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "af944924f49f968d5dd8404918b6058c99814aaf81377330ad3c4a2fd3a4c3a5",
+    "preview_sha256": "6d2677facd18ebd2c175dbff1a2d8b5a7ec42aa8a26adb1348daf9e47ac00752",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. The row is the first half of a statement that continues in r00002 (which day belongs to which Imams), not a bare title; heading is doubtful and note may fit better."
+        "kind": "accept",
+        "note": "Question closed at snapshot f192ee09. The statement is now whole in one row, joined with the first piece of r00002, and it stands as the title line of the item, so heading is acceptable (note could also be defended). The sibling items of the other weekdays, ziyarat-hsn-askry-alyh and ziyarat-zyn-alaabdyn-baqr, are not agent-5's; keeping the same kind there is a point for the coordinator, not for the author."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The field ends the statement begun in r00001 and then gives a direction; cut after the first sentence, give the first piece the kind of r00001 and the second instruction."
+        "note": "Fixed at snapshot f192ee09. The end of the statement is joined to r00001 as one heading row, with one proposed Persian space reviewed separately, and the direction is its own instruction row."
       },
       {
         "row": "r00003",
@@ -72,6 +72,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00003 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
-  }
+    "note": "Read all 4 output rows at snapshot f192ee09. The opening statement is one heading row and the direction is an instruction row; one proposed Persian space, reviewed separately and accepted. Offered, not required: the recitation still breaks inside a phrase between r00003 and r00004 (… بآل بيتكم | الطیبین الطاهرین, and in Persian … به حقّ خاندان | پاکیزه و پاکتان); a join with a space in both languages would mend it. My own items still have breaks of this sort, so I do not hold the item for it."
+  },
+  "spacing_review": [
+    {
+      "row": "m8984a8d78522bdc38982521e",
+      "language": "fa",
+      "target_start": 44,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-scbcad34ad2773d20",
+      "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with حضرت and the right piece begins with رضا; حضرت is the title before the name رضا, as it is before the other three names in the same row, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 44 of 100; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row is Persian prose and has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

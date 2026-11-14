@@ -4,11 +4,11 @@
   "item": "fazilat-svrhnba",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "72d266257da2c8afd9e49d5d6ee677cf8d8a34a56a953e573328b187ab1e880a",
-  "layout_sha256": "2529a4b85ced85d9e380cd4a032def3ff6c416933f282d040ef48dd6f279e69a",
-  "result_item_sha256": "5bfc452b268a48168b96f75a331119f4633f47a2d2fe0866b891a9fa45d96437",
-  "result_record_sha256": "2a8184fecbf82788f6c57bc44cca1f6d9d1f43a658153fd3bfa432c7103d8bc6",
+  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "plan_sha256": "e04f91a9a925173ac11bd5694f867ee59b176fbc226960d61692150cd9c016a5",
+  "layout_sha256": "61e7fee55bcc3f5c8dc65f47f11aa0b1d8c9b95642f3cdbca20132232ce3c2aa",
+  "result_item_sha256": "1856eebc035ba67120d36a924d38be4f1e178b2991734234cbac67d59639c448",
+  "result_record_sha256": "91043b5922437093c514df641d76ba63c3b5fafde452779448a276bc1f1777b6",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "4fe2af8fdb35b441f8c3bcd652bcef91502242e69b73d98dd694fbda5c815989",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "0a3bf2d4ace83094fabcb9d2020b5334d1a026ff0e05e6ef137d291c3459c542",
+    "preview_sha256": "12ddff67e5b77d3da8522bf96d89f6721f7e34c104908391ab84ae4a921f0a83",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Piece 0 holds a complete Arabic sentence inside Persian prose at code points 534-614 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose."
+        "note": "Fixed at snapshot f192ee09. The Arabic sentence is cut out of the Persian field and stands in the Arabic slot. The Persian that follows it in the same field is its rendering and is paired with it by an exact merge of the two pieces (same source field, different slots, so no character is added). The narration before it is one note row. Quotation fits: the sentence is quoted inside the narration."
       }
     ],
     "punctuation": [],
@@ -31,6 +31,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian only; nothing to pair. The cut changes asked for on r00001 are recorded in the source notes; the rows as they stand are placed and paired consistently."
+    "note": "Read both output rows at snapshot f192ee09. The narration is a note row, and the quoted Arabic sentence stands in the Arabic slot beside its own Persian. The pairing is an exact merge inside one source field; no space is proposed and none is needed."
   }
 }

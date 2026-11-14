@@ -4,11 +4,11 @@
   "item": "dua-daa-aymny-shr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "f2cb7ddc6186e0842108e53e506a85a9ccde5b83c0b4015f8d8be887f606fc2a",
-  "layout_sha256": "988dce677238589302b45cf2be1aca277c20091be810675748c84584fb163b2c",
-  "result_item_sha256": "07c699fc9f2ba5d7dfb07b7e3694f55d96fe5e7ed8cea2c37e2ae032a0542c77",
-  "result_record_sha256": "75d9b7eb81a0a7072564f1fb135a50ef27e063ad623c6dc00b533548d7c39ca2",
+  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "plan_sha256": "8fc9beb96aad1c6f2b31d9480934afb54263c8b8aaa663625a27620879f46195",
+  "layout_sha256": "0705988b45198194509d3e1340e9138d7720137c9211007a0ce31cf92975c2d9",
+  "result_item_sha256": "1b39846094450dc96cee42986cafe666d07b2cd943ec5abbee748e79437ebcb3",
+  "result_record_sha256": "ae1724c6f82677d06c229bab79a3222fee251770739e61c064885f221c113ace",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "096f04af5626502f141f98d56685590fff3244df326b884bb4a55d65f15772b9",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "9ba21db5a412e517737478a78e9f94a3689ae2902cd7435d8646ec6d471d5811",
+    "preview_sha256": "801f1b448d270de4c46d296fdda5638649bccc90602590d982a11b5170880f36",
     "sources": [
       {
         "row": "r00001",
@@ -98,9 +98,9 @@
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece ends with the first Arabic words of the Quran passage that continues in the ar field of r00008; cut before them and place them in the ar slot."
+        "note": "Fixed at snapshot f192ee09. The Arabic opening words of the verse are cut from the Persian field, placed in the Arabic slot and joined to the rest of the passage in r00008. The first verse is whole again, and the row stands beside the Persian of r00008, which renders both verses from their first word. One proposed Arabic space, reviewed separately. The Persian before the verse is one note row."
       },
       {
         "row": "r00008",
@@ -121,14 +121,14 @@
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Piece 0 is a Persian fragment stored in the ar field that repeats the opening words of the Persian translation of the verse; it is not a direction to the reader, so instruction is doubtful (other with a recorded issue may fit). Piece 1 is a Quran verse recited as part of this prayer like the verses of r00008, which are classified recitation; quotation is inconsistent."
+        "note": "Still open, unchanged at snapshot f192ee09; nothing is asked of the author now. The second piece is the third verse of this prayer and is recited like the two verses of the row before it, which are recitation; quotation does not agree with them. The first piece is a Persian fragment stored in the Arabic field that only repeats the opening words of the Persian of the verse; it is not a direction to the reader, so instruction is doubtful. Both are cut pieces, and a change of kind gives a cut piece a new row ID and retires the published one. The change should therefore wait for the coordinator's alias tooling."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. Same verse as the ar piece: recitation in r00008, quotation here."
+        "note": "Still open, unchanged at snapshot f192ee09; nothing is asked of the author now. Same verse as the Arabic piece: recitation in the row before, quotation here. A change of kind would retire the published row ID, so it waits for the coordinator's alias tooling."
       }
     ],
     "punctuation": [],
@@ -136,6 +136,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Still open from the earlier review: In r00005 the two-word Arabic tail is paired with a Persian tail that translates other words (the row break falls at different points in the two languages); leave both unpaired. Withdrawn: my request to re-pair r00003 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
-  }
+    "note": "Read all 13 output rows at snapshot f192ee09. Done: r00007. Still open, an author fix that is now possible: r00005 pairs the two Arabic words و جنوده with a Persian tail (رحمت خدا می‌گردند.) that renders other words. Both are only the end of the sentence of the row before: the Arabic of that row ends with إبليس and its Persian ends with باعث ناامیدی از. Join the last piece of r00004 with r00005, with a space in both languages; the row then reads … إبليس و جنوده beside … از رحمت خدا می‌گردند. The join is link-safe, because a merge keeps both old IDs as aliases, and it is no longer held by the pinned test. This replaces my earlier advice to leave both tails unpaired. The kind of r00009 stays an open question that waits for tooling, see the source notes."
+  },
+  "spacing_review": [
+    {
+      "row": "ma8b5fc6e4d9b4e00b7ae91e8",
+      "language": "ar",
+      "target_start": 43,
+      "value": " ",
+      "left": "r00007-sbd47d389958800f8",
+      "right": "r00008",
+      "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with أرحم and the right piece begins with الراحمين»،; أرحم and الراحمين are the two words that close the verse (the most merciful of the merciful), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 43 of 145; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00008), so it has no junction and needs no space; it renders the whole joined Arabic."
+    }
+  ]
 }

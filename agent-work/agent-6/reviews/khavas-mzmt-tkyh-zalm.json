@@ -4,11 +4,11 @@
   "item": "khavas-mzmt-tkyh-zalm",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "ac3ac48a59d1a590c5e8709154b431a1ddabc2aece1e3f4243c3295b5179fd58",
-  "layout_sha256": "2b3803f8ee0cf3dffc228b6836f3ecab810b6cd46595d6058a6ba298e3e3d7af",
-  "result_item_sha256": "1edfbc7318dbc61e12df46f2342e4f7674cb6de0b114b9bc55611c2df3a34134",
-  "result_record_sha256": "78617e3657f8c1c271c196ea5a9e23ee643cdbdf441db0e22b0a1b4412b4211f",
+  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "plan_sha256": "b580ad20121e59c81529aaac0a00e9dad8bfb0c79b7f606d343e24fcda274bd7",
+  "layout_sha256": "59a5d2f9abbcb71830e94d77984cf93bce9f82ccba0fbff67d018a652a694b0a",
+  "result_item_sha256": "2404f110afe6c8ccbe52cfabf75d8b356dce3e22c8f60f1ee360c338e6249f74",
+  "result_record_sha256": "8d5d74d0938f2b5eed90a01bc983951273640d69f8d53217fe88824f0caf4991",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "d31ea5f533705cfcd4440735d1dc62196d53a8b4c5a5b081359b19b5d632bd5e",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "0d23aee2157c8c71bcf02607eb4aa49130442d65fb939ba65ef831dbd924c45c",
+    "preview_sha256": "7a5554b1a9374505f53df40a0efab223e81061a5a9505bc13b11979268aede95",
     "sources": [
       {
         "row": "r00001",
@@ -29,15 +29,15 @@
         "row": "r00002",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A Quran verse quoted in the author's narrative and then explained, not text for the reader to recite; classify quotation."
+        "kind": "accept",
+        "note": "Fixed at snapshot f192ee09. The verse is now quotation."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A Quran verse quoted in the author's narrative and then explained, not text for the reader to recite; classify quotation."
+        "kind": "accept",
+        "note": "Fixed at snapshot f192ee09. The rendering of the verse is now quotation, with its Arabic."
       },
       {
         "row": "r00003",
@@ -59,6 +59,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read every output row; pairings and slots are right."
+    "note": "Read all 4 output rows at snapshot f192ee09. The verse and its rendering are one quotation row between the lead-in and the explanation. No join and no proposed space."
   }
 }

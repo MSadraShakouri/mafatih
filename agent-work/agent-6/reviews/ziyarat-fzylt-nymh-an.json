@@ -4,11 +4,11 @@
   "item": "ziyarat-fzylt-nymh-an",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "90826c1b4be4a0723e6256e88d773f2f1c22f28a9511f11e952391cc274b7615",
-  "layout_sha256": "4f91a7f0b171eac49d3991f426a74aadca1ad706ac77c6c6f389f98bab489e5a",
-  "result_item_sha256": "2cff944d1200550476d28b20b3781a2eeed9864b45b949d18c3159cc1539bff6",
-  "result_record_sha256": "163b063639e0d7ea83f20b3641aac1f7ce718eb41776c81b4bdffd34cca4fa52",
+  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "plan_sha256": "2ed322b2aabcdaf8d8ac78fa42d9295744943d778e490752844ab11f7e3ebc2a",
+  "layout_sha256": "79282bda0104c77c5d482381d9c7022c4176267efe1f736a15e84c279938c187",
+  "result_item_sha256": "7637d09055db22f4970dcb0d2f4d8edc6f557e2bdb71af5c82f3f82ebc149c3b",
+  "result_record_sha256": "3ebcf2b5d78c2a6e015552f4c12fd7fe1612153f0383252e4e31dfdd2c2be973",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "b2a0b17668959d836a3e21d394bf880f406e25213c93547ddc7192ddc22307d7",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "590360352c027af23d5b928c3b0d722cc512487bd1349b54d99d3431abfa151e",
+    "preview_sha256": "bf76500e8540d5265cf3b5070e966f1a7603b8b3d341a7fb35dc3dd958686525",
     "sources": [
       {
         "row": "r00001",
@@ -50,15 +50,15 @@
         "row": "r00005",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (Arabic piece now 328 code points, 4 internal clause marks, 0 internal sentence ends). A row is not to be cut merely because it is long, and this piece holds fewer than three sentences and fewer than nine clauses. The pairing of the passage with its whole translation is accepted; a finer cut stays optional. Kind, still open: Arabic prose statement of a scholar quoted by the author and translated beside it, not a prayer text; classify quotation."
+        "kind": "accept",
+        "note": "Fixed at snapshot f192ee09. The scholar's Arabic statement is now quotation. The pairing of the passage with its whole translation was accepted before."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Arabic prose statement of a scholar quoted by the author and translated beside it, not a prayer text; classify quotation."
+        "kind": "accept",
+        "note": "Fixed at snapshot f192ee09. The rendering is now quotation, with its Arabic."
       }
     ],
     "punctuation": [],
@@ -66,6 +66,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The request to re-pair long rows is withdrawn with the length findings. Read again at 4aae1ccd: every Arabic passage sits beside its own translation and slots are right."
+    "note": "Read the changed row r00005 and its neighbours at snapshot f192ee09 (5 output rows); the other rows are unchanged since my last review. The quoted Arabic statement and its rendering are one quotation row. No join and no proposed space."
   }
 }

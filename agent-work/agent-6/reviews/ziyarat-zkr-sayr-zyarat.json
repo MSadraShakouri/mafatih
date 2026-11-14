@@ -4,11 +4,11 @@
   "item": "ziyarat-zkr-sayr-zyarat",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "66ca6c47aece66bd08fa7c34c226a99a4f5c6775166628f703473c8587d9b3cc",
-  "layout_sha256": "be5449a68e3a09142ca3ab22690863f77ff51829dd190a2950482160dc743686",
-  "result_item_sha256": "3fa763321bc324216f0834bac080c0339548f5553efa2cd1ef5a91d4c21d50b5",
-  "result_record_sha256": "c9499ad995796e7cbc749b44d1e7179753fed520270470a753ac505aea50628d",
+  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "plan_sha256": "fd1798398c431d7e31ce6b2b9e8c8ae32721a845ced28946b072c49a4bfacff9",
+  "layout_sha256": "dbbc3845173540ca5e3f556544219b43ceeaf107fa10c2d8b5fbd38b327c3b25",
+  "result_item_sha256": "a011b6e8628333fe7c507a90640f99a31636c43e86ddc07c2d93737a86808936",
+  "result_record_sha256": "9ae62c40df6968c0bd997e00110aa35409dc18c08e6e45f7a803c7e6c93d1097",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "036da14db200cf9e2e5e15862a2ac6f41bb358ae5b4d7a40bad894ad77bcdea9",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "ec30d6dab086924c06c0833062ce53eacc19d26c69f7bee4009db4a99237bad7",
+    "preview_sha256": "00af916dd8f9a2e95102b86fe9d80dc78c6e322cf1f52f90678e0d00165e16a8",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The row holds a section title and then the title of the first ziyarat, with no narrative; cut between the two and classify both heading."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Fixed at snapshot f192ee09. Two heading rows: the title of the section and the title of the first ziyarat."
       },
       {
         "row": "r00002",
@@ -115,6 +115,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00003, r00005, r00007 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
+    "note": "Read the changed row r00001 and its neighbours at snapshot f192ee09 (9 output rows); the other rows are unchanged since my last review. The section title and the title of the first ziyarat are two heading rows. No join and no proposed space."
   }
 }
