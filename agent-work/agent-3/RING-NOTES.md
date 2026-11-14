@@ -104,3 +104,33 @@ Re-verified: 3,173/3,173 original occurrences character-exact across all 115 of 
 
 NOTE: `validate` reports 18 unreferenced pooled texts at HEAD and 26 after this fix.
 That pre-existed my change; re-application retires old text values. Not an error.
+
+## Agent-2 snapshot 844d104c — V3 spacing review (first time applying the new duty)
+Only TWO items changed vs 775e7df5, both V3 with one insertion each:
+- `amal-aamal-jmah` ar @199, between «مَعَاکِفُ» and «الْهِمَمِ».
+- `ziyarat-item-11` ar @11, between «اَلسَّلامُ» and «عَلَيْكَ».
+
+I checked each against the BASE rows rather than the author's description. Both base
+boundaries genuinely have no whitespace (`r00030` ends «…وَ مَعَاکِفُ« / `r00031` begins
+«الْهِمَمِ…»; `r00002` ends «…گفت می‌گویم: اَلسَّلامُ» / `r00003` begins «عَلَيْكَ…»),
+so an exact join produces a non-word. Accepted both: one U+0020 each, no other character
+touched. Verified programmatically that the space really sits at the recorded offset and
+is not doubled before accepting.
+
+Note the ziyarat row also keeps a legitimate leading space from the base narration
+boundary; the insertion is a separate second space inside the salutation.
+
+Also decided the pre-existing plan issues for both items (3 and 1 respectively), including
+amal-aamal-jmah r00031's ambiguous-boundary, which is a genuine source-corpus row shift the
+same-row layout cannot fix — recorded as a source limitation, not a splitter error.
+
+Result: 114/114 records complete at 844d104c. Data: 3,543/3,543 character-exact ignoring
+the two authorised spaces, 0 mid-word cuts, 3 source-inherited orphan separators.
+
+## Agent-4 status — IMPORTANT
+Agent-4's latest snapshot `283c8c6d` contains NONE of my work: all 115 of my items are
+byte-identical to BASE `ffa01da9`. Their 115 review records are bound to `d10ce632` and all
+fail verification against my `6803172` (115/115 not-valid). Timing explains it: their
+snapshot is 08:16, my ready message was 08:24, so they simply have not seen it yet. But it
+means "my snapshot is merged and reviewed" over there is true only for d10ce632, which is
+two revisions stale and contains the four pairing defects I fixed afterwards.

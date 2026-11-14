@@ -4,11 +4,11 @@
   "item": "ziyarat-item-11",
   "author": "agent-2",
   "reviewer": "agent-3",
-  "author_commit": "775e7df579ac7278cefdb958f312e906492ade4a",
-  "plan_sha256": "6d73e3b3cc7be4b06aa728d3c5438826d55cfa12963a500d764bddbca7d7b87b",
-  "layout_sha256": "277afc803d28ec236bf7b52104a2036e87c05cbe26ea2cb5b368d73ff75acb61",
-  "result_item_sha256": "88d632b265214842c836deb00cfc529bafdf8cea522e9b69026388ae82ea4da8",
-  "result_record_sha256": "5c3a945adf703adbc083d9791f46294a4fde46e8a9970a2aa570714decc53fbb",
+  "author_commit": "844d104c5a5ef375630cae5626d5519bd993da01",
+  "plan_sha256": "4a4f641b2c9924121502b5491ebfda2a7b29d884a39ffc87a08c976025c6f593",
+  "layout_sha256": "d934e9391b9fbb1ec054918f12ec24791f6c3df4357468ca092e6483159248ea",
+  "result_item_sha256": "84eab57a6caf74d5b55f7c2368ffbdde7c15371e1820bdb9eb905e0e1dba6709",
+  "result_record_sha256": "d9a153c0d358d95e6a0ede70f7a1b212a208cd8b3d03001fc0365e8ca7fe2033",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,42 +16,42 @@
     "item_sha256": "7eabb89a4b70a87f3d15e2dbb2aba34f6a1d1692f18603497c6e10803462e41a",
     "author": "agent-2",
     "reviewer": "agent-3",
-    "preview_sha256": "322eb256b99530202b3b1b281ae13a0414384241bf586603ca79c51277aaea93",
+    "preview_sha256": "f7bddf54febd51bbf82edb1458b8721e97090e06bbb130cd3e0d1b7d867f828b",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "1 part(s), 57 code points reconstructed exactly; kinds heading fit the text"
+        "note": "1 part(s)/57 cps reconstruct exactly"
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "2 part(s), 187 code points reconstructed exactly; kinds note/recitation fit the text"
+        "note": "2 part(s)/187 cps reconstruct exactly"
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "1 part(s), 467 code points reconstructed exactly; kinds recitation fit the text"
+        "note": "1 part(s)/467 cps reconstruct exactly"
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "1 part(s), 370 code points reconstructed exactly; kinds recitation fit the text"
+        "note": "1 part(s)/370 cps reconstruct exactly"
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "1 part(s), 24 code points reconstructed exactly; kinds note fit the text"
+        "note": "1 part(s)/24 cps reconstruct exactly"
       }
     ],
     "punctuation": [],
@@ -59,12 +59,25 @@
       {
         "index": 0,
         "decision": "addressed",
-        "note": "historical hint inspected; no old break offset silently restored and no marker moved in this field"
+        "note": "r00002/fa mixed-language: the Arabic ziyarat opening sits at the end of the Persian narration inside the fa field, and is re-homed to the ar destination. Verified: the narration row r00002 renders Persian only, and the re-homed Arabic now heads the merged bilingual row m3ec38f5 alongside its Persian rendering. Correct and reversible; the one inserted U+0020 is judged separately in spacing_review."
       }
     ]
   },
   "layout": {
     "decision": "accept",
-    "note": "every bilingual original row paired consistently; single-language pieces unp aired"
-  }
+    "note": "Rows reviewed: the V3 merge pairs the joined Arabic with its existing Persian translation in one row, and no other row in the item changed. Acceptance of the merge is separate from acceptance of the inserted space, which is recorded in spacing_review."
+  },
+  "spacing_review": [
+    {
+      "row": "m3ec38f557321b82eaeb91a44",
+      "language": "ar",
+      "target_start": 11,
+      "value": " ",
+      "left": "r00002-s51331c3b3dd06d15",
+      "right": "r00003",
+      "reason": "The base rows split the ziyarat opening al-salamu alayka without a space; one U+0020 restores the salam phrase.",
+      "decision": "accept",
+      "note": "Insertion verified at ar offset 11 of merged row m3ec38f5. Base r00002 ends the narration «…‌روی چه می‌گویی؟ گفت می‌گویم: اَلسَّلامُ» and r00003 begins «عَلَيْكَ يَا أَبا عَبْدِ اللّٰهِ…». The base rows glue «اَلسَّلامُ» to «عَلَيْكَ» with no whitespace, so an exact join yields «اَلسَّلامُعَلَيْكَ». This is the opening of the ziyarat salutation; the space restores «اَلسَّلامُ عَلَيْكَ», the universally read form. Note the merged row already legitimately begins with a leading space inherited from the base narration boundary — this insertion is a separate, second space inside the salutation itself, at offset 11, and does not affect that leading space. One U+0020 only; no other characters changed. Proposed editorial space, not a source character; accepted as the minimum correction."
+    }
+  ]
 }
