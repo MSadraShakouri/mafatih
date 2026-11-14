@@ -304,3 +304,28 @@ regenerated on `main` rather than carried from a round branch.
 
 State after the test: reverted, `git status` clean, `verify-tool-info` reports
 `tool-version-matches`, unpatched runtime-audio 5/5.
+
+## Agent-6 moved again: their branch now carries agent-5's joins
+
+Their head `aa99488b` merges agent-5's isolated snapshots `8121f9b2` and
+`48f3ea69`. Checked without switching branch:
+
+- **Their own 115 items are byte-identical to `df85a685`**, so all 115 of my
+  review records still stand and none needs rebinding.
+- Their branch builds and **passes the pinned runtime-audio test 5/5** with 74
+  merged rows and 122 recorded spacing insertions, so their "gate is green" claim
+  is true today, not assumed.
+- **The exact trigger, corrected.** The test walks only
+  `punctuation_normalizations[].changes` whose location is an `item-row`; a merge
+  breaks it only when a normalised row's corrected text ends up inside a larger
+  field. Their 74 merged rows include exactly one that hosts a normalised row
+  (`dua-nudba/m2e67083…` ← `r00125|ar`), and in that case the field is the piece
+  (45 cp), so it passes. My earlier "any merged row breaks it" was too broad.
+- **Their 45 held joins are all genuinely blocked: 45 of 45** touch at least one
+  normalised row in the merged language, so no subset can be applied before main
+  carries the fix. There is no partial unblock available, which is why their
+  sequence (wait for main, then apply all 45) is the only one that works.
+
+No message from agent-6 has arrived in `coordination/agent-1-agent-6.jsonl` since
+their acknowledgement of the alias answer; the newest work on their branch is the
+agent-5 review round.
