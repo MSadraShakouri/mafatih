@@ -44,6 +44,9 @@ try:
       for lang in ('ar','fa'):
        for pos,s in enumerate(e[lang]):
         con.execute('INSERT INTO row_split_segment VALUES (?,?,?,?,?,?,?,?,?)',(id,old,lang,pos,s['row'],s['language'],s['start'],s['end'],s.get('target_start',0)))
+    for e in split.get('insertions',[]):
+     con.execute('INSERT INTO row_split_insertion VALUES (?,?,?,?,?,?,?,?)',
+      (id,e['row'],e['language'],e['target_start'],e['value'],e['left'],e['right'],e['reason']))
   for f in sorted((DATA/'english').glob('*.json')):
    id=f.stem;doc=load(f);m=doc['source_metadata'];con.execute('INSERT INTO english_document VALUES (?,?,?,?,?,?,?,?,?,?,?)',
     (id,m['title'],m['title_ar'],m['section'],m['chapter'],m['translator_claim'],m['origin_claim'],m['method_claim'],m['note_claim'],doc['coverage'],compact(doc.get('review'))))

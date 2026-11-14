@@ -1,5 +1,18 @@
 import type { Corpus } from './corpus.js';
+import { validMergeInsertionReason } from './schema.js';
 import { codePoints, slicePoints } from './text-ids.js';
+
+/** A proposed space may not split a grapheme or a protected Quran marker. */
+export function spacingBoundaryIssue(left:string,right:string):string|undefined {
+  if (!left || !right || /[\s\u0085]$/u.test(left) || /^[\s\u0085]/u.test(right))
+    return 'a proposed boundary space requires two nonempty fields without existing boundary whitespace';
+  const combined=left+right, boundary=left.length; // Segmenter and regex indices are UTF-16.
+  if (![...new Intl.Segmenter('und',{granularity:'grapheme'}).segment(combined)].some(part=>part.index===boundary))
+    return 'a proposed boundary space would split a Unicode grapheme';
+  if ([...combined.matchAll(/﴿[^﴿﴾]*﴾/gu)].some(match=>match.index<boundary&&match.index+match[0].length>boundary))
+    return 'a proposed boundary space would split a protected Quran marker';
+  return undefined;
+}
 
 /** Old row occurrences remain identities even when their physical row is retired. */
 export function hasHistoricalRow(c: Corpus, item: string, row: string): boolean {
@@ -15,7 +28,7 @@ export function validateRowSplitRecords(c: Corpus, onlyItem?: string): string[] 
     if (onlyItem !== undefined && itemId !== onlyItem) continue;
     const item = c.items.get(itemId);
     if (!item || record.item !== itemId) { errors.push(`row split ${itemId}: missing item or item/file mismatch`); continue; }
-    if (record.format_version === 2) { errors.push(...validateMergedRecord(c, itemId)); continue; }
+    if (record.format_version !== 1) { errors.push(...validateMergedRecord(c, itemId)); continue; }
     const current = new Map(item.rows.map((r, i) => [r.id, { row: r, position: i }]));
     const originals = new Set<string>(), destinations = new Set<string>();
     let preceding = -1;
@@ -78,13 +91,15 @@ export function validateRowSplitRecords(c: Corpus, onlyItem?: string): string[] 
   return errors;
 }
 
-/** V2 permits adjacent originals to share a target row. Every target field is
- * tiled exactly once by source slices; aliases are checked separately because
- * they intentionally overlap the original mappings. */
+/** V2/V3 permit adjacent originals to share a target row. Source slices plus
+ * explicit V3 insertions tile every field exactly once. Aliases intentionally
+ * overlap the original mappings and are checked separately. */
 function validateMergedRecord(c: Corpus, itemId: string): string[] {
   const record = c.rowSplits.get(itemId)!, item = c.items.get(itemId)!;
   const errors:string[] = [], fail = (message:string) => errors.push(`row split ${itemId}: ${message}`);
-  if (!Array.isArray(record.aliases)) fail('V2 mapping must include an aliases array');
+  if (!Array.isArray(record.aliases)) fail('V2/V3 mapping must include an aliases array');
+  if (record.format_version===3 ? !record.insertions?.length : record.insertions!==undefined)
+    fail('V3 requires explicit insertions; V2 must omit them');
   const current = new Map(item.rows.map((row, position) => [row.id, {row,position}]));
   const originals = new Set<string>(), destinations = new Set<string>();
   const tiles = new Map<string,Array<{start:number;end:number}>>();
@@ -156,6 +171,25 @@ function validateMergedRecord(c: Corpus, itemId: string): string[] {
     const id = alias.original.id;
     if (aliasIds.has(id) || originals.has(id) || current.has(id)) fail(`${id}: duplicate or reused alias identity`);
     aliasIds.add(id); check(alias,true);
+  }
+  const origins = new Map([...record.rows,...(record.aliases ?? [])].map(entry=>[entry.original.id,entry]));
+  for (const insertion of record.insertions ?? []) {
+    const {row,language,target_start:start,left,right,reason,value:inserted} = insertion;
+    const target=current.get(row)?.row, ref=target?.[language], actual=ref==null?undefined:c.texts.get(ref);
+    const points=actual===undefined?[]:codePoints(actual), leftOrigin=origins.get(left),rightOrigin=origins.get(right);
+    const leftTouches=leftOrigin?.[language].some(s=>s.row===row&&s.language===language&&
+      s.target_start!==undefined&&s.target_start+s.end-s.start===start);
+    const rightTouches=rightOrigin?.[language].some(s=>s.row===row&&s.language===language&&s.target_start===start+1);
+    const boundaryIssue=Number.isSafeInteger(start)&&start>0&&start<points.length-1 ?
+      spacingBoundaryIssue(points.slice(0,start).join(''),points.slice(start+1).join('')) : 'invalid offset';
+    if (record.format_version!==3 || inserted!==' ' || !reason || !validMergeInsertionReason(reason) ||
+        !Number.isSafeInteger(start) || start<=0 || start>=points.length-1 ||
+        !destinations.has(row) || points[start]!==' ' || boundaryIssue!==undefined ||
+        left===right || !leftTouches || !rightTouches) {
+      fail(`${row}/${language}: invalid or untraceable editorial boundary insertion`);
+    }
+    const key=`${row}\0${language}`,ranges=tiles.get(key) ?? [];
+    ranges.push({start,end:start+1});tiles.set(key,ranges);
   }
   for (const rowId of destinations) {
     const row = current.get(rowId)?.row; if (!row) continue;
