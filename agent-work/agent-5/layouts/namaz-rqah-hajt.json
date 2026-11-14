@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-rqah-hajt",
   "author": "agent-5",
-  "plan_sha256": "9389ad27738afb906556ab4cc7cc1c3b13406706507c99e07259d27641cb9ce5",
+  "plan_sha256": "5c305bb23395c159f284ac49ad5efa655b6793b61c5f1142245cdd6604dc7e50",
   "rows": [
     {
       "row": "r00001",
@@ -14,6 +14,14 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "instruction"
         }
@@ -31,6 +39,17 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
           },
           "kind": "recitation"
         }
