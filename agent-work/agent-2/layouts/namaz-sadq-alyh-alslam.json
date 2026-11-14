@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-sadq-alyh-alslam",
   "author": "agent-2",
-  "plan_sha256": "cb525cc9bd417a84e147fb95a3d98d4037f637aa5b7818ffb61a6e741703e719",
+  "plan_sha256": "f504c4b4c298862f9bd061dab259d6c9ad1c41fdbbdf4db3b767ea911d543d57",
   "rows": [
     {
       "row": "r00001",
@@ -65,6 +65,13 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002-s51331c3b3dd06d15",
+      "right": "r00003-sa800142d710dfc87",
+      "checked": true
     }
   ]
 }

@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-item-11",
   "author": "agent-2",
-  "plan_sha256": "6d73e3b3cc7be4b06aa728d3c5438826d55cfa12963a500d764bddbca7d7b87b",
+  "plan_sha256": "4a4f641b2c9924121502b5491ebfda2a7b29d884a39ffc87a08c976025c6f593",
   "rows": [
     {
       "row": "r00001",
@@ -71,6 +71,17 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002-s51331c3b3dd06d15",
+      "right": "r00003",
+      "checked": true,
+      "spacing": {
+        "mode": "ar-space",
+        "reason": "The base rows split the ziyarat opening al-salamu alayka without a space; one U+0020 restores the salam phrase."
+      }
     }
   ]
 }
