@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-slvat-shaban",
   "author": "agent-4",
-  "plan_sha256": "b06583ee1bd63c7eee99b2fb5e0d5b301c74bb98d9dc0b59f726b98b9eacf592",
+  "plan_sha256": "a39fd4b826cbf9dc8148cadf84c7ada8a39986af6474f8c7fead0f05361231af",
   "rows": [
     {
       "row": "r00001",
@@ -215,6 +215,44 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002",
+      "right": "r00003-sa84854240323e3e5",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate words at r00002/r00003 fa boundary"
+      }
+    },
+    {
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005-sf75a34654a0b51be",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at r00004/r00005 ar/fa boundary"
+      }
+    },
+    {
+      "left": "r00005-s43c86915aa88b706",
+      "right": "r00006-s3e3874d69dfd3c50",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at r00005/r00006 ar/fa boundary"
+      }
+    },
+    {
+      "left": "r00006-s34b02a6bb1ae0a35",
+      "right": "r00007-sb13bc65dd76f169b",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at r00006/r00007 ar/fa boundary"
+      }
     }
   ]
 }
