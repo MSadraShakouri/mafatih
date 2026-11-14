@@ -220,8 +220,15 @@
       "language": "ar",
       "source_sha256": "bf944cae58947dfd05d636ba06991e3332f8055fc591d34b67ae21b11e458646",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        32,
+        65,
+        100
+      ],
       "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
         "recitation"
       ]
     },
@@ -240,8 +247,15 @@
       "language": "ar",
       "source_sha256": "8691154f83b7114e607d15b27674186c3056855e57f136d7de1e75e2a96a1ae1",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        44,
+        86,
+        100
+      ],
       "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
         "recitation"
       ]
     },
@@ -250,8 +264,15 @@
       "language": "fa",
       "source_sha256": "cd37cb955227b56f4db2bad9ca048d4024e370d553cb39b670049b8fbfd8c0a6",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        37,
+        83,
+        115
+      ],
       "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
         "recitation"
       ]
     },
@@ -260,8 +281,11 @@
       "language": "ar",
       "source_sha256": "0688cae3427da05a68deff3e9aae14e3d64deb1da891b86ab847ef3e1c0acf58",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        48
+      ],
       "kinds": [
+        "recitation",
         "recitation"
       ]
     },
@@ -270,8 +294,11 @@
       "language": "fa",
       "source_sha256": "a1d4899769586f949cc7b9b035ef0d30b94c2c8ce74edeeb3cbf49ac8530c8db",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        48
+      ],
       "kinds": [
+        "recitation",
         "recitation"
       ]
     },
@@ -2480,8 +2507,15 @@
       "language": "ar",
       "source_sha256": "152bf3507b4fcc49744843ae1db6ff0cab4401ef3cbcd7f529e49da942b75716",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        38,
+        69,
+        101
+      ],
       "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
         "recitation"
       ]
     },
@@ -2490,8 +2524,15 @@
       "language": "fa",
       "source_sha256": "c7fd31b6371bd2c3fdf900f0d26fc8e81e6c7345d4eb44fb89bf2175ebc2e3d2",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        28,
+        47,
+        72
+      ],
       "kinds": [
+        "recitation",
+        "recitation",
+        "recitation",
         "recitation"
       ]
     },
@@ -4767,6 +4808,12 @@
       "language": "fa",
       "kind": "historical-line-break",
       "note": "Recorded earlier value carried physical separators; current field inspected and no old separator restored."
+    },
+    {
+      "row": "r00014",
+      "language": "ar",
+      "kind": "other",
+      "note": "Only the first portion has a corresponding Persian phrase in the frozen r00014/fa source; remaining Arabic is left unpaired. No missing translation was generated; recheck against neighboring sources."
     }
   ]
 }
