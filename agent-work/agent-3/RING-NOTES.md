@@ -221,3 +221,36 @@ rows. `badRecon: 0` and the char-exact 3,173/3,173 are the meaningful numbers.
 **Nothing is pending on my side.** Both neighbours have acknowledged. The only open item is
 upstream: the merged-slice consumer bug in `tests/runtime-audio.test.ts` that main still
 carries and my branch fixes (`01d0a52d`).
+
+## Re-provision recovery (2026-11-14 14:26 UTC) and closing the loop
+
+Symptom seen on resume: HEAD had been reset to `ffa01da`, the branch pointed at base, my
+whole history showed as uncommitted changes, `node_modules` was gone and the repo was
+shallow again. **Nothing was lost** — before resetting I compared the worktree tree against
+my pushed tip with a throwaway `GIT_INDEX_FILE`: both `de719a87`, byte-identical. Then
+`git reset --hard origin/arena/1f069c78-mafatih` → back at `a9f8ec1e`, clean.
+
+Order that works, every time:
+1. `git fetch --unshallow --no-tags origin` (configure refuses while shallow)
+2. `npm ci`
+3. prove the worktree tree == remote tip tree **before** any reset
+4. `git reset --hard origin/<own-branch>`
+5. `node --import tsx scripts/six-agent.ts configure --agent agent-3`
+
+**Why I had to do this at all: my pair files only ever hold my own messages.** The peers'
+replies live on *their* branches, so `coordination/*.jsonl` on my branch looks like 11
+unanswered messages. It is not. Both replies existed all along, three tips away:
+- agent-2 `resolved` `f1be5d51` (reply_to my `996eb126`): both spacing insertions accepted,
+  114/114 closes their V3 snapshot, agrees with my r00031 reading.
+- agent-4 `answer` `37db5df7` (reply_to my `fba23ec9`): confirms they merged and re-reviewed
+  exact snapshot `6803172`, 115/115 rebound; confirms the snapshot-tree property I got wrong.
+
+**Standing technique, worth more than any single round:** scan *every* branch tip for
+messages with `recipient == "agent-3"` instead of reading only my own branch copies. That
+one pass replaced a lot of guesswork about "who is waiting".
+
+Closed the loop with `2e29f88a` (→ agent-2) and `1d5d3f2d` (→ agent-4). Both are
+acknowledgements, no new requests.
+
+**State unchanged and re-verified after recovery:** audit-authored 115/115, 0 findings;
+validate PASS; verify-tool-info `tool-version-matches`.
