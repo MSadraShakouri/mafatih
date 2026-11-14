@@ -83,11 +83,31 @@ Notes on the kinds:
   judgment, not a verified audio attribution.
 - `other` marks the one piece left unpaired because the language rows cross.
 
+## Mid-round tool upgrade
+
+Coordinator commit `c75e50c6` was merged into this branch after the review work:
+it adds reversible cross-row merging (`merge-preview`, `merge-rows`, V2 split
+records) and prior-snapshot text-pool repair, and repins `tool-info.json`. The
+frozen base, registration, assignments, plans and V1 results are untouched, and
+`verify-tool-info` reports `tool-version-matches` (Node v22.22.3, ICU 78.2,
+Unicode 17.0). The upgrade raised the suite from 263 to 271 tests.
+
+The merge tool does not apply to anything left open here: it refuses rows of
+different kinds (checked against `item-drd-dndan/r00001`, heading against note),
+and my remaining short heading rows are headings by kind, not one-word rows that
+were mistakenly cut out. Text-pool repair is likewise not needed: no value from
+the parent snapshot is missing, only 79 extra values that arrived with the
+agent-6 revision, which no tool prunes.
+
+Snapshot re-published after the upgrade:
+`8d9704b99508ab405017dc891844a38e99685b4a` (supersedes `9439f6a`, same 112
+items, V1 results unchanged).
+
 ## Gates run at 112 items
 
 - `npm run validate` — STRUCTURAL VALIDATION PASS (not a content/rights approval).
 - `npm run check:line-breaks` — passed, 0 exact retained breaks (0 pending, 0 reviewed).
-- `npm run check` — exit 0; 263 tests, 260 pass, 0 fail, 3 skipped.
+- `npm run check` — exit 0; 271 tests after the upgrade, 268 pass, 0 fail, 3 skipped.
 - `six-agent.ts audit-authored --base ffa01da9… --agent agent-1` — `complete`,
   total_items 112, complete_items 112, findings [].
 
