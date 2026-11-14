@@ -3,8 +3,15 @@
 Status: **proposal only, nothing applied to `data/`.** No row was re-split, no
 guard was bypassed and no pinned tool was changed to produce this.
 
-Data: `historical-row-links.json` in this directory (one proposed alias per
-retired row ID).
+Data in this directory:
+
+- `historical-row-links.json`: one proposed alias per retired row ID (142 IDs,
+  all recoverable).
+- `reused-row-ids.json`: a second class found after the first report, 93 row
+  IDs that are still in use but now carry other text (not recoverable by an
+  alias; see the section near the end).
+- `agent-5-retired-row-ids.json`: the same check run on agent-5's items as
+  their reviewer.
 
 ## What was asked
 
@@ -120,6 +127,43 @@ Needed from the tool:
 - Until item 1 exists I will not revise the cuts of any item, and as a reviewer
   I will not ask an author to re-cut a row that is already split and published.
 
+## Second class: IDs still in use that now carry other text
+
+Agent-5 reported this class in their own items (message `04048d20`), so I
+checked mine. Because the text is not part of the ID hash, adding a cut does
+not only retire IDs: the part numbers shift, and an ID that was published for
+one piece can come to stand for the next piece.
+
+- **93 row IDs in 9 items** exist in an earlier snapshot of mine and exist
+  now, but with different text. All 93 were published in `561fdfb0`; the 31 of
+  `amal-slvat-abvalhsn-zrab` also in `941c7ad3` and `b8d0d350`, and the 23 of
+  `ziyarat-rjybyh-alhmd-allh` also in `36f89c8b`.
+- A link saved against the earlier snapshot would now open:
+  - a different piece of text in 79 cases (a neighbouring piece of the same
+    source row);
+  - the start of the old text in 13 cases (the old piece was cut and the ID
+    stayed with its first part);
+  - a row that contains the old text in 1 case.
+- Items: `amal-slvat-abvalhsn-zrab` 31, `ziyarat-rjybyh-alhmd-allh` 23,
+  `dua-aml-am-davd` 11, `namaz-rsvl-sly-allh` 11, `item-dvm-khtbh-ayd` 8,
+  `item-adayh-vqt-tlva` 4, `dua-samat` 2, `ziyarat-hshtm-adab-nyabt` 2,
+  `khavas-khvas-angshtr-aqyq` 1.
+
+**What can be recovered.** The old text of every one of the 93 is still in the
+item and I located it: 73 as the same text under another current ID, 13 spread
+over several current rows, 7 inside one larger row. `reused-row-ids.json`
+gives the current rows for each. An alias cannot express this, because an
+alias maps an ID that is no longer in use, and these IDs are in use. A repair
+is possible only if a saved link also records which snapshot it was made
+against; then the table in the file is the migration. Without that, a link to
+one of these IDs cannot be told apart from a link made today.
+
+**What I recommend to the coordinator.** Decide first whether links were ever
+saved against `561fdfb0` or the two partial snapshots. If not, nothing is
+lost. If they were, the safe repair is a versioned link migration or a new ID
+scheme that includes the text; neither is something an author should attempt
+by re-cutting rows.
+
 ## The same audit run on agent-5's items (as their reviewer)
 
 While re-reviewing agent-5's snapshot `4aae1ccd` I ran the same script on their
@@ -129,7 +173,9 @@ which of my review findings are safe to ask for.
 - 16 row IDs in 12 items are missing from the current rows and mappings; 14 of
   them were published in snapshot `b537ded9`. All 16 are exactly recoverable as
   aliases. The list is in `agent-5-retired-row-ids.json` (IDs and text
-  reference IDs only).
+  reference IDs only). Agent-5's own audit reports the same count, 16 in 12
+  items, plus 11 reused IDs (`agent-work/agent-5/historical-anchor-audit.json`
+  on their branch).
 - Ten of the 12 items are at mapping V1. The IDs were retired when a row that
   was already cut was cut again, or when a piece changed kind or slot.
 - Consequence for the review: I ask for a first cut only on rows that have
