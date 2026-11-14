@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-slvat-shaban",
   "author": "agent-4",
   "baseline_item_sha256": "c85b38038000a660c7395d9a8a32bdc34e1be5164abb465008524437c5ae3a20",
-  "plan_sha256": "b06583ee1bd63c7eee99b2fb5e0d5b301c74bb98d9dc0b59f726b98b9eacf592",
-  "layout_sha256": "c56f217e8189ff8bd2a3d3b1a366f87f59e08723f72f4d59d10331d41e93ddc2",
+  "plan_sha256": "a39fd4b826cbf9dc8148cadf84c7ada8a39986af6474f8c7fead0f05361231af",
+  "layout_sha256": "056bf4e864334ab791d731a898be4336ace582676521a24eb6bd82c8e98bc63f",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 12
+          "end": 12,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +33,16 @@
         "fa": "t9353c957505fe66f339869ea"
       },
       "results": [
-        "r00002"
+        "m0a65bb84f22990a314437199"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m0a65bb84f22990a314437199",
           "language": "fa",
           "start": 0,
-          "end": 143
+          "end": 143,
+          "target_start": 0
         }
       ]
     },
@@ -51,29 +53,32 @@
         "fa": "tf0438c86bed917a0995f373b"
       },
       "results": [
-        "r00003-sa84854240323e3e5",
+        "m0a65bb84f22990a314437199",
         "r00003-s1b27bb8c75bc48e1",
         "r00003-s277471b51abf8d01"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003-sa84854240323e3e5",
+          "row": "m0a65bb84f22990a314437199",
           "language": "fa",
           "start": 0,
-          "end": 74
+          "end": 74,
+          "target_start": 144
         },
         {
           "row": "r00003-s1b27bb8c75bc48e1",
           "language": "fa",
           "start": 74,
-          "end": 409
+          "end": 409,
+          "target_start": 0
         },
         {
           "row": "r00003-s277471b51abf8d01",
           "language": "fa",
           "start": 409,
-          "end": 443
+          "end": 443,
+          "target_start": 0
         }
       ]
     },
@@ -85,28 +90,31 @@
       },
       "results": [
         "r00004-s84d9644081c0182c",
-        "r00004-se656eb44999bf14d"
+        "mfc62a9fa6de76a4527937b07"
       ],
       "ar": [
         {
           "row": "r00004-s84d9644081c0182c",
           "language": "fa",
           "start": 0,
-          "end": 140
+          "end": 140,
+          "target_start": 0
         },
         {
-          "row": "r00004-se656eb44999bf14d",
+          "row": "mfc62a9fa6de76a4527937b07",
           "language": "ar",
           "start": 140,
-          "end": 484
+          "end": 484,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00004-se656eb44999bf14d",
+          "row": "mfc62a9fa6de76a4527937b07",
           "language": "fa",
           "start": 0,
-          "end": 269
+          "end": 269,
+          "target_start": 0
         }
       ]
     },
@@ -117,74 +125,84 @@
         "fa": "tf87bf0a07aa04a08bae58468"
       },
       "results": [
-        "r00005-sf75a34654a0b51be",
+        "mfc62a9fa6de76a4527937b07",
         "r00005-sef34cc78c3ba2c3e",
         "r00005-s26cb4356b4155a1c",
         "r00005-sbd99c92550db078e",
-        "r00005-s43c86915aa88b706"
+        "mc3133c28659a89e4debe9223"
       ],
       "ar": [
         {
-          "row": "r00005-sf75a34654a0b51be",
+          "row": "mfc62a9fa6de76a4527937b07",
           "language": "ar",
           "start": 0,
-          "end": 79
+          "end": 79,
+          "target_start": 345
         },
         {
           "row": "r00005-sef34cc78c3ba2c3e",
           "language": "ar",
           "start": 79,
-          "end": 247
+          "end": 247,
+          "target_start": 0
         },
         {
           "row": "r00005-s26cb4356b4155a1c",
           "language": "ar",
           "start": 247,
-          "end": 443
+          "end": 443,
+          "target_start": 0
         },
         {
           "row": "r00005-sbd99c92550db078e",
           "language": "ar",
           "start": 443,
-          "end": 607
+          "end": 607,
+          "target_start": 0
         },
         {
-          "row": "r00005-s43c86915aa88b706",
+          "row": "mc3133c28659a89e4debe9223",
           "language": "ar",
           "start": 607,
-          "end": 783
+          "end": 783,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00005-sf75a34654a0b51be",
+          "row": "mfc62a9fa6de76a4527937b07",
           "language": "fa",
           "start": 0,
-          "end": 84
+          "end": 84,
+          "target_start": 270
         },
         {
           "row": "r00005-sef34cc78c3ba2c3e",
           "language": "fa",
           "start": 84,
-          "end": 220
+          "end": 220,
+          "target_start": 0
         },
         {
           "row": "r00005-s26cb4356b4155a1c",
           "language": "fa",
           "start": 220,
-          "end": 396
+          "end": 396,
+          "target_start": 0
         },
         {
           "row": "r00005-sbd99c92550db078e",
           "language": "fa",
           "start": 396,
-          "end": 538
+          "end": 538,
+          "target_start": 0
         },
         {
-          "row": "r00005-s43c86915aa88b706",
+          "row": "mc3133c28659a89e4debe9223",
           "language": "fa",
           "start": 538,
-          "end": 683
+          "end": 683,
+          "target_start": 0
         }
       ]
     },
@@ -195,35 +213,39 @@
         "fa": "t3ea4f1c2add12a6bec88e8bd"
       },
       "results": [
-        "r00006-s3e3874d69dfd3c50",
-        "r00006-s34b02a6bb1ae0a35"
+        "mc3133c28659a89e4debe9223",
+        "mfaa6f3934de456f96fcd3edf"
       ],
       "ar": [
         {
-          "row": "r00006-s3e3874d69dfd3c50",
+          "row": "mc3133c28659a89e4debe9223",
           "language": "ar",
           "start": 0,
-          "end": 106
+          "end": 106,
+          "target_start": 177
         },
         {
-          "row": "r00006-s34b02a6bb1ae0a35",
+          "row": "mfaa6f3934de456f96fcd3edf",
           "language": "ar",
           "start": 106,
-          "end": 309
+          "end": 309,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00006-s3e3874d69dfd3c50",
+          "row": "mc3133c28659a89e4debe9223",
           "language": "fa",
           "start": 0,
-          "end": 104
+          "end": 104,
+          "target_start": 146
         },
         {
-          "row": "r00006-s34b02a6bb1ae0a35",
+          "row": "mfaa6f3934de456f96fcd3edf",
           "language": "fa",
           "start": 104,
-          "end": 248
+          "end": 248,
+          "target_start": 0
         }
       ]
     },
@@ -234,50 +256,297 @@
         "fa": "t179ebf1d78c40b089f21d42b"
       },
       "results": [
-        "r00007-sb13bc65dd76f169b",
+        "mfaa6f3934de456f96fcd3edf",
         "r00007-s4a2aa7f2dd56d14a",
         "r00007-s09ad0225f00818de"
       ],
       "ar": [
         {
-          "row": "r00007-sb13bc65dd76f169b",
+          "row": "mfaa6f3934de456f96fcd3edf",
           "language": "ar",
           "start": 0,
-          "end": 114
+          "end": 114,
+          "target_start": 204
         },
         {
           "row": "r00007-s4a2aa7f2dd56d14a",
           "language": "ar",
           "start": 114,
-          "end": 206
+          "end": 206,
+          "target_start": 0
         },
         {
           "row": "r00007-s09ad0225f00818de",
           "language": "ar",
           "start": 206,
-          "end": 505
+          "end": 505,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00007-sb13bc65dd76f169b",
+          "row": "mfaa6f3934de456f96fcd3edf",
           "language": "fa",
           "start": 0,
-          "end": 126
+          "end": 126,
+          "target_start": 145
         },
         {
           "row": "r00007-s4a2aa7f2dd56d14a",
           "language": "fa",
           "start": 126,
-          "end": 197
+          "end": 197,
+          "target_start": 0
         },
         {
           "row": "r00007-s09ad0225f00818de",
           "language": "fa",
           "start": 197,
-          "end": 459
+          "end": 459,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00003-sa84854240323e3e5",
+        "ar": null,
+        "fa": "t8b957b5f1bd8272d7e2c39d8",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m0a65bb84f22990a314437199",
+          "language": "fa",
+          "start": 0,
+          "end": 74,
+          "target_start": 144
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-se656eb44999bf14d",
+        "ar": "t89a22851087b48018586a577",
+        "fa": "t38cdd27688232ade93e69791",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mfc62a9fa6de76a4527937b07",
+          "language": "ar",
+          "start": 0,
+          "end": 344,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mfc62a9fa6de76a4527937b07",
+          "language": "fa",
+          "start": 0,
+          "end": 269,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-sf75a34654a0b51be",
+        "ar": "t81ab89ca0835adbc97d1f38d",
+        "fa": "t6016b7d447cda1400d63a6c6",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mfc62a9fa6de76a4527937b07",
+          "language": "ar",
+          "start": 0,
+          "end": 79,
+          "target_start": 345
+        }
+      ],
+      "fa": [
+        {
+          "row": "mfc62a9fa6de76a4527937b07",
+          "language": "fa",
+          "start": 0,
+          "end": 84,
+          "target_start": 270
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-s43c86915aa88b706",
+        "ar": "tee1ce1c59de14506b86a6803",
+        "fa": "t6f8e7b6722d3bab2e9e7578f",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mc3133c28659a89e4debe9223",
+          "language": "ar",
+          "start": 0,
+          "end": 176,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mc3133c28659a89e4debe9223",
+          "language": "fa",
+          "start": 0,
+          "end": 145,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-s3e3874d69dfd3c50",
+        "ar": "tcd61f20ae6a533f0624ff23a",
+        "fa": "tb6f0ce93700e0c886253ca28",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mc3133c28659a89e4debe9223",
+          "language": "ar",
+          "start": 0,
+          "end": 106,
+          "target_start": 177
+        }
+      ],
+      "fa": [
+        {
+          "row": "mc3133c28659a89e4debe9223",
+          "language": "fa",
+          "start": 0,
+          "end": 104,
+          "target_start": 146
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-s34b02a6bb1ae0a35",
+        "ar": "tdd71351e9e9141880f43fd20",
+        "fa": "tb5e82249a133cced1e3f2178",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mfaa6f3934de456f96fcd3edf",
+          "language": "ar",
+          "start": 0,
+          "end": 203,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mfaa6f3934de456f96fcd3edf",
+          "language": "fa",
+          "start": 0,
+          "end": 144,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00007-sb13bc65dd76f169b",
+        "ar": "t8248c15daef8f88881d05dea",
+        "fa": "t213f22046a34a51fe35636ef",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mfaa6f3934de456f96fcd3edf",
+          "language": "ar",
+          "start": 0,
+          "end": 114,
+          "target_start": 204
+        }
+      ],
+      "fa": [
+        {
+          "row": "mfaa6f3934de456f96fcd3edf",
+          "language": "fa",
+          "start": 0,
+          "end": 126,
+          "target_start": 145
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m0a65bb84f22990a314437199",
+      "language": "fa",
+      "target_start": 143,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-sa84854240323e3e5",
+      "reason": "Separate words at r00002/r00003 fa boundary"
+    },
+    {
+      "row": "mfc62a9fa6de76a4527937b07",
+      "language": "ar",
+      "target_start": 344,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005-sf75a34654a0b51be",
+      "reason": "Separate words at r00004/r00005 ar/fa boundary"
+    },
+    {
+      "row": "mfc62a9fa6de76a4527937b07",
+      "language": "fa",
+      "target_start": 269,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005-sf75a34654a0b51be",
+      "reason": "Separate words at r00004/r00005 ar/fa boundary"
+    },
+    {
+      "row": "mc3133c28659a89e4debe9223",
+      "language": "ar",
+      "target_start": 176,
+      "value": " ",
+      "left": "r00005-s43c86915aa88b706",
+      "right": "r00006-s3e3874d69dfd3c50",
+      "reason": "Separate words at r00005/r00006 ar/fa boundary"
+    },
+    {
+      "row": "mc3133c28659a89e4debe9223",
+      "language": "fa",
+      "target_start": 145,
+      "value": " ",
+      "left": "r00005-s43c86915aa88b706",
+      "right": "r00006-s3e3874d69dfd3c50",
+      "reason": "Separate words at r00005/r00006 ar/fa boundary"
+    },
+    {
+      "row": "mfaa6f3934de456f96fcd3edf",
+      "language": "ar",
+      "target_start": 203,
+      "value": " ",
+      "left": "r00006-s34b02a6bb1ae0a35",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at r00006/r00007 ar/fa boundary"
+    },
+    {
+      "row": "mfaa6f3934de456f96fcd3edf",
+      "language": "fa",
+      "target_start": 144,
+      "value": " ",
+      "left": "r00006-s34b02a6bb1ae0a35",
+      "right": "r00007-sb13bc65dd76f169b",
+      "reason": "Separate words at r00006/r00007 ar/fa boundary"
     }
   ]
 }
