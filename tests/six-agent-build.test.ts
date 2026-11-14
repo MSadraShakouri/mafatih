@@ -64,5 +64,25 @@ test('runtime build emits merged row offsets and prior-output redirects while se
       {row:'joined',language:'ar',offset:3});
     const search=[...files].filter(([name])=>/^search\/\d+\.json$/.test(name)).flatMap(([,body])=>(JSON.parse(body) as {records:Array<{row?:string;text:string}>}).records);
     assert.ok(search.some(record=>record.row==='joined'&&record.text==='a😀bc'));
+    // The runtime also indexes the actual V3 editorial space while historical
+    // anchors start after it, without pretending it belonged to the source.
+    const spaced='a😀 bc',spacedId=textId(spaced),shard=spacedId.slice(1,3),pool=pools.get(shard)??{};
+    pool[spacedId]=spaced;pools.set(shard,pool);put(`texts/${shard}.json`,pool);
+    put('items/example.json',{legacy_id:null,title:{fa:null,ar:null,en:null},category:'other',tags:[],legacy_alignment:null,
+      rows:[{id:'joined-space',ar:spacedId,fa:null,kind:'recitation'}]});
+    const s=(target_start:number)=>({row:'joined-space',language:'ar',start:0,end:2,target_start});
+    put('row-splits/example.json',{format_version:3,item:'example',author:'agent-1',baseline_item_sha256:h,plan_sha256:h,layout_sha256:h,
+      rows:[{original:{id:'old-a',ar:ids[0],fa:null},results:['joined-space'],ar:[s(0)],fa:[]},
+        {original:{id:'old-b',ar:ids[1],fa:null},results:['joined-space'],ar:[s(3)],fa:[]}],
+      aliases:[{original:{id:'old-b-piece',ar:ids[1],fa:null},ar:[s(3)],fa:[]}],
+      insertions:[{row:'joined-space',language:'ar',target_start:2,value:' ',left:'old-a',right:'old-b',reason:'Proposed boundary space'}]});
+    assert.deepEqual(validateCorpus(loadCorpus(root)).errors,[]);
+    const spacedFiles=new Map<string,string>();buildData({root,quiet:true,write:(name,body)=>spacedFiles.set(name,body)});
+    const spacedItem=JSON.parse(spacedFiles.get('items/example.json')!) as {rows:Array<{id:string;ar:string}>;row_split_redirects:RowSplitRedirect[]};
+    assert.equal(spacedItem.rows[0]!.ar,spaced);
+    assert.deepEqual(resolveLegacyRowAnchor(spacedItem.row_split_redirects,{row:'old-b-piece',language:'ar',offset:1}),
+      {row:'joined-space',language:'ar',offset:4});
+    const spacedSearch=[...spacedFiles].filter(([name])=>/^search\/\d+\.json$/.test(name)).flatMap(([,body])=>(JSON.parse(body) as {records:Array<{row?:string;text:string}>}).records);
+    assert.ok(spacedSearch.some(record=>record.row==='joined-space'&&record.text===spaced));
   } finally {fs.rmSync(root,{recursive:true,force:true});}
 });

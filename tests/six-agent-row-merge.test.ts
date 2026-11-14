@@ -2,13 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadCorpus, text, type Corpus } from '../src/corpus.js';
 import { intern } from '../src/editor.js';
-import { ItemSchema, RowSplitRecordSchema } from '../src/schema.js';
+import { ItemSchema, RowMergeInsertionSchema, RowSplitRecordSchema } from '../src/schema.js';
 import { createAgentTemplate, splitAgentPlan } from '../src/split-agent.js';
 import { compileCanonicalSplit, createCanonicalLayoutTemplate, restoreCanonicalItem, verifyCanonicalResult } from '../src/split-canonical.js';
-import { validateRowSplitRecords } from '../src/row-splits.js';
+import { spacingBoundaryIssue, validateRowSplitRecords } from '../src/row-splits.js';
 import { codePoints } from '../src/text-ids.js';
 import { resolveLegacyRowAnchor } from '../web/row-split-anchor.js';
 import { createCanonicalReviewTemplate, verifyCanonicalReview } from '../src/six-agent-review.js';
+import { corpusBeforeRowSplits } from './helpers/row-split-history.js';
 
 function withResult(c:Corpus, result:ReturnType<typeof compileCanonicalSplit>):Corpus {
   const next:Corpus={...c,items:new Map(c.items),texts:new Map(c.texts),textShards:new Map(c.textShards),rowSplits:new Map(c.rowSplits)};
@@ -18,7 +19,9 @@ function withResult(c:Corpus, result:ReturnType<typeof compileCanonicalSplit>):C
 }
 
 function faraj() {
-  const c=loadCorpus(), item='dua-frj-zman-ajl', plan=createAgentTemplate(c,item,'agent-5');
+  // The fixture describes the frozen original rows, not whichever already
+  // migrated rows happen to be in the branch running this test.
+  const c=corpusBeforeRowSplits(loadCorpus()), item='dua-frj-zman-ajl', plan=createAgentTemplate(c,item,'agent-5');
   for(const source of plan.sources){
     source.checked=true;
     source.cuts=source.row==='r00003'?[source.language==='ar'?745:659]:
@@ -145,4 +148,111 @@ test('mixed-language source pieces retain their original language redirects when
     {row:joined.id,language:'fa',offset:codePoints(f.ar[0]!).length+1});
   assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:second.id,language:'fa',offset:1}),
     {row:joined.id,language:'fa',offset:codePoints(f.ar[0]!).length+1});
+});
+
+test('Faraj spaces are explicit editorial insertions, reversible and separately reviewable', () => {
+  const f=faraj(), before=withResult(f.c,f.separate), old=before.items.get(f.item)!;
+  const left=old.rows.find(r=>r.id===f.left)!, right=old.rows.find(r=>r.id===f.right)!;
+  const reason='Proposed separation across original row boundary';
+  const layout={...f.layout,merges:[{left:f.left,right:f.right,checked:true as const,
+    spacing:{mode:'both-space' as const,reason}}]};
+  const result=compileCanonicalSplit(f.c,f.plan,layout),after=withResult(f.c,result);
+  const joined=result.item.rows[old.rows.indexOf(left)]!, redirects=[...result.record.rows,...result.record.aliases!];
+  assert.equal(result.record.format_version,3);assert.equal(result.record.insertions!.length,2);
+  assert.throws(()=>RowSplitRecordSchema.parse({...result.record,format_version:2}),/V3|insertions/i);
+  assert.throws(()=>RowSplitRecordSchema.parse({...result.record,insertions:[]}),/V3|insertions/i);
+  assert.deepEqual(validateRowSplitRecords(after),[]);assert.deepEqual(restoreCanonicalItem(after,f.item),f.c.items.get(f.item));
+  for(const lang of ['ar','fa'] as const){
+    const a=text(before,left[lang]),b=text(before,right[lang]),at=codePoints(a).length;
+    assert.equal(text(after,joined[lang]),a+' '+b,'exactly one explicit, tracked space; neither original is altered');
+    assert.deepEqual(result.record.insertions!.find(x=>x.language===lang),
+      {row:joined.id,language:lang,target_start:at,value:' ',left:f.left,right:f.right,reason});
+    assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:'r00004',language:lang,offset:0}),
+      {row:joined.id,language:lang,offset:at+1});
+    assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:f.right,language:lang,offset:2}),
+      {row:joined.id,language:lang,offset:at+3});
+    assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:f.left,language:lang,offset:at}),
+      {row:joined.id,language:lang,offset:at},'the left end remains immediately before the inserted space');
+  }
+  assert.doesNotThrow(()=>verifyCanonicalResult(f.c,after,f.plan,layout));
+  const review=createCanonicalReviewTemplate(f.c,after,f.plan,layout,'agent-6','a'.repeat(40));
+  for(const source of review.semantic_review.sources){source.split='accept';source.kind='accept';}
+  for(const issue of review.semantic_review.issues){issue.decision='addressed';issue.note='Inspected';}
+  review.layout.decision='accept';
+  assert.equal(review.spacing_review!.length,2);
+  assert.equal(verifyCanonicalReview(f.c,after,f.plan,layout,review).status,'needs-work','layout approval alone must not approve spaces');
+  review.spacing_review![0]!.decision='accept';
+  assert.throws(()=>verifyCanonicalReview(f.c,after,f.plan,layout,review),/spacing decision needs a review note/i);
+  review.spacing_review![0]!.note='Boundary and source context checked';
+  assert.equal(verifyCanonicalReview(f.c,after,f.plan,layout,review).status,'needs-work','both language spaces need separate decisions');
+  review.spacing_review![1]!.decision='accept';review.spacing_review![1]!.note='Boundary and source context checked';
+  assert.equal(verifyCanonicalReview(f.c,after,f.plan,layout,review).status,'agent-review-records-complete');
+  for(const decision of ['revise','uncertain'] as const){
+    const finding=structuredClone(review);finding.spacing_review![1]!.decision=decision;
+    assert.equal(verifyCanonicalReview(f.c,after,f.plan,layout,finding).status,'needs-work');
+  }
+  const forged=structuredClone(review);forged.spacing_review![0]!.target_start++;
+  assert.throws(()=>verifyCanonicalReview(f.c,after,f.plan,layout,forged),/spacing review.*stale/i);
+  const noSeparate=structuredClone(review);delete noSeparate.spacing_review;
+  assert.throws(()=>verifyCanonicalReview(f.c,after,f.plan,layout,noSeparate),/separate spacing review/i);
+  const broken=structuredClone(result.record);broken.insertions![0]!.left='unrelated';after.rowSplits.set(f.item,broken);
+  assert.ok(validateRowSplitRecords(after).some(e=>/untraceable.*insertion/i.test(e)));
+  assert.throws(()=>restoreCanonicalItem(after,f.item),/invalid/i);
+});
+
+test('chained corrections remap source anchors, prior-output aliases and earlier insertion offsets', () => {
+  const f=synthetic(), firstLayout={...f.layout,merges:[{left:'old-2',right:'old-3',checked:true as const,
+    spacing:{mode:'ar-space' as const,reason:'Separate the Arabic boundary'}}]};
+  const first=compileCanonicalSplit(f.c,f.plan,firstLayout),mid=first.item.rows[1]!.id;
+  const layout={...firstLayout,merges:[...firstLayout.merges,{left:'old-1',right:mid,checked:true as const,
+    spacing:{mode:'fa-space' as const,reason:'Separate the Persian boundary'}}]};
+  const result=compileCanonicalSplit(f.c,f.plan,layout),after=withResult(f.c,result),joined=result.item.rows[0]!;
+  assert.deepEqual(validateRowSplitRecords(after),[]);assert.deepEqual(restoreCanonicalItem(after,f.item),f.c.items.get(f.item));
+  assert.equal(text(after,joined.ar),f.ar[0]!+f.ar[1]!+' '+f.ar[2]!);
+  assert.equal(text(after,joined.fa),f.fa[0]!+' '+f.fa[1]!+f.fa[2]!);
+  assert.equal(result.record.insertions!.find(x=>x.language==='ar')!.target_start,codePoints(f.ar[0]!+f.ar[1]!).length);
+  assert.equal(result.record.insertions!.find(x=>x.language==='fa')!.target_start,codePoints(f.fa[0]!).length);
+  const redirects=[...result.record.rows,...result.record.aliases!];
+  assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:mid,language:'fa',offset:0}),
+    {row:joined.id,language:'fa',offset:codePoints(f.fa[0]!).length+1});
+  assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:mid,language:'ar',offset:codePoints(f.ar[1]!).length}),
+    {row:joined.id,language:'ar',offset:codePoints(f.ar[0]!+f.ar[1]!).length},'the prior output link to its own inserted space remains valid');
+  assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:'old-3',language:'ar',offset:0}),
+    {row:joined.id,language:'ar',offset:codePoints(f.ar[0]!+f.ar[1]!).length+1});
+});
+
+test('spacing proposals reject an absent side, existing whitespace or missing explanation', () => {
+  const f=synthetic();
+  const withSpace={...f.layout,merges:[{left:'old-1',right:'old-2',checked:true,
+    spacing:{mode:'ar-space',reason:'Separate the boundary'}}]};
+  const existing=f.c.items.get(f.item)!.rows[0]!;existing.ar=intern(f.c,'ends in space ');
+  const plan=createAgentTemplate(f.c,f.item,'agent-1');for(const s of plan.sources){s.checked=true;s.kinds=['recitation'];}
+  const layout=createCanonicalLayoutTemplate(f.c,splitAgentPlan(f.c,plan));for(const r of layout.rows)r.checked=true;
+  assert.throws(()=>compileCanonicalSplit(f.c,plan,{...layout,merges:withSpace.merges}),/existing boundary whitespace/i);
+  const noReason={...layout,merges:[{left:'old-1',right:'old-2',checked:true,spacing:{mode:'ar-space',reason:''}}]};
+  assert.throws(()=>compileCanonicalSplit(f.c,plan,noReason),/reason|too small/i);
+  const absent=f.c.items.get(f.item)!.rows[0]!;absent.fa=null;
+  const p=createAgentTemplate(f.c,f.item,'agent-1');for(const s of p.sources){s.checked=true;s.kinds=['recitation'];}
+  const l=createCanonicalLayoutTemplate(f.c,splitAgentPlan(f.c,p));for(const r of l.rows)r.checked=true;
+  assert.throws(()=>compileCanonicalSplit(f.c,p,{...l,merges:[{left:'old-1',right:'old-2',checked:true,
+    spacing:{mode:'fa-space',reason:'Separate Persian'}}]}),/two nonempty fields/i);
+});
+
+test('editorial spaces cannot divide a cross-row grapheme or protected Quran marker', () => {
+  for(const [a,b,expected] of [['a','\u0301b',/grapheme/i],['﴿12','3﴾',/protected Quran marker/i]] as const){
+    const f=synthetic(),rows=f.c.items.get(f.item)!.rows;
+    rows[0]!.ar=intern(f.c,a);rows[1]!.ar=intern(f.c,b);
+    const plan=createAgentTemplate(f.c,f.item,'agent-1');for(const source of plan.sources){source.checked=true;source.kinds=['recitation'];}
+    const layout=createCanonicalLayoutTemplate(f.c,splitAgentPlan(f.c,plan));for(const row of layout.rows)row.checked=true;
+    assert.throws(()=>compileCanonicalSplit(f.c,plan,{...layout,merges:[{left:'old-1',right:'old-2',checked:true,
+      spacing:{mode:'ar-space',reason:'Propose boundary space'}}]}),expected);
+  }
+});
+
+test('spacing reasons use Unicode code points and reject control characters and ill-formed text', () => {
+  const insertion={row:'joined',language:'ar',target_start:1,value:' ',left:'left',right:'right'};
+  assert.doesNotThrow(()=>RowMergeInsertionSchema.parse({...insertion,reason:'😀😀😀'}));
+  for(const reason of ['😀😀','a\u0000b','a\u2028b','a\ud800b','a'.repeat(241)])
+    assert.throws(()=>RowMergeInsertionSchema.parse({...insertion,reason}),/reason/i);
+  assert.match(spacingBoundaryIssue('left\u0085','right')!,/existing boundary whitespace/i);
 });
