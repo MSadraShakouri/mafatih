@@ -4,7 +4,7 @@
   "item": "amal-avzh-aqrb",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "7ab2cc3c5642acefa9ed04f7377b35ce25690cf2",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
   "plan_sha256": "f2be6d1f29e8a604830771ec4863b7a885e4002b4eca06b4332ab82d7b66d47a",
   "layout_sha256": "1448176e2749160ca9b9142cac7dc91fc61fa1007be7146ac3be1b1ee62b5ebb",
   "result_item_sha256": "9b42695e325db6b399972dfeccd8faddf2b472cd173c8a646866e055ed88c44c",
@@ -21,37 +21,37 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The attributed report has been moved correctly to Persian but continues at the beginning of r00002. Reviewed ar source."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "revise",
+        "kind": "revise",
+        "note": "The first sentence completes the report attributed in r00001 and refers to an earlier verse; the subsequent conditional direction and attributed protection claim need distinct roles. Preserve the source reference rather than inventing the verse. Reviewed fa source."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its existing Persian rendering correspond. Reviewed ar source."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "uncertain",
-        "note": "Earlier acceptance relied on screening and was not an adequate independent source review; re-review required."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its existing Persian rendering correspond. Reviewed fa source."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "uncertain",
-    "note": "Earlier acceptance relied on screening rather than a complete examination of pairings and boundaries; independent re-review required."
+    "decision": "revise",
+    "note": "Group the attributed report across r00001/02, and separate it and the later attributed safety claim from the actual direction. The source refers to a verse not present in this item; do not invent it or treat protection claims as medical advice. The prayer is paired."
   }
 }
