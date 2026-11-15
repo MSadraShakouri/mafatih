@@ -4,11 +4,11 @@
   "item": "ziyarat-mvsy-kazm-rza",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
   "plan_sha256": "72f567ba4c61c9e0bf3b3149672bbef68a1df811341c0c2faa6277e0c8db9698",
-  "layout_sha256": "e5cad8038c39d0f83eff8dce425fd3e77c088978393412add02a33871a3297bc",
-  "result_item_sha256": "695fdb34d73bf40b9be6d78500229c9e8ded0ad5fb42b9cbeaffc9e603a73c6a",
-  "result_record_sha256": "5693ef348b90aa2ffe1f6cf6c83c1078286c28c818c1b34ec521ed1e17af7a6f",
+  "layout_sha256": "2a3090ef0564dc55a347cfd8d5a7f0968672893eaef44a6ea764557870f370a8",
+  "result_item_sha256": "75b725d47a8b84d51a838e29562f9808f6a949ab99d36009f3d1ed0161ae8893",
+  "result_record_sha256": "497be1e737e889e4e4db6d261252e7d64dc865fd02ed6a84976e2433acf26902",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -72,7 +72,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read all 4 output rows at snapshot f192ee09. The opening statement is one heading row and the direction is an instruction row; one proposed Persian space, reviewed separately and accepted. Offered, not required: the recitation still breaks inside a phrase between r00003 and r00004 (… بآل بيتكم | الطیبین الطاهرین, and in Persian … به حقّ خاندان | پاکیزه و پاکتان); a join with a space in both languages would mend it. My own items still have breaks of this sort, so I do not hold the item for it."
+    "note": "Read all 3 output rows at snapshot bae5beb3. The join I offered is made: r00003 and r00004 are one recitation row, so the phrase … بآل بيتكم الطیبین الطاهرین is whole beside … به حقّ خاندان پاکیزه و پاکتان. Three proposed spaces in the item (two new, one from the earlier snapshot), each reviewed separately and accepted."
   },
   "spacing_review": [
     {
@@ -85,6 +85,28 @@
       "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text.",
       "decision": "accept",
       "note": "Accepted. Read against the two joined pieces: the left piece ends with حضرت and the right piece begins with رضا; حضرت is the title before the name رضا, as it is before the other three names in the same row, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 44 of 100; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row is Persian prose and has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "md48ed3fca39a9da9108ab16f",
+      "language": "ar",
+      "target_start": 940,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete Arabic and Persian descriptions of the household across source-row boundaries.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with بيتكم and the right piece begins with الطیبین; بيتكم is followed by its two adjectives الطیبین الطاهرین, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 940 of 969; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    },
+    {
+      "row": "md48ed3fca39a9da9108ab16f",
+      "language": "fa",
+      "target_start": 731,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete Arabic and Persian descriptions of the household across source-row boundaries.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with خاندان and the right piece begins with پاکیزه; خاندان is followed by its two adjectives پاکیزه و پاکتان, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 731 of 748; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Arabic field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
     }
   ]
 }

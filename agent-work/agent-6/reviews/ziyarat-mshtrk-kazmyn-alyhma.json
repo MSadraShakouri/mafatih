@@ -4,11 +4,11 @@
   "item": "ziyarat-mshtrk-kazmyn-alyhma",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
   "plan_sha256": "a608473739e41fd54e6e207cf9ebd49884ca928b26e23c8a75ef39939a4c6af2",
-  "layout_sha256": "95363a3e6612e0d5085a39b217843d8a10950ff31e8ffb97902b4478fb749757",
-  "result_item_sha256": "8e2cd027bb2c8ad0a09ed682f623effbb2c3cd9ab1ba656043dd3d8b1f4e6b89",
-  "result_record_sha256": "298ece5b8fcfa0c1204781b4b838c40744083360b2d4df0106ab34ca4ab3d7f3",
+  "layout_sha256": "35f5d10e178b26eaa63b97827085483a3b8eac53dd0c251b54eeee2400b6a1d6",
+  "result_item_sha256": "b17d2964abeed9ad834c7edc462d7b52f1d90979b89d37dca813189484400fde",
+  "result_record_sha256": "f70bf7348ce390ed863401af8be1d568a36b4fe2f6b06ed5eb098172a3c2af2a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -44,7 +44,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Fixed at snapshot b81241ae. The row is now note, the kind of r00004. It is still only the first two words (این زیارت) of the sentence that goes on in r00004; a join with r00004, with one proposed space, would make it one row. Offered, not required."
+        "note": "Fixed at snapshot b81241ae and completed at bae5beb3. The row is note, the kind of r00004, and its two words (این زیارت) are now joined to the rest of their sentence in r00004 as one note row, with one proposed space reviewed separately."
       },
       {
         "row": "r00004",
@@ -192,6 +192,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read the changed row r00003 and its neighbours at snapshot b81241ae (17 output rows); the other rows are unchanged since my last review. r00003 is note. Offered, not required: r00003 is two words and r00004 is the rest of the same sentence; a join would make one row."
-  }
+    "note": "Read at snapshot bae5beb3 the merged row that is new and its neighbours (16 output rows); the other rows are as I read them at b81241ae. The join I offered is made: r00003 and r00004 are one note row (این زیارت در نهایت اعتبار است …). One proposed Persian space, reviewed separately and accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m5de8585eebe6459b1cc9ffcb",
+      "language": "fa",
+      "target_start": 9,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete the Persian source statement across rows: این زیارت در نهایت اعتبار است.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with زیارت and the right piece begins with در; این زیارت is the subject and در نهایت اعتبار است is the rest of the sentence, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 9 of 100; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

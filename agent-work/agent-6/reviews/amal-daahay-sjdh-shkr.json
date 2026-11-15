@@ -4,11 +4,11 @@
   "item": "amal-daahay-sjdh-shkr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "e5099796475c92da39b0dd88a2d3881ed67f0b46e5d681336507eafcef569c45",
-  "layout_sha256": "080d5b6a6af6020434aba5d7dbc033cbe5dec38053ad2805b00d8ab8f39475dd",
-  "result_item_sha256": "2b4b52cc77004950a63903e4587cba13d518a865a8c277eb1454e86d08170f6c",
-  "result_record_sha256": "db7e4f834e4a80ca60757b04336006bd434c9f899c7e547aa675d6219e8d7ceb",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
+  "plan_sha256": "5fd22b78d817fad671bfa00dda5d2d7d0fad519556fc6d1681a0bb5f8c06b7b3",
+  "layout_sha256": "142a0ab549eb67b766dd9f8595e755ce73be8927f4b40a0a43e74fd2be01a1c9",
+  "result_item_sha256": "8047fd554ee12acf1b6ab180288dd652d3ada159a4a4eaac71850dd3ec016969",
+  "result_record_sha256": "d5093b4c0e81ac77ab4a34a2076c483de7dc93c6ed169da82c4b9c2fb3c8399c",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "7aaa11425b428403a3ff5cfa331f12b0e4c2d488a38659fa321d498984a909d7",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "5418f4a088ca2b325606964930777679c5e6dd88bd4ad974dece70a6bd3cd88a",
+    "preview_sha256": "54fd0e64631b5def890ea502620919111e0b67bd1f7ab8fc8f2ac98ac2f22f8a",
     "sources": [
       {
         "row": "r00001",
@@ -28,9 +28,9 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The first sentence of the field is joined to r00001, whose sentence it ends, with one proposed space reviewed separately. The labels اول: and دوم: open their own heading rows, each followed by its narration (note); the closing direction چون به سجده روی بگو: is an instruction row before the prayer."
       },
       {
         "row": "r00003",
@@ -70,9 +70,9 @@
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece holds the end of an instruction and then the opening of the next numbered narration, which continues in r00007; cut before the ordinal and classify the second piece as note."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The closing direction is an instruction row, the label سوم: is a heading row, and the opening of the third narration is joined to its continuation at the head of r00007 as one note row, with one proposed space reviewed separately."
       },
       {
         "row": "r00007",
@@ -119,9 +119,9 @@
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 3 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The first piece ends the narration begun in r00010 and is joined to it, with one proposed space reviewed separately. The labels ششم:, هفتم: and هشتم: open their own heading rows. The four short Arabic prayers are in the Arabic slot as recitation rows without Persian, which is right because the source gives none; each narration before them is a note row and the direction after the first is an instruction row."
       },
       {
         "row": "r00012",
@@ -133,9 +133,9 @@
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). The piece ends with the first Arabic words of the prayer that continues in the ar field of r00014; cut before them and place them in the ar slot as recitation."
+        "note": "Fixed at snapshot bae5beb3. The label نهم: is a heading row, the narration is a note row, and the two Arabic words that open the prayer are placed in the Arabic slot and joined to the rest of the prayer in r00014, with one proposed Arabic space reviewed separately. The Persian of r00014 renders the prayer from its first word."
       },
       {
         "row": "r00014",
@@ -168,16 +168,16 @@
       {
         "row": "r00016",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The label یازدهم: is a heading row and the short Arabic invocation is a recitation row in the Arabic slot. The cuts inside this field are right. Its last piece, a note row, stops after یا رَبّاهُ, and the sentence goes on with یا سَیِّداهُ at the head of r00017; that is the break of the source rows, and my answer on it is in the note on r00017/ar."
       },
       {
         "row": "r00017",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 284 code points, 7 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
+        "note": "Answer to the adjudication the author asked for at snapshot bae5beb3: I agree that the piece is left as it is, and nothing is required of the author. The first piece of this field (row r00017-s6194ab88e3c608b8, note) holds the end of the sentence that starts in the last piece of r00016 (… بگوید: یا رَبّاهُ | یا سَیِّداهُ؛ …), then the label دوازدهم: with the opening of the twelfth narration. This piece was published in earlier snapshots. Cutting it again, to give the label its own row and to move the invocation to the Arabic slot, gives its parts new row IDs and retires the published one; that waits for tooling that can keep the old ID. A label left inside an already published piece is accepted in this round, here as in r00015. Offered, not required: the last piece of r00016 and this piece are both note rows, so a join of the two, with one proposed space, would put the whole invocation in one row without any new cut. The second piece, the prayer with its Persian, is right."
       },
       {
         "row": "r00017",
@@ -199,6 +199,52 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The slot finding on r00012 is resolved. Prose rows r00002, r00011, r00016 hold numbered sections to be opened as their own rows (Persian only, nothing to pair). The cut changes asked for on r00006, r00013 are recorded in the source notes; the rows as they stand are placed and paired consistently."
-  }
+    "note": "Read all 40 output rows at snapshot bae5beb3. Every numbered section named in my findings opens its own row; the short Arabic prayers found inside Persian fields stand in the Arabic slot; four sentences broken across source rows are joined. Four proposed spaces (three Persian, one Arabic), each reviewed separately and accepted. One break of the source rows is left, between the last row of r00016 and the first of r00017 (… یا رَبّاهُ | یا سَیِّداهُ؛ …); a join of these two note rows is offered, not required, and the finer re-cut of the published r00017 piece waits for tooling. See the note on r00017/ar."
+  },
+  "spacing_review": [
+    {
+      "row": "m7b5f82a72f443976dfc6df39",
+      "language": "fa",
+      "target_start": 25,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with بسیار and the right piece begins with است; بسیار is followed by the verb است, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 25 of 65; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m897d56940cdbb8d040051bd5",
+      "language": "fa",
+      "target_start": 21,
+      "value": " ",
+      "left": "r00006-saa9b9be4b3d5606d",
+      "right": "r00007-s94954aa661bd7576",
+      "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with از and the right piece begins with حضرت; the preposition از is followed by حضرت صادق, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 21 of 141; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m2afaf7c8d0c4de9430bffb45",
+      "language": "fa",
+      "target_start": 122,
+      "value": " ",
+      "left": "r00010",
+      "right": "r00011-sff3d5cac0f1b50db",
+      "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with گفته and the right piece begins with می‌شود; گفته and می‌شود are the two parts of the verb, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 122 of 229; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "md8ab96ae89adc938e941d110",
+      "language": "ar",
+      "target_start": 21,
+      "value": " ",
+      "left": "r00013-sd34abb5117ef22c1",
+      "right": "r00014",
+      "reason": "Separate complete words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with مغفرتک and the right piece begins with أوسع; مغفرتک is followed by its predicate أوسع (Your forgiveness is wider), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 21 of 136; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00014), so it has no junction and needs no space; it renders the whole joined Arabic."
+    }
+  ]
 }

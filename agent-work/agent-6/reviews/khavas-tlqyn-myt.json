@@ -4,11 +4,11 @@
   "item": "khavas-tlqyn-myt",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
   "plan_sha256": "ee16a320df316ad499abdded37506bef7b50a542e1172cd3aaa105e4b67755ee",
-  "layout_sha256": "2d23fa32582d0d0110cbb0a792d7511cb50374d4f646eb66d2d242df3f74b79f",
-  "result_item_sha256": "38f8973ca9c73b2a2a06895d0961c50362ba859ab8db013906fae26f66f5bd3f",
-  "result_record_sha256": "04c0bc729de3f858808e23b6eda767d5b40a6237584d836aba94c73881fb7553",
+  "layout_sha256": "860c2e4f00446af4f471fc595fc778e05db18d83af56cb5d6091fd6bf759e3d7",
+  "result_item_sha256": "8d34fedc03dd8e71b73c0b238f1bfbc36743de04c0159b175fc6ee950b2fa875",
+  "result_record_sha256": "f52e782e07ba1d0e43f68475d23f6593795f6dc6cb980ac369bcb75f42e384d5",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -163,14 +163,14 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Fixed at snapshot b81241ae. The row is now note. Its slot is a layout point, see the layout note."
+        "note": "Fixed at snapshot bae5beb3. The Arabic colophon is now in the Arabic slot and is joined to its signature line (r00014) and to its Persian rendering (r00015) as one note row."
       },
       {
         "row": "r00014",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Fixed at snapshot b81241ae. The row is now note. Its slot is a layout point, see the layout note."
+        "note": "Fixed at snapshot bae5beb3. The signature line is in the Arabic slot, joined after r00013 with one proposed Arabic space, reviewed separately, and paired with the rendering of r00015."
       },
       {
         "row": "r00015",
@@ -184,7 +184,20 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read the changed rows and their neighbours at snapshot b81241ae (19 output rows). Done: r00013 and r00014 are note. Still open, an author fix: r00013 and r00014 hold the compiler's Arabic colophon but stand in the Persian slot, and r00015, two rows later, is its Persian rendering (date and place first, signature last). So the Arabic shows as if it were Persian and is not beside its rendering. Place the Arabic of r00013 and r00014 in the Arabic slot and bring r00015 beside it: join r00013 with r00014 (one Arabic space) and then with r00015, in the way namaz-item-2 r00004 (Arabic taken out of a Persian field) and item-asharh r00001 (rendering joined to its Arabic) were treated in this same snapshot. Link-safe: the three rows have never been cut, so their IDs stay in the mapping as originals. If the tool refuses this join, tell me and I will mark the point as blocked by tooling. My request for a cut in r00009 is withdrawn."
-  }
+    "decision": "accept",
+    "note": "Read all 17 output rows at snapshot bae5beb3. The open layout point is met: the Arabic colophon of r00013 and r00014 is in the Arabic slot as one field and stands beside its Persian rendering from r00015, in one note row. The rendering follows the Arabic in order: the date and place first, the signature last. One proposed Arabic space between the two Arabic parts, reviewed separately and accepted; the pairing with r00015 is an exact join across slots and adds no character."
+  },
+  "spacing_review": [
+    {
+      "row": "m0b8d4b26b9afab775ce8676c",
+      "language": "ar",
+      "target_start": 382,
+      "value": " ",
+      "left": "r00013-s3d5f93a42f982bcb",
+      "right": "r00014-sdbbf718084a78ff7",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with آله. and the right piece begins with کتبه; the full stop after و آله ends the first sentence and کتبه begins the signature line, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 382 of 462; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00015), so it has no junction and needs no space; it renders the whole joined Arabic."
+    }
+  ]
 }

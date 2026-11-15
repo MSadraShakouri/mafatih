@@ -1,9 +1,9 @@
 # agent-6 status
 
-**State: 45 JOINS ACCEPTED BY AGENT-1; AGENT-5 SNAPSHOTS UP TO `f192ee09` MERGED AND
-REVIEWED (101 COMPLETE, 14 NEED WORK); LINK MAPPINGS RECOMPUTED AND WAITING FOR THE
+**State: 45 JOINS ACCEPTED BY AGENT-1; AGENT-5 SNAPSHOTS UP TO `bae5beb3` MERGED AND
+REVIEWED (111 COMPLETE, 4 NEED WORK); LINK MAPPINGS RECOMPUTED AND WAITING FOR THE
 COORDINATOR'S MIGRATION; 20 ITEMS HELD FROM FINAL RELEASE.**
-Updated 2026-11-14 (UTC).
+Updated 2026-11-13 (UTC).
 
 - Branch: `arena/1a493a80-mafatih`
 - Frozen base: `ffa01da92fbba25731356e8158c295b3824763f0`
@@ -68,10 +68,11 @@ still unresolved in the data.** I added no alias by hand and re-cut nothing.
    warning with the known destinations for a link without a version.
 4. **Whether any links were saved against my first snapshot `561fdfb0` or the
    partial snapshots.** Only this tells how many old unversioned links exist.
-5. **The kind of the elegy verses in `item-mrsyh-am-albnyn`** (agent-5's item). I
-   lean `quotation`. A kind change alters the row ID, so it would retire the IDs
-   of the rows agent-5 has just joined. I left it as `uncertain` and did not ask
-   agent-5 to change it.
+5. **Two kind questions in agent-5's items**, kept `uncertain` in my records as
+   directed: the elegy verses of `item-mrsyh-am-albnyn` (I lean `quotation`) and
+   the opening row of `dua-vdaa-hsyn-alyh` (`heading` is doubtful). A kind
+   change on an already-cut or joined piece gives it a new row ID, so I did not
+   ask agent-5 to change them.
 6. *(Optional.)* Whether a direction that the source prints twice, once in each
    language field, should be shown once. Today that needs a tool change. I
    accepted the two adjacent rows in `amal-aamal-shbhay-dhh` and
@@ -94,55 +95,71 @@ with `historical-row-links.json`, `reused-row-ids.json` and
 
 ## Where my review of agent-5's 115 items stands
 
-- 101 complete, 14 need work, 0 errors (`verify-review`, all 115 records).
-- Every record names an isolated agent-5 snapshot that is merged here: 89 name
-  `4aae1ccd`, 2 name `8121f9b2`, 1 names `48f3ea69`, 17 name `b81241ae`,
-  6 name `f192ee09`.
-- Merges of agent-5's snapshots: `fe5d86d0`, `fe0f3878`, `6f178ea2` (the chain
-  `5fdda3a7`, `1bf2e925`, `d28d23e5`, `85268da2`, `b81241ae`) and `175d6327`
-  (`f192ee09`). No conflicts. Only agent-5's files changed; every changed file
-  equals the snapshot; no pooled value was lost. `npm run check` passed after
-  each of the last two (278 tests, 275 pass, 0 fail, 3 skipped).
-- Last round (23 changed items): 21 complete, 2 need work. All 34 new proposed
-  spaces are accepted, each checked against the two joined pieces and by code
-  point. The 13 joins that the pinned test used to hold are applied and correct.
-  No row ID published in agent-5's earlier snapshots was lost (1,259 checked).
-- The 14 open records:
-  - Author fixes, link-safe (12): `amal-ahd-bhshty`, `amal-daahay-sjdh-shkr`,
-    `dua-daa-aymny-shr`, `dua-iftitah`,
-    `fazilat-svrhqdrvtryqtfryqmrtbhmrtbhanbrshbanhrvz`, `item-asharh-5`,
-    `item-avzh-kyk-kk`, `item-azn-dkhvl-hrmhay`, `khavas-avzat-drd-chshm`,
-    `khavas-tlqyn-myt`, `ziyarat-adab`, `ziyarat-fzylt-jafr-hrm`. Each rests on
-    a specific point: a numbered section that starts inside a prose row, an
-    Arabic sentence left in the Persian slot, or an Arabic piece beside Persian
-    that renders other words. None rests on length or on counts.
-  - Kind questions for the coordinator, nothing for the author (2):
-    `dua-vdaa-hsyn-alyh`, `item-mrsyh-am-albnyn`.
-  - Waiting for alias tooling: the kind of `dua-daa-aymny-shr` r00009 and of
-    `khavas-avzat-drd-chshm` r00011. A kind change on a cut piece gives it a new
-    row ID and retires the published one, so I ask agent-5 not to change them
-    yet.
-- Offered to agent-5 and not required: four more joins of sentences broken
-  across source rows (`amal-aamal-rmzan-2` r00002 with r00003 and r00006 with
-  r00007, `ziyarat-mshtrk-kazmyn-alyhma` r00003 with r00004,
-  `ziyarat-mvsy-kazm-rza` r00003 with r00004). My own items keep breaks of the
-  same sort, so I do not hold his items for them.
+- **111 complete, 4 need work, 0 errors** (`verify-review`, all 115 records, each
+  against the snapshot it names).
+- Every record names an isolated agent-5 snapshot that is merged here: 79 name
+  `4aae1ccd`, 2 name `8121f9b2`, 1 names `48f3ea69`, 14 name `b81241ae`,
+  4 name `f192ee09`, 15 name `bae5beb3`. For the 100 records that name an
+  older snapshot I compared the item, its mapping, plan and layout with
+  `bae5beb3`: all 100 are identical there, so those reviews still hold.
+- Merges of agent-5's snapshots: `fe5d86d0`, `fe0f3878`, `6f178ea2`,
+  `175d6327` and now `fc7195fb` (the chain `69a996e3`, `bae5beb3`). No
+  conflicts. Only agent-5's files changed; every changed file equals the
+  snapshot; no pooled value was lost or changed. `npm run check` passed on
+  `fc7195fb` (278 tests, 275 pass, 0 fail, 3 skipped).
+- **This round (snapshot `bae5beb3`, 15 changed items): 13 complete, 2 need
+  work.**
+  - All 12 author fixes I had asked for are done and read in both languages:
+    numbered sections now open their own rows, Arabic sentences that stood in
+    the Persian slot are in the Arabic slot, and the three pairings I had
+    questioned are mended.
+  - The 3 joins I had offered are made (`amal-aamal-rmzan-2` r00002 with r00003,
+    `ziyarat-mshtrk-kazmyn-alyhma`, `ziyarat-mvsy-kazm-rza`). The fourth
+    (`amal-aamal-rmzan-2` r00006 with r00007) is not made because the two rows
+    have different kinds; I agree.
+  - **All 26 new proposed spaces are accepted, each with its own decision and
+    note** (22 from `69a996e3`, 4 from `bae5beb3`). Each was read against the
+    two joined pieces and checked by code point: one U+0020, a real word on each
+    side, no doubled space, nothing else added. The 15 items have 28 junctions
+    in joined rows; all 28 carry a recorded space. My 115 records now hold 88
+    spacing decisions, all `accept`.
+  - Of 442 row IDs that earlier agent-5 snapshots published for these 15 items,
+    441 still resolve. The one that does not
+    (`fazilat-svrhqdr…` `r00003-sa800142d710dfc87`) is one of the 16 already
+    reported; this snapshot lost none.
+- The 4 open records:
+  - Kind questions for the coordinator, kept `uncertain`, nothing for the
+    author (2): `dua-vdaa-hsyn-alyh`, `item-mrsyh-am-albnyn`.
+  - Waiting for alias tooling, nothing for the author (1): the kind of
+    `dua-daa-aymny-shr` r00009. Its pieces are already cut; a kind change gives
+    a cut piece a new row ID and retires the published one.
+  - Author fix, link-safe (1): the kind of `khavas-avzat-drd-chshm` r00011
+    (a verse to be said every day, `quotation` now, `recitation` in the same
+    author's `item-jht-drd-zanv` r00005). **A correction of my last status:** I
+    had listed this row as waiting for tooling. That was wrong. The row has
+    never been cut, so a kind change keeps its ID, as `ziyarat-adab` r00025 to
+    r00030 show in this snapshot. I have now asked agent-5 for it.
+- Answered, complete, but to be redone when a re-cut can keep old IDs:
+  `amal-daahay-sjdh-shkr` r00017. Its first published piece holds the end of an
+  Arabic invocation that starts in r00016, and the label of the twelfth section.
+  agent-5 asked me to rule on it; I agreed that it stays as it is. A join of the
+  two note rows is offered to him, not required.
+- Offered to agent-5 and not required: that join, and `ziyarat-adab` r00020
+  with r00021 (a name broken at the row boundary). My own items keep breaks of
+  the same sort, so I do not hold his items for them.
 - The earlier link audit of agent-5's items stands: 16 retired row IDs in 12
   items still do not resolve. That is the same tooling gap as in my items.
 - A warning that is not new: `npm run validate` reports 85 unreferenced pooled
-  text values. It was 86 before this round, and this round added none. I traced
-  71 of the 85 to earlier isolated snapshots (64 to my `561fdfb0`, the rest to
-  my other early snapshots and to agent-5's first one): they are the texts of
-  rows that were later cut again. 14 I did not trace. Nothing is missing. I
-  suggest keeping them until the link migration is validated, because they are
-  the old texts behind the retired row IDs; removing them is a step for the
-  coordinator's final integration, not for one agent's branch.
+  text values, the same number as before this merge. They are the old texts
+  behind retired row IDs (71 of the 85 traced to earlier isolated snapshots).
+  Nothing is missing. I suggest keeping them until the link migration is
+  validated; removing them is a step for the coordinator's final integration.
 
 ## What I am waiting for
 
 - agent-1: nothing. His review of snapshot `3e35f4ca` is done.
-- agent-5: the two fixes of the last round (`khavas-tlqyn-myt`,
-  `dua-daa-aymny-shr`) and the ten older author fixes, as isolated snapshots.
+- agent-5: one kind change (`khavas-avzat-drd-chshm` r00011), as an isolated
+  snapshot. Nothing else.
 - The coordinator: the link migration (points 2 and 3) and points 4 to 6 above.
 
 I have no other task I am allowed to start; the remaining join candidates were

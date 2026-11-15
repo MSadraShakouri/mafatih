@@ -4,11 +4,11 @@
   "item": "ziyarat-adab",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "915df8824f8877f0326684b6ca1b5152bdddd8c879cd3cc290fc161bc724d7d3",
-  "layout_sha256": "0f1f1915bbf19f07e5e825d0bb555a2da5303b7fa819b027420570a2afe44585",
-  "result_item_sha256": "1e48ea13cd296e59e717f3732a891c5f26136bed7d1be432a4850e218a210049",
-  "result_record_sha256": "551fa20a8b41e8e26dc42a8fe66d7fb80d1a88fbff2d12cb8db5d817e97e8c44",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
+  "plan_sha256": "3eb4ee4f2776b331ebfa73593cec4102f1893332659e2164292ac56dbcad7a54",
+  "layout_sha256": "41528d055ceb004454a5d53a889f8a7f98f5ca7b3adad996ade762ae7211479f",
+  "result_item_sha256": "82f8a3786e31e53af65bc5a99cb72a373dd510cdcdee3e5200099b04e749bd57",
+  "result_record_sha256": "81b51c8cfc96dd69a5bfdcdc50c9d39789d251ea6e97d4905e2bc7a9905e5e15",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,35 +16,35 @@
     "item_sha256": "f1e5c1771c6ac542bd163bed44c738f99b8ddd0c8c391dab4c743c31b04cd721",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "c21d9d8bbe8ceb8ede307fbe643dbc92a157a784b9b21784e7970af7d823dc66",
+    "preview_sha256": "fac9496c70fc8c9abd5ade508c67dd50b0f2b071ecf69535dc5b8107a5c8eb08",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 5 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The introduction is a note row, and each of the five numbered manners opens with its label as a heading row followed by the manner itself as an instruction row."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The labels ششم: and هفتم: are heading rows, each followed by its manner as an instruction row."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The labels هشتم: and نهم: are heading rows. The eighth manner is an instruction row; the ninth is joined to its continuation in r00004 as one instruction row, with one proposed space reviewed separately."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
+        "note": "Read again at snapshot bae5beb3: the field is now the second part of the ninth manner, joined after the last piece of r00003. The sentence broken at the row boundary is whole."
       },
       {
         "row": "r00005",
@@ -203,128 +203,128 @@
       {
         "row": "r00022",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The first piece ends the report begun in r00021 and is joined to it, with one proposed space reviewed separately. The labels دهم: and یازدهم: are heading rows; the tenth manner is an instruction row; the first word of the eleventh is joined to the rest of it in r00023, with one proposed space reviewed separately."
       },
       {
         "row": "r00023",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 5 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The labels from دوازدهم: to شانزدهم: open their own heading rows, each followed by its manner (instruction). In the fifteenth, the report is a note row, the Arabic formula is a recitation row in the Arabic slot without Persian, as in the source, and the promised reward is a note row. The first words of the sixteenth are joined to their continuation in r00024, with one proposed space reviewed separately."
       },
       {
         "row": "r00024",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The report of Kulayni is a note row, the label هفدهم: is a heading row, the manner is an instruction row and the statement of the scholars that leads to the verses is a note row."
       },
       {
         "row": "r00025",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The verse is now quotation. The row keeps its ID, because it has never been cut."
       },
       {
         "row": "r00025",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The rendering is now quotation, with its Arabic."
       },
       {
         "row": "r00026",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The verse is now quotation. The row keeps its ID."
       },
       {
         "row": "r00026",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The rendering is now quotation, with its Arabic."
       },
       {
         "row": "r00027",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The verse is now quotation. The row keeps its ID."
       },
       {
         "row": "r00027",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The rendering is now quotation, with its Arabic."
       },
       {
         "row": "r00028",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The verse is now quotation. The row keeps its ID."
       },
       {
         "row": "r00028",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The rendering is now quotation, with its Arabic."
       },
       {
         "row": "r00029",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The verse is now quotation. The row keeps its ID."
       },
       {
         "row": "r00029",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The rendering is now quotation, with its Arabic."
       },
       {
         "row": "r00030",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The verse is now quotation. The row keeps its ID."
       },
       {
         "row": "r00030",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Didactic verses quoted from a book as support for the author's point, not text for the visitor to recite; classify quotation, as in amal-byan-nhvst-sfr r00006."
+        "kind": "accept",
+        "note": "Fixed at snapshot bae5beb3. The rendering is now quotation, with its Arabic."
       },
       {
         "row": "r00031",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The labels هجدهم: and نوزدهم: are heading rows. The eighteenth manner is an instruction row; the nineteenth, a statement of the scholar, is a note row joined to its continuation in r00032, with one proposed space reviewed separately."
       },
       {
         "row": "r00032",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 6 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The labels from بیستم: to بیست وپنجم: open their own heading rows, each followed by its manner. The first word of the twenty-fifth is joined to the rest of it in r00033, with one proposed space reviewed separately."
       },
       {
         "row": "r00033",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The labels بیست وششم: and بیست وهفتم: are heading rows. The twenty-sixth manner is an instruction row; the twenty-seventh, a statement of the scholar, is a note row joined to its continuation in r00034, with one proposed space reviewed separately."
       },
       {
         "row": "r00034",
@@ -339,6 +339,85 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The slot findings on r00012 to r00014 are resolved. Prose rows r00001, r00002, r00003, r00022, r00023, r00024, r00031, r00032, r00033 hold numbered sections to be opened as their own rows (Persian only, nothing to pair)."
-  }
+    "note": "Read all 83 output rows at snapshot bae5beb3. Each of the twenty-seven numbered manners now opens with its label as a heading row; the manners are instruction rows and the reports and statements of scholars are note rows; the six verses of r00025 to r00030 are quotation and keep their row IDs; seven sentences broken across source rows are joined. Seven proposed Persian spaces, each reviewed separately and accepted. Offered, not required: one more break of the same sort is left, r00020 with r00021, in the middle of a name (… علی بن | یقطین برسد …); a join with the merged row that follows would mend it. Source wording recorded, not changed: in the report of r00021 the words فرود بیا بیرون read oddly, and they are kept as they stand."
+  },
+  "spacing_review": [
+    {
+      "row": "mc604be56bf1ecbb482f20654",
+      "language": "fa",
+      "target_start": 89,
+      "value": " ",
+      "left": "r00003-se2af0fcb7e3f5164",
+      "right": "r00004",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with با and the right piece begins with کمک; با is followed by کمک (with the help of), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 89 of 744; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m0e1033bdfb23558fc0b0c898",
+      "language": "fa",
+      "target_start": 1012,
+      "value": " ",
+      "left": "r00021",
+      "right": "r00022-s5e113afd1b603f44",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with بیا and the right piece begins with بیرون; بیا and بیرون are separate words; the wording of the source is odd here and is kept as it stands, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 1012 of 1831; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m6cf93c84f9d29b6fcc7e5f6f",
+      "language": "fa",
+      "target_start": 5,
+      "value": " ",
+      "left": "r00022-s208aff89680bc949",
+      "right": "r00023-s562550bab804df4d",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with مقدم and the right piece begins with داشتن; مقدّم and داشتن are the two parts of the verbal noun, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 5 of 114; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m5aa61456fd0cf0b41e6c5db3",
+      "language": "fa",
+      "target_start": 42,
+      "value": " ",
+      "left": "r00023-sd6cad946fc57037a",
+      "right": "r00024-s893f920d8f81963c",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with و and the right piece begins with زیارت‌های; the conjunction و is followed by زیارت‌های, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 42 of 244; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m8db570bc1a5e36f39296778a",
+      "language": "fa",
+      "target_start": 294,
+      "value": " ",
+      "left": "r00031-s498c38373256592e",
+      "right": "r00032-s706ce6710ffc2cb3",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with است، and the right piece begins with زیارت; the comma after است closes the clause and زیارت را قطع کنند follows, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 294 of 410; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m07188414391d1e808679d17e",
+      "language": "fa",
+      "target_start": 5,
+      "value": " ",
+      "left": "r00032-s6b72289b5a195096",
+      "right": "r00033-sb73fb3683ad4a5f1",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with انفاق and the right piece begins with کردن; انفاق and کردن are the two parts of the verbal noun, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 5 of 437; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "md2d65f5f7c05b7255c2825e2",
+      "language": "fa",
+      "target_start": 238,
+      "value": " ",
+      "left": "r00033-s1aa098da9441289b",
+      "right": "r00034",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with باید and the right piece begins with خود; باید is followed by خود را, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 238 of 572; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

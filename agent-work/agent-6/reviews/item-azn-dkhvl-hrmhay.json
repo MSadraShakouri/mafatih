@@ -4,11 +4,11 @@
   "item": "item-azn-dkhvl-hrmhay",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
   "plan_sha256": "11a7ab47855041367f2a29d7b921e0375addf439541186b9c5ec82459d1a71c4",
-  "layout_sha256": "e65e92c00a5482dab8826826f30401fac20eace7145475e6f2c5ad99262ccd20",
-  "result_item_sha256": "e33248fc825cb676c81d6c9f333b4f52045e234ac90711ddc9f6b7d1a47440ad",
-  "result_record_sha256": "17616ef71f6b20e6b9609cdb77a80e98d66c1c5827e57635f5fcc9ca330b493b",
+  "layout_sha256": "683037a56e8d79312b3f56557e8b9485409bdb79549b01def0af2c6ce1953d04",
+  "result_item_sha256": "00994755c4b6d2797d71bc616c9a723747d7a4e9cd8e48a3ff4c31b991ffc05a",
+  "result_record_sha256": "d0af780cba2501510dad8a4eeb72b32d8f4d098475306369e1f8a2453cc1a5bb",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -100,7 +100,31 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Still open from the earlier review: In r00003 the Arabic tail is paired with a Persian tail that translates other words (the row break falls at different points in the two languages); I first advised to leave both unpaired. Better, and now possible: join r00002 with r00003, with a space in both languages, so that the Arabic reads … الإمام المفروض (المفترض) علی طاعته، فلان بن فلان beside a Persian sentence that ends … واجب کرده‌ای اجازه می‌خواهم. The join is link-safe (a merge keeps both old IDs) and is no longer held by the pinned test. Withdrawn: my request to re-pair r00002, r00005 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
-  }
+    "decision": "accept",
+    "note": "Read all 6 output rows at snapshot bae5beb3. The open layout point is met: r00002 is joined to r00003, so the Arabic reads … الإمام المفروض (المفترض) علی طاعته، فلان بن فلان beside a Persian sentence that ends … واجب کرده‌ای اجازه می‌خواهم. Two proposed spaces, one in each language, each reviewed separately and accepted. Withdrawn earlier and still withdrawn: my request to re-pair r00002 and r00005 part by part."
+  },
+  "spacing_review": [
+    {
+      "row": "m73cf671c7b7dc08b7375f046",
+      "language": "ar",
+      "target_start": 830,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with (المفترض) and the right piece begins with علی; the variant in brackets (المفترض) closes and علی طاعته completes the phrase, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 830 of 869; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    },
+    {
+      "row": "m73cf671c7b7dc08b7375f046",
+      "language": "fa",
+      "target_start": 699,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with کرده‌ای and the right piece begins with اجازه; واجب کرده‌ای ends the relative clause and اجازه می‌خواهم is the main verb, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 699 of 714; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Arabic field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "amal-aamal-rmzan-2",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "b81241ae49f3a7ec96275ba3950b6af7f4f0b842",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
   "plan_sha256": "b50aa77da9f46cc0f1aae4ad57f7ba1cf0601b1530002d4cc009fb7605a4e92c",
-  "layout_sha256": "9f12712ac82cc1c1fa9f5e4e335fffbb422f7f87698addf5a34abfe4a5282741",
-  "result_item_sha256": "a74287b42b0e6a940a3f094332aed52b832c379d7cca87b058648dcf10792f08",
-  "result_record_sha256": "63ed89496079fea4cc0b9c57d9e1fab57ee54b30fb6221dbc42728f960678c22",
+  "layout_sha256": "183d8a6b9d7aad1a16ca76755824a2441c64b1eac10c4d5e1803e19333defb79",
+  "result_item_sha256": "918b7b4ba64a279cf8b5f1a9452eed79d4a11edc4117c1a051f31eb891183356",
+  "result_record_sha256": "0118a3ec438de4a66733e5bc40c1265bd170d5ab8474c939d92e9261d0b0ac72",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -37,7 +37,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Fixed at snapshot b81241ae. The labels سوّم: and چهارم: now open their own heading rows, each followed by its practice (instruction). The first piece is the end of the sentence that begins in r00002; see the layout note."
+        "note": "Fixed at snapshot b81241ae and completed at bae5beb3. The labels سوّم: and چهارم: open their own heading rows, each followed by its practice (instruction). The first piece, the end of the sentence that begins in r00002, is now joined to r00002 as one instruction row, with one proposed space reviewed separately."
       },
       {
         "row": "r00004",
@@ -65,7 +65,7 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Fixed at snapshot b81241ae. The label هفتم: is its own heading row after the sixth practice, and the report that follows is a note row. That report stops in the middle of its sentence, which continues in r00007; see the layout note."
+        "note": "Fixed at snapshot b81241ae; read again at bae5beb3. The label هفتم: is its own heading row after the sixth practice, and the report that follows is a note row. That report stops in the middle of its sentence (… فرمود: در) and goes on in r00007, which is an instruction row. The author did not join the two because their kinds differ. I agree: the join was offered and not required, and the break stays."
       },
       {
         "row": "r00007",
@@ -227,6 +227,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read the four changed sources and their neighbours at snapshot b81241ae (26 output rows); the other rows are unchanged since my last review. The open layout point is met: in r00010 the Persian clause without Arabic stands alone and the rest is paired clause by clause. Offered, not required: two sentences are still broken across source rows, r00002 with r00003 (… تا در | آن سال از سرسام … ایمن گردد) and r00006 with r00007 (… فرمود: در | ماه مبارک رمضان …); a join like the one made in amal-aamal-mkhsvs-rvzha r00006 with r00007 would mend them. My own items keep Persian-only breaks of this sort as well, so I do not hold the item for it."
-  }
+    "note": "Read at snapshot bae5beb3 the merged row that is new and its neighbours (25 output rows); the other rows are as I read them at b81241ae. The sentence broken between r00002 and r00003 is now one instruction row (… تا در آن سال از سرسام … ایمن گردد); one proposed Persian space, reviewed separately and accepted. The other join I offered, r00006 with r00007, is not made: the two pieces have different kinds (a note of attribution and an instruction), and a join would need one of them to change. The author's reason is sound and I agree; the break stays."
+  },
+  "spacing_review": [
+    {
+      "row": "m372c23ae5f76b87351156a44",
+      "language": "fa",
+      "target_start": 100,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-sa84854240323e3e5",
+      "reason": "Complete the Persian phrase across original rows: تا در آن سال.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with در and the right piece begins with آن; در is followed by آن سال (in that year), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 100 of 174; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

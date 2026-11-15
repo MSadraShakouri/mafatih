@@ -4,11 +4,11 @@
   "item": "dua-iftitah",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "6c4ff7bf680038e3a08385ce884af6363ff095aedf98cdd9067cd1f7e67fcc18",
-  "layout_sha256": "f259ffc673d7f330b879c428d21c33c5ae85f92018a7ff667e9bb148de63ef22",
-  "result_item_sha256": "425b5f4626f5eebfbf274734bba42c3434752650b6156c2a75a4df5f8f027634",
-  "result_record_sha256": "9a7d0527e162cd9ecc91e382531a8e4c2449c11cb072746c90ed8ea5ef7068b4",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
+  "plan_sha256": "5377aab8203915b81eaea3d093a71ad7ca47444e97fab3146f382ff483357313",
+  "layout_sha256": "b8120c977d54d21270a722bed62f24c0feae3b5c6480d2b1450184ddd9d4bed5",
+  "result_item_sha256": "fcc2634f9888fed3a498e7a76dd22140910dbf7a4f9374553a9b29e43108d3d9",
+  "result_record_sha256": "ca6a707ec1cac7d9033e41d3c189eb75b847ee9fa6db1f6f928d20832b626beb",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "cca13fdf83a223623fd75a35d681961ef950db1109b6b10d7a32b74565a93037",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "d531cde11e849fb59aefd5d916dbbaaf6c22558b817e6e35bf83f48646603767",
+    "preview_sha256": "776b7b48b17184528f7c672a110b64935f94d21693e2481bcda3ec8595954025",
     "sources": [
       {
         "row": "r00001",
@@ -28,9 +28,9 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. Five pieces in source order: the opening of the second part (note), the label اوّل: (heading) with the first practice (instruction), the label دوّم: (heading) with the second practice (instruction)."
       },
       {
         "row": "r00003",
@@ -112,9 +112,9 @@
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). 2 numbered list sections begin inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The report (note) and the direction that follows from it (instruction) are separate rows; the labels پنجم: and ششم: open their own heading rows, each followed by its practice (instruction); the report of merit is a note row and is joined to its last sentence in r00011, with one proposed space reviewed separately."
       },
       {
         "row": "r00011",
@@ -1253,6 +1253,30 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The slot finding on r00012 is resolved. Prose rows r00002, r00010 hold numbered sections to be opened as their own rows (Persian only, nothing to pair). Withdrawn: my request to re-pair r00063 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
-  }
+    "note": "Read the two changed sources, the two merged rows and their neighbours at snapshot bae5beb3 (102 output rows); the other rows are unchanged since my last review. The numbered practices open their own rows, and two sentences broken across source rows are joined (r00004 with r00005, r00010 with r00011). Two proposed Persian spaces, each reviewed separately and accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m5bc362a743b421196c1cb165",
+      "language": "fa",
+      "target_start": 391,
+      "value": " ",
+      "left": "r00010-sec019e51e0fab113",
+      "right": "r00011",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with به and the right piece begins with لقمه‌ای; the preposition به is followed by لقمه‌ای, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 391 of 503; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m4ce4ba26d344c902037c3cf9",
+      "language": "fa",
+      "target_start": 230,
+      "value": " ",
+      "left": "r00004",
+      "right": "r00005",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with افطار and the right piece begins with کند; افطار and کند are the two parts of the verb, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 230 of 242; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

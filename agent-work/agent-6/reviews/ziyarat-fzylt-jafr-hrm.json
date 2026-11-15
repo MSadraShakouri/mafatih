@@ -4,11 +4,11 @@
   "item": "ziyarat-fzylt-jafr-hrm",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "e66b21e71aa030d86b8a5b4074a3712cbf00f8aa1977672316e72b8f0df1019f",
-  "layout_sha256": "76593944f360c0224d4572fc8a2c32c8ac09e8d4cc506518435e1150451a3541",
-  "result_item_sha256": "e91b4f302cb8f26619ea82d7d370317f10a11e6788daf9e81d5f09ed96833f9a",
-  "result_record_sha256": "bc6cf599850fa689f184fdc009e3320c73fee86f80b8ea54ea33c0b9d33a18ad",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
+  "plan_sha256": "1fc56a1b1a8b8a4aaac360680bacd67b02b287983f930e904efac7dd40b0e12c",
+  "layout_sha256": "599d326c661f538c8fd118414cc990330fd908fc43f9c91cd4ca28df3209ff61",
+  "result_item_sha256": "9275f42b356e1fcc43f35566efc5e1734c172f39dbbe9375fad6b25bd3c34322",
+  "result_record_sha256": "757ca5dc532bac116e823b14d0b745903d1d75dc83367a493494ae21336edf53",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "9c383d162b5bf2f9caedda87233cb10c00916fa352c4e27d5af60dcb2f10f49b",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "d0082d2a453438b38bf51768d9bbef4d1a07de3dbee1498b0ee5aac3d319b870",
+    "preview_sha256": "f9d3d37e75dfe83bffa4362d86e8bc93ef06b9113f99e9f5f0c3a1145578aa2a",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code points 81, 571 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot bae5beb3. The compiler's opening is a note row; the labels اوّل: and دوم: are heading rows; the first report is a note row; the second is joined to its continuation in r00002, with one proposed space reviewed separately."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code point 315 of the field; cut before each numbered marker so that every section opens its own piece."
+        "note": "Fixed at snapshot bae5beb3. The label سوم: is a heading row, and the third report is joined to its continuation in r00003 as one note row, with one proposed space reviewed separately."
       },
       {
         "row": "r00003",
@@ -45,6 +45,30 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Persian only; nothing to pair. The cut changes asked for on r00001, r00002 are recorded in the source notes; the rows as they stand are placed and paired consistently."
-  }
+    "note": "Read all 7 output rows at snapshot bae5beb3. The three numbered points open with their labels, and the two reports broken across source rows are each one note row. Two proposed Persian spaces, each reviewed separately and accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "m4a5d230894fbabe726d85b3f",
+      "language": "fa",
+      "target_start": 281,
+      "value": " ",
+      "left": "r00001-s1fa9d92731f5fd90",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with هزار and the right piece begins with حج; the number هزار is followed by حج, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 281 of 597; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    },
+    {
+      "row": "m1d50c08c569e0399e36a238f",
+      "language": "fa",
+      "target_start": 700,
+      "value": " ",
+      "left": "r00002-se090ec1c15d74b91",
+      "right": "r00003",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with دستور and the right piece begins with دادم; دستور and دادم are the two parts of the verb, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 700 of 1219; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    }
+  ]
 }

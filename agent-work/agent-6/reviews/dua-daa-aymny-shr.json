@@ -4,11 +4,11 @@
   "item": "dua-daa-aymny-shr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "f192ee09ff1ce44e2af895e0930116c9db305d2b",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
   "plan_sha256": "8fc9beb96aad1c6f2b31d9480934afb54263c8b8aaa663625a27620879f46195",
-  "layout_sha256": "0705988b45198194509d3e1340e9138d7720137c9211007a0ce31cf92975c2d9",
-  "result_item_sha256": "1b39846094450dc96cee42986cafe666d07b2cd943ec5abbee748e79437ebcb3",
-  "result_record_sha256": "ae1724c6f82677d06c229bab79a3222fee251770739e61c064885f221c113ace",
+  "layout_sha256": "ef0350183e65b7f91292203eb4fc504fa88c4a9a189ef9ef4547035cc9442ab9",
+  "result_item_sha256": "79d6736780472156801763a99ab3c14d7984edc950b047972e80655354016634",
+  "result_record_sha256": "d369d39253dece64401673afe165e9de24c3fb93cb9e52fd36d151ae416dd125",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -121,22 +121,22 @@
         "language": "ar",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Still open, unchanged at snapshot f192ee09; nothing is asked of the author now. The second piece is the third verse of this prayer and is recited like the two verses of the row before it, which are recitation; quotation does not agree with them. The first piece is a Persian fragment stored in the Arabic field that only repeats the opening words of the Persian of the verse; it is not a direction to the reader, so instruction is doubtful. Both are cut pieces, and a change of kind gives a cut piece a new row ID and retires the published one. The change should therefore wait for the coordinator's alias tooling."
+        "note": "Still open, unchanged at snapshot bae5beb3. Not an author fix for now; it waits for the coordinator's alias tooling, and nothing is asked of the author. The second piece is the third verse of this prayer and is recited like the two verses of the row before it, which are recitation; quotation does not agree with them. The first piece is a Persian fragment stored in the Arabic field that only repeats the opening words of the Persian of the verse; it is not a direction to the reader, so instruction is doubtful. Both are cut pieces, and a change of kind gives a cut piece a new row ID and retires the published one."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "accept",
         "kind": "uncertain",
-        "note": "Still open, unchanged at snapshot f192ee09; nothing is asked of the author now. Same verse as the Arabic piece: recitation in the row before, quotation here. A change of kind would retire the published row ID, so it waits for the coordinator's alias tooling."
+        "note": "Still open, unchanged at snapshot bae5beb3. Not an author fix for now; it waits for the coordinator's alias tooling, and nothing is asked of the author. Same verse as the Arabic piece: recitation in the row before, quotation here. A change of kind would retire the published row ID."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all 13 output rows at snapshot f192ee09. Done: r00007. Still open, an author fix that is now possible: r00005 pairs the two Arabic words و جنوده with a Persian tail (رحمت خدا می‌گردند.) that renders other words. Both are only the end of the sentence of the row before: the Arabic of that row ends with إبليس and its Persian ends with باعث ناامیدی از. Join the last piece of r00004 with r00005, with a space in both languages; the row then reads … إبليس و جنوده beside … از رحمت خدا می‌گردند. The join is link-safe, because a merge keeps both old IDs as aliases, and it is no longer held by the pinned test. This replaces my earlier advice to leave both tails unpaired. The kind of r00009 stays an open question that waits for tooling, see the source notes."
+    "decision": "accept",
+    "note": "Read all 12 output rows at snapshot bae5beb3. The open layout point is met: the last piece of r00004 is joined to r00005, so the Arabic reads … إبليس و جنوده beside a Persian sentence that ends … از رحمت خدا می‌گردند. Three proposed spaces in the item, each reviewed separately and accepted. Only the kind of r00009 stays open, and it waits for tooling; see the source notes."
   },
   "spacing_review": [
     {
@@ -149,6 +149,28 @@
       "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text.",
       "decision": "accept",
       "note": "Accepted. Read against the two joined pieces: the left piece ends with أرحم and the right piece begins with الراحمين»،; أرحم and الراحمين are the two words that close the verse (the most merciful of the merciful), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 43 of 145; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00008), so it has no junction and needs no space; it renders the whole joined Arabic."
+    },
+    {
+      "row": "mb0571663cc8f471c1b956998",
+      "language": "ar",
+      "target_start": 265,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with إبليس and the right piece begins with و; إبليس is followed by و جنوده (and his hosts), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 265 of 278; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+    },
+    {
+      "row": "mb0571663cc8f471c1b956998",
+      "language": "fa",
+      "target_start": 235,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with از and the right piece begins with رحمت; از is followed by رحمت خدا, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 235 of 254; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Arabic field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
     }
   ]
 }

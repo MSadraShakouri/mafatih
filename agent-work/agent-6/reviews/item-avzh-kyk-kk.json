@@ -4,11 +4,11 @@
   "item": "item-avzh-kyk-kk",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "ccd0f7e8d3443afa307a08cd5b1936b43962d5fa5e05ec012d29dd8bf4c792c7",
-  "layout_sha256": "9a2f9685c27325a946caf4571d2a8376d29f749be117ebf6b03caf5ef428987a",
-  "result_item_sha256": "8d763e2133d87560b6448e3cdae638d392e8bd859a72aa85e972100e4b06a297",
-  "result_record_sha256": "e4d2e078e41ab882f7c9a509f2eaf9d333bf0bcfe6e71bc75a9b78329e98f832",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
+  "plan_sha256": "e26ae968e3fe9f0d7c2b8c4e046cdb76af8cc3e10050c15aa0b142a95c952631",
+  "layout_sha256": "e750a3d65ac2d3e24bd007be24e142fd4c21a0613144181d7d52c2ed3a050856",
+  "result_item_sha256": "6a3744957e6dcc3d017ecff5bb9bbbf1d557d7b71b68ed5427ba8adbe403af68",
+  "result_record_sha256": "a554cf53003a2cbea2f93ccfaed4c5e3a12b9ef6c936a915ebfd3f4d4d5f76a2",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "14acc82cf8798e4bdc196994ecad3b1b781f8dde44ea3251f2c4b467def0f7cf",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "299fa50820a2c8d5937796b876970768f4ed02b5dcecb217dba6193e7da58997",
+    "preview_sha256": "ee7bc5d56cbbb6e6f0378ab3ca398a15b019c38d1b0ccccd71545d776ba1d373",
     "sources": [
       {
         "row": "r00001",
@@ -49,9 +49,9 @@
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). Piece 0 holds a complete Arabic sentence inside Persian prose at code points 122-200 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose."
+        "note": "Fixed at snapshot bae5beb3. The label پنجم: is a heading row, the narration is a note row, and the Arabic sentence is a recitation row in the Arabic slot; the source gives no Persian for it. The second narration follows as a note row. Small remark, no change asked: that row begins with a space."
       },
       {
         "row": "r00005",
@@ -70,9 +70,9 @@
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so the change retires no id). A numbered list section begins inside piece 0 at code point 39 of the field; cut before each numbered marker so that every section opens its own piece; piece 0 holds a complete Arabic sentence inside Persian prose at code points 195-302 of the field; cut it out and place it in the Arabic slot, leaving the Persian before and after as prose."
+        "note": "Fixed at snapshot bae5beb3. The end of the fifth section is a note row, the label ششم: is a heading row, the narration is a note row, and the Arabic sentence is a recitation row in the Arabic slot without Persian, as in the source. The closing sentence is a note row. Small remark, no change asked: that row begins with a space."
       }
     ],
     "punctuation": [],
@@ -80,6 +80,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "The request to re-pair long rows is withdrawn with the length findings. The cut changes asked for on r00004, r00006 are recorded in the source notes; the rows as they stand are placed and paired consistently."
+    "note": "Read all 13 output rows at snapshot bae5beb3. The fifth and sixth sections open with their labels, and the two Arabic sentences stand in the Arabic slot after the narrations that introduce them. No join and no proposed space."
   }
 }

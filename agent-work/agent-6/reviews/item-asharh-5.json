@@ -4,11 +4,11 @@
   "item": "item-asharh-5",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
-  "plan_sha256": "6cc0c6087bb2f53986f312d3b054eacf49d0fd7b514952fc2696d4afce6ecfcc",
-  "layout_sha256": "71a32617993c132aba459d3b9d0bc20fbded599c4fed4af48e87e89fe5a8abbf",
-  "result_item_sha256": "a2ba5edfe2bb4757fca13ab63519c387e8cae098a77451d9ef6a3f2c66223302",
-  "result_record_sha256": "5b9752127edf34a2671d05af048436b6ef7470ba3701919afd3570ee9add0f77",
+  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
+  "plan_sha256": "8c2d237d4b1bad1a236d3cffc37cb10951f26e2efad58fb177b863034624b34b",
+  "layout_sha256": "8588398e8c1d5d6c3ce22a8020558d1763546b118519600f8afd7c47720d366f",
+  "result_item_sha256": "8a4e3066c7900c01bb396b99a78607a0258b2288223129ae6cafc2b49aefdbf5",
+  "result_record_sha256": "148b5b20e9725f51cc8570e9b7bf176e3c44d8be193a1db7325b4edd705d855e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "7f2e309215526a28932b83b9a5ced3b7d2fc4906f79076e401cf6345faaf5745",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "de2585e2c95c04512549180e08f6cc3076de4b3da2fd177a04be879fafdc1cfd",
+    "preview_sha256": "a571c8cd9ea6c3232b3e4e82b5c6756f41c50890e6bcc677a37c5332677875dd",
     "sources": [
       {
         "row": "r00001",
@@ -49,9 +49,9 @@
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Author fix, link-safe (the row has never been cut, so a first cut retires no id). A numbered list section begins inside this prose piece (an ordinal label followed by a colon). Cut before each label so that every section opens its own row with the label as heading, as this snapshot already does in amal-aamal-ayd-qrban r00001 and ziyarat-mbas r00001. This is a structure finding; my earlier length finding on the prose is withdrawn."
+        "note": "Fixed at snapshot bae5beb3. The first sentence of the field continues the list begun in r00004 and is joined to it, with one proposed space reviewed separately. The introduction of the two forms is a note row, the label اول: is a heading row, the report is a note row and the direction before the ziyarat is an instruction row."
       },
       {
         "row": "r00006",
@@ -164,6 +164,19 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Prose row r00005 holds numbered sections to be opened as their own rows (Persian only, nothing to pair). Withdrawn: my request to re-pair r00006, r00007, r00008, r00010 part by part after a first cut rested on sentence and clause counts alone; those rows are accepted as paired."
-  }
+    "note": "Read the changed source r00005, the merged row and their neighbours at snapshot bae5beb3 (17 output rows); the other rows are unchanged since my last review. The list broken between r00004 and r00005 is one note row, and the first form of the ziyarat opens with its label. One proposed Persian space, reviewed separately and accepted."
+  },
+  "spacing_review": [
+    {
+      "row": "me985071a1de152f325648f2e",
+      "language": "fa",
+      "target_start": 188,
+      "value": " ",
+      "left": "r00004",
+      "right": "r00005-saba56576a8f4a2e8",
+      "reason": "Separate complete Persian words at the original row boundary while grouping the interrupted prose; preserve the original text.",
+      "decision": "accept",
+      "note": "Accepted. Read against the two joined pieces: the left piece ends with است: and the right piece begins with پنجاه; the colon after است closes the lead-in and the list begins with پنجاه, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 188 of 411; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The row has no Arabic field, so only this one space is in question."
+    }
+  ]
 }
