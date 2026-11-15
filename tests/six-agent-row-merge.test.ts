@@ -100,6 +100,13 @@ test('chained merges preserve original and intermediate row links, code-point of
     {row:joined.id,language:'fa',offset:codePoints(f.fa[0]!+f.fa[1]!).length+1});
   assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:first,language:'ar',offset:3}),
     {row:joined.id,language:'ar',offset:3});
+  const missingCompilerAlias=structuredClone(result.record);
+  missingCompilerAlias.aliases=missingCompilerAlias.aliases!.filter(alias=>alias.original.id!==first);
+  after.rowSplits.set(f.item,missingCompilerAlias);
+  assert.deepEqual(validateRowSplitRecords(after),[],'the physical slices alone do not prove an intermediate link was retained');
+  assert.throws(()=>verifyCanonicalResult(f.c,after,f.plan,layout),/mismatch/i,
+    'additional historical aliases must not excuse losing compiler-generated aliases');
+  after.rowSplits.set(f.item,result.record);
   const broken=structuredClone(after.rowSplits.get(f.item)!);
   broken.rows.find(e=>e.original.id==='old-2')!.ar[0]!.target_start=0;
   after.rowSplits.set(f.item,broken);
@@ -130,7 +137,7 @@ test('V1 mapping remains strict; V2 offsets and aliases cannot be silently inter
   const bad={...old,format_version:2};assert.throws(()=>RowSplitRecordSchema.parse(bad),/V2|aliases/i);
 });
 
-test('mixed-language source pieces retain their original language redirects when merged into one destination field', () => {
+test('mixed-language source pieces retain their original language redirects when merged into one destination field', async () => {
   const f=synthetic(), layout=structuredClone(f.layout);
   layout.rows[0]!.output=[
     {ar:null,fa:{source:'ar',part:0},kind:'recitation'},
@@ -148,6 +155,9 @@ test('mixed-language source pieces retain their original language redirects when
     {row:joined.id,language:'fa',offset:codePoints(f.ar[0]!).length+1});
   assert.deepEqual(resolveLegacyRowAnchor(redirects,{row:second.id,language:'fa',offset:1}),
     {row:joined.id,language:'fa',offset:codePoints(f.ar[0]!).length+1});
+  const {assertHistoricalAliasLineage}=await import('../src/row-alias-migration.js');
+  assert.doesNotThrow(()=>assertHistoricalAliasLineage(f.c,after,f.item,separate.item,separate.record,
+    result.record.aliases!.find(alias=>alias.original.id===first.id)!));
 });
 
 test('Faraj spaces are explicit editorial insertions, reversible and separately reviewable', () => {
@@ -255,4 +265,114 @@ test('spacing reasons use Unicode code points and reject control characters and 
   for(const reason of ['😀😀','a\u0000b','a\u2028b','a\ud800b','a'.repeat(241)])
     assert.throws(()=>RowMergeInsertionSchema.parse({...insertion,reason}),/reason/i);
   assert.match(spacingBoundaryIssue('left\u0085','right')!,/existing boundary whitespace/i);
+});
+
+test('a validated historical alias and V1-to-V2 promotion remain a verifiable canonical result', () => {
+  const f=faraj(), after=withResult(f.c,f.separate), old=f.separate.record;
+  const oldReview=createCanonicalReviewTemplate(f.c,after,f.plan,f.layout,'agent-6','a'.repeat(40));
+  assert.doesNotThrow(()=>verifyCanonicalReview(f.c,after,f.plan,f.layout,oldReview));
+  const target=after.items.get(f.item)!.rows.find(row=>row.ar!==null && old.rows.some(entry=>entry.results.includes(row.id)))!;
+  const value=text(after,target.ar), source=target.sources?.ar;
+  const original={id:'historic-piece',ar:target.ar,fa:null,kind:target.kind,
+    ...(source?{sources:{ar:source}}:{})};
+  const promoted=RowSplitRecordSchema.parse({...old,format_version:2,
+    rows:old.rows.map(entry=>({...entry,ar:entry.ar.map(segment=>({...segment,target_start:0})),
+      fa:entry.fa.map(segment=>({...segment,target_start:0}))})),
+    aliases:[{original,ar:[{row:target.id,language:'ar',start:0,end:codePoints(value).length,target_start:0}],fa:[]}]});
+  after.rowSplits.set(f.item,promoted);
+  assert.deepEqual(validateRowSplitRecords(after),[],'the added alias reconstructs its original exact content');
+  assert.doesNotThrow(()=>verifyCanonicalResult(f.c,after,f.plan,f.layout),
+    'independently validated historical links must not make the authored canonical result unverifiable');
+  assert.throws(()=>verifyCanonicalReview(f.c,after,f.plan,f.layout,oldReview),/stale|mismatch/i,
+    'a review bound to the previous record must not silently survive a migration');
+  const broken=structuredClone(promoted);broken.aliases![0]!.ar[0]!.target_start=1;
+  after.rowSplits.set(f.item,broken);
+  assert.throws(()=>verifyCanonicalResult(f.c,after,f.plan,f.layout),/invalid|mapping|slice/i,
+    'canonical verification must still reject a structurally invalid alias');
+});
+
+test('a retired alias can target a current row unchanged from the frozen baseline', async () => {
+  const {installHistoricalAliases}=await import('../src/row-alias-history.js');
+  const f=synthetic(), result=compileCanonicalSplit(f.c,f.plan,f.layout), after=withResult(f.c,result);
+  assert.equal(result.record.rows.length,0,'unchanged rows are implicit in a V1 mapping');
+  const target=result.item.rows[0]!, value=text(after,target.ar);
+  const alias={original:{id:'retired-unchanged',ar:target.ar,fa:null,kind:target.kind,
+      ...(target.sources?.ar?{sources:{ar:target.sources.ar}}:{})},
+    ar:[{row:target.id,language:'ar' as const,start:0,end:codePoints(value).length,target_start:0}],fa:[]};
+  const record=installHistoricalAliases(after,f.item,[alias]);after.rowSplits.set(f.item,record);
+  assert.deepEqual(validateRowSplitRecords(after),[]);
+  assert.doesNotThrow(()=>verifyCanonicalResult(f.c,after,f.plan,f.layout));
+  assert.deepEqual(resolveLegacyRowAnchor([...record.rows,...record.aliases!],{row:'retired-unchanged',language:'ar',offset:1}),
+    {row:target.id,language:'ar',offset:1});
+});
+
+test('historical lineage includes editorial spaces and survives shifted merge offsets', async () => {
+  const {assertHistoricalAliasLineage}=await import('../src/row-alias-migration.js');
+  const f=synthetic(), firstLayout={...f.layout,merges:[{left:'old-2',right:'old-3',checked:true as const,
+    spacing:{mode:'ar-space' as const,reason:'Separate the Arabic boundary'}}]};
+  const first=compileCanonicalSplit(f.c,f.plan,firstLayout),before=withResult(f.c,first),mid=first.item.rows[1]!;
+  const secondLayout={...firstLayout,merges:[...firstLayout.merges,{left:'old-1',right:mid.id,checked:true as const,
+    spacing:{mode:'fa-space' as const,reason:'Separate the Persian boundary'}}]};
+  const second=compileCanonicalSplit(f.c,f.plan,secondLayout),after=withResult(f.c,second);
+  // Retain both the intermediate and final pooled values in the test corpus.
+  for(const [id,value] of first.texts){after.texts.set(id,value);after.textShards.set(id,id.slice(1,3));}
+  const alias=second.record.aliases!.find(a=>a.original.id===mid.id)!;
+  assert.ok(alias);assert.equal(first.record.format_version,3);assert.equal(second.record.format_version,3);
+  assert.doesNotThrow(()=>assertHistoricalAliasLineage(f.c,after,f.item,first.item,first.record,alias));
+  const wrong=structuredClone(alias);wrong.ar[0]!.target_start!++;
+  assert.throws(()=>assertHistoricalAliasLineage(f.c,after,f.item,first.item,first.record,wrong),/lineage/i);
+});
+
+test('multi-row historical aliases compose around a new editorial insertion', async () => {
+  const {installHistoricalAliases,carryHistoricalAliases}=await import('../src/row-alias-history.js');
+  const f=synthetic(), first=compileCanonicalSplit(f.c,f.plan,f.layout),before=withResult(f.c,first);
+  const value=f.ar[1]!+f.ar[2]!,ref=intern(before,value),sources=first.item.rows[1]!.sources?.ar;
+  const alias={original:{id:'historic-spanning-row',ar:ref,fa:null,kind:'recitation' as const,
+      ...(sources?{sources:{ar:sources}}:{})},ar:[
+      {row:'old-2',language:'ar' as const,start:0,end:1,target_start:0},
+      {row:'old-3',language:'ar' as const,start:1,end:codePoints(value).length,target_start:0}],fa:[]};
+  const migrated=installHistoricalAliases(before,f.item,[alias]);before.rowSplits.set(f.item,migrated);
+  assert.deepEqual(validateRowSplitRecords(before),[]);
+  const layout={...f.layout,merges:[{left:'old-2',right:'old-3',checked:true as const,
+    spacing:{mode:'ar-space' as const,reason:'Propose boundary space'}}]};
+  const second=compileCanonicalSplit(f.c,f.plan,layout);
+  second.record=carryHistoricalAliases(first.item,migrated,second.item,second.record);
+  const after=withResult(f.c,second);after.texts.set(ref,value);after.textShards.set(ref,ref.slice(1,3));
+  assert.deepEqual(validateRowSplitRecords(after),[]);assert.doesNotThrow(()=>verifyCanonicalResult(f.c,after,f.plan,layout));
+  const joined=second.item.rows[1]!,redirect=second.record.aliases!.find(entry=>entry.original.id===alias.original.id)!;
+  assert.equal(redirect.ar.length,2);assert.equal(redirect.ar[0]!.target_start,0);assert.equal(redirect.ar[1]!.target_start,2);
+  assert.deepEqual(resolveLegacyRowAnchor([...second.record.rows,...second.record.aliases!],
+    {row:alias.original.id,language:'ar',offset:1}),{row:joined.id,language:'ar',offset:2});
+});
+
+test('historical aliases survive recompilation and a later right-side spaced merge', async () => {
+  const {installHistoricalAliases,carryHistoricalAliases}=await import('../src/row-alias-history.js');
+  const f=synthetic(), firstLayout={...f.layout,merges:[{left:'old-2',right:'old-3',checked:true as const}]};
+  const first=compileCanonicalSplit(f.c,f.plan,firstLayout), before=withResult(f.c,first), target=first.item.rows[1]!;
+  const historic=intern(before,'ail'), attribution=target.sources?.ar;
+  const alias={original:{id:'historic-piece',ar:historic,fa:null,kind:'recitation' as const,
+      ...(attribution?{sources:{ar:attribution}}:{})},
+    ar:[{row:target.id,language:'ar' as const,start:0,end:3,target_start:2}],fa:[]};
+  const migrated=installHistoricalAliases(before,f.item,[alias]);before.rowSplits.set(f.item,migrated);
+  assert.deepEqual(validateRowSplitRecords(before),[]);
+  assert.doesNotThrow(()=>verifyCanonicalResult(f.c,before,f.plan,firstLayout));
+  const secondLayout={...f.layout,merges:[...firstLayout.merges,
+    {left:'old-1',right:target.id,checked:true as const,spacing:{mode:'ar-space' as const,reason:'Propose boundary space'}}]};
+  const second=compileCanonicalSplit(f.c,f.plan,secondLayout);
+  second.record=carryHistoricalAliases(first.item,migrated,second.item,second.record);
+  const after=withResult(f.c,second);after.texts.set(historic,'ail');after.textShards.set(historic,historic.slice(1,3));
+  assert.equal(second.record.format_version,3);
+  assert.deepEqual(validateRowSplitRecords(after),[]);
+  assert.doesNotThrow(()=>verifyCanonicalResult(f.c,after,f.plan,secondLayout));
+  const joined=second.item.rows[0]!;
+  assert.deepEqual(resolveLegacyRowAnchor([...second.record.rows,...second.record.aliases!],
+    {row:'historic-piece',language:'ar',offset:1}),
+    {row:joined.id,language:'ar',offset:codePoints(f.ar[0]!).length+1+2+1});
+  const bad={...alias,original:{...alias.original,id:'old-1'}};
+  assert.throws(()=>installHistoricalAliases(before,f.item,[bad]),/duplicate|reused|live|original/i);
+  assert.throws(()=>installHistoricalAliases(before,f.item,[{...alias,original:{...alias.original,id:'wrong-slice'},
+    ar:[{...alias.ar[0]!,target_start:0}]}]),/destination text differs/i);
+  const other=Object.keys(f.c.sources.sources).find(source=>source!==attribution?.[0])!;
+  assert.throws(()=>installHistoricalAliases(before,f.item,[{...alias,original:{...alias.original,id:'wrong-source',sources:{ar:[other]}}}]),
+    /attribution/i);
 });
