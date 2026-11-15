@@ -9,6 +9,8 @@ import { ItemSchema, Key, RowSplitRecordSchema, type Item, type RowSplitRecord }
 import { AgentPartitionsSchema, AgentPlanSchema, exportAgentInput, splitAgentPlan, verifyAgentPartitions } from '../src/split-agent.js';
 import { CanonicalLayoutSchema, compileCanonicalSplit, createCanonicalLayoutTemplate, restoreCanonicalItem, verifyCanonicalResult } from '../src/split-canonical.js';
 import { CanonicalReviewSchema, createCanonicalReviewTemplate, verifyCanonicalReview } from '../src/six-agent-review.js';
+import { carryHistoricalAliases, installHistoricalAliases } from '../src/row-alias-history.js';
+import { parseAliasMigrationBundle, verifyHistoricalAliasEvidence } from '../src/row-alias-migration.js';
 import { sha256, textId } from '../src/text-ids.js';
 import { checkedAgent, currentAgentBranch, discoverAgentPeer, neighbors, registerAgent, requireAgentBranch } from '../src/six-agent-branch.js';
 
@@ -20,6 +22,8 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts apply PLAN LAYOUT --base COMMIT --agent agent-N
   node --import tsx scripts/six-agent.ts merge-preview PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW [--join MODE --reason TEXT]
   node --import tsx scripts/six-agent.ts merge-rows PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW --join MODE [--reason TEXT]
+  node --import tsx scripts/six-agent.ts alias-preview PROPOSAL --base COMMIT --agent agent-N
+  node --import tsx scripts/six-agent.ts alias-migrate PROPOSAL --base COMMIT --agent agent-N --confirm REVIEW_SHA256
   node --import tsx scripts/six-agent.ts restore-snapshot-texts --base COMMIT --agent agent-N
   node --import tsx scripts/six-agent.ts inspect ITEM --base COMMIT --result AUTHOR_COMMIT --author agent-N
   node --import tsx scripts/six-agent.ts review-template ITEM --base COMMIT --result AUTHOR_COMMIT --author agent-N --reviewer agent-M --output NEW_FILE
@@ -29,7 +33,7 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts audit-squashed --base COMMIT
   node --import tsx scripts/six-agent.ts message --from agent-N --to agent-M --kind TYPE --text TEXT [--commit COMMIT] [--item ID] [--reply-to ID]
 Use a full immutable 40-character commit. Register, configure and message write only work metadata or local Git configuration.
-Only apply, merge-rows and restore-snapshot-texts write data/, and only on the registered agent's own branch.
+Only apply, merge-rows, alias-migrate and restore-snapshot-texts write data/, and only on the registered agent's own branch.
 MODE is exact, ar-space, fa-space or both-space. Spacing modes propose one U+0020 per selected language,
 require a reason and separate independent review, and retain exact original text and links.`;
 const project=spawnSync('git',['rev-parse','--show-toplevel'],{encoding:'utf8'});
@@ -92,13 +96,17 @@ function ensureRoundScope(base:ReturnType<typeof loadCorpus>,current:ReturnType<
     throw new Error(`Out-of-scope canonical path: ${file}`);
   }
 }
-/** Never silently orphan a row or alias that an earlier V2 merge exposed. */
+/** Never silently orphan or repurpose an already published row or alias,
+ * including output from V1 records. Role-only changes can keep a live ID. */
 function ensurePriorAnchors(before:Item, previous:RowSplitRecord, next:Item, mapping:RowSplitRecord):void {
   const destinations=new Map(next.rows.map(row=>[row.id,row]));
   const origins=new Map([...mapping.rows,...(mapping.aliases ?? [])].map(entry=>[entry.original.id,entry.original]));
   for(const old of [...before.rows,...previous.rows.map(e=>e.original),...(previous.aliases ?? []).map(e=>e.original)]) {
     const direct=destinations.get(old.id), redirect=origins.get(old.id);
-    const matches=(row:typeof old|undefined)=>row!==undefined && row.ar===old.ar && row.fa===old.fa;
+    const matches=(row:typeof old|undefined)=>row!==undefined && row.ar===old.ar && row.fa===old.fa &&
+      JSON.stringify(row.sources?.ar ?? [])===JSON.stringify(old.sources?.ar ?? []) &&
+      JSON.stringify(row.sources?.fa ?? [])===JSON.stringify(old.sources?.fa ?? []);
+    if(direct&&!matches(direct))throw new Error(`${old.id}: revision would reuse a published row ID for different text or attribution; request a version-aware migration`);
     if(!matches(direct)&&!matches(redirect)) throw new Error(`${old.id}: revision would orphan a previously published row link; preserve it and request a mapping migration`);
   }
 }
@@ -106,7 +114,7 @@ function parseArgs(args:string[]){
   const command=args.shift(),flags:Record<string,string>={},positional:string[]=[];
   for(let i=0;i<args.length;i++){
     const value=args[i]!;if(!value.startsWith('--')){positional.push(value);continue;}
-    if(!['--base','--output','--agent','--peer','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to','--left','--right','--join','--reason'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
+    if(!['--base','--output','--agent','--peer','--author','--reviewer','--result','--from','--to','--kind','--text','--commit','--item','--reply-to','--left','--right','--join','--reason','--confirm'].includes(value)||flags[value]!==undefined||!args[i+1]||args[i+1]!.startsWith('--'))throw new Error(usage);
     flags[value]=args[++i]!;
   }
   return {command,flags,positional};
@@ -136,6 +144,8 @@ function main():void {
     discover:{count:0,flags:['--agent','--peer']},layout:{count:1,flags:['--base','--output']},apply:{count:2,flags:['--base','--agent']},
     'merge-preview':{count:2,flags:['--base','--agent','--left','--right','--join','--reason']},
     'merge-rows':{count:2,flags:['--base','--agent','--left','--right','--join','--reason']},
+    'alias-preview':{count:1,flags:['--base','--agent']},
+    'alias-migrate':{count:1,flags:['--base','--agent','--confirm']},
     'restore-snapshot-texts':{count:0,flags:['--base','--agent']},
     inspect:{count:1,flags:['--base','--result','--author']},
     'review-template':{count:1,flags:['--base','--result','--author','--reviewer','--output']},
@@ -195,6 +205,68 @@ function main():void {
     const pools=new Map(shards.map(file=>[file,json(file) as Record<string,string>]));
     for(const id of ids)if(pools.get(`data/texts/${id.slice(1,3)}.json`)?.[id]!==current.texts.get(id))throw new Error(`Recorded author commit lacks the reviewed text ${id}`);
   };
+  if(command==='alias-preview'||command==='alias-migrate'){
+    const who=agent(flags['--agent']);requireOwnBranch(who,baseSha);
+    const proposalPath=fs.realpathSync(path.resolve(positional[0]!));
+    for(const forbidden of [fs.realpathSync(path.join(root,'data')),fs.realpathSync(path.join(root,'.git'))]){
+      const relative=path.relative(forbidden,proposalPath);
+      if(relative===''||(!relative.startsWith(`..${path.sep}`)&&relative!=='..'&&!path.isAbsolute(relative)))
+        throw new Error('Keep the alias proposal outside data/ and .git/');
+    }
+    const bundle=parseAliasMigrationBundle(read(proposalPath));
+    if(bundle.author!==who||bundle.base!==baseSha)throw new Error('Alias proposal author or frozen base differs');
+    const target=gitCommit(bundle.target_snapshot);
+    if(spawnSync('git',['merge-base','--is-ancestor',target,'HEAD']).status!==0)
+      throw new Error('The proposed target snapshot is not reachable from the current branch');
+    if(spawnSync('git',['rev-parse','-q','--verify','MERGE_HEAD']).status===0)
+      throw new Error('Resolve the existing merge before migrating aliases');
+    const status=spawnSync('git',['status','--porcelain','-z','--untracked-files=all','--','data/'],{encoding:'utf8'});
+    if(status.status!==0||status.stdout)throw new Error('Commit or preserve all canonical data changes before migrating aliases');
+    const dataRoot=path.join(root,'data'),recordRoot=path.join(dataRoot,'row-splits');
+    if(fs.realpathSync(dataRoot)!==dataRoot||fs.realpathSync(recordRoot)!==recordRoot)
+      throw new Error('Refusing canonical writes through a data-directory symlink');
+    const current=loadCorpus(dataRoot),pre=validateCorpus(current);
+    if(pre.errors.length)throw new Error(`Fix current corpus errors first: ${pre.errors.join('; ')}`);
+    ensureRoundScope(base,current,baseSha);
+    const head=gitCommit(spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).stdout.trim());
+    const before:Array<{item:string;item_record:Item;mapping:RowSplitRecord}>=[];
+    const changes=new Map<string,string|null>();
+    for(const entry of bundle.items){
+      if(groupFor(entry.item).agent!==who)throw new Error(`${entry.item}: cannot migrate another agent's assignment`);
+      const names=filesFor(entry.item,who),itemPath=`data/items/${entry.item}.json`,recordPath=`data/row-splits/${entry.item}.json`;
+      const files=gitFiles(target,[itemPath,recordPath,names.plan,names.layout]);
+      const json=(name:string):unknown=>JSON.parse(files.get(name)!) as unknown;
+      const item=current.items.get(entry.item),record=current.rowSplits.get(entry.item);
+      if(!item||!record||record.author!==who ||
+         JSON.stringify(item)!==JSON.stringify(ItemSchema.parse(json(itemPath))) ||
+         JSON.stringify(record)!==JSON.stringify(RowSplitRecordSchema.parse(json(recordPath))) ||
+         JSON.stringify(read(names.plan))!==JSON.stringify(json(names.plan)) ||
+         JSON.stringify(read(names.layout))!==JSON.stringify(json(names.layout)))
+        throw new Error(`${entry.item}: proposal target is stale; item, mapping, plan and layout must match the exact snapshot`);
+      verifyCanonicalResult(base,current,read(names.plan),read(names.layout));
+      verifyHistoricalAliasEvidence(entry.item,entry.aliases,baseSha,head,base,current);
+      before.push({item:entry.item,item_record:structuredClone(item),mapping:structuredClone(record)});
+      const next=installHistoricalAliases(current,entry.item,entry.aliases);
+      current.rowSplits.set(entry.item,next);
+      verifyCanonicalResult(base,current,read(names.plan),read(names.layout));
+      const recordFile=path.join(root,recordPath);
+      if(fs.lstatSync(recordFile).isSymbolicLink())throw new Error(`Refusing to write a symlink: ${recordFile}`);
+      changes.set(recordFile,pretty(preserveKeyOrder(read(recordFile),next)));
+    }
+    const checked=validateCorpus(current);if(checked.errors.length)throw new Error(`Refusing invalid result: ${checked.errors.join('; ')}`);
+    const reviewHash=sha256(JSON.stringify({protocol:'ar-fa-alias-migration-review-v1',head,bundle,before}));
+    if(command==='alias-migrate'){
+      if(!/^[a-f0-9]{64}$/.test(flags['--confirm']??'')||flags['--confirm']!==reviewHash)
+        throw new Error('Migration confirmation hash is missing or stale; run alias-preview again');
+      commit(current,changes,[],[]);
+    }
+    output({status:command==='alias-preview'?'alias-migration-preview':'historical-aliases-migrated',agent:who,base:baseSha,
+      target_snapshot:target,history_head:head,history_scope:'reachable commits from frozen base through HEAD; other histories are not assessed',
+      review_sha256:reviewHash,items:bundle.items.map(entry=>({item:entry.item,aliases:entry.aliases})),
+      alias_count:bundle.items.reduce((n,entry)=>n+entry.aliases.length,0),
+      note:command==='alias-preview'?'No files changed. Inspect this metadata-only preview before applying with its confirmation hash.':
+        'Only row-split metadata was changed. Reviews bound to affected records are stale and require independent refresh; no versioned reader, scholarly or rights approval is implied.'},undefined);return;
+  }
   if(command==='restore-snapshot-texts'){
     const who=agent(flags['--agent']);requireOwnBranch(who,baseSha);
     if(spawnSync('git',['diff','--quiet']).status!==0||spawnSync('git',['diff','--cached','--quiet']).status!==0||
@@ -273,7 +345,10 @@ function main():void {
       preview={left:leftId,right:rightId,join,fields};
     }
     const compiled=compileCanonicalSplit(base,plan,layoutInput);
-    if(record&&(merging||record.format_version!==1))ensurePriorAnchors(before,record,compiled.item,compiled.record);
+    if(record){
+      compiled.record=carryHistoricalAliases(before,record,compiled.item,compiled.record);
+      ensurePriorAnchors(before,record,compiled.item,compiled.record);
+    }
     current.items.set(parsed.item,compiled.item);current.rowSplits.set(parsed.item,compiled.record);
     for(const [id,value] of compiled.texts){const old=current.texts.get(id);if(old!==undefined&&old!==value)throw new Error(`Text hash collision: ${id}`);current.texts.set(id,value);current.textShards.set(id,id.slice(1,3));}
     const checked=validateCorpus(current);if(checked.errors.length)throw new Error(`Refusing invalid result: ${checked.errors.join('; ')}`);
