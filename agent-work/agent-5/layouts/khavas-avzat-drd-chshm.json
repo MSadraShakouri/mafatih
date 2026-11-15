@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "khavas-avzat-drd-chshm",
   "author": "agent-5",
-  "plan_sha256": "c2ea31143af4c14f46158aabf0d08d46a49bf87425719000c95f6759f2c298a6",
+  "plan_sha256": "845131e55b3e7c162c84416976dd54549be0c67d9d20ff3f07e956fa59646c27",
   "rows": [
     {
       "row": "r00001",
@@ -103,13 +103,21 @@
       "checked": true,
       "output": [
         {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
           "ar": {
             "source": "ar",
             "part": 0
           },
           "fa": {
             "source": "fa",
-            "part": 0
+            "part": 1
           },
           "kind": "recitation"
         }

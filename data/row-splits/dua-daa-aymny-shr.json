@@ -4,7 +4,7 @@
   "author": "agent-5",
   "baseline_item_sha256": "096f04af5626502f141f98d56685590fff3244df326b884bb4a55d65f15772b9",
   "plan_sha256": "8fc9beb96aad1c6f2b31d9480934afb54263c8b8aaa663625a27620879f46195",
-  "layout_sha256": "0705988b45198194509d3e1340e9138d7720137c9211007a0ce31cf92975c2d9",
+  "layout_sha256": "ef0350183e65b7f91292203eb4fc504fa88c4a9a189ef9ef4547035cc9442ab9",
   "rows": [
     {
       "original": {
@@ -105,7 +105,7 @@
       },
       "results": [
         "r00004-s86898f86de8b9f04",
-        "r00004-se656eb44999bf14d"
+        "mb0571663cc8f471c1b956998"
       ],
       "ar": [
         {
@@ -116,7 +116,7 @@
           "target_start": 0
         },
         {
-          "row": "r00004-se656eb44999bf14d",
+          "row": "mb0571663cc8f471c1b956998",
           "language": "ar",
           "start": 155,
           "end": 420,
@@ -125,7 +125,7 @@
       ],
       "fa": [
         {
-          "row": "r00004-se656eb44999bf14d",
+          "row": "mb0571663cc8f471c1b956998",
           "language": "fa",
           "start": 0,
           "end": 235,
@@ -140,24 +140,24 @@
         "fa": "t240dfcf90ae41c1077cce38b"
       },
       "results": [
-        "r00005"
+        "mb0571663cc8f471c1b956998"
       ],
       "ar": [
         {
-          "row": "r00005",
+          "row": "mb0571663cc8f471c1b956998",
           "language": "ar",
           "start": 0,
           "end": 12,
-          "target_start": 0
+          "target_start": 266
         }
       ],
       "fa": [
         {
-          "row": "r00005",
+          "row": "mb0571663cc8f471c1b956998",
           "language": "fa",
           "start": 0,
           "end": 18,
-          "target_start": 0
+          "target_start": 236
         }
       ]
     },
@@ -308,6 +308,32 @@
         }
       ],
       "fa": []
+    },
+    {
+      "original": {
+        "id": "r00004-se656eb44999bf14d",
+        "ar": "tb40b31db0660ebc40201b6e9",
+        "fa": "tcbb914d930ae9d7220ee1a25",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mb0571663cc8f471c1b956998",
+          "language": "ar",
+          "start": 0,
+          "end": 265,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mb0571663cc8f471c1b956998",
+          "language": "fa",
+          "start": 0,
+          "end": 235,
+          "target_start": 0
+        }
+      ]
     }
   ],
   "insertions": [
@@ -319,6 +345,24 @@
       "left": "r00007-sbd47d389958800f8",
       "right": "r00008",
       "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text."
+    },
+    {
+      "row": "mb0571663cc8f471c1b956998",
+      "language": "ar",
+      "target_start": 265,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts."
+    },
+    {
+      "row": "mb0571663cc8f471c1b956998",
+      "language": "fa",
+      "target_start": 235,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005",
+      "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts."
     }
   ]
 }
