@@ -159,8 +159,27 @@ with `historical-row-links.json`, `reused-row-ids.json` and
 
 - agent-1: nothing. His review of snapshot `3e35f4ca` is done.
 - agent-5: one kind change (`khavas-avzat-drd-chshm` r00011), as an isolated
-  snapshot. Nothing else.
+  snapshot. Nothing else. **Not published yet** (checked 2026-11-13: his branch
+  tip is still `daa3391e`, r00011 is still `quotation`, no new message).
+  When it comes I review that one item against the exact snapshot:
+  - the kind is `recitation` in both languages; the row ID `r00011` and both
+    text keys are kept; every row resolves to the same text;
+  - nothing else in the item changes, and no other item, mapping, plan, layout,
+    accepted space, join or alias changes; no pooled text is lost or altered;
+  - I read the row and its neighbours again, merge the snapshot, run
+    `npm run check`, rebind the record and publish review and status.
+  The mechanical part is `proposals/scripts/check-kind-only-change.cjs`
+  (`OLD NEW ITEM ROW KIND`, 21 checks, reads Git objects only). Tested on three
+  cases: no change yet (fails only on the kind), a simulated correct change in
+  a scratch worktree (21 of 21), and the same with one unrelated kind change
+  added (caught).
 - The coordinator: the link migration (points 2 and 3) and points 4 to 6 above.
+
+Kept open on purpose, as the coordinator directed: the two kind questions
+(`dua-vdaa-hsyn-alyh`, `item-mrsyh-am-albnyn`) and the kind of
+`dua-daa-aymny-shr` r00009, which waits for the migration. I do not close them,
+apply no historical alias by hand, and do not release the 20 held items before
+the migration is validated.
 
 I have no other task I am allowed to start; the remaining join candidates were
 explicitly not requested.
