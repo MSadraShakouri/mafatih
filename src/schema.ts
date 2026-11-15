@@ -217,7 +217,7 @@ const SplitOriginal = z.object({
   original: RowSchema, results: z.array(Key).min(1),
   ar: z.array(RowSplitSegmentSchema), fa: z.array(RowSplitSegmentSchema),
 }).strict();
-const SplitAlias = z.object({
+export const RowSplitAliasSchema = z.object({
   original: RowSchema, ar: z.array(RowSplitSegmentSchema), fa: z.array(RowSplitSegmentSchema),
 }).strict();
 /** Count Unicode code points consistently with SQLite, and disallow controls. */
@@ -234,7 +234,7 @@ export const RowMergeInsertionSchema = z.object({
 export const RowSplitRecordSchema = z.object({
   format_version: z.union([z.literal(1), z.literal(2), z.literal(3)]), item: Key, author: Key,
   baseline_item_sha256: Hash, plan_sha256: Hash, layout_sha256: Hash,
-  rows: z.array(SplitOriginal), aliases: z.array(SplitAlias).optional(), insertions:z.array(RowMergeInsertionSchema).optional(),
+  rows: z.array(SplitOriginal), aliases: z.array(RowSplitAliasSchema).optional(), insertions:z.array(RowMergeInsertionSchema).optional(),
 }).strict().superRefine((record,ctx) => {
   if (record.format_version === 1 && record.aliases !== undefined)
     ctx.addIssue({code:'custom',message:'V1 mappings cannot have aliases'});
@@ -249,6 +249,7 @@ export const RowSplitRecordSchema = z.object({
     }
 });
 export type RowSplitRecord = z.infer<typeof RowSplitRecordSchema>;
+export type RowSplitAlias = z.infer<typeof RowSplitAliasSchema>;
 export type Item = z.infer<typeof ItemSchema>;
 export type Row = z.infer<typeof RowSchema>;
 export type EnglishDocument = z.infer<typeof EnglishDocumentSchema>;

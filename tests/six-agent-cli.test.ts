@@ -108,13 +108,22 @@ test('real CLI runs six registered Arena branches, remote handoffs, revision, in
       assert.equal(spawnSync('git',['merge-base','--is-ancestor',notice.commit,discovered.tip],{cwd:dir}).status,0);
       git(dir,'merge','-q','--no-ff','-m','peer snapshot',notice.commit);
     }
-    // Agent 2 revises its own item after it has already merged agent 1.
+    // Agent 2 revises its own item after merging agent 1. A changed cut would
+    // repurpose a published V1 child ID, so first prove it is blocked; then
+    // use a safe, review-bound issue revision with unchanged row identities.
     git(dir,'switch','-q',branch(2));const item=authorItems[1]!,planPath=`agent-work/agent-2/plans/${item}.json`,layoutPath=`agent-work/agent-2/layouts/${item}.json`;
     const revised=JSON.parse(fs.readFileSync(path.join(dir,planPath),'utf8')) as ReturnType<typeof import('../src/split-agent.js').createAgentTemplate>;
-    revised.sources.find(s=>s.language==='ar')!.cuts=[10];put(dir,planPath,revised);
-    const layout=createCanonicalLayoutTemplate(baseline,splitAgentPlan(baseline,revised));layout.rows[0]!.checked=true;
-    layout.rows[0]!.output=[{ar:{source:'ar',part:0},fa:{source:'fa',part:0},kind:'recitation'},
-      {ar:{source:'ar',part:1},fa:null,kind:'recitation'}];put(dir,layoutPath,layout);
+    const arSource=revised.sources.find(s=>s.language==='ar')!;arSource.cuts=[10];put(dir,planPath,revised);
+    const makeLayout=()=>{
+      const next=createCanonicalLayoutTemplate(baseline,splitAgentPlan(baseline,revised));next.rows[0]!.checked=true;
+      next.rows[0]!.output=[{ar:{source:'ar',part:0},fa:{source:'fa',part:0},kind:'recitation'},
+        {ar:{source:'ar',part:1},fa:null,kind:'recitation'}];return next;
+    };
+    put(dir,layoutPath,makeLayout());const itemFile=path.join(dir,`data/items/${item}.json`),beforeRevision=fs.readFileSync(itemFile,'utf8');
+    const unsafe=spawnSync(process.execPath,['--import',tsx,cli,'apply',planPath,layoutPath,'--base',base,'--agent','agent-2'],{cwd:dir,encoding:'utf8'});
+    assert.notEqual(unsafe.status,0);assert.match(unsafe.stderr,/reuse|migration/i);assert.equal(fs.readFileSync(itemFile,'utf8'),beforeRevision);
+    arSource.cuts=[4];revised.issues.push({row:'old-row',language:'ar',kind:'other',note:'Synthetic context rechecked'});
+    put(dir,planPath,revised);put(dir,layoutPath,makeLayout());
     node(dir,cli,'apply',planPath,layoutPath,'--base',base,'--agent','agent-2');git(dir,'add','.');git(dir,'commit','-qm','revise agent 2');
     const second=JSON.parse(node(dir,snapshotCli,'--base',base,'--agent','agent-2')) as {snapshot:string;status:string};
     assert.equal(second.status,'author-ready');
