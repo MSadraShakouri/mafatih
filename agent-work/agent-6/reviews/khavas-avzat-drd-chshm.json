@@ -4,11 +4,11 @@
   "item": "khavas-avzat-drd-chshm",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
-  "plan_sha256": "845131e55b3e7c162c84416976dd54549be0c67d9d20ff3f07e956fa59646c27",
-  "layout_sha256": "0253bb8de701e1332eea566b6d36e45a73cd30cd38ae029f61543b00724dfc10",
-  "result_item_sha256": "2ceca09efa981520e340b427c466050b076f5c8c1f0ac4d277263b7048850325",
-  "result_record_sha256": "0d15031817f5952910cc2fa74bf6a2fa9fc911fffc44f11c91fef15998263719",
+  "author_commit": "d0fb57659675c25d0dbbe878a7ec9e9e6b7056d3",
+  "plan_sha256": "c0c0af19094c6b353fffe0d79bc577ecfd3e54b77abd1270fd3638db46e6c8f5",
+  "layout_sha256": "95bb1098e1812af9fbca04be95a3cca722b46e15aa1b1efb0b1f9c95236189ca",
+  "result_item_sha256": "9dae39e6588f6c7af8277d21a15d458d2460421e19e5e688b7e857ef3dc64291",
+  "result_record_sha256": "bf33e4c4715dfd157a6d6f6c1cf6bbb4af27f16f6a897c2a5f291b8522c19c9b",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "ee006526ec427ff87874dff68f37b4774a9155ae821f76d1f89ad0d705fd47fc",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "a12aead4d38c8b51c5c30c45c460a3d335e399df30fc151a6a2fbafaf592ddf3",
+    "preview_sha256": "25ce9346a3dbfd0bd6632b3bd3531e2f5fe5fe450277e56e414bee0a2333f660",
     "sources": [
       {
         "row": "r00001",
@@ -134,15 +134,15 @@
         "row": "r00011",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe: r00011 has never been cut, so a change of kind keeps its row ID (as with ziyarat-adab r00025 to r00030 in this snapshot). I had left this as an open question; I now decide it. The verse is to be said every day (the row before ends هرکه هر روز بگوید:), the same use as the verse of item-jht-drd-zanv r00005, which is recitation. Classify recitation."
+        "kind": "accept",
+        "note": "Fixed at snapshot d0fb5765. The verse is now recitation: the row before it ends هرکه هر روز بگوید:, so it is text the reader says every day, and it now agrees with the verse of item-jht-drd-zanv r00005. Checked against bae5beb3: the row ID r00011 and the text ID are the same, the text is the same character for character, and the row is still uncut."
       },
       {
         "row": "r00011",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Author fix, link-safe, with the Arabic of this row: the rendering of a verse that is said every day; classify recitation, as in item-jht-drd-zanv r00005."
+        "kind": "accept",
+        "note": "Fixed at snapshot d0fb5765. The rendering is now recitation, with its Arabic. Checked against bae5beb3: same row ID, same text ID, same text."
       },
       {
         "row": "r00012",
@@ -164,6 +164,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read all 16 output rows at snapshot bae5beb3. The open layout point is met: the repeated Persian of r00007 stands alone and the Arabic of r00007 is paired with its own four clauses. No join and no proposed space. One author fix is left, on the kind of r00011; see the source notes."
+    "note": "Read all 16 output rows at snapshot d0fb5765. The one open point is met: r00011, the verse that is said every day, is now recitation in both languages. I compared the snapshot with bae5beb3: this item differs only in that kind (item, plan and layout) and in the two hashes of the mapping record that bind the plan and the layout; row IDs, text IDs, texts, cuts and mapped spans are the same. No other item, mapping, plan or layout of the author changed, and no pooled text. No join and no proposed space in this item. Unchanged from my reading at bae5beb3: the repeated Persian of r00007 stands alone and the Arabic of r00007 is paired with its own four clauses."
   }
 }
