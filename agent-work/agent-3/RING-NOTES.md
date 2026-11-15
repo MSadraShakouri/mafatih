@@ -489,3 +489,57 @@ verdict (label convention, needs coordinator) or their "107/134 explained by no 
   says only "Invalid message kind or text". Check `wc -c` before every call.
 - `git merge --no-commit` leaves `UU`; resolve **before** `git add`, and read `:2:`/`:3:`
   *while the merge is live* — after `git add` those stages are gone.
+
+## Reused-ID audit, corrected twice (17:0x UTC, 6th re-provision)
+
+Recovered again. **The worktree had a version whose tree did NOT match the remote tip** — for
+the first time in six re-provisions. Cause: a run of `six-agent.ts message` had left
+`coordination/agent-3-agent-4.jsonl` modified but uncommitted, so my reply to agent-4
+(`bd8f38b6`) was **never pushed**. Caught by diffing the worktree against the tip rather than
+trusting the reset. **Always diff before `reset --hard`; "clean-ish" is not clean.**
+
+Lesson: after `message`, the record is only in the worktree. A push that happens *before* the
+message does not carry it. Commit **after** messaging, or verify with
+`git show origin/<branch>:coordination/... | grep <msgid>`.
+
+### The coordinator was right; I was wrong twice
+1. **"20 of 23 texts lost" was false.** I tested whole-row equality. Old and current pieces
+   are both slices of the same base row; the correct test is **slice containment**. All 23
+   reconstruct byte-exactly.
+2. **String search is the wrong tool.** 7 of 23 are 2-cp fragments (`". "`, `"! "`) occurring
+   at many offsets; matching put a `r00013` fragment inside `r00006`. Replaced with
+   **provenance**: slot in the *old* family concatenation → covering piece in the *current*
+   family concatenation. All 7 became determinate, and 3 destinations moved to the correct
+   offset (e.g. `khavas/sa021c79` is `[136,138)` not `[370,372)`).
+
+Final: **22 mapped, 1 deleted-as-duplicate, 0 lost.** The one with no destination is a lone
+`". "` where the source read `رَفِیقاً. . تمامی` → now `رَفِیقاً. تمامی`; the duplicate period
+was deleted, so inventing a destination would be the exact error this audit exists to avoid.
+
+The coordinator's worked example verifies exactly: old `"! "` (2cp) == `cp.slice(103,105)` of
+the current 105-cp field.
+
+### Proposal file bug
+Every entry sat under `"undefined"` — my generator read `entry.item` while the audit wrote
+`entry.it`. Now keyed by item (10 items, 23 ids), with both SHAs, the offset convention
+(half-open, zero-based, `Array.from` code points) and `reconstruction_check` per id.
+`verify-proposal.mjs` re-reads every range: **22/22 byte-exact**.
+
+### Still the hard blocker
+All 23 are **live rows**, so `src/row-splits.ts:171` rejects any alias for them, and
+`src/schema.ts:237-245` rejects aliases on V1. **These can only ever be versioned destination
+mappings with `start`/`end`, never aliases.** An alias pointing at a whole row would resolve
+readers to the wrong text — the same defect class as the reused ids.
+
+### Agent-4's two corrected records (read-only at 13b46b21 — no peer merge)
+Both slot defects **confirmed**; record says `fa`, layout publishes to `ar`. `ziyarat-item-12`
+is a *title* published as `recitation`. **Correction to agent-4's mechanism:** they blame
+"regrouping"; neither row needs regrouping (both single-child). The block is that the id
+hashes the **address** `{row,ar,fa,kind}` — reproduced `r00001-s03773910ea46fc6e` exactly,
+corrected address mints `r00001-s5e9d…`. Changing slot *or* kind changes the URL. Same
+conclusion, different reason, and no regrouping design avoids it.
+
+**Third self-correction:** I had called `r00009` "Arabic in the Persian slot". Wrong — both
+published rows are `fa`, `ar` empty; the Arabic piece (707cp, 3 Persian chars) was moved to
+`fa` as `note` and the Persian piece (680cp, 53) kept `fa` as `recitation`. A language move
+plus a role swap.
