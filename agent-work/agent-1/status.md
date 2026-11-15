@@ -418,3 +418,24 @@ link audit recomputed against `3e35f4ca`. Checked without taking anything on tru
 Twenty of their items stay held from final release pending the coordinator's link
 migration; nothing is asked of me until their next snapshot, when the 16 items with
 retired ids will need a rebind.
+
+## Standing by for the link migration
+
+Nothing is applied and nothing is asked of me until the coordinator publishes the
+post-migration snapshot. Two reusable tools are now committed here instead of in
+the wiped scratch directory, so the work survives a restore:
+
+- `agent-work/agent-1/tools/rebind-reviews.ts <snapshot> <items-file>` rebuilds
+  review records for a list of items against a snapshot, decides every recorded
+  space on the merged row it sits in, and fails loudly if any record does not
+  verify. Re-running it on an unchanged item reproduces the record exactly.
+- `agent-work/agent-1/tools/space-audit.ts <snapshot>` walks every junction of
+  every merged row and reports seams that are not "two pieces with exactly one
+  recorded space between them". On `3e35f4ca` it reproduces 82 Arabic and 73
+  Persian spaced junctions, 39 single-piece fields, 0 problems.
+
+When the migration lands the sequence is: merge main and the new snapshot with the
+merge drivers configured, `npm run build:data`, runtime-audio, `npm run check`,
+`npm run validate`, `verify-tool-info`, `audit-authored`; then rebind the items the
+snapshot changes (agent-6 promised the list, expected to be the 16 items carrying
+retired ids) with `rebind-reviews.ts`, and re-check the seams with `space-audit.ts`.
