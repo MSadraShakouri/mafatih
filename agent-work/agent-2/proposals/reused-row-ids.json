@@ -1,0 +1,617 @@
+{
+ "format_version": 1,
+ "kind": "reused-row-id-mapping-proposals",
+ "author": "agent-2",
+ "note": "Snapshot-versioned mappings for the 18 row ids the coordinator found reused between snapshots 52201b994cee and 2dff9afad203: the same id carries different text in the two snapshots because the round-1/round-2 cut revisions changed a piece span while keeping its start-anchored id. Per instruction these are NOT aliased — a single-key alias would misdirect one of the two meanings. Each entry says: content of this id AS OF 52201b9 lives at these segments of current rows (verified content-exact). The id today serves its current row content directly. Two further same-id rows (fazilat-svrhjmah r00001, sura-svrh-alzlzlh r00001) changed kind only with identical text and are excluded, matching the coordinator count of 18 across 5 items.",
+ "verification": "for every entry, concatenating maps_to segments equals the as-of-52201b9 pooled text exactly",
+ "proposals": [
+  {
+   "item": "amal-aamal-msjd-shlh",
+   "id": "r00007-s612834f5c13c1a1d",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t3f0945fabf1030124f604d0b",
+    "fa": "t5237df4701ecaf156a757efa",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00007-s612834f5c13c1a1d",
+      "language": "ar",
+      "start": 0,
+      "end": 158,
+      "target_start": 0
+     },
+     {
+      "row": "r00007-s6eb53056725aeb3a",
+      "language": "ar",
+      "start": 158,
+      "end": 190,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00007-s612834f5c13c1a1d",
+      "language": "fa",
+      "start": 0,
+      "end": 153,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "amal-aamal-msjd-shlh",
+   "id": "r00007-s6eb53056725aeb3a",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "tfe6f614bd2fcffd307a6aaa5",
+    "fa": "t83468ffd0bedb9e953295a50",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00007-s6eb53056725aeb3a",
+      "language": "ar",
+      "start": 0,
+      "end": 92,
+      "target_start": 32
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00007-s6eb53056725aeb3a",
+      "language": "fa",
+      "start": 0,
+      "end": 106,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "amal-aamal-msjd-shlh",
+   "id": "r00012-sbaf38a1576b6d401",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t8801918e964a9e66c3d4a0fa",
+    "fa": "tf11e3a354ee2b93411b2ce68",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00012-sbaf38a1576b6d401",
+      "language": "ar",
+      "start": 0,
+      "end": 180,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00012-sbaf38a1576b6d401",
+      "language": "fa",
+      "start": 0,
+      "end": 154,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "amal-aamal-msjd-shlh",
+   "id": "r00012-sca947673c7eec1bf",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t7ca4f8f32f081863bfb8af30",
+    "fa": "t084a36c76eb3c7b2622421fa",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00012-sbaf38a1576b6d401",
+      "language": "ar",
+      "start": 0,
+      "end": 2,
+      "target_start": 180
+     },
+     {
+      "row": "r00012-sca947673c7eec1bf",
+      "language": "ar",
+      "start": 2,
+      "end": 374,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00012-sca947673c7eec1bf",
+      "language": "fa",
+      "start": 0,
+      "end": 339,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "dua-hftm-daayy-zman",
+   "id": "r00004-s0c09de98ea6e555d",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t34241c53496b9e1b0cf7ad60",
+    "fa": "t196b5b83638e5ea04e4083fe",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00004-s97745e24b1ee5388",
+      "language": "ar",
+      "start": 0,
+      "end": 55,
+      "target_start": 236
+     },
+     {
+      "row": "r00004-s0c09de98ea6e555d",
+      "language": "ar",
+      "start": 55,
+      "end": 94,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00004-s0c09de98ea6e555d",
+      "language": "fa",
+      "start": 0,
+      "end": 39,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "dua-hftm-daayy-zman",
+   "id": "r00004-s97745e24b1ee5388",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t742b815934a8bba8f573969b",
+    "fa": "t5d2c33b71de84ed2858949fd",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00004-s97745e24b1ee5388",
+      "language": "ar",
+      "start": 0,
+      "end": 236,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00004-s97745e24b1ee5388",
+      "language": "fa",
+      "start": 0,
+      "end": 291,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-s2dada0ac7c0ded8f",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t2eb2879d6e95834c7b75b9a4",
+    "fa": "t4603d4ffa1da0f021f7f3939",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-s2dada0ac7c0ded8f",
+      "language": "ar",
+      "start": 0,
+      "end": 214,
+      "target_start": 8
+     },
+     {
+      "row": "r00006-s6594951ca817bda4",
+      "language": "ar",
+      "start": 214,
+      "end": 222,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00006-s2dada0ac7c0ded8f",
+      "language": "fa",
+      "start": 0,
+      "end": 85,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-s34b02a6bb1ae0a35",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t4bcae9a8131e55f8f7930ae9",
+    "fa": "t8941b987aa19af1a03f9f1b2",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-s34b02a6bb1ae0a35",
+      "language": "ar",
+      "start": 0,
+      "end": 102,
+      "target_start": 8
+     },
+     {
+      "row": "r00006-sdf64bfbf42f0faf4",
+      "language": "ar",
+      "start": 102,
+      "end": 110,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00006-s34b02a6bb1ae0a35",
+      "language": "fa",
+      "start": 0,
+      "end": 86,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-s3e3874d69dfd3c50",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t31ffd986716649abcc692fb2",
+    "fa": "tc067d91aa10a651d1c52dd80",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-s3e3874d69dfd3c50",
+      "language": "ar",
+      "start": 0,
+      "end": 93,
+      "target_start": 0
+     },
+     {
+      "row": "r00006-s34b02a6bb1ae0a35",
+      "language": "ar",
+      "start": 93,
+      "end": 101,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00006-s3e3874d69dfd3c50",
+      "language": "fa",
+      "start": 0,
+      "end": 74,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-s6594951ca817bda4",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t017f0ff6964d60a15df2596c",
+    "fa": "tc7971139dd8d18ae3e4a34b4",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-s6594951ca817bda4",
+      "language": "ar",
+      "start": 0,
+      "end": 109,
+      "target_start": 8
+     },
+     {
+      "row": "r00006-sc1d013b58ae1dcc2",
+      "language": "ar",
+      "start": 109,
+      "end": 117,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00006-s6594951ca817bda4",
+      "language": "fa",
+      "start": 0,
+      "end": 81,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-saf5c996510b9a4f4",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t626c531102be0af93dceebcc",
+    "fa": null,
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-saf5c996510b9a4f4",
+      "language": "ar",
+      "start": 0,
+      "end": 88,
+      "target_start": 6
+     },
+     {
+      "row": "r00006-sde8982593219fa96",
+      "language": "ar",
+      "start": 88,
+      "end": 96,
+      "target_start": 0
+     }
+    ],
+    "fa": []
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-sc1d013b58ae1dcc2",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t508249ed214cfad65ab4ca87",
+    "fa": "t2e853364443a2b55e50a89f3",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-sc1d013b58ae1dcc2",
+      "language": "ar",
+      "start": 0,
+      "end": 194,
+      "target_start": 8
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00006-sc1d013b58ae1dcc2",
+      "language": "fa",
+      "start": 0,
+      "end": 156,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-sde8982593219fa96",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "tb8d1eed91ddc4872cc27d5cb",
+    "fa": null,
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-sde8982593219fa96",
+      "language": "ar",
+      "start": 0,
+      "end": 103,
+      "target_start": 8
+     },
+     {
+      "row": "r00006-s2dada0ac7c0ded8f",
+      "language": "ar",
+      "start": 103,
+      "end": 111,
+      "target_start": 0
+     }
+    ],
+    "fa": []
+   }
+  },
+  {
+   "item": "monajat-mnajat-amyr-alyh",
+   "id": "r00006-sdf64bfbf42f0faf4",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t91182b0b641c857708145d72",
+    "fa": "t2008bfdfadd6453011eea36f",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00006-sdf64bfbf42f0faf4",
+      "language": "ar",
+      "start": 0,
+      "end": 105,
+      "target_start": 8
+     },
+     {
+      "row": "r00006-saf5c996510b9a4f4",
+      "language": "ar",
+      "start": 105,
+      "end": 111,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00006-sdf64bfbf42f0faf4",
+      "language": "fa",
+      "start": 0,
+      "end": 75,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "sahifa-19",
+   "id": "r00003-sf9cbb0785d5f5447",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t53559fc0a226b8bbf57ca63c",
+    "fa": "t95afb85678518be057c3cabd",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00003-sf9cbb0785d5f5447",
+      "language": "ar",
+      "start": 0,
+      "end": 74,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00003-sf9cbb0785d5f5447",
+      "language": "fa",
+      "start": 0,
+      "end": 90,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "sahifa-19",
+   "id": "r00003-sfc5f463082467697",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t3c50556089d27f60bde9c9b7",
+    "fa": "t35aac86e9c4dad7f8a99f632",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00003-sf9cbb0785d5f5447",
+      "language": "ar",
+      "start": 0,
+      "end": 9,
+      "target_start": 74
+     },
+     {
+      "row": "r00003-sfc5f463082467697",
+      "language": "ar",
+      "start": 9,
+      "end": 61,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00003-sfc5f463082467697",
+      "language": "fa",
+      "start": 0,
+      "end": 77,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "ziyarat-ashura",
+   "id": "r00052-s4f02da39cf3ba196",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t16dce49718805bd90d7da406",
+    "fa": "t2c196a6f90a8c87978463b4f",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00052-s4f02da39cf3ba196",
+      "language": "ar",
+      "start": 0,
+      "end": 35,
+      "target_start": 56
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00052-s4f02da39cf3ba196",
+      "language": "fa",
+      "start": 0,
+      "end": 54,
+      "target_start": 0
+     }
+    ]
+   }
+  },
+  {
+   "item": "ziyarat-ashura",
+   "id": "r00052-sa452900d2d50839c",
+   "as_of_snapshot": "52201b994cee",
+   "original": {
+    "ar": "t376a0312e546ff4f4dad4710",
+    "fa": "tdf9040520f96e2040003763c",
+    "kind": "recitation"
+   },
+   "maps_to": {
+    "ar": [
+     {
+      "row": "r00052-sa452900d2d50839c",
+      "language": "ar",
+      "start": 0,
+      "end": 64,
+      "target_start": 0
+     },
+     {
+      "row": "r00052-s4f02da39cf3ba196",
+      "language": "ar",
+      "start": 64,
+      "end": 120,
+      "target_start": 0
+     }
+    ],
+    "fa": [
+     {
+      "row": "r00052-sa452900d2d50839c",
+      "language": "fa",
+      "start": 0,
+      "end": 68,
+      "target_start": 0
+     }
+    ]
+   }
+  }
+ ]
+}

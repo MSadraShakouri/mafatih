@@ -54,18 +54,34 @@ and `resolveLegacyRowAnchor` would then answer anchors into all 24 retired ids.
 shared instruction for this audit says propose, not apply. The coordinator can
 land them together with the anchor-migration work.
 
-## Secondary finding: 5 merged base rows are traceable but not URL-redirected
+## Secondary finding: 5 merged base rows — withdrawn, already resolved
 
-`amal-aamal-jmah/r00031`, `amal-hsyn-alyh-alslam/r00133` + `r00134`,
-`ziyarat-item-11/r00003`, `ziyarat-zman-alyh-alslam/r00007` were plain rows in
-published snapshots, were absorbed by reviewed merges, and hold `rows[]`
-segment mappings — so `historicalRow`/`currentPieces` resolve them and review
-records verify — but they carry **no alias**, so a reader URL anchored to them
-will not redirect. Empirically the merge tool aliases absorbed split-pieces and
-intermediate m-rows (jmah's two r00030 pieces plus `m4d5600`, namaz-sadq's two
-pieces, ziyarat-item-11's left piece) but not plain base-row operands. The
-`merged_base_rows` group in the proposals file holds verified alias entries for
-these 5 if anchor-level coverage is wanted.
+~~The 5 merged base rows carry no alias.~~ **Withdrawn per coordinator
+instruction:** the coordinator tested the builder and the reader resolver and
+confirmed `amal-aamal-jmah/r00031`, `amal-hsyn-alyh-alslam/r00133` + `r00134`,
+`ziyarat-item-11/r00003`, `ziyarat-zman-alyh-alslam/r00007` already resolve
+through `rows[].original`; no duplicate aliases are proposed. The
+`merged_base_rows` group in the proposals file has been emptied accordingly.
+
+## Update: 18 reused ids between 52201b9 and 2dff9afa
+
+The coordinator additionally found 18 ids reused across five items between
+snapshots `52201b9` and `2dff9afa`: the same id carries different text in the
+two snapshots. Verified — root cause: the round-1/round-2 cut revisions moved
+a piece boundary while the piece kept its start-anchored id, so the id served
+a different span afterwards. Affected items: amal-aamal-msjd-shlh (4),
+dua-hftm-daayy-zman (2), monajat-mnajat-amyr-alyh (8), sahifa-19 (2),
+ziyarat-ashura (2). Two further same-id rows (fazilat-svrhjmah r00001,
+sura-svrh-alzlzlh r00001) changed kind only, with byte-identical text, and are
+excluded — matching the coordinator's count of 18 across 5 items.
+
+Snapshot-versioned mapping proposals are in
+`proposals/reused-row-ids.json`: for every reused id, the content it held
+**as of `52201b9`** is mapped to segments of current rows, each verified
+content-exact (the concatenation of the segments equals the as-of-52201b9
+pooled text). Per instruction, none of these are aliased — a single-key alias
+would silently misdirect one of the two meanings; the mapping must stay
+snapshot-versioned.
 
 ## Other checks (all clean)
 
