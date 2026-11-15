@@ -24,14 +24,18 @@ no row-level english links).
 | dua-hrm-hsyn-alyh | 4 | `bbfe933c` | round-2 pairing fix of r00003 (cut 680→648) → `775e7df5` |
 | monajat-mnajat-tlb-rvzy | 16 | `52201b9` (r00002 set) / `bbfe933c` (r00003 set) | round-1 r00002 fix → `bbfe933c`; round-2 r00003 fix → `775e7df5` |
 
-All 24 are content-hashed split-piece ids (`r000NN-s…`).
+All 24 are split-piece ids (`r000NN-s…`); see the reconciliation section below
+for how the suffix is actually derived — positional references, not text.
 
-**Root cause:** piece ids hash their text, so when the round-1/round-2
-revisions moved a cut, every piece whose text changed received a new id, and
-the revision driver wrote no aliases for the retired ones. Items whose
-revisions did not change a piece's text kept identical ids (e.g. sahifa-19's
-r00003 pieces are byte-identical in `52201b9` and today), which is why only
-these three items are affected.
+**Root cause (corrected):** the round-1/round-2 revisions restructured the
+affected rows — renumbering parts, re-pairing languages, or changing kinds —
+which changed each piece's hashed `(source, part, kind)` inputs and therefore
+its id. Pieces whose restructuring did not change those inputs kept their ids
+even when other pieces around them changed (e.g. sahifa-19's r00003 pieces,
+byte-identical in `52201b9` and today), which is why only these three items
+are affected. My earlier wording ("piece ids hash their text") was an
+empirical mislabel — see the reconciliation below; agent-3's description of
+the algorithm is the correct one.
 
 ## Proposed recovery — safe, no re-splits
 
@@ -68,8 +72,11 @@ through `rows[].original`; no duplicate aliases are proposed. The
 The coordinator additionally found 18 ids reused across five items between
 snapshots `52201b9` and `2dff9afa`: the same id carries different text in the
 two snapshots. Verified — root cause: the round-1/round-2 cut revisions moved
-a piece boundary while the piece kept its start-anchored id, so the id served
-a different span afterwards. Affected items: amal-aamal-msjd-shlh (4),
+a piece boundary while the piece kept its **`(source, part, kind)` identity**
+(the hashed inputs were unchanged; only the text the part refers to moved), so
+the id served a different span afterwards. My earlier wording
+("start-anchored") was also a mislabel — the anchor is the positional part
+reference, not a start offset. Affected items: amal-aamal-msjd-shlh (4),
 dua-hftm-daayy-zman (2), monajat-mnajat-amyr-alyh (8), sahifa-19 (2),
 ziyarat-ashura (2). Two further same-id rows (fazilat-svrhjmah r00001,
 sura-svrh-alzlzlh r00001) changed kind only, with byte-identical text, and are
@@ -98,3 +105,56 @@ snapshot-versioned.
 
 No link guard bypassed, no pinned tool touched, no translation, no re-split for
 row length, and no new spacing proposal was created.
+
+## Reconciliation: how split-piece ids are actually derived
+
+Agent-3's description is correct and both of this report's earlier labels
+("content-hashed", "start-anchored") were empirical mislabels. The algorithm
+never differed between any relevant commit or snapshot — the discrepancy was
+descriptive, not a tooling divergence.
+
+**The code.** `src/split-canonical.ts` builds every output-row id as:
+
+```ts
+const rowId = unchangedAddress ? old.id
+  : `${old.id}-s${serialHash({row:old.id,ar:out.ar,fa:out.fa,kind:out.kind}).slice(0,16)}`;
+```
+
+with `const serialHash = (input:unknown):string => sha256(JSON.stringify(input))`
+(`src/split-canonical.ts:27`; also `src/split-agent.ts:74`). `out.ar`/`out.fa`
+are **positional source/part references** — `{"source":"ar"|"fa","part":N}` or
+`null` — plus the classified `kind`. The hashed payload contains no text and
+no offsets. `unchangedAddress` (a single output row mapping each language to
+part 0 of its own source) keeps the plain base id.
+
+This exact construction is byte-identical at `0585cec` (line 97), `ffa01da9`
+(97), `c75e50c` (100), `b2756bb0` (102), `55ef3fe` (102), and in the trees of
+snapshots `52201b9`, `775e7df5`, `3bd51553` and `2dff9afa`. No version drift.
+
+**Reproduction 1 — reused id, identical inputs, different text.**
+`amal-aamal-msjd-shlh/r00007-s612834f5c13c1a1d`: its layout entry is
+`{"ar":{"source":"ar","part":3},"fa":{"source":"fa","part":3},"kind":"recitation"}`
+at **both** `52201b9` and current HEAD. Recomputing
+`sha256(JSON.stringify({row:"r00007",ar:{"source":"ar","part":3},fa:{"source":"fa","part":3},kind:"recitation"}))`
+yields `612834f5c13c1a1d` in both — the same id — while the row's text differs
+between the snapshots. Positional, not content.
+
+**Reproduction 2 — whole-item exactness.** Recomputing every output-row id
+from the layout with this formula matches the actual rows with zero
+mismatches for `amal-aamal-msjd-shlh` (46 ids) and `amal-byst-6` at both
+`52201b9` and HEAD. (`ziyarat-item-11`'s two layout-computed ids
+`r00002-s51331c3b3dd06d15` and `r00003` are absent from current data because
+the reviewed merge `m3ec38f5` absorbed them — expected, not a formula failure.)
+
+**Reproduction 3 — same text, different id (converse).**
+`amal-byst-6/r00002-sb4c2bfb77eb89124` (at `52201b9`) and
+`r00002-se78f6df715196b3d` (current) carry the byte-identical Arabic text
+«وَ حابِسَهُما أَنْ تَزُولا، يَا عَلِيمُ…» under different ids, because their
+hashed part references differ. Ids therefore neither bind text nor derive
+from it in any direction.
+
+**Consequences for this report's findings.** The 24 retired ids changed
+because restructuring renumbered parts or changed kinds, not because text
+moved; the 18 reused ids persisted because their `(source, part, kind)`
+inputs survived a boundary move. Both mapping-proposal groups remain valid as
+computed — they map content spans, which is independent of how ids are minted.
