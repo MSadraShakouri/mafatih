@@ -22,8 +22,8 @@
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "accept",
-        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00001/fa has no cuts, 1 pieces (recitation 1), parts [0]; no cut/part anomaly. Item-level: 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+        "kind": "revise",
+        "note": "Wrong destination slot, confirmed by reading the text rather than by counting. The only source field of r00001 is the Persian field of 103 code points, and the layout publishes that Persian piece into the Arabic slot with the role recitation. The published row r00001-s03773910ea46fc6e therefore carries Persian text in its ar field and nothing in its fa field, and the row-split record maps the fa segment of r00001 to the ar language of that row. The content is a Persian gloss naming the imams, so it is a note and not a recitation. Reject the slot and the role. Regrouping this row retires its published child id, so the correction waits for the supported mapping migration."
       },
       {
         "row": "r00002",
@@ -120,8 +120,8 @@
         "row": "r00009",
         "language": "ar",
         "split": "accept",
-        "kind": "accept",
-        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00009/ar has no cuts, 1 pieces (note 1), parts [0]; no cut/part anomaly. Item-level: 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+        "kind": "revise",
+        "note": "Wrong destination slot, confirmed by reading the text rather than by counting. The Arabic field of r00009 is 707 code points and continues the Arabic prayer that begins in r00008, whose Arabic field is 401 code points, but the layout publishes the Arabic piece into the Persian slot with the role note. The published row r00009-s5c935b8a19cd440a therefore carries Arabic text in its fa field, and the row's own Persian field of 680 code points is published beside it in r00009-sf45ae3f7757f3e0b, also in the fa slot. r00009 consequently has no Arabic row at all, and the Arabic continuation is labelled a note instead of a recitation. Reject the slot and the role. Regrouping these rows retires published child ids, so the correction waits for the supported mapping migration."
       },
       {
         "row": "r00009",
@@ -184,7 +184,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "accept",
-    "note": "Deep cut/pairing review at exact 680317220f161994082132d8fb9aeb8dcc4d48e1: 23 source fields; 7 cuts, 0 mid-word, 0 punctuation-free; 5 paired outputs, 20 unpaired outputs, 5 language moves, 9 bilingual source rows. Unequal bilingual piece counts: r00004 ar2/fa1, r00005 ar2/fa1, r00012 ar2/fa1. Full metrics in deep-review-findings.json; no human/scholarly/rights approval."
+    "decision": "revise",
+    "note": "Needs work: two sources publish content in the wrong destination slot. r00001 publishes its Persian field of 103 code points into the Arabic slot as a recitation, and r00009 publishes its Arabic field of 707 code points into the Persian slot as a note, so r00009 has no Arabic row at all. The structural counts are unchanged and still hold: 23 source fields; 7 cuts, 0 mid-word, 0 punctuation-free; 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Each slot finding is recorded on the source it belongs to. Regrouping these rows retires published child ids, so the corrections wait for the supported mapping migration. Full metrics in deep-review-findings.json; no human, scholarly or rights approval."
   }
 }

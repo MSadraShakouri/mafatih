@@ -22,8 +22,8 @@
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "accept",
-        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00001/fa has no cuts, 1 pieces (recitation 1), parts [0]; no cut/part anomaly. Item-level: 2 paired outputs, 3 unpaired outputs, 1 language moves, 0 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+        "kind": "revise",
+        "note": "Wrong destination slot, confirmed by reading the text rather than by counting. The only source field of r00001 is the Persian field of 56 code points, which is the title of the visitation, and the layout publishes that Persian piece into the Arabic slot with the role recitation. The published row r00001-s03773910ea46fc6e therefore carries Persian text in its ar field and nothing in its fa field, and the row-split record maps the fa segment of r00001 to the ar language of that row. A title is not a recitation. Reject the slot and the role. Regrouping this row retires its published child id, so the correction waits for the supported mapping migration."
       },
       {
         "row": "r00002",
@@ -72,7 +72,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "accept",
-    "note": "Deep cut/pairing review at exact 680317220f161994082132d8fb9aeb8dcc4d48e1: 7 source fields; 0 cuts, 0 mid-word, 0 punctuation-free; 2 paired outputs, 3 unpaired outputs, 1 language moves, 2 bilingual source rows. No unequal bilingual piece counts. Full metrics in deep-review-findings.json; no human/scholarly/rights approval."
+    "decision": "revise",
+    "note": "Needs work: one source publishes content in the wrong destination slot. r00001 publishes its Persian field of 56 code points into the Arabic slot as a recitation, so the published row carries Persian text in its ar field and nothing in its fa field, and the title of the visitation is labelled a recitation. The structural counts are unchanged and still hold: 7 source fields; 0 cuts, 0 mid-word, 0 punctuation-free; 2 paired outputs, 3 unpaired outputs, 1 language moves, 2 bilingual source rows, no unequal bilingual piece counts. The slot finding is recorded on the source it belongs to. Regrouping this row retires its published child id, so the correction waits for the supported mapping migration. Full metrics in deep-review-findings.json; no human, scholarly or rights approval."
   }
 }
