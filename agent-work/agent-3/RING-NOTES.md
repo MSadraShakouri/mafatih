@@ -413,3 +413,79 @@ agent-2, me). Mine added no information. I withdrew it rather than publish a thi
   40-character frozen base commit ID").
 - `/tmp` can be wiped **mid-session**, not just between sessions. Regenerate
   `/tmp/my-items.txt` and `/tmp/a2-items.txt` from `assignments.json` before trusting a loop.
+
+## Round: official fix merged, 23-reused-id audit, namaz verification (13:3x UTC)
+
+Fifth re-provision, recovered identically (prove tree == remote tip first).
+
+### Main's official fix — merged as instructed, no peer copy
+`55ef3fe4` (coordinator-authored, based on agent-2's *reviewed proposal*). Clean merge,
+exactly 3 files: `tests/runtime-audio.test.ts`, `tests/helpers/row-split-history.ts`,
+`docs/split-assignments/tool-info.json`. `verify-tool-info` → tool-version-matches.
+`npm run check` → **exits 0**, 278 tests / 275 pass / 0 fail / 3 skipped. The merged-slice
+failure is gone because *main* fixed it, not because I copied anyone. Merge `32fedea3`.
+
+### Reused IDs: coordinator's 23/10 reproduced exactly
+Different question from my earlier audit, and **worse**:
+- Earlier class = retired IDs → fail loudly, nothing resolves.
+- This class = **same ID, different text** → resolves *successfully* to wrong content.
+  No reader-side check can catch it.
+
+**Mechanism (from `src/split-canonical.ts:102`, verified against the data):** the child id
+hashes `{row, ar:{source,part}, fa:{source,part}, kind}` — the **address**, not the text.
+`part` is positional. When a re-split yields *fewer* pieces, index *k* names different text
+under the same id. All 23 affected base rows had piece counts **shrink** — 23/23, none grew.
+This contradicts the "ids hash their text" claim I had repeated from agent-2; that claim is
+true of **pooled text ids** (`textId`), not of child row ids.
+
+**Split:** 8 punctuation/space-only, 15 materially different. Only **3** have the old text
+surviving byte-exact somewhere; **20** are gone from the corpus entirely.
+
+**The blocker nobody had stated:** all 23 are **still live rows**. `src/row-splits.ts:171`
+rejects an alias whose id is in `current` ("duplicate or reused alias identity"). So the
+V1→V2/V3 migration is **necessary but not sufficient** — after migrating, every one of these
+23 still fails. The live-row case needs its own decision (retire-then-alias / content-address
+the ids / accept+document). I did not choose.
+
+Deliverable: `REUSED-ID-AUDIT.md` + `proposals/reused-id-mappings.json`. Nothing in `data/`.
+
+### namaz r00010-s5435c4aabef83342 — coordinator's mapping verifies exactly
+r00010, fa, offset **62**, field length 63, `end:63` agrees. In `731bbd96` the row was cut
+into `…آمد.` (62 cp) + `"."` (1 cp) = **62+1=63**, so the offset is where the old cut fell,
+not a guess. `textId(".")` = `tcdb4ee2aea69cc6a83331bbe` **is present** in the pool.
+
+**I withdrew my own earlier recommendation** (point at parent `r00010`). Pointing at the
+parent would redirect a reader into a 63-cp sentence — a different-text outcome, the same
+failure mode as the 23 reused ids. The coordinator's offset-62 version preserves byte-exact
+content and keeps recovery uniform at 28/28.
+
+**Key distinction:** this orphan is **not live**, so it is the one case that could take a
+normal alias without retiring anything. It is blocked purely by V1. The 23 are blocked by
+liveness *and* V1. **Different fixes; do not group them.**
+
+### Agent-4 merge — the merge driver silently loses data (IMPORTANT)
+Merging `41decc19` (to close their reachability gap) hit 16 `UU` text shards. **Git holds
+`OURS` in the worktree and reports a conflict**, and `git checkout --ours` looks like an
+obvious resolution — it would have dropped **134 of agent-4's pool entries**.
+
+Cause: HEAD and agent-4 share **two merge bases** (`55ef3fe4` main, `68031722` my snapshot) —
+a criss-cross. Git feeds the driver `68031722` as ancestor, where 16 texts exist; agent-4 no
+longer carries them, so `merge-agent-files.mjs:28` refuses
+("Existing text value was changed or deleted") and git leaves `:2:` behind.
+
+**Rule: on a refused text-shard merge, take the UNION of `:2:` and `:3:`** (verify every id
+== `t`+sha256(text)[:24], re-sort keys). Result: 134 restored, 686 items, 24,375 refs,
+**0 dangling**, validate PASS, `npm run check` 0. Merge `1c278322`.
+
+### Agent-4's deep review of my cuts — read all 134 rows
+Their 4 "paired exceptions" claim **verifies** (`namaz-item-3/r00001`: Arabic prayer + Persian
+rendering in one row). So detached bilingual pairs are a *style choice*, not a layout rule.
+6 defect rows confirmed at the data level. I did **not** endorse their "role inversion"
+verdict (label convention, needs coordinator) or their "107/134 explained by no counterpart"
+(good-faith editorial-intent judgement, not verifiable — same category as the 3,188 figure).
+
+## CLI gotchas, round 3
+- `message` text limit is **< 2,000 chars**, not ~2,000: 2,032 was rejected. Error text still
+  says only "Invalid message kind or text". Check `wc -c` before every call.
+- `git merge --no-commit` leaves `UU`; resolve **before** `git add`, and read `:2:`/`:3:`
+  *while the merge is live* — after `git add` those stages are gone.

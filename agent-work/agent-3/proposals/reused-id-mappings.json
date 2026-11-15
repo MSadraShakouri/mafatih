@@ -1,0 +1,410 @@
+{
+ "protocol": "agent-3-reused-id-mapping-proposal-v1",
+ "status": "PROPOSAL ONLY — not applied, no data/ change",
+ "coordinator_count": 23,
+ "reproduced": true,
+ "snapshots": {
+  "from": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+  "to": "680317220f161994082132d8fb9aeb8dcc4d48e1"
+ },
+ "mechanism": "piece id = sha256({row, ar:{source,part}, fa:{source,part}, kind}) — it hashes the ADDRESS, not the text. When a re-split yields a shorter piece list for a base row, positional part k now names different text under the identical id.",
+ "evidence": "all 23 affected base rows had their piece count SHRINK (4->3, 9->8, 8->5 ...), 23 of 23, none grew",
+ "summary": {
+  "ids": 23,
+  "items": 10,
+  "still_live_rows": 23,
+  "retired": 0,
+  "old_text_recoverable_byte_exact": 3,
+  "old_text_absent_from_corpus": 20,
+  "punctuation_or_space_only": 8,
+  "text_materially_differs": 15
+ },
+ "blocker": "All 23 ids are still LIVE rows. An alias is forbidden while the id is live, and V1 records cannot carry aliases at all. A V2/V3 migration alone does not resolve the live-row case; the id must first be retired, or the redirect must be expressed some other way.",
+ "items": {
+  "undefined": [
+   {
+    "historical_id": "r00004-sa44b8f05e3e4e602",
+    "kind_unchanged": true,
+    "old_text_codepoints": 110,
+    "current_text_codepoints": 111,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-s3dda56d9c83883fa",
+    "kind_unchanged": true,
+    "old_text_codepoints": 103,
+    "current_text_codepoints": 105,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-s5347c817c3599961",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 27,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-s87a4572572fe3091",
+    "kind_unchanged": true,
+    "old_text_codepoints": 370,
+    "current_text_codepoints": 372,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-sd0076416ed435839",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 138,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-s8939275b275c817a",
+    "kind_unchanged": true,
+    "old_text_codepoints": 136,
+    "current_text_codepoints": 149,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-sa021c793590ec5ab",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 243,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00013-s3d24e8d54d9902e9",
+    "kind_unchanged": true,
+    "old_text_codepoints": 281,
+    "current_text_codepoints": 283,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00013-s892a5505605738ea",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 35,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00012-se62b3f362c1c151a",
+    "kind_unchanged": true,
+    "old_text_codepoints": 261,
+    "current_text_codepoints": 262,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-s909b8a58b8018daa",
+    "kind_unchanged": true,
+    "old_text_codepoints": 109,
+    "current_text_codepoints": 111,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-sa021c793590ec5ab",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 31,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-s1fa9d92731f5fd90",
+    "kind_unchanged": true,
+    "old_text_codepoints": 31,
+    "current_text_codepoints": 234,
+    "text_differs": true,
+    "old_text_present_as_live_row": true,
+    "candidate_targets": [
+     {
+      "row": "r00001-sa021c793590ec5ab",
+      "language": "fa"
+     }
+    ],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "redirect-after-retirement"
+   },
+   {
+    "historical_id": "r00001-s8939275b275c817a",
+    "kind_unchanged": true,
+    "old_text_codepoints": 414,
+    "current_text_codepoints": 417,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-sc5e9d9539705078a",
+    "kind_unchanged": true,
+    "old_text_codepoints": 300,
+    "current_text_codepoints": 302,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00001-sd0076416ed435839",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 266,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00003-s1828851db03b603e",
+    "kind_unchanged": true,
+    "old_text_codepoints": 8,
+    "current_text_codepoints": 63,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00003-s1b27bb8c75bc48e1",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 183,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00003-sd8fe963a13fe0305",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 265,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00003-sb355d8466a6ab016",
+    "kind_unchanged": true,
+    "old_text_codepoints": 183,
+    "current_text_codepoints": 104,
+    "text_differs": true,
+    "old_text_present_as_live_row": true,
+    "candidate_targets": [
+     {
+      "row": "r00003-s1b27bb8c75bc48e1",
+      "language": "fa"
+     }
+    ],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "redirect-after-retirement"
+   },
+   {
+    "historical_id": "r00002-s16b235f3fb54b1a5",
+    "kind_unchanged": true,
+    "old_text_codepoints": 420,
+    "current_text_codepoints": 422,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00002-s7912db66cde98eb8",
+    "kind_unchanged": true,
+    "old_text_codepoints": 2,
+    "current_text_codepoints": 275,
+    "text_differs": true,
+    "old_text_present_as_live_row": false,
+    "candidate_targets": [],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "content-lost-no-target"
+   },
+   {
+    "historical_id": "r00002-se090ec1c15d74b91",
+    "kind_unchanged": true,
+    "old_text_codepoints": 275,
+    "current_text_codepoints": 30,
+    "text_differs": true,
+    "old_text_present_as_live_row": true,
+    "candidate_targets": [
+     {
+      "row": "r00002-s7912db66cde98eb8",
+      "language": "fa"
+     }
+    ],
+    "blocking": {
+     "remains_live_row": true,
+     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
+     "record_format": 1,
+     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
+    },
+    "proposed_class": "redirect-after-retirement"
+   }
+  ]
+ }
+}
