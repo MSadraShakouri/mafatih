@@ -1,0 +1,7447 @@
+{
+ "protocol": "agent-4-deep-review-evidence-v1",
+ "reviewed_agent": "agent-3",
+ "reviewed_snapshot": "680317220f161994082132d8fb9aeb8dcc4d48e1",
+ "frozen_base": "ffa01da92fbba25731356e8158c295b3824763f0",
+ "baseline_check": {
+  "plan_source_rows_checked": 1660,
+  "matched": 1660,
+  "mismatched": 0,
+  "missing": 0
+ },
+ "totals": {
+  "flagged_items": 49,
+  "flagged_rows": 134,
+  "slot_move_events": 154,
+  "unequal_bilingual_rows": 85,
+  "unequal_piece_rows": 116,
+  "flagged_rows_with_slot_move": 134,
+  "class_partition": {
+   "detached-1to1": 65,
+   "detached-multi": 13,
+   "paired": 4,
+   "one-sided": 34,
+   "note-only": 18
+  },
+  "class_partition_total": 134
+ },
+ "classes": {
+  "detached-1to1": 65,
+  "detached-multi": 13,
+  "paired": 4,
+  "one-sided": 34,
+  "note-only": 18
+ },
+ "findings": {
+  "F1_detached_bilingual_pair": {
+   "rows": 78,
+   "items": 30,
+   "applied": false,
+   "reason": "regrouping retires published child ids; needs the supported V1-to-V2 mapping migration",
+   "classes": {
+    "detached-1to1": 65,
+    "detached-multi": 13
+   },
+   "definition": "the Arabic recitation and its Persian rendering are published in two different output rows; no output row of the source row carries both slots"
+  },
+  "F2_wrong_destination_slot": {
+   "rows": 3,
+   "items": 2,
+   "cases": [
+    "ziyarat-aymh-bqya-alyhm|r00001",
+    "ziyarat-item-12|r00001",
+    "ziyarat-aymh-bqya-alyhm|r00009"
+   ],
+   "applied": false
+  },
+  "F3_role_mismatch": {
+   "rows": 32,
+   "inversions": [
+    "amal-syghh-astghfar-fzylt|r00002",
+    "dua-svm-daahay-vqt|r00002",
+    "namaz-astkharh-zat-alrqaa|r00002"
+   ],
+   "applied": false,
+   "definition": "the Persian side carries a recitation while the Arabic side of the same source row carries none, because the Arabic was re-homed into the Persian slot, embedded in a Persian direction, or continued into a neighbouring row"
+  },
+  "F4_truncated_recitation": {
+   "rows": 6,
+   "cases": [
+    "dua-hsyn-alyh-alslam|r00016",
+    "namaz-hajt-nvh-alyh|r00013",
+    "namaz-valdyn-avlad-amvat|r00003",
+    "ziyarat-kyfyt-rza-alyh|r00005",
+    "ziyarat-kyfyt-rza-alyh|r00022",
+    "khavas-aqyqh|r00002"
+   ],
+   "applied": false,
+   "definition": "the Arabic piece ends inside an invocation while the rest of the prayer is in the next source row, yet the piece is published as a complete recitation"
+  },
+  "not_a_defect": {
+   "unequal_count_explained_by_direction_or_report": 107,
+   "wider_side_is_arabic": 91,
+   "wider_side_is_persian": 16,
+   "flagged_rows_with_unequal_piece_counts": 116,
+   "flagged_rows_with_equal_piece_counts": 18
+  }
+ },
+ "items": [
+  {
+   "item": "amal-aaddt-lkl-hvl",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00012",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 1,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 59,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00012-s0591727d9a83ff84"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-aamal-jmah-2",
+   "slot_moves": 11,
+   "unequal_rows": 4,
+   "rows": [
+    {
+     "row": "r00005",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 80,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00005-s1461543daf3ad696",
+      "r00005-s091ecf41cca5cd79",
+      "r00005-s123f647288df4b56"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00007",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 90,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00007-s437311542faefd68",
+      "r00007-sa4a257ecd4822fc6"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00008",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 6,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00008-s2c6a015796faa033",
+      "r00008-s32a6f39eb1428d59",
+      "r00008-s6aa777535e6a7bb4"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00010",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 5,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation",
+      "note",
+      "note",
+      "note",
+      "note"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#3",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#4",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 56,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00010-s28decd77ffb512be",
+      "r00010-s5435c4aabef83342",
+      "r00010-s236734ce0f2bd346",
+      "r00010-s9ac7a756dd43d7c0",
+      "r00010-sa6b568f6ca62e16e"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00013",
+     "class": "detached-1to1",
+     "arabic_pieces": 6,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "note",
+      "note",
+      "instruction",
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#2",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#3",
+       "kind": "instruction"
+      },
+      {
+       "ar": null,
+       "fa": "ar#4",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#5",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 154,
+       "language_screen": "fa",
+       "persian_markers": 9,
+       "arabic_markers": 0
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "note",
+       "length": 76,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 2,
+       "kind": "note",
+       "length": 100,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 0
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 3,
+       "kind": "instruction",
+       "length": 85,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 4,
+       "kind": "instruction",
+       "length": 227,
+       "language_screen": "fa",
+       "persian_markers": 11,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00013-s7db99eb370abd3c7",
+      "r00013-s4459f4c1c19ad62b",
+      "r00013-s34ee6a258b859e70",
+      "r00013-s331fdfb5dc273998",
+      "r00013-sc086950c35b39f83",
+      "r00013-s31f7c20acf072bbb",
+      "r00013-s40fb361402b9c6af"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00023",
+     "class": "detached-1to1",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "note",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 156,
+       "language_screen": "fa",
+       "persian_markers": 8,
+       "arabic_markers": 0
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "note",
+       "length": 186,
+       "language_screen": "fa",
+       "persian_markers": 14,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00023-sd5800838fcca19fa",
+      "r00023-s681e36a1fbcac0d2",
+      "r00023-s3bc9caa3cb9d4c62",
+      "r00023-sc2188a06e4f47e27"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-aamal-mkhsvsh-byst",
+   "slot_moves": 4,
+   "unequal_rows": 2,
+   "rows": [
+    {
+     "row": "r00004",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 26,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 18,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00005-s1461543daf3ad696",
+      "r00005-s091ecf41cca5cd79",
+      "r00005-s123f647288df4b56"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00006",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 59,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00006-sf793fe842b07432f",
+      "r00006-s6b2b0ff07b4b8ae2"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00008",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 0,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 70,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00008-s5dc11d00b5bdd07d"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-aamal-msjd-kvfh",
+   "slot_moves": 6,
+   "unequal_rows": 5,
+   "rows": [
+    {
+     "row": "r00003",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 48,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s77194eb67ae6c13d",
+      "r00003-se283c95e6594ac46",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00004",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 44,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00007",
+     "class": "detached-1to1",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 21,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "instruction",
+       "length": 100,
+       "language_screen": "fa",
+       "persian_markers": 8,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00007-s94954aa661bd7576",
+      "r00007-s23a513f21e48dea7",
+      "r00007-sf848cac367ea6573",
+      "r00007-sa4a257ecd4822fc6"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00011",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 16,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00011-sd4a99eeb77863809",
+      "r00011-s53ddf1fd1e1f5d29",
+      "r00011-sdced7607b9b0bd6c"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00012",
+     "class": "detached-multi",
+     "arabic_pieces": 3,
+     "persian_pieces": 2,
+     "arabic_kinds": [
+      "instruction",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 7,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 2,
+     "published_child_ids": [
+      "r00012-s70b98bd76381fe37",
+      "r00012-se62b3f362c1c151a",
+      "r00012-sb2130a49d3b9105e",
+      "r00012-saff7ad5e4797c1a8",
+      "r00012-s8793f837a3f4ee36"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-aamal-stvn",
+   "slot_moves": 3,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00004",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 224,
+       "language_screen": "fa",
+       "persian_markers": 14,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00009",
+     "class": "detached-multi",
+     "arabic_pieces": 3,
+     "persian_pieces": 2,
+     "arabic_kinds": [
+      "recitation",
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "ar#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "instruction",
+       "length": 30,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 2,
+     "published_child_ids": [
+      "r00009-s3b3375cb23a6131d",
+      "r00009-s61ce358e818dd153",
+      "r00009-s7c5fe2c2c368bd12",
+      "r00009-sf45ae3f7757f3e0b",
+      "r00009-s546cce4ecd0212d6"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00010",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 61,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00010-s70dfccf5c0fc10de",
+      "r00010-s68bc5adb439ddf26",
+      "r00010-s3d412748668b3db4"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-aamal-stvn-3",
+   "slot_moves": 4,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00003",
+     "class": "detached-multi",
+     "arabic_pieces": 6,
+     "persian_pieces": 3,
+     "arabic_kinds": [
+      "note",
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#3",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#4",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#5",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 237,
+       "language_screen": "fa",
+       "persian_markers": 15,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "recitation",
+       "length": 126,
+       "language_screen": "fa",
+       "persian_markers": 10,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 4,
+     "persian_recitation_rows": 4,
+     "published_child_ids": [
+      "r00003-s3dbdf5fec4f8f8e0",
+      "r00003-s3fcd7ba15bae8afd",
+      "r00003-s4ced2172db710711",
+      "r00003-s75f171481d1693e0",
+      "r00003-s29c15e95d9eb8851",
+      "r00003-sf5891ccdfa7fa474",
+      "r00003-sa800142d710dfc87",
+      "r00003-s17ee679a21196393",
+      "r00003-s246e32d857da5bce"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00007",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 54,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00007-s437311542faefd68",
+      "r00007-sd40ca7b7f73b78f7",
+      "r00007-sa4a257ecd4822fc6"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00011",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 17,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00011-sd4a99eeb77863809",
+      "r00011-s53ddf1fd1e1f5d29",
+      "r00011-sdced7607b9b0bd6c"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-adab-vqt-khvab",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00002",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 33,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00002-sb9f57278a5910780",
+      "r00002-s93ed69e2ceaad8b5",
+      "r00002-s33d1515313a177c7"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-adab-vzv",
+   "slot_moves": 10,
+   "unequal_rows": 10,
+   "rows": [
+    {
+     "row": "r00004",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 95,
+       "language_screen": "fa",
+       "persian_markers": 8,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 67,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00005-s1461543daf3ad696",
+      "r00005-s091ecf41cca5cd79",
+      "r00005-s123f647288df4b56"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00006",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 35,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00006-s5277842879ed0547",
+      "r00006-sffb0fbe94541cff2",
+      "r00006-s89e104f91d82493c"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00007",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 28,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00007-s437311542faefd68",
+      "r00007-sd40ca7b7f73b78f7",
+      "r00007-sa4a257ecd4822fc6"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00008",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 33,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00008-s2c6a015796faa033",
+      "r00008-s32a6f39eb1428d59",
+      "r00008-s6aa777535e6a7bb4"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00009",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 29,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00009-sc64421e6669ebe6d",
+      "r00009-s7e35f20e21823632",
+      "r00009-sf45ae3f7757f3e0b"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00010",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 56,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00010-s70dfccf5c0fc10de",
+      "r00010-s68bc5adb439ddf26",
+      "r00010-s3d412748668b3db4"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00011",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 43,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00011-sd4a99eeb77863809",
+      "r00011-s53ddf1fd1e1f5d29",
+      "r00011-sdced7607b9b0bd6c"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00012",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 24,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00012-s70b98bd76381fe37",
+      "r00012-se62b3f362c1c151a",
+      "r00012-saff7ad5e4797c1a8"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00013",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 6,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00013-sf57720f41b6d243f",
+      "r00013-s6aad7304d1f79c1c",
+      "r00013-s40fb361402b9c6af"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-akhr-shaban-rmzan",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-multi",
+     "arabic_pieces": 5,
+     "persian_pieces": 3,
+     "arabic_kinds": [
+      "note",
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#3",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#4",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 127,
+       "language_screen": "fa",
+       "persian_markers": 8,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 4,
+     "persian_recitation_rows": 3,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s78ed89b0314fa100",
+      "r00001-s3dda56d9c83883fa",
+      "r00001-s5347c817c3599961",
+      "r00001-s633a7c61dc1b47ae",
+      "r00001-s8877147e145d3e46",
+      "r00001-scafac7126253874f"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-daahay-rjb",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00019",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 0,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 56,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00019-s91c68958f817ee5b"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "amal-syghh-astghfar-fzylt",
+   "slot_moves": 3,
+   "unequal_rows": 2,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 103,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-s3db48b9cdceccaca",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00002",
+     "class": "one-sided",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "recitation",
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "recitation",
+       "length": 41,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "note",
+       "length": 337,
+       "language_screen": "fa",
+       "persian_markers": 10,
+       "arabic_markers": 4
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00002-s4c6603f0a72e2255",
+      "r00002-s368b53e736b379bc",
+      "r00002-s16b235f3fb54b1a5"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "dua-aafyt",
+   "slot_moves": 5,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 113,
+       "language_screen": "fa",
+       "persian_markers": 11,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-s3db48b9cdceccaca",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00002",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 56,
+       "language_screen": "mixed",
+       "persian_markers": 1,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00002-s0b1d6d51987de706",
+      "r00002-s16b235f3fb54b1a5"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "detached-1to1",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "note",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 71,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "note",
+       "length": 134,
+       "language_screen": "fa",
+       "persian_markers": 8,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s3dbdf5fec4f8f8e0",
+      "r00003-sb8b4326ab2c2db43",
+      "r00003-s4ced2172db710711",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 90,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00005-s1461543daf3ad696",
+      "r00005-s091ecf41cca5cd79",
+      "r00005-s123f647288df4b56"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "dua-ayza-daahay-aafyt",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00003",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 120,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s77194eb67ae6c13d",
+      "r00003-se283c95e6594ac46",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "dua-hshtm-daahay-vardh",
+   "slot_moves": 5,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00004",
+     "class": "one-sided",
+     "arabic_pieces": 2,
+     "persian_pieces": 0,
+     "arabic_kinds": [
+      "recitation",
+      "note"
+     ],
+     "persian_kinds": [],
+     "published": [
+      {
+       "ar": "ar#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "note",
+       "length": 41,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00004-sa48f69d269a72791",
+      "r00004-s339874b58d2b0084"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "note",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 105,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00005-saba56576a8f4a2e8",
+      "r00005-s8444c51363c4430d"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00006",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 3,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "instruction",
+      "recitation",
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 240,
+       "language_screen": "ar",
+       "persian_markers": 1,
+       "arabic_markers": 3
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00006-sac7cfe4397cd2200",
+      "r00006-s607f491d5e7bd839",
+      "r00006-saa9b9be4b3d5606d"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00007",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "note",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 55,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00007-s5227989a1cf80a5b",
+      "r00007-sbd47d389958800f8"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00008",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation",
+      "note"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 96,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00008-s88dfcd67fd6e4902",
+      "r00008-sb553e7372366eba9"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "dua-hsyn-alyh-alslam",
+   "slot_moves": 7,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 601,
+       "language_screen": "fa",
+       "persian_markers": 30,
+       "arabic_markers": 3
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00004",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 186,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 4
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s86898f86de8b9f04",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 115,
+       "language_screen": "fa",
+       "persian_markers": 8,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00005-s27c9c493bd8f7f6a",
+      "r00005-saba56576a8f4a2e8"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00006",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 53,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00006-s5277842879ed0547",
+      "r00006-sffb0fbe94541cff2",
+      "r00006-s89e104f91d82493c"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00013",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 108,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 89,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 3
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00013-sca80133c84a1c2f3",
+      "r00013-s46464a7079294f18"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00016",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "note",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 14,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00016-s86221518179a9778",
+      "r00016-s172712fee122023f"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "dua-saat-12",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 0,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 94,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "dua-svm-daahay-vqt",
+   "slot_moves": 5,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00002",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 121,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00002-sb9f57278a5910780",
+      "r00002-s16b235f3fb54b1a5"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 12,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s77194eb67ae6c13d",
+      "r00003-se283c95e6594ac46",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 101,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00005-s1461543daf3ad696",
+      "r00005-s091ecf41cca5cd79",
+      "r00005-s123f647288df4b56"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00011",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 332,
+       "language_screen": "fa",
+       "persian_markers": 13,
+       "arabic_markers": 5
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00011-s2159fe1d8f3043ff",
+      "r00011-sdced7607b9b0bd6c"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00015",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 122,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00015-s19fb38e858599e1d",
+      "r00015-s8671b75d7b5458a5",
+      "r00015-s5ca37f5011c30671"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "item-abrt-grftn-amvat",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00014",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "note",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 90,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00014-s39757435c9b855a2",
+      "r00014-s75556eaa0c8da179"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "item-avl-taqybat-mshtrk",
+   "slot_moves": 7,
+   "unequal_rows": 6,
+   "rows": [
+    {
+     "row": "r00002",
+     "class": "detached-multi",
+     "arabic_pieces": 5,
+     "persian_pieces": 4,
+     "arabic_kinds": [
+      "instruction",
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#3",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#4",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#3",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 32,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 4,
+     "persian_recitation_rows": 4,
+     "published_child_ids": [
+      "r00002-sb9f57278a5910780",
+      "r00002-s93ed69e2ceaad8b5",
+      "r00002-sad77f8f4f1752667",
+      "r00002-seb6222a3827d90b5",
+      "r00002-s7aaedf514143adf4",
+      "r00002-s33d1515313a177c7",
+      "r00002-sa6349511538646ee",
+      "r00002-s6071f8cab4ce366d",
+      "r00002-scc6dd1324a57a846"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "detached-1to1",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 105,
+       "language_screen": "mixed",
+       "persian_markers": 1,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "instruction",
+       "length": 10,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s77194eb67ae6c13d",
+      "r00003-s5f66162889627043",
+      "r00003-s4ced2172db710711",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00014",
+     "class": "paired",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 20,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 1,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00014-s587e1c0bb874220f",
+      "r00014-s6d3577567ca79464"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00018",
+     "class": "paired",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 31,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 1,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00018-s4322d97801b3ff23",
+      "r00018-scab5d97b50d26705"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00019",
+     "class": "detached-multi",
+     "arabic_pieces": 2,
+     "persian_pieces": 4,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#3",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 53,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 4,
+     "published_child_ids": [
+      "r00019-sbc654b657e88a431",
+      "r00019-seb5774d1d91a263a",
+      "r00019-s500568fc7b6490f2",
+      "r00019-s4b951cdffea4b65a",
+      "r00019-seb0d07f1eccc1a4c",
+      "r00019-sf322c41c8b7e8452"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00037",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 16,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00037-s7e3fc0b8b54d48bf",
+      "r00037-s08ea39f0accc0c2f",
+      "r00037-s98a2e5fd5ea07d76"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "item-nhm-baz-ahraz",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00004",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 3,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "note",
+      "instruction",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "instruction"
+      },
+      {
+       "ar": "fa#2",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 2,
+       "kind": "recitation",
+       "length": 76,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00004-saabe6c8229b130ea",
+      "r00004-s2be99374d16bcc7b",
+      "r00004-sd4063f740472b6cb"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "item-srfh-drd-shkm",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00007",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 13,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00007-s207e67823f746577",
+      "r00007-sbd47d389958800f8"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "khavas-aqyqh",
+   "slot_moves": 2,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00002",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "note",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 8,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00002-s16b235f3fb54b1a5",
+      "r00002-s51331c3b3dd06d15"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "detached-multi",
+     "arabic_pieces": 5,
+     "persian_pieces": 2,
+     "arabic_kinds": [
+      "recitation",
+      "instruction",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "ar#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#3",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#4",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "instruction",
+       "length": 43,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 4,
+     "persian_recitation_rows": 2,
+     "published_child_ids": [
+      "r00003-s90ce2cbb3805f148",
+      "r00003-s5f66162889627043",
+      "r00003-s4ced2172db710711",
+      "r00003-s75f171481d1693e0",
+      "r00003-s29c15e95d9eb8851",
+      "r00003-sa800142d710dfc87",
+      "r00003-s17ee679a21196393"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "khavas-hrz-hsn-asgry",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 0,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 41,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "khavas-rfa-framvshy",
+   "slot_moves": 3,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00002",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 3,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "instruction",
+      "recitation",
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 168,
+       "language_screen": "mixed",
+       "persian_markers": 1,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00002-sb122fdb543464f4c",
+      "r00002-s51331c3b3dd06d15",
+      "r00002-se090ec1c15d74b91"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 14,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 95,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00003-s3230365f4763acdc",
+      "r00003-s02a5ff8a59221f6c"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "khavas-tfal-qran-mjyd",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 264,
+       "language_screen": "fa",
+       "persian_markers": 14,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "monajat-mnajat-hshtm-raz",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00002",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 1,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 105,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00002-sd88fa12426e00889"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-adab",
+   "slot_moves": 3,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 33,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-s3db48b9cdceccaca",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00002",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 115,
+       "language_screen": "fa",
+       "persian_markers": 10,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00002-sb9f57278a5910780",
+      "r00002-s93ed69e2ceaad8b5",
+      "r00002-s33d1515313a177c7"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00004",
+     "class": "detached-multi",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 41,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-sc37c134c2f2b5db5",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-adab-mghrb-naflh",
+   "slot_moves": 8,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-1to1",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 142,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 2
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "instruction",
+       "length": 94,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-s001e8be5249527ec",
+      "r00001-s78ed89b0314fa100",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 1,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 89,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00003-s3230365f4763acdc"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 16,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00005-s1461543daf3ad696",
+      "r00005-s091ecf41cca5cd79",
+      "r00005-s123f647288df4b56"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00006",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction"
+     ],
+     "persian_kinds": [
+      "instruction"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "instruction"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 97,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00006-s5277842879ed0547",
+      "r00006-sac7cfe4397cd2200"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00007",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 12,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00007-s437311542faefd68",
+      "r00007-sd40ca7b7f73b78f7",
+      "r00007-sa4a257ecd4822fc6"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00010",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 3,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation",
+      "recitation",
+      "note"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#2",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 104,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 2
+      },
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 48,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00010-s28decd77ffb512be",
+      "r00010-sa3db9dd89efd4177",
+      "r00010-s236734ce0f2bd346"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-astghash-fatmh-alyha",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 214,
+       "language_screen": "fa",
+       "persian_markers": 17,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-astkharh-zat-alrqaa",
+   "slot_moves": 3,
+   "unequal_rows": 2,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-multi",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 80,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-s3db48b9cdceccaca",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s78ed89b0314fa100",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00002",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 32,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00002-sb9f57278a5910780",
+      "r00002-s16b235f3fb54b1a5"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00006",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 10,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00006-s5277842879ed0547",
+      "r00006-sffb0fbe94541cff2",
+      "r00006-s89e104f91d82493c"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-hajt-nvh-alyh",
+   "slot_moves": 11,
+   "unequal_rows": 7,
+   "rows": [
+    {
+     "row": "r00008",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 47,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00008-s2c6a015796faa033",
+      "r00008-s32a6f39eb1428d59",
+      "r00008-s6aa777535e6a7bb4"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00009",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 70,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00009-sc64421e6669ebe6d",
+      "r00009-s7e35f20e21823632",
+      "r00009-sf45ae3f7757f3e0b"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00010",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 34,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00010-s70dfccf5c0fc10de",
+      "r00010-s68bc5adb439ddf26",
+      "r00010-s3d412748668b3db4"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00012",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 0,
+     "arabic_kinds": [
+      "instruction"
+     ],
+     "persian_kinds": [],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 44,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00012-s70b98bd76381fe37"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00013",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 3,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "fa#2",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 898,
+       "language_screen": "ar",
+       "persian_markers": 3,
+       "arabic_markers": 17
+      },
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 84,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      },
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 2,
+       "kind": "recitation",
+       "length": 8,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 3,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00013-sca80133c84a1c2f3",
+      "r00013-s46464a7079294f18",
+      "r00013-sd34abb5117ef22c1"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00016",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 29,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00016-se08bae56212cb410",
+      "r00016-s885ea6aa85826f93",
+      "r00016-s09f2e231280a2083"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00017",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 52,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00017-sed440b03898ae131",
+      "r00017-sa19d7be45dbbf8e9",
+      "r00017-sd42c966b7129bb5a"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00018",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 50,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00018-s4322d97801b3ff23",
+      "r00018-se02ec69b33a9c37e",
+      "r00018-s289ff99cb9655048"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00019",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 40,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00019-sbc654b657e88a431",
+      "r00019-seb5774d1d91a263a",
+      "r00019-s500568fc7b6490f2"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-item-3",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "paired",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#1",
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 152,
+       "language_screen": "fa",
+       "persian_markers": 11,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 1,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-s3e4b70ad1b9cb544"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-khvf-zalm",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00003",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 28,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s77194eb67ae6c13d",
+      "r00003-se283c95e6594ac46",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-mhmat",
+   "slot_moves": 2,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 140,
+       "language_screen": "fa",
+       "persian_markers": 9,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-sc5e9d9539705078a"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00002",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 135,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00002-s0b1d6d51987de706",
+      "r00002-s16b235f3fb54b1a5"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-rfa-asr-skhty",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 0,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 44,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-sayr-adab",
+   "slot_moves": 5,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 706,
+       "language_screen": "fa",
+       "persian_markers": 48,
+       "arabic_markers": 7
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-sccd769a9e29adea8",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 369,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 3
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s3dbdf5fec4f8f8e0",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00004",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 388,
+       "language_screen": "fa",
+       "persian_markers": 28,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00007",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 233,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 3
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00007-s94954aa661bd7576",
+      "r00007-sa4a257ecd4822fc6"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00011",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 14,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00011-sd4a99eeb77863809",
+      "r00011-s53ddf1fd1e1f5d29",
+      "r00011-sdced7607b9b0bd6c"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-valdyn-avlad-amvat",
+   "slot_moves": 2,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 122,
+       "language_screen": "fa",
+       "persian_markers": 5,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-s633a7c61dc1b47ae"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00003",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 23,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00003-sa84854240323e3e5",
+      "r00003-s02a5ff8a59221f6c"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "namaz-vqt-tlva-ghrvb",
+   "slot_moves": 3,
+   "unequal_rows": 2,
+   "rows": [
+    {
+     "row": "r00003",
+     "class": "detached-1to1",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 66,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "instruction",
+       "length": 91,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00003-s3dbdf5fec4f8f8e0",
+      "r00003-s5f66162889627043",
+      "r00003-s4ced2172db710711",
+      "r00003-sa800142d710dfc87"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00009",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 36,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00009-sc64421e6669ebe6d",
+      "r00009-s7e35f20e21823632",
+      "r00009-sf45ae3f7757f3e0b"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-abdalazym-alyh-alslam",
+   "slot_moves": 3,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "note-only",
+     "arabic_pieces": 3,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "note",
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#2",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 243,
+       "language_screen": "fa",
+       "persian_markers": 10,
+       "arabic_markers": 0
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "note",
+       "length": 455,
+       "language_screen": "fa",
+       "persian_markers": 19,
+       "arabic_markers": 3
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 2,
+       "kind": "note",
+       "length": 303,
+       "language_screen": "fa",
+       "persian_markers": 11,
+       "arabic_markers": 3
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-saa3ec3f116259495",
+      "r00001-scc7f1fee80b053cc",
+      "r00001-s301995e358a14000",
+      "r00001-sc5e9d9539705078a"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-adab-mkhsvs-hsyn",
+   "slot_moves": 2,
+   "unequal_rows": 2,
+   "rows": [
+    {
+     "row": "r00022",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 174,
+       "language_screen": "fa",
+       "persian_markers": 12,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00022-s4cd090929648b520",
+      "r00022-sb3d75795c1ad9b01",
+      "r00022-sabab06a3e2e0b858"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00026",
+     "class": "detached-multi",
+     "arabic_pieces": 6,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#3",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#4",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#5",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 96,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 5,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00026-sf97304cdff406c4c",
+      "r00026-scf09d84519036561",
+      "r00026-s926cea1bb91a17a9",
+      "r00026-s76ec69762eaa8af0",
+      "r00026-se7b24d9a5d9a0ce6",
+      "r00026-s8070fe7501d1be6a",
+      "r00026-s60445f23db7c5fe0"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-aymh-bqya-alyhm",
+   "slot_moves": 5,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 1,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 103,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-s03773910ea46fc6e"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00004",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 76,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-s0243d87b86c35021"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 68,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00005-s1461543daf3ad696",
+      "r00005-s091ecf41cca5cd79",
+      "r00005-s123f647288df4b56"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00009",
+     "class": "one-sided",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 707,
+       "language_screen": "ar",
+       "persian_markers": 2,
+       "arabic_markers": 5
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00009-s5c935b8a19cd440a",
+      "r00009-sf45ae3f7757f3e0b"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00012",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 34,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00012-s70b98bd76381fe37",
+      "r00012-se62b3f362c1c151a",
+      "r00012-saff7ad5e4797c1a8"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-bad-rza-alyh",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00017",
+     "class": "paired",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 103,
+       "language_screen": "fa",
+       "persian_markers": 10,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 1,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00017-sed440b03898ae131",
+      "r00017-s18f0993006f44169"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-byan-anchh-vars",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 5,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "note",
+      "note",
+      "recitation",
+      "note",
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "note"
+      },
+      {
+       "ar": "fa#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#3",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#4",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 2,
+       "kind": "recitation",
+       "length": 111,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-sc5e9d9539705078a",
+      "r00001-sd0076416ed435839",
+      "r00001-s909b8a58b8018daa",
+      "r00001-sa021c793590ec5ab",
+      "r00001-s1fa9d92731f5fd90"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-chharm-shbhay-qdr",
+   "slot_moves": 2,
+   "unequal_rows": 2,
+   "rows": [
+    {
+     "row": "r00006",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 11,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00006-s5277842879ed0547",
+      "r00006-sffb0fbe94541cff2",
+      "r00006-s89e104f91d82493c"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00009",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 94,
+       "language_screen": "fa",
+       "persian_markers": 10,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00009-sc64421e6669ebe6d",
+      "r00009-s7e35f20e21823632",
+      "r00009-sf45ae3f7757f3e0b"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-item-12",
+   "slot_moves": 1,
+   "unequal_rows": 0,
+   "rows": [
+    {
+     "row": "r00001",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 1,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": "fa#0",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 0,
+       "kind": "recitation",
+       "length": 56,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00001-s03773910ea46fc6e"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-jamea-kabira",
+   "slot_moves": 1,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00314",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 77,
+       "language_screen": "fa",
+       "persian_markers": 4,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00314-s956662be11f30a7b",
+      "r00314-s8a4f5ad0ba76cd21",
+      "r00314-s47e87133b2de3f86"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-kyfyt-rza-alyh",
+   "slot_moves": 5,
+   "unequal_rows": 3,
+   "rows": [
+    {
+     "row": "r00004",
+     "class": "detached-multi",
+     "arabic_pieces": 3,
+     "persian_pieces": 2,
+     "arabic_kinds": [
+      "instruction",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 36,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 2,
+     "published_child_ids": [
+      "r00004-s84d9644081c0182c",
+      "r00004-sa44b8f05e3e4e602",
+      "r00004-sc37c134c2f2b5db5",
+      "r00004-s0243d87b86c35021",
+      "r00004-s8cd93268f2b72979"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00005",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 18,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00005-s16520fa053c7f321",
+      "r00005-s8444c51363c4430d"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00022",
+     "class": "one-sided",
+     "arabic_pieces": 0,
+     "persian_pieces": 2,
+     "arabic_kinds": [],
+     "persian_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "fa#1",
+       "fa": null,
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "ar",
+       "source_field": "fa",
+       "part": 1,
+       "kind": "recitation",
+       "length": 32,
+       "language_screen": "ar",
+       "persian_markers": 0,
+       "arabic_markers": 2
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00022-sd363b1f5f51fc94e",
+      "r00022-s0764c2e4889b7f9f"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00024",
+     "class": "detached-multi",
+     "arabic_pieces": 4,
+     "persian_pieces": 2,
+     "arabic_kinds": [
+      "instruction",
+      "recitation",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#3",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 65,
+       "language_screen": "fa",
+       "persian_markers": 7,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 3,
+     "persian_recitation_rows": 2,
+     "published_child_ids": [
+      "r00024-scb212156de5c465a",
+      "r00024-s010d6040eae6602a",
+      "r00024-s3fd46803cdca89bb",
+      "r00024-sa3b6fbed6e0f7f42",
+      "r00024-s678f75ae05fd198a",
+      "r00024-s75461b742b1e828a"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00026",
+     "class": "detached-1to1",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "instruction",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 22,
+       "language_screen": "fa",
+       "persian_markers": 3,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 1,
+     "persian_recitation_rows": 1,
+     "published_child_ids": [
+      "r00026-s3d84d2748946a2f6",
+      "r00026-scf09d84519036561",
+      "r00026-s60445f23db7c5fe0"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-rsvl-sly-allh",
+   "slot_moves": 2,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00005",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 50,
+       "language_screen": "fa",
+       "persian_markers": 2,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00005-s27c9c493bd8f7f6a",
+      "r00005-saba56576a8f4a2e8"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00006",
+     "class": "detached-multi",
+     "arabic_pieces": 3,
+     "persian_pieces": 2,
+     "arabic_kinds": [
+      "instruction",
+      "recitation",
+      "recitation"
+     ],
+     "persian_kinds": [
+      "recitation",
+      "recitation"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "instruction"
+      },
+      {
+       "ar": "ar#1",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": "ar#2",
+       "fa": null,
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "recitation"
+      },
+      {
+       "ar": null,
+       "fa": "fa#1",
+       "kind": "recitation"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "instruction",
+       "length": 8,
+       "language_screen": "fa",
+       "persian_markers": 1,
+       "arabic_markers": 0
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 2,
+     "persian_recitation_rows": 2,
+     "published_child_ids": [
+      "r00006-s5277842879ed0547",
+      "r00006-sffb0fbe94541cff2",
+      "r00006-scdf2d42b3d91546a",
+      "r00006-s89e104f91d82493c",
+      "r00006-sb6fe0b3768a5c18a"
+     ],
+     "applied": false
+    }
+   ]
+  },
+  {
+   "item": "ziyarat-vrvd-an-qm",
+   "slot_moves": 3,
+   "unequal_rows": 1,
+   "rows": [
+    {
+     "row": "r00003",
+     "class": "note-only",
+     "arabic_pieces": 2,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note",
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "ar#1",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 276,
+       "language_screen": "fa",
+       "persian_markers": 15,
+       "arabic_markers": 2
+      },
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 1,
+       "kind": "note",
+       "length": 501,
+       "language_screen": "ar",
+       "persian_markers": 6,
+       "arabic_markers": 7
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00003-s3dbdf5fec4f8f8e0",
+      "r00003-sb8b4326ab2c2db43",
+      "r00003-s1828851db03b603e"
+     ],
+     "applied": false
+    },
+    {
+     "row": "r00004",
+     "class": "note-only",
+     "arabic_pieces": 1,
+     "persian_pieces": 1,
+     "arabic_kinds": [
+      "note"
+     ],
+     "persian_kinds": [
+      "note"
+     ],
+     "published": [
+      {
+       "ar": null,
+       "fa": "ar#0",
+       "kind": "note"
+      },
+      {
+       "ar": null,
+       "fa": "fa#0",
+       "kind": "note"
+      }
+     ],
+     "slot_moves": [
+      {
+       "destination": "fa",
+       "source_field": "ar",
+       "part": 0,
+       "kind": "note",
+       "length": 114,
+       "language_screen": "fa",
+       "persian_markers": 6,
+       "arabic_markers": 1
+      }
+     ],
+     "paired_recitation_rows": 0,
+     "arabic_recitation_rows": 0,
+     "persian_recitation_rows": 0,
+     "published_child_ids": [
+      "r00004-s86898f86de8b9f04",
+      "r00004-saabe6c8229b130ea"
+     ],
+     "applied": false
+    }
+   ]
+  }
+ ],
+ "measures_not_classes": {
+  "unpaired_recitation_rows": {
+   "value": 112,
+   "meaning": "flagged rows that publish a recitation on at least one side but never pair the two sides in one output row; equals detached-1to1 + detached-multi + one-sided = 78 + 34"
+  },
+  "unequal_bilingual_rows": {
+   "value": 85,
+   "meaning": "the aggregate corpus figure: bilingual source rows whose Arabic and Persian fields are cut into a different number of pieces; all 85 of them fall inside the flagged set"
+  },
+  "flagged_rows_with_unequal_piece_counts": {
+   "value": 116,
+   "meaning": "flagged rows whose two source fields are cut into a different number of pieces, including rows where one field is empty"
+  }
+ }
+}

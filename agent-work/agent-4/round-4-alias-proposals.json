@@ -1,0 +1,230 @@
+{
+  "purpose": "Round-4 alias proposals for the two Agent-5 findings raised against Agent-4 author-ready snapshot c9fa191acade1f72ab36e05f39ea931d4cb9cb5d. Both findings are accepted on the content; neither can be applied with the current tooling, because the correction retires a published identity.",
+  "method": "For each finding: the frozen source field, the exact code-point offset of the cut, the whitespace-boundary check on that offset, the published child id that the correction retires, and the alias entry the supported mapping migration must write so that the published link keeps resolving. Offsets are code points of the frozen base field or of the current merged row field, as named in each entry.",
+  "note": "No proposal is applied here. No source text is quoted. These are structural mappings, not translation or scholarly approval. This file extends agent-work/agent-4/blocked-fix-alias-proposals.json, which was generated before the round-3 merge and therefore does not cover the merged row.",
+  "proposal_count": 3,
+  "items": {
+    "amal-aamal-arfh-2": [
+      {
+        "base_row": "r00002",
+        "finding": "Agent-5, review record bound to c9fa191acade1f72ab36e05f39ea931d4cb9cb5d: the first piece is the stated first practice and not a narrative note, and the second piece combines the stated second practice with a report of merit and a forward reference.",
+        "published_child_ids": [
+          "r00002-s16b235f3fb54b1a5",
+          "r00002-s7912db66cde98eb8"
+        ],
+        "required_aliases": [
+          {
+            "original_id": "r00002-s16b235f3fb54b1a5",
+            "original_kind": "note",
+            "corrected_kind": "heading",
+            "correction": "role",
+            "language": "fa",
+            "source_field": "frozen base fa field of r00002",
+            "source_range": {
+              "start": 0,
+              "end": 10
+            },
+            "destination_length": 10,
+            "boundary_check": "no cut; the piece is unchanged and only its role label changes",
+            "alias_entry": {
+              "original": {
+                "id": "r00002-s16b235f3fb54b1a5",
+                "ar": null,
+                "fa": "t5cbc7870536a00511bb05220",
+                "kind": "note"
+              },
+              "ar": [],
+              "fa": [
+                {
+                  "row": "<new row with kind heading>",
+                  "language": "fa",
+                  "start": 0,
+                  "end": 10,
+                  "target_start": 0
+                }
+              ]
+            },
+            "other_language_slot": null
+          },
+          {
+            "original_id": "r00002-s7912db66cde98eb8",
+            "original_kind": "note",
+            "corrected_kind": "instruction,note",
+            "correction": "cut",
+            "language": "fa",
+            "source_field": "frozen base fa field of r00002",
+            "source_range": {
+              "start": 10,
+              "end": 432
+            },
+            "destination_length": 422,
+            "cut": {
+              "offset": 60,
+              "boundary": "whitespace",
+              "basis": "the stated second practice ends at this offset and the report of merit and the forward reference begin there"
+            },
+            "alias_entry": {
+              "original": {
+                "id": "r00002-s7912db66cde98eb8",
+                "ar": null,
+                "fa": "<text id of the frozen base fa field of r00002>",
+                "kind": "note"
+              },
+              "ar": [],
+              "fa": [
+                {
+                  "row": "<new row for the stated second practice, kind instruction>",
+                  "language": "fa",
+                  "start": 10,
+                  "end": 60,
+                  "target_start": 0
+                },
+                {
+                  "row": "<new row for the report of merit and forward reference, kind note>",
+                  "language": "fa",
+                  "start": 60,
+                  "end": 432,
+                  "target_start": 0
+                }
+              ]
+            },
+            "other_language_slot": null
+          }
+        ]
+      },
+      {
+        "base_row": "r00026+r00027",
+        "merged_row": "md9954596d59be1a71a3e08fb",
+        "finding": "Agent-5, review record bound to c9fa191acade1f72ab36e05f39ea931d4cb9cb5d: the joined passage contains a blessing followed by distinct petitions at the paired openings that the review names, and these are meaningful transitions rather than a request based only on length. The finding requires that the newly published merged row id be preserved.",
+        "published_child_ids": [
+          "md9954596d59be1a71a3e08fb"
+        ],
+        "required_aliases": [
+          {
+            "original_id": "md9954596d59be1a71a3e08fb",
+            "original_kind": "recitation",
+            "corrected_kind": "recitation",
+            "correction": "cut",
+            "language": "ar,fa",
+            "source_field": "current merged row md9954596d59be1a71a3e08fb, after the two accepted spacing insertions",
+            "source_range": {
+              "ar": {
+                "start": 0,
+                "end": 1001
+              },
+              "fa": {
+                "start": 0,
+                "end": 830
+              }
+            },
+            "cuts": [
+              {
+                "segment": 1,
+                "ar_offset": 331,
+                "fa_offset": 277,
+                "ar_boundary": "whitespace",
+                "fa_boundary": "whitespace",
+                "basis": "the blessing ends and the first petition begins; both sides end the sentence and start the paired opening at the same point"
+              },
+              {
+                "segment": 2,
+                "ar_offset": 456,
+                "fa_offset": 358,
+                "ar_boundary": "whitespace",
+                "fa_boundary": "whitespace",
+                "basis": "the first petition ends and the second petition begins; both sides end the sentence and start the paired opening at the same point"
+              }
+            ],
+            "resulting_rows": [
+              {
+                "ar": {
+                  "start": 0,
+                  "end": 331
+                },
+                "fa": {
+                  "start": 0,
+                  "end": 277
+                }
+              },
+              {
+                "ar": {
+                  "start": 331,
+                  "end": 456
+                },
+                "fa": {
+                  "start": 277,
+                  "end": 358
+                }
+              },
+              {
+                "ar": {
+                  "start": 456,
+                  "end": 1001
+                },
+                "fa": {
+                  "start": 358,
+                  "end": 830
+                }
+              }
+            ],
+            "alias_entry": {
+              "original": {
+                "id": "md9954596d59be1a71a3e08fb",
+                "ar": "<ar text id of the merged row>",
+                "fa": "<fa text id of the merged row>",
+                "kind": "recitation"
+              },
+              "ar": [
+                {
+                  "row": "<new row 1>",
+                  "language": "ar",
+                  "start": 0,
+                  "end": 331,
+                  "target_start": 0
+                },
+                {
+                  "row": "<new row 2>",
+                  "language": "ar",
+                  "start": 331,
+                  "end": 456,
+                  "target_start": 0
+                },
+                {
+                  "row": "<new row 3>",
+                  "language": "ar",
+                  "start": 456,
+                  "end": 1001,
+                  "target_start": 0
+                }
+              ],
+              "fa": [
+                {
+                  "row": "<new row 1>",
+                  "language": "fa",
+                  "start": 0,
+                  "end": 277,
+                  "target_start": 0
+                },
+                {
+                  "row": "<new row 2>",
+                  "language": "fa",
+                  "start": 277,
+                  "end": 358,
+                  "target_start": 0
+                },
+                {
+                  "row": "<new row 3>",
+                  "language": "fa",
+                  "start": 358,
+                  "end": 830,
+                  "target_start": 0
+                }
+              ]
+            },
+            "other_language_slot": null
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "protocol": "agent-4-round-5-alias-proposals-v1",
+  "author": "agent-4",
+  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "reviewer": "agent-5",
+  "reviewed_commit": "64d4950ef7bae6cd42a95e0d22bc650722465f1f",
+  "source": "agent-5 review records agent-work/agent-5/reviews/namaz-ayd-ftr.json and agent-work/agent-5/reviews/ziyarat-amamyn-askryyn-alyhma.json",
+  "applied": false,
+  "note": "Nothing here is applied. Every entry is a proposal that needs the supported V1-to-V2 mapping migration, because the change retires a published child id and a V1 record has no alias array to carry it. The proposed_id values are the identities the rows would take if the role label changed; they are computed with the same hash the compiler uses over the layout references, so a reviewer can reproduce them. No source text is quoted in this file.",
+  "tooling_blocker": {
+    "finding": "A phrase that continues from one source row into the next cannot be joined by the current merge tool unless the earlier source row has a single output row.",
+    "reason": "The merge joins two adjacent rows of the compiled item, and the compiler emits the output rows of one source row consecutively. When the earlier source row has several output rows, the last Arabic or Persian row of that source row and the first row of the next source row are separated by the intervening outputs, and the tool refuses with \"Merge requires two adjacent current rows in source order\".",
+    "affected": "namaz-ayd-ftr r00007/r00008 and ziyarat-amamyn-askryyn-alyhma r00002/r00003. The r00003/r00004 and r00007/r00008 joins in the same two items are adjacent in the compiled item and fail only on the role labels.",
+    "reported_to": "agent-5, for relay to the coordinator"
+  },
+  "items": [
+    {
+      "item": "namaz-ayd-ftr",
+      "record_format_version": 1,
+      "aliases": 0,
+      "finding": "The Persian renderings of the Arabic prayers are published as detached note rows. They are the renderings of the invocation rows in the same source row and should be published as paired recitations.",
+      "verified": "Every Persian row listed under role_corrections is the rendering of an Arabic invocation row in the same source row: r00002 has one Arabic invocation row and one Persian rendering row, and r00005 to r00011 have three or two Arabic invocation rows followed by the same number of Persian rendering rows. The r00002 pair is 179 Arabic code points against 141 Persian code points, which is the width difference of two languages for one passage.",
+      "blocker": "The tool refuses the pairing merge with \"Merge requires matching reviewed row kinds\": the Arabic row is a recitation and the Persian row is a note. Correcting the role changes the row identity, because a split row id is a hash of its source row, its language slots and its role label. The published id therefore stops resolving, and a V1 record has no alias array to carry it. On a V2 or V3 record the same revision is refused outright with \"revision would orphan a previously published row link; preserve it and request a mapping migration\".",
+      "role_corrections": [
+        {
+          "published_id": "r00001-s87a4572572fe3091",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00001-s633a7c61dc1b47ae",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00002-s16b235f3fb54b1a5",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00002-s33d1515313a177c7",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00003-sa84854240323e3e5",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00003-sa800142d710dfc87",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00004-s1c27c3072f6239a1",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00004-s0243d87b86c35021",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00004-s2be99374d16bcc7b",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00004-s8cd93268f2b72979",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00005-saba56576a8f4a2e8",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00005-s123f647288df4b56",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00005-sbf827ad20eeda70b",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00005-sd769183f8bafa0c5",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00006-s6b2b0ff07b4b8ae2",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-s89e104f91d82493c",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00006-s99b2880b659f859b",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-sb6fe0b3768a5c18a",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00006-saa9b9be4b3d5606d",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-sb9976eb8335bdf57",
+          "holds": "fa",
+          "piece": 2
+        },
+        {
+          "published_id": "r00007-s5227989a1cf80a5b",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00007-sa4a257ecd4822fc6",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00007-s5b62bfa785d14038",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00007-s89bf2e3c6fcbbd19",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00008-s88eba61461dcd450",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00008-s6aa777535e6a7bb4",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00008-sb553e7372366eba9",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00008-s11595099cc5bf85e",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00009-sace04f5552303cc5",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00009-sf45ae3f7757f3e0b",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00009-sf7cef5d6daa9e7b3",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00009-s546cce4ecd0212d6",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00009-sd005fa4b9d879a1b",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00009-s422d5a807d640007",
+          "holds": "fa",
+          "piece": 2
+        },
+        {
+          "published_id": "r00010-seb219ae3b3f3af47",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00010-s3d412748668b3db4",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00011-sd4a99eeb77863809",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00011-s85cb56af36b7af89",
+          "holds": "ar",
+          "piece": 0
+        },
+        {
+          "published_id": "r00011-sff3d5cac0f1b50db",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00011-sdced7607b9b0bd6c",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00011-s6dfdda7f8c84b2c7",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00011-s78f48a30b802df04",
+          "holds": "fa",
+          "piece": 1
+        }
+      ],
+      "cross_row_joins": [
+        {
+          "source_rows": "r00003 + r00004",
+          "pieces": [
+            "r00003, Persian, 132 code points, ends in the middle of the clause that reports how the prayer is performed",
+            "r00004-s1c27c3072f6239a1, Persian, 273 code points, begins with the rest of that clause"
+          ],
+          "defect": "the reported clause is divided between two source rows",
+          "proposed": "split r00003 into its instruction and its report, then merge the report with the first piece of r00004",
+          "join_mode": "fa-space",
+          "published_ids_at_risk": [
+            "r00004-s1c27c3072f6239a1"
+          ],
+          "blocker": "r00003 and r00004 have several output rows each, so the two rows to be joined are not adjacent in the compiled item and the merge is refused. The split of r00003 would retire its base row identity for anything that links to the row itself, although the base row id stays resolvable through the row-split redirect."
+        },
+        {
+          "source_rows": "r00004",
+          "pieces": [
+            "r00004-s1c27c3072f6239a1, Persian, 273 code points, ends inside the reported numbers",
+            "r00004-s2be99374d16bcc7b, Persian, 145 code points, begins with the second of the two reported numbers"
+          ],
+          "defect": "the report of the two alternative counts is divided between two rows of one source row",
+          "proposed": "group the continuous report inside r00004",
+          "join_mode": "fa-space",
+          "published_ids_at_risk": [
+            "r00004-s1c27c3072f6239a1",
+            "r00004-s2be99374d16bcc7b"
+          ],
+          "blocker": "a regroup inside one source row changes the identity of both pieces and needs the mapping migration"
+        },
+        {
+          "source_rows": "r00007 + r00008",
+          "pieces": [
+            "r00007-sd40ca7b7f73b78f7, Arabic, 329 code points, ends with the vocative particle",
+            "r00008-s6bbb477ed900eaea, Arabic, 114 code points, begins with the name that the vocative belongs to"
+          ],
+          "defect": "the vocative is separated from the name it belongs to",
+          "proposed": "join the two Arabic rows",
+          "join_mode": "ar-space",
+          "published_ids_at_risk": [
+            "r00007-sd40ca7b7f73b78f7",
+            "r00008-s6bbb477ed900eaea"
+          ],
+          "blocker": "the two Persian rows of r00007 sit between the two Arabic rows in the compiled item, so the merge is refused with \"Merge requires two adjacent current rows in source order\""
+        }
+      ],
+      "cut_level_findings": [
+        "r00005/ar, r00006/ar, r00007/ar, r00008/ar and r00009/ar: the Arabic cuts do not fall on the same invocation boundaries as the Persian cuts, so the two sides cannot be paired one to one without re-cutting. Re-cutting changes the piece identities and needs the mapping migration."
+      ]
+    },
+    {
+      "item": "ziyarat-amamyn-askryyn-alyhma",
+      "record_format_version": 1,
+      "aliases": 0,
+      "finding": "The Persian renderings of the ziyarat and of the entry requests are published as detached note and instruction rows. They are renderings of the Arabic rows in the same source row and should be published as paired recitations.",
+      "verified": "r00002 has two Arabic ziyarat rows and two Persian rendering rows, r00003 and r00004 have two Arabic petition rows each with one Persian rendering row that renders them, and r00008 and r00009 have one Arabic request row each with the matching Persian rendering row.",
+      "blocker": "Same mechanism as namaz-ayd-ftr: correcting the role changes the split row identity, the published id stops resolving, and the V1 record has no alias array to carry it.",
+      "role_corrections": [
+        {
+          "published_id": "r00001-s87a4572572fe3091",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00001-s633a7c61dc1b47ae",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00001-sa3fbdb6fa458720f",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00001-s8877147e145d3e46",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00002-s16b235f3fb54b1a5",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00002-s33d1515313a177c7",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00002-s7912db66cde98eb8",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00002-sa6349511538646ee",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00003-sa84854240323e3e5",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00003-sa800142d710dfc87",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00004-s1c27c3072f6239a1",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00004-s0243d87b86c35021",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00004-s2be99374d16bcc7b",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00004-s8cd93268f2b72979",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00005-s16520fa053c7f321",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00005-s123f647288df4b56",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00006-sac7cfe4397cd2200",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-s89e104f91d82493c",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00006-s34abe30a2fd8c1a9",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-sb6fe0b3768a5c18a",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00006-sd51f781dcd3aeb5a",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-sb9976eb8335bdf57",
+          "holds": "fa",
+          "piece": 2
+        },
+        {
+          "published_id": "r00006-sd6ff84aa3ecaa3b3",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-s8ed960a5047cb520",
+          "holds": "fa",
+          "piece": 3
+        },
+        {
+          "published_id": "r00006-s8215c63cb8abc975",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00006-sf9f776ba5139c2a0",
+          "holds": "fa",
+          "piece": 4
+        },
+        {
+          "published_id": "r00007-s207e67823f746577",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00007-sa4a257ecd4822fc6",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00007-sb71241a8316ab2ec",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00007-s89bf2e3c6fcbbd19",
+          "holds": "fa",
+          "piece": 1
+        },
+        {
+          "published_id": "r00007-s85c1e173b0ba86f1",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00007-s36c344de44a2c002",
+          "holds": "fa",
+          "piece": 2
+        },
+        {
+          "published_id": "r00007-s7e520a6eaef99ee0",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00007-s3328605c3c02aabf",
+          "holds": "fa",
+          "piece": 3
+        },
+        {
+          "published_id": "r00007-s1cb45f118a3853df",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00007-s54b9dc7e29aa19b5",
+          "holds": "fa",
+          "piece": 4
+        },
+        {
+          "published_id": "r00008-s2c6a015796faa033",
+          "current_kind": "instruction",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00008-s36180a2ce04f60b5",
+          "holds": "ar",
+          "piece": 0
+        },
+        {
+          "published_id": "r00008-s88eba61461dcd450",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00008-s6aa777535e6a7bb4",
+          "holds": "fa",
+          "piece": 0
+        },
+        {
+          "published_id": "r00009-sace04f5552303cc5",
+          "current_kind": "note",
+          "proposed_kind": "recitation",
+          "proposed_id": "r00009-sf45ae3f7757f3e0b",
+          "holds": "fa",
+          "piece": 0
+        }
+      ],
+      "cross_row_joins": [
+        {
+          "source_rows": "r00007 + r00008",
+          "pieces": [
+            "r00007-s1cb45f118a3853df, Persian, 119 code points, ends with the first word of the title of the book the note cites",
+            "r00008-s2c6a015796faa033, Persian, 375 code points, begins with the second word of that title"
+          ],
+          "defect": "the title of the cited book is divided between two source rows",
+          "proposed": "join the two Persian rows",
+          "join_mode": "fa-space",
+          "published_ids_at_risk": [
+            "r00007-s1cb45f118a3853df",
+            "r00008-s2c6a015796faa033"
+          ],
+          "blocker": "the tool refuses with \"Merge requires matching reviewed row kinds\": one row is a note and the other an instruction. Equalising them changes both row identities, and the merge that would then be possible can only alias the new identities, not the published ones."
+        },
+        {
+          "source_rows": "r00002 + r00003",
+          "pieces": [
+            "r00002-s93ed69e2ceaad8b5, Arabic, 258 code points, ends with the word that takes the clause in the next row as its complement",
+            "r00003-s90ce2cbb3805f148, Arabic, 100 code points, begins with that complement"
+          ],
+          "defect": "the clause and its complement are divided between two source rows",
+          "proposed": "join the two Arabic rows",
+          "join_mode": "ar-space",
+          "published_ids_at_risk": [
+            "r00002-s93ed69e2ceaad8b5",
+            "r00003-s90ce2cbb3805f148"
+          ],
+          "blocker": "the two Persian rows of r00002 sit between the two Arabic rows in the compiled item, so the merge is refused with \"Merge requires two adjacent current rows in source order\""
+        }
+      ],
+      "cut_level_findings": [
+        "r00003/ar: the first Arabic piece ends inside the request, and the object of that request starts in the next piece, so the request is divided.",
+        "r00001/fa: the heading of the first section sits inside the first instruction row and should be its own heading row.",
+        "r00006/fa and r00007/fa: the instructions, the historical explanation and the compiler attribution are published under the same role, and the role changes needed here are blocked with the rest."
+      ]
+    }
+  ]
+}

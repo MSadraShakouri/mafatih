@@ -1,0 +1,93 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "item-jht-drd-zanv",
+  "item_sha256": "7b9cc2b9a69a72e51d6b6087a38bea0b092834b8f6c6ea4ea27c0d3b63a8c24b",
+  "author": "agent-5",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "c2410cfda8d9c9baaeab7cdd4546b79270c3b3b3f60a0728b4565f38c7fbaa33",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "6ecb88000467007cee4949ddfce00c6b7504785664083c792897fd730fa0c000",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "note"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "ar",
+      "source_sha256": "89c5bcddf8e09022429557ecfbb75134a9854c2c04e992f2b1d07dee8a22379a",
+      "checked": true,
+      "cuts": [
+        153,
+        203
+      ],
+      "kinds": [
+        "note",
+        "instruction",
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00003",
+      "language": "fa",
+      "source_sha256": "1b4a7dd6398c865954433e0f52b0c1930a5474f106b966d20d991500577cf34c",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00004",
+      "language": "fa",
+      "source_sha256": "5c647d3a7eebda8a3ce66b678c2c3b2a345ac3d921a6a043cbd011e1dc82418e",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "ar",
+      "source_sha256": "d6f389e2eebcc65d02a6fde9c43824ad452ceaaeeb41c22e7012503350bb0453",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00005",
+      "language": "fa",
+      "source_sha256": "6f583d7004a2b65adafc91f09f36529e18baa312d12133b9e95e9be09a618ac1",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00003",
+      "language": "ar",
+      "kind": "mixed-language",
+      "note": "Offsets 0..cut mix a Quran quotation, Persian narration and a second Arabic formula; left unsplit inside that range."
+    }
+  ]
+}

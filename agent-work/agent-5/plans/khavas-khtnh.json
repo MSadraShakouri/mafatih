@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-split-preflight-v1",
+  "item": "khavas-khtnh",
+  "item_sha256": "cda1d12765f5f8d4459b63612ed538521a7b2e5ca07358a7a0826a59cf63d8cf",
+  "author": "agent-5",
+  "sources": [
+    {
+      "row": "r00001",
+      "language": "fa",
+      "source_sha256": "a77cbb1993223ee0c534082f75018c17a0bd53ddc48bcc30dfa1871223e46659",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "instruction"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "ar",
+      "source_sha256": "66890f5efd295e14184b2d9eb7affdb6d52d41f368c6fe6f2217b24895e7c4fa",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    },
+    {
+      "row": "r00002",
+      "language": "fa",
+      "source_sha256": "d76121255db2f14d9d2aa1b146ad4472bb29bc5a9132809d24ccf5ada43d449d",
+      "checked": true,
+      "cuts": [],
+      "kinds": [
+        "recitation"
+      ]
+    }
+  ],
+  "punctuation_suggestions": [],
+  "issues": [
+    {
+      "row": "r00002",
+      "language": "fa",
+      "kind": "historical-line-break",
+      "note": "Recorded earlier value carried physical separators; current field inspected and no old separator restored."
+    }
+  ]
+}

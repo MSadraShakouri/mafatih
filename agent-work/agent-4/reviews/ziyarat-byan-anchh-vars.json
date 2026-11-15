@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "ziyarat-byan-anchh-vars",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "680317220f161994082132d8fb9aeb8dcc4d48e1",
+  "plan_sha256": "fc838a067962782fb2ace77639493f156cbd951e64697696af605bf356121f69",
+  "layout_sha256": "a37bb7d4d06a9012afe3c5d1096de48ffe51f2607a66efb463e2b6d30fc305f9",
+  "result_item_sha256": "85eef40001fbec387ebb178ffc60e9002d7a08625274c68fcc98b366a5c8b7f6",
+  "result_record_sha256": "0f4aff5544f4a03da9aa0f57fb1060c75234449111f37d4f3a03baac56860c52",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "ziyarat-byan-anchh-vars",
+    "item_sha256": "0f09436e20ed05cbaafc086e62e000518d90e77ba3be89e2bee93856f7c145a3",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "115a16a839f9457d93266680514a1246efdfa6da0f4272caf44e058218c891d0",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00001/fa has cuts [282, 461, 572, 603], 5 pieces (note 4, recitation 1), parts [0, 1, 2, 3, 4]; no cut/part anomaly. Item-level: 0 paired outputs, 12 unpaired outputs, 1 language moves, 0 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00002/fa has cuts [373, 489, 641, 662, 721], 6 pieces (note 6), parts [0, 1, 2, 3, 4, 5]; no cut/part anomaly. Item-level: 0 paired outputs, 12 unpaired outputs, 1 language moves, 0 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+      },
+      {
+        "row": "r00003",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00003/fa has no cuts, 1 pieces (note 1), parts [0]; no cut/part anomaly. Item-level: 0 paired outputs, 12 unpaired outputs, 1 language moves, 0 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Deep cut/pairing review at exact 680317220f161994082132d8fb9aeb8dcc4d48e1: 3 source fields; 9 cuts, 0 mid-word, 0 punctuation-free; 0 paired outputs, 12 unpaired outputs, 1 language moves, 0 bilingual source rows. No unequal bilingual piece counts. Full metrics in deep-review-findings.json; no human/scholarly/rights approval."
+  }
+}

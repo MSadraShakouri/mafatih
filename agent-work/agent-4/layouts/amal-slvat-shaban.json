@@ -1,0 +1,258 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-v1",
+  "item": "amal-slvat-shaban",
+  "author": "agent-4",
+  "plan_sha256": "a39fd4b826cbf9dc8148cadf84c7ada8a39986af6474f8c7fead0f05361231af",
+  "rows": [
+    {
+      "row": "r00001",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "audio-reciter"
+        }
+      ]
+    },
+    {
+      "row": "r00002",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "instruction"
+        }
+      ]
+    },
+    {
+      "row": "r00003",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
+        }
+      ]
+    },
+    {
+      "row": "r00004",
+      "checked": true,
+      "output": [
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        }
+      ]
+    },
+    {
+      "row": "r00005",
+      "checked": true,
+      "output": [
+        {
+          "ar": {
+            "source": "ar",
+            "part": 0
+          },
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 3
+          },
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 4
+          },
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "recitation"
+        }
+      ]
+    },
+    {
+      "row": "r00006",
+      "checked": true,
+      "output": [
+        {
+          "ar": {
+            "source": "ar",
+            "part": 0
+          },
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "recitation"
+        }
+      ]
+    },
+    {
+      "row": "r00007",
+      "checked": true,
+      "output": [
+        {
+          "ar": {
+            "source": "ar",
+            "part": 0
+          },
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "recitation"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "recitation"
+        }
+      ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002",
+      "right": "r00003-sa84854240323e3e5",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Separate words at r00002/r00003 fa boundary"
+      }
+    },
+    {
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005-sf75a34654a0b51be",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at r00004/r00005 ar/fa boundary"
+      }
+    },
+    {
+      "left": "r00005-s43c86915aa88b706",
+      "right": "r00006-s3e3874d69dfd3c50",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at r00005/r00006 ar/fa boundary"
+      }
+    },
+    {
+      "left": "r00006-s34b02a6bb1ae0a35",
+      "right": "r00007-sb13bc65dd76f169b",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Separate words at r00006/r00007 ar/fa boundary"
+      }
+    }
+  ]
+}

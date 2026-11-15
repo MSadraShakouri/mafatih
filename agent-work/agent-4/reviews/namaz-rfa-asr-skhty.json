@@ -1,0 +1,43 @@
+{
+  "format_version": 1,
+  "protocol": "ar-fa-canonical-review-v1",
+  "item": "namaz-rfa-asr-skhty",
+  "author": "agent-3",
+  "reviewer": "agent-4",
+  "author_commit": "680317220f161994082132d8fb9aeb8dcc4d48e1",
+  "plan_sha256": "758331897927218ea4e3e1f718e15b0b7205a8134950bcebc0c4818126c6e118",
+  "layout_sha256": "663d63691df7ef19e678e585a3471f8c7d373c7c508c9184323b1045fa151840",
+  "result_item_sha256": "2f28248fd10555abba023a331acb91c342d862d04752a33b0185b6cb4902896e",
+  "result_record_sha256": "53b0a4395012faed82a0d4b5f88465e16e2ae3b96b5222cb7ef32ae32cb815e2",
+  "semantic_review": {
+    "format_version": 1,
+    "protocol": "ar-fa-split-preflight-v1",
+    "item": "namaz-rfa-asr-skhty",
+    "item_sha256": "92e39f5b531fd2fc846f2797ff28f6ab7e66dec664af99ab6229447f19c53965",
+    "author": "agent-3",
+    "reviewer": "agent-4",
+    "preview_sha256": "6484f6fab717b9b670eeaefc7edd4cc96097257561c8f7cdf17295a07a017450",
+    "sources": [
+      {
+        "row": "r00001",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00001/ar has no cuts, 1 pieces (note 1), parts [0]; no cut/part anomaly. Item-level: 0 paired outputs, 2 unpaired outputs, 1 language moves, 0 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+      },
+      {
+        "row": "r00002",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00002/fa has no cuts, 1 pieces (note 1), parts [0]; no cut/part anomaly. Item-level: 0 paired outputs, 2 unpaired outputs, 1 language moves, 0 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+      }
+    ],
+    "punctuation": [],
+    "issues": []
+  },
+  "layout": {
+    "decision": "accept",
+    "note": "Deep cut/pairing review at exact 680317220f161994082132d8fb9aeb8dcc4d48e1: 2 source fields; 0 cuts, 0 mid-word, 0 punctuation-free; 0 paired outputs, 2 unpaired outputs, 1 language moves, 0 bilingual source rows. No unequal bilingual piece counts. Full metrics in deep-review-findings.json; no human/scholarly/rights approval."
+  }
+}
