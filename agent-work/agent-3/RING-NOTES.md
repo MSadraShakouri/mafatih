@@ -543,3 +543,54 @@ conclusion, different reason, and no regrouping design avoids it.
 published rows are `fa`, `ar` empty; the Arabic piece (707cp, 3 Persian chars) was moved to
 `fa` as `note` and the Persian piece (680cp, 53) kept `fa` as `recitation`. A language move
 plus a role swap.
+
+## Main 2163b5e7 — migration tooling, two verified proposals, none applied (19:1x UTC)
+
+7th re-provision, recovered cleanly (tree matched tip this time).
+
+Main merged with pin verifying and `npm run check` green (283 tests / 280 pass / 0 fail).
+
+### Policy now explicit: live reused ids are out of scope for aliases
+`docs/split-agent-instructions.md:190+`: an id "still live with a different meaning… needs a
+separate **snapshot-version-aware reader**. Ordinary aliases cannot disambiguate an
+unversioned link. **Keep affected items on hold**." That is now policy, not my inference.
+**All 23 stay on hold.** Do not attempt to migrate them with this tool.
+
+### I nearly reported a coordinator bug that did not exist
+My first namaz proposal used `start:62,end:63` and was refused with "destination has
+different source lineage, even if the text repeats". I diagnosed it as a bug in
+`assertSameLineage` (indexing old runs with 62 when the old field is 1 cp long) and drafted a
+bug report. **Wrong.** Two offset spaces exist:
+
+| space | meaning | used by |
+|---|---|---|
+| frozen source offset | position in the original pre-split field | audit tables, `row-splits` `start`/`end` |
+| alias-entry offset | position in **the historical row's own published field** | alias `start`/`end`; `target_start` is the destination offset |
+
+The orphan's own field is `"."` (1 cp) → `start:0, end:1`, with `target_start:62`. Fixed and
+previews clean. **Always state which offset space a proposal uses.** Mixing them yields a
+plausible proposal the tool correctly refuses.
+
+Proof I did not fit the story to the result: I first tested `ziyarat-ghdyr`, whose retired row
+text is a *whole* current row (frozen 697, local 0) — it previewed clean, and only then did
+`start:0` on namaz pass. Two independent cases, same rule.
+
+### Verified by preview, NOT applied
+| item | retired id | destination | range | review_sha256 |
+|---|---|---|---|---|
+| namaz-vqt-tlva-ghrvb | r00010-s5435c4aabef83342 | r00010 fa | [62,63) | 138c63799… |
+| ziyarat-ghdyr | r00002-sb8a7c4ea61e1d0eb | r00002-se090ec1c15d74b91 fa | [0,30) | 58ab23eb7… |
+
+`ziyarat-ghdyr` is a **new find** — on nobody's list.
+
+### Blocked by authorization, not by tooling
+Instructions say the coordinator "**may authorize**" a migration. Not granted for either item;
+standing instruction was "don't add it by hand". `alias-preview` is read-only; `alias-migrate`
+writes `data/`. Waiting for an explicit go-ahead. `data/` remains untouched.
+
+### Agent-2 independently confirmed my id-derivation finding
+Their `93b33991` reproduces `sha256(JSON.stringify({row,ar:{source,part},fa:{source,part},kind}))`
+from the code, states the construction is byte-identical at `0585cec, ffa01da9, c75e50c,
+b2756bb0, 55ef3fe` and every published snapshot tree, and **corrects their own earlier
+"piece ids hash their text" wording, crediting my description.** Good: the mislabel is now
+retired corpus-wide.
