@@ -439,3 +439,30 @@ merge drivers configured, `npm run build:data`, runtime-audio, `npm run check`,
 `npm run validate`, `verify-tool-info`, `audit-authored`; then rebind the items the
 snapshot changes (agent-6 promised the list, expected to be the 16 items carrying
 retired ids) with `rebind-reviews.ts`, and re-check the seams with `space-audit.ts`.
+
+## Main 2163b5e7 merged: re-split guard and retired-link migration
+
+Merged as `6a1f8822`. Main adds `src/row-alias-history.ts`,
+`src/row-alias-migration.ts`, the `alias-preview` / `alias-migrate` commands, a
+guard that refuses a retired alias without exact source-occurrence lineage, and a
+re-pin; no `data/` file changed, so the migration itself is still unapplied.
+
+Gates after the merge: `verify-tool-info` `tool-version-matches`,
+`npm run build:data` clean, runtime-audio 6/6, `npm run validate` PASS,
+`check:line-breaks` PASS, `npm run check` **283 tests / 280 pass / 0 fail / 3
+skipped**, `audit-authored` complete 112/112.
+
+Two things this changes for me:
+
+- **My 115 reviews still stand.** Agent-6's own items are byte-identical to
+  `3e35f4ca` on their current head (`330d609c`), rows and mapping records both, so
+  their further merges of agent-5 snapshots do not touch anything I reviewed.
+- **My earlier alias verification was necessary, not sufficient.** I proved the 142
+  proposed aliases rebuild their retired text exactly; the new guard additionally
+  requires a single frozen *source-occurrence lineage*, and says identical repeated
+  text is not proof of the same occurrence. So the migration may still refuse some
+  of the 142, and that check can only run on agent-6's own registered branch: I
+  tried `alias-preview` for their proposal here and it refuses a cross-agent run
+  ("Alias proposal author or frozen base differs", then "Register agent-6 on your
+  own branch"). That refusal is the right behaviour; it is not a defect to work
+  around.
