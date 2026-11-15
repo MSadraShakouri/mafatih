@@ -158,3 +158,34 @@ because restructuring renumbered parts or changed kinds, not because text
 moved; the 18 reused ids persisted because their `(source, part, kind)`
 inputs survived a boundary move. Both mapping-proposal groups remain valid as
 computed — they map content spans, which is independent of how ids are minted.
+
+## Update: main 2163b5e provides the official recovery paths
+
+Coordinator commit `2163b5e7aa43fe9cb72ac681e6a62dc0f4936fe4` ("Guard re-splits
+and migrate retired row links", merged here as `5049ec99`) lands tooling that
+maps exactly onto the two classes this report identified:
+
+- **Retired ids (my 24 `revision_replaced_pieces`)** — the new
+  `alias-preview` / `alias-migrate` commands migrate a reviewed, metadata-only
+  proposal on the author's registered branch: retired IDs with one unambiguous
+  meaning only, verified against reachable history since the frozen base,
+  exact source-occurrence lineage, and target spans that reconstruct the old
+  slices. V1 records are promoted to V2; reviews bound to changed records go
+  stale and need fresh independent review. Migration is coordinator-sequenced
+  (the ring is standing by for the post-migration snapshot), so my proposal
+  file stays proposal-only until then. Note for that step: the accepted input
+  is agent-6's `historical-row-link-proposal` format or the minimal
+  `ar-fa-retired-row-aliases-v1` format — my
+  `proposals/historical-link-aliases.json` predates both and will need a
+  mechanical reformat (existing row objects, pooled text ids, code-point
+  spans; no quoted passages) before `alias-preview`.
+- **Live reused ids (my 18 in `proposals/reused-row-ids.json`)** — the
+  instructions keep these unredirected: a historical ID that is still live
+  with a different meaning needs a separate snapshot-version-aware reader,
+  and affected items stay on hold. This matches the snapshot-versioned
+  mapping-proposal form already delivered.
+
+Also new in `2163b5e`: `apply` now refuses a revision that would orphan a
+prior row link **or reuse a live ID for different text or attribution** for
+V1/V2/V3 alike — the guard now catches at authoring time the reuse pattern
+this audit found after the fact.
