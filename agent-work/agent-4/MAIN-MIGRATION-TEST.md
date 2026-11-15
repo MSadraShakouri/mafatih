@@ -14,4 +14,4 @@ Thus the new feature recovers some **already retired, unambiguous** historical l
 
 ## Automated tests
 
-The targeted official CLI and row-merge suites (`tests/six-agent-cli.test.ts`, `tests/six-agent-merge-cli.test.ts`, `tests/six-agent-row-merge.test.ts`) passed **17/17**. They include V1-to-V2 historical alias promotion, alias preservation through recompilation, and adjacency/kind checks. Full `npm run check` was started separately; consult the follow-up result rather than assuming it completed from these targeted tests.
+The targeted official CLI and row-merge suites (`tests/six-agent-cli.test.ts`, `tests/six-agent-merge-cli.test.ts`, `tests/six-agent-row-merge.test.ts`) passed **17/17**. They include V1-to-V2 historical alias promotion, alias preservation through recompilation, and adjacency/kind checks. Full `npm run check` completed typechecking, the Node suite (**283 tests: 280 passed, 0 failed, 3 skipped**), repository and line-break checks, and the production build. The build warns of 50 unreferenced pooled text values; these are retained for historical/snapshot safety, not pruned.
