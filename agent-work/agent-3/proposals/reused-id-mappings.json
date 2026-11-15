@@ -1,410 +1,745 @@
 {
- "protocol": "agent-3-reused-id-mapping-proposal-v1",
- "status": "PROPOSAL ONLY — not applied, no data/ change",
- "coordinator_count": 23,
- "reproduced": true,
- "snapshots": {
-  "from": "731bbd960c4161a7665f93745f43271fe6eadc7c",
-  "to": "680317220f161994082132d8fb9aeb8dcc4d48e1"
- },
- "mechanism": "piece id = sha256({row, ar:{source,part}, fa:{source,part}, kind}) — it hashes the ADDRESS, not the text. When a re-split yields a shorter piece list for a base row, positional part k now names different text under the identical id.",
- "evidence": "all 23 affected base rows had their piece count SHRINK (4->3, 9->8, 8->5 ...), 23 of 23, none grew",
- "summary": {
-  "ids": 23,
-  "items": 10,
-  "still_live_rows": 23,
-  "retired": 0,
-  "old_text_recoverable_byte_exact": 3,
-  "old_text_absent_from_corpus": 20,
-  "punctuation_or_space_only": 8,
-  "text_materially_differs": 15
- },
- "blocker": "All 23 ids are still LIVE rows. An alias is forbidden while the id is live, and V1 records cannot carry aliases at all. A V2/V3 migration alone does not resolve the live-row case; the id must first be retired, or the redirect must be expressed some other way.",
- "items": {
-  "undefined": [
-   {
-    "historical_id": "r00004-sa44b8f05e3e4e602",
-    "kind_unchanged": true,
-    "old_text_codepoints": 110,
-    "current_text_codepoints": 111,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-s3dda56d9c83883fa",
-    "kind_unchanged": true,
-    "old_text_codepoints": 103,
-    "current_text_codepoints": 105,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-s5347c817c3599961",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 27,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-s87a4572572fe3091",
-    "kind_unchanged": true,
-    "old_text_codepoints": 370,
-    "current_text_codepoints": 372,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-sd0076416ed435839",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 138,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-s8939275b275c817a",
-    "kind_unchanged": true,
-    "old_text_codepoints": 136,
-    "current_text_codepoints": 149,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-sa021c793590ec5ab",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 243,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00013-s3d24e8d54d9902e9",
-    "kind_unchanged": true,
-    "old_text_codepoints": 281,
-    "current_text_codepoints": 283,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00013-s892a5505605738ea",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 35,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00012-se62b3f362c1c151a",
-    "kind_unchanged": true,
-    "old_text_codepoints": 261,
-    "current_text_codepoints": 262,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-s909b8a58b8018daa",
-    "kind_unchanged": true,
-    "old_text_codepoints": 109,
-    "current_text_codepoints": 111,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-sa021c793590ec5ab",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 31,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-s1fa9d92731f5fd90",
-    "kind_unchanged": true,
-    "old_text_codepoints": 31,
-    "current_text_codepoints": 234,
-    "text_differs": true,
-    "old_text_present_as_live_row": true,
-    "candidate_targets": [
-     {
-      "row": "r00001-sa021c793590ec5ab",
-      "language": "fa"
-     }
+  "format_version": 1,
+  "protocol": "agent-3-reused-id-reconstruction-v1",
+  "status": "PROPOSAL ONLY — not applied; no file under data/ changed",
+  "compared_snapshots": {
+    "from": "731bbd960c4161a7665f93745f43271fe6eadc7c",
+    "to": "680317220f161994082132d8fb9aeb8dcc4d48e1"
+  },
+  "item_count": 10,
+  "id_count": 23,
+  "summary": {
+    "reconstructed-slice": 18,
+    "reconstructed-after-editorial-change": 1,
+    "deleted-as-duplicate": 1,
+    "reconstructed-after-adjacent-change": 1,
+    "reconstructed-whole-row": 2
+  },
+  "offset_convention": "Half-open Unicode code-point ranges [start,end) within the destination row field, zero-based. Codepoints counted with Array.from, so astral characters count as one.",
+  "verification": "Every one of the 23 historical pieces was reconstructed byte-exactly from current row slices. 20 as contiguous slices of a single current row; 1 as a prefix of a row that grew; 1 whose own row is unchanged but a neighbour changed; 1 deleted as a duplicated period (no destination claimed).",
+  "why_not_aliases": "All 23 ids are still live rows. src/row-splits.ts:170-172 rejects an alias whose id is in `current` (\"duplicate or reused alias identity\"). And src/schema.ts:237-245 forbids aliases on V1 records. So neither an ordinary alias nor a drop-in V2/V3 alias can express these; they need a versioned destination mapping keyed to the historical id, which is what this file is.",
+  "items": {
+    "amal-adab-vzv": [
+      {
+        "historical_id": "r00004-sa44b8f05e3e4e602",
+        "historical_kind": "recitation",
+        "base_row": "r00004",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "ar": {
+            "pooled_text_id": "tbb52dd685696dce80658c86e",
+            "codepoints": 110,
+            "text": " بِسْمِ اللّٰه وَ بِاللّٰهِ، اَللّٰهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ، وَ اجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ."
+          }
+        },
+        "destination_segments": {
+          "ar": {
+            "row": "r00004-sa44b8f05e3e4e602",
+            "language": "ar",
+            "start": 0,
+            "end": 110,
+            "cum_start": 0,
+            "cum_end": 110,
+            "whole_row": false,
+            "host_codepoints": 111,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
     ],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "redirect-after-retirement"
-   },
-   {
-    "historical_id": "r00001-s8939275b275c817a",
-    "kind_unchanged": true,
-    "old_text_codepoints": 414,
-    "current_text_codepoints": 417,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-sc5e9d9539705078a",
-    "kind_unchanged": true,
-    "old_text_codepoints": 300,
-    "current_text_codepoints": 302,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00001-sd0076416ed435839",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 266,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00003-s1828851db03b603e",
-    "kind_unchanged": true,
-    "old_text_codepoints": 8,
-    "current_text_codepoints": 63,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00003-s1b27bb8c75bc48e1",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 183,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00003-sd8fe963a13fe0305",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 265,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00003-sb355d8466a6ab016",
-    "kind_unchanged": true,
-    "old_text_codepoints": 183,
-    "current_text_codepoints": 104,
-    "text_differs": true,
-    "old_text_present_as_live_row": true,
-    "candidate_targets": [
-     {
-      "row": "r00003-s1b27bb8c75bc48e1",
-      "language": "fa"
-     }
+    "amal-akhr-shaban-rmzan": [
+      {
+        "historical_id": "r00001-s3dda56d9c83883fa",
+        "historical_kind": "recitation",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "ar": {
+            "pooled_text_id": "ta007d18e73105d48b5e6168e",
+            "codepoints": 103,
+            "text": "إِلَهِی وَعَظْتَنِی فَلَمْ أَتَّعِظْ، وَ زَجَرْتَنِی عَنْ مَحَارِمِکَ فَلَمْ أَنْزَجِرْ، فَمَا عُذْرِی؟"
+          }
+        },
+        "destination_segments": {
+          "ar": {
+            "row": "r00001-s3dda56d9c83883fa",
+            "language": "ar",
+            "start": 0,
+            "end": 103,
+            "cum_start": 637,
+            "cum_end": 740,
+            "whole_row": false,
+            "host_codepoints": 105,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00001-s5347c817c3599961",
+        "historical_kind": "recitation",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "ar": {
+            "pooled_text_id": "tae8b50f3a26d5669225aaf7a",
+            "codepoints": 2,
+            "text": "! "
+          }
+        },
+        "destination_segments": {
+          "ar": {
+            "row": "r00001-s3dda56d9c83883fa",
+            "language": "ar",
+            "start": 103,
+            "end": 105,
+            "cum_start": 740,
+            "cum_end": 742,
+            "whole_row": false,
+            "host_codepoints": 105,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
     ],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "redirect-after-retirement"
-   },
-   {
-    "historical_id": "r00002-s16b235f3fb54b1a5",
-    "kind_unchanged": true,
-    "old_text_codepoints": 420,
-    "current_text_codepoints": 422,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00002-s7912db66cde98eb8",
-    "kind_unchanged": true,
-    "old_text_codepoints": 2,
-    "current_text_codepoints": 275,
-    "text_differs": true,
-    "old_text_present_as_live_row": false,
-    "candidate_targets": [],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "content-lost-no-target"
-   },
-   {
-    "historical_id": "r00002-se090ec1c15d74b91",
-    "kind_unchanged": true,
-    "old_text_codepoints": 275,
-    "current_text_codepoints": 30,
-    "text_differs": true,
-    "old_text_present_as_live_row": true,
-    "candidate_targets": [
-     {
-      "row": "r00002-s7912db66cde98eb8",
-      "language": "fa"
-     }
+    "khavas-khvas-ql-hvallh": [
+      {
+        "historical_id": "r00001-s87a4572572fe3091",
+        "historical_kind": "instruction",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t548f7be6957fcfaeb2c06d59",
+            "codepoints": 370,
+            "text": "سی وششم: و نیز از آن حضرت نقل کرده: کسی که «قُل هُوَ اللّه اَحَدٌ» را سه مرتبه بخواند وقتی‌که به بستر خواب خویش می‌رود، خدا پنجاه هزار فرشته بر او بگمارد که از او در‌ان شب پاسداری کنند، و از حضرت صادق (عَلَیهِ السَّلَامُ) روایت کرده: هرکه یک روز بر او بگذرد، و در نماز خود «قُل هُوَ اللّه اَحَدٌ» را نخواند، روز قیامت به او می‌گویند: ای بنده خدا تو از نماز گذاران نیستی!"
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-s87a4572572fe3091",
+            "language": "fa",
+            "start": 0,
+            "end": 370,
+            "cum_start": 0,
+            "cum_end": 370,
+            "whole_row": false,
+            "host_codepoints": 372,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00001-sd0076416ed435839",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "tae8b50f3a26d5669225aaf7a",
+            "codepoints": 2,
+            "text": "! "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-s87a4572572fe3091",
+            "language": "fa",
+            "start": 370,
+            "end": 372,
+            "cum_start": 370,
+            "cum_end": 372,
+            "whole_row": false,
+            "host_codepoints": 372,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00001-s8939275b275c817a",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t0b542b577fd3f2a6d32e4e21",
+            "codepoints": 136,
+            "text": "و نیز از آن حضرت نقل‌شده: کسی که جُمعه بر او بگذرد یعنی یک هفته و در آن هفته «قُل هُوَ اللّه اَحَدٌ» نخوانده باشد، به دین ابی لهب بمیرد!"
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-sd0076416ed435839",
+            "language": "fa",
+            "start": 0,
+            "end": 136,
+            "cum_start": 372,
+            "cum_end": 508,
+            "whole_row": false,
+            "host_codepoints": 138,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00001-sa021c793590ec5ab",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "tae8b50f3a26d5669225aaf7a",
+            "codepoints": 2,
+            "text": "! "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-sd0076416ed435839",
+            "language": "fa",
+            "start": 136,
+            "end": 138,
+            "cum_start": 508,
+            "cum_end": 510,
+            "whole_row": false,
+            "host_codepoints": 138,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
     ],
-    "blocking": {
-     "remains_live_row": true,
-     "alias_forbidden_by": "src/row-splits.ts:171 (alias id in `current` -> \"duplicate or reused alias identity\")",
-     "record_format": 1,
-     "v1_cannot_hold_aliases": "src/schema.ts:237-245"
-    },
-    "proposed_class": "redirect-after-retirement"
-   }
-  ]
- }
+    "ziyarat-adab-mkhsvs-hsyn": [
+      {
+        "historical_id": "r00013-s3d24e8d54d9902e9",
+        "historical_kind": "note",
+        "base_row": "r00013",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t9f674f7961681d3837a2ce16",
+            "codepoints": 281,
+            "text": "فرمود: وای بر تو، وقتی‌که نزدیک به جحفه بودیم، آیا نشنیدی که فلان کس به تو گفت: مرا به اندازه یک میل راه سوار کن، به خدا سوگند من از پیمودن راه خسته شدم، به خدا قسم تو سر به سوی او بلند نکردی، و او را سبک شمردی، و هرکه مؤمنی را خوا رکند ما را خوار کرده، و حرمت ما را تباه کرده است!"
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00013-s3d24e8d54d9902e9",
+            "language": "fa",
+            "start": 0,
+            "end": 281,
+            "cum_start": 634,
+            "cum_end": 915,
+            "whole_row": false,
+            "host_codepoints": 283,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00013-s892a5505605738ea",
+        "historical_kind": "note",
+        "base_row": "r00013",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "tae8b50f3a26d5669225aaf7a",
+            "codepoints": 2,
+            "text": "! "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00013-s3d24e8d54d9902e9",
+            "language": "fa",
+            "start": 281,
+            "end": 283,
+            "cum_start": 915,
+            "cum_end": 917,
+            "whole_row": false,
+            "host_codepoints": 283,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
+    ],
+    "ziyarat-aymh-bqya-alyhm": [
+      {
+        "historical_id": "r00012-se62b3f362c1c151a",
+        "historical_kind": "recitation",
+        "base_row": "r00012",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "ar": {
+            "pooled_text_id": "t8cd901188d62d0e65cb118f4",
+            "codepoints": 261,
+            "text": "اَلسَّلامُ عَلَيْكُمْ أَئِمَّةَ الْهُدىٰ، وَ رَحْمَةُ اللّٰهِ وَ بَرَكاتُهُ، أَسْتَوْدِعُكُمُ اللّٰهَ، وَ أَقْرَأُ عَلَيْكُمُ السَّلامَ، آمَنَّا بِاللّٰهِ وَ بِالرَّسُولِ وَ بِمَا جِئْتُمْ بِهِ وَ دَلَلْتُمْ عَلَيْهِ، اَللّٰهُمَّ فَاكْتُبْنا مَعَ الشَّاهِدِينَ."
+          }
+        },
+        "destination_segments": {
+          "ar": {
+            "row": "r00012-se62b3f362c1c151a",
+            "language": "ar",
+            "start": 0,
+            "end": 261,
+            "cum_start": 0,
+            "cum_end": 261,
+            "whole_row": false,
+            "host_codepoints": 262,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
+    ],
+    "ziyarat-byan-anchh-vars": [
+      {
+        "historical_id": "r00001-s909b8a58b8018daa",
+        "historical_kind": "recitation",
+        "base_row": "r00001",
+        "status": "reconstructed-after-editorial-change",
+        "note": "Arabic piece grew 109->111 cp: a trailing \". \" was appended to it. Old text is the prefix [0,109) of the current 111-cp row.",
+        "source_segments": {
+          "ar": {
+            "pooled_text_id": "t9aa58501e23ece0ec713ff4c",
+            "codepoints": 109,
+            "text": "اَلسَّلاَمُ عَلَی مَنْ کَانَ فِی اَلْحَائِرِ مِنْکُمْ وَ عَلَی مَنْ لَمْ یَکُنْ فِی اَلْحَائِرِ مَعَکُمْ الخ…"
+          }
+        },
+        "destination_segments": {
+          "ar": {
+            "row": "r00001-s909b8a58b8018daa",
+            "language": "ar",
+            "start": 0,
+            "end": 109,
+            "whole_row": false,
+            "basis": "prefix-of-longer-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00001-sa021c793590ec5ab",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "deleted-as-duplicate",
+        "note": "Historical fa piece was a lone \". \" that duplicated a period already ending the preceding piece. The fa family lost 2 cp (728->726) by removing it; it was DELETED, not moved. No byte-exact destination exists and none should be invented.",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t8dccf256f6d5783e62bba717",
+            "codepoints": 2,
+            "text": ". "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "note": "no byte-exact destination: content deleted as duplicate"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": false
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00001-s1fa9d92731f5fd90",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "reconstructed-after-adjacent-change",
+        "note": "Historical fa piece \"تمامی آن‌ها زیادی و اضافی است. \" (31 cp) is present byte-exact as the whole current row of the same id. The family concatenation differs only because of the neighbouring \". \" deletion above.",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "tc021ac84d5a1ef84b153ee8d",
+            "codepoints": 31,
+            "text": "تمامی آن‌ها زیادی و اضافی است. "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-sa021c793590ec5ab",
+            "language": "fa",
+            "start": 0,
+            "end": 31,
+            "whole_row": true,
+            "basis": "whole-row-exact"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
+    ],
+    "ziyarat-chharm-shbhay-qdr": [
+      {
+        "historical_id": "r00001-s8939275b275c817a",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t8043d90b9596411dfd422e4f",
+            "codepoints": 414,
+            "text": "و در حدیث معتبر دیگری از امام صادق (عَلَیهِ السَّلَامُ) روایت شده: چون شب قَدر می‌شود، منادی از آسمان هفتم از پشت عرش ندا سر می‌دهد: حق‌تعالی آمرزید هرکه را به زیارت قبر حسین (عَلَیهِ السَّلَامُ) آمده و در روایت دیگری است هر که شب قَدر نزد قبر آن حضرت باشد و دو رکعت نماز یا آنچه میسر می‌شود نزد آن حضرت بخواند و از خدا بهشت درخواست کند و از آتش پناه ببرد حق‌تعالی خواهش او را به او عطا فرماید و از آتش پناهش دهد. "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-s8939275b275c817a",
+            "language": "fa",
+            "start": 0,
+            "end": 414,
+            "cum_start": 459,
+            "cum_end": 873,
+            "whole_row": false,
+            "host_codepoints": 417,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
+    ],
+    "ziyarat-fvayd-mdavmt-aashvra": [
+      {
+        "historical_id": "r00001-sc5e9d9539705078a",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "td9f7aadcf47045009d8cd11c",
+            "codepoints": 300,
+            "text": "مؤلف گوید: در کتاب «نجم الثاقب» در ذیل تشرّف جناب حاج سید احَمد رشتی به محضر امام عصر ارواحنا فداه در سفر حجّ و فرمایش آنحضرت به او که شما چرا عاشورا نمی‌خوانید، عاشورا، عاشورا، عاشورا، «دلیل بر فضیلت و آثار و فواید این زیارت است» و ما آن حکایت را‌ان شاء اللّه پس از زیارت جامعه کبیره نقل خواهیم کرد."
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-sc5e9d9539705078a",
+            "language": "fa",
+            "start": 0,
+            "end": 300,
+            "cum_start": 0,
+            "cum_end": 300,
+            "whole_row": false,
+            "host_codepoints": 302,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00001-sd0076416ed435839",
+        "historical_kind": "note",
+        "base_row": "r00001",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t8dccf256f6d5783e62bba717",
+            "codepoints": 2,
+            "text": ". "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00001-sc5e9d9539705078a",
+            "language": "fa",
+            "start": 300,
+            "end": 302,
+            "cum_start": 300,
+            "cum_end": 302,
+            "whole_row": false,
+            "host_codepoints": 302,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
+    ],
+    "ziyarat-fzylt-rza-alyh": [
+      {
+        "historical_id": "r00003-s1828851db03b603e",
+        "historical_kind": "note",
+        "base_row": "r00003",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t87f7b99fe42965f2c6693cea",
+            "codepoints": 8,
+            "text": "پذیرفته؟"
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00003-s1828851db03b603e",
+            "language": "fa",
+            "start": 0,
+            "end": 8,
+            "cum_start": 0,
+            "cum_end": 8,
+            "whole_row": false,
+            "host_codepoints": 63,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00003-s1b27bb8c75bc48e1",
+        "historical_kind": "note",
+        "base_row": "r00003",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "tae8b50f3a26d5669225aaf7a",
+            "codepoints": 2,
+            "text": "! "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00003-s1828851db03b603e",
+            "language": "fa",
+            "start": 8,
+            "end": 10,
+            "cum_start": 8,
+            "cum_end": 10,
+            "whole_row": false,
+            "host_codepoints": 63,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00003-sd8fe963a13fe0305",
+        "historical_kind": "note",
+        "base_row": "r00003",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "tae8b50f3a26d5669225aaf7a",
+            "codepoints": 2,
+            "text": "! "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00003-s1828851db03b603e",
+            "language": "fa",
+            "start": 61,
+            "end": 63,
+            "cum_start": 61,
+            "cum_end": 63,
+            "whole_row": false,
+            "host_codepoints": 63,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00003-sb355d8466a6ab016",
+        "historical_kind": "note",
+        "base_row": "r00003",
+        "status": "reconstructed-whole-row",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t6f726803fc40632b794a29d2",
+            "codepoints": 183,
+            "text": "فرمود: چه‌بسا حجّی که پذیرفته نباشد، هرکه آن حضرت را زیارت کند یا یک شب نزد آن حضرت بیتوته کند چنان باشد که خدا را در عرش زیارت کرده باشد، گفت: چنان‌که خدا را در عرش زیارت کرده باشد؟ "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00003-s1b27bb8c75bc48e1",
+            "language": "fa",
+            "start": 0,
+            "end": 183,
+            "cum_start": 63,
+            "cum_end": 246,
+            "whole_row": true,
+            "host_codepoints": 183,
+            "basis": "whole-row-exact"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
+    ],
+    "ziyarat-ghdyr": [
+      {
+        "historical_id": "r00002-s16b235f3fb54b1a5",
+        "historical_kind": "note",
+        "base_row": "r00002",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t9d5a1109ae930232a525bb63",
+            "codepoints": 420,
+            "text": "از حضرت رضا (عَلَیهِ السَّلَامُ) روایت شده که به ابن ابی نصر فرمود: هرجا که باشی، روز غدیر کنار قبر امیر المؤمنان (عَلَیهِ السَّلَامُ) حاضر شو، به درستی که در این روز حق‌تعالی، از مرد مؤمن و زن مؤمنه گناه شصت سال را می‌آمرزد، و از آتش جهنم آزاد می‌کند و دو برابر آنچه در ماه رمضان و شب قَدر و شب فطر آزاد کرده بدان که برای این روز شریف چند زیارت نقل‌شده است: اوّل: زیارت «امین اللّه» که بیان آن در زیارت دوّم مطلقه گذشت."
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00002-s16b235f3fb54b1a5",
+            "language": "fa",
+            "start": 0,
+            "end": 420,
+            "cum_start": 0,
+            "cum_end": 420,
+            "whole_row": false,
+            "host_codepoints": 422,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00002-s7912db66cde98eb8",
+        "historical_kind": "note",
+        "base_row": "r00002",
+        "status": "reconstructed-slice",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "t8dccf256f6d5783e62bba717",
+            "codepoints": 2,
+            "text": ". "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00002-s16b235f3fb54b1a5",
+            "language": "fa",
+            "start": 420,
+            "end": 422,
+            "cum_start": 420,
+            "cum_end": 422,
+            "whole_row": false,
+            "host_codepoints": 422,
+            "basis": "unique-slice-in-larger-row"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      },
+      {
+        "historical_id": "r00002-se090ec1c15d74b91",
+        "historical_kind": "note",
+        "base_row": "r00002",
+        "status": "reconstructed-whole-row",
+        "source_segments": {
+          "fa": {
+            "pooled_text_id": "tba7819d30e2118b4225601e5",
+            "codepoints": 275,
+            "text": "دوم: زیارتی است که به سندهای معتبر از حضرت هادی (عَلَیهِ السَّلَامُ) نقل‌شده است، که با آن زیارت حضرت امیر مؤمنان (عَلَیهِ السَّلَامُ) را در روز غدیر در سالی که معتصم آن حضرت را طلبیده بود زیارت کردند، و کیفیت آن به این نحو است: چون اراده زیارت نمایی بر بارگاه نورانی بایست. "
+          }
+        },
+        "destination_segments": {
+          "fa": {
+            "row": "r00002-s7912db66cde98eb8",
+            "language": "fa",
+            "start": 0,
+            "end": 275,
+            "cum_start": 422,
+            "cum_end": 697,
+            "whole_row": true,
+            "host_codepoints": 275,
+            "basis": "whole-row-exact"
+          }
+        },
+        "reconstruction_check": {
+          "method": "family concatenation: old and current pieces of the same base row, joined in row order, compared codepoint by codepoint",
+          "passed": true
+        },
+        "applies_to": "V2/V3 mapping proposal only. NOT an alias: this id is a live row and an alias for it is rejected by src/row-splits.ts:171."
+      }
+    ]
+  }
 }

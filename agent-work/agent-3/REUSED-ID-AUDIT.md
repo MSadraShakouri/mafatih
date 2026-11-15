@@ -55,39 +55,60 @@ A shrinking piece list is exactly the condition that re-points a positional inde
 
 ---
 
-## 2. The 23 IDs
+## 2. The 23 IDs — all reconstructed, none lost
 
-| # | item | reused id | change | old text elsewhere in corpus |
-|---:|---|---|---|---|
-| 1 | amal-adab-vzv | r00004-sa44b8f05e3e4e602 | punctuation/space only | — |
-| 2 | amal-akhr-shaban-rmzan | r00001-s3dda56d9c83883fa | punctuation/space only | — |
-| 3 | amal-akhr-shaban-rmzan | r00001-s5347c817c3599961 | text differs | — |
-| 4 | khavas-khvas-ql-hvallh | r00001-s87a4572572fe3091 | punctuation/space only | — |
-| 5 | khavas-khvas-ql-hvallh | r00001-sd0076416ed435839 | text differs | — |
-| 6 | khavas-khvas-ql-hvallh | r00001-s8939275b275c817a | text differs | — |
-| 7 | khavas-khvas-ql-hvallh | r00001-sa021c793590ec5ab | text differs | — |
-| 8 | ziyarat-adab-mkhsvs-hsyn | r00013-s3d24e8d54d9902e9 | punctuation/space only | — |
-| 9 | ziyarat-adab-mkhsvs-hsyn | r00013-s892a5505605738ea | text differs | — |
-| 10 | ziyarat-aymh-bqya-alyhm | r00012-se62b3f362c1c151a | punctuation/space only | — |
-| 11 | ziyarat-byan-anchh-vars | r00001-s909b8a58b8018daa | punctuation/space only | — |
-| 12 | ziyarat-byan-anchh-vars | r00001-sa021c793590ec5ab | text differs | — |
-| 13 | ziyarat-byan-anchh-vars | r00001-s1fa9d92731f5fd90 | text differs | **r00001-sa021c793590ec5ab / fa** |
-| 14 | ziyarat-chharm-shbhay-qdr | r00001-s8939275b275c817a | text differs | — |
-| 15 | ziyarat-fvayd-mdavmt-aashvra | r00001-sc5e9d9539705078a | punctuation/space only | — |
-| 16 | ziyarat-fvayd-mdavmt-aashvra | r00001-sd0076416ed435839 | text differs | — |
-| 17 | ziyarat-fzylt-rza-alyh | r00003-s1828851db03b603e | text differs | — |
-| 18 | ziyarat-fzylt-rza-alyh | r00003-s1b27bb8c75bc48e1 | text differs | — |
-| 19 | ziyarat-fzylt-rza-alyh | r00003-sd8fe963a13fe0305 | text differs | — |
-| 20 | ziyarat-fzylt-rza-alyh | r00003-sb355d8466a6ab016 | text differs | **r00003-s1b27bb8c75bc48e1 / fa** |
-| 21 | ziyarat-ghdyr | r00002-s16b235f3fb54b1a5 | punctuation/space only | — |
-| 22 | ziyarat-ghdyr | r00002-s7912db66cde98eb8 | text differs | — |
-| 23 | ziyarat-ghdyr | r00002-se090ec1c15d74b91 | text differs | **r00002-s7912db66cde98eb8 / fa** |
+**Correction to my own first report.** I previously wrote that 20 of the 23 had "old text
+absent from the corpus" and only 3 were recoverable. **That was wrong**, and the coordinator
+was right to reject it. I had measured *whole-row equality* — whether the old row's complete
+text exists as a complete current row. That is the wrong test. The old and current pieces are
+both slices of the same base row, so the correct test is whether the old text is a contiguous
+slice of some current row.
 
-**Tally:** 8 punctuation/space only, 15 materially different text.
-Of the 15, the old text survives byte-exact as a live row in only **3** cases; in **12** it
-is gone from the corpus entirely.
+Reconstructed with a provenance method rather than string search: take the old piece's slot
+in the concatenation of the old family's pieces, then find which current piece covers that
+same span in the current concatenation. Cumulative offsets must agree for the spans to line
+up, so this cannot silently attach a fragment to a lookalike elsewhere in the item.
 
----
+**Result: 23 of 23 reconstructed byte-exactly. 0 lost.**
+
+| class | count | meaning |
+|---|---:|---|
+| reconstructed-slice | 18 | contiguous `[start,end)` inside a current row |
+| reconstructed-whole-row | 2 | the current row *is* the old piece |
+| reconstructed-after-editorial-change | 1 | old Arabic is a prefix of a row that grew by a trailing `". "` |
+| reconstructed-after-adjacent-change | 1 | row unchanged; only its neighbour changed |
+| deleted-as-duplicate | 1 | the piece *was* removed as a redundant period |
+
+The single `deleted-as-duplicate` case is `ziyarat-byan-anchh-vars/r00001-sa021c793590ec5ab`,
+a lone `". "`. In `731bbd96` the Persian read `رَفِیقاً. . تمامی` — a duplicated period. Today
+it reads `رَفِیقاً. تمامی`. The duplicate was deleted, so the fa family lost 2 code points
+(728→726). **No destination is claimed for it, because none exists.** Inventing one would be
+the exact error this audit exists to avoid.
+
+Full per-id destination ranges are in `proposals/reused-id-mappings.json`, keyed by item.
+
+### Verification
+
+`agent-work/agent-3/scratch/verify-proposal.mjs` re-reads every destination range from the
+snapshot and compares it against the historical source text:
+**22 of 22 claimed destination segments reproduce byte-exactly; 0 failures; 1 segment
+intentionally unclaimed** (the deleted duplicate).
+
+The coordinator's worked example is one of them, and it verifies:
+
+> `amal-akhr-shaban-rmzan/r00001-s5347c817c3599961`, old Arabic `[0,2)`,
+> maps to `r00001-s3dda56d9c83883fa` Arabic `[103,105)`.
+
+I confirmed both halves independently: the old piece is `"! "` (2 cp) and
+`cp.slice(103,105)` of the current 105-cp field is exactly `"! "`.
+
+### The proposal file is now properly keyed
+
+My earlier JSON had every entry under a single `"undefined"` key — a bug in my generator,
+which read `entry.item` while the audit had written `entry.it`. The regenerated file is keyed
+by item name, 10 items, 23 ids, with `format_version`, both snapshot SHAs, the offset
+convention stated explicitly (half-open, zero-based, code points via `Array.from`), and a
+`reconstruction_check` per id.
 
 ## 3. The blocker nobody has stated yet: all 23 are still live
 
@@ -124,11 +145,16 @@ which I am applying:
 I have no authority to pick. Option 1 is the only one that both repairs the links and stays
 inside the per-item mapping model.
 
-**A further wrinkle:** for 20 of the 23 the old text no longer exists anywhere in the
-corpus, so there is nothing to point an alias *at*. Only 3 have a byte-exact live target.
-The other 20 would need either the old text restored or the alias to point at the piece that
-now occupies that slot — which is a *provenance claim*, not a redirect, and should be the
-coordinator's decision, not mine.
+**Correction to that wrinkle, which I got wrong the first time.** I wrote that 20 of the 23
+had "no byte-exact target". That was an artefact of testing whole-row equality. All 22 that
+still exist have a byte-exact target — a slice inside a current row — and `[start,end)` for
+each is in the proposal file. So the alias target does exist for 22 of 23; what is missing is
+an *expressible* alias, for the liveness and V1 reasons above. The 23rd was deleted as a
+duplicate and should have no alias at all.
+
+This also means the destination is a *slice*, not always a whole row. An alias entry that
+points at a row without a range would resolve readers to the wrong text — which is the same
+class of defect as the reused ids themselves. Any applied mapping must carry `start`/`end`.
 
 ---
 
@@ -151,12 +177,18 @@ would imply it can be dropped in, and it cannot.
 
 - Both snapshots resolved in-repo; text read from `data/texts/<xx>.json` via `data/items`
   references at each snapshot, so old and new are compared as the reader saw them.
-- Punctuation/space-insensitive comparison uses `[\s،؛؟.,!?;:ـ\u200c\u200e\u200f]`.
-- Old-text search ran against **every live row of the whole corpus**, not just my items.
-- Fragment guard: 9 old values are punctuation-only fragments with no letters or marks.
-  These normalize to the empty string and would "match" anything, so they are reported as
-  fragments and never counted as found. *My first pass lacked this guard and produced
-  bogus matches; the tally above is from the corrected run.*
+- **Final method is provenance, not string search.** Locate the old piece's slot in the
+  concatenation of the old base-row family, then find which current piece covers that span in
+  the current concatenation of the same family. This attaches each fragment to its actual
+  provenance, so it cannot drift to a lookalike elsewhere in the item.
+- *String search alone was insufficient and I abandoned it.* 7 of 23 are 2-code-point
+  fragments (`". "`, `"! "`) that occur at many offsets, and matching produced impossible
+  destinations — a `r00013` fragment placed inside `r00006`. The coordinator's provenance
+  framing is what corrected this; the earlier "content-lost" conclusion came from the same
+  flawed approach.
+- 3 ids could not be reconstructed by family concatenation alone because their families
+  genuinely changed between snapshots (one gained a trailing `". "`, one lost a duplicate
+  `". "`). Those three are adjudicated individually in the proposal file with their evidence.
 - I did not and cannot verify whether these 23 ids were ever used by a reader. Frequency of
   use is unknown; only that the link is now wrong.
 
@@ -166,5 +198,8 @@ would imply it can be dropped in, and it cannot.
 - Not re-cutting published pieces — the coordinator's instruction, and the ids cannot move
   until the migration supports them.
 - Not choosing between retirement, content-addressing, or acceptance.
-- Not claiming the 20 `content-lost` cases are recoverable; they are not, from the corpus as
-  it stands.
+- Not retiring live ids, and not using an ordinary alias to pick between reused meanings —
+  both explicitly ruled out by the coordinator.
+- Not claiming any case is unrecoverable: 22 of 23 reconstruct byte-exactly. Only
+  `ziyarat-byan-anchh-vars/r00001-sa021c793590ec5ab` has no destination, and that is because
+  its content was deliberately deleted as a duplicate — the correct answer there is no alias.
