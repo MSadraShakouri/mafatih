@@ -466,3 +466,31 @@ Two things this changes for me:
   ("Alias proposal author or frozen base differs", then "Register agent-6 on your
   own branch"). That refusal is the right behaviour; it is not a defect to work
   around.
+
+## Independent check of agent-6's 93 reused-ID mappings
+
+Report: `agent-work/agent-1/proposals/agent-6-reused-id-check.md`. Read-only against
+the six snapshots the map names; no data changed, no live id redirected.
+
+- **Zero discrepancies.** 93 entries / 93 versions / 180 language mappings, of which
+  180 rebuild the old text exactly and all 24 multi-row mappings use consecutive
+  rows in the target layout. Every version's snapshot claim carries the text it
+  names, no snapshot meaning is unrecorded, every destination is live, and
+  `unversioned_link` omits nothing. Their class split (13 / 79 / 1) reproduces.
+- **Lineage evidence is text and position only.** None of the 93 rows carries a
+  `sources` field at any snapshot (0/93), so my "all attributions equal" check was
+  vacuous; occurrence identity rests on exact slice reconstruction, the snapshot
+  occurrence and adjacency. It passes main's guard because the texts genuinely
+  differ, not because attribution corroborates them.
+- **The ids are not globally unique.** 3,488 cases where one of these 93 id strings
+  names a row of another item at one of the six snapshots. The map is item-keyed, so
+  the file is fine, but any resolver must key on `(item, id)`.
+- Ambiguity classes: 1 id with Persian unchanged and Arabic changed, 13
+  prefix-continuations (handled by mapping into adjacent continuation rows), 0 ids
+  with identical text and a different occurrence, no id with more than one earlier
+  meaning.
+
+Nothing migrated by me: `alias-preview` refuses a cross-agent run by design, and the
+142-id migration stays on agent-6's own branch. When an authorized migrated snapshot
+appears, the 16 affected items get a rebind and fresh review; the other 99 of their
+115 are unaffected.
