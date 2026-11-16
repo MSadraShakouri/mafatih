@@ -89,7 +89,7 @@ If the command fails or conflicts, preserve the merge state and report; do not f
 
 Install the existing locked dependencies with `npm ci` if needed, without changing package or lock files. This round is pinned to **Node v22.22.3, ICU 78.2 and Unicode 17.0**: use that exact runtime, not the earlier Node 20 pin. If the runtime or another pin differs, `verify-tool-info` reports the differing fields; do not bypass it. On resume, keep the original registration and base; if a legacy `agent-work/$ME/base.txt` or existing plans record a different or unverifiable base, preserve them and report instead of silently migrating them.
 
-**Mid-round tool upgrade:** merge the coordinator's updated `main` into your own branch before using or reviewing merged-row V2 or V3 records. The updated `tool-info.json` pins the upgraded files; verify it in your worktree as shown below. Keep your existing `$BASE`, registration, assignments, plans and old reviews—this upgrade does **not** move the frozen launch marker or change the assignment manifest. Unchanged V1/V2 results and their matching reviews remain valid; an item changed by a merge needs a fresh independent review. Old clients cannot read V3 records, so the author, reviewer and eventual integrator must all upgrade. Preserve/report any Git conflict; do not force or discard work.
+**Mid-round tool upgrade:** merge the coordinator's updated `main` into your own branch before using or reviewing merged-row V2/V3 records or migrated historical aliases. The updated `tool-info.json` pins the upgraded files; verify it in your worktree as shown below. Keep your existing `$BASE`, registration, assignments, plans and old reviews—this upgrade does **not** move the frozen launch marker or change the assignment manifest. Unchanged results and their matching reviews remain valid; an item changed by a merge or alias migration needs a fresh independent review. Older tools cannot verify migrated aliases correctly, so the author, reviewer and eventual integrator must all upgrade. Preserve/report any Git conflict; do not force or discard work.
 
 ```bash
 node --version                 # must print v22.22.3
@@ -181,9 +181,51 @@ node --import tsx scripts/six-agent.ts merge-rows "$PLAN" "$LAYOUT" --base "$BAS
 
 Each selected language receives exactly one ordinary U+0020 space **in the current canonical text**. This is a proposed text correction, not an original source character or an automatic approval. It is refused if either side is absent, boundary whitespace already exists, or insertion would divide a Unicode grapheme or protected Quran marker. The V3 mapping records each inserted space, its exact destination code-point offset, source-side row IDs and reason, while retaining both exact original texts and their provenance. The reader/search use the corrected current text; old original/output links map around the insertion. V1 and exact V2 remain unchanged.
 
-The command checks ownership, the frozen plan, current result and adjacency; it refuses different row kinds or conflicting row-level source attributions. It writes the layout, item, mapping and pooled values as one guarded worktree operation; it does not `git add` or commit them. A sequence of merges can use the returned `merged_row` with its next neighbor; intermediate links are preserved. Once V2/V3 exists, ordinary `apply` refuses a later revision that would orphan prior row links; request a mapping migration rather than bypassing it. Already-retired V1 revision links that were never recorded cannot be reconstructed.
+The command checks ownership, the frozen plan, current result and adjacency; it refuses different row kinds or conflicting row-level source attributions. It writes the layout, item, mapping and pooled values as one guarded worktree operation; it does not `git add` or commit them. A sequence of merges can use the returned `merged_row` with its next neighbor; intermediate links are preserved. For **V1, V2 and V3**, ordinary `apply` refuses a revision that would orphan a prior row link or reuse its live ID for different text or attribution. Do not bypass this guard. Retired V1 revision IDs can sometimes be recovered from preserved history using the separately checked migration below.
 
 The author must review the grouping and ask the assigned independent reviewer to review the new snapshot. For each V3 inserted space, the reviewer must make a **separate** `spacing_review` decision with a note; accepting only the layout and source reviews is insufficient. Previous reviews for this changed item are stale; unchanged items' reviews remain bound to their existing results. Agent assertions are not human scholarly or rights approval.
+
+### Recover independently evidenced retired row links
+
+The coordinator may authorize an author to migrate a reviewed, metadata-only proposal on the author's **own registered branch**. This is for retired IDs with one unambiguous meaning, not for live IDs whose meaning was reused. It does not edit physical rows or pooled text and never silently redirects a live/reused ID.
+
+The proposal contains existing row objects, pooled text IDs and code-point spans, not quoted passages. The tool accepts agent 6's `historical-row-link-proposal` format directly, or this minimal format (replace every angle-bracketed value with real, independently checked metadata; copy the original row's complete `sources` and optional `kind` if present):
+
+```json
+{
+  "format_version": 1,
+  "protocol": "ar-fa-retired-row-aliases-v1",
+  "author": "agent-N",
+  "base": "<frozen 40-character base>",
+  "target_snapshot": "<40-character authored snapshot>",
+  "items": [{
+    "item": "<assigned-item-id>",
+    "aliases": [{
+      "original": {"id": "<retired-row-id>", "ar": "<existing-pooled-text-id>", "fa": null},
+      "ar": [{"row": "<current-row-id>", "language": "ar", "start": 0, "end": 5, "target_start": 0}],
+      "fa": []
+    }]
+  }]
+}
+```
+
+Keep the proposal outside `data/` and `.git/`. The author, base, current item, mapping, plan and layout must match the proposal's reachable target snapshot; all `data/` changes must be committed first and no merge may be in progress. Each original reference must already exist in the current text pool; missing old text requires a separate evidence-backed repair, not invented text. A shallow Git history is refused. The tool checks the frozen base and **reachable commits since that base through the current HEAD**, not other branches, pre-base history or absent/deleted commits. Bring any other potentially shared history to the coordinator's attention; passing this check does not prove that no outside links exist.
+
+First inspect the metadata-only preview and its `review_sha256` without changing files:
+
+```bash
+PROPOSAL="agent-work/$ME/proposals/historical-row-links.json"
+node --import tsx scripts/six-agent.ts alias-preview "$PROPOSAL" --base "$BASE" --agent "$ME"
+# After inspection, copy the full review_sha256 from the preview:
+CONFIRM='<64-character preview review_sha256>'
+node --import tsx scripts/six-agent.ts alias-migrate "$PROPOSAL" --base "$BASE" --agent "$ME" --confirm "$CONFIRM"
+```
+
+Preview verifies each ID appeared in reachable history, that no observed version has a different text, attribution or frozen **source-occurrence lineage**, and that each proposed target reconstructs the exact old slices. Identical repeated text is not sufficient evidence of the same occurrence. V3 inserted spaces are distinguished from source characters. The confirmation binds the proposal, current records and HEAD; rerun preview after any change. Any ambiguity, incomplete lineage, wrong offset, missing pooled value, live ID, stale snapshot, attribution mismatch or invalid mapping stops the whole migration before writing. Do not guess or force a mapping.
+
+After confirmation, inspect the diff: only the affected `data/row-splits/*.json` records should change. A V1 record is safely promoted to V2; V2/V3 retain compiler-generated mappings and insertions. Later `apply` or merge operations carry these aliases forward when the destinations can be composed exactly; otherwise they stop for a separate migration. Create a new authored snapshot and obtain the assigned independent review: **reviews bound to the changed record are stale**, even if its physical text is unchanged. The preview hash is an operator confirmation, not an independent review or scholarly or rights approval.
+
+A historical ID that is still live with a different meaning, or had multiple historical source meanings, needs a separate **snapshot-version-aware reader**. Ordinary aliases cannot disambiguate an unversioned link. Keep affected items on hold rather than redirecting such links or assuming a user's saved URL has a known origin.
 
 ### Prior snapshot text-pool repair
 

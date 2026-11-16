@@ -1,5 +1,5 @@
 import type { Corpus } from './corpus.js';
-import { validMergeInsertionReason } from './schema.js';
+import { RowSplitRecordSchema, validMergeInsertionReason, type RowSplitRecord } from './schema.js';
 import { codePoints, slicePoints } from './text-ids.js';
 
 /** A proposed space may not split a grapheme or a protected Quran marker. */
@@ -12,6 +12,16 @@ export function spacingBoundaryIssue(left:string,right:string):string|undefined 
   if ([...combined.matchAll(/﴿[^﴿﴾]*﴾/gu)].some(match=>match.index<boundary&&match.index+match[0].length>boundary))
     return 'a proposed boundary space would split a protected Quran marker';
   return undefined;
+}
+
+/** Promote a V1 record without changing its rows or meaning. V1 always targets
+ * offset zero; V2 makes that offset explicit and can hold historical aliases. */
+export function promoteRowSplitRecord(record:RowSplitRecord):RowSplitRecord {
+  if (record.format_version!==1) return structuredClone(record);
+  return RowSplitRecordSchema.parse({...record,format_version:2,
+    rows:record.rows.map(entry=>({...entry,
+      ar:entry.ar.map(segment=>({...segment,target_start:0})),
+      fa:entry.fa.map(segment=>({...segment,target_start:0}))})),aliases:[]});
 }
 
 /** Old row occurrences remain identities even when their physical row is retired. */
@@ -128,7 +138,9 @@ function validateMergedRecord(c: Corpus, itemId: string): string[] {
       for (const segment of segments) {
         const target = current.get(segment.row), start = segment.target_start, length = segment.end-segment.start;
         const key = `${segment.row}\0${segment.language}`;
-        if (!target || (results && !results.includes(segment.row)) || !destinations.has(segment.row) ||
+        // An alias may point at an unchanged live row omitted from `rows`.
+        // Original mappings still must tile their explicit destinations exactly.
+        if (!target || (results && !results.includes(segment.row)) || (!alias && !destinations.has(segment.row)) ||
             segment.start !== offset || segment.end <= segment.start || segment.end > total ||
             start === undefined || !Number.isSafeInteger(start) || start < 0 ||
             (target && target.position < lastPosition) || (start !== undefined && start < (lastEnd.get(key) ?? 0))) {

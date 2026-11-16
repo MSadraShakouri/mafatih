@@ -2,7 +2,7 @@ import { z } from 'zod';
 import type { Corpus } from './corpus.js';
 import { ItemSchema, Key, RowFieldsSchema, RowMergeInsertionSchema, RowSplitRecordSchema, type Item, type Row, type RowSplitRecord } from './schema.js';
 import { AgentPreviewSchema, splitAgentPlan, verifyAgentPreview, type AgentPreview } from './split-agent.js';
-import { spacingBoundaryIssue, validateRowSplitRecords } from './row-splits.js';
+import { promoteRowSplitRecord, spacingBoundaryIssue, validateRowSplitRecords } from './row-splits.js';
 import { codePoints, sha256, slicePoints, textId } from './text-ids.js';
 
 const Language = z.enum(['ar','fa']);
@@ -242,11 +242,20 @@ export function restoreCanonicalItem(c: Corpus, itemId: string) {
   return ItemSchema.parse({...structuredClone(item),rows});
 }
 
-/** Verify the actual result, not just a proposed plan or a reviewer's claim. */
+/** Verify the actual result, not just a proposed plan or a reviewer's claim.
+ * Independently validated historical aliases may extend the compiled record;
+ * they never relax the comparison of the canonical item, original mappings,
+ * insertions, or compiler-generated aliases. */
 export function verifyCanonicalResult(base: Corpus, current: Corpus, plan: unknown, layout: unknown): void {
-  const expected = compileCanonicalSplit(base,plan,layout);
-  if (JSON.stringify(current.items.get(expected.itemId)) !== JSON.stringify(expected.item) ||
-      JSON.stringify(current.rowSplits.get(expected.itemId)) !== JSON.stringify(expected.record)) {
+  const expected = compileCanonicalSplit(base,plan,layout), actual=current.rowSplits.get(expected.itemId);
+  let canonical=expected.record;
+  if (canonical.format_version===1 && actual?.format_version===2) canonical=promoteRowSplitRecord(canonical);
+  const withoutAliases=(record:RowSplitRecord)=>record.format_version===1 ? record : {...record,aliases:[]};
+  const actualAliases=new Map((actual?.aliases ?? []).map(entry=>[entry.original.id,entry]));
+  const compiledAliasesMatch=(canonical.aliases ?? []).every(entry=>
+    JSON.stringify(actualAliases.get(entry.original.id))===JSON.stringify(entry));
+  if (!actual || JSON.stringify(current.items.get(expected.itemId)) !== JSON.stringify(expected.item) ||
+      JSON.stringify(withoutAliases(actual)) !== JSON.stringify(withoutAliases(canonical)) || !compiledAliasesMatch) {
     throw new Error(`${expected.itemId}: actual canonical result or mapping mismatches the compiled plan`);
   }
   for (const [id,value] of expected.texts) if (current.texts.get(id) !== value) throw new Error(`${expected.itemId}: result text mismatch ${id}`);
