@@ -189,3 +189,47 @@ Also new in `2163b5e`: `apply` now refuses a revision that would orphan a
 prior row link **or reuse a live ID for different text or attribution** for
 V1/V2/V3 alike — the guard now catches at authoring time the reuse pattern
 this audit found after the fact.
+
+## Retired-ID proposal converted to the official format; preview 24/24 pass
+
+Coordinator directive (turn 17): convert the 24 retired-ID proposal to the
+official `ar-fa-retired-row-aliases-v1` input using existing row references
+and offsets, run a read-only preview on my registered branch, report exactly,
+keep the 18 reused IDs separate, and do not migrate.
+
+- **File**: `proposals/historical-row-links.json` (format_version 1, protocol
+  `ar-fa-retired-row-aliases-v1`, author agent-2, base `ffa01da9…`, target
+  snapshot `2dff9afa…` — that commit's item/record/plan/layout for all three
+  items are byte-identical to current HEAD).
+- **Originals** are exact historical row objects (id, pooled ar/fa text ids,
+  kind) lifted verbatim from reachable snapshots. **Segments** were recomputed
+  from frozen source-occurrence lineage, not text containment; they came out
+  identical to the turn-13 content-exact segments.
+- **Preview** (`alias-preview`, read-only, registered branch, HEAD `8d95fa35`):
+  status `alias-migration-preview`, **alias_count 24 — all pass**,
+  review_sha256
+  `95060c294704cdeab3f1b46437c3e465ff90afd936a9204272fcd2e0fc46427e`.
+  No files changed; nothing migrated; full output saved at
+  `proposals/historical-row-links.preview.json`.
+- **Structure**: amal-byst-6 ×4 (2 ar + 2 fa pieces of r00002),
+  dua-hrm-hsyn-alyh ×4 (2 ar + 2 fa of r00003), monajat-mnajat-tlb-rvzy ×16
+  (12 of r00002 + 4 of r00003). Two tlb-rvzy r00003 pieces need two segments
+  each — the round-2 re-cut moved the 648 boundary, so one old 680-cp ar text
+  now spans current `r00003-s3a5c66…` [0,648) and `r00003-sf9cbb0…`
+  [648,680), and another old piece maps at target_start 32 inside the new
+  piece.
+- **Item-scoping finding (flagged for the coordinator, as the instructions
+  require)**: the 24 are item-scoped entries over only 16 distinct id
+  strings. Eight ids were minted independently by two items each —
+  `r00002-sb4c…`, `s93ed…`, `s33d1…`, `sa634…` (amal-byst-6 **and**
+  monajat-mnajat-tlb-rvzy) and `r00003-s90ce…`, `se283…`, `sa800…`,
+  `s17ee…` (dua-hrm-hsyn-alyh **and** monajat-mnajat-tlb-rvzy) — because the
+  piece-id hash covers only (row id, ar/fa part refs, kind), not the item.
+  Per item, the lineage checks pass cleanly; interpreted globally the same 8
+  strings carry different historical texts and would be rejected as
+  "different historical meanings require version-aware handling". The same
+  mechanism is live today: 203 current piece ids are shared across 2–23
+  items (plain base ids have always been item-scoped). Any id-based redirect
+  or version-aware reader must resolve ids within an item, never globally.
+- The 18 reused live IDs remain separate in `proposals/reused-row-ids.json`
+  for snapshot-version-aware handling; untouched, per instruction.
