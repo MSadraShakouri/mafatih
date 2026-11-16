@@ -594,3 +594,51 @@ from the code, states the construction is byte-identical at `0585cec, ffa01da9, 
 b2756bb0, 55ef3fe` and every published snapshot tree, and **corrects their own earlier
 "piece ids hash their text" wording, crediting my description.** Good: the mislabel is now
 retired corpus-wide.
+
+## Full retired-ID sweep: 511 found, 210 accepted, 6 disambiguated (22:1x UTC)
+
+8th re-provision, clean.
+
+### The 295 that were never a problem
+First pass called them "old text absent from every current row" → **unresolved**. Wrong test.
+They are rows a **re-split already mapped**: the record's `rows[]` entry lists their child ids.
+`khavas-tmjyd-hq-taaly/r00002` → `results: [s16b235f…, s7912db6…]`, complete mapping, already
+redirectable. Correct test is "is this ID covered by `rows[]` or `aliases[]`?", not "is it a
+live row?". **Inflated the problem ~60%.** Always run the coverage test before the text search.
+
+### Candidate generation must be strict
+210 candidates = exactly ONE destination occurrence after dedup. Anything ambiguous was
+escalated, never guessed. Length profile: 179 are 31+ cp, 29 are 11-30, 2 are 4-10 — the
+**inverse** of the original 28-ID audit, where short punctuation fragments were the hazard.
+Long unique text is the safe end.
+
+### The offset convention — wrong twice, both caught by the tool
+1. **`start`/`end`** are offsets in the **retired row's own published field**. Namaz orphan =
+   `.` → `0..1`, not the frozen `62..63`.
+2. **`target_start`** is in **source-field coordinates** (where the piece sat pre-split), NOT
+   the destination row's own field. Proved by brute force on `amal-adab-vzv`: tested
+   `target_start ∈ {0,14,15,109,110}`, **only 110** previews clean. One-answer test, not a fit.
+
+So one alias entry mixes two coordinate spaces. Recorded in the table in
+`RETIRED-ID-MIGRATION-REPORT.md` §4.
+
+### Proposals (preview-verified, NONE applied)
+| file | items | aliases | review_sha256 |
+|---|---:|---:|---|
+| `proposals/historical-row-links.json` | 58 | 210 | `16201fc784d7…` |
+| `proposals/historical-row-links-ambiguous6.json` | 6 | 6 | `1954e7423084…` |
+
+`historical-row-links-ghdyr.json` deleted — subsumed by the 210 (avoid duplicate alias for one id).
+
+### Held separate, per instruction
+- 23 reused IDs: live, ambiguous, out of scope. Not in either proposal.
+- Agent-4's `ziyarat-aymh-bqya-alyhm` r00001/r00009 and `ziyarat-item-12` r00001: **still
+  open**. Those are live rows needing slot/role correction. The tool accepting a *different*
+  id in aymh-bqya (`r00012-sb2130…`) is not approval of them — do not let that be read as
+  coverage.
+
+### Self-check before reporting (a passing preview does not prove correctness)
+- `start`/`end` length must equal the retired text length.
+- `target_start + (end-start) <= destination source span`.
+- I re-derived `target_start` for 2 rejected cases by brute-forcing 5 candidate values.
+- `data/` verified untouched (`git diff --stat -- data/` empty) before committing.
