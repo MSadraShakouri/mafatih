@@ -1,7 +1,63 @@
-# Proposal: recover agent-6's retired row links
+# agent-6's row links: retired IDs migrated, reused IDs still open
 
-Status: **proposal only, nothing applied to `data/`.** No row was re-split, no
-guard was bypassed and no pinned tool was changed to produce this.
+Status (2026-11-15): **the 142 retired IDs are migrated to durable aliases** in
+snapshot `f8dca07be7536bf19ea17c869bf098385002099a`, with the coordinator's
+official command and on the coordinator's authorization. **The 93 reused IDs
+are untouched and still open. All 20 affected items stay held.** No alias was
+written by hand, no row was re-cut, no guard was bypassed.
+
+## The migration (2026-11-15)
+
+- **Scope authorized:** only the 142 already-retired IDs of
+  `historical-row-links.json`, in 16 items, at snapshot `3e35f4ca`. Not
+  covered: reused or live IDs, role corrections, re-cuts, release.
+- **Before:** the item, mapping, plan and layout of all 16 items were identical
+  to `3e35f4ca`. A fresh `alias-preview` at branch tip `9e36fd49` accepted
+  exactly that scope: 142 aliases in 16 items, each alias object identical to
+  the proposal. Confirmation
+  `a08e695b5f5d6765a60ddbb8cd75d87d2b517d4461b8bcf61c65f3df0f7d5396`.
+- **Run:** `alias-migrate` with that confirmation; commit `0d6a78ca`.
+- **What changed:** 16 files, the mapping records `data/row-splits/<item>.json`
+  of the 16 items, and nothing else. 142 aliases added; the 88 aliases that
+  were there are untouched; 6 records promoted from V1 to V2. No item file, no
+  row, kind or text, no pooled text, no plan, no layout and none of the 91
+  proposed spaces in these records changed.
+- **Checks after:**
+  - `scripts/check-alias-migration.cjs`: 11 of 11, both for the worktree
+    against the commit before and for the new snapshot against `3e35f4ca`.
+    Every added alias rebuilds its old text from the current rows, code point
+    by code point.
+  - `scripts/audit-migrated-links.mjs` (the project's loader, validator and
+    resolver): 0 validator errors; all 142 retired IDs resolve; the 93 reused
+    IDs keep their current meaning and none was given an alias.
+  - `scripts/recompute-row-links.cjs` against the new snapshot, in a scratch
+    worktree: 0 retired IDs left; the same 93 reused IDs in 9 items.
+  - `npm run validate` passes (unreferenced pooled values fall from 85 to 48,
+    because the aliases now refer to the old texts). `audit-authored`: 115 of
+    115. `npm run check`: 283 tests, 280 pass, 0 fail, 3 skipped.
+- **New author snapshot:** `f8dca07be7536bf19ea17c869bf098385002099a`
+  (author-ready, child of `3e35f4ca`; differs from it in the 16 mapping
+  records only). agent-1's reviews of these 16 items are stale and are to be
+  redone; his other 99 reviews are not affected.
+- **Record with the per-item evidence:** `alias-migration-record.json` (for
+  each item: aliases added, format before and after, hashes of the mapping
+  record before and after, the retired IDs).
+
+Files kept as they were, as the evidence of what was migrated:
+`historical-row-links.json` (the proposal the migration ran on, target
+`3e35f4ca`). `reused-row-ids.json` is recomputed against `f8dca07b`; its 93
+mappings are the same, only the snapshot labels and totals changed.
+
+Everything below this line is the proposal as it stood **before** the
+migration. It is kept for the record and for the part on the reused IDs, which
+is still current.
+
+---
+
+# Proposal (before the migration): recover agent-6's retired row links
+
+Status at the time: proposal only, nothing applied to `data/`. No row was
+re-split, no guard was bypassed and no pinned tool was changed to produce this.
 
 Data in this directory:
 
