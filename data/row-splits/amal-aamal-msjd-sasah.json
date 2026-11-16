@@ -1,5 +1,5 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "amal-aamal-msjd-sasah",
   "author": "agent-6",
   "baseline_item_sha256": "14f678099e7484b1a9712cb4d8aca8da6361063eb345f8f94ddfb2991ea0765c",
@@ -23,19 +23,22 @@
           "row": "r00001-sc5e9d9539705078a",
           "language": "fa",
           "start": 0,
-          "end": 192
+          "end": 192,
+          "target_start": 0
         },
         {
           "row": "r00001-sd0076416ed435839",
           "language": "fa",
           "start": 192,
-          "end": 262
+          "end": 262,
+          "target_start": 0
         },
         {
           "row": "r00001-s8939275b275c817a",
           "language": "fa",
           "start": 262,
-          "end": 417
+          "end": 417,
+          "target_start": 0
         }
       ]
     },
@@ -57,25 +60,29 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 256
+          "end": 256,
+          "target_start": 0
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 256,
-          "end": 540
+          "end": 540,
+          "target_start": 0
         },
         {
           "row": "r00002-se090ec1c15d74b91",
           "language": "fa",
           "start": 540,
-          "end": 774
+          "end": 774,
+          "target_start": 0
         },
         {
           "row": "r00002-sb8a7c4ea61e1d0eb",
           "language": "fa",
           "start": 774,
-          "end": 1021
+          "end": 1021,
+          "target_start": 0
         }
       ]
     },
@@ -98,31 +105,56 @@
           "row": "r00003-s1828851db03b603e",
           "language": "fa",
           "start": 0,
-          "end": 210
+          "end": 210,
+          "target_start": 0
         },
         {
           "row": "r00003-s1b27bb8c75bc48e1",
           "language": "fa",
           "start": 210,
-          "end": 393
+          "end": 393,
+          "target_start": 0
         },
         {
           "row": "r00003-sb2788ad0365e5e91",
           "language": "ar",
           "start": 393,
-          "end": 453
+          "end": 453,
+          "target_start": 0
         },
         {
           "row": "r00003-sd8fe963a13fe0305",
           "language": "fa",
           "start": 453,
-          "end": 563
+          "end": 563,
+          "target_start": 0
         },
         {
           "row": "r00003-sb355d8466a6ab016",
           "language": "fa",
           "start": 563,
-          "end": 873
+          "end": 873,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-sd6c1d7af35072d21",
+        "ar": null,
+        "fa": "t64a49e4aa71b97b0c55c8b18",
+        "kind": "quotation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00002-se090ec1c15d74b91",
+          "language": "fa",
+          "start": 0,
+          "end": 234,
+          "target_start": 0
         }
       ]
     }

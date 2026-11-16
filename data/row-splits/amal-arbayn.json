@@ -1,5 +1,5 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "amal-arbayn",
   "author": "agent-6",
   "baseline_item_sha256": "53aebd03c0722ee1f337fa0313b337fab9847fd29295bd08e733223ba759d049",
@@ -23,19 +23,22 @@
           "row": "r00001-sac8d3a493e4cbc88",
           "language": "fa",
           "start": 0,
-          "end": 11
+          "end": 11,
+          "target_start": 0
         },
         {
           "row": "r00001-sd0076416ed435839",
           "language": "fa",
           "start": 11,
-          "end": 330
+          "end": 330,
+          "target_start": 0
         },
         {
           "row": "r00001-s8939275b275c817a",
           "language": "fa",
           "start": 330,
-          "end": 375
+          "end": 375,
+          "target_start": 0
         }
       ]
     },
@@ -55,13 +58,35 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 209
+          "end": 209,
+          "target_start": 0
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 209,
-          "end": 348
+          "end": 348,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s70b05d1806fceca6",
+        "ar": null,
+        "fa": "t1827e95961b5de713ea16440",
+        "kind": "quotation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00002-s16b235f3fb54b1a5",
+          "language": "fa",
+          "start": 0,
+          "end": 209,
+          "target_start": 0
         }
       ]
     }
