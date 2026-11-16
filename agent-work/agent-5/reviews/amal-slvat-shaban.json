@@ -44,56 +44,56 @@
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Persian procedural lead-in and Arabic recitation are separated, but the following recitation is still bundled into a very long multiclause row with a cross-row continuation. Inspect and cut corresponding clauses finer before migration."
+        "note": "The merged mfc62a9fa6de76a4527937b07 contains two independently introduced parallel blessings; their second opening is a specific optional paired semantic boundary. Preserve its published merged ID. Other distinct blessing rows need not be split merely for length."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The Persian rendering is correctly recitation but remains bundled with multiple clauses and a continuation in a large merged row; inspect finer corresponding cuts."
+        "note": "The merged mfc62a9fa6de76a4527937b07 contains two independently introduced parallel blessings; their second opening is a specific optional paired semantic boundary. Preserve its published merged ID. Other distinct blessing rows need not be split merely for length."
       },
       {
         "row": "r00005",
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Recitation is paired and the cross-row joins are sensible, but the remaining output rows contain many separable clauses rather than short paired passages."
+        "note": "The merged mfc62a9fa6de76a4527937b07 contains two independently introduced parallel blessings; their second opening is a specific optional paired semantic boundary. Preserve its published merged ID. Other distinct blessing rows need not be split merely for length."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "Persian recitation is now paired and correctly classified; inspect finer matched clauses, especially the long final cross-row passage."
+        "note": "The merged mfc62a9fa6de76a4527937b07 contains two independently introduced parallel blessings; their second opening is a specific optional paired semantic boundary. Preserve its published merged ID. Other distinct blessing rows need not be split merely for length."
       },
       {
         "row": "r00006",
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "Cross-row continuation is joined, but the result combines numerous distinct recitation clauses that merit finer boundaries."
+        "note": "The existing cross-row grouping is coherent, but Persian punctuation at the start of mfaa6f3934de456f96fcd3edf needs a supported link-preserving boundary review. Do not move or delete punctuation without a guarded mapping."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The cut before the next rendering leaves a comma at the start of the next row rather than at the end of the preceding phrase. Inspect and move the boundary without changing the punctuation; further paired clauses need finer splitting."
+        "note": "The existing cross-row grouping is coherent, but Persian punctuation at the start of mfaa6f3934de456f96fcd3edf needs a supported link-preserving boundary review. Do not move or delete punctuation without a guarded mapping."
       },
       {
         "row": "r00007",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Cross-row continuation is joined, but later long recitation combines many meaningful clauses and should be split more finely with its existing Persian."
+        "note": "The remaining separately introduced blessings are coherent paired units. Withdraw any request for finer subdivision based merely on length; preserve their current wording and links."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The existing translation is paired and correctly classified; later long recitation combines many meaningful clauses and should be split more finely."
+        "note": "The remaining separately introduced blessings are coherent paired units. Withdraw any request for finer subdivision based merely on length; preserve their current wording and links."
       }
     ],
     "punctuation": [],
@@ -117,7 +117,7 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The procedural/narrative roles and most AR/FA pairings are improved. r00004–r00007 retain very long multiclause recitations; inspect finer matched cuts. r00006/fa has a comma stranded at the start of the following row. Existing V3 aliases constrain later revisions: preserve all recorded links and request a supported mapping migration if the tool cannot revise cuts."
+    "note": "The procedural/narrative roles and most bilingual pairings are improved. The first merged recitation contains two explicitly introduced paired blessings, a specific candidate semantic cut; other coherent blessings need no split solely because they are long. r00006/fa punctuation is stranded at the start of the following merged row and needs independent, link-preserving handling. Existing V3 aliases constrain later revisions: preserve every recorded link and request supported mapping migration if ordinary tools cannot revise cuts."
   },
   "spacing_review": [
     {
