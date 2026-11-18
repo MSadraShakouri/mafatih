@@ -642,3 +642,30 @@ So one alias entry mixes two coordinate spaces. Recorded in the table in
 - `target_start + (end-start) <= destination source span`.
 - I re-derived `target_start` for 2 rejected cases by brute-forcing 5 candidate values.
 - `data/` verified untouched (`git diff --stat -- data/` empty) before committing.
+
+## target_start corrected: destination-field offset (20:0x UTC, 9th re-provision)
+
+Coordinator corrected my §4. I had claimed `target_start` is in **frozen source coordinates**.
+**Wrong.** It is an offset in the **destination row's own field**.
+
+**Why I believed the wrong thing — the trap worth remembering.** For `amal-adab-vzv` the
+destination row is the *tail* of the field: record maps source `[95,206)` → destination field
+of length `111`. So destination offset `110` and frozen offset `205` are the same character,
+and `95 + 110 = 205` holds by coincidence of geometry. My brute force over
+`{0,14,15,109,110}` could **reject** 15 but could not **distinguish** the two models.
+**A one-answer test is not an identification test.** I wrote it up as if it identified.
+
+**What actually catches this class of error:** read the destination field directly and print
+the character at both candidate offsets. `destination[15]` = `"و"` = `frozen[110]` — that is
+why 15 was refused, and it is invisible in an accept/reject loop.
+
+**Correction is to the explanation only; no proposal value changed.** 110 stays.
+
+### Recheck + staleness
+- All **216** aliases re-verified: `destination_field[target_start : target_start+(end-start)]`
+  == retired pooled text → **216/216 byte-exact, 0 problems** (`scratch/recheck-offsets.mjs`).
+- Both proposals had `target_snapshot` one commit stale (`74f801a6` vs HEAD `e1a29f7f`).
+  Preview tolerates it by binding `history_head` separately, but the instructions call a stale
+  snapshot a stop condition — **rebound both to HEAD** and re-ran previews.
+- All 58 affected records are V1 → an authorized migration is a **V1→V2 promotion**.
+- `data/` untouched, verified by `git diff --stat -- data/`.

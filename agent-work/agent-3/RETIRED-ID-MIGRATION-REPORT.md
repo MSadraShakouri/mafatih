@@ -71,30 +71,55 @@ Proposal: `proposals/historical-row-links-ambiguous6.json`
 | `ziyarat-aymh-bqya-alyhm/r00012-sb2130a49d3b9105e` | `.` | `r00012-se62b3f362c1c151a` ar | 261 |
 | `ziyarat-chharm-shbhay-qdr/r00001-sa021c793590ec5ab` | `ابن` | `r00001-s8939275b275c817a` fa | 414 |
 
-## 4. The offset convention — I had it wrong twice, and both errors were caught by the tool
+## 4. The offset convention — corrected
 
-Your reminder is exactly where I was going wrong, in two distinct ways. Recording both because
-the second is not obvious from the instruction.
-
-**Error 1 — which string `start`/`end` index.** I first used frozen source offsets (`start:62`
-for the namaz orphan). Refused. `start`/`end` are offsets in **the retired row's own field**,
-which for that orphan is the single character `.` → `start:0, end:1`.
-
-**Error 2 — which string `target_start` indexes.** I then assumed it was the offset in the
-destination row's own field, and computed `110 - 95 = 15` for `amal-adab-vzv`. Refused.
-`target_start` is in **source-field coordinates**: the offset where the piece sat in the
-original pre-split field. `110` was accepted, `15` was not.
-
-So the two ends of one alias entry use *different* coordinate spaces:
+**Both coordinates are field offsets. Neither is a frozen source offset.**
 
 | field | indexes | example |
 |---|---|---|
-| `start` / `end` | the historical row's own published field | `0..1` for a 1-cp piece |
-| `target_start` | the frozen source field, as the current record segments it | `110`, `62`, `261` |
+| `start` / `end` | the **retired row's own published field** | `0..1` for the 1-cp piece `.` |
+| `target_start` | the **destination row's own published field** | `110` in a 111-cp field |
 
-I confirmed this by brute force rather than inference: for `amal-adab-vzv` I tested
-`target_start ∈ {0, 14, 15, 109, 110}` and **only 110 previews clean**. That is a one-answer
-test, not a fit.
+### What I got wrong, and why the brute force misled me
+
+I had two wrong models in sequence, and the second one survived a test that looked conclusive.
+
+**First** I used frozen source offsets for `start`/`end` (`start:62` for the namaz orphan).
+Refused. Correct value is `0..1`, because that row's own field is the single character `.`.
+
+**Then** I claimed `target_start` was in "source-field coordinates" and that `target_start:110`
+was accepted for `amal-adab-vzv` because `110` was the *source* offset. **That was wrong.**
+
+The truth is that the two coincide numerically in this case, because the destination row is
+the field's tail: the record maps source `[95,206)` into a destination field of length
+`206 - 95 = 111`. So a `target_start` of `110` is simultaneously "destination offset 110" and
+"frozen offset 205". My brute force over `{0, 14, 15, 109, 110}` therefore could not
+distinguish the two models — **it was a test that could only reject, not identify.**
+
+Worse, my "`110 - 95 = 15`" computation was a category error: subtracting the destination's
+source start from an offset I had mis-derived. Frozen offset 110 is the letter `و`, and
+destination offset 15 is that same `و` — which is exactly why `15` was refused.
+
+### The correct reading, verified
+
+`amal-adab-vzv`, destination `r00004-sa44b8f05e3e4e602`:
+
+- record segment: source `[95,206)` → destination field length **111**; `206 - 95 = 111` ✓
+- `destination[110]` is `"."` and `frozen[205]` is `"."` — **the same character**; `95 + 110 = 205` ✓
+- `destination[15]` is `"و"`, matching `frozen[110]` — a different character, correctly rejected
+
+So `target_start` is an offset in the destination row's field, and the accepted `110` stands.
+**No proposal value changes.** This section previously stated the opposite; the correction is
+to the explanation, not to the data.
+
+### Recheck under the corrected convention
+
+All **216** aliases were re-verified with the destination field read directly out of
+`data/items` + `data/texts` at HEAD, asserting for every segment:
+`destination_field[target_start : target_start + (end - start)] == retired pooled text`.
+
+Result: **216 of 216 byte-exact, 0 problems.** Script:
+`agent-work/agent-3/scratch/recheck-offsets.mjs`.
 
 ## 5. What the tool does and does not establish
 
@@ -118,3 +143,56 @@ assessed" and I am not widening its claim.
   change, not an alias, and the tool's acceptance of a different ID in the same item
   (`r00012-sb2130…` in aymh-bqya) must not be read as approval of those.
 - No re-cut and no migration applied.
+
+---
+
+## 7. Correction log — offset explanation (this revision)
+
+The coordinator corrected §4. My stated model was wrong:
+
+- **I wrote:** `target_start` is in frozen source coordinates.
+- **Correct:** `target_start` is an offset in the **destination row's own field**.
+
+The value `110` for `amal-adab-vzv` was right and is unchanged. What was wrong was my account
+of *why* it is right, and that matters because a wrong model produces wrong offsets the moment
+a destination row stops being the field's tail.
+
+The coordinator's arithmetic, verified independently: destination covers frozen `[95,206)`,
+so destination offset `110` corresponds to frozen `205`, and `95 + 110 = 205`. Both positions
+hold `"."`. The destination field length `206 − 95 = 111` matches the row's actual length.
+
+**Why my brute force did not catch this.** Because the destination row is the tail of the
+field, "destination offset" and "frozen offset" coincide numerically for the accepted answer
+only by accident of `95 + 110 = 205`. Testing `{0, 14, 15, 109, 110}` could reject `15` but
+could not distinguish "destination offset" from "frozen offset". I treated a one-answer test
+as an identification test; it was not.
+
+**What did catch it**: reading the destination field directly. `destination[15]` is `"و"` and
+`frozen[110]` is `"و"` — the same letter, which is precisely why `15` failed.
+
+### Recheck performed
+
+Every one of the **216** aliases across both proposals was re-verified with the destination
+field read from `data/items` + `data/texts` at HEAD:
+
+> for each segment, `destination_field[target_start : target_start + (end − start)]`
+> must equal the retired row's pooled text.
+
+**216 of 216 byte-exact. 0 problems.** Script: `scratch/recheck-offsets.mjs`.
+
+### Staleness fixed
+
+Both proposals had `target_snapshot` = `74f801a6`, one commit behind HEAD `e1a29f7f`. The
+preview accepts it because it binds `history_head` separately, but the instructions call a
+stale snapshot a stop condition, so I rebound both to HEAD and re-ran the previews:
+
+| proposal | items | aliases | `review_sha256` |
+|---|---:|---:|---|
+| `historical-row-links.json` | 58 | 210 | `ddb304e746db…` |
+| `historical-row-links-ambiguous6.json` | 6 | 6 | `dc289ceb084d…` |
+
+Both `target_snapshot` and `history_head` are now `e1a29f7f`. All 58 affected records are
+`format_version: 1`, so an authorized migration would be a **V1 → V2 promotion** for each,
+which the tool does and which retires the V1 record's shape, not its physical rows.
+
+**Still not migrated.** No `data/` file has changed — verified with `git diff --stat -- data/`.
