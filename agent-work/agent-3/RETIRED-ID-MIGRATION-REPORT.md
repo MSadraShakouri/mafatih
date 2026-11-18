@@ -184,15 +184,27 @@ field read from `data/items` + `data/texts` at HEAD:
 
 Both proposals had `target_snapshot` = `74f801a6`, one commit behind HEAD `e1a29f7f`. The
 preview accepts it because it binds `history_head` separately, but the instructions call a
-stale snapshot a stop condition, so I rebound both to HEAD and re-ran the previews:
+stale snapshot a stop condition, so I rebound both and re-ran the previews:
 
-| proposal | items | aliases | `review_sha256` |
+`target_snapshot` cannot name the commit that contains the proposal — that is self-referential
+— so rebinding had to happen in a *following* commit. Both are now `target_snapshot` =
+`faf72033` (commit `b2c7a062`, which changes only that one field in each proposal file).
+`data/` is byte-identical between `e1a29f7f` and `faf72033` (verified: `git diff --stat
+e1a29f7f HEAD -- data/` is empty), and the tool requires only that the target be an
+**ancestor** of HEAD and that item, mapping, plan and layout match it — which they do.
+
+| proposal | items | aliases | `review_sha256` at `history_head` `25600624` |
 |---|---:|---:|---|
-| `historical-row-links.json` | 58 | 210 | `ddb304e746db…` |
-| `historical-row-links-ambiguous6.json` | 6 | 6 | `dc289ceb084d…` |
+| `historical-row-links.json` | 58 | 210 | `d0f46c9d03ab…` |
+| `historical-row-links-ambiguous6.json` | 6 | 6 | `584e53f62676…` |
 
-Both `target_snapshot` and `history_head` are now `e1a29f7f`. All 58 affected records are
-`format_version: 1`, so an authorized migration would be a **V1 → V2 promotion** for each,
-which the tool does and which retires the V1 record's shape, not its physical rows.
+**The `review_sha256` is not a stable identifier — do not cite it as one.** It is
+`sha256({protocol, head, bundle, before})`, so it changes with every commit, even when the
+aliases are byte-identical: this same set of 210 hashed to `16201fc7…`, then `ddb304e746db…`,
+then `d0f46c9d03ab…` as HEAD advanced. It is an **operator confirmation token**, valid only
+for the HEAD it was computed at. The operational consequence: `alias-preview` and the
+`alias-migrate --confirm` that consumes the hash must run back-to-back with **no commit in
+between**, since committing the proposal itself moves HEAD and invalidates the hash. The
+stable identity of a proposal is its alias set, not its hash.
 
 **Still not migrated.** No `data/` file has changed — verified with `git diff --stat -- data/`.

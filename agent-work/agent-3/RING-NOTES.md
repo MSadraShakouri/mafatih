@@ -669,3 +669,30 @@ why 15 was refused, and it is invisible in an accept/reject loop.
   snapshot a stop condition — **rebound both to HEAD** and re-ran previews.
 - All 58 affected records are V1 → an authorized migration is a **V1→V2 promotion**.
 - `data/` untouched, verified by `git diff --stat -- data/`.
+
+## review_sha256 is an ephemeral token, not a proposal identity
+
+`alias-preview` returns `review_sha256 = sha256({protocol, head, bundle, before})`. It binds
+`head`, so it changes on **every commit** even when the alias set is byte-identical: the same
+210 aliases produced `16201fc7…` → `ddb304e746db…` → `d0f46c9d03ab…` as HEAD advanced through
+`74f801a6` → `e1a29f7f` → `25600624`.
+
+Consequence for the operator: `alias-preview` and the `alias-migrate --confirm <hash>` that
+consumes it must run **back-to-back with no commit in between**. Committing the proposal file
+itself moves HEAD and silently invalidates the hash, so the confirm fails with "confirmation
+hash is missing or stale" — which is the tool working as intended, not a broken proposal.
+
+Never cite a `review_sha256` in a report or message as if it identified the proposal; it
+identifies *(proposal, HEAD)* at one instant. The stable identity is the alias set.
+
+## target_snapshot cannot point at its own commit
+
+`alias-preview`/`alias-migrate` only require `git merge-base --is-ancestor target HEAD`, plus
+that item/mapping/plan/layout match the target tree. So `target_snapshot` must name a commit
+**before** the one that adds the proposal — rebinding it is inherently a follow-up commit.
+`b2c7a062` exists only to advance `target_snapshot` to `faf72033`; it touches nothing else.
+Verified harmless because `git diff --stat e1a29f7f b2c7a062 -- data/` is empty: the data the
+proposal describes is unchanged, so the target is still exact where it matters.
+
+Stale-snapshot check to run after *every* commit:
+  git log -1 --format=%H  vs  jq -r .target_snapshot <proposal>
