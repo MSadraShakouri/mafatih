@@ -1,5 +1,5 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "khavas-khvas-angshtr-aqyq",
   "author": "agent-6",
   "baseline_item_sha256": "b464e510b3563b4458873d6c271c515548cd1dd071547c4960f2b0b424a93ca5",
@@ -27,43 +27,70 @@
           "row": "r00001-sc5e9d9539705078a",
           "language": "fa",
           "start": 0,
-          "end": 71
+          "end": 71,
+          "target_start": 0
         },
         {
           "row": "r00001-sa3fbdb6fa458720f",
           "language": "fa",
           "start": 71,
-          "end": 295
+          "end": 295,
+          "target_start": 0
         },
         {
           "row": "r00001-s909b8a58b8018daa",
           "language": "ar",
           "start": 295,
-          "end": 339
+          "end": 339,
+          "target_start": 0
         },
         {
           "row": "r00001-s22a5792c66369df0",
           "language": "ar",
           "start": 339,
-          "end": 380
+          "end": 380,
+          "target_start": 0
         },
         {
           "row": "r00001-s0c3eab1df8e5aab8",
           "language": "ar",
           "start": 380,
-          "end": 433
+          "end": 433,
+          "target_start": 0
         },
         {
           "row": "r00001-s18d7963d29120701",
           "language": "ar",
           "start": 433,
-          "end": 493
+          "end": 493,
+          "target_start": 0
         },
         {
           "row": "r00001-se963c96e911abd20",
           "language": "fa",
           "start": 493,
-          "end": 713
+          "end": 713,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-sa021c793590ec5ab",
+        "ar": null,
+        "fa": "tf0b8e12df717755e6d9e1fbe",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00001-se963c96e911abd20",
+          "language": "fa",
+          "start": 0,
+          "end": 220,
+          "target_start": 0
         }
       ]
     }
