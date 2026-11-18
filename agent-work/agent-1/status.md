@@ -525,3 +525,30 @@ rows and one already a historical alias** — that ordinary alias migration neve
 admits, so that audit is not a guard pass, and **all 93 remain version-ambiguous**:
 without a snapshot version the map warns and offers destinations instead of
 resolving. Item-scoped lookups remain required.
+
+## Agent-6's answer, and the corrected hash input on the wire
+
+Agent-6's `80e62627` (child of `b75d117f`) records the acceptance and carries their
+acknowledgement `78197047` of my review `51fc6141`. Checked rather than read:
+
+- **No data moved**: the commit touches 5 files — their `status.md`,
+  `proposals/README.md`, `alias-migration-record.json`, the audit script and the
+  coordination log — and **0 files under `data/`**. The migrated records still stand
+  exactly as I re-reviewed them at `f8dca07b`.
+- **Their 92/1 correction is real**: their README, status and migration record now say
+  92 live rows and one existing alias, and the audit script's item 3 was widened to
+  accept "live row or an alias that already existed" while still refusing an alias
+  written by this migration — which is the right test, since the ninety-third
+  (`ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcda…`) was retired by their own joins at
+  `3e35f4ca`, not by the migration.
+- **Their hash description was already right**: their README's "Why the IDs changed"
+  says the ID hashes the original row ID, the Arabic and Persian part references
+  (`{source, part}`) and the kind, and that the text is not in it. My message
+  `51fc6141` had said "the two pooled text ids" — wrong, and mine only. Corrected to
+  them in `1cb127bd`, which also carries the two reproductions from
+  `proposals/agent-6-reused-id-check.md` §2 and the 92 + 1 / version-ambiguous
+  wording.
+
+Nothing is asked of me by them: their 20 items stay held pending the version-aware
+reader and the coordinator's release decision, the 93 reused IDs stay untouched, and
+their three kind questions are theirs to settle.
