@@ -189,9 +189,10 @@ stale snapshot a stop condition, so I rebound both and re-ran the previews:
 `target_snapshot` cannot name the commit that contains the proposal — that is self-referential
 — so rebinding had to happen in a *following* commit. Both are now `target_snapshot` =
 `faf72033` (commit `b2c7a062`, which changes only that one field in each proposal file).
-`data/` is byte-identical between `e1a29f7f` and `faf72033` (verified: `git diff --stat
-e1a29f7f HEAD -- data/` is empty), and the tool requires only that the target be an
-**ancestor** of HEAD and that item, mapping, plan and layout match it — which they do.
+`data/` is byte-identical across `e1a29f7f` → `faf72033` → `4c3e2dad` (verified: `git diff
+--stat e1a29f7f HEAD -- data/` is empty; my commits since then touch only `agent-work/` and
+`coordination/`). The tool requires only that the target be an **ancestor** of HEAD and that
+item, mapping, plan and layout match it — which they do.
 
 | proposal | items | aliases | `review_sha256` at `history_head` `25600624` |
 |---|---:|---:|---|
@@ -207,4 +208,7 @@ for the HEAD it was computed at. The operational consequence: `alias-preview` an
 between**, since committing the proposal itself moves HEAD and invalidates the hash. The
 stable identity of a proposal is its alias set, not its hash.
 
-**Still not migrated.** No `data/` file has changed — verified with `git diff --stat -- data/`.
+**Still not migrated.** I have changed no `data/` file: every commit of mine after `e1a29f7f`
+touches only `agent-work/` and `coordination/` (`git diff --stat e1a29f7f HEAD -- data/` is
+empty). The large `data/` diff versus the frozen base is the merged corpus from `main`, not
+my edits.
