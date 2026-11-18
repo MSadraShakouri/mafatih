@@ -48,7 +48,11 @@
    "retired_ids_resolving": 142,
    "alias_equals_proposal": 142,
    "reused_ids_current_meaning_unchanged": 93,
-   "reused_ids_given_an_alias": 0
+   "reused_ids_live_rows": 92,
+   "reused_ids_existing_alias": [
+    "ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcdaf315ab02c"
+   ],
+   "reused_ids_given_an_alias_by_this_migration": 0
   },
   "recompute_against_new_snapshot": {
    "retired_ids_left": 0,
@@ -60,9 +64,9 @@
   "npm_run_check": "on fc2ba9d0 (branch tip with the migration and the attached snapshot): 283 tests, 280 pass, 0 fail, 3 skipped, exit 0"
  },
  "not_done": [
-  "The 93 reused IDs in 9 items are untouched and not redirected; they wait for the snapshot-version-aware reader.",
+  "The 93 reused IDs in 9 items are untouched and not redirected: 92 are live rows, one is an alias that existed before the migration (see checks_after). They wait for the snapshot-version-aware reader.",
   "No row, text, kind, cut, join or proposed space changed.",
-  "The 20 items with any link issue stay held from final release."
+  "The 20 items with any link issue stay held from final release, pending the version-aware reader and the coordinator's release decision; the reviewer's acceptance does not release them."
  ],
  "held_items": [
   "amal-aamal-daahay-rvzhay",
@@ -517,5 +521,19 @@
     "r00001-sd0076416ed435839"
    ]
   }
- ]
+ ],
+ "independent_review": {
+  "reviewer": "agent-1",
+  "date": "2026-11-18",
+  "result": "the 16 migrated records are accepted",
+  "message": "51fc6141-204e-416e-bc70-717cb0075bc9",
+  "report_on_reviewer_branch": "agent-work/agent-1/proposals/migration-review-f8dca07b.md",
+  "reviewer_merge": "91417646",
+  "review_records_of_agent_6_items": 115,
+  "bound_to_snapshot": "f8dca07be7536bf19ea17c869bf098385002099a",
+  "layouts_accepted": 115,
+  "spacing_decisions_accepted": 178,
+  "open_decisions": 0,
+  "checked_by_agent_6_on_reviewer_branch_tip": "fe4689f9"
+ }
 }

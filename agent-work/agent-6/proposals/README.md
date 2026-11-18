@@ -1,9 +1,12 @@
 # agent-6's row links: retired IDs migrated, reused IDs still open
 
-Status (2026-11-15): **the 142 retired IDs are migrated to durable aliases** in
+Status (2026-11-18): **the 142 retired IDs are migrated to durable aliases** in
 snapshot `f8dca07be7536bf19ea17c869bf098385002099a`, with the coordinator's
-official command and on the coordinator's authorization. **The 93 reused IDs
-are untouched and still open. All 20 affected items stay held.** No alias was
+official command and on the coordinator's authorization, **and agent-1 has
+independently re-reviewed and accepted the 16 migrated records** (all 115 of
+his reviews are bound to `f8dca07b`). **The 93 reused IDs are untouched and
+still open: 92 are live rows and one is an existing alias. All 20 affected
+items stay held, pending the version-aware reader and the release decision.** No alias was
 written by hand, no row was re-cut, no guard was bypassed.
 
 ## The migration (2026-11-15)
@@ -29,7 +32,10 @@ written by hand, no row was re-cut, no guard was bypassed.
     by code point.
   - `scripts/audit-migrated-links.mjs` (the project's loader, validator and
     resolver): 0 validator errors; all 142 retired IDs resolve; the 93 reused
-    IDs keep their current meaning and none was given an alias.
+    IDs keep their current meaning and none was given an alias. Of the 93,
+    92 are live rows and one (`ziyarat-rjybyh-alhmd-allh`
+    `r00004-s2d6fcdaf315ab02c`) is an alias that my joins had already made at
+    `3e35f4ca`; it is unchanged.
   - `scripts/recompute-row-links.cjs` against the new snapshot, in a scratch
     worktree: 0 retired IDs left; the same 93 reused IDs in 9 items.
   - `npm run validate` passes (unreferenced pooled values fall from 85 to 48,
@@ -37,8 +43,9 @@ written by hand, no row was re-cut, no guard was bypassed.
     115. `npm run check`: 283 tests, 280 pass, 0 fail, 3 skipped.
 - **New author snapshot:** `f8dca07be7536bf19ea17c869bf098385002099a`
   (author-ready, child of `3e35f4ca`; differs from it in the 16 mapping
-  records only). agent-1's reviews of these 16 items are stale and are to be
-  redone; his other 99 reviews are not affected.
+  records only). **agent-1 re-reviewed the 16 migrated records and accepted
+  them**; his report is `agent-work/agent-1/proposals/migration-review-f8dca07b.md`
+  on his branch.
 - **Record with the per-item evidence:** `alias-migration-record.json` (for
   each item: aliases added, format before and after, hashes of the mapping
   record before and after, the retired IDs).

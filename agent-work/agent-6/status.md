@@ -1,10 +1,10 @@
 # agent-6 status
 
-**State: THE 142 RETIRED ROW IDS ARE MIGRATED (16 ITEMS, OFFICIAL COMMAND, ON THE
-COORDINATOR'S AUTHORIZATION); NEW AUTHOR SNAPSHOT `f8dca07b` WAITS FOR AGENT-1'S
-RE-REVIEW OF THOSE 16 ITEMS; THE 93 REUSED IDS ARE UNTOUCHED; ALL 20 ITEMS STAY
-HELD. AGENT-5 REVIEW: 112 COMPLETE, 3 NEED WORK, DECISION REQUEST SENT.**
-Updated 2026-11-15 (UTC).
+**State: THE 142 RETIRED ROW IDS ARE MIGRATED AND ACCEPTED BY AGENT-1; ALL 115 OF HIS
+REVIEWS ARE BOUND TO SNAPSHOT `f8dca07b`. STILL OPEN: THE 93 REUSED IDS (WAIT FOR
+THE VERSION-AWARE READER), THE RELEASE DECISION FOR THE 20 HELD ITEMS, AND THREE
+KIND QUESTIONS IN AGENT-5'S ITEMS. AGENT-5 REVIEW: 112 COMPLETE, 3 NEED WORK.**
+Updated 2026-11-18 (UTC).
 
 - Branch: `arena/1a493a80-mafatih`
 - Frozen base: `ffa01da92fbba25731356e8158c295b3824763f0`
@@ -62,22 +62,38 @@ nothing else.
   aliases now refer to the old texts); `audit-authored` 115 of 115;
   `npm run check` 283 tests, 280 pass, 0 fail, 3 skipped. Recomputing the link
   audit against the new snapshot finds 0 retired IDs left.
-- **New snapshot:** `f8dca07be7536bf19ea17c869bf098385002099a`. agent-1 has the
-  list of the 16 items for independent re-review (message `a8947b4e`); his
-  other 99 reviews are not affected.
+- **New snapshot:** `f8dca07be7536bf19ea17c869bf098385002099a`.
+- **Independent review: accepted.** agent-1 merged the snapshot, re-reviewed
+  the 16 migrated records and accepted them (his message `51fc6141`, his report
+  `agent-work/agent-1/proposals/migration-review-f8dca07b.md`). He found the
+  change to be metadata only, all 142 IDs resolving, every alias identical to
+  the proposal and rebuilding its old text, and no live ID redirected. I checked
+  his branch myself: all 115 of his review records of my items name
+  `f8dca07b`, every layout is accepted, all 178 spacing decisions are accepted
+  and no source or issue decision is open.
 - **Evidence:** `proposals/alias-migration-record.json` (per item: aliases
   added, format and hashes before and after, the retired IDs),
   `proposals/README.md`, and the checkers in `proposals/scripts/`.
 
 **Not done, and not covered by the authorization:**
 
-- **93 reused IDs (9 items):** untouched. Each is still live with its current
-  meaning and none was given an alias. `proposals/reused-row-ids.json` (now
-  against `f8dca07b`, same 93 mappings) is the snapshot-versioned map for the
-  reader change. Five of the nine items are also among the 16 migrated ones.
+- **93 reused IDs (9 items):** untouched, and none was given an alias by the
+  migration. **92 are live rows** with unchanged text. **One is an existing
+  alias**, not a live row: `ziyarat-rjybyh-alhmd-allh`
+  `r00004-s2d6fcdaf315ab02c`. My reviewed joins had already turned it into an
+  alias at `3e35f4ca`, and that alias is identical in `f8dca07b`. (My last
+  status said all 93 were still live; that was imprecise.) All 93 keep the
+  meaning they have today. `proposals/reused-row-ids.json` (against `f8dca07b`,
+  same 93 mappings, checked independently by agent-1 with zero discrepancies)
+  is the snapshot-versioned map for the reader change. A reader built on it
+  must key on item plus ID, never on the ID alone. Five of the nine items are
+  also among the 16 migrated ones.
+  agent-1 also notes that none of these rows carries source attribution, so
+  their identity rests on exact text reconstruction and position only.
 - **Held from final release: all 20 items** (the 16 migrated and the 4 that
-  have reused IDs only). The migration is not validated until agent-1 has
-  re-reviewed the 16, and the reused IDs need the reader change.
+  have reused IDs only), pending the version-aware reader and the coordinator's
+  release decision. agent-1's acceptance of the migration does not release
+  them.
 - No role correction and no re-cut of a published row.
 
 ## What I still need from the coordinator
@@ -103,11 +119,12 @@ nothing else.
 
 - All 115 are authored; `audit-authored` reports 115 of 115 complete.
 - Latest isolated snapshot: `f8dca07be7536bf19ea17c869bf098385002099a`. agent-1
-  accepted its parent `3e35f4ca` in full; the new one differs in 16 mapping
-  records (the alias migration) and waits for his re-review of those 16 items.
+  re-reviewed it and accepted it: all 115 of his reviews are bound to it,
+  with the same 178 accepted spacing decisions. Nothing is open between us.
 - Of 243 places where an original row boundary cuts an Arabic sentence: 97 joins
   are applied (52 earlier, 45 now), 146 are left as they are.
-- 20 items stay held from final release (list in `proposals/README.md` and in
+- 20 items stay held from final release, pending the version-aware reader and
+  the release decision (list in `proposals/README.md` and in
   `proposals/alias-migration-record.json`).
 
 ## Where my review of agent-5's 115 items stands
@@ -181,13 +198,14 @@ nothing else.
 
 ## What I am waiting for
 
-- agent-1: his independent re-review of the 16 migrated items at `f8dca07b`.
+- agent-1: nothing. His re-review of `f8dca07b` is done and accepted.
 - agent-5: nothing.
 - The coordinator: the ruling on the three kinds (point 1), the reader side
   (point 2) and points 3 to 5 above.
 
-Kept as directed: the two kind questions and `dua-daa-aymny-shr` r00009 stay
-open until the coordinator rules. I apply no alias by hand, touch no reused or
+Kept as directed: the three kind questions (`dua-vdaa-hsyn-alyh`,
+`item-mrsyh-am-albnyn`, `dua-daa-aymny-shr` r00009) stay open until the
+coordinator rules. I apply no alias by hand, touch no reused or
 live ID, make no role correction and no re-cut, and release none of the 20 held
 items.
 
