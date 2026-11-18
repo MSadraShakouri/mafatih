@@ -5,6 +5,14 @@ checked against the six snapshots it names — `b8d0d350`, `941c7ad3`, `561fdfb0
 `36f89c8b`, `df85a685`, `3e35f4ca` — with `3e35f4ca` as the target.
 **No corpus data was changed, no live ID was redirected, nothing was applied.**
 
+> **Corrected after review of this report.** Two statements in the first version were
+> wrong and are fixed below: split-piece IDs do not hash the text (they hash the local
+> row reference, the two pooled text IDs and the kind, with no item ID), and the 93
+> IDs are live IDs that ordinary alias migration does not admit at all, so this audit
+> is not a pass through that guard. The item-scoped lookup conclusion stands.
+> Also: 92 of the 93 are live rows; the ninety-third was retired by the reviewed
+> joins of `3e35f4ca`, before the migration.
+
 ## Result
 
 The map is internally correct. **Zero discrepancies** of the kind it claims to
@@ -35,24 +43,39 @@ These are not errors in the file; they are limits a consumer has to know about.
 carries a `sources` field at any of the six snapshots (0 of 93). My first pass
 reported "350/350 attributions identical", which is true but vacuous — both sides
 were empty. So occurrence identity here rests on **exact text reconstruction plus
-the snapshot occurrence and adjacency**, not on source attribution. Under main's new
-alias guard ("identical repeated text is not sufficient evidence of the same
-occurrence") this set passes because the texts genuinely differ — 79 wholly, 13 as
-a prefix continuation, 1 in Arabic only — and because each mapping rebuilds the old
-text byte-for-byte. It would not pass on attribution, because there is none.
+the snapshot occurrence and adjacency**, not on source attribution.
 
-**2. The ID strings are not globally unique.** These are content-hashed piece IDs, so
-the same string names a row of a *different* item whenever the text matches. I found
-**3,488** such cross-item occurrences at these six snapshots (for example
+**These 93 are live IDs, and ordinary alias migration does not admit them.** The
+migration guard is for retired IDs with a single unambiguous meaning, and it never
+redirects a live ID. Nothing in this report is a pass through that guard: it is a
+separate reconstruction audit of a versioned map that tells a reader which old text
+an ID stood for and where that text is today. What the audit establishes is that
+every mapping rebuilds the old slice byte-for-byte and that the continuations are
+adjacent; it cannot and does not establish occurrence identity for a live ID.
+
+**2. The ID strings are not globally unique, and the reason is the hash input, not
+the text.** A split-piece ID is `r000NN-s…` where the suffix is
+`sha256({row, ar, fa, kind})` truncated — `row` is the *local row reference*
+(`r00005`), `ar` and `fa` are pooled text IDs and `kind` is the row kind. **The item
+ID is not in the hash.** So two items that both have a `r00005` with the same texts
+and the same kind produce the same piece ID, which is why these strings recur across
+items. (An earlier version of this report said the IDs "hash the text"; that was
+wrong — the hash covers references plus kind, and the item is simply absent.)
+
+I found **3,488** such cross-item occurrences at these six snapshots (for example
 `amal-slvat-abvalhsn-zrab/r00005-s1342bec0684c82aa` is also a row of
 `amal-amal-akhr-aashvra`, `ziyarat-al-yasyn-amam` and `ziyarat-arbaeen` at earlier
 snapshots). The map is keyed by item and its `unversioned_link` destinations are
 item-scoped, so the file itself is unambiguous — but a resolver that looks up an ID
-without its item can land in the wrong item. Any migration or reader code built on
-this map must key on `(item, id)`.
+without its item can land in the wrong item. Any reader built on this map must key
+on `(item, id)`. That conclusion is unchanged.
 
 ## Ambiguous cases, concretely
 
+- **1 ID is no longer a live row.** `ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcdaf315ab02c`
+  was retired by the reviewed joins of `3e35f4ca`; its alias exists in both snapshots
+  and is identical across the migration, so the map's `resolves_through:
+  alias-or-original` is accurate.
 - **1 ID with Persian unchanged and Arabic changed.** The mapping redirects per
   language, so following it does not silently borrow the current Arabic text.
 - **13 prefix-continuation IDs.** These are the cases where a naive reader would see

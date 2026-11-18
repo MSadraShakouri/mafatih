@@ -494,3 +494,28 @@ Nothing migrated by me: `alias-preview` refuses a cross-agent run by design, and
 142-id migration stays on agent-6's own branch. When an authorized migrated snapshot
 appears, the 16 affected items get a rebind and fresh review; the other 99 of their
 115 are unaffected.
+
+## Agent-6's migrated snapshot `f8dca07b` re-reviewed
+
+Merged as `91417646`. Report: `agent-work/agent-1/proposals/migration-review-f8dca07b.md`.
+
+- **Metadata only, verified**: 0 item/text/editorial files changed; the 16 records
+  changed in aliases only; canonical rows, mapping entries, insertions and the
+  plan/layout hashes are identical to `3e35f4ca`. The single other difference is an
+  explicit `"target_start": 0` on 153 segments that previously omitted it — 0
+  segments changed in any other way.
+- **142 / 142 retired ids resolve**, every applied alias is byte-identical to the
+  proposal I audited, and every one rebuilds its retired text exactly.
+- **No live id redirected**: 92 of the 93 reused ids are live rows with unchanged
+  text; the ninety-third (`ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcda…`) was retired
+  by the reviewed joins of `3e35f4ca` and its alias is unchanged across the
+  migration.
+- **All 115 records rebound to `f8dca07b`** and verified, same 178 space decisions.
+  Gates: pin matches, runtime-audio 6/6, validate PASS, `npm run check`
+  283/280/0/3, `audit-authored` 112/112.
+
+Two corrections to the reused-ID report, both accepted from the user's read:
+split-piece ids hash `{local row reference, ar pooled id, fa pooled id, kind}` — the
+item id is absent, which is the real cause of cross-item collisions (my "hashes the
+text" was wrong); and the 93 are live ids that ordinary alias migration never
+admits, so that audit is not a guard pass. Item-scoped lookups remain required.
