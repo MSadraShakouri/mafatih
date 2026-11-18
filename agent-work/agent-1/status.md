@@ -514,8 +514,14 @@ Merged as `91417646`. Report: `agent-work/agent-1/proposals/migration-review-f8d
   Gates: pin matches, runtime-audio 6/6, validate PASS, `npm run check`
   283/280/0/3, `audit-authored` 112/112.
 
-Two corrections to the reused-ID report, both accepted from the user's read:
-split-piece ids hash `{local row reference, ar pooled id, fa pooled id, kind}` — the
-item id is absent, which is the real cause of cross-item collisions (my "hashes the
-text" was wrong); and the 93 are live ids that ordinary alias migration never
-admits, so that audit is not a guard pass. Item-scoped lookups remain required.
+Corrections to the reused-ID report, all accepted from the user's two reads:
+a split-piece id hashes `{row: old.id, ar: out.ar, fa: out.fa, kind}`, where
+`out.ar` / `out.fa` are the layout's source-and-part references (`{source, part}`)
+or null — **neither the item ID nor the text is in the hash**. Two consequences: the
+missing item makes the same string recur across items (3,488 cases found), and the
+missing text means a correction leaves the id unchanged, so the id later opens
+different text, which is how the 93 arose. Also: the 93 are live IDs — **92 live
+rows and one already a historical alias** — that ordinary alias migration never
+admits, so that audit is not a guard pass, and **all 93 remain version-ambiguous**:
+without a snapshot version the map warns and offers destinations instead of
+resolving. Item-scoped lookups remain required.

@@ -10,8 +10,10 @@ checked against the six snapshots it names — `b8d0d350`, `941c7ad3`, `561fdfb0
 > row reference, the two pooled text IDs and the kind, with no item ID), and the 93
 > IDs are live IDs that ordinary alias migration does not admit at all, so this audit
 > is not a pass through that guard. The item-scoped lookup conclusion stands.
-> Also: 92 of the 93 are live rows; the ninety-third was retired by the reviewed
-> joins of `3e35f4ca`, before the migration.
+> Also: 92 of the 93 are live rows and one is already a historical alias — retired
+> by the reviewed joins of `3e35f4ca`, before the migration. All 93 remain
+> version-ambiguous either way: an ID without a snapshot version cannot be resolved
+> by this map, only warned about and offered its destinations.
 
 ## Result
 
@@ -45,7 +47,8 @@ reported "350/350 attributions identical", which is true but vacuous — both si
 were empty. So occurrence identity here rests on **exact text reconstruction plus
 the snapshot occurrence and adjacency**, not on source attribution.
 
-**These 93 are live IDs, and ordinary alias migration does not admit them.** The
+**These 93 are live IDs — 92 live rows and one already a historical alias — and
+ordinary alias migration does not admit them.** The
 migration guard is for retired IDs with a single unambiguous meaning, and it never
 redirects a live ID. Nothing in this report is a pass through that guard: it is a
 separate reconstruction audit of a versioned map that tells a reader which old text
@@ -54,28 +57,46 @@ every mapping rebuilds the old slice byte-for-byte and that the continuations ar
 adjacent; it cannot and does not establish occurrence identity for a live ID.
 
 **2. The ID strings are not globally unique, and the reason is the hash input, not
-the text.** A split-piece ID is `r000NN-s…` where the suffix is
-`sha256({row, ar, fa, kind})` truncated — `row` is the *local row reference*
-(`r00005`), `ar` and `fa` are pooled text IDs and `kind` is the row kind. **The item
-ID is not in the hash.** So two items that both have a `r00005` with the same texts
-and the same kind produce the same piece ID, which is why these strings recur across
-items. (An earlier version of this report said the IDs "hash the text"; that was
-wrong — the hash covers references plus kind, and the item is simply absent.)
+the text.** A split-piece ID is `old.id-s…` where the suffix is
+`sha256({row: old.id, ar: out.ar, fa: out.fa, kind: out.kind})` truncated to 16 hex
+characters. `old.id` is the *local* row reference (`r00005`), and `out.ar` / `out.fa`
+are the layout's **source-and-part references** — `{source, part}` pointing at a
+source occurrence and one of its pieces — or `null` when that language has no piece
+in the output row. So the hash covers the row reference, two source-and-part
+references and the kind: **neither the item ID nor the text is in it.**
 
-I found **3,488** such cross-item occurrences at these six snapshots (for example
+I reproduced the formula on real IDs rather than reading it off. In
+`amal-byst-3`, `{row:'r00001', ar:null, fa:{source:'ar',part:0}, kind:'heading'}`
+hashes to `r00001-sf8ca119bc7deb30b`, and
+`{row:'r00001', ar:{source:'ar',part:1}, fa:{source:'fa',part:0}, kind:'recitation'}`
+hashes to `r00001-s3e4b70ad1b9cb544` — both are live rows. Note the first: the
+Persian slot is filled from the **Arabic** source, which is what "source-and-part
+reference" means here; it is not a text ID.
+
+Two consequences follow, and both are visible in this set. Because the item is
+absent, two items with a `r00005` of the same part shape and kind produce the same
+piece ID, which is why these strings recur across items — I found **3,488** such
+cross-item occurrences at these six snapshots (for example
 `amal-slvat-abvalhsn-zrab/r00005-s1342bec0684c82aa` is also a row of
 `amal-amal-akhr-aashvra`, `ziyarat-al-yasyn-amam` and `ziyarat-arbaeen` at earlier
-snapshots). The map is keyed by item and its `unversioned_link` destinations are
-item-scoped, so the file itself is unambiguous — but a resolver that looks up an ID
-without its item can land in the wrong item. Any reader built on this map must key
-on `(item, id)`. That conclusion is unchanged.
+snapshots). Because the text is absent, an editorial correction to a piece leaves
+its ID unchanged, and the same ID then opens different text — which is exactly how
+the 93 reused IDs arose. The map is keyed by item and its `unversioned_link`
+destinations are item-scoped, so the file itself is unambiguous — but any reader must
+key on `(item, id)`. That conclusion is unchanged.
+
+(An earlier version of this report said these IDs "hash the text" and, after a first
+correction, that they hash the two pooled text IDs. Both were wrong: the hash holds
+source-and-part references, not text, and no item ID.)
 
 ## Ambiguous cases, concretely
 
-- **1 ID is no longer a live row.** `ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcdaf315ab02c`
-  was retired by the reviewed joins of `3e35f4ca`; its alias exists in both snapshots
-  and is identical across the migration, so the map's `resolves_through:
-  alias-or-original` is accurate.
+- **92 live rows and 1 historical alias.** The one alias,
+  `ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcdaf315ab02c`, was retired by the reviewed
+  joins of `3e35f4ca`; its alias exists in both snapshots and is identical across the
+  migration, so the map's `resolves_through: alias-or-original` is accurate. All 93
+  remain version-ambiguous: without a snapshot version the map warns and offers the
+  known destinations rather than resolving.
 - **1 ID with Persian unchanged and Arabic changed.** The mapping redirects per
   language, so following it does not silently borrow the current Arabic text.
 - **13 prefix-continuation IDs.** These are the cases where a naive reader would see
