@@ -12,13 +12,16 @@ import { SearchClient } from './search-client.js';
 import { createSearchSession } from './search-common.js';
 import { nativeBackAction } from './native-back.js';
 import { scrollToReadingAnchor } from './reader-anchor.js';
-import { resolveLegacyRowAnchor } from './row-split-anchor.js';
+import { resolveVersionedRowAnchor } from './row-split-anchor.js';
+import { showRowVersionNotice } from './row-version-notice.js';
 import { captureVisibleReaderPosition, keepReaderPositionOnResize, restoreVisibleReaderPosition, type VisibleReaderPosition } from './reader-position.js';
 import { createReaderPreferencesStore, type ReaderPreferences } from './reader-preferences.js';
 import { applyReaderPreferences, prepareReaderFont, renderReaderSettings } from './reader-settings.js';
 import { renderItem, renderLibrary, renderMessage, type RenderActions } from './render.js';
-import { itemHref, parseRoute, settingsHref, type Route } from './routes.js';
+import { itemHref, parseRoute, settingsHref, type ReadingAnchor, type Route } from './routes.js';
 import { createThemeStore } from './theme.js';
+
+declare const __MAFATIH_ROW_VERSION_GUARDS__: Readonly<Record<string, readonly string[]>>;
 
 const root = document.getElementById('app');
 if (!root) throw new Error('Missing app root');
@@ -231,26 +234,40 @@ async function renderRoute(route: Route, from: Route | undefined): Promise<void>
         wideModule = selectedModule; current = preferences.get();
       }
       const content = renderItem(item, actions);
+      const resolution = route.anchor ? resolveVersionedRowAnchor(item.row_split_redirects ?? [], item.row_version_links ?? [],
+        route.anchor, item.rows, __MAFATIH_ROW_VERSION_GUARDS__[item.id]?.includes(route.anchor.row) ?? false) : undefined;
+      let acceptProvisional: ((target: ReadingAnchor) => void) | undefined;
+      if (route.anchor && resolution && resolution.status !== 'resolved')
+        showRowVersionNotice(content, item.id, route.anchor, resolution, target => acceptProvisional?.(target));
       applyReaderPreferences(content, current);
       replaceView(content); reader = content;
       const wideLayout = wideModule?.attachWideReaderLayout(content, current.wideLayout, item);
       let snapshot: AutoScrollSnapshot | undefined, restored = false;
-      if (saved && saved.id === item.id && from?.kind === 'settings') {
+      if (saved && saved.id === item.id && from?.kind === 'settings' && (!resolution || resolution.status === 'resolved')) {
         if (saved.position) wideLayout?.prepareRow(saved.position.row);
         window.scrollTo({ top: saved.scroll, behavior: 'auto' });
         restoreVisibleReaderPosition(content, saved.position);
         snapshot = saved.autoScroll; saved = undefined; restored = true;
-      } else if (!route.anchor) window.scrollTo({ top: 0, behavior: 'auto' });
+      } else if (!route.anchor || (resolution && resolution.status !== 'resolved')) {
+        saved = undefined; window.scrollTo({ top: 0, behavior: 'auto' });
+      }
       const keeper = keepReaderPositionOnResize(content,
         wideLayout ? position => wideLayout.reflow(position?.row) : undefined);
       autoScroll = scrollModule!.attachAutoScroll(content, scrollSettings, snapshot,
         snapshot !== undefined && snapshot.settingsRevision !== scrollSettings.get().revision, appActive);
       const attachedScroll = autoScroll;
-      if (route.anchor && !restored) {
-        const anchor = resolveLegacyRowAnchor(item.row_split_redirects ?? [], route.anchor);
+      const openAnchor = (anchor: ReadingAnchor): void => {
         wideLayout?.prepareRow(anchor.row);
-        requestAnimationFrame(() => { if (id === renderId) scrollToReadingAnchor(content, anchor, attachedScroll); });
-      }
+        requestAnimationFrame(() => {
+          if (id !== renderId) return;
+          if (!scrollToReadingAnchor(content, anchor, attachedScroll) && route.anchor) {
+            showRowVersionNotice(content, item.id, route.anchor, { status: 'unavailable', choices: [] }, () => {});
+            window.scrollTo({ top: 0, behavior: 'auto' });
+          }
+        });
+      };
+      acceptProvisional = openAnchor;
+      if (resolution?.status === 'resolved' && !restored) openAnchor(resolution.anchor);
       inTextSearch = attachInTextSearch(content, item, searchClient, searchSession, closeReaderSearch,
         open => attachedScroll.setSearchOpen(open), attachedScroll,
         wideLayout ? row => wideLayout.prepareRow(row, attachedScroll.readingPosition()) : undefined,

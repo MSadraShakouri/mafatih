@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { displayedSource, runtimeItem, sourceSegments } from './row-source-fixture.js';
 
 test('Ashura renders corrected in-row breaks without changing row identities or punctuation', async ({ page }) => {
   await page.goto('./#/item/ziyarat-ashura');
@@ -14,18 +15,20 @@ test('Ashura renders corrected in-row breaks without changing row identities or 
   expect(persian).toContain('حسین (درود بر او)، و ما');
 });
 
-test('Samat keeps both excerpts and their ellipsis after joining the boundary', async ({ page }) => {
+test('Samat keeps both excerpts and their ellipsis after joining the boundary', async ({ page, request }) => {
+  const item = await runtimeItem(request, 'dua-samat');
   await page.goto('./#/item/dua-samat');
-  const paragraph = page.locator('article [data-row-id="r00117"] p[lang="fa"]');
-  await expect(paragraph).toBeVisible();
-  const value = (await paragraph.textContent())!;
+  const value = await displayedSource(page, item, 'r00117', 'fa');
   expect(value).not.toContain('\n');
   expect(value).toContain('خدایا! به حق این دعا… خدایا! به حق این دعا');
   expect(value.split('خدایا! به حق این دعا')).toHaveLength(3);
-  expect(await paragraph.evaluate(element => getComputedStyle(element).whiteSpace)).toBe('pre-wrap');
+  for (const part of sourceSegments(item, 'r00117', 'fa')) {
+    const paragraph = page.locator(`article [data-row-id="${part.row}"] p[lang="${part.language}"]`);
+    expect(await paragraph.evaluate(element => getComputedStyle(element).whiteSpace)).toBe('pre-wrap');
+  }
 });
 
-test('list markers and Jawshan section numbers are attached to their intended existing rows', async ({ page }) => {
+test('list markers and Jawshan section numbers are attached to their intended existing rows', async ({ page, request }) => {
   await page.goto('./#/item/item-mqdmh');
   const heading = page.locator('article [data-row-id="r00006"] p[lang="fa"]');
   const bullet = page.locator('article [data-row-id="r00007"] p[lang="fa"]');
@@ -43,10 +46,10 @@ test('list markers and Jawshan section numbers are attached to their intended ex
     expect((await priorLocation.textContent())!).not.toContain(marker);
   }
   expect(await page.locator('article [data-row-id="r00126"] p[lang="fa"]').textContent()).toBe('ای پناهم در دماندگی،');
+  const jamea = await runtimeItem(request, 'ziyarat-jamea-kabira');
   await page.goto('./#/item/ziyarat-jamea-kabira');
-  const beforeInstruction = page.locator('article [data-row-id="r00313"] p[lang="ar"]');
-  const instruction = page.locator('article [data-row-id="r00314"] p[lang="ar"]');
-  await expect(beforeInstruction).toBeVisible(); await expect(instruction).toBeVisible();
-  expect((await beforeInstruction.textContent())!.trim()).not.toMatch(/-$/u);
-  expect((await instruction.textContent())!).toMatch(/^- /u);
+  const beforeInstruction = await displayedSource(page, jamea, 'r00313', 'ar');
+  const instruction = await displayedSource(page, jamea, 'r00314', 'ar');
+  expect(beforeInstruction.trim()).not.toMatch(/-$/u);
+  expect(instruction).toMatch(/^- /u);
 });

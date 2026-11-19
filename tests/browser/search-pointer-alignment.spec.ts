@@ -138,6 +138,12 @@ test('near the end, the pointer moves down only as needed when scrolling reaches
 
 
 test('a short item that cannot scroll moves the pointer to the match', async ({ page }) => {
+  // Keep the geometry deterministic even when a real source row is split or
+  // a mixed-language instruction is moved to its correct field.
+  await page.route('**/data/items/khavas-tavyz-nashnvayy-gvsh.json', route => route.fulfill({
+    status:200,contentType:'application/json',body:JSON.stringify({id:'khavas-tavyz-nashnvayy-gvsh',title:{fa:'نمونه',ar:'',en:''},
+      featured:false,rows:[{id:'r00001',ar:'باقر',fa:'',kind:'quotation'}]}),
+  }));
   await page.goto('./#/item/khavas-tavyz-nashnvayy-gvsh');
   await expect(page.locator('#current-marker')).toBeVisible();
   await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();

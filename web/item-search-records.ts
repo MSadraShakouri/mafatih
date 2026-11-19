@@ -29,7 +29,7 @@ export function itemSearchRecords(item: ReaderItem): SearchRecord[] {
       const next = following && nextText && fold(nextText)
         ? `row:${item.id}:${following.id}:${language}` : undefined;
       records.push({ key: `row:${item.id}:${row.id}:${language}`, section: 'text', item: item.id,
-        row: row.id, language, text, normalized: fold(text), featured: Boolean(item.featured),
+        row: row.id, ...(row.version ? { rowVersion: row.version } : {}), language, text, normalized: fold(text), featured: Boolean(item.featured),
         order: records.length, ...(next ? { next } : {}) });
     }
   }
