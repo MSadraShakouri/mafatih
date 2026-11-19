@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "ziyarat-item-12",
   "author": "agent-3",
   "baseline_item_sha256": "c0a0861d1fa147edd6904ba8424967dee3fa73bf301e97210181649293fe329d",
   "plan_sha256": "34218f8869b3a2fd8c5dab4f8ed4dca653289d5d8898cae2f93209b9518f6a97",
-  "layout_sha256": "82f3681361db4ece63dd60f949142a5278425efbda0da59b00d901e4e8d1dc4a",
+  "layout_sha256": "74b25fd7ab917d606254c8ab905f5aedc107c2dbb8cf7874d23a7c4bec22ee0e",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "tf138b2c78b6940fae67272ce"
       },
       "results": [
-        "r00001-s03773910ea46fc6e"
+        "r00001"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001-s03773910ea46fc6e",
-          "language": "ar",
+          "row": "r00001",
+          "language": "fa",
           "start": 0,
-          "end": 56
+          "end": 56,
+          "target_start": 0
         }
       ]
     },
@@ -40,7 +41,8 @@
           "row": "r00002",
           "language": "fa",
           "start": 0,
-          "end": 118
+          "end": 118,
+          "target_start": 0
         }
       ]
     },
@@ -58,7 +60,8 @@
           "row": "r00003",
           "language": "ar",
           "start": 0,
-          "end": 249
+          "end": 249,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -66,7 +69,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 156
+          "end": 156,
+          "target_start": 0
         }
       ]
     },
@@ -84,7 +88,8 @@
           "row": "r00004",
           "language": "ar",
           "start": 0,
-          "end": 834
+          "end": 834,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -92,7 +97,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 707
+          "end": 707,
+          "target_start": 0
         }
       ]
     },
@@ -111,9 +117,30 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 82
+          "end": 82,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-s03773910ea46fc6e",
+        "ar": "tf138b2c78b6940fae67272ce",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00001",
+          "language": "fa",
+          "start": 0,
+          "end": 56,
+          "target_start": 0
+        }
+      ],
+      "fa": []
     }
   ]
 }
