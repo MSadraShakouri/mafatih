@@ -1,0 +1,215 @@
+{
+ "format_version": 1,
+ "kind": "reviewer-dry-run",
+ "by": "agent-6",
+ "written": "2026-11-19",
+ "script": "scripts/simulate-kind-revision.mjs",
+ "status": "in memory only; nothing written; not agent-5's revise-preview, not an authorization, not a ruling. The history check covers the commits reachable from the frozen base to my HEAD, which include all 26 isolated agent-5 snapshots of his branch at 891d3ed0, but not his other branch commits.",
+ "head": "504afeb4a919690fc7b2f65e61091eeb746fe12d",
+ "base": "ffa01da92fbba25731356e8158c295b3824763f0",
+ "note": "in-memory dry run by the reviewer; nothing written; not an authorization and not agent-5's revise-preview",
+ "cases": [
+  {
+   "case": "1",
+   "item": "dua-vdaa-hsyn-alyh",
+   "change": "heading -> instruction",
+   "frozen_rows_edited": [
+    "r00001"
+   ],
+   "output_pieces_edited": 1,
+   "rows": 3,
+   "rows_with_text_or_attribution_change": 0,
+   "rows_changed": [
+    {
+     "old_id": "r00001-sf8ca119bc7deb30b",
+     "old_kind": "heading",
+     "new_id": "r00001-s3db48b9cdceccaca",
+     "new_kind": "instruction",
+     "id_kept": false
+    }
+   ],
+   "live_ids_retired": [
+    "r00001-sf8ca119bc7deb30b"
+   ],
+   "new_live_ids": [
+    "r00001-s3db48b9cdceccaca"
+   ],
+   "ids_kept_with_new_kind": [],
+   "mapping_format": {
+    "before": 1,
+    "after": 2
+   },
+   "aliases": {
+    "before": 0,
+    "after": 1,
+    "earlier_aliases_all_kept": true
+   },
+   "proposed_spaces": {
+    "before": 0,
+    "after": 0,
+    "same_language_and_offset": true
+   },
+   "published_ids_checked": 4,
+   "code_points_checked": 1373,
+   "code_points_opening_other_text": [],
+   "result": "accepted by the project functions; every published link keeps its character"
+  },
+  {
+   "case": "2",
+   "item": "item-mrsyh-am-albnyn",
+   "change": "recitation -> quotation",
+   "frozen_rows_edited": [
+    "r00003",
+    "r00004",
+    "r00005",
+    "r00006",
+    "r00007",
+    "r00009",
+    "r00010",
+    "r00011",
+    "r00012",
+    "r00013"
+   ],
+   "output_pieces_edited": 10,
+   "rows": 11,
+   "rows_with_text_or_attribution_change": 0,
+   "rows_changed": [
+    {
+     "old_id": "m7fd11ac1993a4b4f9d3db507",
+     "old_kind": "recitation",
+     "new_id": "m8295de084366aef28d7b3740",
+     "new_kind": "quotation",
+     "id_kept": false
+    },
+    {
+     "old_id": "m593b5e8d63e327587f6fea00",
+     "old_kind": "recitation",
+     "new_id": "m9fabefe023a95654ead5e658",
+     "new_kind": "quotation",
+     "id_kept": false
+    },
+    {
+     "old_id": "r00007",
+     "old_kind": "recitation",
+     "new_id": "r00007",
+     "new_kind": "quotation",
+     "id_kept": true
+    },
+    {
+     "old_id": "r00009",
+     "old_kind": "recitation",
+     "new_id": "r00009",
+     "new_kind": "quotation",
+     "id_kept": true
+    },
+    {
+     "old_id": "r00010",
+     "old_kind": "recitation",
+     "new_id": "r00010",
+     "new_kind": "quotation",
+     "id_kept": true
+    },
+    {
+     "old_id": "r00011",
+     "old_kind": "recitation",
+     "new_id": "r00011",
+     "new_kind": "quotation",
+     "id_kept": true
+    },
+    {
+     "old_id": "r00012",
+     "old_kind": "recitation",
+     "new_id": "r00012",
+     "new_kind": "quotation",
+     "id_kept": true
+    },
+    {
+     "old_id": "r00013",
+     "old_kind": "recitation",
+     "new_id": "r00013",
+     "new_kind": "quotation",
+     "id_kept": true
+    }
+   ],
+   "live_ids_retired": [
+    "m7fd11ac1993a4b4f9d3db507",
+    "m593b5e8d63e327587f6fea00"
+   ],
+   "new_live_ids": [
+    "m8295de084366aef28d7b3740",
+    "m9fabefe023a95654ead5e658"
+   ],
+   "ids_kept_with_new_kind": [
+    "r00007",
+    "r00009",
+    "r00010",
+    "r00011",
+    "r00012",
+    "r00013"
+   ],
+   "mapping_format": {
+    "before": 3,
+    "after": 3
+   },
+   "aliases": {
+    "before": 2,
+    "after": 6,
+    "earlier_aliases_all_kept": true
+   },
+   "proposed_spaces": {
+    "before": 2,
+    "after": 2,
+    "same_language_and_offset": true
+   },
+   "published_ids_checked": 17,
+   "code_points_checked": 2780,
+   "code_points_opening_other_text": [],
+   "result": "accepted by the project functions; every published link keeps its character"
+  },
+  {
+   "case": "3",
+   "item": "dua-daa-aymny-shr",
+   "change": "quotation -> recitation",
+   "frozen_rows_edited": [
+    "r00009"
+   ],
+   "output_pieces_edited": 1,
+   "rows": 12,
+   "rows_with_text_or_attribution_change": 0,
+   "rows_changed": [
+    {
+     "old_id": "r00009-se370353bb3dfce92",
+     "old_kind": "quotation",
+     "new_id": "r00009-s94f3428995dfd8af",
+     "new_kind": "recitation",
+     "id_kept": false
+    }
+   ],
+   "live_ids_retired": [
+    "r00009-se370353bb3dfce92"
+   ],
+   "new_live_ids": [
+    "r00009-s94f3428995dfd8af"
+   ],
+   "ids_kept_with_new_kind": [],
+   "mapping_format": {
+    "before": 3,
+    "after": 3
+   },
+   "aliases": {
+    "before": 2,
+    "after": 3,
+    "earlier_aliases_all_kept": true
+   },
+   "proposed_spaces": {
+    "before": 3,
+    "after": 3,
+    "same_language_and_offset": true
+   },
+   "published_ids_checked": 20,
+   "code_points_checked": 6702,
+   "code_points_opening_other_text": [],
+   "result": "accepted by the project functions; every published link keeps its character"
+  }
+ ]
+}

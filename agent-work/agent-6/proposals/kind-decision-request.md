@@ -6,6 +6,43 @@ against agent-5's snapshot `d0fb57659675c25d0dbbe878a7ec9e9e6b7056d3`.
 This file quotes and translates no devotional text. Rows are named by item and
 row ID; what a row holds is described by its role only.
 
+## Update 2026-11-19: option B now has a supported tool
+
+`main` `985f226c` adds `revise-preview` and `revise`. They change a published
+split and, in the same guarded step, keep every old row ID as an alias built
+from the frozen source offsets. So the sentence "B cannot be done with today's
+tools" below is **no longer true**, and point 4 of the last section is met by
+the tool. The three questions themselves are unchanged and still yours to
+answer.
+
+I tried option B for each case **in memory only**, with the project's own
+functions, on agent-5's committed plans and layouts as merged here
+(`scripts/simulate-kind-revision.mjs`, result in `kind-revision-dry-run.json`).
+Nothing was written. This is not agent-5's preview and not an authorization.
+
+| Case | Change tried | Live IDs retired, each kept as an alias | Rows that keep their ID | Earlier aliases | Proposed spaces | Text or attribution changed | Published links checked |
+|---|---|---|---|---|---|---|---|
+| 1 | `heading` to `instruction` | 1 (`r00001-sf8ca119bc7deb30b`) | none affected | 0, kept | 0 | none | 4 IDs, 1,373 code points, all open the same character |
+| 2 | `recitation` to `quotation`, eight rows | 2 (the two joined rows) | 6 uncut rows | 2, kept | 2, same place | none | 17 IDs, 2,780 code points, all the same |
+| 3 | `quotation` to `recitation`, verse piece | 1 (`r00009-se370353bb3dfce92`) | none affected | 2, kept | 3, same place | none | 20 IDs, 6,702 code points, all the same |
+
+All three passed the history check, the validator and the canonical check.
+Limits: the history I can check is the frozen base up to my own branch tip
+(it holds all 26 isolated agent-5 snapshots, not his other commits); none of
+the three items has an entry in the provisional register.
+
+What this changes in my advice:
+
+- **Case 1:** still **A**. B no longer costs a link, but the gain is small.
+  Either answer is safe.
+- **Case 2:** **B**, without the earlier reservation.
+- **Case 3:** **B** for the verse piece, without the earlier reservation.
+
+If you choose B anywhere, the steps are: you authorize agent-5 for that item;
+he runs `revise-preview` and `revise` on his own branch and publishes a
+snapshot; I review the changed item again against that exact snapshot, every
+re-made space separately. I make no change to his files.
+
 ## What I ask
 
 For each of the three cases below, choose **A** (keep the kind, I close the
@@ -108,18 +145,22 @@ in principle; the tool that writes it in the same guarded step does not exist.
 
 ## Summary
 
-| Case | Rows in question | Live IDs retired by B | B possible today | I recommend |
+As of 2026-11-19 (see the update at the top):
+
+| Case | Rows in question | Live IDs retired by B (kept as aliases) | B possible | I recommend |
 |---|---|---|---|---|
-| 1 `dua-vdaa-hsyn-alyh` | 1 | 1 | no | A |
-| 2 `item-mrsyh-am-albnyn` | 8 | 2 (6 keep their IDs) | no | B with tooling, else A |
-| 3 `dua-daa-aymny-shr` `r00009` | 2 | 1 | no | B for the verse, with tooling |
+| 1 `dua-vdaa-hsyn-alyh` | 1 | 1 | yes, with `revise` | A (B is also safe) |
+| 2 `item-mrsyh-am-albnyn` | 8 | 2 (6 keep their IDs) | yes, with `revise` | B |
+| 3 `dua-daa-aymny-shr` `r00009` | 2 | 1 | yes, with `revise` | B for the verse |
 
 ## What I need from you
 
 1. Case 1: A or B.
 2. Case 2: A or B (not C).
 3. Case 3: A or B for the verse piece.
-4. Only if any answer is B: a supported, guarded operation for a **kind-only
+4. *(Met on 2026-11-19 by `revise` on `main` `985f226c`; what remains is your
+   authorization of agent-5 for each item where you choose B.)* Only if any
+   answer is B: a supported, guarded operation for a **kind-only
    change of a cut piece or joined row** that, in the same step, records the old
    ID as an alias to the unchanged text and carries existing aliases and
    spaces; or your word that these rows wait for the version-aware reader. I
