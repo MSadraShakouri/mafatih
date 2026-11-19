@@ -233,3 +233,30 @@ keep the 18 reused IDs separate, and do not migrate.
   or version-aware reader must resolve ids within an item, never globally.
 - The 18 reused live IDs remain separate in `proposals/reused-row-ids.json`
   for snapshot-version-aware handling; untouched, per instruction.
+
+## Turn-18 update: coordinator safety register verified against my data
+
+Main `985f226c` ("Add guarded provisional historical link support") landed the
+version-aware reader and the metadata-only register
+`docs/split-assignments/row-version-findings.json` (467 IDs / 94 items,
+provisional-unreviewed, target snapshot `0cbcdf7f…`). Verified on my branch
+after merging main as `fcb3079`:
+
+- **All 8 of my affected items are BOUND** (itemVersionBinding(item, split)
+  equals the register's target_sha256), so the provisional candidates are
+  live rather than withheld on this branch: amal-aamal-msjd-shlh (4),
+  dua-hftm-daayy-zman (2), monajat-mnajat-amyr-alyh (8), sahifa-19 (2),
+  ziyarat-ashura (2) — the 18 reused; amal-byst-6 (4), dua-hrm-hsyn-alyh
+  (4), monajat-mnajat-tlb-rvzy (16) — the 24 retired.
+- **Register rows for my 24 retired candidates equal my official-format
+  proposal byte-exact** (originals and both segment arrays;
+  `proposals/historical-row-links.json`), and 18/18 reused IDs are present.
+- The official `alias-preview` re-passed 24/24 on the upgraded toolset at
+  HEAD `fcb3079` (review_sha256 `1c6f566f…`); main's only migration-code
+  change is additive (`allowRoleOnly` for the register builder).
+- Agent-3's offset-semantics rule (frozen source offset vs alias-entry
+  offset) is confirmed correct; my segments already use alias-entry offsets,
+  and the passing preview is the evidence.
+- Nothing migrated; the register's provisional status is unchanged, and the
+  alias-migrate step still requires explicit coordinator authorization and
+  a fresh independent review of the changed records.
