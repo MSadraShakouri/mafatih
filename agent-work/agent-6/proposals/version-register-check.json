@@ -1,0 +1,118 @@
+{
+ "format_version": 1,
+ "kind": "provisional-register-lineage-check",
+ "by": "agent-6",
+ "written": "2026-11-19",
+ "register": "docs/split-assignments/row-version-findings.json (main 985f226c4acc1241041b807c2cb4f4fc10d36734)",
+ "status": "read-only check; no binding hash was changed, no alias installed, nothing approved. The register entries stay provisional and unreviewed until the coordinator says otherwise.",
+ "own_items_against_my_lineage_map": {
+  "script": "scripts/check-version-register.mjs",
+  "head": "504afeb4a919690fc7b2f65e61091eeb746fe12d",
+  "register_target_snapshot": "0cbcdf7f854a798f0e387bff2a649e1a5157b053",
+  "register_items_of_agent_6": 9,
+  "register_ids": 93,
+  "my_map_items": 9,
+  "my_map_ids": 93,
+  "ids_only_in_register": [],
+  "ids_only_in_my_map": [],
+  "old_meaning_not_in_my_map": [],
+  "mapping_differs": [],
+  "ids_with_more_old_meanings_in_my_map": [],
+  "mapping_equal": 93,
+  "bindings_current": 9,
+  "bindings_stale": [],
+  "migrated_ids_listed_in_register": [],
+  "snapshots": {
+   "distinct": 19,
+   "readable": 19,
+   "unreadable": [],
+   "observations_checked": 595,
+   "observations_wrong": []
+  }
+ },
+ "own_items_lineage_per_snapshot": {
+  "script": "scripts/check-register-lineage.mjs agent-6",
+  "role": "author confirmation of the candidates",
+  "head": "504afeb4a919690fc7b2f65e61091eeb746fe12d",
+  "author": "agent-6",
+  "items": 9,
+  "ids": 93,
+  "live_or_aliased_now": 93,
+  "retired_now": 0,
+  "bindings_current": 9,
+  "bindings_stale": [],
+  "snapshots": {
+   "distinct": 19,
+   "readable": 19,
+   "unreadable": []
+  },
+  "observations": {
+   "listed": 595,
+   "checked": 595,
+   "unreadable": 0
+  },
+  "old_row_differs_in_snapshot": [],
+  "lineage_differs": [],
+  "lineage_problems": [],
+  "text_rebuild_differs": [],
+  "attribution_differs": [],
+  "ids_fully_agreeing": 93,
+  "per_item": {
+   "amal-slvat-abvalhsn-zrab": "31/31",
+   "dua-aml-am-davd": "11/11",
+   "dua-samat": "2/2",
+   "item-adayh-vqt-tlva": "4/4",
+   "item-dvm-khtbh-ayd": "8/8",
+   "khavas-khvas-angshtr-aqyq": "1/1",
+   "namaz-rsvl-sly-allh": "11/11",
+   "ziyarat-hshtm-adab-nyabt": "2/2",
+   "ziyarat-rjybyh-alhmd-allh": "23/23"
+  }
+ },
+ "agent_5_items_lineage_per_snapshot": {
+  "script": "scripts/check-register-lineage.mjs agent-5",
+  "role": "independent reviewer check of the candidates; not an authorization to migrate",
+  "head": "504afeb4a919690fc7b2f65e61091eeb746fe12d",
+  "author": "agent-5",
+  "items": 14,
+  "ids": 27,
+  "live_or_aliased_now": 11,
+  "retired_now": 16,
+  "bindings_current": 14,
+  "bindings_stale": [],
+  "snapshots": {
+   "distinct": 32,
+   "readable": 32,
+   "unreadable": []
+  },
+  "observations": {
+   "listed": 232,
+   "checked": 232,
+   "unreadable": 0
+  },
+  "old_row_differs_in_snapshot": [],
+  "lineage_differs": [],
+  "lineage_problems": [],
+  "text_rebuild_differs": [],
+  "attribution_differs": [],
+  "ids_fully_agreeing": 27,
+  "per_item": {
+   "amal-aamal-ayd-qrban": "2/2",
+   "dua-frj-zman-ajl": "6/6",
+   "ziyarat-amyralmvmnyn-alyh-alslam-2": "3/3",
+   "ziyarat-item-3": "3/3",
+   "ziyarat-mbas": "1/1",
+   "amal-aamal-stvn-2": "1/1",
+   "dua-ilhah": "2/2",
+   "fazilat-svrhqdrvtryqtfryqmrtbhmrtbhanbrshbanhrvz": "1/1",
+   "item-jht-drd-zanv": "2/2",
+   "khavas-hrz-fatmh-alyha": "1/1",
+   "khavas-ram-shdn-asb": "1/1",
+   "namaz-hnvt-myt": "2/2",
+   "namaz-taqyb-zhr-nql": "1/1",
+   "ziyarat-aashvray-ghyr": "1/1"
+  }
+ },
+ "self_test": "three deliberate mutations of a copy of the register (a shifted target_start, a wrong target row, a changed old kind) were each reported by check-register-lineage.mjs",
+ "other_meanings_in_reachable_history": "For the 93 IDs of my items, 279 commits (50 distinct item versions) on all fetched branches were scanned: every occurrence is either the register's old meaning or today's meaning (live row, or the one existing alias). No third meaning."
+}
