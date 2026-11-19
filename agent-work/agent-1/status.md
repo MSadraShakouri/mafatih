@@ -591,3 +591,29 @@ rows of my items do not suppress valid links inside them; and the browser specs 
 in this sandbox (Playwright binaries absent and not downloadable here), so the new
 `tests/browser/row-version-links.spec.ts` errors at `browserType.launch` — an environment
 limitation, reported rather than worked around. Node gates are green.
+
+## Handoff for this round
+
+- **Branch**: `arena/411fca58-mafatih` (my platform-assigned branch, confirmed against
+  `agent-work/agent-1/registration.json`).
+- **Pushed tip**: `4c326a02…` and its parent, this round's work `260d0ad5…`.
+- **Fetched main**: `985f226c…`, merged as `291080e2…` (`git merge-base --is-ancestor`
+  verified afterwards). **Frozen base unchanged**: `ffa01da9…`, still the launch marker on
+  main.
+- **My authored snapshot**: `bfa51744…`, unchanged; reviews of it: 112/112 verified.
+- **Predecessor snapshot reviewed**: agent-6 `f8dca07b…`, 115/115 reviews verified under
+  the upgraded tooling; merged here as `91417646…`. Their tip `80e62627…` adds no data.
+- **Items completed**: 112/112 authored (`audit-authored` no findings), 115/115 of
+  agent-6's items reviewed, 0 of my items in the provisional register.
+- **Tests**: `npm run check` 307 tests, 304 pass, **0 fail**, 3 skipped; `npm run validate`
+  PASS (27 unreferenced pooled values, pre-existing from parallel snapshot merges);
+  tool-pin `tool-version-matches`. Browser specs **cannot run in this sandbox**
+  (Playwright binaries absent, download blocked).
+- **Remaining blockers**: none on my side. Open elsewhere: the 85 register items whose
+  authored records live on branches 2–5, the provisional/held status of agent-6's 20 items,
+  and the release decision the version-choice change implies for their reviewed alias
+  (`ziyarat-rjybyh-alhmd-allh/r00004-s2d6fcda…`). The coordinator's "94 items with
+  unresolved review findings" list does not match the register's membership — of the five
+  items named in it, four (`ziyarat-item-12`, `dua-daa-aymny-shr`, `dua-vdaa-hsyn-alyh`,
+  `item-mrsyh-am-albnyn`) are not in `row-version-findings.json` at all, so that list must
+  come from a different audit and should be reconciled before it is treated as the register.
