@@ -158,7 +158,8 @@ export function attachGlobalSearch(main: HTMLElement, getCatalog: () => Promise<
       if (record.section === 'text' && record.row && (record.language === 'ar' || record.language === 'fa')) {
         const match = originalMatches(record.text, hit.matchedWords)[0];
         navigate(itemHref(record.item, { row: record.row, language: record.language,
-          offset: match ? utf16ToCodePointOffset(record.text, match.start) : 0 }));
+          offset: match ? utf16ToCodePointOffset(record.text, match.start) : 0,
+          ...(record.rowVersion ? { version: record.rowVersion } : {}) }));
       } else navigate(itemHref(record.item));
     });
     row.append(button); return row;

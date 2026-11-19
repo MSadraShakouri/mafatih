@@ -11,6 +11,7 @@ import { CanonicalLayoutSchema, compileCanonicalSplit, createCanonicalLayoutTemp
 import { CanonicalReviewSchema, createCanonicalReviewTemplate, verifyCanonicalReview } from '../src/six-agent-review.js';
 import { carryHistoricalAliases, installHistoricalAliases } from '../src/row-alias-history.js';
 import { parseAliasMigrationBundle, verifyHistoricalAliasEvidence } from '../src/row-alias-migration.js';
+import { prepareLiveRevision, verifyLiveRevisionHistory } from '../src/row-revision.js';
 import { sha256, textId } from '../src/text-ids.js';
 import { checkedAgent, currentAgentBranch, discoverAgentPeer, neighbors, registerAgent, requireAgentBranch } from '../src/six-agent-branch.js';
 
@@ -20,6 +21,8 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts discover --agent agent-N --peer agent-M
   node --import tsx scripts/six-agent.ts layout PLAN --base COMMIT --output NEW_FILE
   node --import tsx scripts/six-agent.ts apply PLAN LAYOUT --base COMMIT --agent agent-N
+  node --import tsx scripts/six-agent.ts revise-preview PLAN LAYOUT --base COMMIT --agent agent-N
+  node --import tsx scripts/six-agent.ts revise PLAN LAYOUT --base COMMIT --agent agent-N --confirm REVIEW_SHA256
   node --import tsx scripts/six-agent.ts merge-preview PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW [--join MODE --reason TEXT]
   node --import tsx scripts/six-agent.ts merge-rows PLAN LAYOUT --base COMMIT --agent agent-N --left ROW --right ROW --join MODE [--reason TEXT]
   node --import tsx scripts/six-agent.ts alias-preview PROPOSAL --base COMMIT --agent agent-N
@@ -33,7 +36,7 @@ const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens
   node --import tsx scripts/six-agent.ts audit-squashed --base COMMIT
   node --import tsx scripts/six-agent.ts message --from agent-N --to agent-M --kind TYPE --text TEXT [--commit COMMIT] [--item ID] [--reply-to ID]
 Use a full immutable 40-character commit. Register, configure and message write only work metadata or local Git configuration.
-Only apply, merge-rows, alias-migrate and restore-snapshot-texts write data/, and only on the registered agent's own branch.
+Only apply, revise, merge-rows, alias-migrate and restore-snapshot-texts write data/, and only on the registered agent's own branch.
 MODE is exact, ar-space, fa-space or both-space. Spacing modes propose one U+0020 per selected language,
 require a reason and separate independent review, and retain exact original text and links.`;
 const project=spawnSync('git',['rev-parse','--show-toplevel'],{encoding:'utf8'});
@@ -142,6 +145,8 @@ function main():void {
   const specs:Record<string,{count:number;flags:string[]}>={
     register:{count:0,flags:['--agent','--base']},configure:{count:0,flags:['--agent']},
     discover:{count:0,flags:['--agent','--peer']},layout:{count:1,flags:['--base','--output']},apply:{count:2,flags:['--base','--agent']},
+    'revise-preview':{count:2,flags:['--base','--agent']},
+    revise:{count:2,flags:['--base','--agent','--confirm']},
     'merge-preview':{count:2,flags:['--base','--agent','--left','--right','--join','--reason']},
     'merge-rows':{count:2,flags:['--base','--agent','--left','--right','--join','--reason']},
     'alias-preview':{count:1,flags:['--base','--agent']},
@@ -302,6 +307,61 @@ function main():void {
     const plan=read(positional[0]!);checkPlanForPublication(plan);const parsed=AgentPlanSchema.parse(plan),group=groupFor(parsed.item);
     if(parsed.author!==group.agent)throw new Error('Wrong author for item');
     output(createCanonicalLayoutTemplate(base,splitAgentPlan(base,plan)),flags['--output']);return;
+  }
+  if(command==='revise-preview'||command==='revise'){
+    const who=agent(flags['--agent']);requireOwnBranch(who,baseSha);
+    const plan=read(positional[0]!),layout=read(positional[1]!);checkPlanForPublication(plan);
+    const parsed=AgentPlanSchema.parse(plan),parsedLayout=CanonicalLayoutSchema.parse(layout),group=groupFor(parsed.item);
+    if(group.agent!==who||parsed.author!==who||parsedLayout.author!==who||parsedLayout.item!==parsed.item)
+      throw new Error('Cannot revise a different agent’s assignment');
+    const names=filesFor(parsed.item,who);ensureExpectedPath(positional[0]!,names.plan);ensureExpectedPath(positional[1]!,names.layout);
+    if(spawnSync('git',['rev-parse','-q','--verify','MERGE_HEAD']).status===0)throw new Error('Resolve the existing merge before revising');
+    const dataStatus=()=>spawnSync('git',['status','--porcelain','-z','--untracked-files=all','--','data/'],{encoding:'utf8'});
+    const status=dataStatus();if(status.status!==0||status.stdout)throw new Error('Commit or preserve all canonical data changes before revising');
+    const dataRoot=path.join(root,'data');
+    for(const directory of [dataRoot,path.join(dataRoot,'items'),path.join(dataRoot,'row-splits'),path.join(dataRoot,'texts')])
+      if(fs.realpathSync(directory)!==directory)throw new Error(`Refusing canonical writes through a directory symlink: ${directory}`);
+    const current=loadCorpus(dataRoot),pre=validateCorpus(current);
+    if(pre.errors.length)throw new Error(`Fix current corpus errors first: ${pre.errors.join('; ')}`);
+    ensureRoundScope(base,current,baseSha);
+    const before=current.items.get(parsed.item),baseline=base.items.get(parsed.item),record=current.rowSplits.get(parsed.item);
+    if(!before||!baseline||!record)throw new Error('A published item and current row mapping are required for a live revision');
+    if(current.alignments.has(parsed.item)||before.review?.text||before.review?.ar_fa)throw new Error('A current human review or alignment needs separate migration');
+    if(record.author!==who||record.baseline_item_sha256!==parsed.item_sha256||
+       JSON.stringify(restoreCanonicalItem(current,parsed.item))!==JSON.stringify(baseline))
+      throw new Error('Existing canonical work is not a reversible version of this agent’s frozen baseline');
+    const headResult=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8'});
+    if(headResult.status!==0)throw new Error('Cannot identify the current revision parent');
+    const head=gitCommit(headResult.stdout.trim()),old=trackedInputAt(head,parsed.item,who);
+    verifyCanonicalResult(base,current,old.plan,old.layout);
+    const compiled=compileCanonicalSplit(base,plan,layout),prepared=prepareLiveRevision(base,current,parsed.item,compiled);
+    ensurePriorAnchors(before,record,compiled.item,prepared.record);
+    verifyLiveRevisionHistory(baseSha,head,base,prepared.corpus,parsed.item,record,prepared.retired,prepared.newLive);
+    const checked=validateCorpus(prepared.corpus);if(checked.errors.length)throw new Error(`Refusing invalid revision: ${checked.errors.join('; ')}`);
+    verifyCanonicalResult(base,prepared.corpus,plan,layout);
+    const reviewHash=sha256(JSON.stringify({protocol:'ar-fa-live-revision-review-v1',base:baseSha,head,agent:who,
+      item:parsed.item,before,previous:record,plan,layout,after:compiled.item,mapping:prepared.record,texts:[...compiled.texts]}));
+    if(command==='revise'){
+      if(!/^[a-f0-9]{64}$/.test(flags['--confirm']??'')||flags['--confirm']!==reviewHash)
+        throw new Error('Revision confirmation hash is missing or stale; run revise-preview again');
+      const latest=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8'}),now=dataStatus();
+      if(latest.status!==0||latest.stdout.trim()!==head||now.status!==0||now.stdout ||
+         JSON.stringify(read(positional[0]!))!==JSON.stringify(plan)||JSON.stringify(read(positional[1]!))!==JSON.stringify(layout))
+        throw new Error('Revision parent, drafts or canonical data changed after preview; preserve and retry');
+      requireOwnBranch(who,baseSha);
+      const itemFile=path.join(dataRoot,'items',`${parsed.item}.json`),recordFile=path.join(dataRoot,'row-splits',`${parsed.item}.json`);
+      for(const file of [itemFile,recordFile,...[...compiled.texts.keys()].map(id=>path.join(dataRoot,'texts',`${id.slice(1,3)}.json`))])
+        if(fs.existsSync(file)&&fs.lstatSync(file).isSymbolicLink())throw new Error(`Refusing to write a symlink: ${file}`);
+      const changes=new Map<string,string|null>([[itemFile,pretty(preserveKeyOrder(read(itemFile),compiled.item))],
+        [recordFile,pretty(preserveKeyOrder(read(recordFile),prepared.record))]]);
+      commit(prepared.corpus,changes,[],[...compiled.texts.keys()]);
+    }
+    output({status:command==='revise-preview'?'live-revision-preview':'live-revision-applied',item:parsed.item,author:who,
+      base:baseSha,history_head:head,history_scope:'reachable commits from frozen base through HEAD; other histories are not assessed',
+      review_sha256:reviewHash,retired_rows:prepared.retired,new_live_ids:prepared.newLive.map(row=>row.id),
+      ...(command==='revise-preview'?{proposed_rows:compiled.item.rows}:{}),
+      note:command==='revise-preview'?'No files changed. Inspect the exact old-to-new mappings and seek independent review.':
+        'Previous reviews of this item are stale. Publish a new authored snapshot and obtain fresh independent review; no scholarly or rights approval is implied.'},undefined);return;
   }
   if(command==='apply'||command==='merge-preview'||command==='merge-rows'){
     const who=agent(flags['--agent']);requireOwnBranch(who,baseSha);

@@ -152,6 +152,22 @@ The tool checks a frozen item fingerprint, author assignment, complete occurrenc
 
 Review `git status` and the actual diff. Stage and commit only your own plans/layouts, changed assigned items, their split records and the affected text shards; never `git add` ignored inputs/previews or an unrelated user's file. Use the two co-author trailers. Before every push, confirm `git branch --show-current` still equals the verified `$OWN_BRANCH`; then push only that branch with `git push origin "$OWN_BRANCH"` (never force). If a push is rejected or branch ownership is unclear, stop and preserve/report the state.
 
+### Revise a published split without orphaning its links
+
+Use this only after the correction has been individually assessed and appropriately authorized. Keep your own registered branch, frozen base and assignment. Merge the coordinator's current tool upgrade, verify the tool pin and fetch relevant history first. Commit the existing plan, layout, item and mapping; canonical `data/` must be clean and the committed plan/layout must describe the current item. Edit your assigned plan/layout **without committing those drafts yet**, keep every source character and attribution, and update `layout.plan_sha256` as above. Existing aliases and reviewed editorial spaces must remain reconstructible. If a changed cut would reuse an old positional child ID for different text or a different frozen occurrence, add `"id_scheme":"lineage-v2"` to the affected output rows. It derives those new child IDs from source references and frozen code-point spans; unchanged layouts keep their old IDs. This does not resolve any already-reused ID.
+
+```bash
+# PLAN and LAYOUT are your assigned work files, edited but not yet committed.
+node --import tsx scripts/six-agent.ts revise-preview "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME"
+# Independently inspect the complete returned retired_rows mappings and proposed result.
+# Copy the full review_sha256; no commit or draft edit may intervene.
+node --import tsx scripts/six-agent.ts revise "$PLAN" "$LAYOUT" --base "$BASE" --agent "$ME" --confirm "$REVIEW_SHA256"
+```
+
+The preview is read-only and contains IDs, pooled references and code-point mappings, not source passages. The write operation rechecks the exact HEAD, draft plan/layout, old item and mapping, frozen source lineage and reachable Git history; it stages the item, mapping and needed pool additions before installing them, with best-effort rollback on write failure. It preserves earlier aliases and refuses to repurpose affected IDs, ambiguous historical aliases, missing lineage, changed attribution, lost editorial spaces, shallow history or stale confirmation. Histories outside the reachable commits are **not** assessed; an existing version-ambiguous ID that is untouched by a revision remains held, not fixed. Ordinary `apply` still refuses to orphan or repurpose published IDs. The tool does not authorize invented translations, nonadjacent arbitrary joins, unreviewed spaces or changes to human-reviewed alignments.
+
+Review the actual `git diff`; commit the revised plan, layout and canonical changes on your own branch. Publish a new isolated author snapshot and ask the assigned neighbor to re-review the actual result, its links, roles and every proposed space. Old reviews for a changed item are stale. If a guarded operation is refused, preserve its work and report the exact blocker rather than editing canonical files by hand.
+
 ### Merge adjacent rows, including across original rows
 
 First apply your fully checked plan/layout normally and inspect the **current** row IDs and both languages. If finer cuts are needed, make them before merging. Select two adjacent current output rows in source order; they can come from different frozen original rows. Do not infer that the languages correspond just because they are adjacent. Preview without changing any files:
@@ -184,6 +200,18 @@ Each selected language receives exactly one ordinary U+0020 space **in the curre
 The command checks ownership, the frozen plan, current result and adjacency; it refuses different row kinds or conflicting row-level source attributions. It writes the layout, item, mapping and pooled values as one guarded worktree operation; it does not `git add` or commit them. A sequence of merges can use the returned `merged_row` with its next neighbor; intermediate links are preserved. For **V1, V2 and V3**, ordinary `apply` refuses a revision that would orphan a prior row link or reuse its live ID for different text or attribution. Do not bypass this guard. Retired V1 revision IDs can sometimes be recovered from preserved history using the separately checked migration below.
 
 The author must review the grouping and ask the assigned independent reviewer to review the new snapshot. For each V3 inserted space, the reviewer must make a **separate** `spacing_review` decision with a note; accepting only the layout and source reviews is insufficient. Previous reviews for this changed item are stale; unchanged items' reviews remain bound to their existing results. Agent assertions are not human scholarly or rights approval.
+
+### Version-aware reader safety
+
+The upgraded reader can warn on known reused IDs, offer provisional candidates
+for some unroutable retired IDs, and produce versioned current search links.
+See [row-version-links.md](row-version-links.md) for the URL contract,
+stale-data safeguards, provisional lineage findings and important limits.
+Even a single candidate requires explicit user action and is not approved. The
+unreviewed safety register does not authorize a migration, complete an item,
+rebind a review, or relax `ensureRoundScope`. If an item or mapping changes,
+historical physical suggestions are withheld until rechecked; do not merely
+replace their binding hash. Run `verify-tool-info` after upgrading.
 
 ### Recover independently evidenced retired row links
 

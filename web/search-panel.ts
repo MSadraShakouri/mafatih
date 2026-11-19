@@ -210,13 +210,17 @@ export function attachSearch(main: HTMLElement, catalog: Catalog, client: Search
       if (record.section === 'text' && record.row && (record.language === 'ar' || record.language === 'fa')) {
         const first = matches[0];
         const anchor: ReadingAnchor = { row: record.row, language: record.language,
-          offset: first ? utf16ToCodePointOffset(record.text, first.start) : 0 };
+          offset: first ? utf16ToCodePointOffset(record.text, first.start) : 0,
+          ...(record.rowVersion ? { version: record.rowVersion } : {}) };
         link.href = itemHref(record.item, anchor);
         link.addEventListener('click', event => {
           if (window.location.hash === link.hash && main.dataset.itemId === record.item) {
             event.preventDefault();
             close();
-            scrollToReadingAnchor(main, anchor);
+            // Do not bypass a version warning when a stale index points to the
+            // same hash. Only repeat a target the reader already resolved.
+            if (main.dataset.anchorRow === anchor.row && main.dataset.anchorOffset === String(anchor.offset))
+              scrollToReadingAnchor(main, anchor);
           }
         });
         row.dataset.rowId = record.row;

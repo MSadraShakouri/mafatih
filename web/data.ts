@@ -1,4 +1,4 @@
-import type { RowSplitRedirect } from './row-split-anchor.js';
+import type { RowSplitRedirect, RowVersionEntry } from './row-split-anchor.js';
 
 // The browser consumes resolved runtime data, not Node's corpus loader or
 // the canonical text pool. These interfaces cover only fields used so far.
@@ -31,6 +31,8 @@ export interface Catalog {
 
 export interface ItemRow {
   id: string;
+  /** Deterministic identity for newly generated current-row links. */
+  version?: string;
   ar: string;
   fa: string;
   kind?: string;
@@ -45,6 +47,8 @@ export interface ReaderItem {
   rows: ItemRow[];
   /** Redirects from retired row/language/code-point URLs to current slices. */
   row_split_redirects?: RowSplitRedirect[];
+  /** Guarded reused and retired IDs; historical mappings remain provisional. */
+  row_version_links?: RowVersionEntry[];
 }
 
 // Identifiers use the same character rule as the canonical schema. In
