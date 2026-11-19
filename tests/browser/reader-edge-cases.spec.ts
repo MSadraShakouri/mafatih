@@ -62,14 +62,26 @@ test('a slow earlier font load cannot override a newer selection', async ({ page
 });
 
 test('only explicit instructions use the explanation size; Persian-only rows are not reclassified', async ({ page }) => {
+  // The real introduction now has an explicit note classification. Use an
+  // unambiguous fixture to test the reader rule rather than undoing that data.
+  await page.route('**/data/items/item-mqdmh.json', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({
+    id:'item-mqdmh', title:{fa:'نمونه',ar:'',en:''}, featured:false, rows:[
+      {id:'synthetic-translation',ar:'',fa:'نمونهٔ متن',kind:'recitation'},
+      {id:'synthetic-instruction',ar:'',fa:'نمونهٔ راهنما',kind:'instruction'},
+    ],
+  }) }));
   await page.goto('./#/item/item-mqdmh');
-  const first = page.locator('article [data-row-id="r00004"] p[lang="fa"]');
+  const first = page.locator('article [data-row-id="synthetic-translation"] p[lang="fa"]');
+  const instruction = page.locator('article [data-row-id="synthetic-instruction"] p[lang="fa"]');
   await expect(first).toHaveAttribute('data-text-role', 'translation');
+  await expect(instruction).toHaveAttribute('data-text-role', 'explanation');
+  const before = await instruction.evaluate(node => parseFloat(getComputedStyle(node).fontSize));
   await page.getByRole('button', { name: 'تنظیمات متن' }).click();
   await page.getByRole('button', { name: 'دیدن نمونهٔ توضیحات' }).click();
   await page.getByRole('button', { name: 'بزرگ‌تر کردن توضیحات' }).evaluate(button => { for (let i = 0; i < 10; i++) (button as HTMLButtonElement).click(); });
   await page.getByRole('button', { name: 'بازگشت به دعا' }).click();
   await expect(first).toHaveCSS('font-size', '16.5px');
+  expect(await instruction.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThan(before);
 });
 
 test('licenses are bundled locally but not shown in the reader or settings', async ({ page }) => {

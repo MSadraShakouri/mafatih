@@ -52,12 +52,12 @@ function sameMeaning(a:Row,b:Row):boolean {
 }
 
 type Language='ar'|'fa';
-type LineageRun={start:number;end:number;origin:string;originStart:number};
+export type LineageRun={start:number;end:number;origin:string;originStart:number};
 /** Map a physical field back to its precise frozen occurrences. A source slice
  * is identified by original row, source language and code-point offset, not
  * by its (possibly repeated) text. Editorial spaces are identified by their
  * neighboring source offsets and may never masquerade as source characters. */
-function fieldLineage(base:Corpus,current:Corpus,itemId:string,item:Item,record:RowSplitRecord|undefined,
+export function fieldLineage(base:Corpus,current:Corpus,itemId:string,item:Item,record:RowSplitRecord|undefined,
     rowId:string,language:Language):LineageRun[] {
   const frozen=base.items.get(itemId),row=item.rows.find(entry=>entry.id===rowId);
   if(!frozen||!row||row[language]===null)throw new Error(`${itemId}/${rowId}/${language}: lineage field is absent`);
@@ -153,7 +153,7 @@ export function assertHistoricalAliasLineage(base:Corpus,current:Corpus,itemId:s
  * or source attributions. This deliberately does not claim coverage of commits
  * absent from the local reachable history. */
 export function verifyHistoricalAliasEvidence(item:string,aliases:RowSplitAlias[],baseSha:string,head:string,
-    base:Corpus,current:Corpus):void {
+    base:Corpus,current:Corpus,options:{allowRoleOnly?:boolean}={}):void {
   Key.parse(item);Commit.parse(baseSha);Commit.parse(head);
   if(git(['rev-parse','--is-shallow-repository']).trim()!=='false')
     throw new Error('Historical alias migration requires complete local Git history; a shallow history cannot establish ambiguity');
@@ -203,7 +203,8 @@ export function verifyHistoricalAliasEvidence(item:string,aliases:RowSplitAlias[
     if(!occurrences.length)throw new Error(`${item}/${id}: not found in reachable history`);
     if(occurrences.some(entry=>!sameMeaning(entry.row,occurrences[0]!.row)))
       throw new Error(`${item}/${id}: different historical meanings require version-aware handling, not an ordinary alias`);
-    if(!occurrences.some(entry=>JSON.stringify(entry.row)===JSON.stringify(alias.original)))
+    if(!occurrences.some(entry=>JSON.stringify(entry.row)===JSON.stringify(alias.original)) &&
+       !(options.allowRoleOnly && occurrences.some(entry=>sameMeaning(entry.row,alias.original))))
       throw new Error(`${item}/${id}: alias original does not match a historical row and kind`);
     for(const {snapshot} of occurrences)
       assertHistoricalAliasLineage(base,current,item,snapshot.item,records.get(snapshot.sha),alias,targetCache);
