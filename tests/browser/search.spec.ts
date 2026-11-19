@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { runtimeItem, sourceTarget, sourceValue } from './row-source-fixture.js';
 
 test.setTimeout(60_000);
 
@@ -192,7 +193,12 @@ test('language choices are shared for a session and reset to Arabic-only on relo
   await expect(page.getByRole('button', { name: arabic })).toHaveAttribute('aria-pressed', 'true');
 });
 
-test('approved short-B aliases find unchanged full-corpus source in both scopes', async ({ page }) => {
+test('approved short-B aliases find unchanged full-corpus source in both scopes', async ({ page, request }) => {
+  const item = await runtimeItem(request, 'namaz-adab-kyfyt');
+  const source = sourceValue(item, 'r00011', 'ar'), index = source.indexOf('بالَّلِعبِ');
+  expect(index).toBeGreaterThanOrEqual(0);
+  const target = sourceTarget(item, 'r00011', 'ar', Array.from(source.slice(0, index)).length);
+  expect(target.language).toBe('ar');
   await page.goto('./');
   await page.getByRole('searchbox', { name: homeInput }).fill('بالطف');
   await completeGlobal(page);
@@ -211,7 +217,7 @@ test('approved short-B aliases find unchanged full-corpus source in both scopes'
   await page.goto('./#/item/namaz-adab-kyfyt');
   await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();
   await page.getByRole('searchbox', { name: readerInput }).fill('بالعب');
-  await expect(page.locator('.result-row[data-row-id="r00011"] mark').first()).toContainText('بالَّلِعبِ', { timeout: 40_000 });
+  await expect(page.locator(`.result-row[data-row-id="${target.row}"][data-language="ar"] mark`).first()).toContainText('بالَّلِعبِ', { timeout: 40_000 });
 });
 
 test('Persian in-text result jumps to the matched line inside a long original row', async ({ page }) => {

@@ -7,7 +7,11 @@ export interface ReadingAnchor {
   language: SearchLanguage;
   /** Unicode code-point offset in the original row field, not UTF-16. */
   offset: number;
+  /** Exact snapshot or content-version identifier; never infer one from an old URL. */
+  version?: string;
 }
+
+const versionId = /^(?:[a-f0-9]{40}|[a-f0-9]{64})$/;
 
 export type Route =
   | { kind: 'library' }
@@ -43,20 +47,25 @@ export function parseRoute(hash: string): Route {
   const row = params.get('row');
   const language = params.get('lang');
   const offsetText = params.get('offset');
-  if (keys.length !== 3 || new Set(keys).size !== 3 ||
+  const version = params.get('version');
+  if ((keys.length !== 3 && keys.length !== 4) || new Set(keys).size !== keys.length ||
+      keys.some(key => !['row', 'lang', 'offset', 'version'].includes(key)) ||
       !row || !isItemId(row) || (language !== 'ar' && language !== 'fa') ||
-      !offsetText || !/^(?:0|[1-9][0-9]*)$/.test(offsetText)) return { kind: 'not-found' };
+      !offsetText || !/^(?:0|[1-9][0-9]*)$/.test(offsetText) ||
+      (version !== null && !versionId.test(version))) return { kind: 'not-found' };
   const offset = Number(offsetText);
   if (!Number.isSafeInteger(offset)) return { kind: 'not-found' };
-  return { kind: 'item', id, anchor: { row, language, offset } };
+  return { kind: 'item', id, anchor: { row, language, offset, ...(version === null ? {} : { version }) } };
 }
 
 export function itemHref(id: string, anchor?: ReadingAnchor): string {
   if (!isItemId(id)) throw new Error('Invalid item ID');
   if (!anchor) return `#/item/${id}`;
   if (!isItemId(anchor.row) || (anchor.language !== 'ar' && anchor.language !== 'fa') ||
-      !Number.isSafeInteger(anchor.offset) || anchor.offset < 0) throw new Error('Invalid reading anchor');
+      !Number.isSafeInteger(anchor.offset) || anchor.offset < 0 ||
+      (anchor.version !== undefined && !versionId.test(anchor.version))) throw new Error('Invalid reading anchor');
   const params = new URLSearchParams({ row: anchor.row, lang: anchor.language, offset: String(anchor.offset) });
+  if (anchor.version !== undefined) params.set('version', anchor.version);
   return `#/item/${id}?${params.toString()}`;
 }
 
