@@ -66,6 +66,11 @@ and equal). So no new author snapshot was made and no review became stale.
    names: 112 complete, 3 need work, 0 errors. For all 115 items, item,
    mapping, plan and layout are identical at the recorded snapshot, at his
    branch tip and here.
+   Checked again at the end of the round: his tip moved to `24ebdcb4` (his
+   merge of `main` and a handoff note). No item, mapping, plan or layout
+   changed, and there is no new snapshot. His message `623807d3` says the
+   three kind questions stay open, no kind was changed and no alias was
+   migrated. That agrees with my records.
 4. **The register's 27 candidates in agent-5's items** (14 items: 16 retired
    IDs, 11 reused), checked as his reviewer by the same lineage method: 232
    observations in 32 commits, 27 of 27 agree, bindings match. This is a
