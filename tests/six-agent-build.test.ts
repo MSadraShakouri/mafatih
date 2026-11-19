@@ -6,7 +6,8 @@ import path from 'node:path';
 import { buildData } from '../scripts/build-data.js';
 import { loadCorpus, validateCorpus } from '../src/corpus.js';
 import { textId } from '../src/text-ids.js';
-import { resolveLegacyRowAnchor, type RowSplitRedirect } from '../web/row-split-anchor.js';
+import { rowVersion } from '../src/row-version-safety.js';
+import { resolveLegacyRowAnchor, resolveVersionedRowAnchor, type RowSplitRedirect, type VersionedLiveRow } from '../web/row-split-anchor.js';
 
 test('runtime build emits row redirects and validates historical references to a retired row', () => {
   const temp=fs.mkdtempSync(path.join(os.tmpdir(),'mafatih-split-build-'));
@@ -32,7 +33,7 @@ test('runtime build emits row redirects and validates historical references to a
     buildData({root:temp,includeSearch:false,quiet:true,write:(name,body)=>files.set(name,body)});
     const item=JSON.parse(files.get('items/example.json')!) as {rows:Array<{id:string;ar:string}>;row_split_redirects:unknown[]};
     assert.deepEqual(item.rows.map(r=>[r.id,r.ar]),[['old-s1','abc '],['old-s2','def']]);
-    assert.deepEqual(item.row_split_redirects,[{original:{id:'old'},
+    assert.deepEqual(item.row_split_redirects,[{original:{id:'old'},version:rowVersion('example',{id:'old',ar:ids[0]!,fa:null}),
       ar:[{row:'old-s1',language:'ar',start:0,end:4},{row:'old-s2',language:'ar',start:4,end:7}],fa:[]}]);
   } finally {fs.rmSync(temp,{recursive:true,force:true});}
 });
@@ -58,10 +59,16 @@ test('runtime build emits merged row offsets and prior-output redirects while se
     put('editorial-history.json',{evidence:{},metadata_corrections:[]});
     assert.deepEqual(validateCorpus(loadCorpus(root)).errors,[]);
     const files=new Map<string,string>();buildData({root,quiet:true,write:(name,body)=>files.set(name,body)});
-    const item=JSON.parse(files.get('items/example.json')!) as {rows:Array<{id:string;ar:string}>;row_split_redirects:RowSplitRedirect[]};
+    const item=JSON.parse(files.get('items/example.json')!) as {rows:VersionedLiveRow[];row_split_redirects:RowSplitRedirect[]};
     assert.deepEqual(item.rows.map(r=>[r.id,r.ar]),[['joined','a😀bc']]);
-    for(const old of ['old-b','old-b-piece'])assert.deepEqual(resolveLegacyRowAnchor(item.row_split_redirects,{row:old,language:'ar',offset:1}),
-      {row:'joined',language:'ar',offset:3});
+    for(const old of ['old-b','old-b-piece']){
+      assert.deepEqual(resolveLegacyRowAnchor(item.row_split_redirects,{row:old,language:'ar',offset:1}),
+        {row:'joined',language:'ar',offset:3});
+      const original={id:old,ar:ids[1]!,fa:null};
+      assert.deepEqual(resolveVersionedRowAnchor(item.row_split_redirects,[],{row:old,language:'ar',offset:1,version:rowVersion('example',original)},item.rows),
+        {status:'resolved',anchor:{row:'joined',language:'ar',offset:3},meaning:'historical'});
+      assert.equal(resolveVersionedRowAnchor(item.row_split_redirects,[],{row:old,language:'ar',offset:8,version:rowVersion('example',original)},item.rows).status,'unavailable');
+    }
     const search=[...files].filter(([name])=>/^search\/\d+\.json$/.test(name)).flatMap(([,body])=>(JSON.parse(body) as {records:Array<{row?:string;text:string}>}).records);
     assert.ok(search.some(record=>record.row==='joined'&&record.text==='a😀bc'));
     // The runtime also indexes the actual V3 editorial space while historical

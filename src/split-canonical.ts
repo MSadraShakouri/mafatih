@@ -8,8 +8,11 @@ import { codePoints, sha256, slicePoints, textId } from './text-ids.js';
 const Language = z.enum(['ar','fa']);
 const Kind = RowFieldsSchema.shape.kind.unwrap();
 const Part = z.object({ source: Language, part: z.number().int().nonnegative() }).strict();
-const OutputRow = z.object({ ar: Part.nullable(), fa: Part.nullable(), kind: Kind }).strict()
-  .refine(row => row.ar !== null || row.fa !== null, 'an output row needs a source piece');
+const OutputRow = z.object({ ar: Part.nullable(), fa: Part.nullable(), kind: Kind,
+  // Opt in only for a revised piece whose old positional ID would otherwise
+  // be reused for different source offsets. Existing layouts keep their IDs.
+  id_scheme:z.literal('lineage-v2').optional(),
+}).strict().refine(row => row.ar !== null || row.fa !== null, 'an output row needs a source piece');
 export const CanonicalLayoutSchema = z.object({
   format_version: z.literal(1), protocol: z.literal('ar-fa-canonical-v1'), item: Key, author: Key,
   plan_sha256: z.string().regex(/^[a-f0-9]{64}$/),
@@ -99,7 +102,14 @@ export function compileCanonicalSplit(c: Corpus, planInput: unknown, layoutInput
     });
     for (const out of rowLayout.output) {
       if (out.kind === 'unknown') throw new Error(`${old.id}: output kind must be classified`);
-      const rowId = unchangedAddress ? old.id : `${old.id}-s${serialHash({row:old.id,ar:out.ar,fa:out.fa,kind:out.kind}).slice(0,16)}`;
+      const spans=out.id_scheme ? Object.fromEntries((['ar','fa'] as const).map(language=>{
+        const ref=out[language];if(ref===null)return [language,null];
+        const piece=sources[ref.source][ref.part];
+        if(!piece)throw new Error(`${old.id}/${ref.source}: invalid source piece`);
+        return [language,{source:ref.source,start:piece.start,end:piece.end}];
+      })) : undefined;
+      const rowId = unchangedAddress ? old.id : `${old.id}-s${serialHash({row:old.id,ar:out.ar,fa:out.fa,kind:out.kind,
+        ...(out.id_scheme?{id_scheme:out.id_scheme,spans}:{}),}).slice(0,16)}`;
       if (usedIds.has(rowId) || (!unchangedAddress && allIds.has(rowId))) throw new Error(`${old.id}: duplicate or reused row identity ${rowId}`);
       usedIds.add(rowId);
       const row:Row = {id:rowId,ar:null,fa:null,kind:out.kind};

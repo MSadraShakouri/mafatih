@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { claim, documentTitle, itemTitle, linksForItem, loadCorpus, text, validateCorpus } from '../src/corpus.js';
 import { normalizeSearch } from '../src/normalize.js';
+import { compileRowVersionFindings, rowVersion } from '../src/row-version-safety.js';
 import type { SearchIndex, SearchRecord } from '../src/search.js';
 import type { NavNode } from '../src/schema.js';
 
@@ -16,6 +17,8 @@ export interface BuildDataOptions {
   onWarning?: (warning: string) => void;
   /** An in-memory sink lets Vite serve data without staging thousands of files. */
   write?: (relativePath: string, content: string) => void;
+  /** Override the checked-in safety findings, e.g. for a synthetic corpus test. */
+  rowVersionFindings?: unknown;
   quiet?: boolean;
 }
 
@@ -24,6 +27,11 @@ export function buildData(options: BuildDataOptions = {}): void {
   const c=loadCorpus(options.root);const checked=validateCorpus(c);
   if(checked.errors.length)throw new Error(`Structural validation failed:\n${checked.errors.join('\n')}`);
   if(options.onWarning) for(const warning of checked.warnings) options.onWarning(warning);
+  // The register is metadata-only, not a corpus edit or review. It remains in
+  // the build even if a mapping becomes stale, so guarded IDs still warn.
+  const findingsPath=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../docs/split-assignments/row-version-findings.json');
+  const findings=options.rowVersionFindings ?? JSON.parse(fs.readFileSync(findingsPath,'utf8')) as unknown;
+  const versionLinks=compileRowVersionFindings(c,findings);
   const out=path.resolve('generated/web-data');
   if(!options.write){fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});}
   const writeText=options.write ?? ((rel:string,content:string)=>{const target=path.join(out,rel);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,content,'utf8');});
@@ -32,6 +40,7 @@ export function buildData(options: BuildDataOptions = {}): void {
   const featured=new Set(c.nav.featured);const catalog=[];const textSearchRecords:SearchRecord[]=[];
   for(const id of c.nav.default_order){
     const item=c.items.get(id)!;const title=itemTitle(c,id);const tags=item.tags.map(x=>text(c,x));
+    const currentVersions=new Map(item.rows.map(row=>[row.id,rowVersion(id,row)]));
     const links=linksForItem(c,id).map(l=>({document:l.document,kind:l.kind,coverage:c.english.get(l.document)!.coverage,reviewed:Boolean(l.review)}));
     // Source-page audio menus accidentally imported as Persian text remain in
     // canonical data/history but are not prayer rows or searchable content.
@@ -41,17 +50,19 @@ export function buildData(options: BuildDataOptions = {}): void {
     const rows=item.rows.flatMap((r,position)=>{
       if(r.kind==='audio-reciter')return [];
       const following=item.rows[position+1];
-      return [{id:r.id,ar:text(c,r.ar),fa:text(c,r.fa),...(r.kind?{kind:r.kind}:{}),...(r.sources?{sources:r.sources}:{}),
+      return [{id:r.id,version:currentVersions.get(r.id)!,ar:text(c,r.ar),fa:text(c,r.fa),...(r.kind?{kind:r.kind}:{}),...(r.sources?{sources:r.sources}:{}),
         ...(following&&following.kind!=='audio-reciter'?{searchNext:following.id}:{})}];
     });
     catalog.push({id,title,category:item.category,...(item.quran?{quran:item.quran}:{}),tags,featured:featured.has(id),row_count:rows.length,
       excluded_audio_rows:excludedAudioRows,alignment_claim:item.legacy_alignment, titles_reviewed:Boolean(item.review?.titles),english:links});
     const split=c.rowSplits.get(id);
     const redirects=[...(split?.rows ?? []),...(split?.aliases ?? [])]
-      .map(entry=>({original:{id:entry.original.id},ar:entry.ar,fa:entry.fa}));
+      .map(entry=>({original:{id:entry.original.id},version:rowVersion(id,entry.original),ar:entry.ar,fa:entry.fa}));
+    const rowVersionLinks=versionLinks.get(id);
     write(`items/${id}.json`,{id,legacy_id:item.legacy_id,title,featured:featured.has(id),category:item.category,...(item.quran?{quran:item.quran}:{}),tags,
       alignment_claim:item.legacy_alignment,ar_fa_reviewed:Boolean(item.review?.ar_fa),sources:item.sources??{},excluded_audio_rows:excludedAudioRows,rows,english:links,
-      ...(redirects.length?{row_split_redirects:redirects}:{}),reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});
+      ...(redirects.length?{row_split_redirects:redirects}:{}),...(rowVersionLinks?.length?{row_version_links:rowVersionLinks}:{}),
+      reviewed_alignment_groups:c.alignments.get(id)?.groups??[]});
     // Each source field remains a separate OR result. Link only an immediately
     // neighboring source row in the same language, never across an excluded
     // audio row or an empty field; local phrase ranking can follow this link.
@@ -64,7 +75,7 @@ export function buildData(options: BuildDataOptions = {}): void {
           const nextText=following&&following.kind!=='audio-reciter'?text(c,following[language]):'';
           const next=following&&nextText&&normalizeSearch(nextText)?`row:${id}:${following.id}:${language}`:undefined;
           textSearchRecords.push({key:`row:${id}:${row.id}:${language}`,section:'text',item:id,row:row.id,
-            language,text:value,normalized:normalizeSearch(value),featured:featured.has(id),order:textSearchRecords.length,
+            rowVersion:currentVersions.get(row.id)!,language,text:value,normalized:normalizeSearch(value),featured:featured.has(id),order:textSearchRecords.length,
             ...(next?{next}:{})});
         }
       }
