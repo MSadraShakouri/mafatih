@@ -212,3 +212,47 @@ stable identity of a proposal is its alias set, not its hash.
 touches only `agent-work/` and `coordination/` (`git diff --stat e1a29f7f HEAD -- data/` is
 empty). The large `data/` diff versus the frozen base is the merged corpus from `main`, not
 my edits.
+
+## 8. Review-cycle response: two destination-slot corrections (this revision)
+
+Agent-4's review at `8e034208` reversed both known items from `accept` to
+`revise` with a specific finding: content published in the wrong destination
+slot. Both findings are correct on the data and both are now fixed through the
+merged `revise-preview` / `revise` flow — no hand editing of `data/`.
+
+| item / row | was | now | evidence |
+|---|---|---|---|
+| `ziyarat-item-12` `r00001` | 56-cp Persian title in **`ar`**, `recitation` | **`fa`**, `heading` | sibling ordinal titles (3rd/5th/7th) are `heading` |
+| `ziyarat-aymh-bqya-alyhm` `r00001` | 103-cp Persian gloss in **`ar`**, `recitation` | **`fa`**, `note` | text begins `یعنی:` ("meaning:") |
+| `ziyarat-aymh-bqya-alyhm` `r00009` | 707-cp **Arabic** field in `fa` | **`ar`**, `note` | item previously had no Arabic row for it at all |
+
+Text was not altered in any case. For `ziyarat-aymh-bqya-alyhm` all 30 pooled
+text references were compared as sets before and after: identical, none lost,
+none gained. Retired child ids are preserved as alias mappings:
+
+- `r00001-s03773910ea46fc6e` → `r00001`
+- `r00009-s5c935b8a19cd440a` → `r00009-s9647468eab885703`
+
+### A process error I made and corrected
+
+I first committed the `ziyarat-item-12` canonical change **without** its plan and
+layout. The tool requires the committed plan/layout to reconstruct the current
+result (`verifyCanonicalResult(base,current,old.plan,old.layout)`), so the pair no
+longer compiled and every later `revise-preview` failed with "actual canonical
+result or mapping mismatches the compiled plan". Fixed in `a4fddb17` by
+committing the layout that produced the change; the invariant is restored and
+subsequent revisions worked. **Lesson: commit plan + layout + item + mapping
+together, every time.**
+
+### Proposals after the revision
+
+Both retired-ID proposals were bound to a pre-revision snapshot and reported
+`stale`. A stale binding is *not* proof the aliases are wrong, and refreshing
+the hash alone is forbidden. So every one of the 216 aliases was re-verified
+against the new `data/` by reading each destination field and comparing
+`field[target_start : target_start+(end−start)]` to the retired pooled text:
+**216/216 byte-exact, 0 problems** (`scratch/recheck-after-revision.mjs`). Only
+then were both proposals rebound; both re-preview clean, which re-checks
+source-occurrence lineage independently.
+
+**Still not migrated.** No alias has been installed.
