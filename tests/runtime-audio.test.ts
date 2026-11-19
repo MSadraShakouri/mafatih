@@ -1,6 +1,8 @@
-import test, {before} from 'node:test';
+import test, {after,before} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {loadCorpus,text} from '../src/corpus.js';
 import {normalizeSearch} from '../src/normalize.js';
@@ -9,7 +11,15 @@ import {corpusBeforeRowSplits,currentPieces,historicalRow} from './helpers/row-s
 import {codePoints,slicePoints} from '../src/text-ids.js';
 
 // Build now, rather than relying on potentially stale generated artifacts.
-before(()=>{execFileSync(process.execPath,['--import','tsx','scripts/build-data.ts'],{stdio:'pipe'});});
+// The CLI writes ~38 MB / hundreds of files; keep this disposable test output
+// in an automatically removed temporary directory, not the user's workspace.
+const temp=fs.mkdtempSync(path.join(os.tmpdir(),'mafatih-runtime-audio-'));
+const generated=path.join(temp,'generated/web-data');
+const loader=path.resolve('node_modules/tsx/dist/loader.mjs');
+const dataRoot=path.resolve(process.env.MAFATIH_DATA_ROOT ?? 'data');
+before(()=>{execFileSync(process.execPath,['--import',loader,path.resolve('scripts/build-data.ts')],
+  {cwd:temp,env:{...process.env,MAFATIH_DATA_ROOT:dataRoot},stdio:'pipe'});});
+after(()=>fs.rmSync(temp,{recursive:true,force:true}));
 
 /** Check a mapped historical slice without treating it as a whole merged row. */
 function assertCorrectedRuntimePiece(
@@ -45,19 +55,19 @@ test('corrected occurrences use code-point slices while search indexes the whole
 
 test('web build excludes classified audio menus from content and search but retains canonical rows',()=>{
   const c=loadCorpus();
-  const index=JSON.parse(fs.readFileSync('generated/web-data/search-index.json','utf8')) as SearchIndex;
-  const allRecords=[...index.records,...index.shards.flatMap(path=>(JSON.parse(fs.readFileSync(`generated/web-data/${path}`,'utf8')) as SearchShard).records)];
+  const index=JSON.parse(fs.readFileSync(path.join(generated,'search-index.json'),'utf8')) as SearchIndex;
+  const allRecords=[...index.records,...index.shards.flatMap(path=>(JSON.parse(fs.readFileSync(`${generated}/${path}`,'utf8')) as SearchShard).records)];
   const searchRows=allRecords.filter(r=>r.section==='text');
   const priority=(r:typeof searchRows[number])=>(r.featured?0:2)+(r.language==='ar'?0:1);
   assert.ok(searchRows[0]?.featured&&searchRows[0]?.language==='ar');
   for(let i=1;i<searchRows.length;i+=1)assert.ok(priority(searchRows[i-1]!)<=priority(searchRows[i]!),`shard priority at ${i}`);
-  const catalog=JSON.parse(fs.readFileSync('generated/web-data/catalog.json','utf8')) as {items:Array<{id:string;row_count:number;excluded_audio_rows:number}>};
+  const catalog=JSON.parse(fs.readFileSync(path.join(generated,'catalog.json'),'utf8')) as {items:Array<{id:string;row_count:number;excluded_audio_rows:number}>};
   let excluded=0;
   for(const [id,item] of c.items){
     const audio=item.rows.filter(r=>r.kind==='audio-reciter');if(!audio.length)continue;
     excluded+=audio.length;
     const ordinary=item.rows.filter(r=>r.kind!=='audio-reciter');
-    const built=JSON.parse(fs.readFileSync(`generated/web-data/items/${id}.json`,'utf8')) as {excluded_audio_rows:number;rows:Array<{id:string;ar:string;fa:string;kind?:string}>};
+    const built=JSON.parse(fs.readFileSync(`${generated}/items/${id}.json`,'utf8')) as {excluded_audio_rows:number;rows:Array<{id:string;ar:string;fa:string;kind?:string}>};
     const catalogItem=catalog.items.find(x=>x.id===id)!;
     assert.equal(built.excluded_audio_rows,audio.length);assert.equal(catalogItem.excluded_audio_rows,audio.length);
     assert.equal(catalogItem.row_count,ordinary.length);
@@ -86,23 +96,23 @@ test('web build excludes classified audio menus from content and search but reta
 
 test('web build publishes retired paragraph redirects without restoring retracted links',()=>{
   const c=loadCorpus();
-  const output=JSON.parse(fs.readFileSync('generated/web-data/paragraph-redirects.json','utf8')) as {redirects:Array<{document:string;paragraph:string;target_document:string;target_paragraph:string;original_text_id:string}>};
+  const output=JSON.parse(fs.readFileSync(path.join(generated,'paragraph-redirects.json'),'utf8')) as {redirects:Array<{document:string;paragraph:string;target_document:string;target_paragraph:string;original_text_id:string}>};
   assert.equal(output.redirects.length,c.editorial.paragraph_removals?.length);
   for(const e of c.editorial.paragraph_removals??[]){
     const redirect=output.redirects.find(r=>r.document===e.document&&r.paragraph===e.paragraph);
     assert.deepEqual(redirect,{document:e.document,paragraph:e.paragraph,target_document:e.preserved_document,target_paragraph:e.preserved_paragraph,original_text_id:e.text});
-    const doc=JSON.parse(fs.readFileSync(`generated/web-data/english/${e.document}.json`,'utf8')) as {paragraph_redirects:typeof output.redirects};
+    const doc=JSON.parse(fs.readFileSync(`${generated}/english/${e.document}.json`,'utf8')) as {paragraph_redirects:typeof output.redirects};
     assert.ok(doc.paragraph_redirects.some(r=>r.paragraph===e.paragraph&&r.target_document===e.preserved_document));
   }
-  const item=JSON.parse(fs.readFileSync('generated/web-data/items/ziyarat-zkrmsajd-mazmh-mdynh.json','utf8')) as {english:Array<{document:string}>};
+  const item=JSON.parse(fs.readFileSync(path.join(generated,'items/ziyarat-zkrmsajd-mazmh-mdynh.json'),'utf8')) as {english:Array<{document:string}>};
   assert.ok(!item.english.some(l=>l.document==='tr142-rajab-daily-dua-4'));
 });
 
 test('row adjacency metadata follows immediate source rows only, without crossing languages, gaps or audio rows',()=>{
   const c=loadCorpus();
-  const index=JSON.parse(fs.readFileSync('generated/web-data/search-index.json','utf8')) as SearchIndex;
+  const index=JSON.parse(fs.readFileSync(path.join(generated,'search-index.json'),'utf8')) as SearchIndex;
   assert.equal(index.version,4);
-  const shards=index.shards.map(path=>JSON.parse(fs.readFileSync(`generated/web-data/${path}`,'utf8')) as SearchShard);
+  const shards=index.shards.map(path=>JSON.parse(fs.readFileSync(`${generated}/${path}`,'utf8')) as SearchShard);
   assert.ok(shards.every(shard=>shard.version===4));
   const records=[...index.records,...shards.flatMap(shard=>shard.records)];
   const byKey=new Map(records.map(r=>[r.key,r]));
@@ -125,11 +135,11 @@ test('row adjacency metadata follows immediate source rows only, without crossin
 
 test('local diagnostic probe reports the actual current combined ranking and continuation',()=>{
   const query='عظم البلاء و برح الخفاء';
-  const output=execFileSync(process.execPath,['--import','tsx','scripts/probe-search.ts',query],{encoding:'utf8'});
+  const output=execFileSync(process.execPath,['--import',loader,path.resolve('scripts/probe-search.ts'),query],{cwd:temp,encoding:'utf8'});
   assert.match(output,/Top combined results:/);
   const first=output.split('Top combined results:')[1]!.trimStart().split('\n')[0]!;
-  const index=JSON.parse(fs.readFileSync('generated/web-data/search-index.json','utf8')) as SearchIndex;
-  const records=[...index.records,...index.shards.flatMap(file=>(JSON.parse(fs.readFileSync(`generated/web-data/${file}`,'utf8')) as SearchShard).records)];
+  const index=JSON.parse(fs.readFileSync(path.join(generated,'search-index.json'),'utf8')) as SearchIndex;
+  const records=[...index.records,...index.shards.flatMap(file=>(JSON.parse(fs.readFileSync(`${generated}/${file}`,'utf8')) as SearchShard).records)];
   const engine=new IncrementalSearch(records);
   let result=engine.begin({id:0,query,languages:['ar','fa'],tocLimit:records.length,textLimit:records.length,resultLimit:6});
   while(!result.complete)result=engine.advance(records.length);
@@ -146,12 +156,12 @@ test('generated reader, search, navigation and English data use the corrected ca
   type BuiltNode = { title: string; children: BuiltNode[] };
   type BuiltItem = { title: Record<string, string>; rows: Array<{ id: string; ar: string; fa: string }> };
   type BuiltEnglish = { paragraphs: Array<{ id: string; text: string }> };
-  const catalog = JSON.parse(fs.readFileSync('generated/web-data/catalog.json', 'utf8')) as {
+  const catalog = JSON.parse(fs.readFileSync(path.join(generated,'catalog.json'), 'utf8')) as {
     items: Array<{ id: string; title: Record<string, string>; tags: string[] }>;
     toc: BuiltNode[];
   };
-  const index = JSON.parse(fs.readFileSync('generated/web-data/search-index.json', 'utf8')) as SearchIndex;
-  const records = [...index.records, ...index.shards.flatMap(file => (JSON.parse(fs.readFileSync(`generated/web-data/${file}`, 'utf8')) as SearchShard).records)];
+  const index = JSON.parse(fs.readFileSync(path.join(generated,'search-index.json'), 'utf8')) as SearchIndex;
+  const records = [...index.records, ...index.shards.flatMap(file => (JSON.parse(fs.readFileSync(`${generated}/${file}`, 'utf8')) as SearchShard).records)];
   const byKey = new Map(records.map(record => [record.key, record]));
   const itemFiles = new Map<string, BuiltItem>();
   const englishFiles = new Map<string, BuiltEnglish>();
@@ -175,7 +185,7 @@ test('generated reader, search, navigation and English data use the corrected ca
       expected = text(c, previous);
       let item = itemFiles.get(location.item);
       if (!item) {
-        item = JSON.parse(fs.readFileSync(`generated/web-data/items/${location.item}.json`, 'utf8')) as BuiltItem;
+        item = JSON.parse(fs.readFileSync(`${generated}/items/${location.item}.json`, 'utf8')) as BuiltItem;
         itemFiles.set(location.item, item);
       }
       const pieces = currentPieces(c, location.item, location.row, location.language);
@@ -196,7 +206,7 @@ test('generated reader, search, navigation and English data use the corrected ca
     } else if (location.kind === 'english-paragraph') {
       let doc = englishFiles.get(location.document);
       if (!doc) {
-        doc = JSON.parse(fs.readFileSync(`generated/web-data/english/${location.document}.json`, 'utf8')) as BuiltEnglish;
+        doc = JSON.parse(fs.readFileSync(`${generated}/english/${location.document}.json`, 'utf8')) as BuiltEnglish;
         englishFiles.set(location.document, doc);
       }
       assert.equal(doc.paragraphs.find(paragraph => paragraph.id === location.paragraph)?.text, expected);

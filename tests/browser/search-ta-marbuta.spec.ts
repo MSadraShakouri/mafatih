@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { runtimeItem, sourceTarget, sourceValue } from './row-source-fixture.js';
 
 test.setTimeout(60_000);
 const query = 'العقوبت'; // the source has الْعُقُوبَةِ, not a literal ت
@@ -51,14 +52,27 @@ test('in-text query changes from ه to ة and finds an ordinary ت', async ({ pa
   await expect(page.locator('main[data-screen="reader"]')).toHaveAttribute('data-anchor-row', 'r00012');
 });
 
-test('in-text highlights both approved lam spellings of a source ة when ت is typed', async ({ page }) => {
+test('in-text highlights both approved lam spellings of a source ة when ت is typed', async ({ page, request }) => {
+  const item = await runtimeItem(request, 'amal-aamal-mkhsvsh-byst');
+  const source = sourceValue(item, 'r00006', 'ar');
+  const words = ['اَللیلَةَ', 'الیلَةَ'];
+  const targets = words.map(word => {
+    const index = source.indexOf(word); expect(index).toBeGreaterThanOrEqual(0);
+    return sourceTarget(item, 'r00006', 'ar', Array.from(source.slice(0, index)).length);
+  });
   await page.goto('./#/item/amal-aamal-mkhsvsh-byst');
   await page.getByRole('button', { name: 'جست‌وجو در متن' }).click();
+  if (targets.some(target => target.language === 'fa')) {
+    await page.getByRole('button', { name: 'گزینه‌های زبان' }).click();
+    await page.getByRole('button', { name: 'نمایش متن فارسی' }).click();
+  }
   await page.getByRole('searchbox', { name: 'جست‌وجو در این متن' }).fill('اللیلت');
   await expect(page.locator('.result-popover')).toHaveAttribute('aria-busy', 'false', { timeout: 40_000 });
-  const result = page.locator('.result-row[data-row-id="r00006"][data-language="ar"]');
-  await expect(result).toBeVisible();
-  await expect(result.locator('mark')).toHaveText(['اَللیلَةَ', 'الیلَةَ']);
+  for (const [index, target] of targets.entries()) {
+    const result = page.locator(`.result-row[data-row-id="${target.row}"][data-language="${target.language}"]`);
+    await expect(result).toBeVisible();
+    await expect(result.locator('mark').filter({ hasText: words[index]! })).toHaveText(words[index]!);
+  }
 });
 
 test('a typed ه follows a ت-key lam alias but does not highlight ordinary ت', async ({ page }) => {
