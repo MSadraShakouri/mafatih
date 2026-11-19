@@ -1,21 +1,88 @@
 # agent-6 status
 
-**State: THE 142 RETIRED ROW IDS ARE MIGRATED AND ACCEPTED BY AGENT-1; ALL 115 OF HIS
-REVIEWS ARE BOUND TO SNAPSHOT `f8dca07b`. STILL OPEN: THE 93 REUSED IDS (WAIT FOR
-THE VERSION-AWARE READER), THE RELEASE DECISION FOR THE 20 HELD ITEMS, AND THREE
-KIND QUESTIONS IN AGENT-5'S ITEMS. AGENT-5 REVIEW: 112 COMPLETE, 3 NEED WORK.**
-Updated 2026-11-18 (UTC).
+**State: `main` `985f226c` IS MERGED. NOTHING AUTHORED CHANGED: THE SNAPSHOT IS
+STILL `f8dca07b`, ACCEPTED BY AGENT-1 (115 OF 115 REVIEWS). THE NEW READER NOW
+GUARDS MY 93 REUSED IDS; THE REGISTER'S 93 CANDIDATES AGREE WITH MY LINEAGE MAP
+BUT REMAIN PROVISIONAL AND UNREVIEWED. THE 20 ITEMS STAY HELD FOR THE RELEASE
+DECISION. THE THREE KIND QUESTIONS IN AGENT-5'S ITEMS STAY OPEN; A CHANGE OF KIND
+NOW HAS A SUPPORTED TOOL. AGENT-5 REVIEW: 112 COMPLETE, 3 NEED WORK.**
+Updated 2026-11-19 (UTC).
 
 - Branch: `arena/1a493a80-mafatih`
 - Frozen base: `ffa01da92fbba25731356e8158c295b3824763f0`
-- `main` merged here: `2163b5e7aa43fe9cb72ac681e6a62dc0f4936fe4` (merge `99e481d9`):
-  the re-split guard and the retired-link migration (`alias-preview`,
-  `alias-migrate`). No conflict; the 12 changed files equal `main`; the tool pin
-  matches; `npm run check` passes (283 tests, 280 pass, 0 fail, 3 skipped).
+- `main` merged here: `985f226c4acc1241041b807c2cb4f4fc10d36734` (merge
+  `504afeb4`): the version-aware reader, the guarded `revise-preview` and
+  `revise`, and the provisional register of guarded row IDs. No conflict; no
+  file under `data/`, `agent-work/` or `coordination/` changed in the merge;
+  `verify-tool-info` reports the pin matches (Node v22.22.3, ICU 78.2,
+  Unicode 17.0); `verify-partitions` is valid. Test results are in the next
+  section. Earlier merge: `2163b5e7` (as `99e481d9`).
 - Latest isolated author snapshot: `f8dca07be7536bf19ea17c869bf098385002099a`
   (author-ready, 115 of 115 items, direct child of `3e35f4ca`; differs from it
   only in the 16 migrated mapping records).
 - Role: author of 115 items (reviewer: agent-1); reviewer of agent-5's 115 items.
+
+## Round of 2026-11-19
+
+Identity checked first: agent-6, registered for `arena/1a493a80-mafatih` on base
+`ffa01da9`; the platform names the same branch as this session's branch.
+
+**Nothing under `data/` changed in this round, and no plan or layout.** Item,
+mapping, plan and layout of all 115 of my items are identical to `f8dca07b`
+(0 of 460 files differ; all 33,844 pooled values of the snapshot are present
+and equal). So no new author snapshot was made and no review became stale.
+
+1. **My own items: no open finding.** agent-1's branch tip is `3c8547ed`. His
+   115 records of my items all name `f8dca07b`; `verify-review` with the
+   upgraded tools reports 115 of 115 complete; 115 layouts and 178 spacing
+   decisions accepted. His new message `1cb127bd` corrects his own description
+   of how a piece ID is computed; it changes nothing in my files.
+2. **My 93 reused IDs and the new register.** The register on `main`
+   (`docs/split-assignments/row-version-findings.json`) lists, for my items,
+   exactly these 93 IDs in the same 9 items, and no other ID of mine.
+   - Compared with my lineage map `proposals/reused-row-ids.json`: 93 of 93
+     old meanings and segment lists are equal.
+   - Checked again from the frozen source offsets, in every snapshot the
+     register names: 595 observations in 19 commits, all readable here, all
+     right. Every candidate tiles its old field and gives back its exact text;
+     no attribution differs.
+   - The 9 binding hashes match my current item and mapping. I changed no
+     hash.
+   - 279 commits on all fetched branches (50 distinct versions of the 9 items)
+     show only two meanings per ID: the register's old one and today's. 92 IDs
+     are live rows, 1 is the existing alias, as before.
+   - The project's own test walks every code point of every bound candidate
+     through the reader's resolver: an unversioned link warns, a versioned link
+     to the old meaning is offered as provisional and never opens by itself.
+     It passes on this branch.
+   - This is my **author confirmation** of the 93 candidates. They are still
+     provisional and unreviewed; I installed no alias and approved nothing.
+   - Scripts: `proposals/scripts/check-version-register.mjs`,
+     `proposals/scripts/check-register-lineage.mjs`. Result:
+     `proposals/version-register-check.json`.
+3. **My review of agent-5: nothing new to review.** His branch is still at
+   `891d3ed0` (last snapshot `d0fb5765`, 2026-11-16). All 115 of my records
+   were verified again with the upgraded tools, each against the snapshot it
+   names: 112 complete, 3 need work, 0 errors. For all 115 items, item,
+   mapping, plan and layout are identical at the recorded snapshot, at his
+   branch tip and here.
+4. **The register's 27 candidates in agent-5's items** (14 items: 16 retired
+   IDs, 11 reused), checked as his reviewer by the same lineage method: 232
+   observations in 32 commits, 27 of 27 agree, bindings match. This is a
+   check, not an authorization to migrate; no alias is installed for them.
+5. **The three kind questions: still open, but option B is now possible.**
+   `revise` keeps a retired ID as an alias in the same step. I tried the three
+   changes in memory only (`proposals/scripts/simulate-kind-revision.mjs`,
+   result `proposals/kind-revision-dry-run.json`): each is accepted by the
+   project's functions; 1, 2 and 1 live IDs would retire and stay reachable as
+   aliases; six uncut rows keep their IDs; earlier aliases and all proposed
+   spaces stay; no text or attribution changes; 41 published IDs and 10,855
+   code points still open the same character. Nothing was written, and this is
+   not agent-5's preview. `proposals/kind-decision-request.md` has the update
+   at its top.
+6. **Messages:** to agent-1 `7439f9fe` (register check, nothing to re-review);
+   to agent-5 `a6e2371c` (the tool now exists, the ruling is still the
+   coordinator's, no hand edit, the register check).
 
 ## What was done on the coordinator's go
 
@@ -77,7 +144,9 @@ nothing else.
 
 **Not done, and not covered by the authorization:**
 
-- **93 reused IDs (9 items):** untouched, and none was given an alias by the
+- **93 reused IDs (9 items):** *(2026-11-19: the reader on `main` `985f226c`
+  now guards them; see the section "Round of 2026-11-19".)* Untouched, and
+  none was given an alias by the
   migration. **92 are live rows** with unchanged text. **One is an existing
   alias**, not a live row: `ziyarat-rjybyh-alhmd-allh`
   `r00004-s2d6fcdaf315ab02c`. My reviewed joins had already turned it into an
@@ -93,7 +162,8 @@ nothing else.
 - **Held from final release: all 20 items** (the 16 migrated and the 4 that
   have reused IDs only), pending the version-aware reader and the coordinator's
   release decision. agent-1's acceptance of the migration does not release
-  them.
+  them. The reader is now on `main` and merged here; the release decision has
+  not been given, so all 20 stay held.
 - No role correction and no re-cut of a published row.
 
 ## What I still need from the coordinator
@@ -102,11 +172,13 @@ nothing else.
    `proposals/kind-decision-request.md`: `dua-vdaa-hsyn-alyh` (opening row),
    `item-mrsyh-am-albnyn` (eight verse rows) and `dua-daa-aymny-shr` r00009.
    For each: keep the kind, or change it. A change retires a live ID in each
-   case (1, 2 and 1) and no tool supports it today: `apply` refuses to orphan a
-   published ID and `alias-migrate` takes only IDs that are already retired.
-   The migration of my retired IDs does not make such a correction safe.
-2. **The reader side for the 93 reused IDs:** snapshot-versioned links, and the
-   warning with the known destinations for a link without a version.
+   case (1, 2 and 1). Since `main` `985f226c` the guarded `revise` supports it
+   and keeps each retired ID as an alias; my dry run shows no lost link. What
+   is missing is only your ruling and, for a change, your authorization of
+   agent-5, who must run it on his own branch.
+2. **The reader side for the 93 reused IDs: delivered** on `main` `985f226c`.
+   Still yours: whether the 93 register candidates, which I confirm as author,
+   need an independent review by agent-1 before release.
 3. **Whether any links were saved against my first snapshot `561fdfb0` or the
    partial snapshots.** Only this tells how many old unversioned links exist.
 4. **When the held items may be released.** I release nothing on my own.
@@ -188,8 +260,10 @@ nothing else.
   with r00021 (a name broken at the row boundary). My own items keep breaks of
   the same sort, so I do not hold his items for them.
 - The earlier link audit of agent-5's items stands: 16 retired row IDs in 12
-  items still do not resolve. The tool for it is now on `main`; it is agent-5's
-  to propose and the coordinator's to authorize.
+  items still do not resolve as aliases. The tool for it is on `main`; it is
+  agent-5's to propose and the coordinator's to authorize. Since 2026-11-19 the
+  reader offers them as provisional candidates from the register; I checked
+  those candidates and his 11 reused IDs by lineage (27 of 27 agree).
 - A warning that is not new: `npm run validate` reports unreferenced pooled
   text values: 48 now, 85 before my alias migration (the aliases refer to 37 of
   them again). Nothing is missing. I suggest keeping the rest until all link
@@ -198,10 +272,13 @@ nothing else.
 
 ## What I am waiting for
 
-- agent-1: nothing. His re-review of `f8dca07b` is done and accepted.
-- agent-5: nothing.
-- The coordinator: the ruling on the three kinds (point 1), the reader side
-  (point 2) and points 3 to 5 above.
+- agent-1: nothing required. His re-review of `f8dca07b` is done and accepted.
+  A review of the 93 register candidates only if the coordinator asks for it.
+- agent-5: a new snapshot of the three items, if and when the coordinator
+  rules for a change; otherwise nothing.
+- The coordinator: the ruling on the three kinds (point 1), whether the
+  register candidates need a review (point 2), the release decision for the 20
+  held items (point 4), and points 3 and 5 above.
 
 Kept as directed: the three kind questions (`dua-vdaa-hsyn-alyh`,
 `item-mrsyh-am-albnyn`, `dua-daa-aymny-shr` r00009) stay open until the

@@ -9,6 +9,28 @@ still open: 92 are live rows and one is an existing alias. All 20 affected
 items stay held, pending the version-aware reader and the release decision.** No alias was
 written by hand, no row was re-cut, no guard was bypassed.
 
+## Update 2026-11-19: the reader guards the 93 reused IDs
+
+- `main` `985f226c` (merged here as `504afeb4`) brings the version-aware
+  reader and a provisional register,
+  `docs/split-assignments/row-version-findings.json`. For my items it lists
+  exactly the 93 reused IDs of `reused-row-ids.json`, in the same 9 items.
+- I checked the register against my lineage map and again from the frozen
+  source offsets in every snapshot it names: 93 of 93 agree (595 observations,
+  19 commits), the 9 binding hashes match my current data, and no ID has a
+  third meaning in 279 scanned commits. Result: `version-register-check.json`.
+  Scripts: `scripts/check-version-register.mjs`,
+  `scripts/check-register-lineage.mjs` (the second also checks agent-5's 27
+  candidates: 27 of 27 agree).
+- This is my author confirmation. The candidates stay **provisional and
+  unreviewed**; no alias was installed, no hash was refreshed, and nothing
+  authored changed (the snapshot is still `f8dca07b`).
+- **All 20 items stay held**: the reader condition is met, the coordinator's
+  release decision is not yet given.
+- The kind questions in agent-5's items: `kind-decision-request.md` has an
+  update, and `kind-revision-dry-run.json` shows what a change would do with
+  the new `revise` tool (in memory only).
+
 ## The migration (2026-11-15)
 
 - **Scope authorized:** only the 142 already-retired IDs of
