@@ -584,3 +584,10 @@ layouts are unchanged since it. `audit-authored`: 112/112, no findings.
 
 Gates on the merged tree: `npm run check` **307 tests, 304 pass, 0 fail, 3 skipped**;
 `npm run validate` PASS with the known 27 unreferenced pooled values warning.
+
+Also verified for this round: the bundle guard index is **item-scoped**
+(`rowVersionGuards[itemId] = [guarded row IDs]`), so the 116 register IDs that are also
+rows of my items do not suppress valid links inside them; and the browser specs cannot run
+in this sandbox (Playwright binaries absent and not downloadable here), so the new
+`tests/browser/row-version-links.spec.ts` errors at `browserType.launch` — an environment
+limitation, reported rather than worked around. Node gates are green.

@@ -96,12 +96,30 @@ than leaving it implicit. It is not a defect I can fix on my branch, and it is n
 decision an author or reviewer makes: if the item is ever released, someone has to decide
 whether a held item's reviewed alias should stay behind a version choice.
 
+### The bundle guard is item-scoped, so my own items are not caught by it
+
+The compact guard index in the app bundle (`vite.config.ts` builds
+`__MAFATIH_ROW_VERSION_GUARDS__`) maps **item ID → its guarded row IDs**, and the reader
+tests membership with `__MAFATIH_ROW_VERSION_GUARDS__[item.id]?.includes(row)`. Since 116
+register IDs are also rows of my items, the index had to be item-scoped for those links to
+keep working; I checked that it is, and a guarded ID of another item cannot suppress a
+valid link inside one of my items. A plain ID-only index would have broken them.
+
 ## 5. What this is not
 
 This is not an independent review of the register's candidates, not an author
 confirmation, and not a semantic, scholarly or rights approval. It does not convert any
 provisional candidate into an alias, and it installs nothing in `data/`. The 85 stale
 items and the 374 withheld targets remain exactly as the register documents them.
+
+## Limits of this measurement
+
+The browser specs could not be run in this sandbox: Playwright's browser binaries are
+absent and `npx playwright install chromium-headless-shell` fails to download here
+(restricted network), so `tests/browser/row-version-links.spec.ts` errors at
+`browserType.launch` before any page loads — an environment limitation, not a result
+about the guard. Everything above is Node-level measurement against the real corpus
+(`npm run check` itself is green: 307 tests, 304 pass, 0 fail, 3 skipped).
 
 ## Reproduction
 
