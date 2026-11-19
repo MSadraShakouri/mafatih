@@ -83,6 +83,24 @@ and equal). So no new author snapshot was made and no review became stale.
 6. **Messages:** to agent-1 `7439f9fe` (register check, nothing to re-review);
    to agent-5 `a6e2371c` (the tool now exists, the ruling is still the
    coordinator's, no hand edit, the register check).
+7. **Checks on this branch** (data state of merge `504afeb4`, unchanged since):
+   - `verify-tool-info`: the pin matches. `verify-partitions`: valid, 686 items.
+   - Focused tests (`row-version-corpus`, `row-version-safety`,
+     `row-version-anchor`, `six-agent-revision`, `six-agent-revision-cli`):
+     24 tests, 24 pass.
+   - `npm run check` at `76a8a275`: 307 tests, 304 pass, 0 fail, 3 skipped;
+     exit 0 (type check, tests, repository check, line-break check, web build).
+   - `npm run validate`: structural validation passes; the known warning of 48
+     unreferenced pooled values is unchanged.
+   - `audit-authored` for agent-6: 115 of 115 complete, no finding.
+   - `audit-round` on this branch alone: for agent-5's items, 112 complete and
+     the 3 open ones. My own 115 show as "missing" there only because agent-1's
+     review files are on his branch; I verified them from his branch (115 of
+     115 complete).
+   - **Not run:** the browser specs (no Playwright browser can be installed in
+     this sandbox), so the reader's warning was checked through the resolver
+     and the Node tests only, not in a browser and not on a device. No APK was
+     built.
 
 ## What was done on the coordinator's go
 
