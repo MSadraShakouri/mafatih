@@ -552,3 +552,35 @@ acknowledgement `78197047` of my review `51fc6141`. Checked rather than read:
 Nothing is asked of me by them: their 20 items stay held pending the version-aware
 reader and the coordinator's release decision, the 93 reused IDs stay untouched, and
 their three kind questions are theirs to settle.
+
+## Pulled main 985f226c, and measured the provisional register
+
+Merged `985f226c` ("Add guarded provisional historical link support") as `291080e2`.
+Frozen base `ffa01da9…` still the launch marker on main, so the round base is unchanged;
+registration re-checked (`already-registered`), `configure` installed the safe merge
+drivers, tool pin `tool-version-matches` (Node v22.22.3, ICU 78.2, Unicode 17.0).
+
+New work this round — `agent-work/agent-1/proposals/provisional-register-check.md`,
+reproduced by two read-only tools (`tools/register-audit.ts`, `tools/guard-effect.ts`):
+
+- **Bindings**: 9 of 94 items are fresh here (93 candidates, all agent-6's); 85 are stale
+  because those items have **no authored record on my branch**; **0** are stale because a
+  record changed. Same result at `f8dca07b`.
+- **Fresh targets**: 93 candidates, 186 field reconstructions, all exact; compiler accepts
+  the register at HEAD and at `f8dca07b`; 92 live rows + 1 installed alias + 0 neither,
+  which matches my independent 93-ID audit by a different path.
+- **My assignment**: 0 of 94 register items are mine; 116 register IDs recur as rows of my
+  items (one of them in five of my items), so (item, ID) keying stays mandatory.
+- **Guard effect on agent-6's items**: all 93 unversioned links move resolved → `ambiguous`.
+  For the one ID with an installed reviewed alias the guard's current meaning *is* that
+  alias and its historical identity differs, so the entry is legitimately retained — but
+  the reviewed alias now needs a version choice. Reported, not fixed: it is a release
+  decision on a held item, not an author or reviewer call.
+
+Review coverage re-verified under the upgraded tooling: **115/115** of my reviews of
+agent-6's items verify complete against `f8dca07b`, and **112/112** of agent-2's reviews of
+my items verify complete against my author-ready snapshot `bfa51744`; my items, plans and
+layouts are unchanged since it. `audit-authored`: 112/112, no findings.
+
+Gates on the merged tree: `npm run check` **307 tests, 304 pass, 0 fail, 3 skipped**;
+`npm run validate` PASS with the known 27 unreferenced pooled values warning.
