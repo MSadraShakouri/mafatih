@@ -6,7 +6,9 @@ GUARDS MY 93 REUSED IDS; THE REGISTER'S 93 CANDIDATES AGREE WITH MY LINEAGE MAP
 BUT REMAIN PROVISIONAL AND UNREVIEWED. THE 20 ITEMS STAY HELD FOR THE RELEASE
 DECISION. THE THREE KIND QUESTIONS IN AGENT-5'S ITEMS STAY OPEN; A CHANGE OF KIND
 NOW HAS A SUPPORTED TOOL. AGENT-5 REVIEW: 112 COMPLETE, 3 NEED WORK.**
-Updated 2026-11-19 (UTC).
+Updated 2026-11-20 (UTC). **Nothing changed since 2026-11-19 except the
+notes of the round of 2026-11-20 below; I am waiting, and the conditions are
+listed there.**
 
 - Branch: `arena/1a493a80-mafatih`
 - Frozen base: `ffa01da92fbba25731356e8158c295b3824763f0`
@@ -21,6 +23,69 @@ Updated 2026-11-19 (UTC).
   (author-ready, 115 of 115 items, direct child of `3e35f4ca`; differs from it
   only in the 16 migrated mapping records).
 - Role: author of 115 items (reviewer: agent-1); reviewer of agent-5's 115 items.
+
+## Round of 2026-11-20
+
+- **`main`:** fetched, still `985f226c`, already merged here (`504afeb4`). No
+  new merge. Branch, registration and frozen base are as before. The tool pin
+  matches.
+- **agent-5 (I review him):** his tip is `24ebdcb4`, the same as at the end of
+  the last round. No snapshot after `d0fb5765`. For all 115 items, item,
+  mapping, plan and layout are identical at the snapshot each of my records
+  names, at his tip and here. So I redid no review. State: **112 complete,
+  3 need work.** The three open records still report `needs-work`.
+- **agent-1 (he reviews me):** his tip is `10b8be27`. No review file changed;
+  all 115 of his records of my items name `f8dca07b`. His message `eee2f41d`
+  asks nothing. It reports his own measurement of the register (the same 9
+  items, 93 candidates, 92 live rows and 1 alias) and one consequence, which
+  I confirmed with the project's resolver on this branch:
+  - for all 93 guarded IDs, a link **without** a version now returns a choice,
+    not a row (93 of 93 `ambiguous`);
+  - a link with the current row version resolves (93 of 93);
+  - a link with the old content version is offered as provisional (93 of 93);
+  - this includes `ziyarat-rjybyh-alhmd-allh` `r00004-s2d6fcdaf315ab02c`: its
+    reviewed alias no longer opens without a version. That is the guard
+    working as designed; the coordinator should know it before release.
+- **My own items:** all 460 authored files equal snapshot `f8dca07b`. Nothing
+  to revise, no new snapshot.
+- **Historical links:** all kept provisional. Nothing migrated, nothing
+  approved, no hash refreshed.
+- **Messages (IDs and offsets only, no source text):** to agent-5 `b6f0099a`
+  (the three findings by row ID and what I wait for); to agent-1 `9765ef44`
+  (acknowledgement).
+
+- **Checks on 2026-11-20** (worktree on top of `f84ddccb`; only status, handoff
+  and the two message files differ from it):
+  - `verify-tool-info`: matches. `verify-partitions`: valid, 686 items.
+  - `npm run check`: 307 tests, 304 pass, 0 fail, 3 skipped, exit 0. The three
+    skipped tests are the project's own optional ones (generated review page
+    absent, alignment candidates absent, the lam-pair corpus comparison).
+  - `npm run validate`: passes; 48 unreferenced pooled values, as before.
+  - `audit-authored` agent-6: 115 of 115, no finding.
+  - `verify-review` on the three open records and one closed record: 3
+    `needs-work`, 1 complete. The other records were not run again because
+    nothing they cover changed.
+  - Register checks rerun: 93 of 93 (my items), 27 of 27 (agent-5's items).
+  - **Browser specs: not run.** Playwright 1.64.1 is installed as a package,
+    but no browser binary is present and none can be downloaded here, so there
+    is no browser version to report. No APK, no device test.
+
+**What I wait for, exactly:**
+
+1. **From agent-5:** a new isolated author snapshot, later than `d0fb5765`, in
+   which any of these rows changed, made with `revise-preview` and `revise` on
+   his branch, and the commit sent to me:
+   `dua-vdaa-hsyn-alyh` `r00001-sf8ca119bc7deb30b`;
+   `item-mrsyh-am-albnyn` `m7fd11ac1993a4b4f9d3db507`,
+   `m593b5e8d63e327587f6fea00`, `r00007`, `r00009` to `r00013`;
+   `dua-daa-aymny-shr` `r00009-se370353bb3dfce92`.
+   Then I review each changed item against that commit.
+2. **Or from the coordinator:** for any of the three that is to stay as it is,
+   the word that the kind stays. Then I close that record. The round note of
+   2026-11-20 tells agent-5 to address these findings; I do not read that as a
+   ruling to keep or to change, so the three records stay open.
+3. **From the coordinator:** the release decision for the 20 held items, and
+   whether the 93 provisional candidates need agent-1's review.
 
 ## Round of 2026-11-19
 

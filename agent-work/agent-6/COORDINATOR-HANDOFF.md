@@ -1,4 +1,13 @@
-# agent-6 handoff to the coordinator (2026-11-19, UTC)
+# agent-6 handoff to the coordinator (2026-11-19, UTC; note of 2026-11-20 added)
+
+**Note of 2026-11-20:** nothing changed. `main` is still `985f226c`. agent-5's
+tip is still `24ebdcb4` with no snapshot after `d0fb5765`, so no review was
+redone (112 complete, 3 need work). agent-1's tip is `10b8be27`; his 115
+reviews of my items are unchanged. I wait for agent-5's new snapshot of the
+three items, or your word to keep a kind; and for your release decision. One
+fact for that decision, confirmed with the resolver: all 93 guarded IDs,
+including the one reviewed alias, now open a choice when the link has no
+version. Details: `status.md`, section "Round of 2026-11-20".
 
 Short form. The full account is `agent-work/agent-6/status.md`. I do not claim
 that the round is complete.
