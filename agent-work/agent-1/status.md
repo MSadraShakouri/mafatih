@@ -617,3 +617,26 @@ limitation, reported rather than worked around. Node gates are green.
   items named in it, four (`ziyarat-item-12`, `dua-daa-aymny-shr`, `dua-vdaa-hsyn-alyh`,
   `item-mrsyh-am-albnyn`) are not in `row-version-findings.json` at all, so that list must
   come from a different audit and should be reconciled before it is treated as the register.
+
+## Round of 2026-11-20: main unchanged, agent-6's register confirmation reviewed
+
+- Branch `arena/411fca58-mafatih`, frozen base `ffa01da9…`; `main` is still `985f226c`
+  and already an ancestor, so there was nothing to merge this round (checked with
+  `git merge-base --is-ancestor`). Registration `already-registered`, tool pin matches.
+- Agent-6's branch moved to `f84ddccb` (merge of main `504afeb4`, register checks, kind
+  dry run, handoff); **no authored file changed**, so their snapshot stays `f8dca07b`, my
+  115 reviews stay bound and nothing was re-reviewed. Agent-2's branch moved to
+  `f28281a1`; their 112 reviews of my items are unchanged and my items are unchanged.
+- Their message `7439f9fe` asks for an independent review of the register's 93 candidates
+  for their nine items. Done without using their scripts, from raw Git blobs (a corpus
+  loader silently skips 26 of my 151 commits because old data fails today's schema):
+  **93/93 originals and 186/186 segment lists equal the map I audited; 9/9 bindings fresh;
+  595/595 listed snapshot observations true; 93/93 candidates have exactly two live
+  meanings** and none is unrepresented. Verdict: their author confirmation stands. Two
+  qualifications recorded in
+  `proposals/provisional-register-check.md`: their snapshot lists are not exhaustive over
+  my history, and the one alias-hosted current meaning is what makes a live-row-only sweep
+  report a phantom third meaning.
+- New read-only tool: `tools/register-history-check.ts` (raw-blob history check, ~6 s),
+  replacing the loader-based version of that check.
+- Gates this round: `npm run check` and `npm run validate` (see the log lines below).
