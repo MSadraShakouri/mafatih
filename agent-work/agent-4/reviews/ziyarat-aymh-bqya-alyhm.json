@@ -4,11 +4,11 @@
   "item": "ziyarat-aymh-bqya-alyhm",
   "author": "agent-3",
   "reviewer": "agent-4",
-  "author_commit": "680317220f161994082132d8fb9aeb8dcc4d48e1",
-  "plan_sha256": "535a2ce358bd8376abd3f8d245dedb4f2821a7e1a6a4be66b3e1ec137bc72b68",
-  "layout_sha256": "3444233b0154795a1006dd6c362419f777fc07a5b610c72f91372c2855bb6f1d",
-  "result_item_sha256": "85b1dd78dca6e441c71dc7a20f259259738833c272f431324494aeb54b60ddbb",
-  "result_record_sha256": "9d5c11f659242b79a31baea484feea390c9c6e867016ef4f300f8895531a146e",
+  "author_commit": "434d4c7a36a9e86faa00184ff85abc261a637037",
+  "plan_sha256": "95f0c3b46f0c8ad1e0acc790c53bb6765c46e535c3c3bc9bb75ee5296b60d6ee",
+  "layout_sha256": "3d9dc5f57a761731aea4a64f842d6159df95f7d87167b00eac2ca4f2560073ca",
+  "result_item_sha256": "b7bb4ecdb55d0a8ad890422035712b43eb46970a7c07f6523f41b37ca68bfafc",
+  "result_record_sha256": "fb96c12b3802a82bd98c9cee58a79e5319f1b8ebe9dc6bb3487fb8f38f06ae0d",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "e9f2870e0152cbe42a0d60a7b265defa4c534d19f1d27da4ca9d858fbd54fc85",
     "author": "agent-3",
     "reviewer": "agent-4",
-    "preview_sha256": "9217eaa9cb6945cd1728f92e646f3ef724c4f946286f8fe9b2b6dd96002e61ef",
+    "preview_sha256": "b00f3c858b9cb54db007d2aee95220f86f81fa24a048fc5d08c66a5991a386be",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Wrong destination slot, confirmed by reading the text rather than by counting. The only source field of r00001 is the Persian field of 103 code points, and the layout publishes that Persian piece into the Arabic slot with the role recitation. The published row r00001-s03773910ea46fc6e therefore carries Persian text in its ar field and nothing in its fa field, and the row-split record maps the fa segment of r00001 to the ar language of that row. The content is a Persian gloss naming the imams, so it is a note and not a recitation. Reject the slot and the role. Regrouping this row retires its published child id, so the correction waits for the supported mapping migration."
+        "kind": "accept",
+        "note": "Snapshot 434d4c7a: Persian gloss is in the fa slot as a note, with unchanged source text and exact mapping for the prior child ID. Earlier slot and role findings resolved for this source."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "accept",
-        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00002/fa has cuts [173], 2 pieces (instruction 1, note 1), parts [0, 1]; no cut/part anomaly. Item-level: 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+        "kind": "revise",
+        "note": "Correction to my prior review: output r00002-s16b235f3fb54b1a5, source [0,173), directs preparation for visitation and is labelled note. Please assess instruction role while preserving source and links; the following [173,188) instruction remains separate."
       },
       {
         "row": "r00003",
@@ -119,9 +119,9 @@
       {
         "row": "r00009",
         "language": "ar",
-        "split": "accept",
+        "split": "uncertain",
         "kind": "revise",
-        "note": "Wrong destination slot, confirmed by reading the text rather than by counting. The Arabic field of r00009 is 707 code points and continues the Arabic prayer that begins in r00008, whose Arabic field is 401 code points, but the layout publishes the Arabic piece into the Persian slot with the role note. The published row r00009-s5c935b8a19cd440a therefore carries Arabic text in its fa field, and the row's own Persian field of 680 code points is published beside it in r00009-sf45ae3f7757f3e0b, also in the fa slot. r00009 consequently has no Arabic row at all, and the Arabic continuation is labelled a note instead of a recitation. Reject the slot and the role. Regrouping these rows retires published child ids, so the correction waits for the supported mapping migration."
+        "note": "The Arabic slot and recitation role correct the prior wrong-slot/note finding for the prayer, but the same field contains an embedded Persian instruction at source code points [126,153). The code point immediately before it is U+0020; the next Arabic recitation begins at 153 with no source separator. Do not infer or apply a cut from this observation: author must assess safe boundaries, role and historical links. Review remains open."
       },
       {
         "row": "r00009",
@@ -147,9 +147,9 @@
       {
         "row": "r00011",
         "language": "fa",
-        "split": "accept",
-        "kind": "accept",
-        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00011/fa has cuts [37], 2 pieces (note 2), parts [0, 1]; no cut/part anomaly. Item-level: 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+        "split": "uncertain",
+        "kind": "revise",
+        "note": "Correction to my prior review: output r00011-sff3d5cac0f1b50db, source [0,37), is a direction but labelled note. The following [37,183) contains both attribution and a direction. Assess roles and safe grouping; no cut is authorized by this observation."
       },
       {
         "row": "r00012",
@@ -169,15 +169,15 @@
         "row": "r00013",
         "language": "fa",
         "split": "accept",
-        "kind": "accept",
-        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00013/fa has cuts [120, 390], 3 pieces (note 3), parts [0, 1, 2]; no cut/part anomaly. Item-level: 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+        "kind": "revise",
+        "note": "Correction to my prior review: output r00013-s29f78d985229d34c, source [0,120), directs the reader but is labelled note; subsequent attribution/gloss pieces are separate. Assess role and historical links."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "accept",
-        "kind": "accept",
-        "note": "Deep cut/pairing check at 680317220f161994082132d8fb9aeb8dcc4d48e1: r00014/fa has no cuts, 1 pieces (recitation 1), parts [0]; no cut/part anomaly. Item-level: 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Structural/linguistic-structure review only; no full semantic or rights approval."
+        "split": "uncertain",
+        "kind": "revise",
+        "note": "Correction to my prior review: the Persian source [0,552) is editorial commentary with directions, not a recitation throughout. Assess mixed roles and safe grouping, preserving the existing text and historical links; this does not prescribe a cut."
       }
     ],
     "punctuation": [],
@@ -185,6 +185,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Needs work: two sources publish content in the wrong destination slot. r00001 publishes its Persian field of 103 code points into the Arabic slot as a recitation, and r00009 publishes its Arabic field of 707 code points into the Persian slot as a note, so r00009 has no Arabic row at all. The structural counts are unchanged and still hold: 23 source fields; 7 cuts, 0 mid-word, 0 punctuation-free; 5 paired outputs, 20 unpaired outputs, 5 language moves, 3 unequal-piece bilingual rows. Each slot finding is recorded on the source it belongs to. Regrouping these rows retires published child ids, so the corrections wait for the supported mapping migration. Full metrics in deep-review-findings.json; no human, scholarly or rights approval."
+    "note": "Snapshot 434d4c7a fixes the earlier r00001 and r00009 language slots and corrects the role of the main r00009 prayer. Review remains open for the embedded r00009 Persian instruction and newly identified r00002, r00011, r00013 and r00014 role concerns; my prior acceptances for those unchanged rows were errors. All tested source and alias segment text matches target slices; prior row IDs remain accounted for. No editorial-space insertions are proposed. Do not infer an authorized revision or migration."
   }
 }

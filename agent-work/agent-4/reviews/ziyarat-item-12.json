@@ -4,11 +4,11 @@
   "item": "ziyarat-item-12",
   "author": "agent-3",
   "reviewer": "agent-4",
-  "author_commit": "680317220f161994082132d8fb9aeb8dcc4d48e1",
-  "plan_sha256": "34218f8869b3a2fd8c5dab4f8ed4dca653289d5d8898cae2f93209b9518f6a97",
-  "layout_sha256": "82f3681361db4ece63dd60f949142a5278425efbda0da59b00d901e4e8d1dc4a",
-  "result_item_sha256": "5c43b8b935b14df7cb11de26c13f5b16aee099c06d2e39dd3bc7b62ceef6b3ce",
-  "result_record_sha256": "65e1cd65066cba4059f1ac94912666fd936dad9c5e7c6c4c17b75d34de5fd65c",
+  "author_commit": "434d4c7a36a9e86faa00184ff85abc261a637037",
+  "plan_sha256": "71fe9bcb018e8c1c6813d963f0e72dd24fe2d9778e06813f034261b8968bd08c",
+  "layout_sha256": "85b4c1e56b028ba55029100ffd18dc552f680b50183744bd4c0f2db587dd628f",
+  "result_item_sha256": "9ba14dd367c95a73ab0495e493259038a33a2e77f1cfdca6624bec312aa4979e",
+  "result_record_sha256": "98cf675e4033554fbc7398cdedab3bb3bd249b80e96c2a402c6f9c791f04f2e9",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "c0a0861d1fa147edd6904ba8424967dee3fa73bf301e97210181649293fe329d",
     "author": "agent-3",
     "reviewer": "agent-4",
-    "preview_sha256": "44bd04d29821bb47f9b25d54df69c13d9d105fffb3521f123de41721a6f4f7c1",
+    "preview_sha256": "417787f5c2015ef6c73af237f742199291fd3e621b5e63a91084c880368c7da2",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Wrong destination slot, confirmed by reading the text rather than by counting. The only source field of r00001 is the Persian field of 56 code points, which is the title of the visitation, and the layout publishes that Persian piece into the Arabic slot with the role recitation. The published row r00001-s03773910ea46fc6e therefore carries Persian text in its ar field and nothing in its fa field, and the row-split record maps the fa segment of r00001 to the ar language of that row. A title is not a recitation. Reject the slot and the role. Regrouping this row retires its published child id, so the correction waits for the supported mapping migration."
+        "kind": "accept",
+        "note": "Snapshot 434d4c7a: title now appears in the fa slot as heading; source text is unchanged. Prior child ID remains mapped to this field. Earlier slot and role findings resolved for this snapshot."
       },
       {
         "row": "r00002",
@@ -72,7 +72,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Needs work: one source publishes content in the wrong destination slot. r00001 publishes its Persian field of 56 code points into the Arabic slot as a recitation, so the published row carries Persian text in its ar field and nothing in its fa field, and the title of the visitation is labelled a recitation. The structural counts are unchanged and still hold: 7 source fields; 0 cuts, 0 mid-word, 0 punctuation-free; 2 paired outputs, 3 unpaired outputs, 1 language moves, 2 bilingual source rows, no unequal bilingual piece counts. The slot finding is recorded on the source it belongs to. Regrouping this row retires its published child id, so the correction waits for the supported mapping migration. Full metrics in deep-review-findings.json; no human, scholarly or rights approval."
+    "decision": "accept",
+    "note": "At 434d4c7a the r00001 Persian heading occupies the correct slot; prior published child is mapped exactly. The other previously reviewed sources are unchanged from 68031722. No editorial-space insertions are proposed. Mechanical and independent agent review only, not scholarly or rights certification."
   }
 }
