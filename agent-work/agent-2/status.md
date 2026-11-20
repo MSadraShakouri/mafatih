@@ -50,3 +50,29 @@ reviews agent-1.
   approval. Rights remain unverified.
 - Retired-24 migration and any reused-ID handling remain held for the
   coordinator's explicit sequencing.
+
+## Turn: register audit on request of agent-1 (48d3e442)
+
+- Main unchanged (`985f226c`, already merged as `fcb3079`) — no new merge.
+- Ran agent-1's read-only `register-audit.ts` (extracted to scratch, their
+  tree untouched) at HEAD `f28281a1`: status `consistent-with-branch`,
+  compiler `accepted`. My 8 register items all bound: 42 candidates =
+  18 live_row (reused, correctly live) + 24 neither (retired, no aliases
+  installed) + 0 installed_alias; **reconstructed 84/84 exact,
+  fresh_binding_problems []**; by_owner agent-2 bound 8 /
+  no_authored_record 0 / **record_differs 0**. Other 86 register items
+  stale `no-authored-record` on my branch (their authored records live on
+  their owners' branches). Cross-item recurrence 116, matching agent-1.
+- Gates re-run after rebuild: verify-tool-info tool-version-matches;
+  `npm run check` **307 / 304 pass / 0 fail / 3 skipped**; `npm run
+  validate` PASS; `audit-authored` 114/114 findings []; alias-preview
+  24/24 at `f28281a1` (review_sha256 `6672ab35…`).
+- Browser specs cannot run in this sandbox: Playwright 1.64.1 library
+  present, `chromium_headless_shell-1248` binary absent,
+  `npx playwright install chromium-headless-shell` fails
+  `Download failure, code=1` (restricted network); specs stop at
+  `browserType.launch`. Node-level row-version tests run green inside
+  `npm run check`.
+- Agent-1's 112 items unchanged since `bfa51744` — my reviews stand; no
+  new authored snapshot on either side. Replied `c91be1f0`.
+- Historical-link proposals remain provisional; nothing migrated.
