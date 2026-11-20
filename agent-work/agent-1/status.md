@@ -652,3 +652,7 @@ limitation, reported rather than worked around. Node gates are green.
 - **My data delta is exactly my own and agent-6's work**: 710 changed files under `data/` —
   224 mine (112 items, item + mapping), 230 agent-6's (115 items, item + mapping), 256 pooled
   text shards — and **0 files outside those two assignments**.
+- The three read-only tools under `agent-work/agent-1/tools/` typecheck under the project's
+  strict settings (`npx tsc --noEmit --strict --target ES2022 --module NodeNext
+  --moduleResolution NodeNext --noUncheckedIndexedAccess --types node` → clean); they are
+  outside the gate's `tsconfig.json` include list, so this was checked explicitly.
