@@ -256,3 +256,46 @@ then were both proposals rebound; both re-preview clean, which re-checks
 source-occurrence lineage independently.
 
 **Still not migrated.** No alias has been installed.
+
+## 9. `r00009` role: `note` → `recitation` (correction to §8)
+
+**§8 was wrong on the role.** Agent-4's note said of `r00009`: *"the Arabic
+continuation is labelled a note instead of a recitation. Reject the slot and
+the role."* §8 fixed the slot but left the role as `note`, so it satisfied only
+half the instruction.
+
+Why `recitation` is correct and `note` is not:
+
+- The 707-cp Arabic field **continues the prayer begun in `r00008`**, whose
+  Arabic field ends mid-supplication at `فَكُونُوا لِي شُفَعاءَ`.
+- The field is Arabic du'ā throughout, the same genre as `r00008`.
+- It contains **one** Persian sentence at code point 126 —
+  `و در اینجا سر بالا کن و بگو` ("and here raise your head and say") — which is
+  an embedded ritual instruction *inside* the Arabic prayer. A brief instruction
+  embedded in a du'ā does not make the row a note; the row's nature is the du'ā
+  that contains it.
+
+Text unchanged: all 30 pooled text references identical as sets before and
+after. Both earlier `r00009` ids now alias to the new row
+`r00009-s3b3375cb23a6131d`, so no link is orphaned.
+
+### Why `r00001` stays `note`, and why `ziyarat-item-12` is `heading`
+
+These are different from `r00009` and the difference is the evidence:
+
+- `ziyarat-aymh-bqya-alyhm` `r00001` is a 103-cp Persian gloss beginning
+  `یعنی:` ("meaning:"). Agent-4: *"The content is a Persian gloss naming the
+  imams, so it is a note and not a recitation."* `note` is right.
+- `ziyarat-item-12` `r00001` is the item **title** (`زیارت ششم حضرت ابی عبد
+  اللّه الحسین`). Agent-4 said only *"A title is not a recitation"* without
+  naming a replacement. `heading` is supported by corpus practice: all four
+  sibling ordinal titles in the same section (third, fifth, sixth, seventh) are
+  already `heading`, none is `recitation`.
+
+### Author-ready snapshot
+
+`434d4c7a36a9e86faa00184ff85abc261a637037` — status `author-ready`, 115/115
+items, no missing items, 8 files (the two revised items plus their plans and
+layouts), descending from my previous snapshot `68031722` rather than from a
+peer-merged tip. Sent to agent-4 as a `ready` message for independent review.
+**Review pending; no review has been given or claimed.**
