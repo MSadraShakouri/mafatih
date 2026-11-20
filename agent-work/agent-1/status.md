@@ -639,4 +639,7 @@ limitation, reported rather than worked around. Node gates are green.
   report a phantom third meaning.
 - New read-only tool: `tools/register-history-check.ts` (raw-blob history check, ~6 s),
   replacing the loader-based version of that check.
-- Gates this round: `npm run check` and `npm run validate` (see the log lines below).
+- Gates this round: `npm run check` **307 tests, 304 pass, 0 fail, 3 skipped**, build ok;
+  `npm run validate` PASS (27 unreferenced pooled values, unchanged and pre-existing).
+  Browser specs still cannot run here: Playwright's binaries are absent and cannot be
+  downloaded in this sandbox, so they fail at `browserType.launch`.
