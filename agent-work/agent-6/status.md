@@ -4,11 +4,12 @@
 STILL `f8dca07b`, ACCEPTED BY AGENT-1 (115 OF 115 REVIEWS). THE NEW READER NOW
 GUARDS MY 93 REUSED IDS; THE REGISTER'S 93 CANDIDATES AGREE WITH MY LINEAGE MAP
 BUT REMAIN PROVISIONAL AND UNREVIEWED. THE 20 ITEMS STAY HELD FOR THE RELEASE
-DECISION. THE THREE KIND QUESTIONS IN AGENT-5'S ITEMS STAY OPEN; A CHANGE OF KIND
-NOW HAS A SUPPORTED TOOL. AGENT-5 REVIEW: 112 COMPLETE, 3 NEED WORK.**
-Updated 2026-11-20 (UTC). **Nothing changed since 2026-11-19 except the
-notes of the round of 2026-11-20 below; I am waiting, and the conditions are
-listed there.**
+DECISION. AGENT-5 CHANGED TWO OF THE THREE OPEN KINDS WITH THE GUARDED TOOL (SNAPSHOT
+`1a908eac`); I REVIEWED BOTH ITEMS AFRESH AND ACCEPTED THEM. ONE KIND QUESTION
+(`dua-vdaa-hsyn-alyh`) STAYS OPEN FOR THE COORDINATOR. AGENT-5 REVIEW: 114
+COMPLETE, 1 NEEDS WORK.**
+Updated 2026-11-20 (UTC), second part of the round. **My own authored work is
+unchanged. What I still wait for is listed in the next section.**
 
 - Branch: `arena/1a493a80-mafatih`
 - Frozen base: `ffa01da92fbba25731356e8158c295b3824763f0`
@@ -23,6 +24,117 @@ listed there.**
   (author-ready, 115 of 115 items, direct child of `3e35f4ca`; differs from it
   only in the 16 migrated mapping records).
 - Role: author of 115 items (reviewer: agent-1); reviewer of agent-5's 115 items.
+
+## Round of 2026-11-20, second part: agent-5's snapshot `1a908eac` reviewed
+
+After my first push of this round, agent-5 pushed a new isolated author
+snapshot and asked for a fresh review (his message `71a270d2`).
+
+- **His snapshot:** `1a908eacb7a6b8cbb66f43569615f62c25548122`, a direct child
+  of `d0fb5765` (the one I reviewed last). His branch tip is `67e6b254`.
+  Merged here as `7b81120c` (no conflict, eight files, all his).
+- **What changed:** exactly two items; 8 of his 460 authored files. The other
+  113 items are identical at the old snapshot, the new one, his tip and here,
+  so their reviews stand and I did not redo them.
+  - `item-mrsyh-am-albnyn`: eight verse rows, `recitation` to `quotation`.
+    Six uncut rows keep their IDs. The two joined rows have new IDs:
+    `m7fd11ac1993a4b4f9d3db507` is now `m8295de084366aef28d7b3740`;
+    `m593b5e8d63e327587f6fea00` is now `m9fabefe023a95654ead5e658`.
+  - `dua-daa-aymny-shr`: the verse piece of `r00009`, `quotation` to
+    `recitation`; `r00009-se370353bb3dfce92` is now `r00009-s94f3428995dfd8af`.
+    The Persian-only piece `r00009-sc64421e6669ebe6d` is unchanged.
+- **How I reviewed (each item afresh, against that exact snapshot):**
+  1. Read every row of both items in both languages again and wrote a new
+     note for every source field (16 and 19 fields).
+  2. Checked the mapping separately from the kinds, with a new reviewer
+     script, `proposals/scripts/check-role-revision.mjs` (result:
+     `proposals/role-revision-check.json`). 21 checks per item, all pass:
+     no text reference and no attribution changed; no pooled text changed;
+     each of the 3 retired IDs is an alias holding the exact old row and
+     pointing to the whole field of the new row at offset 0; the 4 earlier
+     aliases are carried with the same offsets; the 2 further aliases in the
+     first item are the left sides of the re-made joins and were never
+     published; no new ID ever existed before; plan and layout differ only in
+     kinds; the project's validator and canonical check pass.
+  3. Checked every row ID published for each item since the frozen base, code
+     point by code point: 19 ID meanings and 3,231 code points; 21 ID meanings
+     and 6,933 code points. Every one opens the same character as before.
+  4. Reviewed each proposed space on its own: the 2 spaces of the re-made
+     joins (`m8295de084366aef28d7b3740` Arabic offset 59,
+     `m9fabefe023a95654ead5e658` Arabic offset 57) and the 3 carried spaces
+     of the second item (`ma8b5fc6e4d9b4e00b7ae91e8` Arabic 43,
+     `mb0571663cc8f471c1b956998` Arabic 265 and Persian 235). All five
+     accepted: one U+0020, the only character added, a complete word on each
+     side, no doubled space.
+  5. The three new live IDs are the same three my in-memory dry run of
+     2026-11-19 predicted (`proposals/kind-revision-dry-run.json`).
+- **Result:** both records are rewritten, bound to `1a908eac`, and
+  `verify-review` reports both complete. **agent-5's items: 114 complete,
+  1 needs work.** My two kind findings on these items are closed, because the
+  rows now have the kind I had argued for and no link was lost.
+- **What this acceptance is and is not:** it is the assigned reviewer's
+  acceptance of split, roles and mapping. It is not a coordinator ruling, not
+  a scholarly or rights approval, and it approves no provisional
+  historical-link candidate. The earlier instruction was to keep the three
+  kind questions open until the coordinator rules; the round note of
+  2026-11-20 told agent-5 to address them and told me to review a changed
+  snapshot, so I reviewed and recorded the honest result. If the coordinator
+  wants these two held for his own ruling, one word reopens them.
+- **Still open, `dua-vdaa-hsyn-alyh` `r00001-sf8ca119bc7deb30b`:** agent-5 did
+  not change it (kind `heading`) and asked for my view. The item is unchanged,
+  so the review at `4aae1ccd` is not redone and still reports `needs-work`.
+  My view, sent to him: I have no objection to `heading`; the row holds the
+  section number and the narrator's name, and a change to `instruction` would
+  also be safe (1 ID retired and kept as an alias, per my dry run). Author and
+  reviewer now both lean to keep. I do not close it myself, because the
+  standing instruction is to keep it open until the coordinator rules and
+  nothing in this item changed.
+- **Register:** neither changed item is in the provisional register. My
+  lineage check of agent-5's register items still gives 27 of 27 IDs agreeing
+  and 14 of 14 bindings current. Nothing migrated, nothing approved, no hash
+  refreshed.
+- **One limit, stated plainly:** the link check covers row IDs from the frozen
+  base onward. A row of the second item (`r00006`) had other text in the first
+  commit of the repository, before the base; that older history is outside the
+  split mapping and I did not judge it.
+- **Message:** to agent-5, `review` `59a530f1` (reply to his `71a270d2`; IDs and offsets only).
+- **Checks after the merge and the review** (worktree: merge `7b81120c` plus
+  the two review records, the new script and its result file, the message and
+  these notes):
+  - `npm run check`: 307 tests, 304 pass, 0 fail, 0 cancelled, 3 skipped,
+    exit 0; web build succeeded. The three skipped tests are the project's own
+    optional ones: test 64 (generated review page absent), test 65 (alignment
+    candidates absent), test 97 (lam-pair corpus comparison).
+  - `npm run validate`: passes; 48 unreferenced pooled values, as before.
+  - `verify-review` over all 115 of my records, each against its own snapshot:
+    114 complete, 1 `needs-work` (`dua-vdaa-hsyn-alyh`).
+  - `audit-round`: `needs-work`, exit 1, as expected on one agent's branch:
+    114 complete; 1 `invalid-or-incomplete` (`dua-vdaa-hsyn-alyh`); 571
+    `missing`, because the other agents' plans, layouts and reviews are on
+    their own branches.
+  - `audit-authored` agent-5 at the merged state: 115 of 115, no finding.
+    `audit-authored` agent-6: 115 of 115; my 460 authored files still equal
+    `f8dca07b`.
+  - `verify-tool-info`: matches. `verify-partitions`: valid.
+  - Register checks: 93 of 93 and 9 of 9 bindings current (mine); 27 of 27
+    and 14 of 14 bindings current (agent-5's).
+  - **Browser specs: not run.** Playwright 1.64.1 is installed as a package,
+    but no browser binary is present and none can be downloaded here, so there
+    is no browser version to report. No APK, no device test.
+
+**What I wait for now, exactly:**
+
+1. **From the coordinator:** one word on `dua-vdaa-hsyn-alyh`
+   `r00001-sf8ca119bc7deb30b`: the kind stays `heading` (then I close the
+   record), or it changes (then agent-5 runs `revise-preview` and `revise`,
+   publishes a snapshot, and I review it).
+2. **From the coordinator:** the release decision for my 20 held items, and
+   whether the 93 provisional candidates need agent-1's review.
+3. **From agent-5:** nothing at present, unless the coordinator rules a change
+   under point 1 or he changes another item.
+
+The section below is the first part of the same day. Its waiting list is
+replaced by the list above.
 
 ## Round of 2026-11-20
 

@@ -1,6 +1,22 @@
 # agent-6 handoff to the coordinator (2026-11-19, UTC; note of 2026-11-20 added)
 
-**Note of 2026-11-20:** nothing changed. `main` is still `985f226c`. agent-5's
+**Second note of 2026-11-20 (newest):** agent-5 published snapshot
+`1a908eacb7a6b8cbb66f43569615f62c25548122` with two guarded role changes
+(`item-mrsyh-am-albnyn`, eight verse rows to `quotation`; `dua-daa-aymny-shr`,
+verse piece of `r00009` to `recitation`). I merged it (`7b81120c`), reviewed
+both items afresh against it, each mapping and each of the five spaces
+separately, and accepted both. Three live IDs retired, all kept as aliases; no
+text or attribution changed; every row ID published since the base still opens
+the same character. **agent-5's items: 114 complete, 1 needs work.** The one
+open item is `dua-vdaa-hsyn-alyh` `r00001-sf8ca119bc7deb30b` (kind `heading`,
+unchanged): author and reviewer both lean to keep; **I need your word to close
+it.** My acceptance is a reviewer's acceptance, not your ruling and not a
+scholarly approval; one word from you reopens the two items. Details:
+`status.md`, section "Round of 2026-11-20, second part". Where the text below
+says "three kind questions" or "112 complete, 3 need work", read it with this
+note.
+
+**First note of 2026-11-20:** nothing changed. `main` is still `985f226c`. agent-5's
 tip is still `24ebdcb4` with no snapshot after `d0fb5765`, so no review was
 redone (112 complete, 3 need work). agent-1's tip is `10b8be27`; his 115
 reviews of my items are unchanged. I wait for agent-5's new snapshot of the

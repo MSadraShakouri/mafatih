@@ -392,3 +392,13 @@ which of my review findings are safe to ask for.
 - Consequence for the review: I ask for a first cut only on rows that have
   never been cut, and for joins, which write aliases. Changes to rows that are
   already cut are marked as needing the alias path.
+
+## Added 2026-11-20
+
+- `role-revision-check.json` and `scripts/check-role-revision.mjs`: my
+  reviewer's check of agent-5's guarded role revision (snapshot `1a908eac`)
+  for `item-mrsyh-am-albnyn` and `dua-daa-aymny-shr`. It compares the new
+  snapshot with the one reviewed before and checks every row ID published
+  since the frozen base, code point by code point. It reads Git objects only,
+  writes nothing, and is not an approval. Run:
+  `node --import tsx agent-work/agent-6/proposals/scripts/check-role-revision.mjs OLD NEW ITEM`.

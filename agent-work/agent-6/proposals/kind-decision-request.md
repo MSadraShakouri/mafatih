@@ -6,6 +6,15 @@ against agent-5's snapshot `d0fb57659675c25d0dbbe878a7ec9e9e6b7056d3`.
 This file quotes and translates no devotional text. Rows are named by item and
 row ID; what a row holds is described by its role only.
 
+## Update 2026-11-20: cases 2 and 3 are done; only case 1 is open
+
+agent-5 applied option B to cases 2 and 3 with `revise-preview` and `revise`
+and published snapshot `1a908eacb7a6b8cbb66f43569615f62c25548122`. I reviewed
+both items afresh against it and accepted them (`role-revision-check.json`;
+`status.md`, section "Round of 2026-11-20, second part"). The new live IDs are
+the ones my dry run predicted. **Case 1 (`dua-vdaa-hsyn-alyh`) is unchanged
+and still yours to answer**; author and reviewer both lean to option A (keep).
+
 ## Update 2026-11-19: option B now has a supported tool
 
 `main` `985f226c` adds `revise-preview` and `revise`. They change a published

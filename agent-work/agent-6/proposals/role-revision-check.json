@@ -1,0 +1,168 @@
+{
+  "format_version": 1,
+  "kind": "reviewer-check-of-role-revision",
+  "by": "agent-6",
+  "written": "2026-11-20",
+  "script": "agent-work/agent-6/proposals/scripts/check-role-revision.mjs",
+  "note": "Reviewer aid, not an approval. Compares agent-5 snapshot 1a908eac with the snapshot reviewed before (d0fb5765) for the two items changed by the guarded role revision. Reads Git objects only. Links are checked for every row ID published since the frozen base; history before the base is outside the split mapping and is not judged. IDs and offsets only; no source text.",
+  "items": [
+    {
+      "old": "d0fb57659675c25d0dbbe878a7ec9e9e6b7056d3",
+      "new": "1a908eacb7a6b8cbb66f43569615f62c25548122",
+      "item": "item-mrsyh-am-albnyn",
+      "author": "agent-5",
+      "files_changed_in_snapshot": 8,
+      "rows": 11,
+      "kind_changes": [
+        "m7fd11ac1993a4b4f9d3db507:recitation->quotation",
+        "m593b5e8d63e327587f6fea00:recitation->quotation",
+        "r00007:recitation->quotation",
+        "r00009:recitation->quotation",
+        "r00010:recitation->quotation",
+        "r00011:recitation->quotation",
+        "r00012:recitation->quotation",
+        "r00013:recitation->quotation"
+      ],
+      "ids_kept_with_new_kind": [
+        "r00007",
+        "r00009",
+        "r00010",
+        "r00011",
+        "r00012",
+        "r00013"
+      ],
+      "ids_retired": [
+        "m7fd11ac1993a4b4f9d3db507",
+        "m593b5e8d63e327587f6fea00"
+      ],
+      "new_ids": [
+        "m8295de084366aef28d7b3740",
+        "m9fabefe023a95654ead5e658"
+      ],
+      "aliases": {
+        "before": 2,
+        "after": 6,
+        "for_retired_ids": 2,
+        "new_intermediate": [
+          "r00003-sce35a6075dcf1b56",
+          "r00005-s0f9a18f36d608878"
+        ]
+      },
+      "proposed_spaces": [
+        "m8295de084366aef28d7b3740/ar@59",
+        "m9fabefe023a95654ead5e658/ar@57"
+      ],
+      "published_id_meanings_checked": 19,
+      "code_points_checked": 3231,
+      "item_versions_scanned": 5,
+      "failed_checks": 0,
+      "checks_passed": 21,
+      "checks_failed": 0,
+      "checks": [
+        "PASS  new snapshot descends from the reviewed one",
+        "PASS  no pooled text file changed",
+        "PASS  same number of rows",
+        "PASS  no row changed its Arabic or Persian text reference",
+        "PASS  no row changed its source attribution",
+        "PASS  no row got a new ID without a kind change",
+        "PASS  item fields other than rows are identical",
+        "PASS  every earlier alias is carried: same original, same offsets, only the target row renamed",
+        "PASS  each retired ID has an alias: exact old row, whole field, offset 0 of the renamed row",
+        "PASS  other new aliases are intermediate pieces of the re-made joins, never published before",
+        "PASS  the mapping of every frozen original row is the same, only target rows renamed",
+        "PASS  mapping record names the same item, author and frozen baseline",
+        "PASS  proposed spaces: same rows (renamed), languages, offsets, value and reason",
+        "PASS  each proposed space is one U+0020 with a non-space character on both sides",
+        "PASS  plan differs only in kinds",
+        "PASS  layout differs only in kinds, the plan hash and the renamed sides of the same joins",
+        "PASS  layout no row uses a new ID scheme",
+        "PASS  project validator: no error on the new snapshot",
+        "PASS  project canonical check: plan and layout rebuild the published item and mapping",
+        "PASS  every row ID published since the frozen base opens the same character at every code point",
+        "PASS  no new ID ever existed in an earlier version of the item"
+      ]
+    },
+    {
+      "old": "d0fb57659675c25d0dbbe878a7ec9e9e6b7056d3",
+      "new": "1a908eacb7a6b8cbb66f43569615f62c25548122",
+      "item": "dua-daa-aymny-shr",
+      "author": "agent-5",
+      "files_changed_in_snapshot": 8,
+      "rows": 12,
+      "kind_changes": [
+        "r00009-se370353bb3dfce92:quotation->recitation"
+      ],
+      "ids_kept_with_new_kind": [],
+      "ids_retired": [
+        "r00009-se370353bb3dfce92"
+      ],
+      "new_ids": [
+        "r00009-s94f3428995dfd8af"
+      ],
+      "aliases": {
+        "before": 2,
+        "after": 3,
+        "for_retired_ids": 1,
+        "new_intermediate": []
+      },
+      "proposed_spaces": [
+        "ma8b5fc6e4d9b4e00b7ae91e8/ar@43",
+        "mb0571663cc8f471c1b956998/ar@265",
+        "mb0571663cc8f471c1b956998/fa@235"
+      ],
+      "published_id_meanings_checked": 21,
+      "code_points_checked": 6933,
+      "item_versions_scanned": 6,
+      "failed_checks": 0,
+      "checks_passed": 21,
+      "checks_failed": 0,
+      "checks": [
+        "PASS  new snapshot descends from the reviewed one",
+        "PASS  no pooled text file changed",
+        "PASS  same number of rows",
+        "PASS  no row changed its Arabic or Persian text reference",
+        "PASS  no row changed its source attribution",
+        "PASS  no row got a new ID without a kind change",
+        "PASS  item fields other than rows are identical",
+        "PASS  every earlier alias is carried: same original, same offsets, only the target row renamed",
+        "PASS  each retired ID has an alias: exact old row, whole field, offset 0 of the renamed row",
+        "PASS  other new aliases are intermediate pieces of the re-made joins, never published before",
+        "PASS  the mapping of every frozen original row is the same, only target rows renamed",
+        "PASS  mapping record names the same item, author and frozen baseline",
+        "PASS  proposed spaces: same rows (renamed), languages, offsets, value and reason",
+        "PASS  each proposed space is one U+0020 with a non-space character on both sides",
+        "PASS  plan differs only in kinds",
+        "PASS  layout differs only in kinds, the plan hash and the renamed sides of the same joins",
+        "PASS  layout no row uses a new ID scheme",
+        "PASS  project validator: no error on the new snapshot",
+        "PASS  project canonical check: plan and layout rebuild the published item and mapping",
+        "PASS  every row ID published since the frozen base opens the same character at every code point",
+        "PASS  no new ID ever existed in an earlier version of the item"
+      ]
+    }
+  ],
+  "agreement_with_my_dry_run": [
+    {
+      "item": "item-mrsyh-am-albnyn",
+      "dry_run_new_live_ids": [
+        "m8295de084366aef28d7b3740",
+        "m9fabefe023a95654ead5e658"
+      ],
+      "actual_new_ids": [
+        "m8295de084366aef28d7b3740",
+        "m9fabefe023a95654ead5e658"
+      ],
+      "equal": true
+    },
+    {
+      "item": "dua-daa-aymny-shr",
+      "dry_run_new_live_ids": [
+        "r00009-s94f3428995dfd8af"
+      ],
+      "actual_new_ids": [
+        "r00009-s94f3428995dfd8af"
+      ],
+      "equal": true
+    }
+  ]
+}

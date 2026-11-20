@@ -4,11 +4,11 @@
   "item": "dua-daa-aymny-shr",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "bae5beb3ce47f81dcf2eb4e27b6afeaa3456f4d4",
-  "plan_sha256": "8fc9beb96aad1c6f2b31d9480934afb54263c8b8aaa663625a27620879f46195",
-  "layout_sha256": "ef0350183e65b7f91292203eb4fc504fa88c4a9a189ef9ef4547035cc9442ab9",
-  "result_item_sha256": "79d6736780472156801763a99ab3c14d7984edc950b047972e80655354016634",
-  "result_record_sha256": "d369d39253dece64401673afe165e9de24c3fb93cb9e52fd36d151ae416dd125",
+  "author_commit": "1a908eacb7a6b8cbb66f43569615f62c25548122",
+  "plan_sha256": "88f4a4c15f63a1ce00706736f1e1ae177d5d6f75229e552b6313edbbe6162ac2",
+  "layout_sha256": "f596c61e9e84ab086efb7cf6adf97772f4b2e829a1e3d020f4d854892b33f608",
+  "result_item_sha256": "26fe7bc529960b871ad506f2b04221ca6d72a279ad257e1b4646077e50af68c3",
+  "result_record_sha256": "fbfffda4835444970941a824737dfe2a4515a5efc3ca29f2db079ec0be10ce92",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,119 +16,119 @@
     "item_sha256": "096f04af5626502f141f98d56685590fff3244df326b884bb4a55d65f15772b9",
     "author": "agent-5",
     "reviewer": "agent-6",
-    "preview_sha256": "801f1b448d270de4c46d296fdda5638649bccc90602590d982a11b5170880f36",
+    "preview_sha256": "41c23323de1c2aac0603c539d314d44db176541d180ea8eb85723881325c9f11",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. Persian prose is not judged by length. Read again at 4aae1ccd: no numbered section starts inside it and it holds no complete Arabic recitation."
+        "note": "Fresh read at agent-5 snapshot 1a908eac. Persian prose that opens numbered section 17 (the number stands at offset 0 of the row, not inside it), names the transmitters and tells the reader when to say the prayer. Kept whole, kind note. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3. No Arabic recitation inside it; not judged by length."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the first clause of the prayer with its rendering."
+        "note": "Fresh read at 1a908eac. Two rows, both recitation: r00002-se78f6df715196b3d takes Arabic 0-38 and Persian 0-50 (the opening formula and its rendering) and r00002-s85aa1380ba79f059 takes Arabic 39-88 and Persian 51-84 (the first clause of the prayer and its rendering). Each Arabic piece stands beside its own Persian. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Re-read at 4aae1ccd: 2 output rows (2 recitation). The basmala and its rendering are cut off as asked; the second row pairs the first clause of the prayer with its rendering."
+        "note": "Fresh read at 1a908eac. Two rows, both recitation: r00002-se78f6df715196b3d takes Arabic 0-38 and Persian 0-50 (the opening formula and its rendering) and r00002-s85aa1380ba79f059 takes Arabic 39-88 and Persian 51-84 (the first clause of the prayer and its rendering). Each Arabic piece stands beside its own Persian. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside; I found no place where the Persian leaves the order of the Arabic or where part of one language lacks the other. The split is accepted as it stands."
+        "note": "Fresh read at 1a908eac. One uncut recitation row, Arabic 555 and Persian 455 code points, both whole. It continues the prayer begun in r00002 and ends with its closing praise. No cut is asked: a length or a count of clauses is not a ground for a cut, and the two fields correspond from start to end. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside; I found no place where the Persian leaves the order of the Arabic or where part of one language lacks the other. The split is accepted as it stands."
+        "note": "Fresh read at 1a908eac. One uncut recitation row, Arabic 555 and Persian 455 code points, both whole. It continues the prayer begun in r00002 and ends with its closing praise. No cut is asked: a length or a count of clauses is not a ground for a cut, and the two fields correspond from start to end. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00004",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 265 code points, 5 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
+        "note": "Fresh read at 1a908eac. The source Arabic field mixes two things. Offsets 0-154 are Persian prose that opens numbered section 18; they go to the Persian field of r00004-s86898f86de8b9f04, kind note. Offsets 155-419 are the Arabic of the prayer; they go to the Arabic field of joined row mb0571663cc8f471c1b956998 at offsets 0-264, kind recitation. The cut stands exactly at the change of script, so the section label is its own row and the Arabic is beside its rendering. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 265 code points, 5 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
+        "note": "Fresh read at 1a908eac. All 235 code points go to the Persian field of mb0571663cc8f471c1b956998 at offsets 0-234; r00005 continues the same sentence after the proposed space at offset 235. The Persian renders the joined Arabic in order. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00005",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Fresh read at 1a908eac. All 12 code points (the last two words of the Arabic sentence) go to mb0571663cc8f471c1b956998 at offsets 266-277, after the proposed space at offset 265. Joining them to r00004 completes the sentence the source had broken across two rows. Kind recitation, as the rest of the prayer. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Fresh read at 1a908eac. All 18 code points (the end of the Persian sentence) go to mb0571663cc8f471c1b956998 at offsets 236-253, after the proposed space at offset 235. Persian and Arabic are joined at the same point of the sentence, so the two fields still correspond. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00006",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 397 code points, 7 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
+        "note": "Fresh read at 1a908eac. Offsets 0-184 are Persian prose that opens numbered section 19 and ends by telling the reader to say the prayer; they go to the Persian field of r00006-s5277842879ed0547, kind instruction, which fits a direction ending with a colon. Offsets 185-581 are the Arabic of the prayer and go whole to r00006-s8f53b0f82f7a2dbf, kind recitation. The cut stands at the change of script. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My earlier finding on this field rested on a length and punctuation screen (largest Arabic piece now 397 code points, 7 internal clause marks). The row is already cut into 2 output rows, so a further cut would renumber its published split ids; under the round's shared instruction it is not asked to be re-split because it is long."
+        "note": "Fresh read at 1a908eac. All 330 code points form the Persian field of r00006-s8f53b0f82f7a2dbf, beside the Arabic of the same prayer; the two correspond from start to end. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Fixed at snapshot f192ee09. The Arabic opening words of the verse are cut from the Persian field, placed in the Arabic slot and joined to the rest of the passage in r00008. The first verse is whole again, and the row stands beside the Persian of r00008, which renders both verses from their first word. One proposed Arabic space, reviewed separately. The Persian before the verse is one note row."
+        "note": "Fresh read at 1a908eac. The source Persian field mixes two things. Offsets 0-169 are Persian prose that opens numbered section 20 and states the number of repetitions; they form r00007-s5227989a1cf80a5b, kind note. Offsets 170-212 are Arabic: the beginning of the first verse, stored by the source in the Persian slot. They go to the Arabic field of joined row ma8b5fc6e4d9b4e00b7ae91e8 at offsets 0-42, kind recitation. The cut stands at the change of script. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00008",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Fresh read at 1a908eac. All 101 code points go to ma8b5fc6e4d9b4e00b7ae91e8 at offsets 44-144, after the proposed space at offset 43: the end of the first verse and the whole second verse. Kind recitation: section 20 tells the reader to say these verses seven times. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00008",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Fresh read at 1a908eac. All 130 code points form the Persian field of ma8b5fc6e4d9b4e00b7ae91e8. It renders the first verse and then the second, which is exactly the joined Arabic. Unchanged by the role revision: same text references, same IDs, same kinds as in the result I accepted at bae5beb3."
       },
       {
         "row": "r00009",
         "language": "ar",
         "split": "accept",
-        "kind": "uncertain",
-        "note": "Still open, unchanged at snapshot bae5beb3. Not an author fix for now; it waits for the coordinator's alias tooling, and nothing is asked of the author. The second piece is the third verse of this prayer and is recited like the two verses of the row before it, which are recitation; quotation does not agree with them. The first piece is a Persian fragment stored in the Arabic field that only repeats the opening words of the Persian of the verse; it is not a direction to the reader, so instruction is doubtful. Both are cut pieces, and a change of kind gives a cut piece a new row ID and retires the published one."
+        "kind": "accept",
+        "note": "Fresh read at 1a908eac; this is the changed row. The source Arabic field mixes two things. Offsets 27-148 (122 code points) are the third verse of the prayer of section 20; they form the Arabic field of r00009-s94f3428995dfd8af, whose kind is now recitation. That is right: the direction in r00007-s5227989a1cf80a5b covers all three verses, and the first two stand in the row just above (ma8b5fc6e4d9b4e00b7ae91e8), which is recitation. One prayer no longer shows two kinds; this closes my open kind finding. The published ID r00009-se370353bb3dfce92 is retired and kept as an alias (see the layout note). Offsets 0-26 are a Persian fragment that the source stored in the Arabic field; they form the Persian-only row r00009-sc64421e6669ebe6d, kind instruction, unchanged (same ID, text and kind). I accept it as it stands: the fragment ends with a colon and a space (offsets 25 and 26) directly before the verse and reads as a lead-in to it; its offsets 0-24 are the same 25 code points as offsets 0-24 of the Persian of the verse, a duplication that belongs to the source and that a split must not remove. No other kind fits better. I record the duplication here for a later editorial pass; it is not a finding against the author."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "accept",
-        "kind": "uncertain",
-        "note": "Still open, unchanged at snapshot bae5beb3. Not an author fix for now; it waits for the coordinator's alias tooling, and nothing is asked of the author. Same verse as the Arabic piece: recitation in the row before, quotation here. A change of kind would retire the published row ID."
+        "kind": "accept",
+        "note": "Fresh read at 1a908eac. All 109 code points form the Persian field of r00009-s94f3428995dfd8af, beside the 122 code points of the verse. The Persian renders the verse and nothing else. Kind recitation, the same as the Arabic beside it and as the two verses in the row above. This closes my open kind finding on this field."
       }
     ],
     "punctuation": [],
@@ -136,7 +136,7 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Read all 12 output rows at snapshot bae5beb3. The open layout point is met: the last piece of r00004 is joined to r00005, so the Arabic reads … إبليس و جنوده beside a Persian sentence that ends … از رحمت خدا می‌گردند. Three proposed spaces in the item, each reviewed separately and accepted. Only the kind of r00009 stays open, and it waits for tooling; see the source notes."
+    "note": "Fresh review of all 12 rows in both languages at agent-5 isolated snapshot 1a908eac (parent d0fb5765). Row order, cuts and the two joins (last piece of r00004 with r00005; Arabic piece of r00007 with r00008) are the same as in the layout I accepted at bae5beb3. What changed: one row. The verse piece of r00009 went from quotation to recitation and its ID from r00009-se370353bb3dfce92 to r00009-s94f3428995dfd8af. Mapping, checked separately from the kind with my script check-role-revision.mjs (21 checks, all pass): no text reference and no attribution changed in any row; no pooled text file changed; the retired ID is an alias that holds the exact old row and maps Arabic 0-121 and Persian 0-108 to the same offsets of the new row; the two earlier aliases (r00007-sbd47d389958800f8, r00004-se656eb44999bf14d) are carried unchanged; no new ID existed in any earlier version; the mapping of all 9 frozen rows is the same apart from the one renamed target row; plan and layout differ only in that kind; the project's canonical check rebuilds the published item and mapping from plan and layout. Link check over every row ID published for this item since the frozen base (21 ID meanings in 6 versions, 6933 code points): every code point opens the same character in the current rows. Three proposed spaces, none in the changed row; each is still reviewed again in its own entry because the review is bound to a new snapshot. Nothing stays open in this item. This is a reviewer's acceptance of the split, roles and mapping; it is not a scholarly or rights approval, and it approves no provisional historical-link candidate."
   },
   "spacing_review": [
     {
@@ -148,7 +148,7 @@
       "right": "r00008",
       "reason": "Separate the complete words at the original source-row boundary while grouping the interrupted passage; preserve the original text.",
       "decision": "accept",
-      "note": "Accepted. Read against the two joined pieces: the left piece ends with أرحم and the right piece begins with الراحمين»،; أرحم and الراحمين are the two words that close the verse (the most merciful of the merciful), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 43 of 145; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the row comes whole from one source piece (r00008), so it has no junction and needs no space; it renders the whole joined Arabic."
+      "note": "Accepted, reviewed again at 1a908eac; row, ID and text are unchanged by the role revision. Left side r00007-sbd47d389958800f8 fills offsets 0-42 and right side r00008 fills offsets 44-144 of the 145 code points; offset 43 is one U+0020 and the only character added. The word before it and the word after it are the two separate words that close the first verse, so without the space they would run together. The field has no doubled space. The Persian field comes whole from r00008 and has no junction; it renders the whole joined Arabic."
     },
     {
       "row": "mb0571663cc8f471c1b956998",
@@ -159,7 +159,7 @@
       "right": "r00005",
       "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts.",
       "decision": "accept",
-      "note": "Accepted. Read against the two joined pieces: the left piece ends with إبليس and the right piece begins with و; إبليس is followed by و جنوده (and his hosts), so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 265 of 278; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Persian field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+      "note": "Accepted, reviewed again at 1a908eac; row, ID and text are unchanged by the role revision. Left side r00004-se656eb44999bf14d fills offsets 0-264 and right side r00005 fills offsets 266-277 of the 278 code points; offset 265 is one U+0020 and the only character added. A complete noun ends before it and a separate one-letter conjunction begins after it, so without the space two words would run together. The field has no doubled space. The Persian field of the same row is joined at the same point of the sentence and has its own space, reviewed in its own entry."
     },
     {
       "row": "mb0571663cc8f471c1b956998",
@@ -170,7 +170,7 @@
       "right": "r00005",
       "reason": "Separate complete words at the original source-row boundary while grouping the interrupted passage; preserve both original texts.",
       "decision": "accept",
-      "note": "Accepted. Read against the two joined pieces: the left piece ends with از and the right piece begins with رحمت; از is followed by رحمت خدا, so without the space two words would run together. Checked by code point: the inserted character is U+0020 at index 235 of 254; a character that is not a space stands on each side of it; the field has no doubled space; and the mapped pieces of the two sources lie directly before and after it, so the space is the only character added. The Arabic field of the same row is joined at the same point of the phrase and has its own space, reviewed in its own entry; the two fields still correspond."
+      "note": "Accepted, reviewed again at 1a908eac; row, ID and text are unchanged by the role revision. Left side r00004-se656eb44999bf14d fills offsets 0-234 and right side r00005 fills offsets 236-253 of the 254 code points; offset 235 is one U+0020 and the only character added. A complete preposition ends before it and a noun begins after it, so without the space two words would run together. The field has no doubled space. The Arabic field of the same row is joined at the same point of the sentence and has its own space, reviewed in its own entry; the two fields still correspond."
     }
   ]
 }
