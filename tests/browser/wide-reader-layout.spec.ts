@@ -249,6 +249,10 @@ test('explanatory, Persian-only and long Arabic rows remain intact; no row or tr
   await page.goto('./#/item/ziyarat-ashura'); await expect(reader(page)).toHaveAttribute('data-wide-active', 'true');
   await checkRows('ziyarat-ashura');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(761);
+  // Ashura's longest physical rows can become short after a split.
+  // Exercise long-row preservation against a separate genuinely long item.
+  await page.goto('./#/item/namaz-hnvt-myt'); await expect(reader(page)).toHaveAttribute('data-wide-active', 'true');
+  await checkRows('namaz-hnvt-myt');
   const longRows = await page.locator('article > .reader-row p[data-text-role="arabic"]').evaluateAll(nodes => nodes.filter(p => {
     const cs = getComputedStyle(p); return p.getBoundingClientRect().height > parseFloat(cs.lineHeight) * 2;
   }).length);

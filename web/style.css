@@ -47,6 +47,14 @@ button:focus-visible,a:focus-visible,input:focus-visible + .radio-mark {outline:
 .content {padding:0 clamp(20px,5.5vw,56px) 64px}
 .navigation-loading {position:fixed;z-index:60;bottom:16px;inset-inline-start:16px;padding:7px 11px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--muted);font-size:12px;box-shadow:0 4px 12px var(--shadow);pointer-events:none}
 .reader {padding-top:27px}
+.row-version-warning {margin:18px 0 0;padding:14px 16px;border:1px solid var(--border);border-inline-start:4px solid var(--gold);border-radius:9px;background:var(--soft);color:var(--text);font-size:13px;line-height:1.9}
+.row-version-warning strong {display:block;font-size:14px}
+.row-version-warning p {margin:4px 0 8px}
+.row-version-warning ul {margin:8px 0 0;padding-inline-start:22px}
+.row-version-warning a {color:var(--primary);font-weight:650;text-underline-offset:3px}
+.row-version-warning code {font-size:11px;unicode-bidi:isolate;color:var(--muted)}
+.row-version-accept {min-height:44px;padding:6px 14px;border:1px solid var(--primary);border-radius:8px;background:var(--surface);color:var(--primary);font-weight:650}
+.row-version-warning :is(a,button):focus-visible {outline:2px solid var(--primary);outline-offset:3px}
 .reader-row {margin:0 0 33px}
 .reader-row:last-child {margin-bottom:0}
 /* Existing row elements remain in source order. Flex order presents all of a

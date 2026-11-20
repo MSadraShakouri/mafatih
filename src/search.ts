@@ -14,6 +14,8 @@ export interface SearchRecord {
   section: SearchSection;
   item: string | null;
   row?: string;
+  /** Version of the current physical row; optional for legacy indexes and TOC. */
+  rowVersion?: string;
   language: SearchLanguage | 'toc';
   text: string;
   normalized: string;

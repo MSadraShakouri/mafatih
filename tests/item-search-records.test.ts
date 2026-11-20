@@ -70,6 +70,8 @@ test('local reader records match every global source field and original adjacenc
     for (const record of local) {
       const global = byKey.get(record.key);
       assert.ok(global, record.key);
+      assert.match(global.rowVersion ?? '', /^[a-f0-9]{64}$/, `generated current version: ${record.key}`);
+      assert.equal(global.rowVersion, item.rows.find(row => row.id === global.row)?.version, record.key);
       base ??= global.order - record.order;
       assert.deepEqual({ ...record, order: global.order }, global, record.key);
       verifyFold(global);

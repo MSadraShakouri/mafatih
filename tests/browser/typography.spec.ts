@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { runtimeItem, sourceTarget, sourceValue } from './row-source-fixture.js';
 
 test.setTimeout(60_000);
 
@@ -14,8 +15,13 @@ test('Quran endings are Persian digits and normal weight, while Arabic words sta
   expect(await marker.evaluate(node => getComputedStyle(node).fontWeight)).toBe('400');
   expect((await paragraph.textContent())!.length).toBe(source.length);
 
+  const ziyarat = await runtimeItem(request, 'ziyarat-al-yasyn-amam');
+  const original = sourceValue(ziyarat, 'r00005', 'ar'), index = original.indexOf('﴿لَايَنْفَعُ');
+  expect(index).toBeGreaterThanOrEqual(0);
+  const target = sourceTarget(ziyarat, 'r00005', 'ar', Array.from(original.slice(0, index)).length);
+  expect(target.language).toBe('ar');
   await page.goto('./#/item/ziyarat-al-yasyn-amam');
-  const quote = page.locator('[data-row-id="r00005"] p[lang="ar"]');
+  const quote = page.locator(`[data-row-id="${target.row}"] p[lang="ar"]`);
   await expect(quote).toContainText('﴿لَايَنْفَعُ');
   await expect(quote.locator('.quran-verse-marker')).toHaveCount(0);
   expect(await quote.evaluate(node => getComputedStyle(node).fontWeight)).toBe('700');
@@ -41,8 +47,12 @@ test('anchors, search matches and reading position work across multiple marker n
   const initialAnchor = 400;
   await context.route('**/data/items/sura-yasin.json', async route => {
     const response = await route.fetch();
-    const data = await response.json() as { rows: Array<{ id: string; ar: string; fa: string }> };
+    const data = await response.json() as { rows: Array<{ id: string; ar: string; fa: string }>;
+      row_split_redirects?: Array<{ original: { id: string } }> };
     const row = data.rows.find(value => value.id === 'r00003')!; row.ar = text; row.fa = '';
+    // This is synthetic replacement text, not the historical source of an
+    // existing split mapping. Keep unrelated real redirects out of the fixture.
+    data.row_split_redirects = data.row_split_redirects?.filter(entry => entry.original.id !== 'r00003');
     await route.fulfill({ response, json: data });
   });
   await page.setViewportSize({ width: 390, height: 600 });
