@@ -643,3 +643,12 @@ limitation, reported rather than worked around. Node gates are green.
   `npm run validate` PASS (27 unreferenced pooled values, unchanged and pre-existing).
   Browser specs still cannot run here: Playwright's binaries are absent and cannot be
   downloaded in this sandbox, so they fail at `browserType.launch`.
+
+### Scope checks run while waiting (all three branches)
+
+- **No tooling drift anywhere**: `git diff --stat 985f226c <tip> -- ':!agent-work' ':!coordination'
+  ':!data'` is empty for my tip, agent-6's `f84ddccb` and agent-2's `f28281a1`. No branch
+  carries a moved pin, an altered script or a changed test relative to main `985f226c`.
+- **My data delta is exactly my own and agent-6's work**: 710 changed files under `data/` —
+  224 mine (112 items, item + mapping), 230 agent-6's (115 items, item + mapping), 256 pooled
+  text shards — and **0 files outside those two assignments**.
