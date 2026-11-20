@@ -12,7 +12,10 @@ open item is `dua-vdaa-hsyn-alyh` `r00001-sf8ca119bc7deb30b` (kind `heading`,
 unchanged): author and reviewer both lean to keep; **I need your word to close
 it.** My acceptance is a reviewer's acceptance, not your ruling and not a
 scholarly approval; one word from you reopens the two items. Details:
-`status.md`, section "Round of 2026-11-20, second part". Where the text below
+`status.md`, section "Round of 2026-11-20, second part". Checks at this state:
+`npm run check` 307 tests, 304 pass, 0 fail, 3 skipped; browser specs 520 of
+520 pass with Playwright 1.64.1 and a substitute Chromium 153.0.8010.0 (the
+pinned build is not available here). Where the text below
 says "three kind questions" or "112 complete, 3 need work", read it with this
 note.
 

@@ -98,6 +98,17 @@ snapshot and asked for a fresh review (his message `71a270d2`).
   commit of the repository, before the base; that older history is outside the
   split mapping and I did not judge it.
 - **Message:** to agent-5, `review` `59a530f1` (reply to his `71a270d2`; IDs and offsets only).
+- **Peers after my push (fetched again):** agent-5's tip is `8fa542a6`; it
+  adds only a note file and his message `5d96126c`, sent before he could read
+  my review. No snapshot after `1a908eac`; his 460 authored files equal it.
+  agent-1's tip is `93e20304`; no review file of his changed. His message
+  `f5be4e43` is an independent check of my register confirmation from raw Git
+  objects: 93 of 93 meanings, 9 of 9 bindings, 595 of 595 observations; my
+  conclusion stands; nothing is asked of me; the 20 items stay held. Two
+  qualifications of his, which I accept: my list of 19 snapshots is evidence,
+  not every commit on every branch; and my count of 279 scanned commits is
+  true of my branch only (his history has 151). I acknowledged with
+  `49673bec`.
 - **Checks after the merge and the review** (worktree: merge `7b81120c` plus
   the two review records, the new script and its result file, the message and
   these notes):
@@ -118,9 +129,20 @@ snapshot and asked for a fresh review (his message `71a270d2`).
   - `verify-tool-info`: matches. `verify-partitions`: valid.
   - Register checks: 93 of 93 and 9 of 9 bindings current (mine); 27 of 27
     and 14 of 14 bindings current (agent-5's).
-  - **Browser specs: not run.** Playwright 1.64.1 is installed as a package,
-    but no browser binary is present and none can be downloaded here, so there
-    is no browser version to report. No APK, no device test.
+  - **Browser specs: run, with a substitute browser.** All 31 spec files in
+    both configurations (root and Pages): **520 tests, 520 pass, 0 fail,
+    0 skipped, 0 flaky** (9.7 minutes, one worker). The two link spec files
+    alone (`row-split-links`, `row-version-links`): 56 of 56. Playwright
+    1.64.1 with **Chromium 153.0.8010.0** from the npm package
+    `@sparticuz/chromium@153.0.0`, installed outside the repository. This is
+    a substitute: the Chromium build that Playwright 1.64.1 pins is not
+    installed and cannot be downloaded here. The run used a scratch copy of
+    `playwright.config.ts` (same projects, same preview servers, same specs;
+    only the browser path and launch flags added), kept outside Git, on the
+    production build made by `npm run check` above. In my earlier rounds I
+    reported the browser specs as not runnable; agent-5's note showed this
+    substitute, and I used the same package.
+  - No APK, no device test.
 
 **What I wait for now, exactly:**
 
