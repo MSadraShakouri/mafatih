@@ -1,6 +1,6 @@
 # Consolidated Agent 4 findings pass and review inventory
 
-Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `2f96f55fb869be7acfd02e61fd57dbb80cd802cb`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 59 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
+Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `2f96f55fb869be7acfd02e61fd57dbb80cd802cb`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 60 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
 
 ## Guarded continuation operations
 
@@ -122,6 +122,7 @@ Each row below was checked by formal `merge-preview` and `merge-rows`, including
 | `amal-aamal-nv-ayd` | `r00004-s9139a499aa920ed2` → `r00005-s49a0157da90fa1f7` | `m5f6a035bfcab60f8fc668354` | ar 83, fa 83 | `46fa665b1c87de8811bf47dc854efa2ea6bf833e` |
 | `amal-aamal-akhr-zy` | `r00001-s2aa090098a6808db` → `r00002-sa35c43f774f2ad27` | `m22c9ea2bd0ac7d871ca0a282` | fa 37 | `a3cf28716159dfa36f903f9fd51de2b054acd6f4` |
 | `amal-aamal-ta-hfdhm` | `r00001-s6293118522084e62` → `r00002` | `m2ab7a23f6aa07a562f0b2137` | fa 64 | `602d916842724977a306d0da0cfc17a2dc56ed9c` |
+| `amal-avzh-aqrb` | `r00001-saa3ec3f116259495` → `r00002-s715b6a57ac51205e` | `m9d14b9d90e88617efb036061` | fa 44 | `23fbc781227ce084a0ed837efb0160965b178dd4` |
 
 `sura-rahman` preserved audio-reciter row, relations and alignment files; verse 33 and 54 markers remain in their respective Arabic and Persian result fields. These checks do not certify external audio timing.
 
@@ -131,6 +132,7 @@ Formal previews were bound to each exact parent and confirmed by digest. Previou
 
 | Item | Frozen source rows revised | Commit |
 | --- | --- | --- |
+| `amal-avzh-aqrb` | r00002/fa cuts 101,157 | `49a800f57684d1c10400279fbf6a2ca708246de9` |
 | `ziyarat-klamy-znha-mzmt` | r00003 corresponding ar/fa quotations and notes; retain missing Persian lead-in | `ed8f4f3fa4540b2ac83856b3586857aaab0c75d7` |
 | `amal-aamal-akhr-zy` | r00001/fa cut 18, r00002/fa cut 37 | `eb44334fcd548c303ae854d2ac4ac426b0ba94e6` |
 | `amal-aamal-ta-hfdhm` | r00001/fa cuts 13,136,271; r00003/fa cut 13; r00004/fa cut 10 | `afbffb694932dfc40c6fcaf06616d00d59cbfbb9` |
@@ -178,7 +180,7 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | `amal-aamal-ta-hfdhm` | needs clarification; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa` | changed; full re-review and residual findings open |
 | `amal-aamal-vrvz-ayd` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/fa`, `r00007/fa` | changed; full re-review and residual findings open |
 | `amal-asharh` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00002/fa`, `r00003/fa`, `r00007/fa`, `r00008/fa`, `r00009/fa` | changed; full re-review and residual findings open |
-| `amal-avzh-aqrb` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/ar`, `r00002/fa` | unchanged; prior finding open unless independently accepted later |
+| `amal-avzh-aqrb` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/ar`, `r00002/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-aamal-mbahlh` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa`, `r00013/ar`, `r00013/fa`, `r00014/ar`, `r00014/fa`, `r00015/ar`, `r00015/fa`, `r00016/ar`, `r00016/fa`, `r00017/fa`, `r00018/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-bsm-allh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/ar`, `r00001/fa`, `r00002/fa`, `r00003/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-fzylt-dhvalarz-aamal` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/fa`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa`, `r00013/fa`, `r00014/fa`, `r00015/fa` | changed; full re-review and residual findings open |
@@ -256,6 +258,8 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 - `namaz-ayza-hajt-sndhay`: plausible r00003/r00005 role-pair draft passed in-memory live revision checks but the item has provisional version-link register entries; it was not applied or rebound.
 - Some multi-row sequences remain connected only in part after adjacent-pair corrections; examine all original findings, not just the listed operations. Role mismatches, reused IDs, old-retired IDs and unsupported nonadjacent composition remain distinct issues.
 - Agent 5 independently accepted unchanged `dua-saat-6`, `dua-saat-8`, `dua-saat-9`, `fazilat-svrhalrhmn`, `fazilat-svrhmbarkys`, `fazilat-svrhmlk` and `khavas-khvab-dydn-khvd` at its e90/7cd reviews; they are excluded from the remaining-holds table and are not reopened. The four items in snapshot 38 remain pending. The item rows listed above are a conservative review inventory, not an assertion that the full scholarly, translation, source-rights or user-facing correctness has been certified.
+
+
 ## Checks on the author branch
 
-At author data commit `602d916842724977a306d0da0cfc17a2dc56ed9c`, `npm run check` passed: 304 tests passed, 0 failed, 3 skipped (optional generated review page, optional alignment candidates, and approved lam-pair corpus comparison). Focused row-merge/revision/version tests passed 14/14. Structural validation passed with 68 unreferenced pooled-text warnings; generated audit ran successfully. Mechanical authored audit reports 115/115, which is not independent completion or content/rights approval. Focused row-split and row-version browser suites passed 56/56 in Chromium 153.0.8010.0, an npm-packaged substitute, not the Playwright-pinned Chromium 156. No APK was built. Browser server setup initially timed out because the temporary config ran Vite from `node_modules`; setting its working directory to the repository fixed the rerun.
+At author data commit `602d916842724977a306d0da0cfc17a2dc56ed9c`, `npm run check` passed: 304 passed, 0 failed, 3 skipped (optional generated review page, optional alignment candidates, approved lam-pair corpus comparison). Focused merge/revision/version tests passed 14/14; validation passed with 68 unreferenced pooled-text warnings; generated audit ran successfully; mechanical authored audit 115/115 is not independent completion. Focused browser suites passed 56/56 on Chromium 153.0.8010.0, an npm-packaged substitute, not pinned Chromium 156. No APK was built. The later `amal-avzh-aqrb` revision and join have not yet had the full suite rerun.
