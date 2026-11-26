@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "ziyarat-shhday-ahd",
   "author": "agent-4",
   "baseline_item_sha256": "71dcc9e39c61fbb1eff4c3a5a7b461647dcdbe86dceae4afcf0e17cbf3669688",
   "plan_sha256": "56d124d2aee748bae1771cd460a455dc6828fb779878b725330e3959b8966d86",
-  "layout_sha256": "df451590debd05fe3fd56e4174dba9b0306e87314289a8d3477e0dfa2e3fc885",
+  "layout_sha256": "e1223ea972dd51a344c4ffe85aee759fff898510bf34d5a2539daedb08991f75",
   "rows": [
     {
       "original": {
@@ -65,7 +65,7 @@
       },
       "results": [
         "r00002-s33ed15b82a54ab62",
-        "r00002-se66d2a8d6f823518"
+        "m682b6b06cb08185c03d22bf6"
       ],
       "ar": [
         {
@@ -76,7 +76,7 @@
           "target_start": 0
         },
         {
-          "row": "r00002-se66d2a8d6f823518",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "ar",
           "start": 213,
           "end": 487,
@@ -92,7 +92,7 @@
           "target_start": 0
         },
         {
-          "row": "r00002-se66d2a8d6f823518",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "fa",
           "start": 183,
           "end": 382,
@@ -107,19 +107,19 @@
         "fa": "ta37b840f06f5b0ee9fe52674"
       },
       "results": [
-        "r00003-s89233bbc4b8f1768",
-        "r00003-s20b0ac40a7179b1f"
+        "m682b6b06cb08185c03d22bf6",
+        "m3abfb9bedb1d83bc0f57eb0f"
       ],
       "ar": [
         {
-          "row": "r00003-s89233bbc4b8f1768",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "ar",
           "start": 0,
           "end": 317,
-          "target_start": 0
+          "target_start": 275
         },
         {
-          "row": "r00003-s20b0ac40a7179b1f",
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
           "language": "ar",
           "start": 317,
           "end": 643,
@@ -128,14 +128,14 @@
       ],
       "fa": [
         {
-          "row": "r00003-s89233bbc4b8f1768",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "fa",
           "start": 0,
           "end": 262,
-          "target_start": 0
+          "target_start": 200
         },
         {
-          "row": "r00003-s20b0ac40a7179b1f",
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
           "language": "fa",
           "start": 262,
           "end": 511,
@@ -150,24 +150,24 @@
         "fa": "t521bc516690f8bc43808fcfd"
       },
       "results": [
-        "r00004"
+        "m3abfb9bedb1d83bc0f57eb0f"
       ],
       "ar": [
         {
-          "row": "r00004",
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
           "language": "ar",
           "start": 0,
           "end": 235,
-          "target_start": 0
+          "target_start": 327
         }
       ],
       "fa": [
         {
-          "row": "r00004",
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
           "language": "fa",
           "start": 0,
           "end": 206,
-          "target_start": 0
+          "target_start": 250
         }
       ]
     },
@@ -195,6 +195,84 @@
   "aliases": [
     {
       "original": {
+        "id": "r00002-se66d2a8d6f823518",
+        "ar": "t108bbe8080c974bcbf132993",
+        "fa": "t07d291c6ec22e9ec71c118b6",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m682b6b06cb08185c03d22bf6",
+          "language": "ar",
+          "start": 0,
+          "end": 274,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m682b6b06cb08185c03d22bf6",
+          "language": "fa",
+          "start": 0,
+          "end": 199,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s89233bbc4b8f1768",
+        "ar": "tfadc8f3d91ee67a42c863109",
+        "fa": "t7223426114d43e20f9607936",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m682b6b06cb08185c03d22bf6",
+          "language": "ar",
+          "start": 0,
+          "end": 317,
+          "target_start": 275
+        }
+      ],
+      "fa": [
+        {
+          "row": "m682b6b06cb08185c03d22bf6",
+          "language": "fa",
+          "start": 0,
+          "end": 262,
+          "target_start": 200
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s20b0ac40a7179b1f",
+        "ar": "t2f16c6ab8d67f369b3809157",
+        "fa": "tf4f9ec06a1782d8d7821f947",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
+          "language": "ar",
+          "start": 0,
+          "end": 326,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
+          "language": "fa",
+          "start": 0,
+          "end": 249,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00002-sb4c2bfb77eb89124",
         "ar": "tf1be6cf57f003926a8e55ea9",
         "fa": null,
@@ -220,7 +298,7 @@
       },
       "ar": [
         {
-          "row": "r00002-se66d2a8d6f823518",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "ar",
           "start": 0,
           "end": 274,
@@ -257,7 +335,7 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00002-se66d2a8d6f823518",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "fa",
           "start": 0,
           "end": 199,
@@ -274,11 +352,11 @@
       },
       "ar": [
         {
-          "row": "r00003-s89233bbc4b8f1768",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "ar",
           "start": 0,
           "end": 317,
-          "target_start": 0
+          "target_start": 275
         }
       ],
       "fa": []
@@ -292,7 +370,7 @@
       },
       "ar": [
         {
-          "row": "r00003-s20b0ac40a7179b1f",
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
           "language": "ar",
           "start": 0,
           "end": 326,
@@ -311,11 +389,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s89233bbc4b8f1768",
+          "row": "m682b6b06cb08185c03d22bf6",
           "language": "fa",
           "start": 0,
           "end": 262,
-          "target_start": 0
+          "target_start": 200
         }
       ]
     },
@@ -329,13 +407,51 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s20b0ac40a7179b1f",
+          "row": "m3abfb9bedb1d83bc0f57eb0f",
           "language": "fa",
           "start": 0,
           "end": 249,
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m682b6b06cb08185c03d22bf6",
+      "language": "ar",
+      "target_start": 274,
+      "value": " ",
+      "left": "r00002-se66d2a8d6f823518",
+      "right": "r00003-s89233bbc4b8f1768",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "m682b6b06cb08185c03d22bf6",
+      "language": "fa",
+      "target_start": 199,
+      "value": " ",
+      "left": "r00002-se66d2a8d6f823518",
+      "right": "r00003-s89233bbc4b8f1768",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "m3abfb9bedb1d83bc0f57eb0f",
+      "language": "ar",
+      "target_start": 326,
+      "value": " ",
+      "left": "r00003-s20b0ac40a7179b1f",
+      "right": "r00004",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "m3abfb9bedb1d83bc0f57eb0f",
+      "language": "fa",
+      "target_start": 249,
+      "value": " ",
+      "left": "r00003-s20b0ac40a7179b1f",
+      "right": "r00004",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
 }
