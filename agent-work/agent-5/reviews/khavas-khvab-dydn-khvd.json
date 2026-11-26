@@ -4,11 +4,11 @@
   "item": "khavas-khvab-dydn-khvd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "e90db4bb4afbb421c5047998c4616187c53d4b45",
-  "plan_sha256": "c504df2dece813ecb41943d3a23c189f762ee9e555556fab4e5119cae128d154",
-  "layout_sha256": "e377fdbd59ec0a4cf54f7c9ac195dbe69afe991c052b6832c0946f927b8c04ea",
-  "result_item_sha256": "7383dae714f9dc1507e2031cfaad9be9ebf69495ecb757508d1d45db4416ad7d",
-  "result_record_sha256": "f2ff2bcc429c3891cb69c07d861b00810e59a70cba53de979cb0a09cd9bc7271",
+  "author_commit": "7cd3f354190c746b5bd329c0ed29b3224def3928",
+  "plan_sha256": "1c46caa96e54fc3b5a12da84cf3f07ee985768de8c4054d7a5eddf5f5007be00",
+  "layout_sha256": "295c2ddb4979734454320749a8867aeb793b09d0ffc53fa7461e9cd20d3c9f86",
+  "result_item_sha256": "55363014b2cf69bdd5aaa61079683b3e479cf370a837eab4513b5d7b4abfc9f9",
+  "result_record_sha256": "19a3d40c9fee2ef584f7bf56a2dce0577be56677be12db3b859d4619c47c7a2b",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,41 +16,41 @@
     "item_sha256": "f0352edfa4fa1ca60439197987be439625daeb18e7e66622d9a5c0f089eca268",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "6cbf8043e5b1a96d233c6cbf7df07978b9d6786ddf8b5693e5475e410cdf8dc6",
+    "preview_sha256": "69f9bb0e9ef25bccfc09f5cfcd8e36853019a4eb349fdacd436fdc658ff4e353",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Local continuation accepted; r00001/fa 107 separates attribution from the direction, which remains mixed in the merged row."
+        "note": "r00001/fa cuts 70 and 107 now separately retain the compiler note, attributed source and direction; all source text is preserved."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Local continuation accepted; r00002/fa 265 begins reported outcome and 337 begins an experience claim, still mixed with the direction. Preserve all text and links."
+        "note": "r00002/fa cuts 265 and 337 now separately retain direction, reported outcome and experience claim without changing source text."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The local continuation and its space are accepted, but the merged instruction still combines attribution, procedure, reported outcome and an experience claim. Source boundaries at r00001/fa 107 and r00002/fa 265 and 337 remain independently assessable; preserve the published IDs and source if revising."
+    "decision": "accept",
+    "note": "The compiler note, named attribution, practice direction, attributed outcome and reported experience are separately placed. All source characters, the carried separately reviewed space and earlier published links remain reconstructible. The underlying claims are not certified."
   },
   "spacing_review": [
     {
-      "row": "m5cf533cd9573fd0434e142dd",
+      "row": "m58adb9f621ab6f575a32dbcb",
       "language": "fa",
-      "target_start": 83,
+      "target_start": 46,
       "value": " ",
-      "left": "r00001-sa3fbdb6fa458720f",
-      "right": "r00002",
-      "reason": "Distinct words at a reviewed Persian continuation; one independently reviewed space, with other role concerns left open.",
+      "left": "r00001-s730fcd91e8c82399",
+      "right": "r00002-sb122fdb543464f4c",
+      "reason": "Retain the previously independently reviewed single Persian space at the same source boundary.",
       "decision": "accept",
-      "note": "One U+0020 at fa 83 separates the incomplete timing phrase from its continuation without doubling whitespace."
+      "note": "Persian U+0020 at 46 remains at the same earlier reviewed frozen-source boundary, now in the revised instruction row; no source edge whitespace was added or removed."
     }
   ]
 }

@@ -4,11 +4,11 @@
   "item": "fazilat-svrhalrhmn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "7cd3f354190c746b5bd329c0ed29b3224def3928",
   "plan_sha256": "931ed5ff8e2a776689b534c55b5f562b4e11d2554af07119d5a7baecd43c56b1",
-  "layout_sha256": "d84090c0588855b817e4003af857a2309f0cf8b0eb9900fbcb89fc4ae947150e",
-  "result_item_sha256": "42aa3b435bdb8fe5f96517594ad61b09e6c3b9aa1528b192170c228502eda811",
-  "result_record_sha256": "5ec8bc5d54b9e2a49a1fb0b23f6f4acff2dff43e01da0dc740916b0140513d1b",
+  "layout_sha256": "8a669204a11ffcd3dbb1b8e2fd25d5893e97317f3c3c43c525467655b9cc9628",
+  "result_item_sha256": "f363c477d8f2908a047822afa2ad56c9fd1bf96b6c62fc0e6da05ea85deca1ae",
+  "result_record_sha256": "623f3a2347d9c2283224f26308728236c5bed9b2944001d4ec998c980a7f06a0",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,23 +21,36 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Reported merit narrative continues mid-sentence into r00002 after پس; group the continuation without altering the source."
+        "note": "The previously interrupted attributed report is now coherent; the distinct source reports remain separate, with source text and directly resolvable links preserved."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first part completes r00001, and the second introduces a separate report. Preserve the report transition and consider a link-safe join at the interrupted first sentence."
+        "note": "The previously interrupted attributed report is now coherent; the distinct source reports remain separate, with source text and directly resolvable links preserved."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
-  }
+    "decision": "accept",
+    "note": "The interrupted attributed report is now coherent; the second report remains separate. Claims remain attributed and unverified. Historical source and previously resolvable links reconstruct."
+  },
+  "spacing_review": [
+    {
+      "row": "m91266de17c4ad153541e6faf",
+      "language": "fa",
+      "target_start": 422,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the same attributed report with one proposed Persian space.",
+      "decision": "accept",
+      "note": "Persian U+0020 at 422 separates the end of the report from its continuation without doubling source whitespace."
+    }
+  ]
 }

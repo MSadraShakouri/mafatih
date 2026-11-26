@@ -4,11 +4,11 @@
   "item": "fazilat-svrhmbarkys",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "7cd3f354190c746b5bd329c0ed29b3224def3928",
   "plan_sha256": "58c33f3ee5b8883498edee6d5c59d61c14b3a4685a8e158d54d5014a635ce57d",
-  "layout_sha256": "dfc971da88fd11721aed6849557c3b119ed6c4ad52a92204c9d109b30dd6854d",
-  "result_item_sha256": "40f4ebc70b88c330aafda8162814506a63b01172b13ea2967dbfe7fd802fb330",
-  "result_record_sha256": "2ac698928e39cb671e528994d3b820e021b8b00b4c5a2b122a29603c97b58bb5",
+  "layout_sha256": "705d524005034cccdea3751061704032f2eb8f986158c6731b0a66ddaf730c34",
+  "result_item_sha256": "c4a74eb9c8e2f713650d4b20cd0d2e4f2ca11854ed24360c4b76d7f0fc0fc5b3",
+  "result_record_sha256": "9962609e1fac77e0eb1808dbc2481104c42963017736c858b646e4e1adc64802",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,16 +21,16 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The report cuts are sensible but its third report is interrupted mid-predicate and continues in r00002. Reviewed fa source."
+        "note": "The previously interrupted attributed report is now coherent; the distinct source reports remain separate, with source text and directly resolvable links preserved."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This continues the report introduced at the end of r00001; keep its claims attributed and unverified. Reviewed fa source."
+        "note": "The previously interrupted attributed report is now coherent; the distinct source reports remain separate, with source text and directly resolvable links preserved."
       },
       {
         "row": "r00003",
@@ -44,7 +44,20 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The third attributed report is interrupted across r00001/02. Group its continuation and keep the other report boundaries and health-related claims as attributed, not verified."
-  }
+    "decision": "accept",
+    "note": "The interrupted third attributed report now continues coherently; other reports remain separate. Health and other benefits remain attributed source claims, not verified assertions. Historical source and previously resolvable links reconstruct."
+  },
+  "spacing_review": [
+    {
+      "row": "mda02d09666455d3dfa3e1bb6",
+      "language": "fa",
+      "target_start": 63,
+      "value": " ",
+      "left": "r00001-s8939275b275c817a",
+      "right": "r00002",
+      "reason": "Complete the same attributed claim with one proposed Persian space.",
+      "decision": "accept",
+      "note": "Persian U+0020 at 63 separates subject/object phrasing from its following predicate without doubling source whitespace."
+    }
+  ]
 }

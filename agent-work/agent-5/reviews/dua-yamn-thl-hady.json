@@ -4,11 +4,11 @@
   "item": "dua-yamn-thl-hady",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "7cd3f354190c746b5bd329c0ed29b3224def3928",
   "plan_sha256": "6a5065e240d2d096a52eee8277575f9b77ba4c588aacc7cce4478cd01f228419",
-  "layout_sha256": "bec6ebfd17086362e7045ec219915d146423d89d1833f8b8bb58270611ab9192",
-  "result_item_sha256": "ea382c58805b094a925d5673bab3f5bf93a87d39663159512c85cae295468aa4",
-  "result_record_sha256": "b42ded12a469a3a17150ab4f874d702864dd6f490cba62de8aba78a28e1c28bc",
+  "layout_sha256": "1a4c22396ac7d1d06c0588f6707062a3e277c11a392b4c3beb4e34870cbc3a92",
+  "result_item_sha256": "ab3dde15b1d1b1a644ec35d20372f233010f8494715eb1e362c153bb79d77629",
+  "result_record_sha256": "6125bd311990551bcfac206fdd57270594ca50e32276e24e7942dccfd0731240",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,30 +28,30 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The five Arabic and Persian sections are now paired correctly; the final construction continues into r00003 in both languages. Reviewed ar source."
+        "note": "The paired continuation is now grouped in both languages; all available prior live anchors preserve their text. Existing historical candidate availability remains a separate open layout issue."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The five Arabic and Persian sections are now paired correctly; the final construction continues into r00003 in both languages. Reviewed fa source."
+        "note": "The paired continuation is now grouped in both languages; all available prior live anchors preserve their text. Existing historical candidate availability remains a separate open layout issue."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first paired segment completes r00002. The other prayer sections follow coherently. Reviewed ar source."
+        "note": "The paired continuation is now grouped in both languages; all available prior live anchors preserve their text. Existing historical candidate availability remains a separate open layout issue."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first paired segment completes r00002. The other prayer sections follow coherently. Reviewed fa source."
+        "note": "The paired continuation is now grouped in both languages; all available prior live anchors preserve their text. Existing historical candidate availability remains a separate open layout issue."
       },
       {
         "row": "r00004",
@@ -73,6 +73,30 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Earlier concern about detached r00002 pieces is resolved in c9fa191a: all displayed prayer sections are paired. However the two-language phrase at r00002/03 remains interrupted; group as allowed while preserving published anchors and source wording."
-  }
+    "note": "The paired continuation and both new spaces are semantically acceptable and prior directly resolvable anchors are preserved. However 26 earlier retired IDs were already unroutable; their provisional register binding matched e90db4bb but is stale for this revised item and mapping, so the reader now withholds the prior candidate targets. Keep needs-work pending source-lineage re-evaluation and independent review. Do not blindly refresh the hash or approve candidates."
+  },
+  "spacing_review": [
+    {
+      "row": "m74d3bd845c73d4c24ff5323b",
+      "language": "ar",
+      "target_start": 118,
+      "value": " ",
+      "left": "r00002-s5846264aa24491de",
+      "right": "r00003-s3a5c66537d9f28c5",
+      "reason": "Complete the bilingual recitation continuation with one proposed space per language.",
+      "decision": "accept",
+      "note": "Arabic U+0020 at 118 separates two source words of the interrupted construction; neither source edge contains whitespace."
+    },
+    {
+      "row": "m74d3bd845c73d4c24ff5323b",
+      "language": "fa",
+      "target_start": 156,
+      "value": " ",
+      "left": "r00002-s5846264aa24491de",
+      "right": "r00003-s3a5c66537d9f28c5",
+      "reason": "Complete the bilingual recitation continuation with one proposed space per language.",
+      "decision": "accept",
+      "note": "Persian U+0020 at 156 separates two source words of the paired construction; neither source edge contains whitespace."
+    }
+  ]
 }
