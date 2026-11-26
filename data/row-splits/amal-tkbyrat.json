@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-tkbyrat",
   "author": "agent-4",
   "baseline_item_sha256": "1d661a94c2958c2bc9973936a2a4d41955040178d5d279aef6fb684e8ed86b5c",
   "plan_sha256": "ee7b8682ea37c7188fb18ee2aae7e91451aa61cac9d477272d03bab6d471d651",
-  "layout_sha256": "26b406206c932a33b3880dc022b9c6ad5ab2864aa67d54119ca0d2aa87df8519",
+  "layout_sha256": "ebcfd733e67601a85045c4d419fef42a97e7a5be0bc6b5bcab54fa2e53983ff1",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "t3d526fad1fc32ec08e09157c"
       },
       "results": [
-        "r00001"
+        "m0e01b021fbc5169e6aecf901"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m0e01b021fbc5169e6aecf901",
           "language": "fa",
           "start": 0,
-          "end": 538
+          "end": 538,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +33,16 @@
         "fa": "t40b4a558b6848d13436ac045"
       },
       "results": [
-        "r00002"
+        "m0e01b021fbc5169e6aecf901"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m0e01b021fbc5169e6aecf901",
           "language": "fa",
           "start": 0,
-          "end": 243
+          "end": 243,
+          "target_start": 539
         }
       ]
     },
@@ -58,7 +60,8 @@
           "row": "r00003",
           "language": "ar",
           "start": 0,
-          "end": 173
+          "end": 173,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -66,7 +69,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 123
+          "end": 123,
+          "target_start": 0
         }
       ]
     },
@@ -86,19 +90,22 @@
           "row": "r00004-s84d9644081c0182c",
           "language": "fa",
           "start": 0,
-          "end": 28
+          "end": 28,
+          "target_start": 0
         },
         {
           "row": "r00004-se656eb44999bf14d",
           "language": "ar",
           "start": 28,
-          "end": 231
+          "end": 231,
+          "target_start": 0
         },
         {
           "row": "r00004-s9139a499aa920ed2",
           "language": "ar",
           "start": 231,
-          "end": 388
+          "end": 388,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -106,13 +113,15 @@
           "row": "r00004-se656eb44999bf14d",
           "language": "fa",
           "start": 0,
-          "end": 181
+          "end": 181,
+          "target_start": 0
         },
         {
           "row": "r00004-s9139a499aa920ed2",
           "language": "fa",
           "start": 181,
-          "end": 321
+          "end": 321,
+          "target_start": 0
         }
       ]
     },
@@ -124,28 +133,31 @@
       },
       "results": [
         "r00005-s1461543daf3ad696",
-        "r00005-s93affcc5f3ac5677"
+        "m47357f56b7327a5c2f8e755d"
       ],
       "ar": [
         {
           "row": "r00005-s1461543daf3ad696",
           "language": "fa",
           "start": 0,
-          "end": 28
+          "end": 28,
+          "target_start": 0
         },
         {
-          "row": "r00005-s93affcc5f3ac5677",
+          "row": "m47357f56b7327a5c2f8e755d",
           "language": "ar",
           "start": 28,
-          "end": 141
+          "end": 141,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00005-s93affcc5f3ac5677",
+          "row": "m47357f56b7327a5c2f8e755d",
           "language": "fa",
           "start": 0,
-          "end": 113
+          "end": 113,
+          "target_start": 0
         }
       ]
     },
@@ -156,24 +168,83 @@
         "fa": "t19e69bc278a9ad13eb196387"
       },
       "results": [
-        "r00006"
+        "m47357f56b7327a5c2f8e755d"
       ],
       "ar": [
         {
-          "row": "r00006",
+          "row": "m47357f56b7327a5c2f8e755d",
           "language": "ar",
           "start": 0,
-          "end": 181
+          "end": 181,
+          "target_start": 114
         }
       ],
       "fa": [
         {
-          "row": "r00006",
+          "row": "m47357f56b7327a5c2f8e755d",
           "language": "fa",
           "start": 0,
-          "end": 158
+          "end": 158,
+          "target_start": 114
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00005-s93affcc5f3ac5677",
+        "ar": "t573c014eb795d8c4c56f6de6",
+        "fa": "tf3fc96c868372ab68118bc8d",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m47357f56b7327a5c2f8e755d",
+          "language": "ar",
+          "start": 0,
+          "end": 113,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m47357f56b7327a5c2f8e755d",
+          "language": "fa",
+          "start": 0,
+          "end": 113,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m0e01b021fbc5169e6aecf901",
+      "language": "fa",
+      "target_start": 538,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the continuous practical instruction with one proposed Persian space."
+    },
+    {
+      "row": "m47357f56b7327a5c2f8e755d",
+      "language": "ar",
+      "target_start": 113,
+      "value": " ",
+      "left": "r00005-s93affcc5f3ac5677",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer with one proposed space per language."
+    },
+    {
+      "row": "m47357f56b7327a5c2f8e755d",
+      "language": "fa",
+      "target_start": 113,
+      "value": " ",
+      "left": "r00005-s93affcc5f3ac5677",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer with one proposed space per language."
     }
   ]
 }

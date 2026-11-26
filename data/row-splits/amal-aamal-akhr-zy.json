@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-aamal-akhr-zy",
   "author": "agent-4",
   "baseline_item_sha256": "be264973a06aa8f72f9b0c96468a1efe084a2f08e60e529b8a6b01a325d92615",
-  "plan_sha256": "f34f6d0e34bc03e17a0e50b0cf3fd9ae7572eeb5ddf2328c01d026b860cf6bfb",
-  "layout_sha256": "0a9a4207392b1a2d81b917d0aead2c0716a6fa0ca146d0f734b8d506cff00cb5",
+  "plan_sha256": "3d47e0708d39b2b5e81f81f07e9b0befa878835f8556cf9ad19fe400e3c34ca5",
+  "layout_sha256": "e0a56c26d2b2ecfabd40b1fe38c137c1200700d519ede16714680bd9db058048",
   "rows": [
     {
       "original": {
@@ -13,15 +13,24 @@
         "fa": "tf6cf955425f89a6dda128817"
       },
       "results": [
-        "r00001"
+        "r00001-sf983c3ab649ea21a",
+        "m22c9ea2bd0ac7d871ca0a282"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "r00001-sf983c3ab649ea21a",
           "language": "fa",
           "start": 0,
-          "end": 55
+          "end": 18,
+          "target_start": 0
+        },
+        {
+          "row": "m22c9ea2bd0ac7d871ca0a282",
+          "language": "fa",
+          "start": 18,
+          "end": 55,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +41,24 @@
         "fa": "t6c7f4fb1d27f1038b241300b"
       },
       "results": [
-        "r00002"
+        "m22c9ea2bd0ac7d871ca0a282",
+        "r00002-sdf5d8580dccbb32c"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m22c9ea2bd0ac7d871ca0a282",
           "language": "fa",
           "start": 0,
-          "end": 190
+          "end": 37,
+          "target_start": 38
+        },
+        {
+          "row": "r00002-sdf5d8580dccbb32c",
+          "language": "fa",
+          "start": 37,
+          "end": 190,
+          "target_start": 0
         }
       ]
     },
@@ -60,19 +78,22 @@
           "row": "r00003-s3a5c66537d9f28c5",
           "language": "ar",
           "start": 0,
-          "end": 189
+          "end": 189,
+          "target_start": 0
         },
         {
           "row": "r00003-sf9cbb0785d5f5447",
           "language": "ar",
           "start": 189,
-          "end": 247
+          "end": 247,
+          "target_start": 0
         },
         {
           "row": "r00003-sfc5f463082467697",
           "language": "ar",
           "start": 247,
-          "end": 361
+          "end": 361,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -80,19 +101,22 @@
           "row": "r00003-s3a5c66537d9f28c5",
           "language": "fa",
           "start": 0,
-          "end": 180
+          "end": 180,
+          "target_start": 0
         },
         {
           "row": "r00003-sf9cbb0785d5f5447",
           "language": "fa",
           "start": 180,
-          "end": 226
+          "end": 226,
+          "target_start": 0
         },
         {
           "row": "r00003-sfc5f463082467697",
           "language": "fa",
           "start": 226,
-          "end": 323
+          "end": 323,
+          "target_start": 0
         }
       ]
     },
@@ -111,9 +135,59 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 164
+          "end": 164,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-s2aa090098a6808db",
+        "ar": null,
+        "fa": "t36a4960b7b3721172e16a2d6",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m22c9ea2bd0ac7d871ca0a282",
+          "language": "fa",
+          "start": 0,
+          "end": 37,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-sa35c43f774f2ad27",
+        "ar": null,
+        "fa": "t159f0a12a631fb41a9698ea7",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m22c9ea2bd0ac7d871ca0a282",
+          "language": "fa",
+          "start": 0,
+          "end": 37,
+          "target_start": 38
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m22c9ea2bd0ac7d871ca0a282",
+      "language": "fa",
+      "target_start": 37,
+      "value": " ",
+      "left": "r00001-s2aa090098a6808db",
+      "right": "r00002-sa35c43f774f2ad27",
+      "reason": "Complete the interrupted bibliographic attribution, preserve the narrative source and the old row links."
     }
   ]
 }

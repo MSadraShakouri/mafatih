@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "ziyarat-amamzadh-hmzh-alyh",
   "author": "agent-4",
   "baseline_item_sha256": "006463e41b5b7088645c86dbedc742dccabebb613a1db925ff50b23ae195cb63",
   "plan_sha256": "fade9fd196c3570ca7064bb6275a5b0c97b4d975ceeb2573af86b2878eaae088",
-  "layout_sha256": "d14bde9b860ce322a412a3632668506df79cbeb4941b89c0b3da3993ae008566",
+  "layout_sha256": "9bbe285dd1576de0827d213fb85a48d1ebf75bf924ef8415a7bd11da2b1eedff",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "tcc9218f3d7975f96c68b822f"
       },
       "results": [
-        "r00001"
+        "m3cf282c8466f123175491312"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m3cf282c8466f123175491312",
           "language": "fa",
           "start": 0,
-          "end": 52
+          "end": 52,
+          "target_start": 0
         }
       ]
     },
@@ -32,24 +33,57 @@
         "fa": "teb383b71bb450e75f3d1dccc"
       },
       "results": [
-        "r00002-s16b235f3fb54b1a5",
+        "m3cf282c8466f123175491312",
         "r00002-s7912db66cde98eb8"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s16b235f3fb54b1a5",
+          "row": "m3cf282c8466f123175491312",
           "language": "fa",
           "start": 0,
-          "end": 633
+          "end": 633,
+          "target_start": 53
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 633,
-          "end": 942
+          "end": 942,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s16b235f3fb54b1a5",
+        "ar": null,
+        "fa": "tede98828a28dc5ddedc8b363",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m3cf282c8466f123175491312",
+          "language": "fa",
+          "start": 0,
+          "end": 633,
+          "target_start": 53
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m3cf282c8466f123175491312",
+      "language": "fa",
+      "target_start": 52,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }

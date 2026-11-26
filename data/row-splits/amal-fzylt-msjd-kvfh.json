@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-fzylt-msjd-kvfh",
   "author": "agent-4",
   "baseline_item_sha256": "8e11cfe3f36910f208253949a4c42a3b7eb344c9a69e462af6b6d095e5b1f3df",
   "plan_sha256": "35bdb018793c325e6fe4fc6691086859cf97dbbe46a33493f1317b625f6195de",
-  "layout_sha256": "5c52f4b85242b6469f389cdd5c427c66baafde3336f1f9b36f495ae2bb1ea643",
+  "layout_sha256": "f17a916d44f71b4089debf98cd870c26645341bb3f22566034da081a17bbdddd",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 336
+          "end": 336,
+          "target_start": 0
         }
       ]
     },
@@ -33,7 +34,7 @@
       },
       "results": [
         "r00002-s16b235f3fb54b1a5",
-        "r00002-s7912db66cde98eb8"
+        "m4181a00203cbc3c01cc784df"
       ],
       "ar": [],
       "fa": [
@@ -41,13 +42,15 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 316
+          "end": 316,
+          "target_start": 0
         },
         {
-          "row": "r00002-s7912db66cde98eb8",
+          "row": "m4181a00203cbc3c01cc784df",
           "language": "fa",
           "start": 316,
-          "end": 466
+          "end": 466,
+          "target_start": 0
         }
       ]
     },
@@ -58,29 +61,32 @@
         "fa": "t3eade33288877f432a960502"
       },
       "results": [
-        "r00003-s1828851db03b603e",
+        "m4181a00203cbc3c01cc784df",
         "r00003-s1b27bb8c75bc48e1",
-        "r00003-s2fd8d78ba1da248f"
+        "mde48436c2798e02702533601"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s1828851db03b603e",
+          "row": "m4181a00203cbc3c01cc784df",
           "language": "fa",
           "start": 0,
-          "end": 142
+          "end": 142,
+          "target_start": 151
         },
         {
           "row": "r00003-s1b27bb8c75bc48e1",
           "language": "fa",
           "start": 142,
-          "end": 560
+          "end": 560,
+          "target_start": 0
         },
         {
-          "row": "r00003-s2fd8d78ba1da248f",
+          "row": "mde48436c2798e02702533601",
           "language": "fa",
           "start": 560,
-          "end": 1060
+          "end": 1060,
+          "target_start": 0
         }
       ]
     },
@@ -91,17 +97,94 @@
         "fa": "t9da2a36d5953c3ce897f2b51"
       },
       "results": [
-        "r00004"
+        "mde48436c2798e02702533601"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004",
+          "row": "mde48436c2798e02702533601",
           "language": "fa",
           "start": 0,
-          "end": 799
+          "end": 799,
+          "target_start": 501
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s7912db66cde98eb8",
+        "ar": null,
+        "fa": "t81d5943e0e096fd85d5f2edb",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m4181a00203cbc3c01cc784df",
+          "language": "fa",
+          "start": 0,
+          "end": 150,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s1828851db03b603e",
+        "ar": null,
+        "fa": "tdab1e9afef8006b67ec2b0e8",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m4181a00203cbc3c01cc784df",
+          "language": "fa",
+          "start": 0,
+          "end": 142,
+          "target_start": 151
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s2fd8d78ba1da248f",
+        "ar": null,
+        "fa": "tec2ab034e8a911df9cfa8bc2",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mde48436c2798e02702533601",
+          "language": "fa",
+          "start": 0,
+          "end": 500,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m4181a00203cbc3c01cc784df",
+      "language": "fa",
+      "target_start": 150,
+      "value": " ",
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+    },
+    {
+      "row": "mde48436c2798e02702533601",
+      "language": "fa",
+      "target_start": 500,
+      "value": " ",
+      "left": "r00003-s2fd8d78ba1da248f",
+      "right": "r00004",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }

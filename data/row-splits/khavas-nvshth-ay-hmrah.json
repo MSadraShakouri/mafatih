@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "khavas-nvshth-ay-hmrah",
   "author": "agent-4",
   "baseline_item_sha256": "4966aff097ee49525b81b3e401bbd5d58c48c8cb91b870892661ea563b40b410",
-  "plan_sha256": "421d8910db84381980a8a954723d76fe33810eb9de57ce5321fdb84cf18287b6",
-  "layout_sha256": "5b2ceece32a605d0d66f78484a3789352fd2b8b6696311cf3efd228bc50ac4ec",
+  "plan_sha256": "423bee8ae16a526d1b5f3e14d02c260c861d55ed88008b1a503d41c960094b7a",
+  "layout_sha256": "2b089d98b1da592c904618a9f3c66489b66f700553678e53d442d94b36ad5125",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 81
+          "end": 81,
+          "target_start": 0
         }
       ]
     },
@@ -41,13 +42,15 @@
           "row": "r00002-sb4c2bfb77eb89124",
           "language": "ar",
           "start": 0,
-          "end": 104
+          "end": 104,
+          "target_start": 0
         },
         {
           "row": "r00002-s93ed69e2ceaad8b5",
           "language": "ar",
           "start": 104,
-          "end": 338
+          "end": 338,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -55,7 +58,8 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 296
+          "end": 296,
+          "target_start": 0
         }
       ]
     },
@@ -75,13 +79,15 @@
           "row": "r00003-s77194eb67ae6c13d",
           "language": "fa",
           "start": 0,
-          "end": 14
+          "end": 14,
+          "target_start": 0
         },
         {
           "row": "r00003-se283c95e6594ac46",
           "language": "ar",
           "start": 14,
-          "end": 162
+          "end": 162,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -89,7 +95,8 @@
           "row": "r00003-s1828851db03b603e",
           "language": "fa",
           "start": 0,
-          "end": 145
+          "end": 145,
+          "target_start": 0
         }
       ]
     },
@@ -109,13 +116,15 @@
           "row": "r00004-s84d9644081c0182c",
           "language": "fa",
           "start": 0,
-          "end": 26
+          "end": 26,
+          "target_start": 0
         },
         {
           "row": "r00004-sa44b8f05e3e4e602",
           "language": "ar",
           "start": 26,
-          "end": 59
+          "end": 59,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -123,7 +132,8 @@
           "row": "r00004-saabe6c8229b130ea",
           "language": "fa",
           "start": 0,
-          "end": 34
+          "end": 34,
+          "target_start": 0
         }
       ]
     },
@@ -145,19 +155,22 @@
           "row": "r00005-sd923aced91424bab",
           "language": "ar",
           "start": 0,
-          "end": 151
+          "end": 151,
+          "target_start": 0
         },
         {
           "row": "r00005-s091ecf41cca5cd79",
           "language": "ar",
           "start": 151,
-          "end": 502
+          "end": 502,
+          "target_start": 0
         },
         {
           "row": "r00005-sc40cef633ca48d09",
           "language": "ar",
           "start": 502,
-          "end": 739
+          "end": 739,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -165,13 +178,15 @@
           "row": "r00005-saba56576a8f4a2e8",
           "language": "fa",
           "start": 0,
-          "end": 194
+          "end": 194,
+          "target_start": 0
         },
         {
           "row": "r00005-s7f8fe392f228390a",
           "language": "fa",
           "start": 194,
-          "end": 524
+          "end": 524,
+          "target_start": 0
         }
       ]
     },
@@ -192,13 +207,15 @@
           "row": "r00006-sd441b11af7c6fc50",
           "language": "ar",
           "start": 0,
-          "end": 123
+          "end": 123,
+          "target_start": 0
         },
         {
           "row": "r00006-sffb0fbe94541cff2",
           "language": "ar",
           "start": 123,
-          "end": 425
+          "end": 425,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -206,13 +223,15 @@
           "row": "r00006-sac7cfe4397cd2200",
           "language": "fa",
           "start": 0,
-          "end": 175
+          "end": 175,
+          "target_start": 0
         },
         {
           "row": "r00006-s99b2880b659f859b",
           "language": "fa",
           "start": 175,
-          "end": 315
+          "end": 315,
+          "target_start": 0
         }
       ]
     },
@@ -223,23 +242,24 @@
         "fa": "t5504d9ba7156c08157c2d3f6"
       },
       "results": [
-        "r00007-s5d4f270b5482bc7d",
-        "r00007-s5227989a1cf80a5b"
+        "r00007"
       ],
       "ar": [
         {
-          "row": "r00007-s5d4f270b5482bc7d",
+          "row": "r00007",
           "language": "ar",
           "start": 0,
-          "end": 299
+          "end": 299,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00007-s5227989a1cf80a5b",
+          "row": "r00007",
           "language": "fa",
           "start": 0,
-          "end": 221
+          "end": 221,
+          "target_start": 0
         }
       ]
     },
@@ -259,13 +279,15 @@
           "row": "r00008-s2c6a015796faa033",
           "language": "fa",
           "start": 0,
-          "end": 11
+          "end": 11,
+          "target_start": 0
         },
         {
           "row": "r00008-s32a6f39eb1428d59",
           "language": "ar",
           "start": 11,
-          "end": 21
+          "end": 21,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -273,7 +295,8 @@
           "row": "r00008-s88eba61461dcd450",
           "language": "fa",
           "start": 0,
-          "end": 9
+          "end": 9,
+          "target_start": 0
         }
       ]
     },
@@ -293,13 +316,15 @@
           "row": "r00009-sc64421e6669ebe6d",
           "language": "fa",
           "start": 0,
-          "end": 166
+          "end": 166,
+          "target_start": 0
         },
         {
           "row": "r00009-s7e35f20e21823632",
           "language": "ar",
           "start": 166,
-          "end": 451
+          "end": 451,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -307,7 +332,8 @@
           "row": "r00009-sace04f5552303cc5",
           "language": "fa",
           "start": 0,
-          "end": 143
+          "end": 143,
+          "target_start": 0
         }
       ]
     },
@@ -326,7 +352,46 @@
           "row": "r00010",
           "language": "fa",
           "start": 0,
-          "end": 183
+          "end": 183,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00007-s5d4f270b5482bc7d",
+        "ar": "t311741cd2ffbdddd4f7513e2",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00007",
+          "language": "ar",
+          "start": 0,
+          "end": 299,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00007-s5227989a1cf80a5b",
+        "ar": null,
+        "fa": "t5504d9ba7156c08157c2d3f6",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00007",
+          "language": "fa",
+          "start": 0,
+          "end": 221,
+          "target_start": 0
         }
       ]
     }

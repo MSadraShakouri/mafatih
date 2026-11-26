@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-astkharh-sahb-jvahr",
   "author": "agent-4",
-  "plan_sha256": "a1b9d18f125ddab9f5899d7621db9a97e01cf1c77a23d188984ee8a1a9bde901",
+  "plan_sha256": "161a98dc9821801e041efb8180ca65afb9697cc841ee2a31c79430498d870bb0",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -23,7 +24,8 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "instruction"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -31,7 +33,17 @@
             "source": "fa",
             "part": 2
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     }

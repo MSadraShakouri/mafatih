@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "ziyarat-daahay-bad-alyh",
   "author": "agent-4",
   "baseline_item_sha256": "220e7682cd2b8bec5a8b7de8cc966a7d0ea8c12244aa98d4695e8c7e0ded5a8a",
-  "plan_sha256": "05ad3deae9beb05cd19ae1151d1c80d8bd9a94e565574f1442588f9650b04499",
-  "layout_sha256": "38486b9b7e4da6d22bb78720c2cb4e859f7ca46bb0613762506de8e4a081a3af",
+  "plan_sha256": "c42d945fe12cd6d1f9a6df149f5921928d0b114d8b428e737ca31e5893fdcedf",
+  "layout_sha256": "93fef1a1f6f0e1aa503ca29227bb93e063bd14e28719b0926f4f9bd37cac5799",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 150
+          "end": 150,
+          "target_start": 0
         }
       ]
     },
@@ -44,19 +45,22 @@
           "row": "r00002-sb4c2bfb77eb89124",
           "language": "ar",
           "start": 0,
-          "end": 190
+          "end": 190,
+          "target_start": 0
         },
         {
           "row": "r00002-s93ed69e2ceaad8b5",
           "language": "ar",
           "start": 190,
-          "end": 494
+          "end": 494,
+          "target_start": 0
         },
         {
           "row": "r00002-sad77f8f4f1752667",
           "language": "ar",
           "start": 494,
-          "end": 833
+          "end": 833,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -64,19 +68,22 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 291
+          "end": 291,
+          "target_start": 0
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 291,
-          "end": 422
+          "end": 422,
+          "target_start": 0
         },
         {
           "row": "r00002-s6071f8cab4ce366d",
           "language": "fa",
           "start": 422,
-          "end": 661
+          "end": 661,
+          "target_start": 0
         }
       ]
     },
@@ -94,7 +101,8 @@
           "row": "r00003",
           "language": "ar",
           "start": 0,
-          "end": 229
+          "end": 229,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -102,7 +110,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 154
+          "end": 154,
+          "target_start": 0
         }
       ]
     },
@@ -123,13 +132,15 @@
           "row": "r00004-sa48f69d269a72791",
           "language": "ar",
           "start": 0,
-          "end": 170
+          "end": 170,
+          "target_start": 0
         },
         {
           "row": "r00004-sa44b8f05e3e4e602",
           "language": "ar",
           "start": 170,
-          "end": 495
+          "end": 495,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -137,13 +148,15 @@
           "row": "r00004-s0243d87b86c35021",
           "language": "fa",
           "start": 0,
-          "end": 167
+          "end": 167,
+          "target_start": 0
         },
         {
           "row": "r00004-s2be99374d16bcc7b",
           "language": "fa",
           "start": 167,
-          "end": 531
+          "end": 531,
+          "target_start": 0
         }
       ]
     },
@@ -164,13 +177,15 @@
           "row": "r00005-sd923aced91424bab",
           "language": "ar",
           "start": 0,
-          "end": 211
+          "end": 211,
+          "target_start": 0
         },
         {
           "row": "r00005-s091ecf41cca5cd79",
           "language": "ar",
           "start": 211,
-          "end": 591
+          "end": 591,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -178,13 +193,15 @@
           "row": "r00005-s123f647288df4b56",
           "language": "fa",
           "start": 0,
-          "end": 197
+          "end": 197,
+          "target_start": 0
         },
         {
           "row": "r00005-sbf827ad20eeda70b",
           "language": "fa",
           "start": 197,
-          "end": 531
+          "end": 531,
+          "target_start": 0
         }
       ]
     },
@@ -195,23 +212,24 @@
         "fa": "tf7225b6614794298f754878d"
       },
       "results": [
-        "r00006-sd441b11af7c6fc50",
-        "r00006-sac7cfe4397cd2200"
+        "r00006"
       ],
       "ar": [
         {
-          "row": "r00006-sd441b11af7c6fc50",
+          "row": "r00006",
           "language": "ar",
           "start": 0,
-          "end": 250
+          "end": 250,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00006-sac7cfe4397cd2200",
+          "row": "r00006",
           "language": "fa",
           "start": 0,
-          "end": 240
+          "end": 240,
+          "target_start": 0
         }
       ]
     },
@@ -232,19 +250,60 @@
           "row": "r00007-s5227989a1cf80a5b",
           "language": "fa",
           "start": 0,
-          "end": 129
+          "end": 129,
+          "target_start": 0
         },
         {
           "row": "r00007-sc75e87e01d95d1af",
           "language": "ar",
           "start": 129,
-          "end": 197
+          "end": 197,
+          "target_start": 0
         },
         {
           "row": "r00007-s85c1e173b0ba86f1",
           "language": "fa",
           "start": 197,
-          "end": 318
+          "end": 318,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00006-sd441b11af7c6fc50",
+        "ar": "t909c49347a916135b548b4ce",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00006",
+          "language": "ar",
+          "start": 0,
+          "end": 250,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00006-sac7cfe4397cd2200",
+        "ar": null,
+        "fa": "tf7225b6614794298f754878d",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00006",
+          "language": "fa",
+          "start": 0,
+          "end": 240,
+          "target_start": 0
         }
       ]
     }

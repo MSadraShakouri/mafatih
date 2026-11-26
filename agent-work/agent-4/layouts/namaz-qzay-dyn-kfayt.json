@@ -132,5 +132,25 @@
         }
       ]
     }
+  ],
+  "merges": [
+    {
+      "left": "r00001",
+      "right": "r00002",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the reported complaint without changing source attribution."
+      }
+    },
+    {
+      "left": "r00004-sc95e4eb4083f3e93",
+      "right": "r00005",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the attributed outcome while preserving source witnesses."
+      }
+    }
   ]
 }

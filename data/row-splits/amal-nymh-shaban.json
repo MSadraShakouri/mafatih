@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-nymh-shaban",
   "author": "agent-4",
   "baseline_item_sha256": "6b78991bdb0285849c421cb9b56aa1b752d0260ea91178d9d97b2e730d51bf1a",
   "plan_sha256": "8d1307a6ea46589ee7cd7793efef8f9aebdf32bb8cec38397533151db68ec19e",
-  "layout_sha256": "05b75390590464b430a9f8e1612747f65c42c732bdc4cc2bcf6bddbd7e4c696e",
+  "layout_sha256": "17ccf6fcb02fadbca1eef6516e73a3e5eb4b112157c0782609727d03ac4e43b4",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 401
+          "end": 401,
+          "target_start": 0
         }
       ]
     },
@@ -33,7 +34,7 @@
       },
       "results": [
         "r00002-scbcad34ad2773d20",
-        "r00002-s7912db66cde98eb8"
+        "m50c851b78f8599b75cd95c6d"
       ],
       "ar": [],
       "fa": [
@@ -41,13 +42,15 @@
           "row": "r00002-scbcad34ad2773d20",
           "language": "fa",
           "start": 0,
-          "end": 27
+          "end": 27,
+          "target_start": 0
         },
         {
-          "row": "r00002-s7912db66cde98eb8",
+          "row": "m50c851b78f8599b75cd95c6d",
           "language": "fa",
           "start": 27,
-          "end": 172
+          "end": 172,
+          "target_start": 0
         }
       ]
     },
@@ -58,29 +61,32 @@
         "fa": "tef5278c7035aad5f2232b8b3"
       },
       "results": [
-        "r00003-s1828851db03b603e",
+        "m50c851b78f8599b75cd95c6d",
         "r00003-s1b27bb8c75bc48e1",
         "r00003-s277471b51abf8d01"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s1828851db03b603e",
+          "row": "m50c851b78f8599b75cd95c6d",
           "language": "fa",
           "start": 0,
-          "end": 27
+          "end": 27,
+          "target_start": 146
         },
         {
           "row": "r00003-s1b27bb8c75bc48e1",
           "language": "fa",
           "start": 27,
-          "end": 732
+          "end": 732,
+          "target_start": 0
         },
         {
           "row": "r00003-s277471b51abf8d01",
           "language": "fa",
           "start": 732,
-          "end": 774
+          "end": 774,
+          "target_start": 0
         }
       ]
     },
@@ -98,7 +104,8 @@
           "row": "r00004",
           "language": "ar",
           "start": 0,
-          "end": 107
+          "end": 107,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -106,7 +113,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 105
+          "end": 105,
+          "target_start": 0
         }
       ]
     },
@@ -125,9 +133,59 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 101
+          "end": 101,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s7912db66cde98eb8",
+        "ar": null,
+        "fa": "t2c064913ed8479761411117e",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m50c851b78f8599b75cd95c6d",
+          "language": "fa",
+          "start": 0,
+          "end": 145,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s1828851db03b603e",
+        "ar": null,
+        "fa": "t95329098fd26990244d19dc6",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m50c851b78f8599b75cd95c6d",
+          "language": "fa",
+          "start": 0,
+          "end": 27,
+          "target_start": 146
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m50c851b78f8599b75cd95c6d",
+      "language": "fa",
+      "target_start": 145,
+      "value": " ",
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }

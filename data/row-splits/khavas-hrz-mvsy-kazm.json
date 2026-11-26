@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "khavas-hrz-mvsy-kazm",
   "author": "agent-4",
   "baseline_item_sha256": "c18eff51a08dd9efc1ae61a0e8f11ee04b631282dceba4b678794fc444ca9118",
   "plan_sha256": "232fa2e82636abc59349cd8d7dc17af2e9283b653a49d3303420fc64e565aeef",
-  "layout_sha256": "33dc39d9ed79860457047d8189356a83f4137973d8e62067c53085385eb96474",
+  "layout_sha256": "f3f067299c574460d92bd31fb8eb28d8eac2ebd77bcce43715c9a17ffa45a201",
   "rows": [
     {
       "original": {
@@ -22,13 +22,15 @@
           "row": "r00001-sac8d3a493e4cbc88",
           "language": "fa",
           "start": 0,
-          "end": 45
+          "end": 45,
+          "target_start": 0
         },
         {
           "row": "r00001-sd0076416ed435839",
           "language": "fa",
           "start": 45,
-          "end": 382
+          "end": 382,
+          "target_start": 0
         }
       ]
     },
@@ -46,7 +48,8 @@
           "row": "r00002",
           "language": "ar",
           "start": 0,
-          "end": 80
+          "end": 80,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -54,7 +57,8 @@
           "row": "r00002",
           "language": "fa",
           "start": 0,
-          "end": 98
+          "end": 98,
+          "target_start": 0
         }
       ]
     },
@@ -70,44 +74,50 @@
         "r00003-s97dcb687a6c9f782",
         "r00003-s2910d2ad8b4add78",
         "r00003-s4fad701b746fdd57",
-        "r00003-s9f97c4871ba80c47"
+        "m4028a6e9b999ddc6746f443d"
       ],
       "ar": [
         {
           "row": "r00003-s3dbdf5fec4f8f8e0",
           "language": "fa",
           "start": 0,
-          "end": 43
+          "end": 43,
+          "target_start": 0
         },
         {
           "row": "r00003-s8a68ed4afb081fe5",
           "language": "ar",
           "start": 43,
-          "end": 202
+          "end": 202,
+          "target_start": 0
         },
         {
           "row": "r00003-s97dcb687a6c9f782",
           "language": "ar",
           "start": 202,
-          "end": 379
+          "end": 379,
+          "target_start": 0
         },
         {
           "row": "r00003-s2910d2ad8b4add78",
           "language": "ar",
           "start": 379,
-          "end": 577
+          "end": 577,
+          "target_start": 0
         },
         {
           "row": "r00003-s4fad701b746fdd57",
           "language": "ar",
           "start": 577,
-          "end": 719
+          "end": 719,
+          "target_start": 0
         },
         {
-          "row": "r00003-s9f97c4871ba80c47",
+          "row": "m4028a6e9b999ddc6746f443d",
           "language": "ar",
           "start": 719,
-          "end": 956
+          "end": 956,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -115,31 +125,36 @@
           "row": "r00003-s8a68ed4afb081fe5",
           "language": "fa",
           "start": 0,
-          "end": 168
+          "end": 168,
+          "target_start": 0
         },
         {
           "row": "r00003-s97dcb687a6c9f782",
           "language": "fa",
           "start": 168,
-          "end": 329
+          "end": 329,
+          "target_start": 0
         },
         {
           "row": "r00003-s2910d2ad8b4add78",
           "language": "fa",
           "start": 329,
-          "end": 509
+          "end": 509,
+          "target_start": 0
         },
         {
           "row": "r00003-s4fad701b746fdd57",
           "language": "fa",
           "start": 509,
-          "end": 664
+          "end": 664,
+          "target_start": 0
         },
         {
-          "row": "r00003-s9f97c4871ba80c47",
+          "row": "m4028a6e9b999ddc6746f443d",
           "language": "fa",
           "start": 664,
-          "end": 887
+          "end": 887,
+          "target_start": 0
         }
       ]
     },
@@ -150,22 +165,24 @@
         "fa": "t3199a8594d9957afa0e2e48e"
       },
       "results": [
-        "r00004"
+        "m4028a6e9b999ddc6746f443d"
       ],
       "ar": [
         {
-          "row": "r00004",
+          "row": "m4028a6e9b999ddc6746f443d",
           "language": "ar",
           "start": 0,
-          "end": 129
+          "end": 129,
+          "target_start": 238
         }
       ],
       "fa": [
         {
-          "row": "r00004",
+          "row": "m4028a6e9b999ddc6746f443d",
           "language": "fa",
           "start": 0,
-          "end": 94
+          "end": 94,
+          "target_start": 224
         }
       ]
     },
@@ -184,9 +201,58 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 77
+          "end": 77,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00003-s9f97c4871ba80c47",
+        "ar": "tb4663296a9594f08a50254f2",
+        "fa": "t2de813b6ee6d6f8a7ae988ef",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m4028a6e9b999ddc6746f443d",
+          "language": "ar",
+          "start": 0,
+          "end": 237,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m4028a6e9b999ddc6746f443d",
+          "language": "fa",
+          "start": 0,
+          "end": 223,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m4028a6e9b999ddc6746f443d",
+      "language": "ar",
+      "target_start": 237,
+      "value": " ",
+      "left": "r00003-s9f97c4871ba80c47",
+      "right": "r00004",
+      "reason": "Complete the bilingual prayer while retaining the source asymmetry, with one proposed space per language."
+    },
+    {
+      "row": "m4028a6e9b999ddc6746f443d",
+      "language": "fa",
+      "target_start": 223,
+      "value": " ",
+      "left": "r00003-s9f97c4871ba80c47",
+      "right": "r00004",
+      "reason": "Complete the bilingual prayer while retaining the source asymmetry, with one proposed space per language."
     }
   ]
 }

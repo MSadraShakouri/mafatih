@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "khavas-mzmt-trashydn-rysh",
   "author": "agent-4",
   "baseline_item_sha256": "d4e4eaad4094d2e95ed297241d9625e0ea12daaf4f6c51f262da91af11fbd8dd",
   "plan_sha256": "093b74e9414c6cb37c15e102e19d8738f0177f2ece8da21b5dc6509b28666f2c",
-  "layout_sha256": "f5ab202336f3795402f203e6e27acf97a63f67281837bc4239c4ca3fabdf61ad",
+  "layout_sha256": "7a35d937d39ea350c0037dd2c65292e1e893a0eb3f3fc79c4ec3a971dafac007",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "tf363e9aa60db4b30f93a6f7e"
       },
       "results": [
-        "r00001"
+        "m453ab4ac65155a95bd719aad"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m453ab4ac65155a95bd719aad",
           "language": "fa",
           "start": 0,
-          "end": 158
+          "end": 158,
+          "target_start": 0
         }
       ]
     },
@@ -32,24 +33,57 @@
         "fa": "te8d8b533f71f0048f7334122"
       },
       "results": [
-        "r00002-s16b235f3fb54b1a5",
+        "m453ab4ac65155a95bd719aad",
         "r00002-s7912db66cde98eb8"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s16b235f3fb54b1a5",
+          "row": "m453ab4ac65155a95bd719aad",
           "language": "fa",
           "start": 0,
-          "end": 241
+          "end": 241,
+          "target_start": 159
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 241,
-          "end": 661
+          "end": 661,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s16b235f3fb54b1a5",
+        "ar": null,
+        "fa": "t1aaafcc38a33a6a5b578f93c",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m453ab4ac65155a95bd719aad",
+          "language": "fa",
+          "start": 0,
+          "end": 241,
+          "target_start": 159
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m453ab4ac65155a95bd719aad",
+      "language": "fa",
+      "target_start": 158,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the attributed report with one proposed Persian space, retaining its source characterization."
     }
   ]
 }

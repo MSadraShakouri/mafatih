@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-avzh-aqrb",
   "author": "agent-4",
-  "plan_sha256": "f2be6d1f29e8a604830771ec4863b7a885e4002b4eca06b4332ab82d7b66d47a",
+  "plan_sha256": "45154069941c07089258b1e5742a79624032b1a167266dd0fd8a9849c793ce77",
   "rows": [
     {
       "row": "r00001",
@@ -29,7 +29,26 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -49,6 +68,17 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-saa3ec3f116259495",
+      "right": "r00002-s715b6a57ac51205e",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the source attribution without inventing the referenced verse or endorsing its reported claim."
+      }
     }
   ]
 }

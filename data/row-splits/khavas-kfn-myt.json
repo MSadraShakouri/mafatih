@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "khavas-kfn-myt",
   "author": "agent-4",
   "baseline_item_sha256": "fbebd4a12656ab011f05feedcf670959d34b549e876e44309b55a8bec3b502be",
   "plan_sha256": "7a3bc92f6277901ac370a2242eab227897c3dbefcb5697b912829f16e1859507",
-  "layout_sha256": "2d645d3e885dc57ba73597c5422a104d001027379746c5976162741a9908535f",
+  "layout_sha256": "886ea3d5d0721291a473850bbf659992d33746c31fd0a8d69feffff3d4a1415a",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "tf54b0840da100edcc8973731"
       },
       "results": [
-        "r00001"
+        "m99480f5973842d6f9a286b72"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m99480f5973842d6f9a286b72",
           "language": "fa",
           "start": 0,
-          "end": 383
+          "end": 383,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +33,16 @@
         "fa": "t608276bab034c51d03974580"
       },
       "results": [
-        "r00002"
+        "m99480f5973842d6f9a286b72"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m99480f5973842d6f9a286b72",
           "language": "fa",
           "start": 0,
-          "end": 219
+          "end": 219,
+          "target_start": 384
         }
       ]
     },
@@ -63,33 +65,50 @@
           "row": "r00003-sa84854240323e3e5",
           "language": "fa",
           "start": 0,
-          "end": 60
+          "end": 60,
+          "target_start": 0
         },
         {
           "row": "r00003-s02a5ff8a59221f6c",
           "language": "ar",
           "start": 60,
-          "end": 241
+          "end": 241,
+          "target_start": 0
         },
         {
           "row": "r00003-s277471b51abf8d01",
           "language": "fa",
           "start": 241,
-          "end": 303
+          "end": 303,
+          "target_start": 0
         },
         {
           "row": "r00003-s52f3aedf3127284d",
           "language": "ar",
           "start": 303,
-          "end": 343
+          "end": 343,
+          "target_start": 0
         },
         {
           "row": "r00003-s14bd161087f11064",
           "language": "fa",
           "start": 343,
-          "end": 434
+          "end": 434,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [],
+  "insertions": [
+    {
+      "row": "m99480f5973842d6f9a286b72",
+      "language": "fa",
+      "target_start": 383,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }
