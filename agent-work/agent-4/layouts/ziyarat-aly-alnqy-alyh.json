@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-aly-alnqy-alyh",
   "author": "agent-4",
-  "plan_sha256": "ba2eb2c56edef4a2ce0445ad08edb3d25417bd09d6a800def58de167aeccd2a4",
+  "plan_sha256": "9d7d06cf78523a43da92164ee7a4f1b410544d064d07680fd4c88813af95ba5e",
   "rows": [
     {
       "row": "r00001",
@@ -215,32 +215,24 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": {
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
-          "fa": {
-            "source": "fa",
-            "part": 0
-          },
-          "kind": "note"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "note"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
