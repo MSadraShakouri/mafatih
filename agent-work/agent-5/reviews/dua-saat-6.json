@@ -4,11 +4,11 @@
   "item": "dua-saat-6",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "e90db4bb4afbb421c5047998c4616187c53d4b45",
   "plan_sha256": "a5ec6623bc04bffd2295e6f6ed55999d3f244b69243dd1d70e038e2abba10a15",
-  "layout_sha256": "3292f337d5bec02e82a0074bf80bffc457d5474f797d75e34e86efdff410d072",
-  "result_item_sha256": "7a7b12480a183c893402907c4263ac48e27ef01bf9ad04a81a593e0da21d926e",
-  "result_record_sha256": "52cf511e84e2794d117e8a685c8b10346d9eaca940210016785f88846c6e7c85",
+  "layout_sha256": "3fb239e4c4a119992041fba581561e3f2814923bde4cb1546812cb9e22496059",
+  "result_item_sha256": "a7d2ebb08629be9b42b4bb8505d20bc1b9d6f5cc8664d604dbb344421ed4a32c",
+  "result_record_sha256": "009aedf341fae6d0362f647d561b261c4e3c59f27388c9be88d18869d55f31dc",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,37 +28,61 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The cut between address and supplication is reasonable, but the concluding paired sentence ends incomplete before r00003; group that ending with its continuation. Reviewed ar source."
+        "note": "Reviewed ar source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The cut between address and supplication is reasonable, but the concluding paired sentence ends incomplete before r00003; group that ending with its continuation. Reviewed fa source."
+        "note": "Reviewed fa source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields complete the ending of the supplication from r00002; retain the existing formula without adding a requested need. Reviewed ar source."
+        "note": "Reviewed ar source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields complete the ending of the supplication from r00002; retain the existing formula without adding a requested need. Reviewed fa source."
+        "note": "Reviewed fa source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The sixth-hour introduction is separate and the internal cut marks the address-to-request transition, but the final prayer is interrupted across r00002/03 in both languages. Group the continuation and preserve row links."
-  }
+    "decision": "accept",
+    "note": "The two language fields now group the interrupted request and preserve its supplied placeholder; the introduction and other cut remain appropriate. Earlier IDs and text map exactly."
+  },
+  "spacing_review": [
+    {
+      "row": "m17b844185e93c1acecd3a9a1",
+      "language": "ar",
+      "target_start": 275,
+      "value": " ",
+      "left": "r00002-s85aa1380ba79f059",
+      "right": "r00003",
+      "reason": "Distinct words at a reviewed bilingual continuation; one independently reviewed space per language.",
+      "decision": "accept",
+      "note": "One U+0020 at ar 275 separates two source words at the interrupted request; no edge whitespace was present."
+    },
+    {
+      "row": "m17b844185e93c1acecd3a9a1",
+      "language": "fa",
+      "target_start": 231,
+      "value": " ",
+      "left": "r00002-s85aa1380ba79f059",
+      "right": "r00003",
+      "reason": "Distinct words at a reviewed bilingual continuation; one independently reviewed space per language.",
+      "decision": "accept",
+      "note": "One U+0020 at fa 231 separates two source words at the corresponding request; no edge whitespace was present."
+    }
+  ]
 }

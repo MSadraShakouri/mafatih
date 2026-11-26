@@ -4,11 +4,11 @@
   "item": "dua-saat-8",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "e90db4bb4afbb421c5047998c4616187c53d4b45",
   "plan_sha256": "d8b9f85d26514b4cc0b43307a73e1615614e0f75b6b56a88668935742970d705",
-  "layout_sha256": "8e3be681461c0afc31917d87653819ff8be6475408f4ee0e23440c77722d9959",
-  "result_item_sha256": "508527023fd6bae3557457acb7123aef3c831fade1d5020b2ac2f24c650b7fec",
-  "result_record_sha256": "9bba935541049f9454ad4e01a9c1d166cd83fe8e798ff4353f47ae8b726ed1c3",
+  "layout_sha256": "69d1639f377736c56513d79f319662e59c116db504a7519312a0ceda5667b1e7",
+  "result_item_sha256": "b913fcdcd294e5e4cbbcbc65eb4b2665ae2b0253d72605db6cf4b39148f4c4e3",
+  "result_record_sha256": "97ae9100b1180da82e131221588e1e552baff01fc61c02ca59842afd23189e25",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,37 +28,61 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The last Arabic and Persian vocative begins an incomplete relative phrase continued in r00003. Reviewed ar source."
+        "note": "Reviewed ar source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The last Arabic and Persian vocative begins an incomplete relative phrase continued in r00003. Reviewed fa source."
+        "note": "Reviewed fa source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002’s paired invocation; the later internal cut reasonably separates the appeal from the descriptive address. Reviewed ar source."
+        "note": "Reviewed ar source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002’s paired invocation; the later internal cut reasonably separates the appeal from the descriptive address. Reviewed fa source."
+        "note": "Reviewed fa source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The timing note and internal address-to-request cut are reasonable. Both language fields split a vocative across r00002/03; group that phrase while preserving published IDs and the existing rendering."
-  }
+    "decision": "accept",
+    "note": "The bilingual interrupted vocative now reads as one coherent recitation; the later child remains separate. Earlier IDs and text map exactly."
+  },
+  "spacing_review": [
+    {
+      "row": "ma435951125278b6836230b09",
+      "language": "ar",
+      "target_start": 80,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-s3a5c66537d9f28c5",
+      "reason": "Distinct words at a reviewed bilingual continuation; one independently reviewed space per language.",
+      "decision": "accept",
+      "note": "One U+0020 at ar 80 separates the vocative from its continuation without doubling whitespace."
+    },
+    {
+      "row": "ma435951125278b6836230b09",
+      "language": "fa",
+      "target_start": 84,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-s3a5c66537d9f28c5",
+      "reason": "Distinct words at a reviewed bilingual continuation; one independently reviewed space per language.",
+      "decision": "accept",
+      "note": "One U+0020 at fa 84 separates the relative phrase from its continuation without doubling whitespace."
+    }
+  ]
 }

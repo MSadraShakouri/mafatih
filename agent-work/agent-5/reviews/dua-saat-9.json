@@ -4,11 +4,11 @@
   "item": "dua-saat-9",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "e90db4bb4afbb421c5047998c4616187c53d4b45",
   "plan_sha256": "08b53e1f4baf13185d55eafbde91ae3f6b244c098242c0bccaa99e367231bf22",
-  "layout_sha256": "3ab10fd31fb6510b8cce88d6fdecda8093cee0d499bbc85306e9cd24407b0857",
-  "result_item_sha256": "4b6ef862318df8d2344a11f3a1eb1d951a0620003364a38b1db81fd8c13f157f",
-  "result_record_sha256": "2302d468b615a7ae6ad51ddeadc6cbdc758a25f4357fb6fddb46fea6ff4e7384",
+  "layout_sha256": "d1b2a9f889bea8571d73a1aa91d05245772897cf674ad7d860a54bfd34d4c572",
+  "result_item_sha256": "8cbcf582979e492cf0ffbb09107c4b2d02cd6bed4459d28b4f872efe1bb28986",
+  "result_record_sha256": "bf8be15256588669aa2f5f85ce171e651b0b5a371f0b7de459dc8f64bd014931",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,37 +28,61 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The internal cut marks the request; its Arabic salutation is incomplete at the end and is completed in r00003 while Persian already renders it here. Reviewed ar source."
+        "note": "Reviewed ar source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The internal cut marks the request; its Arabic salutation is incomplete at the end and is completed in r00003 while Persian already renders it here. Reviewed fa source."
+        "note": "Reviewed fa source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first Arabic word completes the blessing begun in r00002 while the Persian has rendered it there; keep the passage together and align the attributes. Reviewed ar source."
+        "note": "Reviewed ar source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first Arabic word completes the blessing begun in r00002 while the Persian has rendered it there; keep the passage together and align the attributes. Reviewed fa source."
+        "note": "Reviewed fa source and the actual grouped result; the interrupted continuation is now coherent, all original characters and mapped IDs remain, with the recorded separate space reviewed."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The timing and prayer transition are sound, but the Arabic honorific is interrupted between r00002 and r00003 while the Persian keeps its full rendering in r00002. Group coherently and retain IDs."
-  }
+    "decision": "accept",
+    "note": "The grouped invocation preserves the Arabic/Persian asymmetry in the honorific without adding a rendering. The surrounding address and recitation roles remain appropriate; earlier IDs map exactly."
+  },
+  "spacing_review": [
+    {
+      "row": "m6a26264e84c7022fc3e4d0ef",
+      "language": "ar",
+      "target_start": 53,
+      "value": " ",
+      "left": "r00002-s85aa1380ba79f059",
+      "right": "r00003",
+      "reason": "Distinct words at a reviewed bilingual continuation; retain source honorific asymmetry and add one reviewed space per language.",
+      "decision": "accept",
+      "note": "One U+0020 at ar 53 separates the two words of the honorific without doubling whitespace."
+    },
+    {
+      "row": "m6a26264e84c7022fc3e4d0ef",
+      "language": "fa",
+      "target_start": 58,
+      "value": " ",
+      "left": "r00002-s85aa1380ba79f059",
+      "right": "r00003",
+      "reason": "Distinct words at a reviewed bilingual continuation; retain source honorific asymmetry and add one reviewed space per language.",
+      "decision": "accept",
+      "note": "One U+0020 at fa 58 separates the existing parenthetical honorific from the following description; asymmetry is retained."
+    }
+  ]
 }

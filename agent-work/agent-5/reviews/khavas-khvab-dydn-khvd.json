@@ -4,11 +4,11 @@
   "item": "khavas-khvab-dydn-khvd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "e90db4bb4afbb421c5047998c4616187c53d4b45",
   "plan_sha256": "c504df2dece813ecb41943d3a23c189f762ee9e555556fab4e5119cae128d154",
-  "layout_sha256": "2b44edbc5e84ce076bf42834d8a2aad445c4d2f17a500a17420a18fde209561a",
-  "result_item_sha256": "d22d126109762159a2f11c1927246673efbf7322da513f5e3cc98e2ff90821f3",
-  "result_record_sha256": "66746b27c405427879632aa630d2c2a8dff7b22ccd0eafcd2786fe771074bc80",
+  "layout_sha256": "e377fdbd59ec0a4cf54f7c9ac195dbe69afe991c052b6832c0946f927b8c04ea",
+  "result_item_sha256": "7383dae714f9dc1507e2031cfaad9be9ebf69495ecb757508d1d45db4416ad7d",
+  "result_record_sha256": "f2ff2bcc429c3891cb69c07d861b00810e59a70cba53de979cb0a09cd9bc7271",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,14 +23,14 @@
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The compiler comment and source-based practice are distinguished, but the instruction ends به وقت and continues into r00002; group the complete direction without losing either child ID."
+        "note": "Local continuation accepted; r00001/fa 107 separates attribution from the direction, which remains mixed in the merged row."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The instruction starts by completing r00001 and then describes the sleep procedure; retain source text and join the interrupted opening if possible."
+        "note": "Local continuation accepted; r00002/fa 265 begins reported outcome and 337 begins an experience claim, still mixed with the direction. Preserve all text and links."
       }
     ],
     "punctuation": [],
@@ -38,6 +38,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
-  }
+    "note": "The local continuation and its space are accepted, but the merged instruction still combines attribution, procedure, reported outcome and an experience claim. Source boundaries at r00001/fa 107 and r00002/fa 265 and 337 remain independently assessable; preserve the published IDs and source if revising."
+  },
+  "spacing_review": [
+    {
+      "row": "m5cf533cd9573fd0434e142dd",
+      "language": "fa",
+      "target_start": 83,
+      "value": " ",
+      "left": "r00001-sa3fbdb6fa458720f",
+      "right": "r00002",
+      "reason": "Distinct words at a reviewed Persian continuation; one independently reviewed space, with other role concerns left open.",
+      "decision": "accept",
+      "note": "One U+0020 at fa 83 separates the incomplete timing phrase from its continuation without doubling whitespace."
+    }
+  ]
 }
