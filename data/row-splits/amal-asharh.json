@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "amal-asharh",
   "author": "agent-4",
   "baseline_item_sha256": "419562db817461fc41d6266638ca062baa56f25647fdfa036c4a6199525dc155",
   "plan_sha256": "b5fa4b364d7f6adad427dbc31ab77d73faad52ac4598c27a61d6b503f165b8df",
-  "layout_sha256": "3b3a04c6f0c13d32fd33ff1c967d23c58f9833400cf0db9906b684531d32a081",
+  "layout_sha256": "f19a0e08084b750eb4d3965e7a4f6477d6a199dee7d6c9d1911ec9fda6101755",
   "rows": [
     {
       "original": {
@@ -194,7 +194,7 @@
       },
       "results": [
         "r00008-s2c6a015796faa033",
-        "r00008-scd9253eebe43dc9a"
+        "m8f9d30c25264242bdd47812b"
       ],
       "ar": [
         {
@@ -205,7 +205,7 @@
           "target_start": 0
         },
         {
-          "row": "r00008-scd9253eebe43dc9a",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "ar",
           "start": 222,
           "end": 349,
@@ -214,7 +214,7 @@
       ],
       "fa": [
         {
-          "row": "r00008-scd9253eebe43dc9a",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "fa",
           "start": 0,
           "end": 82,
@@ -229,24 +229,24 @@
         "fa": "t5da3337a668fb8d979255378"
       },
       "results": [
-        "r00009"
+        "m8f9d30c25264242bdd47812b"
       ],
       "ar": [
         {
-          "row": "r00009",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "ar",
           "start": 0,
           "end": 99,
-          "target_start": 0
+          "target_start": 128
         }
       ],
       "fa": [
         {
-          "row": "r00009",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "fa",
           "start": 0,
           "end": 71,
-          "target_start": 0
+          "target_start": 83
         }
       ]
     },
@@ -274,6 +274,32 @@
   "aliases": [
     {
       "original": {
+        "id": "r00008-scd9253eebe43dc9a",
+        "ar": "td80b77bd04811ca4808aa440",
+        "fa": "t3fa7b1e15abc3961af0c235a",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m8f9d30c25264242bdd47812b",
+          "language": "ar",
+          "start": 0,
+          "end": 127,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m8f9d30c25264242bdd47812b",
+          "language": "fa",
+          "start": 0,
+          "end": 82,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00008-s32a6f39eb1428d59",
         "ar": "td80b77bd04811ca4808aa440",
         "fa": null,
@@ -281,7 +307,7 @@
       },
       "ar": [
         {
-          "row": "r00008-scd9253eebe43dc9a",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "ar",
           "start": 0,
           "end": 127,
@@ -300,7 +326,7 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00008-scd9253eebe43dc9a",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "fa",
           "start": 0,
           "end": 82,
@@ -425,11 +451,11 @@
       },
       "ar": [
         {
-          "row": "r00009",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "ar",
           "start": 0,
           "end": 99,
-          "target_start": 0
+          "target_start": 128
         }
       ],
       "fa": []
@@ -444,13 +470,33 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00009",
+          "row": "m8f9d30c25264242bdd47812b",
           "language": "fa",
           "start": 0,
           "end": 71,
-          "target_start": 0
+          "target_start": 83
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m8f9d30c25264242bdd47812b",
+      "language": "ar",
+      "target_start": 127,
+      "value": " ",
+      "left": "r00008-scd9253eebe43dc9a",
+      "right": "r00009",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review."
+    },
+    {
+      "row": "m8f9d30c25264242bdd47812b",
+      "language": "fa",
+      "target_start": 82,
+      "value": " ",
+      "left": "r00008-scd9253eebe43dc9a",
+      "right": "r00009",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review."
     }
   ]
 }
