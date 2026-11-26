@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "amal-mjavl-bvdn-daayy",
   "author": "agent-4",
   "baseline_item_sha256": "aa2a2d3382a9779c1ba81854ec0c1544a1af10e7a07258dc41b452c2423faced",
   "plan_sha256": "450129a1303bad54be02b186fbd161f707dca963cbbce21f15c06dd8904653c4",
-  "layout_sha256": "61baa45183e9d8d29afd494ab400e32176fc323ea1e6a510f508286655d91ee5",
+  "layout_sha256": "f58626279faa8fe07e2d05cc72df0f8e090620cd7cce65807beeef7f97e96965",
   "rows": [
     {
       "original": {
@@ -15,7 +15,7 @@
       "results": [
         "r00001-s205e9629de3f86b8",
         "r00001-sd0076416ed435839",
-        "r00001-s8939275b275c817a"
+        "ma8b9bf1b31c0193c0b7a6231"
       ],
       "ar": [],
       "fa": [
@@ -34,7 +34,7 @@
           "target_start": 0
         },
         {
-          "row": "r00001-s8939275b275c817a",
+          "row": "ma8b9bf1b31c0193c0b7a6231",
           "language": "fa",
           "start": 511,
           "end": 653,
@@ -49,7 +49,7 @@
         "fa": "tbdddf12c9fd30e1e03f3aa5d"
       },
       "results": [
-        "r00002-s16b235f3fb54b1a5",
+        "ma8b9bf1b31c0193c0b7a6231",
         "r00002-s7912db66cde98eb8",
         "r00002-se090ec1c15d74b91",
         "r00002-sb8a7c4ea61e1d0eb"
@@ -57,11 +57,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s16b235f3fb54b1a5",
+          "row": "ma8b9bf1b31c0193c0b7a6231",
           "language": "fa",
           "start": 0,
           "end": 214,
-          "target_start": 0
+          "target_start": 143
         },
         {
           "row": "r00002-s7912db66cde98eb8",
@@ -93,12 +93,12 @@
         "fa": "t2f7b69d6c843b9299f35f317"
       },
       "results": [
-        "r00003"
+        "mda583183d4e72901c7be411e"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003",
+          "row": "mda583183d4e72901c7be411e",
           "language": "fa",
           "start": 0,
           "end": 51,
@@ -113,16 +113,16 @@
         "fa": "t8bf841024b5715f3ea85d8a5"
       },
       "results": [
-        "r00004"
+        "mda583183d4e72901c7be411e"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004",
+          "row": "mda583183d4e72901c7be411e",
           "language": "fa",
           "start": 0,
           "end": 144,
-          "target_start": 0
+          "target_start": 52
         }
       ]
     },
@@ -394,6 +394,42 @@
   "aliases": [
     {
       "original": {
+        "id": "r00001-s8939275b275c817a",
+        "ar": null,
+        "fa": "t7f9b41d3a2d4700f2ad701f9",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "ma8b9bf1b31c0193c0b7a6231",
+          "language": "fa",
+          "start": 0,
+          "end": 142,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-s16b235f3fb54b1a5",
+        "ar": null,
+        "fa": "t694d33857769171715679eb1",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "ma8b9bf1b31c0193c0b7a6231",
+          "language": "fa",
+          "start": 0,
+          "end": 214,
+          "target_start": 143
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00001-s87a4572572fe3091",
         "ar": null,
         "fa": "t6b29fbcf1604d0c0276d33e6",
@@ -639,6 +675,26 @@
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "ma8b9bf1b31c0193c0b7a6231",
+      "language": "fa",
+      "target_start": 142,
+      "value": " ",
+      "left": "r00001-s8939275b275c817a",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review."
+    },
+    {
+      "row": "mda583183d4e72901c7be411e",
+      "language": "fa",
+      "target_start": 51,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review."
     }
   ]
 }
