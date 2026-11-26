@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "namaz-astkharh-sahb-jvahr",
   "author": "agent-4",
   "baseline_item_sha256": "f29dffcf176e42ec7a31df0e4530d1d2fbee0638b08794b171350267b9ee9f04",
-  "plan_sha256": "a1b9d18f125ddab9f5899d7621db9a97e01cf1c77a23d188984ee8a1a9bde901",
-  "layout_sha256": "1bb5811dbe8fcc7cbd69adc5cf37598ee41b81546d204870cff9a545f73dba52",
+  "plan_sha256": "161a98dc9821801e041efb8180ca65afb9697cc841ee2a31c79430498d870bb0",
+  "layout_sha256": "b639d2ff050dafde27dda8d43632ad72c740fb09110d4bbe61b2c13d394ae484",
   "rows": [
     {
       "original": {
@@ -13,29 +13,103 @@
         "fa": "t83f47a053eca52f85988d34b"
       },
       "results": [
-        "r00001-s87a4572572fe3091",
-        "r00001-sa3fbdb6fa458720f",
-        "r00001-s8939275b275c817a"
+        "r00001-s56a89036c9f81f52",
+        "r00001-sb01821dd75410888",
+        "r00001-s0d6c020864331a0c",
+        "r00001-s00ed0cae246dba6c"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001-s87a4572572fe3091",
+          "row": "r00001-s56a89036c9f81f52",
           "language": "fa",
           "start": 0,
-          "end": 296
+          "end": 187,
+          "target_start": 0
         },
         {
-          "row": "r00001-sa3fbdb6fa458720f",
+          "row": "r00001-sb01821dd75410888",
+          "language": "fa",
+          "start": 187,
+          "end": 296,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-s0d6c020864331a0c",
           "language": "fa",
           "start": 296,
-          "end": 734
+          "end": 734,
+          "target_start": 0
         },
         {
-          "row": "r00001-s8939275b275c817a",
+          "row": "r00001-s00ed0cae246dba6c",
           "language": "fa",
           "start": 734,
-          "end": 786
+          "end": 786,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-s87a4572572fe3091",
+        "ar": null,
+        "fa": "t46a34964c938c784fd8660ae",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00001-s56a89036c9f81f52",
+          "language": "fa",
+          "start": 0,
+          "end": 187,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-sb01821dd75410888",
+          "language": "fa",
+          "start": 187,
+          "end": 296,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00001-sa3fbdb6fa458720f",
+        "ar": null,
+        "fa": "t7135b1667bb96666c02293e6",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00001-s0d6c020864331a0c",
+          "language": "fa",
+          "start": 0,
+          "end": 438,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00001-s8939275b275c817a",
+        "ar": null,
+        "fa": "t96486d1710291a8ef2c5e8cb",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00001-s00ed0cae246dba6c",
+          "language": "fa",
+          "start": 0,
+          "end": 52,
+          "target_start": 0
         }
       ]
     }
