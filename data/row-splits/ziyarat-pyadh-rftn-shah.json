@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "ziyarat-pyadh-rftn-shah",
   "author": "agent-4",
   "baseline_item_sha256": "d35598fe4db8d2e6b03819f170b594602f05f1a5a028eb6248d81ddfd4f15e7e",
   "plan_sha256": "d534181e21fa37d26220f2ef4af414281a54e7787727557cafa96d87043b4dc4",
-  "layout_sha256": "21704d8bd6b74473459c6c568222761c7bc22cf7b8ca8cc233346165350d163e",
+  "layout_sha256": "e066f3900009a4f7165ed728535d205077fbfe90fd270c2beb64af63cf40c9e7",
   "rows": [
     {
       "original": {
@@ -13,24 +13,23 @@
         "fa": "t21b3ee8a847a362009446b68"
       },
       "results": [
-        "r00001-sc5e9d9539705078a",
-        "r00001-sdc643a20efc8b62b"
+        "m7645b194dc96728f453647f6"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001-sc5e9d9539705078a",
+          "row": "m7645b194dc96728f453647f6",
           "language": "fa",
           "start": 0,
           "end": 207,
           "target_start": 0
         },
         {
-          "row": "r00001-sdc643a20efc8b62b",
+          "row": "m7645b194dc96728f453647f6",
           "language": "fa",
           "start": 207,
           "end": 433,
-          "target_start": 0
+          "target_start": 207
         }
       ]
     },
@@ -241,12 +240,12 @@
         "fa": "ta677c7b00a3d7ee0e871cc04"
       },
       "results": [
-        "r00012"
+        "m0543999e8a015ed1dc3c9c8d"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00012",
+          "row": "m0543999e8a015ed1dc3c9c8d",
           "language": "fa",
           "start": 0,
           "end": 146,
@@ -261,17 +260,17 @@
         "fa": "t3f4771928b68f8fa0db00e80"
       },
       "results": [
-        "r00013-s579535577e8a6fbf",
+        "m0543999e8a015ed1dc3c9c8d",
         "r00013-s6790b23d332073b7"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00013-s579535577e8a6fbf",
+          "row": "m0543999e8a015ed1dc3c9c8d",
           "language": "fa",
           "start": 0,
           "end": 343,
-          "target_start": 0
+          "target_start": 147
         },
         {
           "row": "r00013-s6790b23d332073b7",
@@ -342,6 +341,60 @@
   "aliases": [
     {
       "original": {
+        "id": "r00001-sc5e9d9539705078a",
+        "ar": null,
+        "fa": "t0c6d14398be47f4fdb2d1430",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m7645b194dc96728f453647f6",
+          "language": "fa",
+          "start": 0,
+          "end": 207,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00001-sdc643a20efc8b62b",
+        "ar": null,
+        "fa": "t38f436685c36fa2b9f075d58",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m7645b194dc96728f453647f6",
+          "language": "fa",
+          "start": 0,
+          "end": 226,
+          "target_start": 207
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00013-s579535577e8a6fbf",
+        "ar": null,
+        "fa": "t3bd811bd5c8ca04b93d27874",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m0543999e8a015ed1dc3c9c8d",
+          "language": "fa",
+          "start": 0,
+          "end": 343,
+          "target_start": 147
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00001-sa3fbdb6fa458720f",
         "ar": null,
         "fa": "t38f436685c36fa2b9f075d58",
@@ -350,11 +403,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00001-sdc643a20efc8b62b",
+          "row": "m7645b194dc96728f453647f6",
           "language": "fa",
           "start": 0,
           "end": 226,
-          "target_start": 0
+          "target_start": 207
         }
       ]
     },
@@ -368,11 +421,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00013-s579535577e8a6fbf",
+          "row": "m0543999e8a015ed1dc3c9c8d",
           "language": "fa",
           "start": 0,
           "end": 343,
-          "target_start": 0
+          "target_start": 147
         }
       ]
     },
@@ -429,6 +482,17 @@
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m0543999e8a015ed1dc3c9c8d",
+      "language": "fa",
+      "target_start": 146,
+      "value": " ",
+      "left": "r00012",
+      "right": "r00013-s579535577e8a6fbf",
+      "reason": "Complete the historical source report, preserving attributed history and existing row links."
     }
   ]
 }
