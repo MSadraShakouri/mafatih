@@ -4,7 +4,7 @@
   "author": "agent-4",
   "baseline_item_sha256": "ecb465ba7074b52696c3cf91cf46125252f1299921c4f301fff1ac54394c9791",
   "plan_sha256": "18a24184f2fa91f3bae8da12aaf9cb43c74088496c19303e43f02e618b7ef527",
-  "layout_sha256": "a2213e097a7d48cd82beafc978293d9340ac1cd6b44fc93cda4062a3a7a13024",
+  "layout_sha256": "f3fb3e787a9659e74a0bfa83b2d5dedcb136db64386371dca66729ecb8b9712c",
   "rows": [
     {
       "original": {
@@ -214,7 +214,7 @@
       },
       "results": [
         "r00007-s437311542faefd68",
-        "r00007-s96935ee66e3fd322"
+        "mdcacc0ca270ecc0f07ff9b1d"
       ],
       "ar": [
         {
@@ -225,7 +225,7 @@
           "target_start": 0
         },
         {
-          "row": "r00007-s96935ee66e3fd322",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "ar",
           "start": 86,
           "end": 304,
@@ -234,7 +234,7 @@
       ],
       "fa": [
         {
-          "row": "r00007-s96935ee66e3fd322",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "fa",
           "start": 0,
           "end": 221,
@@ -249,24 +249,24 @@
         "fa": "te36ffcfd0bc6b66bf867c1c6"
       },
       "results": [
-        "r00008"
+        "mdcacc0ca270ecc0f07ff9b1d"
       ],
       "ar": [
         {
-          "row": "r00008",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "ar",
           "start": 0,
           "end": 25,
-          "target_start": 0
+          "target_start": 219
         }
       ],
       "fa": [
         {
-          "row": "r00008",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "fa",
           "start": 0,
           "end": 20,
-          "target_start": 0
+          "target_start": 222
         }
       ]
     },
@@ -488,6 +488,32 @@
     },
     {
       "original": {
+        "id": "r00007-s96935ee66e3fd322",
+        "ar": "t7c44a8e4d53a0357b7b63b94",
+        "fa": "t2907d147f9ae1cd81e775247",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "ar",
+          "start": 0,
+          "end": 218,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "fa",
+          "start": 0,
+          "end": 221,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00006-sffb0fbe94541cff2",
         "ar": "t81652600fac06947259b6dde",
         "fa": null,
@@ -531,7 +557,7 @@
       },
       "ar": [
         {
-          "row": "r00007-s96935ee66e3fd322",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "ar",
           "start": 0,
           "end": 218,
@@ -550,7 +576,7 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00007-s96935ee66e3fd322",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "fa",
           "start": 0,
           "end": 221,
@@ -622,7 +648,7 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00007-s96935ee66e3fd322",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "fa",
           "start": 0,
           "end": 221,
@@ -765,11 +791,11 @@
       },
       "ar": [
         {
-          "row": "r00008",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "ar",
           "start": 0,
           "end": 25,
-          "target_start": 0
+          "target_start": 219
         }
       ],
       "fa": []
@@ -784,11 +810,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00008",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "fa",
           "start": 0,
           "end": 20,
-          "target_start": 0
+          "target_start": 222
         }
       ]
     },
@@ -856,6 +882,24 @@
       "left": "r00003",
       "right": "r00004",
       "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "mdcacc0ca270ecc0f07ff9b1d",
+      "language": "ar",
+      "target_start": 218,
+      "value": " ",
+      "left": "r00007-s96935ee66e3fd322",
+      "right": "r00008",
+      "reason": "Complete the paired prayer without changing either supplied rendering."
+    },
+    {
+      "row": "mdcacc0ca270ecc0f07ff9b1d",
+      "language": "fa",
+      "target_start": 221,
+      "value": " ",
+      "left": "r00007-s96935ee66e3fd322",
+      "right": "r00008",
+      "reason": "Complete the paired prayer without changing either supplied rendering."
     }
   ]
 }
