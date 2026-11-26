@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "amal-aamal-nv-ayd",
   "author": "agent-4",
   "baseline_item_sha256": "23ebfad4762c988f32b3aea6198a7c90e8947638035c8a669f28a50435131251",
   "plan_sha256": "a8fe750b05333034105a644ff9fd44e1177e383e61f6db678deffb96d29bed8b",
-  "layout_sha256": "b4d06b9d0b336142f9487e2057828507dc4e29eac9b11a5227e1da0435b981e6",
+  "layout_sha256": "c31c6c389cd6031f14ef21ab120bd0381394384c9ef696973342aa72f8153b01",
   "rows": [
     {
       "original": {
@@ -14,7 +14,7 @@
       },
       "results": [
         "r00001-sac8d3a493e4cbc88",
-        "r00001-sa3fbdb6fa458720f"
+        "m51f8b74258ee45cc045129d2"
       ],
       "ar": [],
       "fa": [
@@ -26,7 +26,7 @@
           "target_start": 0
         },
         {
-          "row": "r00001-sa3fbdb6fa458720f",
+          "row": "m51f8b74258ee45cc045129d2",
           "language": "fa",
           "start": 21,
           "end": 153,
@@ -41,7 +41,7 @@
         "fa": "t5c26902ddba76bcaf20a15c8"
       },
       "results": [
-        "r00002-sb122fdb543464f4c",
+        "m51f8b74258ee45cc045129d2",
         "r00002-sb99308cb22091a05",
         "r00002-sefe2b44d479f4e2b",
         "r00002-s2fe06d8edad6d859"
@@ -49,11 +49,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00002-sb122fdb543464f4c",
+          "row": "m51f8b74258ee45cc045129d2",
           "language": "fa",
           "start": 0,
           "end": 14,
-          "target_start": 0
+          "target_start": 133
         },
         {
           "row": "r00002-sb99308cb22091a05",
@@ -107,7 +107,7 @@
       "results": [
         "r00004-s84d9644081c0182c",
         "r00004-se656eb44999bf14d",
-        "r00004-s9139a499aa920ed2"
+        "m5f6a035bfcab60f8fc668354"
       ],
       "ar": [
         {
@@ -125,7 +125,7 @@
           "target_start": 0
         },
         {
-          "row": "r00004-s9139a499aa920ed2",
+          "row": "m5f6a035bfcab60f8fc668354",
           "language": "ar",
           "start": 231,
           "end": 314,
@@ -141,7 +141,7 @@
           "target_start": 0
         },
         {
-          "row": "r00004-s9139a499aa920ed2",
+          "row": "m5f6a035bfcab60f8fc668354",
           "language": "fa",
           "start": 174,
           "end": 257,
@@ -156,18 +156,18 @@
         "fa": "tac85b2b1d3c024ffb944d524"
       },
       "results": [
-        "r00005-s49a0157da90fa1f7",
+        "m5f6a035bfcab60f8fc668354",
         "r00005-s71c2b9982ef3e4fa",
         "r00005-s3493d20179ac908c",
         "r00005-seb80b1564f39705f"
       ],
       "ar": [
         {
-          "row": "r00005-s49a0157da90fa1f7",
+          "row": "m5f6a035bfcab60f8fc668354",
           "language": "ar",
           "start": 0,
           "end": 140,
-          "target_start": 0
+          "target_start": 84
         },
         {
           "row": "r00005-s71c2b9982ef3e4fa",
@@ -193,11 +193,11 @@
       ],
       "fa": [
         {
-          "row": "r00005-s49a0157da90fa1f7",
+          "row": "m5f6a035bfcab60f8fc668354",
           "language": "fa",
           "start": 0,
           "end": 155,
-          "target_start": 0
+          "target_start": 84
         },
         {
           "row": "r00005-s71c2b9982ef3e4fa",
@@ -226,6 +226,94 @@
   "aliases": [
     {
       "original": {
+        "id": "r00001-sa3fbdb6fa458720f",
+        "ar": null,
+        "fa": "t28f698d8f79a98e2bebd7c10",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m51f8b74258ee45cc045129d2",
+          "language": "fa",
+          "start": 0,
+          "end": 132,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-sb122fdb543464f4c",
+        "ar": null,
+        "fa": "t56fd4f44c57f546c0928b385",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m51f8b74258ee45cc045129d2",
+          "language": "fa",
+          "start": 0,
+          "end": 14,
+          "target_start": 133
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-s9139a499aa920ed2",
+        "ar": "t36778ef1b1c3214df79af6cc",
+        "fa": "t2c1e41890b787055aaad6a21",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m5f6a035bfcab60f8fc668354",
+          "language": "ar",
+          "start": 0,
+          "end": 83,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m5f6a035bfcab60f8fc668354",
+          "language": "fa",
+          "start": 0,
+          "end": 83,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-s49a0157da90fa1f7",
+        "ar": "tb6bf2284ec99dcb0ff031f60",
+        "fa": "te30ee06c07890baadd6e6087",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m5f6a035bfcab60f8fc668354",
+          "language": "ar",
+          "start": 0,
+          "end": 140,
+          "target_start": 84
+        }
+      ],
+      "fa": [
+        {
+          "row": "m5f6a035bfcab60f8fc668354",
+          "language": "fa",
+          "start": 0,
+          "end": 155,
+          "target_start": 84
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00005-sd923aced91424bab",
         "ar": "tb6bf2284ec99dcb0ff031f60",
         "fa": null,
@@ -233,11 +321,11 @@
       },
       "ar": [
         {
-          "row": "r00005-s49a0157da90fa1f7",
+          "row": "m5f6a035bfcab60f8fc668354",
           "language": "ar",
           "start": 0,
           "end": 140,
-          "target_start": 0
+          "target_start": 84
         }
       ],
       "fa": []
@@ -306,11 +394,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00005-s49a0157da90fa1f7",
+          "row": "m5f6a035bfcab60f8fc668354",
           "language": "fa",
           "start": 0,
           "end": 155,
-          "target_start": 0
+          "target_start": 84
         }
       ]
     },
@@ -367,6 +455,35 @@
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m51f8b74258ee45cc045129d2",
+      "language": "fa",
+      "target_start": 132,
+      "value": " ",
+      "left": "r00001-sa3fbdb6fa458720f",
+      "right": "r00002-sb122fdb543464f4c",
+      "reason": "Complete the practice reference while retaining historical line-break provenance."
+    },
+    {
+      "row": "m5f6a035bfcab60f8fc668354",
+      "language": "ar",
+      "target_start": 83,
+      "value": " ",
+      "left": "r00004-s9139a499aa920ed2",
+      "right": "r00005-s49a0157da90fa1f7",
+      "reason": "Complete the paired verse while preserving both source texts and historical links."
+    },
+    {
+      "row": "m5f6a035bfcab60f8fc668354",
+      "language": "fa",
+      "target_start": 83,
+      "value": " ",
+      "left": "r00004-s9139a499aa920ed2",
+      "right": "r00005-s49a0157da90fa1f7",
+      "reason": "Complete the paired verse while preserving both source texts and historical links."
     }
   ]
 }
