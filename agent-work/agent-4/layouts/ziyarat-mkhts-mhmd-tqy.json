@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-mkhts-mhmd-tqy",
   "author": "agent-4",
-  "plan_sha256": "23228995e7a48f26f3cecbaa1a47487f5fa3b1454ed4cf45ee3d3ee61114ea41",
+  "plan_sha256": "61d9b5757a053f27e84b115849a12212d146356d2abd7dda87b4c0ec5971d0e0",
   "rows": [
     {
       "row": "r00001",
@@ -327,7 +327,26 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -386,7 +405,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     }
