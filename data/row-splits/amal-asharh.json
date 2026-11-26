@@ -3,8 +3,8 @@
   "item": "amal-asharh",
   "author": "agent-4",
   "baseline_item_sha256": "419562db817461fc41d6266638ca062baa56f25647fdfa036c4a6199525dc155",
-  "plan_sha256": "b8a37985de3902c29a57fba29a7a3401229d67e5873fab352498b8620c1bc24e",
-  "layout_sha256": "053c9d56c2ef9ea3717967e51a48f94b4c2253b9214a4add1f45307407d25e97",
+  "plan_sha256": "b5fa4b364d7f6adad427dbc31ab77d73faad52ac4598c27a61d6b503f165b8df",
+  "layout_sha256": "3b3a04c6f0c13d32fd33ff1c967d23c58f9833400cf0db9906b684531d32a081",
   "rows": [
     {
       "original": {
@@ -194,8 +194,7 @@
       },
       "results": [
         "r00008-s2c6a015796faa033",
-        "r00008-s32a6f39eb1428d59",
-        "r00008-s88eba61461dcd450"
+        "r00008-scd9253eebe43dc9a"
       ],
       "ar": [
         {
@@ -206,7 +205,7 @@
           "target_start": 0
         },
         {
-          "row": "r00008-s32a6f39eb1428d59",
+          "row": "r00008-scd9253eebe43dc9a",
           "language": "ar",
           "start": 222,
           "end": 349,
@@ -215,7 +214,7 @@
       ],
       "fa": [
         {
-          "row": "r00008-s88eba61461dcd450",
+          "row": "r00008-scd9253eebe43dc9a",
           "language": "fa",
           "start": 0,
           "end": 82,
@@ -273,6 +272,42 @@
     }
   ],
   "aliases": [
+    {
+      "original": {
+        "id": "r00008-s32a6f39eb1428d59",
+        "ar": "td80b77bd04811ca4808aa440",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00008-scd9253eebe43dc9a",
+          "language": "ar",
+          "start": 0,
+          "end": 127,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00008-s88eba61461dcd450",
+        "ar": null,
+        "fa": "t3fa7b1e15abc3961af0c235a",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00008-scd9253eebe43dc9a",
+          "language": "fa",
+          "start": 0,
+          "end": 82,
+          "target_start": 0
+        }
+      ]
+    },
     {
       "original": {
         "id": "r00002-sb4c2bfb77eb89124",
