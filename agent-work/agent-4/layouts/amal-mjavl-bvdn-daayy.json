@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-mjavl-bvdn-daayy",
   "author": "agent-4",
-  "plan_sha256": "b5f918d81433dfba4146fdc0fd923282bb1715ede0d532fbd8019a140929a795",
+  "plan_sha256": "450129a1303bad54be02b186fbd161f707dca963cbbce21f15c06dd8904653c4",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -83,7 +84,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -97,7 +99,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -124,20 +127,34 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
           "fa": {
+            "source": "ar",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },

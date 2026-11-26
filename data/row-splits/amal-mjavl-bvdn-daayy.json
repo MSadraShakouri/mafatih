@@ -3,8 +3,8 @@
   "item": "amal-mjavl-bvdn-daayy",
   "author": "agent-4",
   "baseline_item_sha256": "aa2a2d3382a9779c1ba81854ec0c1544a1af10e7a07258dc41b452c2423faced",
-  "plan_sha256": "b5f918d81433dfba4146fdc0fd923282bb1715ede0d532fbd8019a140929a795",
-  "layout_sha256": "62c84828cce08864f83e083696e378f6aefca843198b24aaeecb91669eaad438",
+  "plan_sha256": "450129a1303bad54be02b186fbd161f707dca963cbbce21f15c06dd8904653c4",
+  "layout_sha256": "61baa45183e9d8d29afd494ab400e32176fc323ea1e6a510f508286655d91ee5",
   "rows": [
     {
       "original": {
@@ -13,14 +13,14 @@
         "fa": "te77215a3e2f8d0f276506c04"
       },
       "results": [
-        "r00001-s87a4572572fe3091",
+        "r00001-s205e9629de3f86b8",
         "r00001-sd0076416ed435839",
         "r00001-s8939275b275c817a"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001-s87a4572572fe3091",
+          "row": "r00001-s205e9629de3f86b8",
           "language": "fa",
           "start": 0,
           "end": 203,
@@ -161,21 +161,36 @@
         "fa": "t64bf2fbd934b554846aef7ed"
       },
       "results": [
-        "r00006-s816b520837ffe102",
-        "r00006-s6b2b0ff07b4b8ae2"
+        "r00006-s1100785de0766b95",
+        "r00006-s6815cca0d38ca579",
+        "r00006-s4ea53ac84f4031d2"
       ],
       "ar": [
         {
-          "row": "r00006-s816b520837ffe102",
-          "language": "ar",
+          "row": "r00006-s1100785de0766b95",
+          "language": "fa",
           "start": 0,
+          "end": 27,
+          "target_start": 0
+        },
+        {
+          "row": "r00006-s6815cca0d38ca579",
+          "language": "fa",
+          "start": 27,
+          "end": 58,
+          "target_start": 0
+        },
+        {
+          "row": "r00006-s4ea53ac84f4031d2",
+          "language": "ar",
+          "start": 58,
           "end": 292,
           "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00006-s6b2b0ff07b4b8ae2",
+          "row": "r00006-s4ea53ac84f4031d2",
           "language": "fa",
           "start": 0,
           "end": 165,
@@ -377,6 +392,74 @@
     }
   ],
   "aliases": [
+    {
+      "original": {
+        "id": "r00001-s87a4572572fe3091",
+        "ar": null,
+        "fa": "t6b29fbcf1604d0c0276d33e6",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00001-s205e9629de3f86b8",
+          "language": "fa",
+          "start": 0,
+          "end": 203,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-s816b520837ffe102",
+        "ar": "taa8fdebb51cc7440702cea6b",
+        "fa": null,
+        "kind": "quotation"
+      },
+      "ar": [
+        {
+          "row": "r00006-s1100785de0766b95",
+          "language": "fa",
+          "start": 0,
+          "end": 27,
+          "target_start": 0
+        },
+        {
+          "row": "r00006-s6815cca0d38ca579",
+          "language": "fa",
+          "start": 27,
+          "end": 58,
+          "target_start": 0
+        },
+        {
+          "row": "r00006-s4ea53ac84f4031d2",
+          "language": "ar",
+          "start": 58,
+          "end": 292,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00006-s6b2b0ff07b4b8ae2",
+        "ar": null,
+        "fa": "t64bf2fbd934b554846aef7ed",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00006-s4ea53ac84f4031d2",
+          "language": "fa",
+          "start": 0,
+          "end": 165,
+          "target_start": 0
+        }
+      ]
+    },
     {
       "original": {
         "id": "r00005-s65910f28bd2bd075",
