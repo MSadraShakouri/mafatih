@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-dvm-nymh-rjb",
   "author": "agent-4",
-  "plan_sha256": "0168c98c915f660c858a888147338dc3c7ff2f3bf833066e1d483e9adc97a994",
+  "plan_sha256": "c2c17d23e5bcd5f6fc83acd007f81ed408883dcc43e8d60d0b2102573c5f2f46",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
