@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "ziyarat-avl-fzylt-hsyn",
   "author": "agent-4",
   "baseline_item_sha256": "5c2309f094331686d2f0b35aaf8a10b5744922eefb83d70a6febdcdc06992db5",
   "plan_sha256": "cb32e9be29101ec7b863bcf13b5ac730d63544cfe243e76378fdaa1c5c7e3c55",
-  "layout_sha256": "8b89bb4f670cb1056dd6d82a86c9c5b14c0dc9010bf3940f0f4006b36fa0fdb0",
+  "layout_sha256": "72fe511c85d126f3e8ebf9cdc505d69aed61a3d34caf900e6a5d5fed85f71c0e",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 60
+          "end": 60,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +33,16 @@
         "fa": "t97ee05374b81e39a4e367d06"
       },
       "results": [
-        "r00002"
+        "m06b6eb25700a9ef6ad4c439d"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m06b6eb25700a9ef6ad4c439d",
           "language": "fa",
           "start": 0,
-          "end": 589
+          "end": 589,
+          "target_start": 0
         }
       ]
     },
@@ -51,22 +53,24 @@
         "fa": "t8f3227f0a6a5dfb351c7b185"
       },
       "results": [
-        "r00003-s1828851db03b603e",
-        "r00003-s1b27bb8c75bc48e1"
+        "m06b6eb25700a9ef6ad4c439d",
+        "m0db83e16ff5931ff82ca8e2d"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s1828851db03b603e",
+          "row": "m06b6eb25700a9ef6ad4c439d",
           "language": "fa",
           "start": 0,
-          "end": 702
+          "end": 702,
+          "target_start": 590
         },
         {
-          "row": "r00003-s1b27bb8c75bc48e1",
+          "row": "m0db83e16ff5931ff82ca8e2d",
           "language": "fa",
           "start": 702,
-          "end": 909
+          "end": 909,
+          "target_start": 0
         }
       ]
     },
@@ -77,29 +81,32 @@
         "fa": "t8361a50d8b83590cac651ac8"
       },
       "results": [
-        "r00004-saabe6c8229b130ea",
+        "m0db83e16ff5931ff82ca8e2d",
         "r00004-s1aae3487509d641a",
         "r00004-s1eea81343f83a892"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004-saabe6c8229b130ea",
+          "row": "m0db83e16ff5931ff82ca8e2d",
           "language": "fa",
           "start": 0,
-          "end": 532
+          "end": 532,
+          "target_start": 208
         },
         {
           "row": "r00004-s1aae3487509d641a",
           "language": "ar",
           "start": 532,
-          "end": 626
+          "end": 626,
+          "target_start": 0
         },
         {
           "row": "r00004-s1eea81343f83a892",
           "language": "fa",
           "start": 626,
-          "end": 926
+          "end": 926,
+          "target_start": 0
         }
       ]
     },
@@ -118,13 +125,15 @@
           "row": "r00005-s27c9c493bd8f7f6a",
           "language": "fa",
           "start": 0,
-          "end": 482
+          "end": 482,
+          "target_start": 0
         },
         {
           "row": "r00005-s07589039be45be65",
           "language": "ar",
           "start": 482,
-          "end": 643
+          "end": 643,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -132,7 +141,8 @@
           "row": "r00005-s07589039be45be65",
           "language": "fa",
           "start": 0,
-          "end": 122
+          "end": 122,
+          "target_start": 0
         }
       ]
     },
@@ -151,7 +161,8 @@
           "row": "r00006",
           "language": "fa",
           "start": 0,
-          "end": 169
+          "end": 169,
+          "target_start": 0
         }
       ]
     },
@@ -162,15 +173,16 @@
         "fa": "t431b2f49ec7e48f46c53fcc6"
       },
       "results": [
-        "r00007"
+        "m766a58f2c1d2e33c25667e90"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00007",
+          "row": "m766a58f2c1d2e33c25667e90",
           "language": "fa",
           "start": 0,
-          "end": 131
+          "end": 131,
+          "target_start": 0
         }
       ]
     },
@@ -181,24 +193,129 @@
         "fa": "t5614d8a1464e9c18dff008ed"
       },
       "results": [
-        "r00008-s88eba61461dcd450",
+        "m766a58f2c1d2e33c25667e90",
         "r00008-sb553e7372366eba9"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00008-s88eba61461dcd450",
+          "row": "m766a58f2c1d2e33c25667e90",
           "language": "fa",
           "start": 0,
-          "end": 364
+          "end": 364,
+          "target_start": 132
         },
         {
           "row": "r00008-sb553e7372366eba9",
           "language": "fa",
           "start": 364,
-          "end": 1058
+          "end": 1058,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00003-s1828851db03b603e",
+        "ar": null,
+        "fa": "tfec6ba528b60503d48046625",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m06b6eb25700a9ef6ad4c439d",
+          "language": "fa",
+          "start": 0,
+          "end": 702,
+          "target_start": 590
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s1b27bb8c75bc48e1",
+        "ar": null,
+        "fa": "t123bf44ab56d502b2867cc07",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m0db83e16ff5931ff82ca8e2d",
+          "language": "fa",
+          "start": 0,
+          "end": 207,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-saabe6c8229b130ea",
+        "ar": null,
+        "fa": "tfc22a9abbba4d9c39dc7e380",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m0db83e16ff5931ff82ca8e2d",
+          "language": "fa",
+          "start": 0,
+          "end": 532,
+          "target_start": 208
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00008-s88eba61461dcd450",
+        "ar": null,
+        "fa": "t358c4437d84a671c96b1ec75",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m766a58f2c1d2e33c25667e90",
+          "language": "fa",
+          "start": 0,
+          "end": 364,
+          "target_start": 132
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m06b6eb25700a9ef6ad4c439d",
+      "language": "fa",
+      "target_start": 589,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the attributed report without endorsing claims."
+    },
+    {
+      "row": "m0db83e16ff5931ff82ca8e2d",
+      "language": "fa",
+      "target_start": 207,
+      "value": " ",
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-saabe6c8229b130ea",
+      "reason": "Complete the interrupted source attribution."
+    },
+    {
+      "row": "m766a58f2c1d2e33c25667e90",
+      "language": "fa",
+      "target_start": 131,
+      "value": " ",
+      "left": "r00007",
+      "right": "r00008-s88eba61461dcd450",
+      "reason": "Complete the narrated account; separate remaining role findings."
     }
   ]
 }
