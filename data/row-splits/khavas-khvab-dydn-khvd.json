@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "khavas-khvab-dydn-khvd",
   "author": "agent-4",
   "baseline_item_sha256": "f0352edfa4fa1ca60439197987be439625daeb18e7e66622d9a5c0f089eca268",
   "plan_sha256": "c504df2dece813ecb41943d3a23c189f762ee9e555556fab4e5119cae128d154",
-  "layout_sha256": "2b44edbc5e84ce076bf42834d8a2aad445c4d2f17a500a17420a18fde209561a",
+  "layout_sha256": "e377fdbd59ec0a4cf54f7c9ac195dbe69afe991c052b6832c0946f927b8c04ea",
   "rows": [
     {
       "original": {
@@ -14,7 +14,7 @@
       },
       "results": [
         "r00001-sc5e9d9539705078a",
-        "r00001-sa3fbdb6fa458720f"
+        "m5cf533cd9573fd0434e142dd"
       ],
       "ar": [],
       "fa": [
@@ -22,13 +22,15 @@
           "row": "r00001-sc5e9d9539705078a",
           "language": "fa",
           "start": 0,
-          "end": 70
+          "end": 70,
+          "target_start": 0
         },
         {
-          "row": "r00001-sa3fbdb6fa458720f",
+          "row": "m5cf533cd9573fd0434e142dd",
           "language": "fa",
           "start": 70,
-          "end": 153
+          "end": 153,
+          "target_start": 0
         }
       ]
     },
@@ -39,17 +41,49 @@
         "fa": "ta72f710198161c270399b818"
       },
       "results": [
-        "r00002"
+        "m5cf533cd9573fd0434e142dd"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m5cf533cd9573fd0434e142dd",
           "language": "fa",
           "start": 0,
-          "end": 382
+          "end": 382,
+          "target_start": 84
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-sa3fbdb6fa458720f",
+        "ar": null,
+        "fa": "t1d32aadd0fa07fca80f98a45",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m5cf533cd9573fd0434e142dd",
+          "language": "fa",
+          "start": 0,
+          "end": 83,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m5cf533cd9573fd0434e142dd",
+      "language": "fa",
+      "target_start": 83,
+      "value": " ",
+      "left": "r00001-sa3fbdb6fa458720f",
+      "right": "r00002",
+      "reason": "Distinct words at a reviewed Persian continuation; one independently reviewed space, with other role concerns left open."
     }
   ]
 }
