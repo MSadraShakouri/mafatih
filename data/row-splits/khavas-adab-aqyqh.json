@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "khavas-adab-aqyqh",
   "author": "agent-4",
   "baseline_item_sha256": "43fa28272972d40c0bb0a95d3f784c6cdcb364e83de789c81116c2988622a35b",
   "plan_sha256": "2a38787ef4bb3ac82163ec9bbb54e3e88ab3673e91f6a4b31fcaea61784ab161",
-  "layout_sha256": "51ce6502625589cc78b1fa2acc4de7035016a08c493d4d8dbfeee3f187a2eef1",
+  "layout_sha256": "749d3524bf9f300e320dd7585d380a3d19995f2f5044897d89b4a9277ce4fc7c",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "tea4aff499ac054086a1fcb30"
       },
       "results": [
-        "r00001"
+        "m94ba4a22e49aa63686a85872"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m94ba4a22e49aa63686a85872",
           "language": "fa",
           "start": 0,
-          "end": 311
+          "end": 311,
+          "target_start": 0
         }
       ]
     },
@@ -32,22 +33,24 @@
         "fa": "t67f2f1d1a8699af4feb213dc"
       },
       "results": [
-        "r00002-s16b235f3fb54b1a5",
-        "r00002-s7912db66cde98eb8"
+        "m94ba4a22e49aa63686a85872",
+        "me09bef69254fbafb6f38a84d"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s16b235f3fb54b1a5",
+          "row": "m94ba4a22e49aa63686a85872",
           "language": "fa",
           "start": 0,
-          "end": 378
+          "end": 378,
+          "target_start": 312
         },
         {
-          "row": "r00002-s7912db66cde98eb8",
+          "row": "me09bef69254fbafb6f38a84d",
           "language": "fa",
           "start": 378,
-          "end": 1006
+          "end": 1006,
+          "target_start": 0
         }
       ]
     },
@@ -58,22 +61,24 @@
         "fa": "t7ba2701111dc3156fd261ae2"
       },
       "results": [
-        "r00003-s1828851db03b603e",
-        "r00003-s1b27bb8c75bc48e1"
+        "me09bef69254fbafb6f38a84d",
+        "m9ba9e551340dc7ae8f86817a"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s1828851db03b603e",
+          "row": "me09bef69254fbafb6f38a84d",
           "language": "fa",
           "start": 0,
-          "end": 357
+          "end": 357,
+          "target_start": 629
         },
         {
-          "row": "r00003-s1b27bb8c75bc48e1",
+          "row": "m9ba9e551340dc7ae8f86817a",
           "language": "fa",
           "start": 357,
-          "end": 1068
+          "end": 1068,
+          "target_start": 0
         }
       ]
     },
@@ -84,22 +89,24 @@
         "fa": "te6ba2efe94ccc3c7e9debeb7"
       },
       "results": [
-        "r00004-saabe6c8229b130ea",
-        "r00004-s6781612fc75b6e23"
+        "m9ba9e551340dc7ae8f86817a",
+        "m77b65d8216bf37d4ea42d546"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004-saabe6c8229b130ea",
+          "row": "m9ba9e551340dc7ae8f86817a",
           "language": "fa",
           "start": 0,
-          "end": 470
+          "end": 470,
+          "target_start": 712
         },
         {
-          "row": "r00004-s6781612fc75b6e23",
+          "row": "m77b65d8216bf37d4ea42d546",
           "language": "fa",
           "start": 470,
-          "end": 970
+          "end": 970,
+          "target_start": 0
         }
       ]
     },
@@ -110,28 +117,31 @@
         "fa": "tb107de12952d97fd4ac61137"
       },
       "results": [
-        "r00005-s27c9c493bd8f7f6a",
+        "m77b65d8216bf37d4ea42d546",
         "r00005-s2c15d29b00c72e18",
         "r00005-s4dafd146a344da1c"
       ],
       "ar": [
         {
-          "row": "r00005-s27c9c493bd8f7f6a",
+          "row": "m77b65d8216bf37d4ea42d546",
           "language": "fa",
           "start": 0,
-          "end": 266
+          "end": 266,
+          "target_start": 501
         },
         {
           "row": "r00005-s2c15d29b00c72e18",
           "language": "fa",
           "start": 266,
-          "end": 327
+          "end": 327,
+          "target_start": 0
         },
         {
           "row": "r00005-s4dafd146a344da1c",
           "language": "ar",
           "start": 327,
-          "end": 412
+          "end": 412,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -139,7 +149,8 @@
           "row": "r00005-s4dafd146a344da1c",
           "language": "fa",
           "start": 0,
-          "end": 76
+          "end": 76,
+          "target_start": 0
         }
       ]
     },
@@ -158,9 +169,176 @@
           "row": "r00006",
           "language": "fa",
           "start": 0,
-          "end": 175
+          "end": 175,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s16b235f3fb54b1a5",
+        "ar": null,
+        "fa": "t373f20f759fb91a019777964",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m94ba4a22e49aa63686a85872",
+          "language": "fa",
+          "start": 0,
+          "end": 378,
+          "target_start": 312
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-s7912db66cde98eb8",
+        "ar": null,
+        "fa": "t5bb9d8d60f99cffd596f29ac",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "me09bef69254fbafb6f38a84d",
+          "language": "fa",
+          "start": 0,
+          "end": 628,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s1828851db03b603e",
+        "ar": null,
+        "fa": "t8cdc2db6cb5fc944f6b696b7",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "me09bef69254fbafb6f38a84d",
+          "language": "fa",
+          "start": 0,
+          "end": 357,
+          "target_start": 629
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s1b27bb8c75bc48e1",
+        "ar": null,
+        "fa": "ta747c918d498fe235cbe21e3",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m9ba9e551340dc7ae8f86817a",
+          "language": "fa",
+          "start": 0,
+          "end": 711,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-saabe6c8229b130ea",
+        "ar": null,
+        "fa": "te55393ae48f34f486b47e054",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m9ba9e551340dc7ae8f86817a",
+          "language": "fa",
+          "start": 0,
+          "end": 470,
+          "target_start": 712
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-s6781612fc75b6e23",
+        "ar": null,
+        "fa": "t7f4fa23904d00c41e40a89af",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m77b65d8216bf37d4ea42d546",
+          "language": "fa",
+          "start": 0,
+          "end": 500,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-s27c9c493bd8f7f6a",
+        "ar": null,
+        "fa": "t6c248f280e04035e09e406f5",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m77b65d8216bf37d4ea42d546",
+          "language": "fa",
+          "start": 0,
+          "end": 266,
+          "target_start": 501
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m94ba4a22e49aa63686a85872",
+      "language": "fa",
+      "target_start": 311,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+    },
+    {
+      "row": "me09bef69254fbafb6f38a84d",
+      "language": "fa",
+      "target_start": 628,
+      "value": " ",
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+    },
+    {
+      "row": "m9ba9e551340dc7ae8f86817a",
+      "language": "fa",
+      "target_start": 711,
+      "value": " ",
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-saabe6c8229b130ea",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+    },
+    {
+      "row": "m77b65d8216bf37d4ea42d546",
+      "language": "fa",
+      "target_start": 500,
+      "value": " ",
+      "left": "r00004-s6781612fc75b6e23",
+      "right": "r00005-s27c9c493bd8f7f6a",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }

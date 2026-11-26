@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-aamal-sy-am",
   "author": "agent-4",
   "baseline_item_sha256": "5c7fdf4d7515cb9f261b3e82f452820694ce2e4d1aa65e05b4bc4002a90b7995",
   "plan_sha256": "dec15e17297785d045052bde98f59dcbff71f730b51f3c3585095c2323a04713",
-  "layout_sha256": "ad8460bd3f0973e07ec509895056bc9b8bad28fbc6d00c51fdb30c931c2faac3",
+  "layout_sha256": "521c7e0051dddd978c2c9a6fede2ca838a4d48b15e0ebf6133da7a74ecded11b",
   "rows": [
     {
       "original": {
@@ -19,50 +19,57 @@
         "r00001-s3f685494486c4317",
         "r00001-sd54903b3e416a7e1",
         "r00001-s4e67802153784e07",
-        "r00001-sbec4b2d569e949d9"
+        "md92fb4be3f2e22abd57eff93"
       ],
       "ar": [
         {
           "row": "r00001-sf8ca119bc7deb30b",
           "language": "fa",
           "start": 0,
-          "end": 15
+          "end": 15,
+          "target_start": 0
         },
         {
           "row": "r00001-s3e4b70ad1b9cb544",
           "language": "ar",
           "start": 15,
-          "end": 145
+          "end": 145,
+          "target_start": 0
         },
         {
           "row": "r00001-sa329ad2c5a367a28",
           "language": "ar",
           "start": 145,
-          "end": 424
+          "end": 424,
+          "target_start": 0
         },
         {
           "row": "r00001-s3f685494486c4317",
           "language": "ar",
           "start": 424,
-          "end": 509
+          "end": 509,
+          "target_start": 0
         },
         {
           "row": "r00001-sd54903b3e416a7e1",
           "language": "ar",
           "start": 509,
-          "end": 720
+          "end": 720,
+          "target_start": 0
         },
         {
           "row": "r00001-s4e67802153784e07",
           "language": "ar",
           "start": 720,
-          "end": 940
+          "end": 940,
+          "target_start": 0
         },
         {
-          "row": "r00001-sbec4b2d569e949d9",
+          "row": "md92fb4be3f2e22abd57eff93",
           "language": "ar",
           "start": 940,
-          "end": 1058
+          "end": 1058,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -70,37 +77,43 @@
           "row": "r00001-s3e4b70ad1b9cb544",
           "language": "fa",
           "start": 0,
-          "end": 112
+          "end": 112,
+          "target_start": 0
         },
         {
           "row": "r00001-sa329ad2c5a367a28",
           "language": "fa",
           "start": 112,
-          "end": 301
+          "end": 301,
+          "target_start": 0
         },
         {
           "row": "r00001-s3f685494486c4317",
           "language": "fa",
           "start": 301,
-          "end": 368
+          "end": 368,
+          "target_start": 0
         },
         {
           "row": "r00001-sd54903b3e416a7e1",
           "language": "fa",
           "start": 368,
-          "end": 546
+          "end": 546,
+          "target_start": 0
         },
         {
           "row": "r00001-s4e67802153784e07",
           "language": "fa",
           "start": 546,
-          "end": 739
+          "end": 739,
+          "target_start": 0
         },
         {
-          "row": "r00001-sbec4b2d569e949d9",
+          "row": "md92fb4be3f2e22abd57eff93",
           "language": "fa",
           "start": 739,
-          "end": 815
+          "end": 815,
+          "target_start": 0
         }
       ]
     },
@@ -111,24 +124,65 @@
         "fa": "t9737212d3ee774f378aa81aa"
       },
       "results": [
-        "r00002"
+        "md92fb4be3f2e22abd57eff93"
       ],
       "ar": [
         {
-          "row": "r00002",
+          "row": "md92fb4be3f2e22abd57eff93",
           "language": "ar",
           "start": 0,
-          "end": 79
+          "end": 79,
+          "target_start": 119
         }
       ],
       "fa": [
         {
-          "row": "r00002",
+          "row": "md92fb4be3f2e22abd57eff93",
           "language": "fa",
           "start": 0,
-          "end": 85
+          "end": 85,
+          "target_start": 76
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-sbec4b2d569e949d9",
+        "ar": "t326360b81cd3be55eef5e3c3",
+        "fa": "t1bb5be4cb5df0ae90e434661",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "md92fb4be3f2e22abd57eff93",
+          "language": "ar",
+          "start": 0,
+          "end": 118,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "md92fb4be3f2e22abd57eff93",
+          "language": "fa",
+          "start": 0,
+          "end": 76,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "md92fb4be3f2e22abd57eff93",
+      "language": "ar",
+      "target_start": 118,
+      "value": " ",
+      "left": "r00001-sbec4b2d569e949d9",
+      "right": "r00002",
+      "reason": "Complete the Arabic clause and preserve the supplied whole Persian rendering and both historical links."
     }
   ]
 }

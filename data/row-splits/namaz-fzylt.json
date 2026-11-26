@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "namaz-fzylt",
   "author": "agent-4",
   "baseline_item_sha256": "9c2410f29112595d159321fb7d82d84a1b831507ddc934af07a9ca450e242caf",
   "plan_sha256": "226722df7b5423c6f325e9091f4cea8d1ca95d3f08af9534bb16881d3f7ad965",
-  "layout_sha256": "e634825f0162dc190ef870b98361aced4550a079a089add976d847a19e3eb4a0",
+  "layout_sha256": "39bba3c1e420727ff6b77bb69231dbc409d891ee1b71453c935fe110a98cf6eb",
   "rows": [
     {
       "original": {
@@ -14,7 +14,7 @@
       },
       "results": [
         "r00001-sc5e9d9539705078a",
-        "r00001-sd0076416ed435839"
+        "mdde319a5f530b82e81e2f297"
       ],
       "ar": [],
       "fa": [
@@ -22,13 +22,15 @@
           "row": "r00001-sc5e9d9539705078a",
           "language": "fa",
           "start": 0,
-          "end": 531
+          "end": 531,
+          "target_start": 0
         },
         {
-          "row": "r00001-sd0076416ed435839",
+          "row": "mdde319a5f530b82e81e2f297",
           "language": "fa",
           "start": 531,
-          "end": 831
+          "end": 831,
+          "target_start": 0
         }
       ]
     },
@@ -39,15 +41,16 @@
         "fa": "t84c8983a88c3db3f1e92ac77"
       },
       "results": [
-        "r00002"
+        "mdde319a5f530b82e81e2f297"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "mdde319a5f530b82e81e2f297",
           "language": "fa",
           "start": 0,
-          "end": 10
+          "end": 10,
+          "target_start": 301
         }
       ]
     },
@@ -65,7 +68,8 @@
           "row": "r00003",
           "language": "ar",
           "start": 0,
-          "end": 183
+          "end": 183,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -73,7 +77,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 158
+          "end": 158,
+          "target_start": 0
         }
       ]
     },
@@ -92,7 +97,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 102
+          "end": 102,
+          "target_start": 0
         }
       ]
     },
@@ -103,15 +109,16 @@
         "fa": "t687359e13e57b39757566eec"
       },
       "results": [
-        "r00005"
+        "m5ca080d369fad4980c2d88d6"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00005",
+          "row": "m5ca080d369fad4980c2d88d6",
           "language": "fa",
           "start": 0,
-          "end": 583
+          "end": 583,
+          "target_start": 0
         }
       ]
     },
@@ -122,29 +129,32 @@
         "fa": "t99fc0eac8de574515dfd2c35"
       },
       "results": [
-        "r00006-s6b2b0ff07b4b8ae2",
+        "m5ca080d369fad4980c2d88d6",
         "r00006-s99b2880b659f859b",
-        "r00006-saa9b9be4b3d5606d"
+        "m2435feb219a57e8ba0fd9bfa"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00006-s6b2b0ff07b4b8ae2",
+          "row": "m5ca080d369fad4980c2d88d6",
           "language": "fa",
           "start": 0,
-          "end": 159
+          "end": 159,
+          "target_start": 584
         },
         {
           "row": "r00006-s99b2880b659f859b",
           "language": "fa",
           "start": 159,
-          "end": 680
+          "end": 680,
+          "target_start": 0
         },
         {
-          "row": "r00006-saa9b9be4b3d5606d",
+          "row": "m2435feb219a57e8ba0fd9bfa",
           "language": "fa",
           "start": 680,
-          "end": 1043
+          "end": 1043,
+          "target_start": 0
         }
       ]
     },
@@ -155,17 +165,103 @@
         "fa": "t0cc8d03dfdce422e99fcc727"
       },
       "results": [
-        "r00007"
+        "m2435feb219a57e8ba0fd9bfa"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00007",
+          "row": "m2435feb219a57e8ba0fd9bfa",
           "language": "fa",
           "start": 0,
-          "end": 583
+          "end": 583,
+          "target_start": 364
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-sd0076416ed435839",
+        "ar": null,
+        "fa": "t0b5eb25fdf7ace477db6a6d0",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mdde319a5f530b82e81e2f297",
+          "language": "fa",
+          "start": 0,
+          "end": 300,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-s6b2b0ff07b4b8ae2",
+        "ar": null,
+        "fa": "t5fb32d2af9ffed389daead05",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m5ca080d369fad4980c2d88d6",
+          "language": "fa",
+          "start": 0,
+          "end": 159,
+          "target_start": 584
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-saa9b9be4b3d5606d",
+        "ar": null,
+        "fa": "t9d67eb0d581b8f9ac05a7740",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m2435feb219a57e8ba0fd9bfa",
+          "language": "fa",
+          "start": 0,
+          "end": 363,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "mdde319a5f530b82e81e2f297",
+      "language": "fa",
+      "target_start": 300,
+      "value": " ",
+      "left": "r00001-sd0076416ed435839",
+      "right": "r00002",
+      "reason": "Complete the same attributed narration with one proposed Persian space."
+    },
+    {
+      "row": "m5ca080d369fad4980c2d88d6",
+      "language": "fa",
+      "target_start": 583,
+      "value": " ",
+      "left": "r00005",
+      "right": "r00006-s6b2b0ff07b4b8ae2",
+      "reason": "Complete the same attributed account with one proposed Persian space; retain the reported claim."
+    },
+    {
+      "row": "m2435feb219a57e8ba0fd9bfa",
+      "language": "fa",
+      "target_start": 363,
+      "value": " ",
+      "left": "r00006-saa9b9be4b3d5606d",
+      "right": "r00007",
+      "reason": "Complete the same attributed report with one proposed Persian space; retain its source claims."
     }
   ]
 }

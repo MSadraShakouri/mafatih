@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "ziyarat-shykh-klyny-alrhmh",
   "author": "agent-4",
   "baseline_item_sha256": "626c7d2e59b8f3261c3ebd1ee8103b8cce6b8af762ccf9f8f2eb70e1001e263d",
   "plan_sha256": "ca7d9b230d48c7f7ef1a212292fa75ab98c933b1d160ed8e2ffa923ff6be7569",
-  "layout_sha256": "3ed48566a7333b8379906a0dd1827dbb14dd855437070597664755b05c4d1f86",
+  "layout_sha256": "fe6e2480d59f41700742ec31a17d308ce0f3fa6df38a07728fb43fabc6d4784a",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "t70ff8187fe46a876ad1b8f98"
       },
       "results": [
-        "r00001"
+        "m668e1fb5d563d3053b4e454a"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m668e1fb5d563d3053b4e454a",
           "language": "fa",
           "start": 0,
-          "end": 298
+          "end": 298,
+          "target_start": 0
         }
       ]
     },
@@ -32,17 +33,30 @@
         "fa": "t4d41e0eb941cc05b7e42ce02"
       },
       "results": [
-        "r00002"
+        "m668e1fb5d563d3053b4e454a"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m668e1fb5d563d3053b4e454a",
           "language": "fa",
           "start": 0,
-          "end": 300
+          "end": 300,
+          "target_start": 299
         }
       ]
+    }
+  ],
+  "aliases": [],
+  "insertions": [
+    {
+      "row": "m668e1fb5d563d3053b4e454a",
+      "language": "fa",
+      "target_start": 298,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }

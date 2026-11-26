@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-aamal-ta-hfdhm",
   "author": "agent-4",
   "baseline_item_sha256": "e3b2006ac27237bcbd8c2fb980407c56ae61e50879d15979dfffb493d801dd7b",
-  "plan_sha256": "c5891a35adbe7c89e85bbb4a479adcbe3f98c7eadcec083363fc15d2f55a0d3b",
-  "layout_sha256": "a53e31f69a6e06e8e3b7421d67a70178ee5723375cdaa734d086e7fad534773f",
+  "plan_sha256": "03815bdb00fa1de4278d6114c567ebe8db0f7828e8157e0979e01c35d3755564",
+  "layout_sha256": "dd625f98e7c59ebd6a310be42cf281396e6cc65bb008ceb233fd7ff140e2bf82",
   "rows": [
     {
       "original": {
@@ -13,15 +13,40 @@
         "fa": "t7241f1d23fc7362544d620be"
       },
       "results": [
-        "r00001"
+        "r00001-s8f061afe9b17a2e9",
+        "r00001-s8fb7f53a7b14ea9b",
+        "r00001-s0c903598cb4d3be3",
+        "m2ab7a23f6aa07a562f0b2137"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "r00001-s8f061afe9b17a2e9",
           "language": "fa",
           "start": 0,
-          "end": 335
+          "end": 13,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-s8fb7f53a7b14ea9b",
+          "language": "fa",
+          "start": 13,
+          "end": 136,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-s0c903598cb4d3be3",
+          "language": "fa",
+          "start": 136,
+          "end": 271,
+          "target_start": 0
+        },
+        {
+          "row": "m2ab7a23f6aa07a562f0b2137",
+          "language": "fa",
+          "start": 271,
+          "end": 335,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +57,16 @@
         "fa": "t718204b3da70fc76a3d89529"
       },
       "results": [
-        "r00002"
+        "m2ab7a23f6aa07a562f0b2137"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m2ab7a23f6aa07a562f0b2137",
           "language": "fa",
           "start": 0,
-          "end": 97
+          "end": 97,
+          "target_start": 65
         }
       ]
     },
@@ -51,15 +77,24 @@
         "fa": "tf1dee7f09078d58764810c1f"
       },
       "results": [
-        "r00003"
+        "r00003-sdc61ca089ce43c32",
+        "r00003-s4f5451863bc36626"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003",
+          "row": "r00003-sdc61ca089ce43c32",
           "language": "fa",
           "start": 0,
-          "end": 338
+          "end": 13,
+          "target_start": 0
+        },
+        {
+          "row": "r00003-s4f5451863bc36626",
+          "language": "fa",
+          "start": 13,
+          "end": 338,
+          "target_start": 0
         }
       ]
     },
@@ -70,17 +105,57 @@
         "fa": "t127ea50469b831f34fb01f9d"
       },
       "results": [
-        "r00004"
+        "r00004-sa8d78c2431d94412",
+        "r00004-sb33f625fcff4b04e"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004",
+          "row": "r00004-sa8d78c2431d94412",
           "language": "fa",
           "start": 0,
-          "end": 174
+          "end": 10,
+          "target_start": 0
+        },
+        {
+          "row": "r00004-sb33f625fcff4b04e",
+          "language": "fa",
+          "start": 10,
+          "end": 174,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-s6293118522084e62",
+        "ar": null,
+        "fa": "t9d709cd3497ff3a4b3fe6148",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m2ab7a23f6aa07a562f0b2137",
+          "language": "fa",
+          "start": 0,
+          "end": 64,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m2ab7a23f6aa07a562f0b2137",
+      "language": "fa",
+      "target_start": 64,
+      "value": " ",
+      "left": "r00001-s6293118522084e62",
+      "right": "r00002",
+      "reason": "Complete the interrupted historical report while preserving the source attribution and old row links."
     }
   ]
 }
