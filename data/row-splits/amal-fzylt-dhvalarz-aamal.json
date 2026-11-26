@@ -3,8 +3,8 @@
   "item": "amal-fzylt-dhvalarz-aamal",
   "author": "agent-4",
   "baseline_item_sha256": "39d663557477ea358d9509c34f9addae9d005d8a0871f31b83e8938bc533d6e7",
-  "plan_sha256": "77687d7e5f6698efa3505d5cec402cb4f260c7077ebc9a4a7dc59087e04ceb86",
-  "layout_sha256": "f549a99354f1aea1f2ee073f0a2e267e72f956b4c61641ded7abd50e23cf741f",
+  "plan_sha256": "1165966df59b8538472b9d9338b11f90f10db5770e675abb2c7134714be5471c",
+  "layout_sha256": "4dfc4d27e5181e721b576b800b701b999025a3b3d4a89dd4771cacc2ae7f04e5",
   "rows": [
     {
       "original": {
@@ -146,8 +146,7 @@
       },
       "results": [
         "r00006-s5277842879ed0547",
-        "r00006-sffb0fbe94541cff2",
-        "r00006-sac7cfe4397cd2200"
+        "r00006-s2396a74733666b42"
       ],
       "ar": [
         {
@@ -158,7 +157,7 @@
           "target_start": 0
         },
         {
-          "row": "r00006-sffb0fbe94541cff2",
+          "row": "r00006-s2396a74733666b42",
           "language": "ar",
           "start": 23,
           "end": 244,
@@ -167,7 +166,7 @@
       ],
       "fa": [
         {
-          "row": "r00006-sac7cfe4397cd2200",
+          "row": "r00006-s2396a74733666b42",
           "language": "fa",
           "start": 0,
           "end": 195,
@@ -543,6 +542,42 @@
     }
   ],
   "aliases": [
+    {
+      "original": {
+        "id": "r00006-sffb0fbe94541cff2",
+        "ar": "t9f8ca2b03f3ac36d48d8c30e",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00006-s2396a74733666b42",
+          "language": "ar",
+          "start": 0,
+          "end": 221,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00006-sac7cfe4397cd2200",
+        "ar": null,
+        "fa": "t1afcaff636aa918b57d73ae9",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00006-s2396a74733666b42",
+          "language": "fa",
+          "start": 0,
+          "end": 195,
+          "target_start": 0
+        }
+      ]
+    },
     {
       "original": {
         "id": "r00010-sba85b7a436ecc56e",
