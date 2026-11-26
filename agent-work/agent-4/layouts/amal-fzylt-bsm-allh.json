@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-fzylt-bsm-allh",
   "author": "agent-4",
-  "plan_sha256": "a70b681060fbcd88e88162ec6dcc297ce0909925a63ba90c8814e628dbf8bb88",
+  "plan_sha256": "75ddf3afa63378ed11d6cba24e16457d75066272a35b25c8c4dbcfbeefbee71d",
   "rows": [
     {
       "row": "r00001",
@@ -15,18 +15,38 @@
             "source": "ar",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 2
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": {
             "source": "ar",
-            "part": 1
+            "part": 3
           },
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "recitation"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
