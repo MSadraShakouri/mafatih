@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "item-shshm-rqah-ay",
   "author": "agent-4",
   "baseline_item_sha256": "85948994cb7af0d17cd939a9d23377c958ec3e45be3c81c24e7936d93c9592ba",
   "plan_sha256": "eaf2b7b9bc0a8d4cab0010bf4a0dedf7f515d6ee9fa8b805d75062e9facb3126",
-  "layout_sha256": "d56358ecc55135e70ae668229b35c3c528a836754e8ea474f07f50222bc18e3c",
+  "layout_sha256": "27c4f3e2d9d000aa27c5a43c1c621462f598e97bd33127034ac08cb9e43ebffb",
   "rows": [
     {
       "original": {
@@ -36,7 +36,7 @@
         "r00002-sed9777e65994c8dc",
         "r00002-s94ec911707ae19b3",
         "r00002-s221f3530d1dc62ae",
-        "r00002-s2b8dad77a9de939d"
+        "ma174e83076135512e10a7a12"
       ],
       "ar": [
         {
@@ -61,7 +61,7 @@
           "target_start": 0
         },
         {
-          "row": "r00002-s2b8dad77a9de939d",
+          "row": "ma174e83076135512e10a7a12",
           "language": "ar",
           "start": 206,
           "end": 346,
@@ -91,7 +91,7 @@
           "target_start": 0
         },
         {
-          "row": "r00002-s2b8dad77a9de939d",
+          "row": "ma174e83076135512e10a7a12",
           "language": "fa",
           "start": 198,
           "end": 275,
@@ -106,16 +106,16 @@
         "fa": "t0308c8f87a3ae2ad2141c240"
       },
       "results": [
-        "r00003-s42bfee71bb8fa135",
+        "ma174e83076135512e10a7a12",
         "r00003-s5efbe07f9b41f495"
       ],
       "ar": [
         {
-          "row": "r00003-s42bfee71bb8fa135",
+          "row": "ma174e83076135512e10a7a12",
           "language": "ar",
           "start": 0,
           "end": 210,
-          "target_start": 0
+          "target_start": 141
         },
         {
           "row": "r00003-s5efbe07f9b41f495",
@@ -127,11 +127,11 @@
       ],
       "fa": [
         {
-          "row": "r00003-s42bfee71bb8fa135",
+          "row": "ma174e83076135512e10a7a12",
           "language": "fa",
           "start": 0,
           "end": 127,
-          "target_start": 0
+          "target_start": 78
         },
         {
           "row": "r00003-s5efbe07f9b41f495",
@@ -164,6 +164,58 @@
     }
   ],
   "aliases": [
+    {
+      "original": {
+        "id": "r00002-s2b8dad77a9de939d",
+        "ar": "tc3eda4e4c5e73818675b932f",
+        "fa": "tab12918c210b669d938bf46e",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "ma174e83076135512e10a7a12",
+          "language": "ar",
+          "start": 0,
+          "end": 140,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "ma174e83076135512e10a7a12",
+          "language": "fa",
+          "start": 0,
+          "end": 77,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s42bfee71bb8fa135",
+        "ar": "tb20dd4d02410cc48848a3a98",
+        "fa": "t34e877eb348d4fda0ee2d8a1",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "ma174e83076135512e10a7a12",
+          "language": "ar",
+          "start": 0,
+          "end": 210,
+          "target_start": 141
+        }
+      ],
+      "fa": [
+        {
+          "row": "ma174e83076135512e10a7a12",
+          "language": "fa",
+          "start": 0,
+          "end": 127,
+          "target_start": 78
+        }
+      ]
+    },
     {
       "original": {
         "id": "r00002-sb4c2bfb77eb89124",
@@ -227,7 +279,7 @@
       },
       "ar": [
         {
-          "row": "r00002-s2b8dad77a9de939d",
+          "row": "ma174e83076135512e10a7a12",
           "language": "ar",
           "start": 0,
           "end": 140,
@@ -300,7 +352,7 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s2b8dad77a9de939d",
+          "row": "ma174e83076135512e10a7a12",
           "language": "fa",
           "start": 0,
           "end": 77,
@@ -317,11 +369,11 @@
       },
       "ar": [
         {
-          "row": "r00003-s42bfee71bb8fa135",
+          "row": "ma174e83076135512e10a7a12",
           "language": "ar",
           "start": 0,
           "end": 210,
-          "target_start": 0
+          "target_start": 141
         }
       ],
       "fa": []
@@ -354,11 +406,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00003-s42bfee71bb8fa135",
+          "row": "ma174e83076135512e10a7a12",
           "language": "fa",
           "start": 0,
           "end": 127,
-          "target_start": 0
+          "target_start": 78
         }
       ]
     },
@@ -379,6 +431,26 @@
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "ma174e83076135512e10a7a12",
+      "language": "ar",
+      "target_start": 140,
+      "value": " ",
+      "left": "r00002-s2b8dad77a9de939d",
+      "right": "r00003-s42bfee71bb8fa135",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "ma174e83076135512e10a7a12",
+      "language": "fa",
+      "target_start": 77,
+      "value": " ",
+      "left": "r00002-s2b8dad77a9de939d",
+      "right": "r00003-s42bfee71bb8fa135",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
 }
