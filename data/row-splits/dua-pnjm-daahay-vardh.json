@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "dua-pnjm-daahay-vardh",
   "author": "agent-4",
   "baseline_item_sha256": "4e9f11f96e899647eebc2dc6728b73c0b14a67f7bae5890d637c2d3fdfdcab3a",
   "plan_sha256": "d0089e4457da33c1ae58e21ad6d3e29e67a8c55b6edf39cef856886e7aad7245",
-  "layout_sha256": "27927db8547207399972ad9ccf67f1f4b683b70b8f8d09e173021493bc1dbb82",
+  "layout_sha256": "981eb678d4d8fd54fb8b72d9a657a363da8b03e76797feb0f53ee3e7e0f61a8e",
   "rows": [
     {
       "original": {
@@ -41,11 +41,11 @@
         "fa": "t91564a09035443cbd2b83154"
       },
       "results": [
-        "r00002"
+        "mc9fb4e07220cee25903c8756"
       ],
       "ar": [
         {
-          "row": "r00002",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "ar",
           "start": 0,
           "end": 158,
@@ -54,7 +54,7 @@
       ],
       "fa": [
         {
-          "row": "r00002",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "fa",
           "start": 0,
           "end": 103,
@@ -69,24 +69,24 @@
         "fa": "t9afefc1832f8ff532ad33a19"
       },
       "results": [
-        "r00003"
+        "mc9fb4e07220cee25903c8756"
       ],
       "ar": [
         {
-          "row": "r00003",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "ar",
           "start": 0,
           "end": 254,
-          "target_start": 0
+          "target_start": 159
         }
       ],
       "fa": [
         {
-          "row": "r00003",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "fa",
           "start": 0,
           "end": 184,
-          "target_start": 0
+          "target_start": 104
         }
       ]
     },
@@ -478,7 +478,7 @@
       },
       "ar": [
         {
-          "row": "r00002",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "ar",
           "start": 0,
           "end": 158,
@@ -497,7 +497,7 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "fa",
           "start": 0,
           "end": 103,
@@ -514,11 +514,11 @@
       },
       "ar": [
         {
-          "row": "r00003",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "ar",
           "start": 0,
           "end": 254,
-          "target_start": 0
+          "target_start": 159
         }
       ],
       "fa": []
@@ -533,11 +533,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00003",
+          "row": "mc9fb4e07220cee25903c8756",
           "language": "fa",
           "start": 0,
           "end": 184,
-          "target_start": 0
+          "target_start": 104
         }
       ]
     },
@@ -576,6 +576,26 @@
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "mc9fb4e07220cee25903c8756",
+      "language": "ar",
+      "target_start": 158,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "mc9fb4e07220cee25903c8756",
+      "language": "fa",
+      "target_start": 103,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
 }
