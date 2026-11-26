@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "dua-saat-6",
   "author": "agent-4",
   "baseline_item_sha256": "243e20b3e329b287c60c27b564bb5b4ee4cf6338d58705a27d7c8c03a1fc148e",
   "plan_sha256": "a5ec6623bc04bffd2295e6f6ed55999d3f244b69243dd1d70e038e2abba10a15",
-  "layout_sha256": "3292f337d5bec02e82a0074bf80bffc457d5474f797d75e34e86efdff410d072",
+  "layout_sha256": "3fb239e4c4a119992041fba581561e3f2814923bde4cb1546812cb9e22496059",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 113
+          "end": 113,
+          "target_start": 0
         }
       ]
     },
@@ -33,20 +34,22 @@
       },
       "results": [
         "r00002-se78f6df715196b3d",
-        "r00002-s85aa1380ba79f059"
+        "m17b844185e93c1acecd3a9a1"
       ],
       "ar": [
         {
           "row": "r00002-se78f6df715196b3d",
           "language": "ar",
           "start": 0,
-          "end": 201
+          "end": 201,
+          "target_start": 0
         },
         {
-          "row": "r00002-s85aa1380ba79f059",
+          "row": "m17b844185e93c1acecd3a9a1",
           "language": "ar",
           "start": 201,
-          "end": 476
+          "end": 476,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -54,13 +57,15 @@
           "row": "r00002-se78f6df715196b3d",
           "language": "fa",
           "start": 0,
-          "end": 154
+          "end": 154,
+          "target_start": 0
         },
         {
-          "row": "r00002-s85aa1380ba79f059",
+          "row": "m17b844185e93c1acecd3a9a1",
           "language": "fa",
           "start": 154,
-          "end": 385
+          "end": 385,
+          "target_start": 0
         }
       ]
     },
@@ -71,24 +76,74 @@
         "fa": "t0d212c67062de5d298909609"
       },
       "results": [
-        "r00003"
+        "m17b844185e93c1acecd3a9a1"
       ],
       "ar": [
         {
-          "row": "r00003",
+          "row": "m17b844185e93c1acecd3a9a1",
           "language": "ar",
           "start": 0,
-          "end": 12
+          "end": 12,
+          "target_start": 276
         }
       ],
       "fa": [
         {
-          "row": "r00003",
+          "row": "m17b844185e93c1acecd3a9a1",
           "language": "fa",
           "start": 0,
-          "end": 16
+          "end": 16,
+          "target_start": 232
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s85aa1380ba79f059",
+        "ar": "t85737d65aac75b4a8c72baa8",
+        "fa": "tb9192e77ee6e8daeac349feb",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m17b844185e93c1acecd3a9a1",
+          "language": "ar",
+          "start": 0,
+          "end": 275,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m17b844185e93c1acecd3a9a1",
+          "language": "fa",
+          "start": 0,
+          "end": 231,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m17b844185e93c1acecd3a9a1",
+      "language": "ar",
+      "target_start": 275,
+      "value": " ",
+      "left": "r00002-s85aa1380ba79f059",
+      "right": "r00003",
+      "reason": "Distinct words at a reviewed bilingual continuation; one independently reviewed space per language."
+    },
+    {
+      "row": "m17b844185e93c1acecd3a9a1",
+      "language": "fa",
+      "target_start": 231,
+      "value": " ",
+      "left": "r00002-s85aa1380ba79f059",
+      "right": "r00003",
+      "reason": "Distinct words at a reviewed bilingual continuation; one independently reviewed space per language."
     }
   ]
 }
