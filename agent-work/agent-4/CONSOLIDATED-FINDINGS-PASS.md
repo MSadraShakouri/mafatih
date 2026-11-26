@@ -1,6 +1,6 @@
 # Consolidated Agent 4 findings pass and review inventory
 
-Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `2f96f55fb869be7acfd02e61fd57dbb80cd802cb`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 47 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
+Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `2f96f55fb869be7acfd02e61fd57dbb80cd802cb`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 50 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
 
 ## Guarded continuation operations
 
@@ -114,6 +114,12 @@ Each row below was checked by formal `merge-preview` and `merge-rows`, including
 | `amal-fzylt-aamal-mbahlh` | `r00011` → `r00012` | `mb0ca2ed92eb8480de1dbe477` | ar 627, fa 619 | `8c79a48ffbe9d8b217a331bb1ef9d340cda48b74` |
 | `amal-fzylt-aamal-mbahlh` | `r00013` → `r00014` | `m7a347fd487d949419b3b6810` | ar 1127, fa 851 | `8c79a48ffbe9d8b217a331bb1ef9d340cda48b74` |
 | `amal-fzylt-aamal-mbahlh` | `r00015` → `r00016` | `m0ec25d03a46b7c21faf4a0f3` | ar 568, fa 460 | `8c79a48ffbe9d8b217a331bb1ef9d340cda48b74` |
+| `amal-aamal-sy-am` | `r00001-sbec4b2d569e949d9` → `r00002` | `md92fb4be3f2e22abd57eff93` | ar 118 | `4e4ceede46c5e03aafb3c3559777b7698456f50f` |
+| `amal-aamal-vrvz-ayd` | `r00002-s7912db66cde98eb8` → `r00003-s1828851db03b603e` | `m6451383a2a6df9f160f7fc4b` | fa 48 | `5f4aebae95d621a37318d4012c19b29666b56a5c` |
+| `amal-aamal-vrvz-ayd` | `r00004` → `r00005-saba56576a8f4a2e8` | `m366cf6994bea78ad49798f5d` | fa 110 | `5f4aebae95d621a37318d4012c19b29666b56a5c` |
+| `amal-aamal-vrvz-ayd` | `r00006-s34abe30a2fd8c1a9` → `r00007` | `m96fa9d1b62c7a4503d3638d2` | fa 282 | `5f4aebae95d621a37318d4012c19b29666b56a5c` |
+| `amal-aamal-nv-ayd` | `r00001-sa3fbdb6fa458720f` → `r00002-sb122fdb543464f4c` | `m51f8b74258ee45cc045129d2` | fa 132 | `46fa665b1c87de8811bf47dc854efa2ea6bf833e` |
+| `amal-aamal-nv-ayd` | `r00004-s9139a499aa920ed2` → `r00005-s49a0157da90fa1f7` | `m5f6a035bfcab60f8fc668354` | ar 83, fa 83 | `46fa665b1c87de8811bf47dc854efa2ea6bf833e` |
 
 `sura-rahman` preserved audio-reciter row, relations and alignment files; verse 33 and 54 markers remain in their respective Arabic and Persian result fields. These checks do not certify external audio timing.
 
@@ -123,6 +129,7 @@ Formal previews were bound to each exact parent and confirmed by digest. Previou
 
 | Item | Frozen source rows revised | Commit |
 | --- | --- | --- |
+| `amal-aamal-nv-ayd` | r00005 corresponding ar/fa parts (then adjacent continuation) | `274381d43478ec07075a7cd5258426af3ea97457` |
 | `amal-aamal-rbya-alsany` | r00001/fa cuts 203,253,387,646,778 | `434ebe8211035d340b3e4a04fadc14202362690c` |
 | `namaz-anjam-daa-vst` | r00001/fa cut 30 | `cfbe17cb70684c579cd0664e28a046d09513a54e` |
 | `namaz-astkharh-sahb-jvahr` | r00001/fa cuts 187,296,734 | `60d6d4fe10bf7a3a50f91cb25b2554a8cd80d5f2` |
@@ -151,14 +158,14 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | `amal-aamal-akhr-zy` | needs clarification; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-aamal-arfh-2` | migration-blocked; `AGENT-5-TRIAGE-PARTIAL.md` | `r00002/fa`, `r00026/ar`, `r00026/fa`, `r00027/ar`, `r00027/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-aamal-hrm-hsyn` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00010/fa`, `r00011/fa`, `r00012/fa`, `r00013/fa`, `r00014/fa` | unchanged; prior finding open unless independently accepted later |
-| `amal-aamal-nv-ayd` | blocked by tool limitation/link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa` | unchanged; prior finding open unless independently accepted later |
+| `amal-aamal-nv-ayd` | blocked by tool limitation/link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa` | changed; full re-review and residual findings open |
 | `amal-aamal-nvzdhm-rmzan` | migration-blocked; `AGENT-5-TRIAGE-PARTIAL.md` | `r00005/ar`, `r00005/fa` | changed; full re-review and residual findings open |
 | `amal-aamal-rbya-alsany` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa` | changed; full re-review and residual findings open |
 | `amal-aamal-rvyt-hlal` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00003/fa`, `r00006/fa`, `r00008/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-aamal-shaban` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/fa`, `r00006/fa`, `r00007/ar`, `r00007/fa` | unchanged; prior finding open unless independently accepted later |
-| `amal-aamal-sy-am` | needs clarification; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/ar`, `r00001/fa`, `r00002/ar`, `r00002/fa` | unchanged; prior finding open unless independently accepted later |
+| `amal-aamal-sy-am` | needs clarification; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/ar`, `r00001/fa`, `r00002/ar`, `r00002/fa` | changed; full re-review and residual findings open |
 | `amal-aamal-ta-hfdhm` | needs clarification; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa` | unchanged; prior finding open unless independently accepted later |
-| `amal-aamal-vrvz-ayd` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/fa`, `r00007/fa` | unchanged; prior finding open unless independently accepted later |
+| `amal-aamal-vrvz-ayd` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/fa`, `r00007/fa` | changed; full re-review and residual findings open |
 | `amal-asharh` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00002/fa`, `r00003/fa`, `r00007/fa`, `r00008/fa`, `r00009/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-avzh-aqrb` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/ar`, `r00002/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-fzylt-aamal-mbahlh` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa`, `r00013/ar`, `r00013/fa`, `r00014/ar`, `r00014/fa`, `r00015/ar`, `r00015/fa`, `r00016/ar`, `r00016/fa`, `r00017/fa`, `r00018/fa` | changed; full re-review and residual findings open |
