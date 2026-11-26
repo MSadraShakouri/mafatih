@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "amal-avzh-aqrb",
   "author": "agent-4",
   "baseline_item_sha256": "d0a0536e712a2aa3ce4b7ba313fe3d53034b795aca8f7ad921cc6d0da2d4564b",
   "plan_sha256": "45154069941c07089258b1e5742a79624032b1a167266dd0fd8a9849c793ce77",
-  "layout_sha256": "048e78bc39894d441748aefc2a3ebfd660f5a75e71f7abe020c38b1f268cb0d3",
+  "layout_sha256": "43d413785fc677dd384de5078dec52abf81532f12d3e9329e945d5a90359fff9",
   "rows": [
     {
       "original": {
@@ -13,11 +13,11 @@
         "fa": null
       },
       "results": [
-        "r00001-saa3ec3f116259495"
+        "m9d14b9d90e88617efb036061"
       ],
       "ar": [
         {
-          "row": "r00001-saa3ec3f116259495",
+          "row": "m9d14b9d90e88617efb036061",
           "language": "fa",
           "start": 0,
           "end": 44,
@@ -33,18 +33,18 @@
         "fa": "t91faeb0fd9c7c73dd8fe2f0a"
       },
       "results": [
-        "r00002-s715b6a57ac51205e",
+        "m9d14b9d90e88617efb036061",
         "r00002-s5a35ef2d6a414b3a",
         "r00002-s1c76b7fe2316355f"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s715b6a57ac51205e",
+          "row": "m9d14b9d90e88617efb036061",
           "language": "fa",
           "start": 0,
           "end": 101,
-          "target_start": 0
+          "target_start": 45
         },
         {
           "row": "r00002-s5a35ef2d6a414b3a",
@@ -91,5 +91,53 @@
       ]
     }
   ],
-  "aliases": []
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-saa3ec3f116259495",
+        "ar": null,
+        "fa": "tfe5e4ea64069e76b05f3fbf9",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m9d14b9d90e88617efb036061",
+          "language": "fa",
+          "start": 0,
+          "end": 44,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-s715b6a57ac51205e",
+        "ar": null,
+        "fa": "ta6790a43f9ac45838e4a97b0",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m9d14b9d90e88617efb036061",
+          "language": "fa",
+          "start": 0,
+          "end": 101,
+          "target_start": 45
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m9d14b9d90e88617efb036061",
+      "language": "fa",
+      "target_start": 44,
+      "value": " ",
+      "left": "r00001-saa3ec3f116259495",
+      "right": "r00002-s715b6a57ac51205e",
+      "reason": "Complete the source attribution without inventing the referenced verse or endorsing its reported claim."
+    }
+  ]
 }
