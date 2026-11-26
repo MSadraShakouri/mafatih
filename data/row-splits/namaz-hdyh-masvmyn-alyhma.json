@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "namaz-hdyh-masvmyn-alyhma",
   "author": "agent-4",
   "baseline_item_sha256": "8f62197437553d68cd8b0f0f94368a58046f8cb379be2f556ca6bb1ef9550f71",
   "plan_sha256": "e10c71636b0bd30cd10eb77f2bda57939eae02f59d7fa00e298a86bc34799d2a",
-  "layout_sha256": "bd4b73e63c5434b78dbc4c01be4c1c8ebbb97eb36716caff4d8d6932e239c891",
+  "layout_sha256": "cb5fe1fb056b7bd73fb8a47fd1d9fcbc07b1a589f88291d35d515143616f63ee",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "tb56abd7d7ba09e80b152894f"
       },
       "results": [
-        "r00001"
+        "m266fd624fe4e1d54440c5636"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m266fd624fe4e1d54440c5636",
           "language": "fa",
           "start": 0,
-          "end": 384
+          "end": 384,
+          "target_start": 0
         }
       ]
     },
@@ -32,15 +33,16 @@
         "fa": "t3c17cf29d70ce44c6e8ac9f6"
       },
       "results": [
-        "r00002"
+        "m266fd624fe4e1d54440c5636"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m266fd624fe4e1d54440c5636",
           "language": "fa",
           "start": 0,
-          "end": 496
+          "end": 496,
+          "target_start": 385
         }
       ]
     },
@@ -59,13 +61,15 @@
           "row": "r00003-s3a5c66537d9f28c5",
           "language": "ar",
           "start": 0,
-          "end": 115
+          "end": 115,
+          "target_start": 0
         },
         {
           "row": "r00003-sf9cbb0785d5f5447",
           "language": "ar",
           "start": 115,
-          "end": 357
+          "end": 357,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -73,13 +77,15 @@
           "row": "r00003-s3a5c66537d9f28c5",
           "language": "fa",
           "start": 0,
-          "end": 109
+          "end": 109,
+          "target_start": 0
         },
         {
           "row": "r00003-sf9cbb0785d5f5447",
           "language": "fa",
           "start": 109,
-          "end": 298
+          "end": 298,
+          "target_start": 0
         }
       ]
     },
@@ -98,9 +104,22 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 93
+          "end": 93,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [],
+  "insertions": [
+    {
+      "row": "m266fd624fe4e1d54440c5636",
+      "language": "fa",
+      "target_start": 384,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }
