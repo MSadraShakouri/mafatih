@@ -4,7 +4,7 @@
   "author": "agent-4",
   "baseline_item_sha256": "df8aa5c5e09a880bd0a06a4b00a30a5d78fb42893211396afea3c52804c223a1",
   "plan_sha256": "1e1dcab67cd4c734b30ca8cfd3384ca1dd4ec89996abd4e53a432a842e6e44fa",
-  "layout_sha256": "17274171a6bd810742a6476b7ac1fbbe8eeeab55024754c8ebfbede1db49e393",
+  "layout_sha256": "2b414b57af6400d424ebb7954b5145db50bbb9de513894094025c241c365ce85",
   "rows": [
     {
       "original": {
@@ -13,12 +13,12 @@
         "fa": "t0558ffc2fb4c2e4b394b5de1"
       },
       "results": [
-        "r00001"
+        "ma55305311756a8befca02a96"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "ma55305311756a8befca02a96",
           "language": "fa",
           "start": 0,
           "end": 133,
@@ -33,16 +33,16 @@
         "fa": "t80e0b95343493615dc512a35"
       },
       "results": [
-        "r00002"
+        "ma55305311756a8befca02a96"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "ma55305311756a8befca02a96",
           "language": "fa",
           "start": 0,
           "end": 940,
-          "target_start": 0
+          "target_start": 134
         }
       ]
     },
@@ -1051,6 +1051,15 @@
       "left": "r00028",
       "right": "r00029",
       "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+    },
+    {
+      "row": "ma55305311756a8befca02a96",
+      "language": "fa",
+      "target_start": 133,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the attributed report and preserve the claims as reported."
     }
   ]
 }
