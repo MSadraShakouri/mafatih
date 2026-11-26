@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "fazilat-svrhalrhmn",
   "author": "agent-4",
   "baseline_item_sha256": "d18c9382e17c9dcc832e851eaf1909d97ae2f1b2c9a31376dd8989585ee1533d",
   "plan_sha256": "931ed5ff8e2a776689b534c55b5f562b4e11d2554af07119d5a7baecd43c56b1",
-  "layout_sha256": "d84090c0588855b817e4003af857a2309f0cf8b0eb9900fbcb89fc4ae947150e",
+  "layout_sha256": "8a669204a11ffcd3dbb1b8e2fd25d5893e97317f3c3c43c525467655b9cc9628",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "t66333a0c1b7543601652c5a4"
       },
       "results": [
-        "r00001"
+        "m91266de17c4ad153541e6faf"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m91266de17c4ad153541e6faf",
           "language": "fa",
           "start": 0,
-          "end": 422
+          "end": 422,
+          "target_start": 0
         }
       ]
     },
@@ -32,24 +33,57 @@
         "fa": "tfa80244074b5df6cd1118ab4"
       },
       "results": [
-        "r00002-s16b235f3fb54b1a5",
+        "m91266de17c4ad153541e6faf",
         "r00002-s7912db66cde98eb8"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s16b235f3fb54b1a5",
+          "row": "m91266de17c4ad153541e6faf",
           "language": "fa",
           "start": 0,
-          "end": 203
+          "end": 203,
+          "target_start": 423
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 203,
-          "end": 469
+          "end": 469,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s16b235f3fb54b1a5",
+        "ar": null,
+        "fa": "t9f450cc2dc5014c2fa17e30d",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m91266de17c4ad153541e6faf",
+          "language": "fa",
+          "start": 0,
+          "end": 203,
+          "target_start": 423
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m91266de17c4ad153541e6faf",
+      "language": "fa",
+      "target_start": 422,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the same attributed report with one proposed Persian space."
     }
   ]
 }

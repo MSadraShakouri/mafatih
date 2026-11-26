@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "fazilat-svrhmbarkys",
   "author": "agent-4",
   "baseline_item_sha256": "87109326401d5e9001169474f02c6e7f3bcf67a48fd9c97ce25ba57308ca33cc",
   "plan_sha256": "58c33f3ee5b8883498edee6d5c59d61c14b3a4685a8e158d54d5014a635ce57d",
-  "layout_sha256": "dfc971da88fd11721aed6849557c3b119ed6c4ad52a92204c9d109b30dd6854d",
+  "layout_sha256": "705d524005034cccdea3751061704032f2eb8f986158c6731b0a66ddaf730c34",
   "rows": [
     {
       "original": {
@@ -15,7 +15,7 @@
       "results": [
         "r00001-sc5e9d9539705078a",
         "r00001-sd0076416ed435839",
-        "r00001-s8939275b275c817a"
+        "mda02d09666455d3dfa3e1bb6"
       ],
       "ar": [],
       "fa": [
@@ -23,19 +23,22 @@
           "row": "r00001-sc5e9d9539705078a",
           "language": "fa",
           "start": 0,
-          "end": 250
+          "end": 250,
+          "target_start": 0
         },
         {
           "row": "r00001-sd0076416ed435839",
           "language": "fa",
           "start": 250,
-          "end": 839
+          "end": 839,
+          "target_start": 0
         },
         {
-          "row": "r00001-s8939275b275c817a",
+          "row": "mda02d09666455d3dfa3e1bb6",
           "language": "fa",
           "start": 839,
-          "end": 902
+          "end": 902,
+          "target_start": 0
         }
       ]
     },
@@ -46,15 +49,16 @@
         "fa": "tf98e17ab46f333ddd165f8a4"
       },
       "results": [
-        "r00002"
+        "mda02d09666455d3dfa3e1bb6"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "mda02d09666455d3dfa3e1bb6",
           "language": "fa",
           "start": 0,
-          "end": 263
+          "end": 263,
+          "target_start": 64
         }
       ]
     },
@@ -74,15 +78,48 @@
           "row": "r00003-s1828851db03b603e",
           "language": "fa",
           "start": 0,
-          "end": 201
+          "end": 201,
+          "target_start": 0
         },
         {
           "row": "r00003-s1b27bb8c75bc48e1",
           "language": "fa",
           "start": 201,
-          "end": 485
+          "end": 485,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-s8939275b275c817a",
+        "ar": null,
+        "fa": "t67651b6bdac4189d5d766df9",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mda02d09666455d3dfa3e1bb6",
+          "language": "fa",
+          "start": 0,
+          "end": 63,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "mda02d09666455d3dfa3e1bb6",
+      "language": "fa",
+      "target_start": 63,
+      "value": " ",
+      "left": "r00001-s8939275b275c817a",
+      "right": "r00002",
+      "reason": "Complete the same attributed claim with one proposed Persian space."
     }
   ]
 }
