@@ -12,7 +12,7 @@
       "checked": true,
       "cuts": [],
       "kinds": [
-        "recitation"
+        "note"
       ]
     },
     {
@@ -24,7 +24,7 @@
         173
       ],
       "kinds": [
-        "note",
+        "instruction",
         "instruction"
       ]
     },
@@ -159,9 +159,14 @@
       "language": "ar",
       "source_sha256": "9db8545106f30916e0493885b63a6fd79933a98eabf522b099fc4b9288cac3a9",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        126,
+        153
+      ],
       "kinds": [
-        "note"
+        "recitation",
+        "instruction",
+        "recitation"
       ]
     },
     {
@@ -200,10 +205,14 @@
       "source_sha256": "4e928830085edcb8e9da2442ed305dfc1342d007ab66bfcba9d28b1bd35271fb",
       "checked": true,
       "cuts": [
-        37
+        37,
+        85,
+        145
       ],
       "kinds": [
+        "instruction",
         "note",
+        "instruction",
         "note"
       ]
     },
@@ -240,7 +249,7 @@
         390
       ],
       "kinds": [
-        "note",
+        "instruction",
         "note",
         "note"
       ]
@@ -250,9 +259,16 @@
       "language": "fa",
       "source_sha256": "7117ce49b74e13b9bebcf38e0f5953d5d01fa78c8c4bfd59dcc7674706cc69b5",
       "checked": true,
-      "cuts": [],
+      "cuts": [
+        235,
+        254,
+        475
+      ],
       "kinds": [
-        "recitation"
+        "note",
+        "instruction",
+        "note",
+        "instruction"
       ]
     }
   ],

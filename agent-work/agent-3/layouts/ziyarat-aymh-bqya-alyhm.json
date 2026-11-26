@@ -3,19 +3,19 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-aymh-bqya-alyhm",
   "author": "agent-3",
-  "plan_sha256": "535a2ce358bd8376abd3f8d245dedb4f2821a7e1a6a4be66b3e1ec137bc72b68",
+  "plan_sha256": "b1f317c5f32b793dc12a85deb910badebc9891b77dbfc3fcaa220ba045cbee2a",
   "rows": [
     {
       "row": "r00001",
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "fa",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
+          "kind": "note"
         }
       ]
     },
@@ -29,7 +29,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction"
         },
         {
           "ar": null,
@@ -174,12 +174,31 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "ar",
             "part": 0
           },
-          "kind": "note"
+          "fa": null,
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "ar",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": null,
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -218,7 +237,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction"
         },
         {
           "ar": null,
@@ -226,7 +245,26 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "note"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -270,7 +308,7 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction"
         },
         {
           "ar": null,
@@ -300,7 +338,35 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "recitation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     }
