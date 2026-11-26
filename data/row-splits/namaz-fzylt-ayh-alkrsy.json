@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "namaz-fzylt-ayh-alkrsy",
   "author": "agent-4",
   "baseline_item_sha256": "4273a2212765d08d88ff29186d9ed657d4bdbec692acd289b7d31c915582249c",
   "plan_sha256": "51c2cd0def5491b94f4ad2fb1a454e8124775c05fe43f45f72b8a1a1aeccb96e",
-  "layout_sha256": "fa8250053dca6adc37e1fa9af3d36dcca7ffe8240ac36dc077421c33e8367286",
+  "layout_sha256": "eb55f8cc95ea6218249c12ca1f78475a6f315166a7dc151bd9079c3029ac62db",
   "rows": [
     {
       "original": {
@@ -13,14 +13,15 @@
         "fa": null
       },
       "results": [
-        "r00001-saa3ec3f116259495"
+        "mac0db5da0e26580a4a55a159"
       ],
       "ar": [
         {
-          "row": "r00001-saa3ec3f116259495",
+          "row": "mac0db5da0e26580a4a55a159",
           "language": "fa",
           "start": 0,
-          "end": 63
+          "end": 63,
+          "target_start": 0
         }
       ],
       "fa": []
@@ -32,7 +33,7 @@
         "fa": "t1991d587b0512deb0041b6f8"
       },
       "results": [
-        "r00002-s16b235f3fb54b1a5",
+        "mac0db5da0e26580a4a55a159",
         "r00002-s7912db66cde98eb8",
         "r00002-se090ec1c15d74b91",
         "r00002-sb8a7c4ea61e1d0eb"
@@ -40,30 +41,83 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s16b235f3fb54b1a5",
+          "row": "mac0db5da0e26580a4a55a159",
           "language": "fa",
           "start": 0,
-          "end": 79
+          "end": 79,
+          "target_start": 64
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 79,
-          "end": 303
+          "end": 303,
+          "target_start": 0
         },
         {
           "row": "r00002-se090ec1c15d74b91",
           "language": "fa",
           "start": 303,
-          "end": 424
+          "end": 424,
+          "target_start": 0
         },
         {
           "row": "r00002-sb8a7c4ea61e1d0eb",
           "language": "fa",
           "start": 424,
-          "end": 569
+          "end": 569,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-saa3ec3f116259495",
+        "ar": null,
+        "fa": "t95e9c9f50fff612e3505a2cf",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mac0db5da0e26580a4a55a159",
+          "language": "fa",
+          "start": 0,
+          "end": 63,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-s16b235f3fb54b1a5",
+        "ar": null,
+        "fa": "td8403ea0985c1691c4282156",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mac0db5da0e26580a4a55a159",
+          "language": "fa",
+          "start": 0,
+          "end": 79,
+          "target_start": 64
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "mac0db5da0e26580a4a55a159",
+      "language": "fa",
+      "target_start": 63,
+      "value": " ",
+      "left": "r00001-saa3ec3f116259495",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the attributed report with one proposed Persian space, preserving cross-language source lineage."
     }
   ]
 }
