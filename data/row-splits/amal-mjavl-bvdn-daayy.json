@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "amal-mjavl-bvdn-daayy",
   "author": "agent-4",
   "baseline_item_sha256": "aa2a2d3382a9779c1ba81854ec0c1544a1af10e7a07258dc41b452c2423faced",
-  "plan_sha256": "10817d59085d5d93bcd9474a9f0391d7af21bcd4e17869b3db5afa06fc2d69d9",
-  "layout_sha256": "4492a52eba5d78061a31a0b9775f5db380595db0f900297a2b232a45e08e1a88",
+  "plan_sha256": "b5f918d81433dfba4146fdc0fd923282bb1715ede0d532fbd8019a140929a795",
+  "layout_sha256": "62c84828cce08864f83e083696e378f6aefca843198b24aaeecb91669eaad438",
   "rows": [
     {
       "original": {
@@ -23,19 +23,22 @@
           "row": "r00001-s87a4572572fe3091",
           "language": "fa",
           "start": 0,
-          "end": 203
+          "end": 203,
+          "target_start": 0
         },
         {
           "row": "r00001-sd0076416ed435839",
           "language": "fa",
           "start": 203,
-          "end": 511
+          "end": 511,
+          "target_start": 0
         },
         {
           "row": "r00001-s8939275b275c817a",
           "language": "fa",
           "start": 511,
-          "end": 653
+          "end": 653,
+          "target_start": 0
         }
       ]
     },
@@ -57,25 +60,29 @@
           "row": "r00002-s16b235f3fb54b1a5",
           "language": "fa",
           "start": 0,
-          "end": 214
+          "end": 214,
+          "target_start": 0
         },
         {
           "row": "r00002-s7912db66cde98eb8",
           "language": "fa",
           "start": 214,
-          "end": 435
+          "end": 435,
+          "target_start": 0
         },
         {
           "row": "r00002-se090ec1c15d74b91",
           "language": "fa",
           "start": 435,
-          "end": 670
+          "end": 670,
+          "target_start": 0
         },
         {
           "row": "r00002-sb8a7c4ea61e1d0eb",
           "language": "fa",
           "start": 670,
-          "end": 926
+          "end": 926,
+          "target_start": 0
         }
       ]
     },
@@ -94,7 +101,8 @@
           "row": "r00003",
           "language": "fa",
           "start": 0,
-          "end": 51
+          "end": 51,
+          "target_start": 0
         }
       ]
     },
@@ -113,7 +121,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 144
+          "end": 144,
+          "target_start": 0
         }
       ]
     },
@@ -124,23 +133,24 @@
         "fa": "t1e5df0762fb6f7a1fc7d3478"
       },
       "results": [
-        "r00005-s65910f28bd2bd075",
-        "r00005-saba56576a8f4a2e8"
+        "r00005"
       ],
       "ar": [
         {
-          "row": "r00005-s65910f28bd2bd075",
+          "row": "r00005",
           "language": "ar",
           "start": 0,
-          "end": 138
+          "end": 138,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00005-saba56576a8f4a2e8",
+          "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 119
+          "end": 119,
+          "target_start": 0
         }
       ]
     },
@@ -159,7 +169,8 @@
           "row": "r00006-s816b520837ffe102",
           "language": "ar",
           "start": 0,
-          "end": 292
+          "end": 292,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -167,7 +178,8 @@
           "row": "r00006-s6b2b0ff07b4b8ae2",
           "language": "fa",
           "start": 0,
-          "end": 165
+          "end": 165,
+          "target_start": 0
         }
       ]
     },
@@ -186,7 +198,8 @@
           "row": "r00007",
           "language": "fa",
           "start": 0,
-          "end": 318
+          "end": 318,
+          "target_start": 0
         }
       ]
     },
@@ -205,7 +218,8 @@
           "row": "r00008",
           "language": "fa",
           "start": 0,
-          "end": 168
+          "end": 168,
+          "target_start": 0
         }
       ]
     },
@@ -216,23 +230,24 @@
         "fa": "tc1f81e14c402afa9b3e112c3"
       },
       "results": [
-        "r00009-sea2e7a71d8f713f2",
-        "r00009-sace04f5552303cc5"
+        "r00009"
       ],
       "ar": [
         {
-          "row": "r00009-sea2e7a71d8f713f2",
+          "row": "r00009",
           "language": "ar",
           "start": 0,
-          "end": 69
+          "end": 69,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00009-sace04f5552303cc5",
+          "row": "r00009",
           "language": "fa",
           "start": 0,
-          "end": 72
+          "end": 72,
+          "target_start": 0
         }
       ]
     },
@@ -243,23 +258,24 @@
         "fa": "tb401aa0af58d7a121b9441e0"
       },
       "results": [
-        "r00010-s7b1cf06aeba5667e",
-        "r00010-seb219ae3b3f3af47"
+        "r00010"
       ],
       "ar": [
         {
-          "row": "r00010-s7b1cf06aeba5667e",
+          "row": "r00010",
           "language": "ar",
           "start": 0,
-          "end": 75
+          "end": 75,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00010-seb219ae3b3f3af47",
+          "row": "r00010",
           "language": "fa",
           "start": 0,
-          "end": 56
+          "end": 56,
+          "target_start": 0
         }
       ]
     },
@@ -270,23 +286,24 @@
         "fa": "tec502f35b4f364e1aaf75ad2"
       },
       "results": [
-        "r00011-s74e819cfe8448d9a",
-        "r00011-sff3d5cac0f1b50db"
+        "r00011"
       ],
       "ar": [
         {
-          "row": "r00011-s74e819cfe8448d9a",
+          "row": "r00011",
           "language": "ar",
           "start": 0,
-          "end": 75
+          "end": 75,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00011-sff3d5cac0f1b50db",
+          "row": "r00011",
           "language": "fa",
           "start": 0,
-          "end": 56
+          "end": 56,
+          "target_start": 0
         }
       ]
     },
@@ -297,23 +314,24 @@
         "fa": "t47265722ad628b463a5e9a02"
       },
       "results": [
-        "r00012-sb69f67f5bacb4705",
-        "r00012-s233dd7da462b3635"
+        "r00012"
       ],
       "ar": [
         {
-          "row": "r00012-sb69f67f5bacb4705",
+          "row": "r00012",
           "language": "ar",
           "start": 0,
-          "end": 76
+          "end": 76,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00012-s233dd7da462b3635",
+          "row": "r00012",
           "language": "fa",
           "start": 0,
-          "end": 73
+          "end": 73,
+          "target_start": 0
         }
       ]
     },
@@ -332,7 +350,8 @@
           "row": "r00013",
           "language": "fa",
           "start": 0,
-          "end": 54
+          "end": 54,
+          "target_start": 0
         }
       ]
     },
@@ -351,7 +370,190 @@
           "row": "r00014",
           "language": "fa",
           "start": 0,
-          "end": 51
+          "end": 51,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00005-s65910f28bd2bd075",
+        "ar": "t013090d53bcddf7cff3f5b38",
+        "fa": null,
+        "kind": "quotation"
+      },
+      "ar": [
+        {
+          "row": "r00005",
+          "language": "ar",
+          "start": 0,
+          "end": 138,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00005-saba56576a8f4a2e8",
+        "ar": null,
+        "fa": "t1e5df0762fb6f7a1fc7d3478",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00005",
+          "language": "fa",
+          "start": 0,
+          "end": 119,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00009-sea2e7a71d8f713f2",
+        "ar": "tf9ff3670c315f44217452473",
+        "fa": null,
+        "kind": "quotation"
+      },
+      "ar": [
+        {
+          "row": "r00009",
+          "language": "ar",
+          "start": 0,
+          "end": 69,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00009-sace04f5552303cc5",
+        "ar": null,
+        "fa": "tc1f81e14c402afa9b3e112c3",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00009",
+          "language": "fa",
+          "start": 0,
+          "end": 72,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00010-s7b1cf06aeba5667e",
+        "ar": "t06ce57ff505849ff28de6d80",
+        "fa": null,
+        "kind": "quotation"
+      },
+      "ar": [
+        {
+          "row": "r00010",
+          "language": "ar",
+          "start": 0,
+          "end": 75,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00010-seb219ae3b3f3af47",
+        "ar": null,
+        "fa": "tb401aa0af58d7a121b9441e0",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00010",
+          "language": "fa",
+          "start": 0,
+          "end": 56,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00011-s74e819cfe8448d9a",
+        "ar": "t2d8dac155427b1254c8f8b3f",
+        "fa": null,
+        "kind": "quotation"
+      },
+      "ar": [
+        {
+          "row": "r00011",
+          "language": "ar",
+          "start": 0,
+          "end": 75,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00011-sff3d5cac0f1b50db",
+        "ar": null,
+        "fa": "tec502f35b4f364e1aaf75ad2",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00011",
+          "language": "fa",
+          "start": 0,
+          "end": 56,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00012-sb69f67f5bacb4705",
+        "ar": "t0d4fce1ab09d90d83b89ad63",
+        "fa": null,
+        "kind": "quotation"
+      },
+      "ar": [
+        {
+          "row": "r00012",
+          "language": "ar",
+          "start": 0,
+          "end": 76,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00012-s233dd7da462b3635",
+        "ar": null,
+        "fa": "t47265722ad628b463a5e9a02",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00012",
+          "language": "fa",
+          "start": 0,
+          "end": 73,
+          "target_start": 0
         }
       ]
     }
