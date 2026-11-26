@@ -5,11 +5,11 @@ STILL `f8dca07b`, ACCEPTED BY AGENT-1 (115 OF 115 REVIEWS). THE NEW READER NOW
 GUARDS MY 93 REUSED IDS; THE REGISTER'S 93 CANDIDATES AGREE WITH MY LINEAGE MAP
 BUT REMAIN PROVISIONAL AND UNREVIEWED. THE 20 ITEMS STAY HELD FOR THE RELEASE
 DECISION. AGENT-5 CHANGED TWO OF THE THREE OPEN KINDS WITH THE GUARDED TOOL (SNAPSHOT
-`1a908eac`); I REVIEWED BOTH ITEMS AFRESH AND ACCEPTED THEM. ONE KIND QUESTION
-(`dua-vdaa-hsyn-alyh`) STAYS OPEN FOR THE COORDINATOR. AGENT-5 REVIEW: 114
-COMPLETE, 1 NEEDS WORK.**
-Updated 2026-11-20 (UTC), second part of the round. **My own authored work is
-unchanged. What I still wait for is listed in the next section.**
+`1a908eac`); I REVIEWED BOTH ITEMS AFRESH AND ACCEPTED THEM. THE COORDINATOR
+DECIDED TO KEEP THE HEADING IN `dua-vdaa-hsyn-alyh`; I AGREE AND RECORDED MY
+REVIEW. AGENT-5 REVIEW: 115 COMPLETE, 0 OPEN.**
+Updated 2026-11-26 (UTC). **My own authored work is unchanged. What I still
+wait for is listed in the next section.**
 
 - Branch: `arena/1a493a80-mafatih`
 - Frozen base: `ffa01da92fbba25731356e8158c295b3824763f0`
@@ -24,6 +24,90 @@ unchanged. What I still wait for is listed in the next section.**
   (author-ready, 115 of 115 items, direct child of `3e35f4ca`; differs from it
   only in the 16 migrated mapping records).
 - Role: author of 115 items (reviewer: agent-1); reviewer of agent-5's 115 items.
+
+## Round of 2026-11-26: the heading is kept; my review of agent-5 is complete
+
+- **`main`:** fetched; still `985f226c4acc1241041b807c2cb4f4fc10d36734`,
+  already merged here. Nothing to pull, no new merge.
+- **Coordinator decision (2026-11-26):** keep the existing `heading` in
+  `dua-vdaa-hsyn-alyh` (`r00001-sf8ca119bc7deb30b`).
+- **My independent review: I agree.** I read the three rows of the item again
+  in both languages before recording it. Grounds:
+  1. The row holds the number of the section (offsets 0-5) and the name of the
+     transmitter (offsets 7-20). It marks the start of numbered section 20 and
+     tells the reader nothing to do. The direction is wholly in `r00002`,
+     which is `instruction`.
+  2. The source itself puts these words in a row of their own; the split keeps
+     that row.
+  3. Keeping the kind keeps the published ID live. No link changes.
+  One note, kept so it is not lost and not a concern against the decision:
+  grammatically the name is the subject of the verb that opens `r00002`, so
+  one sentence runs from the heading into the next row. That is how the
+  source breaks its rows.
+- **The record:** `reviews/dua-vdaa-hsyn-alyh.json` is rewritten from a fresh
+  template and bound to agent-5's latest isolated snapshot
+  `1a908eacb7a6b8cbb66f43569615f62c25548122`. The item is unchanged since
+  `4aae1ccd`: item, mapping, plan and layout are the same Git objects at
+  `4aae1ccd`, `1a908eac`, his tip `8fa542a6` and here; its five text values
+  are identical and match their hash IDs. No cut, join, space, alias or
+  retired ID. Every row ID published for the item since the frozen base opens
+  the same character (4 ID meanings, 1,373 code points). `verify-review`:
+  complete.
+- **agent-5's items: 115 of 115 complete, nothing open.** By snapshot named:
+  78 `4aae1ccd`, 14 `b81241ae`, 4 `f192ee09`, 1 `8121f9b2`, 1 `48f3ea69`,
+  13 `bae5beb3`, 1 `d0fb5765`, 3 `1a908eac`. No other review was redone, because no other item changed.
+- **The two items accepted on 2026-11-20** (`item-mrsyh-am-albnyn`,
+  `dua-daa-aymny-shr`): the coordinator did not ask to hold them, so they stay
+  accepted.
+- **Peers:** agent-5's tip is `8fa542a6` and agent-1's is `93e20304`, both as
+  on 2026-11-20. No new snapshot, no new message to me.
+- **Historical links:** all kept provisional. Nothing migrated, nothing
+  approved, no hash refreshed. No source text or published link changed in
+  this round; I changed one review record, the notes and one message.
+- **Message:** to agent-5, `resolved` `ce186574` (IDs and offsets only).
+- **Checks on 2026-11-26** (worktree: pushed tip `12cf6db5` plus the one
+  review record, the message and these notes):
+  - `npm run check`: 307 tests, 304 pass, 0 fail, 0 cancelled, 3 skipped,
+    exit 0; web build succeeded. Skipped, as before, are the project's own
+    optional tests: test 64 (generated review page absent), test 65
+    (alignment candidates absent), test 97 (lam-pair corpus comparison).
+  - Browser specs, all 31 files in both configurations: **520 tests, 520
+    pass, 0 fail, 0 skipped, 0 flaky.** Playwright 1.64.1 with Chromium
+    153.0.8010.0 from the npm package `@sparticuz/chromium@153.0.0`, kept
+    outside the repository. This is a substitute for the Chromium build that
+    Playwright pins, which cannot be downloaded here. Scratch copy of
+    `playwright.config.ts` (same projects, servers and specs; only the
+    browser path and launch flags added), on the build made by the check
+    above.
+  - `npm run validate`: passes; 48 unreferenced pooled values, as before.
+  - `verify-review` over all 115 of my records, each against the snapshot it
+    names: **115 complete.**
+  - `audit-authored`: agent-5 115 of 115; agent-6 115 of 115. My 460 authored
+    files still equal `f8dca07b`.
+  - `audit-round`: `needs-work`, exit 1, as expected on one agent's branch:
+    115 complete, none of agent-5's items has a finding; 571 `missing`,
+    because the other agents' plans, layouts and reviews are on their own
+    branches.
+  - `verify-tool-info`: matches. `verify-partitions`: valid.
+  - No APK, no device test.
+- **Sandbox note:** the working copy came back at the frozen base with
+  uncommitted files. I proved with a temporary index that every file was
+  byte-identical to my pushed tip `12cf6db5` (0 tracked differences, 0
+  untracked files) and only then moved the branch pointer there with a mixed
+  `git reset`, which changes no file.
+
+**What I wait for now, exactly:**
+
+1. **From the coordinator:** the release decision for my 20 held items (16
+   migrated and 4 with reused IDs only), and whether the 93 provisional link
+   candidates need agent-1's review first.
+2. **From agent-5:** nothing. If he publishes a new snapshot of any item, I
+   review that item again against it. His 16 retired IDs remain his to migrate
+   after the coordinator's authorization; I have approved none.
+3. **From agent-1:** nothing. His 115 reviews of my items stand on `f8dca07b`.
+
+The sections below are older. Their waiting lists are replaced by the list
+above.
 
 ## Round of 2026-11-20, second part: agent-5's snapshot `1a908eac` reviewed
 
@@ -390,7 +474,10 @@ nothing else.
 
 ## What I still need from the coordinator
 
-1. **A ruling on three row kinds in agent-5's items.** The request is
+1. **(Closed 2026-11-26.)** The three row kinds: two were changed by agent-5
+   and accepted by me on 2026-11-20; the coordinator kept the third. The text
+   of this point is kept for the record: A ruling on three row kinds in
+   agent-5's items. The request is
    `proposals/kind-decision-request.md`: `dua-vdaa-hsyn-alyh` (opening row),
    `item-mrsyh-am-albnyn` (eight verse rows) and `dua-daa-aymny-shr` r00009.
    For each: keep the kind, or change it. A change retires a live ID in each
@@ -423,6 +510,8 @@ nothing else.
 
 ## Where my review of agent-5's 115 items stands
 
+- **Now 115 complete, 0 open** (see the round of 2026-11-26 at the top). The
+  rest of this section is the state of 2026-11-19, kept for the record.
 - **112 complete, 3 need work, 0 errors** (`verify-review` with the upgraded
   tools, all 115 records, each against the snapshot it names).
 - Every record names an isolated agent-5 snapshot that is merged here: 79 name

@@ -6,6 +6,13 @@ against agent-5's snapshot `d0fb57659675c25d0dbbe878a7ec9e9e6b7056d3`.
 This file quotes and translates no devotional text. Rows are named by item and
 row ID; what a row holds is described by its role only.
 
+## Update 2026-11-26: closed
+
+The coordinator decided case 1: keep `heading` (option A). I agree and
+recorded my review against agent-5's snapshot
+`1a908eacb7a6b8cbb66f43569615f62c25548122`. All three cases are closed; this
+file is kept for the record only.
+
 ## Update 2026-11-20: cases 2 and 3 are done; only case 1 is open
 
 agent-5 applied option B to cases 2 and 3 with `revise-preview` and `revise`

@@ -1,6 +1,20 @@
-# agent-6 handoff to the coordinator (2026-11-19, UTC; note of 2026-11-20 added)
+# agent-6 handoff to the coordinator (2026-11-19, UTC; notes of 2026-11-20 and 2026-11-26 added)
 
-**Second note of 2026-11-20 (newest):** agent-5 published snapshot
+**Note of 2026-11-26 (newest):** `main` is still `985f226c`; nothing to pull.
+You decided to keep the `heading` in `dua-vdaa-hsyn-alyh`. I read the item
+again and agree; my review is recorded and bound to agent-5's snapshot
+`1a908eacb7a6b8cbb66f43569615f62c25548122`. **My review of agent-5 is now 115
+of 115 complete; no finding is open.** My own snapshot is still
+`f8dca07be7536bf19ea17c869bf098385002099a`, with agent-1's 115 reviews bound
+to it. What remains is yours: the release decision for my 20 held items and
+whether the 93 provisional link candidates need agent-1's review. Checks:
+`npm run check` 307 tests, 304 pass, 0 fail, 3 skipped; browser specs 520 of
+520 with Playwright 1.64.1 and a substitute Chromium 153.0.8010.0;
+`verify-review` 115 of 115 complete. Details: `status.md`, section "Round of 2026-11-26". Where the
+text below says a kind question is open, or "114 complete", read it with this
+note.
+
+**Second note of 2026-11-20:** agent-5 published snapshot
 `1a908eacb7a6b8cbb66f43569615f62c25548122` with two guarded role changes
 (`item-mrsyh-am-albnyn`, eight verse rows to `quotation`; `dua-daa-aymny-shr`,
 verse piece of `r00009` to `recitation`). I merged it (`7b81120c`), reviewed

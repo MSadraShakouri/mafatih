@@ -4,7 +4,7 @@
   "item": "dua-vdaa-hsyn-alyh",
   "author": "agent-5",
   "reviewer": "agent-6",
-  "author_commit": "4aae1ccd3bae6f027e81f1f21ca333f80cc135d5",
+  "author_commit": "1a908eacb7a6b8cbb66f43569615f62c25548122",
   "plan_sha256": "cb91e099ea8bed561acbaef2c2a67caf9197383cefd88048ec0789f80fe02c70",
   "layout_sha256": "f93f8c8d3f60e5db3c636d35c953b963a2d066d2ac7690787cfc42407b59e96d",
   "result_item_sha256": "ab5d33cef3e9359dc36e081c3e0a41ac0de5b6141fb6ffd135a9b772b77c31e4",
@@ -22,29 +22,29 @@
         "row": "r00001",
         "language": "ar",
         "split": "accept",
-        "kind": "uncertain",
-        "note": "Open question, unchanged at 4aae1ccd. The row is the opening of the sentence that continues in r00002 (an ordinal and the name of the narrator), not a title; heading is doubtful, and the kind of r00002 would be consistent."
+        "kind": "accept",
+        "note": "Fresh independent read on 2026-11-26 at agent-5 snapshot 1a908eac; item, mapping, plan and layout are byte-identical to 4aae1ccd, where my earlier record stood. The source Arabic field holds 21 code points of Persian: the number of the section (offsets 0-5, with its colon) and the name of the transmitter (offsets 7-20). All 21 go, uncut, to the Persian field of r00001-sf8ca119bc7deb30b at offsets 0-20; moving Persian out of the Arabic slot is right. Kind heading: I agree, and this closes my open kind finding. Grounds: (1) the row is what marks the start of numbered section 20, and it names the source; it tells the reader nothing to do, so by itself it is not an instruction; the direction to the reader is wholly in r00002, which is instruction and ends with a colon. (2) The source itself puts these words in a row of their own; the split keeps that row and does not move the break. (3) Keeping the kind keeps the published ID r00001-sf8ca119bc7deb30b live, so no link changes. One thing I record so that it is not lost: grammatically the name is the subject of the verb that opens r00002, so one sentence runs from this heading into the next row. That is a property of the source's row break. It is not a fault of the split and not a reason to change the kind; I name it only for a later editorial pass. The coordinator decided on 2026-11-26 to keep heading; I checked the row again before recording this and I agree with the decision on my own reading."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": ""
+        "note": "Fresh read at 1a908eac. Persian prose, 137 code points, kept whole in one row. It continues from r00001 and tells the visitor what to do at the end of the visit and then to say the passage that follows; it ends with a colon at offset 136, directly before the recitation. Kind instruction is right. Uncut row, ID unchanged. No Arabic to be recited stands inside it."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside; I found no place where the Persian leaves the order of the Arabic or where part of one language lacks the other. The split is accepted as it stands."
+        "note": "Fresh read at 1a908eac. One uncut recitation row: Arabic 672 and Persian 522 code points, both whole, ID unchanged. Read side by side from start to end: the six opening greetings, the farewell sentence, the two conditional clauses, the prayer not to be parted, the prayer for return and the closing request come in the same order in both languages, and no part of one language lacks the other. No cut is asked; a length or a count of clauses is not a ground for a cut. Kind recitation is right: r00002 directs the reader to say exactly this passage."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "Withdrawn. My request for a first cut of this row rested on the number of sentences and clauses in the pair, and a count alone is not a ground for a cut. Read again in both languages: one continuous passage with its rendering alongside; I found no place where the Persian leaves the order of the Arabic or where part of one language lacks the other. The split is accepted as it stands."
+        "note": "Fresh read at 1a908eac. One uncut recitation row: Arabic 672 and Persian 522 code points, both whole, ID unchanged. Read side by side from start to end: the six opening greetings, the farewell sentence, the two conditional clauses, the prayer not to be parted, the prayer for return and the closing request come in the same order in both languages, and no part of one language lacks the other. No cut is asked; a length or a count of clauses is not a ground for a cut. Kind recitation is right: r00002 directs the reader to say exactly this passage."
       }
     ],
     "punctuation": [],
@@ -52,6 +52,6 @@
   },
   "layout": {
     "decision": "accept",
-    "note": "Withdrawn: my request to re-pair r00003 part by part after a first cut rested on sentence and clause counts alone; that row is accepted as paired."
+    "note": "Fresh review of all 3 rows in both languages at agent-5 isolated snapshot 1a908eac. The item is unchanged since 4aae1ccd: item, mapping, plan and layout have the same Git objects at 4aae1ccd, 1a908eac, agent-5's tip 8fa542a6 and here, and the five text values the item uses are identical and match their hash IDs. Row order follows the source: heading, instruction, recitation. No cut, no join, no proposed space, no alias, no retired ID. Link check over every row ID published for this item since the frozen base (4 ID meanings in 2 versions, 1373 code points): every code point opens the same character. The only point I had left open was the kind of r00001-sf8ca119bc7deb30b; the coordinator decided to keep heading, and I agree for the reasons in the note on r00001. Nothing stays open in this item. This is a reviewer's acceptance of the split, roles and mapping; it is not a scholarly or rights approval, and it approves no provisional historical-link candidate."
   }
 }
