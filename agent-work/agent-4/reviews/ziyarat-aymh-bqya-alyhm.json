@@ -4,11 +4,11 @@
   "item": "ziyarat-aymh-bqya-alyhm",
   "author": "agent-3",
   "reviewer": "agent-4",
-  "author_commit": "434d4c7a36a9e86faa00184ff85abc261a637037",
-  "plan_sha256": "95f0c3b46f0c8ad1e0acc790c53bb6765c46e535c3c3bc9bb75ee5296b60d6ee",
-  "layout_sha256": "3d9dc5f57a761731aea4a64f842d6159df95f7d87167b00eac2ca4f2560073ca",
-  "result_item_sha256": "b7bb4ecdb55d0a8ad890422035712b43eb46970a7c07f6523f41b37ca68bfafc",
-  "result_record_sha256": "fb96c12b3802a82bd98c9cee58a79e5319f1b8ebe9dc6bb3487fb8f38f06ae0d",
+  "author_commit": "6ded46b3e894d1dd2ed901157b821ea2d5a4139e",
+  "plan_sha256": "b1f317c5f32b793dc12a85deb910badebc9891b77dbfc3fcaa220ba045cbee2a",
+  "layout_sha256": "530822ef5be78d9cf84176bc48977adde495c79bdcb1df12f4a5e082012317d2",
+  "result_item_sha256": "5f17491551df5a3de7c42108f4ba48bb1c670990895910ced45fb49508a48a50",
+  "result_record_sha256": "424a06b4327f7a12724aad4b19f3cea7fd8fb5e41dcf9c23a6c8e072ec92306a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "e9f2870e0152cbe42a0d60a7b265defa4c534d19f1d27da4ca9d858fbd54fc85",
     "author": "agent-3",
     "reviewer": "agent-4",
-    "preview_sha256": "b00f3c858b9cb54db007d2aee95220f86f81fa24a048fc5d08c66a5991a386be",
+    "preview_sha256": "3a4d0eebb9dda28b1a0a93fa2f797c8b4149267a2fb7d16edbe336fa8ac62be2",
     "sources": [
       {
         "row": "r00001",
@@ -29,8 +29,8 @@
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Correction to my prior review: output r00002-s16b235f3fb54b1a5, source [0,173), directs preparation for visitation and is labelled note. Please assess instruction role while preserving source and links; the following [173,188) instruction remains separate."
+        "kind": "accept",
+        "note": "Snapshot 6ded46b3: [0,173) is now an instruction, followed by the existing [173,188) instruction. The prior role finding is resolved; source characters and links verified."
       },
       {
         "row": "r00003",
@@ -119,9 +119,9 @@
       {
         "row": "r00009",
         "language": "ar",
-        "split": "uncertain",
-        "kind": "revise",
-        "note": "The Arabic slot and recitation role correct the prior wrong-slot/note finding for the prayer, but the same field contains an embedded Persian instruction at source code points [126,153). The code point immediately before it is U+0020; the next Arabic recitation begins at 153 with no source separator. Do not infer or apply a cut from this observation: author must assess safe boundaries, role and historical links. Review remains open."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Snapshot 6ded46b3: Source [0,126) remains ar recitation; [126,153) is the Persian instruction in fa; [153,707) is ar recitation. Source U+0020 at 125 stays in the first span; no separator is inserted at 153. Prior live IDs and aliases map exactly to source-lineage spans. The previous mixed-role finding is resolved."
       },
       {
         "row": "r00009",
@@ -147,9 +147,9 @@
       {
         "row": "r00011",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "revise",
-        "note": "Correction to my prior review: output r00011-sff3d5cac0f1b50db, source [0,37), is a direction but labelled note. The following [37,183) contains both attribution and a direction. Assess roles and safe grouping; no cut is authorized by this observation."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Snapshot 6ded46b3: The source is classified [0,37) instruction, [37,85) attribution note, [85,145) instruction and [145,183) attribution note. Cuts preserve all text, punctuation and old links; prior findings resolved."
       },
       {
         "row": "r00012",
@@ -169,22 +169,22 @@
         "row": "r00013",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Correction to my prior review: output r00013-s29f78d985229d34c, source [0,120), directs the reader but is labelled note; subsequent attribution/gloss pieces are separate. Assess role and historical links."
+        "kind": "accept",
+        "note": "Snapshot 6ded46b3: [0,120) is now instruction, with the later unchanged note pieces retained. The previous role finding is resolved; prior live and alias fields map exactly."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "uncertain",
-        "kind": "revise",
-        "note": "Correction to my prior review: the Persian source [0,552) is editorial commentary with directions, not a recitation throughout. Assess mixed roles and safe grouping, preserving the existing text and historical links; this does not prescribe a cut."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Snapshot 6ded46b3: The source is classified [0,235) note, [235,254) instruction, [254,475) note and [475,552) instruction. No punctuation or boundary whitespace is changed; old links are mapped exactly. Prior findings resolved."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Snapshot 434d4c7a fixes the earlier r00001 and r00009 language slots and corrects the role of the main r00009 prayer. Review remains open for the embedded r00009 Persian instruction and newly identified r00002, r00011, r00013 and r00014 role concerns; my prior acceptances for those unchanged rows were errors. All tested source and alias segment text matches target slices; prior row IDs remain accounted for. No editorial-space insertions are proposed. Do not infer an authorized revision or migration."
+    "decision": "accept",
+    "note": "At 6ded46b3 the prior slot and role corrections are retained and the five flagged sources have been independently checked against their full source and result. All 25 previously live row IDs and 3 old aliases were checked, 33 old fields and 53 current mapping segments reproduce exact target slices. No editorial space is proposed. Prior unchanged source decisions remain as reviewed; agent review is not scholarly, translation or rights approval."
   }
 }
