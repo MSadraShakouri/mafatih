@@ -4,7 +4,7 @@
   "author": "agent-4",
   "baseline_item_sha256": "cc9982a7f206ff3c3486cd085c0910dff7d1513408106b36c2db4fc68f5e2f1f",
   "plan_sha256": "41f857544e722ceb5373f6ac549f0cd8a05fd3cee2f198bd52360279deac167a",
-  "layout_sha256": "b5b0d2b29fea997e2de1292f645317c5aff07a9b91dc8cf7f569be7a840f4cce",
+  "layout_sha256": "5f232a3a3dc8fc22e73f5905cc796a32e1643f9bbee446bc939a115c79c2704e",
   "rows": [
     {
       "original": {
@@ -2810,11 +2810,11 @@
         "fa": "t6dfd20348901d0e6967d9dcd"
       },
       "results": [
-        "r00104"
+        "m0b60322fada23b6d553b9540"
       ],
       "ar": [
         {
-          "row": "r00104",
+          "row": "m0b60322fada23b6d553b9540",
           "language": "ar",
           "start": 0,
           "end": 51,
@@ -2823,7 +2823,7 @@
       ],
       "fa": [
         {
-          "row": "r00104",
+          "row": "m0b60322fada23b6d553b9540",
           "language": "fa",
           "start": 0,
           "end": 51,
@@ -2838,24 +2838,24 @@
         "fa": "tf650420b980d7ac28106b386"
       },
       "results": [
-        "me84a895753305791d0946c64"
+        "m0b60322fada23b6d553b9540"
       ],
       "ar": [
         {
-          "row": "me84a895753305791d0946c64",
+          "row": "m0b60322fada23b6d553b9540",
           "language": "ar",
           "start": 0,
           "end": 37,
-          "target_start": 0
+          "target_start": 52
         }
       ],
       "fa": [
         {
-          "row": "me84a895753305791d0946c64",
+          "row": "m0b60322fada23b6d553b9540",
           "language": "fa",
           "start": 0,
           "end": 29,
-          "target_start": 0
+          "target_start": 52
         }
       ]
     },
@@ -2866,24 +2866,24 @@
         "fa": "td40e1391de47d300ba7e644e"
       },
       "results": [
-        "me84a895753305791d0946c64"
+        "m0b60322fada23b6d553b9540"
       ],
       "ar": [
         {
-          "row": "me84a895753305791d0946c64",
+          "row": "m0b60322fada23b6d553b9540",
           "language": "ar",
           "start": 0,
           "end": 49,
-          "target_start": 38
+          "target_start": 90
         }
       ],
       "fa": [
         {
-          "row": "me84a895753305791d0946c64",
+          "row": "m0b60322fada23b6d553b9540",
           "language": "fa",
           "start": 0,
           "end": 38,
-          "target_start": 30
+          "target_start": 82
         }
       ]
     },
@@ -3989,6 +3989,32 @@
         }
       ],
       "fa": []
+    },
+    {
+      "original": {
+        "id": "me84a895753305791d0946c64",
+        "ar": "tb8abf7240c8f7756d30d85bd",
+        "fa": "t5c30a613229b91b14e1d0709",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m0b60322fada23b6d553b9540",
+          "language": "ar",
+          "start": 0,
+          "end": 87,
+          "target_start": 52
+        }
+      ],
+      "fa": [
+        {
+          "row": "m0b60322fada23b6d553b9540",
+          "language": "fa",
+          "start": 0,
+          "end": 68,
+          "target_start": 52
+        }
+      ]
     }
   ],
   "insertions": [
@@ -4146,18 +4172,18 @@
       "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
     },
     {
-      "row": "me84a895753305791d0946c64",
+      "row": "m0b60322fada23b6d553b9540",
       "language": "ar",
-      "target_start": 37,
+      "target_start": 89,
       "value": " ",
       "left": "r00105",
       "right": "r00106",
       "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
     },
     {
-      "row": "me84a895753305791d0946c64",
+      "row": "m0b60322fada23b6d553b9540",
       "language": "fa",
-      "target_start": 29,
+      "target_start": 81,
       "value": " ",
       "left": "r00105",
       "right": "r00106",
@@ -4198,6 +4224,24 @@
       "left": "r00133",
       "right": "r00134",
       "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+    },
+    {
+      "row": "m0b60322fada23b6d553b9540",
+      "language": "ar",
+      "target_start": 51,
+      "value": " ",
+      "left": "r00104",
+      "right": "me84a895753305791d0946c64",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "m0b60322fada23b6d553b9540",
+      "language": "fa",
+      "target_start": 51,
+      "value": " ",
+      "left": "r00104",
+      "right": "me84a895753305791d0946c64",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
 }
