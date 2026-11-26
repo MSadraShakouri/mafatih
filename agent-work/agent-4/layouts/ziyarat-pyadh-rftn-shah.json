@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-pyadh-rftn-shah",
   "author": "agent-4",
-  "plan_sha256": "3d9c7bdebb56c3ad6b018d2dd97a7c91150fcf67574cf04a70e836b480a6df23",
+  "plan_sha256": "d534181e21fa37d26220f2ef4af414281a54e7787727557cafa96d87043b4dc4",
   "rows": [
     {
       "row": "r00001",
@@ -23,7 +23,8 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -191,7 +192,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -199,7 +201,8 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -225,20 +228,16 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "ar",
             "part": 0
           },
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "quotation"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     }
