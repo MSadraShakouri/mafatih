@@ -3,8 +3,8 @@
   "item": "dua-dvm-daahay-vqt",
   "author": "agent-4",
   "baseline_item_sha256": "d6adc03c4722b3be6cadc6353fd558f56d7ea4ef1956b0b214592397d6fd32dc",
-  "plan_sha256": "0297673ae0d495e7eac9ea0d44f3983d43fcbe37ee630c92dc53ce50f04bbcd3",
-  "layout_sha256": "4a406cb99d3c3f9086f5a5c770e2f50f0b3d1f8bfdcfa99e0bde9de3e1b9affb",
+  "plan_sha256": "d4cd93284ec7581d10d71edf60d9cca30c3c7778dd8fb17a83f0e9e1a3370501",
+  "layout_sha256": "7241f18c9337565ba4eb8f25d82f9759d00846ad631936123328cd4ecdae912f",
   "rows": [
     {
       "original": {
@@ -309,12 +309,12 @@
         "fa": "tf72f023cad415b3e795ce233"
       },
       "results": [
-        "r00011-sfb3628401260f71e",
-        "r00011-s957df2caedcfa97e"
+        "r00011-s4012e08619408362",
+        "r00011-s6dfdda7f8c84b2c7"
       ],
       "ar": [
         {
-          "row": "r00011-sfb3628401260f71e",
+          "row": "r00011-s4012e08619408362",
           "language": "ar",
           "start": 0,
           "end": 179,
@@ -323,9 +323,16 @@
       ],
       "fa": [
         {
-          "row": "r00011-s957df2caedcfa97e",
+          "row": "r00011-s4012e08619408362",
           "language": "fa",
           "start": 0,
+          "end": 139,
+          "target_start": 0
+        },
+        {
+          "row": "r00011-s6dfdda7f8c84b2c7",
+          "language": "fa",
+          "start": 139,
           "end": 230,
           "target_start": 0
         }
@@ -429,6 +436,49 @@
           "language": "fa",
           "start": 0,
           "end": 93,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00011-sfb3628401260f71e",
+        "ar": "t7af47add0f7e25da727596b2",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00011-s4012e08619408362",
+          "language": "ar",
+          "start": 0,
+          "end": 179,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00011-s957df2caedcfa97e",
+        "ar": null,
+        "fa": "tf72f023cad415b3e795ce233",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00011-s4012e08619408362",
+          "language": "fa",
+          "start": 0,
+          "end": 139,
+          "target_start": 0
+        },
+        {
+          "row": "r00011-s6dfdda7f8c84b2c7",
+          "language": "fa",
+          "start": 139,
+          "end": 230,
           "target_start": 0
         }
       ]

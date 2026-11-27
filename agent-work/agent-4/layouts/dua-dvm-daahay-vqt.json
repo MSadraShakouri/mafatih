@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-dvm-daahay-vqt",
   "author": "agent-4",
-  "plan_sha256": "0297673ae0d495e7eac9ea0d44f3983d43fcbe37ee630c92dc53ce50f04bbcd3",
+  "plan_sha256": "d4cd93284ec7581d10d71edf60d9cca30c3c7778dd8fb17a83f0e9e1a3370501",
   "rows": [
     {
       "row": "r00001",
@@ -224,16 +224,20 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
           "fa": {
             "source": "fa",
-            "part": 0
+            "part": 1
           },
-          "kind": "instruction"
+          "kind": "note"
         }
       ]
     },
