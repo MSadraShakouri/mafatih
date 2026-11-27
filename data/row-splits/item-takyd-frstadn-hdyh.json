@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "item-takyd-frstadn-hdyh",
   "author": "agent-4",
   "baseline_item_sha256": "7f065144daf200f5e5dfd916376d220a620caf846d8e85971da55b4d070fbd8b",
   "plan_sha256": "12bcc85e834644f1cad61a16b9e2465887302b1421da8f3085ac6ad5778ad9e3",
-  "layout_sha256": "22c2e56586608e0afca08db7747dcbcfe715f2ec243584cdcb4887ec31e4d10a",
+  "layout_sha256": "0c21874267d8e83dd594eba1301c37697687c3595492e164d6976193e4029b06",
   "rows": [
     {
       "original": {
@@ -22,19 +22,22 @@
           "row": "r00001-s3db48b9cdceccaca",
           "language": "fa",
           "start": 0,
-          "end": 190
+          "end": 190,
+          "target_start": 0
         },
         {
           "row": "r00001-scc7f1fee80b053cc",
           "language": "fa",
           "start": 190,
-          "end": 545
+          "end": 545,
+          "target_start": 0
         },
         {
           "row": "r00001-s4f78d4da3927072d",
           "language": "ar",
           "start": 545,
-          "end": 583
+          "end": 583,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -42,7 +45,8 @@
           "row": "r00001-s4f78d4da3927072d",
           "language": "fa",
           "start": 0,
-          "end": 32
+          "end": 32,
+          "target_start": 0
         }
       ]
     },
@@ -53,15 +57,16 @@
         "fa": "t787cb8820a80d5612c13aed5"
       },
       "results": [
-        "r00002"
+        "m160799be4d73bd0d42aa8703"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m160799be4d73bd0d42aa8703",
           "language": "fa",
           "start": 0,
-          "end": 31
+          "end": 31,
+          "target_start": 0
         }
       ]
     },
@@ -72,21 +77,23 @@
         "fa": "t953719992973b1ce5168795c"
       },
       "results": [
-        "r00003-s3dbdf5fec4f8f8e0",
+        "m160799be4d73bd0d42aa8703",
         "r00003-s8a68ed4afb081fe5"
       ],
       "ar": [
         {
-          "row": "r00003-s3dbdf5fec4f8f8e0",
+          "row": "m160799be4d73bd0d42aa8703",
           "language": "fa",
           "start": 0,
-          "end": 98
+          "end": 98,
+          "target_start": 32
         },
         {
           "row": "r00003-s8a68ed4afb081fe5",
           "language": "ar",
           "start": 98,
-          "end": 198
+          "end": 198,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -94,7 +101,8 @@
           "row": "r00003-s8a68ed4afb081fe5",
           "language": "fa",
           "start": 0,
-          "end": 74
+          "end": 74,
+          "target_start": 0
         }
       ]
     },
@@ -114,13 +122,15 @@
           "row": "r00004-saabe6c8229b130ea",
           "language": "fa",
           "start": 0,
-          "end": 61
+          "end": 61,
+          "target_start": 0
         },
         {
           "row": "r00004-s6781612fc75b6e23",
           "language": "fa",
           "start": 61,
-          "end": 796
+          "end": 796,
+          "target_start": 0
         }
       ]
     },
@@ -133,7 +143,7 @@
       "results": [
         "r00005-saba56576a8f4a2e8",
         "r00005-sbf827ad20eeda70b",
-        "r00005-sfc8c0739f3d3693c"
+        "mfccbd38d2d777e9fef4e1544"
       ],
       "ar": [],
       "fa": [
@@ -141,19 +151,22 @@
           "row": "r00005-saba56576a8f4a2e8",
           "language": "fa",
           "start": 0,
-          "end": 367
+          "end": 367,
+          "target_start": 0
         },
         {
           "row": "r00005-sbf827ad20eeda70b",
           "language": "fa",
           "start": 367,
-          "end": 914
+          "end": 914,
+          "target_start": 0
         },
         {
-          "row": "r00005-sfc8c0739f3d3693c",
+          "row": "mfccbd38d2d777e9fef4e1544",
           "language": "fa",
           "start": 914,
-          "end": 994
+          "end": 994,
+          "target_start": 0
         }
       ]
     },
@@ -164,17 +177,76 @@
         "fa": "t6ebd399191f7813e32f3e94f"
       },
       "results": [
-        "r00006"
+        "mfccbd38d2d777e9fef4e1544"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00006",
+          "row": "mfccbd38d2d777e9fef4e1544",
           "language": "fa",
           "start": 0,
-          "end": 42
+          "end": 42,
+          "target_start": 81
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00003-s3dbdf5fec4f8f8e0",
+        "ar": null,
+        "fa": "tc66373d2bd23b6445d27c692",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m160799be4d73bd0d42aa8703",
+          "language": "fa",
+          "start": 0,
+          "end": 98,
+          "target_start": 32
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-sfc8c0739f3d3693c",
+        "ar": null,
+        "fa": "t19bb5b1e7e1f9ffaf8b4b345",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mfccbd38d2d777e9fef4e1544",
+          "language": "fa",
+          "start": 0,
+          "end": 80,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m160799be4d73bd0d42aa8703",
+      "language": "fa",
+      "target_start": 31,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-s3dbdf5fec4f8f8e0",
+      "reason": "Complete the attributed report while retaining source context."
+    },
+    {
+      "row": "mfccbd38d2d777e9fef4e1544",
+      "language": "fa",
+      "target_start": 80,
+      "value": " ",
+      "left": "r00005-sfc8c0739f3d3693c",
+      "right": "r00006",
+      "reason": "Complete the attributed dream account without endorsing its claim."
     }
   ]
 }

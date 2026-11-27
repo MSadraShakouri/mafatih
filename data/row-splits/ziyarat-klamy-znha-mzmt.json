@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "ziyarat-klamy-znha-mzmt",
   "author": "agent-4",
   "baseline_item_sha256": "895c1eb8dc9f927a29b9ea7fdb706ce1a331086ac9a32acf9a82a9c7df2bd277",
   "plan_sha256": "07f73a49c1477ad20ca29fe9cea673ddaea131ecfc46da790699611cf3d8367b",
-  "layout_sha256": "e37a20ec02669fbad545d743b5e2157871d6ce1702ea05db3dad8999ed439e3a",
+  "layout_sha256": "dfc74ca2e12c90791e58499239f36eef11a5216e6144b14ef3b9fa2a21a33d51",
   "rows": [
     {
       "original": {
@@ -142,7 +142,7 @@
       },
       "results": [
         "r00004-s1c27c3072f6239a1",
-        "r00004-s6781612fc75b6e23"
+        "m899dbdc938a27a2380864f75"
       ],
       "ar": [],
       "fa": [
@@ -154,7 +154,7 @@
           "target_start": 0
         },
         {
-          "row": "r00004-s6781612fc75b6e23",
+          "row": "m899dbdc938a27a2380864f75",
           "language": "fa",
           "start": 181,
           "end": 203,
@@ -169,21 +169,39 @@
         "fa": "tce94a973d370385b790a3ee1"
       },
       "results": [
-        "r00005"
+        "m899dbdc938a27a2380864f75"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00005",
+          "row": "m899dbdc938a27a2380864f75",
           "language": "fa",
           "start": 0,
           "end": 105,
-          "target_start": 0
+          "target_start": 23
         }
       ]
     }
   ],
   "aliases": [
+    {
+      "original": {
+        "id": "r00004-s6781612fc75b6e23",
+        "ar": null,
+        "fa": "t7d49762fc9f5a2e7b88d88cb",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m899dbdc938a27a2380864f75",
+          "language": "fa",
+          "start": 0,
+          "end": 22,
+          "target_start": 0
+        }
+      ]
+    },
     {
       "original": {
         "id": "r00003-sc6b0b67395b28e70",
@@ -363,6 +381,17 @@
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m899dbdc938a27a2380864f75",
+      "language": "fa",
+      "target_start": 22,
+      "value": " ",
+      "left": "r00004-s6781612fc75b6e23",
+      "right": "r00005",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
 }

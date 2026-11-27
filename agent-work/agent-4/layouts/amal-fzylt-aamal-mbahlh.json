@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-fzylt-aamal-mbahlh",
   "author": "agent-4",
-  "plan_sha256": "317aa25ff59693799f5c864ff7618313ea5540ee8c5e22cedb5201f047a43cd0",
+  "plan_sha256": "818d410ee8dde8461577fc52dcbe5604eab5a4cb5f3f57afadd1724fdf6d7cda",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,63 @@
             "source": "fa",
             "part": 0
           },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 5
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 6
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 7
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -275,7 +331,15 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -289,7 +353,23 @@
             "source": "fa",
             "part": 0
           },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction"
         }
       ]
     }
@@ -329,6 +409,24 @@
       "spacing": {
         "mode": "both-space",
         "reason": "Complete the paired address and preserve source spelling."
+      }
+    },
+    {
+      "left": "md8e06d1e315070eb19d036d6",
+      "right": "r00010",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "m7a347fd487d949419b3b6810",
+      "right": "m0ec25d03a46b7c21faf4a0f3",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
       }
     }
   ]

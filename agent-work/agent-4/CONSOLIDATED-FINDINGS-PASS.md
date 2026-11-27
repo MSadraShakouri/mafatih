@@ -1,6 +1,6 @@
 # Consolidated Agent 4 findings pass and review inventory
 
-Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `2f96f55fb869be7acfd02e61fd57dbb80cd802cb`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 60 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
+Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `f3b725a666979ae447a3b552845ba84f28df10aa`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 72 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
 
 ## Guarded continuation operations
 
@@ -123,12 +123,66 @@ Each row below was checked by formal `merge-preview` and `merge-rows`, including
 | `amal-aamal-akhr-zy` | `r00001-s2aa090098a6808db` → `r00002-sa35c43f774f2ad27` | `m22c9ea2bd0ac7d871ca0a282` | fa 37 | `a3cf28716159dfa36f903f9fd51de2b054acd6f4` |
 | `amal-aamal-ta-hfdhm` | `r00001-s6293118522084e62` → `r00002` | `m2ab7a23f6aa07a562f0b2137` | fa 64 | `602d916842724977a306d0da0cfc17a2dc56ed9c` |
 | `amal-avzh-aqrb` | `r00001-saa3ec3f116259495` → `r00002-s715b6a57ac51205e` | `m9d14b9d90e88617efb036061` | fa 44 | `23fbc781227ce084a0ed837efb0160965b178dd4` |
+| `dua-brs-pysy` | `r00001` → `r00002-s16b235f3fb54b1a5` | `m3767be2002ea05319ea3898b` | fa 89 | `1083a03e7f8c7eb13d995a992c55f5c9909acc0f` |
+| `dua-brs-pysy` | `r00005-s0d0eb7c1a676184c` → `r00006` | `md2cd2a8e3fa9a4541337deed` | ar 194, fa 150 | `1083a03e7f8c7eb13d995a992c55f5c9909acc0f` |
+| `item-mqdmh` | `r00035` → `r00036` | `mb508ac774f5ddeab7c104298` | fa 70 | `c84674b8f3741a343062c6bedeb3089cc99c18be` |
+| `item-takyd-frstadn-hdyh` | `r00002` → `r00003-s3dbdf5fec4f8f8e0` | `m160799be4d73bd0d42aa8703` | fa 31 | `2f6bd1ef951661a357e7df15e993a20105b64b66` |
+| `item-takyd-frstadn-hdyh` | `r00005-sfc8c0739f3d3693c` → `r00006` | `mfccbd38d2d777e9fef4e1544` | fa 80 | `2f6bd1ef951661a357e7df15e993a20105b64b66` |
+| `khavas-astkharh-tsbyh-mnqvl` | `r00003` → `r00004-s1c27c3072f6239a1` | `mb031c3fc555ed48e8f4f811f` | fa 149 | `9c1ebdf977b19cc9b4e974a643936331b88b47ec` |
+| `khavas-rvyt-jnazh` | `r00005-sbf827ad20eeda70b` → `r00006` | `m71070a93a821f424314a68b0` | fa 263 | `500d2167f993a8fc46845c205fc1dde3d0f07a9c` |
+| `khavas-tshya-jnazh` | `r00001-sa021c793590ec5ab` → `r00002-s16b235f3fb54b1a5` | `m270f915c213b32e7c0d08cab` | fa 97 | `619d6c028427c6f89bac8362f8894e278fb3266d` |
+| `ziyarat-avl-fzylt-hsyn` | `r00002` → `r00003-s1828851db03b603e` | `m06b6eb25700a9ef6ad4c439d` | fa 589 | `e391cede62bd0e2cef68844694032e7e7c33f5e8` |
+| `ziyarat-avl-fzylt-hsyn` | `r00003-s1b27bb8c75bc48e1` → `r00004-saabe6c8229b130ea` | `m0db83e16ff5931ff82ca8e2d` | fa 207 | `e391cede62bd0e2cef68844694032e7e7c33f5e8` |
+| `ziyarat-avl-fzylt-hsyn` | `r00007` → `r00008-s88eba61461dcd450` | `m766a58f2c1d2e33c25667e90` | fa 131 | `e391cede62bd0e2cef68844694032e7e7c33f5e8` |
+| `amal-fzylt-aamal-mbahlh` | `md8e06d1e315070eb19d036d6` → `r00010` | `m3d847fef89470089ff5f8ccd` | ar 1509, fa 1407 | `fe5d904df1661dbb44e8718df0e19b7089b556c3` |
+| `amal-fzylt-aamal-mbahlh` | `m7a347fd487d949419b3b6810` → `m0ec25d03a46b7c21faf4a0f3` | `m63ddb0937642b8b3208ec0d7` | ar 1683, fa 1223 | `fe5d904df1661dbb44e8718df0e19b7089b556c3` |
+| `dua-hftm-daa-vardh` | `r00001-sa3fbdb6fa458720f` → `r00002-sb122fdb543464f4c` | `m231b07e67564246ab96b482f` | fa 142 | `9271013ad058640df70a42bbff7eddbcb5057e7c` |
+| `dua-hftm-daa-vardh` | `r00003` → `r00004` | `m7e83ec947ecdd6acf81cfaf2` | ar 139, fa 123 | `9271013ad058640df70a42bbff7eddbcb5057e7c` |
+| `dua-pnjm-daahay-vardh` | `r00002` → `r00003` | `mc9fb4e07220cee25903c8756` | ar 158, fa 103 | `9007fc0800ffeacb32b450b58dfd7436a56c31ff` |
+| `dua-srya-alajabh-2` | `meebe010e72ce12260b2d1fd3` → `r00010` | `m496152cfaa1feeddbaee17df` | ar 1763, fa 1457 | `7e287ae08d8f4ab4ad44e1e452a6ef1b3b7e9edc` |
+| `item-abvhmzh-smaly` | `r00149` → `r00150` | `m32d6c8159423db04a2f6b0a9` | fa 176 | `99278fea86c3ed8d6e2d3a545b975d3513ddb07b` |
+| `item-abvhmzh-smaly` | `m097f71ac454258abb77ddc43` → `r00160` | `mbaf3bfd57c1442907dfdbd8d` | ar 211, fa 187 | `99278fea86c3ed8d6e2d3a545b975d3513ddb07b` |
+| `item-shshm-rqah-ay` | `r00002-s2b8dad77a9de939d` → `r00003-s42bfee71bb8fa135` | `ma174e83076135512e10a7a12` | ar 140, fa 77 | `88423a292d0757d19df21605161074731500e2d3` |
+| `khavas-hrz-zyn-alaabdyn-2` | `r00002` → `r00003-sdcc09225d4cc1588` | `m209459181f5c535f90c72a08` | ar 280, fa 214 | `3322ce53635cfb12da272377b1f91928697aea33` |
+| `khavas-hrz-zyn-alaabdyn-2` | `r00004-s261a3e7d683a4772` → `r00005` | `me6ac8497dd7e0f79aeb8a43d` | ar 285, fa 261 | `3322ce53635cfb12da272377b1f91928697aea33` |
+| `namaz-ayd-ftr` | `r00003` → `r00004-s1c27c3072f6239a1` | `m7e85621e71b31ade466c89a6` | fa 132 | `ef5880d0b1f0ca123daab699764a58a4e90119ab` |
+| `namaz-ayd-ghdyr` | `r00007` → `r00008` | `mbef2fd55cc24a6e61869ad4d` | fa 163 | `ad7928ede38f565fd3177490ac119e443dd65345` |
+| `namaz-ayd-ghdyr` | `r00009` → `r00010` | `mb8279524ae80f18620fd6e95` | fa 687 | `ad7928ede38f565fd3177490ac119e443dd65345` |
+| `namaz-fzylt-hmd-ayh` | `r00001-s730fcd91e8c82399` → `r00002` | `m1eca89aa7e8154b93c65ada7` | fa 35 | `17cf3d5ad0fb6b641f76ada342204beef65c4083` |
+| `ziyarat-item-9` | `r00002` → `r00003-s1828851db03b603e` | `mb06959671f4889f4fcae0ad7` | fa 287 | `8c9ba1848f8b1d96abe7bebc9beb6355da30e1ae` |
+| `ziyarat-item-9` | `r00004-sb4f7d6d5791cc484` → `r00005-s1fa57fc41bdb7621` | `m0a711b43cbc191f28410aead` | ar 149, fa 92 | `8c9ba1848f8b1d96abe7bebc9beb6355da30e1ae` |
+| `ziyarat-item-9` | `r00006-s301ee66f47674098` → `r00007` | `m3a4872849e82569a9307d3b7` | fa 89 | `8c9ba1848f8b1d96abe7bebc9beb6355da30e1ae` |
+| `ziyarat-jnab-hany-bn` | `r00002-s35f3eab1f8a5bb20` → `r00003-s52eef1bddbca12d2` | `m179ed1cbe5dcfc6810c2484f` | ar 170, fa 115 | `66d949d530e9ed7ca32f6ad5640eb90e23b57895` |
+| `ziyarat-klamy-znha-mzmt` | `r00004-s6781612fc75b6e23` → `r00005` | `m899dbdc938a27a2380864f75` | fa 22 | `88b5baf0aad9f26bb82b30945370c55ca7f37a7c` |
+| `ziyarat-mtlqh-amyrmvmnyn-alyh` | `m58291c8acf15ea51c3d86f70` → `m3ce474b02f47d8c0beb2ed47` | `mdd6a8c3337fe1e4d0dc4dcb7` | ar 763, fa 466 | `34462f5aeb6fcd35c94a95155f1314d62b453c2f` |
+| `ziyarat-rsvl-sly-allh-2` | `m0ec22c534e4a8243f7274b12` → `r00006` | `mc1440c1fef0efd58b3b52933` | ar 1111, fa 791 | `614f15dbb62d384fa28770b0045de8130422a568` |
+| `ziyarat-rsvl-sly-allh-2` | `m281ce4b4178f3c9c97ad3c39` → `r00017` | `ma365163e47edf4642eed28d3` | ar 1908, fa 1738 | `614f15dbb62d384fa28770b0045de8130422a568` |
+| `ziyarat-shhday-ahd` | `r00002-se66d2a8d6f823518` → `r00003-s89233bbc4b8f1768` | `m682b6b06cb08185c03d22bf6` | ar 274, fa 199 | `4294c04a2fffd884b568061d49380e1bed78162c` |
+| `ziyarat-shhday-ahd` | `r00003-s20b0ac40a7179b1f` → `r00004` | `m3abfb9bedb1d83bc0f57eb0f` | ar 326, fa 249 | `4294c04a2fffd884b568061d49380e1bed78162c` |
+| `ziyarat-warith` | `r00104` → `me84a895753305791d0946c64` | `m0b60322fada23b6d553b9540` | ar 51, fa 51 | `6c3d6f965493fd2938e2409591e1b71eb455642e` |
+| `amal-mjavl-bvdn-daayy` | `r00001-s8939275b275c817a` → `r00002-s16b235f3fb54b1a5` | `ma8b9bf1b31c0193c0b7a6231` | fa 142 | `19a072b23b800935576219c4978267e9a0a07c16` |
+| `amal-mjavl-bvdn-daayy` | `r00003` → `r00004` | `mda583183d4e72901c7be411e` | fa 51 | `19a072b23b800935576219c4978267e9a0a07c16` |
+| `dua-dvm-daahay-vqt` | `r00001-s1c3eddaf647bdfb3` → `r00002` | `ma00aafef2ac547637becb290` | ar 78, fa 65 | `9dbe61e7d6db46826216e0224da46671edf02d08` |
+| `dua-dvm-daahay-vqt` | `r00005-s43eb5e9b2992d81f` → `r00006` | `m9889b0af16baf18236b345e7` | ar 97, fa 93 | `9dbe61e7d6db46826216e0224da46671edf02d08` |
+| `amal-asharh` | `r00008-scd9253eebe43dc9a` → `r00009` | `m8f9d30c25264242bdd47812b` | ar 127, fa 82 | `ed66c4cad5159dfc1efa7fab506d3638ae1d6823` |
+| `item-mqdmh` | HOLD | — | — | — |
+| `item-abvhmzh-smaly` | HOLD | — | — | — |
+| `amal-mjavl-bvdn-daayy` | `r00001-s205e9629de3f86b8` → `r00001-sd0076416ed435839` | `m852025f9308fa668a933146b` |  | `2689e1f9cab660d06101ff478f5da03bdfe0d4e5` |
+| `item-mqdmh` | `r00030` → `r00031` | `mad9f481bf064ad56c42032ef` |  | `6872e9e203cd1339a30c0e2135b6591e8737df69` |
+| `item-abvhmzh-smaly` | `r00220-s399964bc13dc3b3a` → `r00221` | `md9495583f15fa7214a9d8bed` |  | `39150f075d36ab13c9b87d58b82855ff203f3229` |
+| `ziyarat-pnjm-an-ayd` | `r00025` → `r00026-s3d84d2748946a2f6` | `m37eb0bcb2a74b81cf00ed4a7` | fa 31 | `5e759363704c63a6187c220a8ac0001f565e84ba` |
+| `dua-hftm-daa-vardh` | `r00007-s96935ee66e3fd322` → `r00008` | `mdcacc0ca270ecc0f07ff9b1d` | ar 218, fa 221 | `fda57a6389654858fe323f92c288e4de934a45f3` |
+| `dua-pnjm-daahay-vardh` | `r00005-sed8af929f9f62b80` → `r00006` | `mf09a727c289f5661a102ef37` | ar 218, fa 204 | `f0541650f2874cbeaf6412b4b2b73788fdb7f7c5` |
+| `ziyarat-pyadh-rftn-shah` | `r00001-sc5e9d9539705078a` → `r00001-sdc643a20efc8b62b` | `m7645b194dc96728f453647f6` |  | `df9e4066878e5841c1e0b482558c1da813ce9493` |
+| `ziyarat-pyadh-rftn-shah` | `r00012` → `r00013-s579535577e8a6fbf` | `m0543999e8a015ed1dc3c9c8d` | fa 146 | `df9e4066878e5841c1e0b482558c1da813ce9493` |
+| `ziyarat-pyadh-rftn-shah` | `m7645b194dc96728f453647f6` → `r00002` | `m2cd1d730c8288e258e1ff763` | fa 433 | `4243fc8a22362cec1e4daab2d5cdde6c3179a9d6` |
+| `ziyarat-pyadh-rftn-shah` | `m0543999e8a015ed1dc3c9c8d` → `r00013-s6790b23d332073b7` | `m4ce7d17863ad185d4eb41c84` |  | `4243fc8a22362cec1e4daab2d5cdde6c3179a9d6` |
 
 `sura-rahman` preserved audio-reciter row, relations and alignment files; verse 33 and 54 markers remain in their respective Arabic and Persian result fields. These checks do not certify external audio timing.
 
 ## Guarded live revisions
 
-Formal previews were bound to each exact parent and confirmed by digest. Previous live and record fields were checked against exact target slices; original pooled values were unchanged. Thirteen one-to-one role/paired revisions are deliberately partial; other cited rows and unequal cuts remain open. See commit diffs and current plan/layout for exact source slots, parts and retired IDs.
+Formal previews were bound to each exact parent and confirmed by digest. Previous live and record fields were checked against exact target slices; original pooled values were unchanged. Role and paired revisions may be deliberately partial; other cited rows and unequal cuts remain open. See commit diffs and current plan/layout for exact source slots, parts and retired IDs.
 
 | Item | Frozen source rows revised | Commit |
 | --- | --- | --- |
@@ -162,6 +216,54 @@ Formal previews were bound to each exact parent and confirmed by digest. Previou
 | `namaz-ayd-ftr` | r00002, r00010 | `3add8867fd6d81ef4aebf4630c7914bf70c01ac8` |
 | `ziyarat-dvm-nymh-rjb` | r00003, r00008 | `8317d5bd98d10b21e4a5ee30a792eb0d1cfb5b01` |
 
+### Subsequent guarded revisions
+
+The following logs record per-item preview and commit; inspect each referenced commit and current plan/layout for exact source slots, roles, boundaries and retired IDs. All remain subject to independent review.
+
+| Item | Revision commit | Retired IDs |
+| --- | --- | --- |
+| `ziyarat-aly-alnqy-alyh` | `0afd96a91b08c943316aae53894106fa40ab5dc4` | `r00006-sd441b11af7c6fc50`, `r00006-sffb0fbe94541cff2`, `r00006-s6b2b0ff07b4b8ae2`, `r00006-s99b2880b659f859b` |
+| `ziyarat-amamyn-askryyn-alyhma` | `6283eba57081ffac8baa61f479605404105b3977` | `r00002-sb4c2bfb77eb89124`, `r00002-s93ed69e2ceaad8b5`, `r00002-s16b235f3fb54b1a5`, `r00002-s7912db66cde98eb8` |
+| `amal-fzylt-dhvalarz-aamal` | `5090314244f6b07b0f61c9d449d38742063d5444` | `r00010-sba85b7a436ecc56e`, `r00010-s68bc5adb439ddf26`, `r00010-seb219ae3b3f3af47`, `r00010-s0df7b38f9b05a58b` |
+| `amal-aamal-rvyt-hlal` | `9805e309111234118de571d91519d75d4f4c63f9` | `r00006-sd441b11af7c6fc50`, `r00006-sffb0fbe94541cff2`, `r00006-sac7cfe4397cd2200`, `r00006-s99b2880b659f859b` |
+| `amal-mjavl-bvdn-daayy` | `1c68edac737d894a5c7935aadcc40516eab1557a` | `r00005-s65910f28bd2bd075`, `r00005-saba56576a8f4a2e8`, `r00009-sea2e7a71d8f713f2`, `r00009-sace04f5552303cc5`, `r00010-s7b1cf06aeba5667e`, `r00010-seb219ae3b3f3af47`, `r00011-s74e819cfe8448d9a`, `r00011-sff3d5cac0f1b50db`, `r00012-sb69f67f5bacb4705`, `r00012-s233dd7da462b3635` |
+| `amal-fzylt-thlyl-masvr` | `33bbc71fe8fad86d60b0b096ce3564af24eee843` | `r00003-se283c95e6594ac46`, `r00003-s1828851db03b603e`, `r00004-sa44b8f05e3e4e602`, `r00004-saabe6c8229b130ea`, `r00009-s7e35f20e21823632`, `r00009-sace04f5552303cc5`, `r00010-s68bc5adb439ddf26`, `r00010-s422466e378436746` |
+| `dua-dvm-daahay-vqt` | `acdd6447e65206ef1fee5c70bf3596ababe24a6d` | `r00001-sccd769a9e29adea8`, `r00001-sc5e9d9539705078a`, `r00005-s091ecf41cca5cd79`, `r00005-saba56576a8f4a2e8` |
+| `amal-asharh` | `4d669c917dedd083807c18696cda421b83854f64` | `r00008-s32a6f39eb1428d59`, `r00008-s88eba61461dcd450` |
+| `amal-fzylt-dhvalarz-aamal` | `f9f9ad93246a511640c556fa46deb37a2199be9e` | `r00006-sffb0fbe94541cff2`, `r00006-sac7cfe4397cd2200` |
+| `amal-mjavl-bvdn-daayy` | `e44bf2c038f77b150577e96cc7e06cce1a716cd5` | `r00001-s87a4572572fe3091`, `r00006-s816b520837ffe102`, `r00006-s6b2b0ff07b4b8ae2` |
+| `amal-aamal-rvyt-hlal` | `45190537e80c380aed3b7e9dd8ade5313ff9b746` | `r00001-sc5e9d9539705078a`, `r00001-sa3fbdb6fa458720f` |
+| `amal-aamal-arfh-2` | `ec83cd85d538a0acd97ed13c32c2070b6f5f30d9` | `r00002-s16b235f3fb54b1a5` |
+| `amal-fzylt-dhvalarz-aamal` | `b5372df28b7531059209e92bc358786c6be2bffe` |  |
+| `dua-srya-alajabh-2` | `b70d11d523b855de7bd6ddccbc2cf727dcbe7cf9` |  |
+| `ziyarat-mkhts-mhmd-tqy` | `bf5f2d1362a44a25002d2bf0022ee24ef74aff7c` | `r00001`, `r00008` |
+| `amal-nymh-shaban` | `ed31c5b900175c527d899ad3b618ae2678f57aea` | `r00001` |
+| `amal-fzylt-bsm-allh` | `7d567bf68526fecb0bd74d2a8ea0296dbbcec137` | `r00003` |
+| `dua-srya-alajabh-2` | `44a974ba462a5f6ce3aaec998ffe4ca66f75e5ac` | `r00001`, `r00005`, `r00011`, `r00015`, `r00017` |
+| `ziyarat-pnjm-an-ayd` | `992e0567c4e34574da53c285f40c07ff726ff7cc` | `r00032` |
+| `amal-fzylt-taqyb` | `1ec380f1e431b552551c107dbc0084c59d03ccb4` | `r00001` |
+| `amal-fzylt-bsm-allh` | `3f8409554db86586c8270f1a1070a07b780c0dca` | `r00001-s3db48b9cdceccaca`, `r00001-s3e4b70ad1b9cb544` |
+| `khavas-nvshth-ay-hmrah` | `dd958ff47a8d78c4399d120161445f4692b8f888` | `r00003-se283c95e6594ac46`, `r00003-s1828851db03b603e`, `r00004-sa44b8f05e3e4e602`, `r00004-saabe6c8229b130ea`, `r00008-s32a6f39eb1428d59`, `r00008-s88eba61461dcd450`, `r00009-s7e35f20e21823632`, `r00009-sace04f5552303cc5` |
+| `ziyarat-pyadh-rftn-shah` | `8d48d74f563095ce088f757aa0abf2b839a5fcb5` | `r00001-sa3fbdb6fa458720f`, `r00013-s96dd8ca70a0636e5`, `r00013-s0f742e17d4e21e88`, `r00015-sad231d5ea719cca1`, `r00015-sd760fea7c38647a2` |
+| `amal-aamal-shaban` | `0a8c6306ce6fcb9e64a2ec9777baa3909b536a3a` | `r00003-sa84854240323e3e5`, `r00003-sf4b2084d004db1f5`, `r00004-saabe6c8229b130ea`, `r00004-s2be99374d16bcc7b`, `r00006-sac7cfe4397cd2200`, `r00006-s34abe30a2fd8c1a9`, `r00007-s5227989a1cf80a5b`, `r00007-s5b62bfa785d14038` |
+| `amal-fzylt-dhvalarz-aamal` | `4d6fc20c2109100e3f2645042a863545d53e846a` | `r00009-s701ebc58f72e5bbc`, `r00009-sf7cef5d6daa9e7b3`, `r00011-sff3d5cac0f1b50db`, `r00011-s6dfdda7f8c84b2c7`, `r00011-s122bf2e78f29d187`, `r00011-s59f9c95dc110e447`, `r00012-s233dd7da462b3635`, `r00012-s931d9a2aca1bb966`, `r00012-s848bface27c946c0` |
+| `dua-hftm-daa-vardh` | `edafbde47414701fda5a92db49d3b4a1b99d3911` | `r00006-sac7cfe4397cd2200`, `r00007-s207e67823f746577`, `r00009-sace04f5552303cc5`, `r00010-s0df7b38f9b05a58b`, `r00011-sff3d5cac0f1b50db`, `r00011-sd0acd38d458f476f`, `r00011-s122bf2e78f29d187` |
+| `dua-pnjm-daahay-vardh` | `cb5744422b7d34204c38ebc164f6eca41690d535` | `r00004-saabe6c8229b130ea`, `r00005-saba56576a8f4a2e8`, `r00008-s88eba61461dcd450`, `r00010-seb219ae3b3f3af47`, `r00011-sff3d5cac0f1b50db`, `r00011-sd0acd38d458f476f`, `r00011-se0e81718ac9a10fa`, `r00013-s10b6794608c8a935` |
+| `khavas-nvshth-ay-hmrah` | `eeca322446dd2eeddf2ceb61ce4152e8e17feed8` | `r00002-s16b235f3fb54b1a5`, `r00005-saba56576a8f4a2e8`, `r00005-s7f8fe392f228390a`, `r00006-sac7cfe4397cd2200`, `r00006-s99b2880b659f859b` |
+| `namaz-ayd-ftr` | `edcf65c90354a21694f50c007585ed097ec6ed68` | `r00005-saba56576a8f4a2e8`, `r00005-sbf827ad20eeda70b`, `r00006-s6b2b0ff07b4b8ae2`, `r00006-s99b2880b659f859b`, `r00006-saa9b9be4b3d5606d`, `r00007-s5227989a1cf80a5b`, `r00007-s5b62bfa785d14038`, `r00008-s88eba61461dcd450`, `r00008-sb553e7372366eba9`, `r00009-sace04f5552303cc5`, `r00009-sf7cef5d6daa9e7b3`, `r00009-sd005fa4b9d879a1b`, `r00011-sff3d5cac0f1b50db`, `r00011-s6dfdda7f8c84b2c7` |
+| `ziyarat-aly-alnqy-alyh` | `4c91514943ccf4ac1c4a40cb8323b1bf4e64caf6` | `r00002-s16b235f3fb54b1a5`, `r00002-s7912db66cde98eb8`, `r00003-s1828851db03b603e`, `r00003-s1b27bb8c75bc48e1`, `r00003-s2fd8d78ba1da248f`, `r00004-saabe6c8229b130ea`, `r00004-s6781612fc75b6e23`, `r00004-s1eea81343f83a892`, `r00007-s5227989a1cf80a5b`, `r00007-s5b62bfa785d14038`, `r00009-sace04f5552303cc5`, `r00009-sf7cef5d6daa9e7b3`, `r00009-s0e2f47428da34cf4`, `r00010-s422466e378436746` |
+| `ziyarat-daahay-bad-alyh` | `2be5cc02964c32d4c111ae2b888bf2bf3ccd231b` | `r00002-s16b235f3fb54b1a5`, `r00002-s7912db66cde98eb8`, `r00004-s2be99374d16bcc7b`, `r00005-sbf827ad20eeda70b` |
+| `ziyarat-dvm-nymh-rjb` | `33ac998875be788e69cb58eea708bf6a8b527cc8` | `r00002-s16b235f3fb54b1a5`, `r00002-s7912db66cde98eb8`, `r00004-saabe6c8229b130ea`, `r00004-s2be99374d16bcc7b`, `r00005-saba56576a8f4a2e8`, `r00005-s7f8fe392f228390a`, `r00009-sace04f5552303cc5`, `r00009-sf7cef5d6daa9e7b3` |
+| `dua-hftm-daa-vardh` | `6d9aac9f577baa206c6c5bffee99e336e4c6fd39` | `r00006-sffb0fbe94541cff2`, `r00006-sb387dc06664daf82`, `r00007-sd40ca7b7f73b78f7`, `r00007-s7028dc1aa2a207ae`, `r00009-s7e35f20e21823632`, `r00009-s5e860a6509b30134` |
+| `dua-pnjm-daahay-vardh` | `6a85ebbe3da1006ca3e03bb4adf00f79e71ba652` | `r00004-sa44b8f05e3e4e602`, `r00004-s3cbe2fb303b35f97`, `r00005-s091ecf41cca5cd79`, `r00005-s27dc65d0b47dda8c`, `r00008-s32a6f39eb1428d59`, `r00008-s002c606f8c143947` |
+| `ziyarat-aly-alnqy-alyh` | `e151698aa999f96b5b01aa7c989a231d651bba7a` | `r00010-s68bc5adb439ddf26`, `r00010-se5e1c7152c99d111` |
+| `dua-pnjm-daahay-vardh` | `bcbbe9e9cd82e88ca357f83cf6fe3143d9f13187` |  |
+| `ziyarat-avl-fzylt-hsyn` | `12542d936e5507c19fa384afb3ed4a97ab850edb` |  |
+| `ziyarat-rsvl-sly-allh-2` | `fb575df02105a4557efb33b9ba93f4069fea1a38` | `r00001` |
+| `ziyarat-pnjm-an-ayd` | `0cc4bab619560c756d28364b3e0aef9791bf6400` | `r00003` |
+| `ziyarat-dvm-nymh-rjb` | `3279981a78492633a3de19d48ce9c6ae632eb88a` | `r00001` |
+| `ziyarat-mkhts-mhmd-tqy` | `9bef40ff393f3e259420f8ed98c0585459bf83e2` | `r00016`, `r00020` |
+
 ## Remaining holds, by original finding
 
 This is a conservative inventory: original `revise`/`uncertain` source IDs are listed even where a partial author correction above touches them, until Agent 5 independently verifies the entire record. Entries retain prior triage context and do not assert that old tooling limitations all still apply; the new guarded live revisions demonstrate that some earlier nonadjacent-output pairing can be represented without a forced join. Do not perform an alias migration or blindly rebind a provisional candidate. See original peer review JSON for each precise subfinding, and the named prior triage file for its source-level assessment.
@@ -169,7 +271,7 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | Item | Original triage | Original finding IDs / languages | Author state |
 | --- | --- | --- | --- |
 | `amal-aamal-akhr-zy` | needs clarification; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa` | changed; full re-review and residual findings open |
-| `amal-aamal-arfh-2` | migration-blocked; `AGENT-5-TRIAGE-PARTIAL.md` | `r00002/fa`, `r00026/ar`, `r00026/fa`, `r00027/ar`, `r00027/fa` | unchanged; prior finding open unless independently accepted later |
+| `amal-aamal-arfh-2` | migration-blocked; `AGENT-5-TRIAGE-PARTIAL.md` | `r00002/fa`, `r00026/ar`, `r00026/fa`, `r00027/ar`, `r00027/fa` | changed; full re-review and residual findings open |
 | `amal-aamal-hrm-hsyn` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00010/fa`, `r00011/fa`, `r00012/fa`, `r00013/fa`, `r00014/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-aamal-nv-ayd` | blocked by tool limitation/link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa` | changed; full re-review and residual findings open |
 | `amal-aamal-nvzdhm-rmzan` | migration-blocked; `AGENT-5-TRIAGE-PARTIAL.md` | `r00005/ar`, `r00005/fa` | changed; full re-review and residual findings open |
@@ -182,18 +284,18 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | `amal-asharh` | blocked by link migration; `AGENT-5-TRIAGE-BATCH-1.md` | `r00002/fa`, `r00003/fa`, `r00007/fa`, `r00008/fa`, `r00009/fa` | changed; full re-review and residual findings open |
 | `amal-avzh-aqrb` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/ar`, `r00002/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-aamal-mbahlh` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa`, `r00013/ar`, `r00013/fa`, `r00014/ar`, `r00014/fa`, `r00015/ar`, `r00015/fa`, `r00016/ar`, `r00016/fa`, `r00017/fa`, `r00018/fa` | changed; full re-review and residual findings open |
-| `amal-fzylt-bsm-allh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/ar`, `r00001/fa`, `r00002/fa`, `r00003/fa` | unchanged; prior finding open unless independently accepted later |
+| `amal-fzylt-bsm-allh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/ar`, `r00001/fa`, `r00002/fa`, `r00003/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-dhvalarz-aamal` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/fa`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa`, `r00013/fa`, `r00014/fa`, `r00015/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-msjd-kvfh` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00002/fa`, `r00003/fa`, `r00004/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-shaban` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00005/fa`, `r00006/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-taqyb` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00003/fa`, `r00004/fa` | changed; full re-review and residual findings open |
 | `amal-fzylt-thlyl-masvr` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00006/fa`, `r00009/fa`, `r00010/ar`, `r00010/fa` | changed; full re-review and residual findings open |
-| `amal-mjavl-bvdn-daayy` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00007/fa`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa` | unchanged; prior finding open unless independently accepted later |
+| `amal-mjavl-bvdn-daayy` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00007/fa`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa` | changed; full re-review and residual findings open |
 | `amal-nymh-shaban` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa` | changed; full re-review and residual findings open |
 | `amal-slvat-shaban` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00006/ar`, `r00006/fa` | unchanged; prior finding open unless independently accepted later |
 | `amal-tarykh-fzylt-msjd` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00007/fa`, `r00008/fa`, `r00009/fa` | changed; full re-review and residual findings open |
 | `amal-tkbyrat` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa` | changed; full re-review and residual findings open |
-| `dua-brs-pysy` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00007/fa` | unchanged; prior finding open unless independently accepted later |
+| `dua-brs-pysy` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00007/fa` | changed; full re-review and residual findings open |
 | `dua-dvm-daahay-vqt` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00005/fa`, `r00006/fa`, `r00009/fa`, `r00011/fa`, `r00013/fa` | changed; full re-review and residual findings open |
 | `dua-hftm-daa-vardh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-2.md` | `r00001/fa`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/fa`, `r00006/fa`, `r00007/ar`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa` | changed; full re-review and residual findings open |
 | `dua-mashlul` | needs clarification; `AGENT-5-TRIAGE-BATCH-2.md` | `r00022/ar`, `r00022/fa`, `r00023/ar`, `r00023/fa`, `r00225/ar`, `r00225/fa`, `r00226/ar`, `r00226/fa`, `r00229/ar`, `r00229/fa`, `r00230/ar`, `r00230/fa`, `r00234/fa` | changed; full re-review and residual findings open |
@@ -205,19 +307,19 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | `item-asharh-6` | migration-blocked; `AGENT-5-TRIAGE-PARTIAL.md` | `r00005/fa` | unchanged; prior finding open unless independently accepted later |
 | `item-fvayd-adab-trbt` | needs clarification; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00007/ar`, `r00007/fa`, `r00008/fa`, `r00010/fa`, `r00011/fa`, `r00018/fa`, `r00019/fa`, `r00020/ar`, `r00020/fa`, `r00021/ar`, `r00021/fa`, `r00022/ar`, `r00022/fa`, `r00023/ar`, `r00023/fa`, `r00024/fa`, `r00026/fa`, `r00027/fa`, `r00028/fa`, `r00029/fa` | changed; full re-review and residual findings open |
 | `item-jrb-dml-qvba` | needs clarification; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa` | changed; full re-review and residual findings open |
-| `item-mqdmh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00003/ar`, `r00003/fa`, `r00030/fa`, `r00031/fa`, `r00035/fa`, `r00036/fa` | unchanged; prior finding open unless independently accepted later |
+| `item-mqdmh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00003/ar`, `r00003/fa`, `r00030/fa`, `r00031/fa`, `r00035/fa`, `r00036/fa` | changed; full re-review and residual findings open |
 | `item-shshm-rqah-ay` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/fa` | changed; full re-review and residual findings open |
-| `item-takyd-frstadn-hdyh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/ar`, `r00001/fa`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/fa` | unchanged; prior finding open unless independently accepted later |
+| `item-takyd-frstadn-hdyh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/ar`, `r00001/fa`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/fa`, `r00005/fa`, `r00006/fa` | changed; full re-review and residual findings open |
 | `khavas-adab-aqyqh` | needs clarification; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/fa` | changed; full re-review and residual findings open |
-| `khavas-astkharh-tsbyh-mnqvl` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/fa`, `r00004/fa` | unchanged; prior finding open unless independently accepted later |
+| `khavas-astkharh-tsbyh-mnqvl` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/fa`, `r00004/fa` | changed; full re-review and residual findings open |
 | `khavas-hrz-mvlana-alqaym` | needs clarification; `AGENT-5-TRIAGE-BATCH-3.md` | `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa` | unchanged; prior finding open unless independently accepted later |
 | `khavas-hrz-mvsy-kazm` | needs clarification; `AGENT-5-TRIAGE-BATCH-3.md` | `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa` | unchanged; prior finding open unless independently accepted later |
 | `khavas-hrz-zyn-alaabdyn-2` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-3.md` | `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa` | changed; full re-review and residual findings open |
 | `khavas-kfn-myt` | needs clarification; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/fa`, `r00002/fa` | changed; full re-review and residual findings open |
 | `khavas-mzmt-trashydn-rysh` | needs clarification; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/fa`, `r00002/fa` | unchanged; prior finding open unless independently accepted later |
 | `khavas-nvshth-ay-hmrah` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-4.md` | `r00002/ar`, `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00007/fa`, `r00008/fa`, `r00009/ar`, `r00009/fa` | changed; full re-review and residual findings open |
-| `khavas-rvyt-jnazh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/ar`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00005/fa`, `r00006/fa` | unchanged; prior finding open unless independently accepted later |
-| `khavas-tshya-jnazh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/fa`, `r00002/fa` | unchanged; prior finding open unless independently accepted later |
+| `khavas-rvyt-jnazh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/ar`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00005/fa`, `r00006/fa` | changed; full re-review and residual findings open |
+| `khavas-tshya-jnazh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/fa`, `r00002/fa` | changed; full re-review and residual findings open |
 | `monajat-mnajat-sfr` | needs clarification; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/ar`, `r00001/fa`, `r00002/ar`, `r00002/fa` | changed; full re-review and residual findings open |
 | `namaz-anjam-daa-vst` | needs clarification; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/fa` | changed; full re-review and residual findings open |
 | `namaz-astkharh-sahb-jvahr` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-4.md` | `r00001/fa` | changed; full re-review and residual findings open |
@@ -232,10 +334,10 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | `namaz-taqyb-sbh-nql` | needs clarification; `AGENT-5-TRIAGE-BATCH-4.md` |  | unchanged; prior finding open unless independently accepted later |
 | `sura-rahman` | needs clarification; `AGENT-5-TRIAGE-BATCH-4.md` | `r00035/ar`, `r00035/fa`, `r00036/ar`, `r00036/fa`, `r00057/ar`, `r00058/ar`, `r00058/fa` | changed; full re-review and residual findings open |
 | `ziyarat-abas-alyh-alslam` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/fa`, `r00006/ar`, `r00006/fa`, `r00007/ar`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00014/ar`, `r00014/fa`, `r00015/ar`, `r00015/fa`, `r00016/ar`, `r00016/fa`, `r00017/ar`, `r00017/fa` | changed; full re-review and residual findings open |
-| `ziyarat-aly-alnqy-alyh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00006/ar`, `r00006/fa`, `r00007/ar`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/fa`, `r00011/fa` | unchanged; prior finding open unless independently accepted later |
+| `ziyarat-aly-alnqy-alyh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00006/ar`, `r00006/fa`, `r00007/ar`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/fa`, `r00011/fa` | changed; full re-review and residual findings open |
 | `ziyarat-amamyn-askryyn-alyhma` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00006/fa`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/fa` | changed; full re-review and residual findings open |
 | `ziyarat-amamzadh-hmzh-alyh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00002/fa` | changed; full re-review and residual findings open |
-| `ziyarat-avl-fzylt-hsyn` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/fa`, `r00007/fa`, `r00008/fa` | unchanged; prior finding open unless independently accepted later |
+| `ziyarat-avl-fzylt-hsyn` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/fa`, `r00003/fa`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/fa`, `r00007/fa`, `r00008/fa` | changed; full re-review and residual findings open |
 | `ziyarat-daahay-bad-alyh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/ar`, `r00002/fa`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/fa` | changed; full re-review and residual findings open |
 | `ziyarat-dvm-nymh-rjb` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00008/fa`, `r00009/fa` | changed; full re-review and residual findings open |
 | `ziyarat-item-9` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/fa`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/fa`, `r00007/fa` | changed; full re-review and residual findings open |
@@ -244,12 +346,51 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | `ziyarat-mkhts-mhmd-tqy` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00008/fa`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa`, `r00013/ar`, `r00013/fa`, `r00016/fa`, `r00017/fa`, `r00019/fa`, `r00020/fa` | changed; full re-review and residual findings open |
 | `ziyarat-mtlqh-amyrmvmnyn-alyh` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00013/ar`, `r00013/fa`, `r00014/ar`, `r00014/fa`, `r00017/ar`, `r00017/fa`, `r00018/ar`, `r00018/fa`, `r00019/ar`, `r00019/fa`, `r00020/ar`, `r00020/fa`, `r00022/ar`, `r00022/fa`, `r00023/ar`, `r00023/fa`, `r00024/ar`, `r00024/fa`, `r00025/ar`, `r00025/fa`, `r00026/ar`, `r00026/fa`, `r00027/ar`, `r00027/fa`, `r00028/ar`, `r00028/fa`, `r00029/ar`, `r00029/fa`, `r00030/ar`, `r00030/fa`, `r00031/ar`, `r00031/fa`, `r00033/fa`, `r00034/ar`, `r00034/fa`, `r00036/ar`, `r00036/fa`, `r00037/ar`, `r00037/fa`, `r00041/ar`, `r00041/fa`, `r00042/ar`, `r00042/fa`, `r00045/fa` | changed; full re-review and residual findings open |
 | `ziyarat-pnjm-an-ayd` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00002/fa`, `r00003/fa`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00013/ar`, `r00013/fa`, `r00014/ar`, `r00014/fa`, `r00017/fa`, `r00018/ar`, `r00018/fa`, `r00019/ar`, `r00019/fa`, `r00020/ar`, `r00020/fa`, `r00021/fa`, `r00022/ar`, `r00022/fa`, `r00025/fa`, `r00026/ar`, `r00026/fa`, `r00028/ar`, `r00028/fa`, `r00029/ar`, `r00029/fa`, `r00032/fa` | changed; full re-review and residual findings open |
-| `ziyarat-pyadh-rftn-shah` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00013/fa`, `r00015/ar` | unchanged; prior finding open unless independently accepted later |
+| `ziyarat-pyadh-rftn-shah` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00013/fa`, `r00015/ar` | changed; full re-review and residual findings open |
 | `ziyarat-rsvl-sly-allh-2` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00004/ar`, `r00004/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00007/ar`, `r00007/fa`, `r00008/ar`, `r00008/fa`, `r00009/ar`, `r00009/fa`, `r00010/ar`, `r00010/fa`, `r00011/ar`, `r00011/fa`, `r00012/ar`, `r00012/fa`, `r00013/ar`, `r00013/fa`, `r00014/ar`, `r00014/fa`, `r00015/ar`, `r00015/fa`, `r00016/ar`, `r00016/fa`, `r00017/ar`, `r00017/fa`, `r00018/ar`, `r00018/fa`, `r00019/ar`, `r00019/fa`, `r00020/ar`, `r00020/fa`, `r00021/ar`, `r00021/fa`, `r00023/ar`, `r00023/fa`, `r00024/ar`, `r00024/fa` | changed; full re-review and residual findings open |
 | `ziyarat-shhday-ahd` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/ar`, `r00001/fa`, `r00002/ar`, `r00002/fa`, `r00003/ar`, `r00003/fa`, `r00004/ar`, `r00004/fa`, `r00005/fa` | changed; full re-review and residual findings open |
 | `ziyarat-shykh-klyny-alrhmh` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00001/fa`, `r00002/fa` | changed; full re-review and residual findings open |
 | `ziyarat-warith` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00010/fa`, `r00014/ar`, `r00014/fa`, `r00029/ar`, `r00029/fa`, `r00030/ar`, `r00030/fa`, `r00053/fa`, `r00054/ar`, `r00054/fa`, `r00074/ar`, `r00074/fa`, `r00075/ar`, `r00075/fa`, `r00077/ar`, `r00077/fa`, `r00078/ar`, `r00078/fa`, `r00084/ar`, `r00084/fa`, `r00085/ar`, `r00085/fa`, `r00090/ar`, `r00090/fa`, `r00091/ar`, `r00091/fa`, `r00092/ar`, `r00092/fa`, `r00093/ar`, `r00093/fa`, `r00094/ar`, `r00094/fa`, `r00098/ar`, `r00098/fa`, `r00099/ar`, `r00099/fa`, `r00104/ar`, `r00104/fa`, `r00105/ar`, `r00105/fa`, `r00106/ar`, `r00106/fa`, `r00115/ar`, `r00115/fa`, `r00116/ar`, `r00116/fa`, `r00133/ar`, `r00133/fa`, `r00134/ar`, `r00134/fa`, `r00147/fa`, `r00148/ar` | changed; full re-review and residual findings open |
 | `ziyarat-zkrmsajd-mazmh-mdynh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/fa`, `r00004/ar`, `r00004/fa` | changed; full re-review and residual findings open |
+
+## Additional guarded local pass after `42d55546`
+
+These are author changes, not peer acceptance. Revision previews were bound to their exact parent; reachable historical fields and mappings were checked by the guarded revision tool. The source positions below are Unicode code-point offsets in the frozen source field. Prior joins were recomposed rather than discarded where noted. Review each role, pairing, source-language provenance, old link and proposed separator independently. Do not use this table as an approval to rebind or migrate retired IDs.
+
+| Item | Source rows / local operation | Commit |
+| --- | --- | --- |
+| `dua-dvm-daahay-vqt` | r00011/fa cut 139; paired supplied prayer, separated attributed outcome | `fc29a59` |
+| `ziyarat-shhday-ahd` | r00001/r00002 paired continuation; r00005/fa cut 47 | `a9ada24`, `44d9cee` |
+| `amal-aamal-nv-ayd` | r00003/fa cut 172 | `9ba9e37` |
+| `amal-fzylt-dhvalarz-aamal` | r00007/fa cut 6; r00001, r00002/fa cut 16, r00003 roles; later adjacent account join | `ea2c09f`, `218feeb`, `2993f6d` |
+| `dua-pnjm-daahay-vardh` | r00009/fa cut 6 | `b7b7088` |
+| `item-shshm-rqah-ay` | r00001/fa cuts 5,72; r00004/fa cut 125 | `799abd0` |
+| `ziyarat-aly-alnqy-alyh` | r00011/fa cut 50 | `06ccaf9` |
+| `ziyarat-abas-alyh-alslam` | r00002/fa cut 111 | `214debf` |
+| `amal-fzylt-aamal-mbahlh` | r00001/fa cuts 17,944,950,955,961,973,979; r00017/fa 6; r00018/fa 17,188 | `60a754c`, `e65e9b4` |
+| `dua-mashlul` | r00234/fa cuts 22,59 | `39849ff` |
+| `item-fvayd-adab-trbt` | r00005/fa cuts 191,260,630,636,647; r00008/fa 23,129; r00018/fa 115,120,251,327; r00019/fa 403,409,644; r00024/fa 33,273,483; r00018/r00019 note continuation. The r00018 formula remains from the Persian source field and is placed in the Arabic slot without creating a translation. | `fa874a7`, `1f73043`, `300b3d3` |
+| `item-jrb-dml-qvba` | r00001/fa cuts 31,96,107; attributed claims remain claims, not medical advice | `fadb60e` |
+| `ziyarat-avl-fzylt-hsyn` | r00004/fa cut 254 plus existing cuts 532,626; r00005/ar Persian part reclassified; r00007/fa cut 91; recomposed earlier r00003/r00004 and r00007/r00008 joins, preserving the previously added spaces | `24c7afb`, `d8c751b`, `b154e18` |
+| `ziyarat-warith` | r00003/fa cuts 251,423,489,508; r00010/fa 74,126,370,474,547; r00147/fa 128 and r00148/ar Persian report reclassified, followed by adjacent join | `14f0303`, `b9e4382`, `4a509fa` |
+| `ziyarat-mtlqh-amyrmvmnyn-alyh` | r00045/fa cuts 59,93,112,137,166 | `32acff7` |
+| `namaz-ayd-ghdyr` | r00007/fa 76; r00008/fa 142,200,343; r00009/fa 5,183; r00010/fa 205,304,310; recomposed two earlier prose joins | `a7cb625` |
+| `namaz-ayd-ftr` | r00003/fa cut 39; r00004/fa first part classified as note; recomposed prior join | `0ec6a7f` |
+| `khavas-kfn-myt` | r00001/fa cuts 157,206,257,310; recomposed prior continuation join | `c961784` |
+| `amal-fzylt-thlyl-masvr` | r00001/fa cut 9; restore continuous report without changing source anomaly | `7e17cd0` |
+
+### New proposed separators
+
+| Item | Earlier rows | New row | Proposed U+0020 offsets | Commit |
+| --- | --- | --- | --- | --- |
+| `ziyarat-shhday-ahd` | `r00001-sa329ad2c5a367a28` → `r00002-s33ed15b82a54ab62` | `mf49dfe3fcda676cb972a86e9` | ar 304, fa 221 | `a9ada24` |
+| `ziyarat-avl-fzylt-hsyn` | `r00005-s07589039be45be65` → `r00006` | `m35668a6e229b207f2af243cc` | fa 122 | `24c7afb` |
+| `ziyarat-avl-fzylt-hsyn` | `r00004-s78cd245d2e8ca9fe` → `r00005-s9993f31df7edd284` | `m225635dc6106c6e0b6d25906` | fa 300 | `b154e18` |
+| `ziyarat-warith` | `r00147-sd202a7e1a455c8d1` → `r00148-s80f68e0a9692dcbb` | `mbc6c8cc64c2e1b45c7bfe094` | fa 60 | `4a509fa` |
+| `item-fvayd-adab-trbt` | `r00018-sc2a3e9aaadc8b32c` → `r00019-s092599c8f4a16ab7` | `mae28d32e7f63ad62db704f61` | fa 42 | `300b3d3` |
+| `amal-fzylt-dhvalarz-aamal` | `r00002-sa800ebbf817ba8ef` → `r00003` | `mfdf0c2a98f2c628e926da792` | fa 395 | `2993f6d` |
+
+These offsets refer to the named join operation; subsequent revisions can change physical destinations. Check the current row-split record and historical slices rather than assuming a new target from an old row ID.
 
 ## Special holds and verification
 
@@ -262,4 +403,6 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 
 ## Checks on the author branch
 
-At author data commit `23fbc781227ce084a0ed837efb0160965b178dd4`, `npm run check` passed: 304 passed, 0 failed, 3 skipped (optional generated review page, optional alignment candidates, approved lam-pair corpus comparison). Focused merge/revision/version tests passed 14/14; validation passed with 68 unreferenced pooled-text warnings; generated audit ran successfully; mechanical authored audit 115/115 is not independent completion. Focused browser suites passed 56/56 on Chromium 153.0.8010.0, an npm-packaged substitute, not pinned Chromium 156. No APK was built.
+At author data commit `7e17cd008e715e41fd0a74ec71a14af7e7bf4d8f`, `npm run check` passed (304 passed, 3 skipped: optional generated review page, optional alignment candidates, approved lam-pair corpus comparison). Validation passed with 68 unreferenced pooled-text warnings; generated audit ran; authored audit mechanically covered 115/115 items and is not independent approval. Focused browser suites passed 56/56 using Chromium 153.0.8010.0, a substitute for pinned Chromium 156. An earlier full browser run at `9bef40ff` timed out after 373 reported passes and was not a completed run. No APK was built.
+
+The isolated corpus was additionally checked in memory: zero structural errors, two warnings, and `inspect` succeeded for all 72 items changed since `211030da342c75b7de26d657d71af727893568dc`. The first isolated assembly omitted 11 referenced pooled values already present on the author branch; the assembly was corrected additively, content hashes checked, and validation/inspection rerun. This was snapshot construction only, not a new pool repair, alias migration, or provisional-candidate approval.

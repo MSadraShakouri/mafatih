@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-pnjm-an-ayd",
   "author": "agent-4",
-  "plan_sha256": "1e1dcab67cd4c734b30ca8cfd3384ca1dd4ec89996abd4e53a432a842e6e44fa",
+  "plan_sha256": "08a3aea426ea95b746c46ec343feeeb4f56eb7d5fe411bbc243f44ef2890d61a",
   "rows": [
     {
       "row": "r00001",
@@ -43,7 +43,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -441,7 +451,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -578,7 +589,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     }
@@ -654,6 +675,15 @@
       "spacing": {
         "mode": "fa-space",
         "reason": "Complete the attributed report and preserve the claims as reported."
+      }
+    },
+    {
+      "left": "r00025",
+      "right": "r00026-s3d84d2748946a2f6",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the practical instruction and preserve the source movement and prior anchors."
       }
     }
   ]

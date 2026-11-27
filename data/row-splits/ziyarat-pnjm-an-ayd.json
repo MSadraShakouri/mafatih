@@ -3,8 +3,8 @@
   "item": "ziyarat-pnjm-an-ayd",
   "author": "agent-4",
   "baseline_item_sha256": "df8aa5c5e09a880bd0a06a4b00a30a5d78fb42893211396afea3c52804c223a1",
-  "plan_sha256": "1e1dcab67cd4c734b30ca8cfd3384ca1dd4ec89996abd4e53a432a842e6e44fa",
-  "layout_sha256": "2b414b57af6400d424ebb7954b5145db50bbb9de513894094025c241c365ce85",
+  "plan_sha256": "08a3aea426ea95b746c46ec343feeeb4f56eb7d5fe411bbc243f44ef2890d61a",
+  "layout_sha256": "de41c084f8b6865abeba2f2d7c3702570b365f9df3d4ea9adc6740b9faf50d9a",
   "rows": [
     {
       "original": {
@@ -53,14 +53,22 @@
         "fa": "t88eba7bdf611c4e14b34b457"
       },
       "results": [
-        "r00003"
+        "r00003-s3c64ea021249c0c5",
+        "r00003-s661dd4f0230f9ce8"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003",
+          "row": "r00003-s3c64ea021249c0c5",
           "language": "fa",
           "start": 0,
+          "end": 83,
+          "target_start": 0
+        },
+        {
+          "row": "r00003-s661dd4f0230f9ce8",
+          "language": "fa",
+          "start": 83,
           "end": 186,
           "target_start": 0
         }
@@ -653,12 +661,12 @@
         "fa": "t5d2d4209d441b4298d812243"
       },
       "results": [
-        "r00025"
+        "m37eb0bcb2a74b81cf00ed4a7"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00025",
+          "row": "m37eb0bcb2a74b81cf00ed4a7",
           "language": "fa",
           "start": 0,
           "end": 31,
@@ -673,16 +681,16 @@
         "fa": "td433b3c5869f7daa92536cb4"
       },
       "results": [
-        "r00026-s3d84d2748946a2f6",
+        "m37eb0bcb2a74b81cf00ed4a7",
         "r00026-sb0bf64cdb72daaec"
       ],
       "ar": [
         {
-          "row": "r00026-s3d84d2748946a2f6",
+          "row": "m37eb0bcb2a74b81cf00ed4a7",
           "language": "fa",
           "start": 0,
           "end": 5,
-          "target_start": 0
+          "target_start": 32
         },
         {
           "row": "r00026-sb0bf64cdb72daaec",
@@ -856,14 +864,22 @@
         "fa": "tdfa0dd388b3adb92b1499cad"
       },
       "results": [
-        "r00032"
+        "r00032-s77968be005b3cf50",
+        "r00032-s587a47e94fa3ce14"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00032",
+          "row": "r00032-s77968be005b3cf50",
           "language": "fa",
           "start": 0,
+          "end": 15,
+          "target_start": 0
+        },
+        {
+          "row": "r00032-s587a47e94fa3ce14",
+          "language": "fa",
+          "start": 15,
           "end": 142,
           "target_start": 0
         }
@@ -950,6 +966,24 @@
         }
       ],
       "fa": []
+    },
+    {
+      "original": {
+        "id": "r00026-s3d84d2748946a2f6",
+        "ar": null,
+        "fa": "te663a4ffdd032d17eca34e55",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m37eb0bcb2a74b81cf00ed4a7",
+          "language": "fa",
+          "start": 0,
+          "end": 5,
+          "target_start": 32
+        }
+      ]
     }
   ],
   "insertions": [
@@ -1060,6 +1094,15 @@
       "left": "r00001",
       "right": "r00002",
       "reason": "Complete the attributed report and preserve the claims as reported."
+    },
+    {
+      "row": "m37eb0bcb2a74b81cf00ed4a7",
+      "language": "fa",
+      "target_start": 31,
+      "value": " ",
+      "left": "r00025",
+      "right": "r00026-s3d84d2748946a2f6",
+      "reason": "Complete the practical instruction and preserve the source movement and prior anchors."
     }
   ]
 }

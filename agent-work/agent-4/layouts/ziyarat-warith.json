@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-warith",
   "author": "agent-4",
-  "plan_sha256": "41f857544e722ceb5373f6ac549f0cd8a05fd3cee2f198bd52360279deac167a",
+  "plan_sha256": "91b865ce5ccbfd0078eef7c390817271a06a6fe06f3d2f2190d0548ca2cb7f78",
   "rows": [
     {
       "row": "r00001",
@@ -42,6 +42,38 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
           },
           "kind": "note"
         }
@@ -155,6 +187,46 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "quotation"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 5
           },
           "kind": "instruction"
         }
@@ -2529,7 +2601,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -2543,7 +2625,8 @@
             "source": "ar",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     }
@@ -2655,6 +2738,24 @@
       "spacing": {
         "mode": "both-space",
         "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00104",
+      "right": "me84a895753305791d0946c64",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00147-sd202a7e1a455c8d1",
+      "right": "r00148-s80f68e0a9692dcbb",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the attributed explanatory sentence across the source boundary."
       }
     }
   ]
