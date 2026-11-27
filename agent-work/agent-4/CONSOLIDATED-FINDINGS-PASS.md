@@ -1,6 +1,6 @@
 # Consolidated Agent 4 findings pass and review inventory
 
-Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `2f96f55fb869be7acfd02e61fd57dbb80cd802cb`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 72 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
+Frozen base `ffa01da92fbba25731356e8158c295b3824763f0`; Agent 5 peer tip `f3b725a666979ae447a3b552845ba84f28df10aa`. The author changes since `211030da342c75b7de26d657d71af727893568dc` affect 72 items. These changes remain unreviewed, not complete. The earlier four-item isolated snapshot `38eada3411fcf723acb832e5fde40c91603e7d3a` also awaits consolidated review. No candidate migration or register rebinding was performed.
 
 ## Guarded continuation operations
 
@@ -353,6 +353,45 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 | `ziyarat-warith` | needs clarification; `AGENT-5-TRIAGE-BATCH-5.md` | `r00003/fa`, `r00005/ar`, `r00005/fa`, `r00006/ar`, `r00006/fa`, `r00010/fa`, `r00014/ar`, `r00014/fa`, `r00029/ar`, `r00029/fa`, `r00030/ar`, `r00030/fa`, `r00053/fa`, `r00054/ar`, `r00054/fa`, `r00074/ar`, `r00074/fa`, `r00075/ar`, `r00075/fa`, `r00077/ar`, `r00077/fa`, `r00078/ar`, `r00078/fa`, `r00084/ar`, `r00084/fa`, `r00085/ar`, `r00085/fa`, `r00090/ar`, `r00090/fa`, `r00091/ar`, `r00091/fa`, `r00092/ar`, `r00092/fa`, `r00093/ar`, `r00093/fa`, `r00094/ar`, `r00094/fa`, `r00098/ar`, `r00098/fa`, `r00099/ar`, `r00099/fa`, `r00104/ar`, `r00104/fa`, `r00105/ar`, `r00105/fa`, `r00106/ar`, `r00106/fa`, `r00115/ar`, `r00115/fa`, `r00116/ar`, `r00116/fa`, `r00133/ar`, `r00133/fa`, `r00134/ar`, `r00134/fa`, `r00147/fa`, `r00148/ar` | changed; full re-review and residual findings open |
 | `ziyarat-zkrmsajd-mazmh-mdynh` | blocked by link migration or tool limitation; `AGENT-5-TRIAGE-BATCH-5.md` | `r00002/fa`, `r00004/ar`, `r00004/fa` | changed; full re-review and residual findings open |
 
+## Additional guarded local pass after `42d55546`
+
+These are author changes, not peer acceptance. Revision previews were bound to their exact parent; reachable historical fields and mappings were checked by the guarded revision tool. The source positions below are Unicode code-point offsets in the frozen source field. Prior joins were recomposed rather than discarded where noted. Review each role, pairing, source-language provenance, old link and proposed separator independently. Do not use this table as an approval to rebind or migrate retired IDs.
+
+| Item | Source rows / local operation | Commit |
+| --- | --- | --- |
+| `dua-dvm-daahay-vqt` | r00011/fa cut 139; paired supplied prayer, separated attributed outcome | `fc29a59` |
+| `ziyarat-shhday-ahd` | r00001/r00002 paired continuation; r00005/fa cut 47 | `a9ada24`, `44d9cee` |
+| `amal-aamal-nv-ayd` | r00003/fa cut 172 | `9ba9e37` |
+| `amal-fzylt-dhvalarz-aamal` | r00007/fa cut 6; r00001, r00002/fa cut 16, r00003 roles; later adjacent account join | `ea2c09f`, `218feeb`, `2993f6d` |
+| `dua-pnjm-daahay-vardh` | r00009/fa cut 6 | `b7b7088` |
+| `item-shshm-rqah-ay` | r00001/fa cuts 5,72; r00004/fa cut 125 | `799abd0` |
+| `ziyarat-aly-alnqy-alyh` | r00011/fa cut 50 | `06ccaf9` |
+| `ziyarat-abas-alyh-alslam` | r00002/fa cut 111 | `214debf` |
+| `amal-fzylt-aamal-mbahlh` | r00001/fa cuts 17,944,950,955,961,973,979; r00017/fa 6; r00018/fa 17,188 | `60a754c`, `e65e9b4` |
+| `dua-mashlul` | r00234/fa cuts 22,59 | `39849ff` |
+| `item-fvayd-adab-trbt` | r00005/fa cuts 191,260,630,636,647; r00008/fa 23,129; r00018/fa 115,120,251,327; r00019/fa 403,409,644; r00024/fa 33,273,483; r00018/r00019 note continuation. The r00018 formula remains from the Persian source field and is placed in the Arabic slot without creating a translation. | `fa874a7`, `1f73043`, `300b3d3` |
+| `item-jrb-dml-qvba` | r00001/fa cuts 31,96,107; attributed claims remain claims, not medical advice | `fadb60e` |
+| `ziyarat-avl-fzylt-hsyn` | r00004/fa cut 254 plus existing cuts 532,626; r00005/ar Persian part reclassified; r00007/fa cut 91; recomposed earlier r00003/r00004 and r00007/r00008 joins, preserving the previously added spaces | `24c7afb`, `d8c751b`, `b154e18` |
+| `ziyarat-warith` | r00003/fa cuts 251,423,489,508; r00010/fa 74,126,370,474,547; r00147/fa 128 and r00148/ar Persian report reclassified, followed by adjacent join | `14f0303`, `b9e4382`, `4a509fa` |
+| `ziyarat-mtlqh-amyrmvmnyn-alyh` | r00045/fa cuts 59,93,112,137,166 | `32acff7` |
+| `namaz-ayd-ghdyr` | r00007/fa 76; r00008/fa 142,200,343; r00009/fa 5,183; r00010/fa 205,304,310; recomposed two earlier prose joins | `a7cb625` |
+| `namaz-ayd-ftr` | r00003/fa cut 39; r00004/fa first part classified as note; recomposed prior join | `0ec6a7f` |
+| `khavas-kfn-myt` | r00001/fa cuts 157,206,257,310; recomposed prior continuation join | `c961784` |
+| `amal-fzylt-thlyl-masvr` | r00001/fa cut 9; restore continuous report without changing source anomaly | `7e17cd0` |
+
+### New proposed separators
+
+| Item | Earlier rows | New row | Proposed U+0020 offsets | Commit |
+| --- | --- | --- | --- | --- |
+| `ziyarat-shhday-ahd` | `r00001-sa329ad2c5a367a28` → `r00002-s33ed15b82a54ab62` | `mf49dfe3fcda676cb972a86e9` | ar 304, fa 221 | `a9ada24` |
+| `ziyarat-avl-fzylt-hsyn` | `r00005-s07589039be45be65` → `r00006` | `m35668a6e229b207f2af243cc` | fa 122 | `24c7afb` |
+| `ziyarat-avl-fzylt-hsyn` | `r00004-s78cd245d2e8ca9fe` → `r00005-s9993f31df7edd284` | `m225635dc6106c6e0b6d25906` | fa 300 | `b154e18` |
+| `ziyarat-warith` | `r00147-sd202a7e1a455c8d1` → `r00148-s80f68e0a9692dcbb` | `mbc6c8cc64c2e1b45c7bfe094` | fa 60 | `4a509fa` |
+| `item-fvayd-adab-trbt` | `r00018-sc2a3e9aaadc8b32c` → `r00019-s092599c8f4a16ab7` | `mae28d32e7f63ad62db704f61` | fa 42 | `300b3d3` |
+| `amal-fzylt-dhvalarz-aamal` | `r00002-sa800ebbf817ba8ef` → `r00003` | `mfdf0c2a98f2c628e926da792` | fa 395 | `2993f6d` |
+
+These offsets refer to the named join operation; subsequent revisions can change physical destinations. Check the current row-split record and historical slices rather than assuming a new target from an old row ID.
+
 ## Special holds and verification
 
 - `dua-yamn-thl-hady`: 26 provisional candidate destinations remain withheld under stale binding. The independently unapproved recomposition evidence is in `DUA-YAMN-PROVISIONAL-LINEAGE-RECHECK.md`; no register update or migration was made.
@@ -364,4 +403,4 @@ This is a conservative inventory: original `revise`/`uncertain` source IDs are l
 
 ## Checks on the author branch
 
-At author data commit `9bef40ff393f3e259420f8ed98c0585459bf83e2`, npm run check passed (304 passed, 3 skipped: optional generated review page, optional alignment candidates, approved lam-pair corpus comparison). Focused merge/revision/version tests passed 42/42. Validation passed with 68 unreferenced pooled-text warnings; generated audit ran. Focused browser suites passed 56/56 using Chromium 153.0.8010.0, a substitute for pinned Chromium 156. An attempted full browser run timed out after 373 reported passes and is not a completed run. No APK was built.
+At author data commit `7e17cd008e715e41fd0a74ec71a14af7e7bf4d8f`, `npm run check` passed (304 passed, 3 skipped: optional generated review page, optional alignment candidates, approved lam-pair corpus comparison). Validation passed with 68 unreferenced pooled-text warnings; generated audit ran; authored audit mechanically covered 115/115 items and is not independent approval. Focused browser suites passed 56/56 using Chromium 153.0.8010.0, a substitute for pinned Chromium 156. An earlier full browser run at `9bef40ff` timed out after 373 reported passes and was not a completed run. No APK was built.
