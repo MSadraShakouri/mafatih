@@ -4,7 +4,7 @@
   "author": "agent-4",
   "baseline_item_sha256": "cc9982a7f206ff3c3486cd085c0910dff7d1513408106b36c2db4fc68f5e2f1f",
   "plan_sha256": "91b865ce5ccbfd0078eef7c390817271a06a6fe06f3d2f2190d0548ca2cb7f78",
-  "layout_sha256": "8e19065cae925b1264367d8ac2d12ef3830f932d1ace9aeeb34d4d1e93da60e2",
+  "layout_sha256": "c80da77266262b3abcef138185c097db45a979544096f6eb4fa8892222642aff",
   "rows": [
     {
       "original": {
@@ -4046,7 +4046,7 @@
       },
       "results": [
         "r00147-s6ac14aa8ac95408b",
-        "r00147-sd202a7e1a455c8d1"
+        "mbc6c8cc64c2e1b45c7bfe094"
       ],
       "ar": [],
       "fa": [
@@ -4058,7 +4058,7 @@
           "target_start": 0
         },
         {
-          "row": "r00147-sd202a7e1a455c8d1",
+          "row": "mbc6c8cc64c2e1b45c7bfe094",
           "language": "fa",
           "start": 128,
           "end": 188,
@@ -4074,15 +4074,15 @@
         "kind": "instruction"
       },
       "results": [
-        "r00148-s80f68e0a9692dcbb"
+        "mbc6c8cc64c2e1b45c7bfe094"
       ],
       "ar": [
         {
-          "row": "r00148-s80f68e0a9692dcbb",
+          "row": "mbc6c8cc64c2e1b45c7bfe094",
           "language": "fa",
           "start": 0,
           "end": 12,
-          "target_start": 0
+          "target_start": 61
         }
       ],
       "fa": []
@@ -4161,6 +4161,42 @@
     },
     {
       "original": {
+        "id": "r00147-sd202a7e1a455c8d1",
+        "ar": null,
+        "fa": "t5050dd670eaab2a5a4747d2a",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mbc6c8cc64c2e1b45c7bfe094",
+          "language": "fa",
+          "start": 0,
+          "end": 60,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00148-s80f68e0a9692dcbb",
+        "ar": null,
+        "fa": "tb33ac43ce72b8af3a00a0bc3",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mbc6c8cc64c2e1b45c7bfe094",
+          "language": "fa",
+          "start": 0,
+          "end": 12,
+          "target_start": 61
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00148-s8946eea1f6a2cdb4",
         "ar": null,
         "fa": "tb33ac43ce72b8af3a00a0bc3",
@@ -4169,11 +4205,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00148-s80f68e0a9692dcbb",
+          "row": "mbc6c8cc64c2e1b45c7bfe094",
           "language": "fa",
           "start": 0,
           "end": 12,
-          "target_start": 0
+          "target_start": 61
         }
       ]
     }
@@ -4403,6 +4439,15 @@
       "left": "r00104",
       "right": "me84a895753305791d0946c64",
       "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "mbc6c8cc64c2e1b45c7bfe094",
+      "language": "fa",
+      "target_start": 60,
+      "value": " ",
+      "left": "r00147-sd202a7e1a455c8d1",
+      "right": "r00148-s80f68e0a9692dcbb",
+      "reason": "Complete the attributed explanatory sentence across the source boundary."
     }
   ]
 }
