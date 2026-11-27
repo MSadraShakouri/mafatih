@@ -4,7 +4,7 @@
   "author": "agent-4",
   "baseline_item_sha256": "5c2309f094331686d2f0b35aaf8a10b5744922eefb83d70a6febdcdc06992db5",
   "plan_sha256": "4c6cd71dddbfeb0bfc9838888319e4af215375b80b8a11b105db5d6f22776bec",
-  "layout_sha256": "80d78759b6cde8abc70e9897be49e9e04d5770ab4ac053af13aae66f7b12cbcc",
+  "layout_sha256": "adeca18b2812bb52c01c411c3036a6e544823a6808eb766ebf821c051136c4d3",
   "rows": [
     {
       "original": {
@@ -118,7 +118,7 @@
       },
       "results": [
         "r00005-s27c9c493bd8f7f6a",
-        "r00005-s07589039be45be65"
+        "m35668a6e229b207f2af243cc"
       ],
       "ar": [
         {
@@ -129,7 +129,7 @@
           "target_start": 0
         },
         {
-          "row": "r00005-s07589039be45be65",
+          "row": "m35668a6e229b207f2af243cc",
           "language": "ar",
           "start": 482,
           "end": 643,
@@ -138,7 +138,7 @@
       ],
       "fa": [
         {
-          "row": "r00005-s07589039be45be65",
+          "row": "m35668a6e229b207f2af243cc",
           "language": "fa",
           "start": 0,
           "end": 122,
@@ -153,16 +153,16 @@
         "fa": "t2b1d105604ac274218386921"
       },
       "results": [
-        "r00006"
+        "m35668a6e229b207f2af243cc"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00006",
+          "row": "m35668a6e229b207f2af243cc",
           "language": "fa",
           "start": 0,
           "end": 169,
-          "target_start": 0
+          "target_start": 123
         }
       ]
     },
@@ -287,6 +287,32 @@
           "target_start": 132
         }
       ]
+    },
+    {
+      "original": {
+        "id": "r00005-s07589039be45be65",
+        "ar": "t7c4a63e0f88ff596dc0ee601",
+        "fa": "t6af08f730b191a19f823fe5e",
+        "kind": "quotation"
+      },
+      "ar": [
+        {
+          "row": "m35668a6e229b207f2af243cc",
+          "language": "ar",
+          "start": 0,
+          "end": 161,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m35668a6e229b207f2af243cc",
+          "language": "fa",
+          "start": 0,
+          "end": 122,
+          "target_start": 0
+        }
+      ]
     }
   ],
   "insertions": [
@@ -316,6 +342,15 @@
       "left": "r00007",
       "right": "r00008-s88eba61461dcd450",
       "reason": "Complete the narrated account; separate remaining role findings."
+    },
+    {
+      "row": "m35668a6e229b207f2af243cc",
+      "language": "fa",
+      "target_start": 122,
+      "value": " ",
+      "left": "r00005-s07589039be45be65",
+      "right": "r00006",
+      "reason": "Continue the quoted prayer across the source boundary."
     }
   ]
 }
