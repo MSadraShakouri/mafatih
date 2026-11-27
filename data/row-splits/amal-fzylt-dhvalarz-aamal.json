@@ -3,8 +3,8 @@
   "item": "amal-fzylt-dhvalarz-aamal",
   "author": "agent-4",
   "baseline_item_sha256": "39d663557477ea358d9509c34f9addae9d005d8a0871f31b83e8938bc533d6e7",
-  "plan_sha256": "e954d5a314c05aff354ed70c3ff075b84737c9c8c86ede35ea2572915d00cd5b",
-  "layout_sha256": "f03b5278c46d5f462ba3c3f91affdece20aecd8303556c7d8afa3d59855cf66f",
+  "plan_sha256": "49137b924aea150683554114e1b5fe5ba619a545bd702a664bb83d039034fe35",
+  "layout_sha256": "f52ce6efe9f895d31ee893b5dd3af1716f74a2f08834f53a171161852773da8a",
   "rows": [
     {
       "original": {
@@ -15,7 +15,7 @@
       "results": [
         "r00001-sc5e9d9539705078a",
         "r00001-sd0076416ed435839",
-        "r00001-s730fcd91e8c82399"
+        "r00001-s8bd61044cef8820a"
       ],
       "ar": [],
       "fa": [
@@ -34,7 +34,7 @@
           "target_start": 0
         },
         {
-          "row": "r00001-s730fcd91e8c82399",
+          "row": "r00001-s8bd61044cef8820a",
           "language": "fa",
           "start": 427,
           "end": 588,
@@ -49,22 +49,22 @@
         "fa": "t6e5209701b260f2189ea63cc"
       },
       "results": [
-        "r00002-sb122fdb543464f4c",
-        "r00002-sb99308cb22091a05"
+        "r00002-sd748f2df3dbbbe40",
+        "r00002-sa800ebbf817ba8ef"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002-sb122fdb543464f4c",
+          "row": "r00002-sd748f2df3dbbbe40",
           "language": "fa",
           "start": 0,
-          "end": 207,
+          "end": 16,
           "target_start": 0
         },
         {
-          "row": "r00002-sb99308cb22091a05",
+          "row": "r00002-sa800ebbf817ba8ef",
           "language": "fa",
-          "start": 207,
+          "start": 16,
           "end": 411,
           "target_start": 0
         }
@@ -550,6 +550,67 @@
     }
   ],
   "aliases": [
+    {
+      "original": {
+        "id": "r00001-s730fcd91e8c82399",
+        "ar": null,
+        "fa": "tbb76c47d03a8a53125c3acab",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00001-s8bd61044cef8820a",
+          "language": "fa",
+          "start": 0,
+          "end": 161,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-sb122fdb543464f4c",
+        "ar": null,
+        "fa": "t95242d4da160d3046fb0c824",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00002-sd748f2df3dbbbe40",
+          "language": "fa",
+          "start": 0,
+          "end": 16,
+          "target_start": 0
+        },
+        {
+          "row": "r00002-sa800ebbf817ba8ef",
+          "language": "fa",
+          "start": 16,
+          "end": 207,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-sb99308cb22091a05",
+        "ar": null,
+        "fa": "t2a970acba4055ffc2290839a",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00002-sa800ebbf817ba8ef",
+          "language": "fa",
+          "start": 0,
+          "end": 204,
+          "target_start": 191
+        }
+      ]
+    },
     {
       "original": {
         "id": "r00009-s701ebc58f72e5bbc",
