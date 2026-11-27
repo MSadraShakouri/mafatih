@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-avl-fzylt-hsyn",
   "author": "agent-4",
-  "plan_sha256": "4c6cd71dddbfeb0bfc9838888319e4af215375b80b8a11b105db5d6f22776bec",
+  "plan_sha256": "4704b243ce8034bd6c0a007b67d4c3b7a178c895185703830ccad57cf3cd79e4",
   "rows": [
     {
       "row": "r00001",
@@ -65,23 +65,35 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
-        },
-        {
-          "ar": {
-            "source": "fa",
-            "part": 1
-          },
-          "fa": null,
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
           "fa": {
             "source": "fa",
+            "part": 1
+          },
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": {
+            "source": "fa",
             "part": 2
           },
-          "kind": "note"
+          "fa": null,
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -95,7 +107,7 @@
             "source": "ar",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation"
         },
         {
           "ar": {
@@ -135,7 +147,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -174,7 +196,7 @@
     },
     {
       "left": "r00003-s1b27bb8c75bc48e1",
-      "right": "r00004-saabe6c8229b130ea",
+      "right": "r00004-sf5580626db5b2df0",
       "checked": true,
       "spacing": {
         "mode": "fa-space",
@@ -182,7 +204,7 @@
       }
     },
     {
-      "left": "r00007",
+      "left": "r00007-s03b042ed549b3642",
       "right": "r00008-s88eba61461dcd450",
       "checked": true,
       "spacing": {
