@@ -3,8 +3,8 @@
   "item": "khavas-kfn-myt",
   "author": "agent-4",
   "baseline_item_sha256": "fbebd4a12656ab011f05feedcf670959d34b549e876e44309b55a8bec3b502be",
-  "plan_sha256": "7a3bc92f6277901ac370a2242eab227897c3dbefcb5697b912829f16e1859507",
-  "layout_sha256": "886ea3d5d0721291a473850bbf659992d33746c31fd0a8d69feffff3d4a1415a",
+  "plan_sha256": "47ffcc02333e140a200a1dadf01d1fd462cfec1b2356f0617073a10d0ee17610",
+  "layout_sha256": "986c8a62b4cb5a71a427f47532e979e0b529cfcca87fe8a441c76db0c8f38ec3",
   "rows": [
     {
       "original": {
@@ -13,14 +13,46 @@
         "fa": "tf54b0840da100edcc8973731"
       },
       "results": [
-        "m99480f5973842d6f9a286b72"
+        "r00001-sb47d02f5253e0614",
+        "r00001-sefb4f17df4f4f44a",
+        "r00001-se7131d7c6950b073",
+        "r00001-s547bf68c81062dff",
+        "mf6f09dd8b192508ee7a1249a"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "m99480f5973842d6f9a286b72",
+          "row": "r00001-sb47d02f5253e0614",
           "language": "fa",
           "start": 0,
+          "end": 157,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-sefb4f17df4f4f44a",
+          "language": "fa",
+          "start": 157,
+          "end": 206,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-se7131d7c6950b073",
+          "language": "fa",
+          "start": 206,
+          "end": 257,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-s547bf68c81062dff",
+          "language": "fa",
+          "start": 257,
+          "end": 310,
+          "target_start": 0
+        },
+        {
+          "row": "mf6f09dd8b192508ee7a1249a",
+          "language": "fa",
+          "start": 310,
           "end": 383,
           "target_start": 0
         }
@@ -33,16 +65,16 @@
         "fa": "t608276bab034c51d03974580"
       },
       "results": [
-        "m99480f5973842d6f9a286b72"
+        "mf6f09dd8b192508ee7a1249a"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "m99480f5973842d6f9a286b72",
+          "row": "mf6f09dd8b192508ee7a1249a",
           "language": "fa",
           "start": 0,
           "end": 219,
-          "target_start": 384
+          "target_start": 74
         }
       ]
     },
@@ -99,14 +131,79 @@
       ]
     }
   ],
-  "aliases": [],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-s145803ea17a94120",
+        "ar": null,
+        "fa": "t08d860d3a89302dabc3fc7df",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mf6f09dd8b192508ee7a1249a",
+          "language": "fa",
+          "start": 0,
+          "end": 73,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "m99480f5973842d6f9a286b72",
+        "ar": null,
+        "fa": "t6063b0f2e057b788eaf3b663",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00001-sb47d02f5253e0614",
+          "language": "fa",
+          "start": 0,
+          "end": 157,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-sefb4f17df4f4f44a",
+          "language": "fa",
+          "start": 157,
+          "end": 206,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-se7131d7c6950b073",
+          "language": "fa",
+          "start": 206,
+          "end": 257,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-s547bf68c81062dff",
+          "language": "fa",
+          "start": 257,
+          "end": 310,
+          "target_start": 0
+        },
+        {
+          "row": "mf6f09dd8b192508ee7a1249a",
+          "language": "fa",
+          "start": 310,
+          "end": 603,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
   "insertions": [
     {
-      "row": "m99480f5973842d6f9a286b72",
+      "row": "mf6f09dd8b192508ee7a1249a",
       "language": "fa",
-      "target_start": 383,
+      "target_start": 73,
       "value": " ",
-      "left": "r00001",
+      "left": "r00001-s145803ea17a94120",
       "right": "r00002",
       "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
