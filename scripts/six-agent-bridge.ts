@@ -21,6 +21,10 @@ function main():void {
   const root=git(['rev-parse','--show-toplevel']);process.chdir(root);requireAgentBranch(root,who,baseSha);
   if(git(['rev-parse','--is-shallow-repository'])!=='false')throw new Error('Bridge requires complete local Git history');
   if(spawnSync('git',['diff','--quiet']).status!==0||spawnSync('git',['diff','--cached','--quiet']).status!==0||git(['ls-files','--others','--exclude-standard']))throw new Error('Commit and preserve all work before bridge construction');
+  const attr=git(['check-attr','merge','--','data/texts/00.json','coordination/agent-1-agent-2.jsonl']);
+  if(!attr.includes('mafatih-texts')||!attr.includes('mafatih-messages')||
+     !git(['config','--local','--get','merge.mafatih-texts.driver']).includes('merge-agent-files.mjs')||
+     !git(['config','--local','--get','merge.mafatih-messages.driver']).includes('merge-agent-files.mjs'))throw new Error('Install both safe merge drivers before creating a bridge');
   const head=git(['rev-parse','HEAD']);
   if(!ancestor(baseSha,head)||!ancestor(first,head)||!ancestor(second,head))throw new Error('Base and both snapshots must already be reachable from the author branch');
   const parents=(sha:string)=>git(['show','-s','--format=%P',sha]).split(' ').filter(Boolean);
@@ -28,6 +32,11 @@ function main():void {
   const allowed=new Set([`Isolated ${who} authored snapshot`,`Isolated ${who} consolidated author snapshot`]);
   if(parent1.length!==1||parent2.length!==1||parent1[0]!==parent2[0]||!allowed.has(subject(first))||!allowed.has(subject(second))||!allowed.has(subject(parent1[0]!))||!ancestor(baseSha,parent1[0]!))
     throw new Error('Both parents must be isolated single-parent author snapshots with the same isolated author parent');
+  let cursor=parent1[0]!,depth=0;
+  while(cursor!==baseSha){
+    if(++depth>10000||!allowed.has(subject(cursor)))throw new Error('Common ancestor is not an exclusively isolated author chain');
+    const previous=parents(cursor);if(previous.length!==1)throw new Error('Peer merge in isolated author ancestry');cursor=previous[0]!;
+  }
   const manifestPath='docs/split-assignments/assignments.json',manifestRaw=gitFile(baseSha,manifestPath);
   if([first,second,head].some(c=>gitFile(c,manifestPath)!==manifestRaw))throw new Error('Assignment manifest differs from the frozen base');
   const base=loadCorpusAtCommit(baseSha),old=loadCorpusAtCommit(first),next=loadCorpusAtCommit(second);
@@ -35,15 +44,16 @@ function main():void {
   const group=manifest.groups.find(g=>g.agent===who);if(!group)throw new Error('Missing author assignment');
   const assigned=new Set(group.items.map(x=>x.item));
   const metadata=new Set([`agent-work/${who}/CONSOLIDATED-FINDINGS-PASS.md`,`agent-work/${who}/DUA-YAMN-PROVISIONAL-LINEAGE-RECHECK.md`,`agent-work/${who}/proposals/dua-yamn-provisional-lineage-recheck.json`]);
-  for(const snap of [first,second]){
-    const diff=git(['diff','--name-only',parent1[0]!,snap]).split('\n').filter(Boolean);verifyBridgeScope(diff,who,assigned,metadata);
+  for(const snap of [parent1[0]!,first,second]){
+    const scopeBase=snap===parent1[0]?baseSha:parent1[0]!;
+    const diff=git(['diff','--name-only',scopeBase,snap]).split('\n').filter(Boolean);verifyBridgeScope(diff,who,assigned,metadata);
     for(const file of diff){
       const entry=git(['ls-tree',snap,'--',file]);if(!entry.startsWith('100644 blob '))throw new Error(`Bridge does not allow deleted, non-regular or executable file: ${file}`);
     }
   }
   const oldValidation=validateCorpus(old),newValidation=validateCorpus(next);
   if(oldValidation.errors.length||newValidation.errors.length)throw new Error(`Invalid snapshot corpus: ${[...oldValidation.errors,...newValidation.errors].join('; ')}`);
-  verifyBridgePool(loadCorpusAtCommit(parent1[0]!),old);verifyBridgePool(loadCorpusAtCommit(parent1[0]!),next);
+  const common=loadCorpusAtCommit(parent1[0]!);verifyBridgePool(base,common);verifyBridgePool(common,old);verifyBridgePool(common,next);
   const pooled=verifyBridgePool(old,next);
   for(const [sha,corpus] of [[first,old],[second,next]] as const){
     for(const {item} of group.items){
@@ -55,7 +65,7 @@ function main():void {
     }
   }
   const lineage=verifyIsolatedBridgeMappings(base,old,next,who),tree=git(['rev-parse',`${second}^{tree}`]);
-  const review={base:baseSha,agent:who,first,second,common_parent:parent1[0],tree,pooled,lineage,old_warnings:oldValidation.warnings.length,new_warnings:newValidation.warnings.length};
+  const review={base:baseSha,agent:who,first,second,common_parent:parent1[0],isolated_ancestor_depth:depth,tree,pooled,lineage,old_warnings:oldValidation.warnings.length,new_warnings:newValidation.warnings.length};
   const digest=crypto.createHash('sha256').update(JSON.stringify(review)).digest('hex');
   if(flags['--confirm']){
     if(flags['--confirm']!==digest)throw new Error('Stale bridge confirmation: run the guarded preview again');

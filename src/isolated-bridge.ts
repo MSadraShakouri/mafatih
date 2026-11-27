@@ -5,7 +5,7 @@ import { codePoints } from './text-ids.js';
 
 type Language='ar'|'fa';
 type Segment=RowSplitAlias['ar'][number];
-type Mapping={original:Pick<Row,'id'|'ar'|'fa'|'sources'>;ar:Segment[];fa:Segment[]};
+type Mapping={original:Pick<Row,'id'|'ar'|'fa'|'sources'> & Partial<Pick<Row,'kind'>>;ar:Segment[];fa:Segment[]};
 const languages=['ar','fa'] as const;
 function sameFields(a:Mapping['original'],b:Mapping['original']):boolean {
   return a.id===b.id&&a.ar===b.ar&&a.fa===b.fa&&
@@ -40,6 +40,9 @@ export function verifyIsolatedBridgeMappings(base:Corpus,old:Corpus,next:Corpus,
     const check=(prior:Mapping):void=>{
       const target=targets.get(prior.original.id),label=`${itemId}/${prior.original.id}`;
       if(!target||!sameFields(prior.original,target.original))throw new Error(`${label}: old identity is missing or reused`);
+      const targetIsLive=targetItem.rows.some(r=>r.id===prior.original.id);
+      if(!targetIsLive&&prior.original.kind!==undefined&&target.original.kind!==undefined&&prior.original.kind!==target.original.kind)
+        throw new Error(`${label}: historical alias role was changed`);
       for(const lang of languages){
         if(prior.original[lang]===null){if(target[lang].length)throw new Error(`${label}/${lang}: unexpected target field`);continue;}
         const v=old.texts.get(prior.original[lang]!);if(v===undefined||next.texts.get(prior.original[lang]!)!==v)throw new Error(`${label}/${lang}: original pooled field missing or changed`);

@@ -43,3 +43,7 @@ test('bridge refuses an absent or changed prior immutable pooled value',async()=
   f.next.texts.set('tabcd','changed');assert.throws(()=>verifyBridgePool(f.old,f.next),/missing or changed/);
   f.next.texts.delete('tabcd');assert.throws(()=>verifyBridgePool(f.old,f.next),/missing or changed/);
 });
+test('bridge rejects a changed historical alias role',()=>{
+  const f=fixture();f.newRecord.aliases[0]!.original={...f.newRecord.aliases[0]!.original,kind:'note'};
+  assert.throws(()=>verifyIsolatedBridgeMappings(f.base,f.old,f.next,'agent-4'),/historical alias role was changed/);
+});
