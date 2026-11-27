@@ -3,8 +3,8 @@
   "item": "namaz-ayd-ghdyr",
   "author": "agent-4",
   "baseline_item_sha256": "450835d5010b0ce5a31480297b0df72d1f2f50584d74389ab8a3588cbdda4f57",
-  "plan_sha256": "89a6949db9ca3d133fce5627816445605c40dfdd6d76fbdc6fc1c6f3e2149b40",
-  "layout_sha256": "bef86dc30a76e46a3a9de899cb9916dde32dc44245433a4c523456a4d5119906",
+  "plan_sha256": "7e19f020cd1b67447105a338e9651bfe0a61a3b901038e4bbe3415ec51d3ca77",
+  "layout_sha256": "9ffe59f024aa7ebc6f89aa2f3937b0427d149c24bf8771c57b03dcb18e152bb6",
   "rows": [
     {
       "original": {
@@ -173,14 +173,22 @@
         "fa": "tb06fd9c6414791ea2dd0ec1a"
       },
       "results": [
-        "mbef2fd55cc24a6e61869ad4d"
+        "r00007-sa9589fa433a28961",
+        "mba4a10d48ae3886e960aec6c"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "mbef2fd55cc24a6e61869ad4d",
+          "row": "r00007-sa9589fa433a28961",
           "language": "fa",
           "start": 0,
+          "end": 76,
+          "target_start": 0
+        },
+        {
+          "row": "mba4a10d48ae3886e960aec6c",
+          "language": "fa",
+          "start": 76,
           "end": 163,
           "target_start": 0
         }
@@ -193,16 +201,40 @@
         "fa": "tac00ae52e3f03d4f4f45ad34"
       },
       "results": [
-        "mbef2fd55cc24a6e61869ad4d"
+        "mba4a10d48ae3886e960aec6c",
+        "r00008-se07a301f95e00b80",
+        "r00008-sbfef81de5eaf1cb4",
+        "r00008-s902d332c276e1cb3"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "mbef2fd55cc24a6e61869ad4d",
+          "row": "mba4a10d48ae3886e960aec6c",
           "language": "fa",
           "start": 0,
+          "end": 142,
+          "target_start": 88
+        },
+        {
+          "row": "r00008-se07a301f95e00b80",
+          "language": "fa",
+          "start": 142,
+          "end": 200,
+          "target_start": 0
+        },
+        {
+          "row": "r00008-sbfef81de5eaf1cb4",
+          "language": "fa",
+          "start": 200,
+          "end": 343,
+          "target_start": 0
+        },
+        {
+          "row": "r00008-s902d332c276e1cb3",
+          "language": "fa",
+          "start": 343,
           "end": 436,
-          "target_start": 164
+          "target_start": 0
         }
       ]
     },
@@ -213,14 +245,30 @@
         "fa": "t8939d2e0881777c6500ffab3"
       },
       "results": [
-        "mb8279524ae80f18620fd6e95"
+        "r00009-sbfc25d95448d1c43",
+        "r00009-s90365ad7e7c83484",
+        "m75812b92469db9f4bc699ca2"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "mb8279524ae80f18620fd6e95",
+          "row": "r00009-sbfc25d95448d1c43",
           "language": "fa",
           "start": 0,
+          "end": 5,
+          "target_start": 0
+        },
+        {
+          "row": "r00009-s90365ad7e7c83484",
+          "language": "fa",
+          "start": 5,
+          "end": 183,
+          "target_start": 0
+        },
+        {
+          "row": "m75812b92469db9f4bc699ca2",
+          "language": "fa",
+          "start": 183,
           "end": 687,
           "target_start": 0
         }
@@ -233,16 +281,40 @@
         "fa": "t72a899958d7abbb3c2e9c34f"
       },
       "results": [
-        "mb8279524ae80f18620fd6e95"
+        "m75812b92469db9f4bc699ca2",
+        "r00010-s6ce460d2b2369f85",
+        "r00010-s2c50164068128fe4",
+        "r00010-s52e209a7aff993a0"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "mb8279524ae80f18620fd6e95",
+          "row": "m75812b92469db9f4bc699ca2",
           "language": "fa",
           "start": 0,
+          "end": 205,
+          "target_start": 505
+        },
+        {
+          "row": "r00010-s6ce460d2b2369f85",
+          "language": "fa",
+          "start": 205,
+          "end": 304,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s2c50164068128fe4",
+          "language": "fa",
+          "start": 304,
+          "end": 310,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s52e209a7aff993a0",
+          "language": "fa",
+          "start": 310,
           "end": 330,
-          "target_start": 688
+          "target_start": 0
         }
       ]
     },
@@ -647,7 +719,179 @@
       ]
     }
   ],
-  "aliases": [],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00007-s0f783240c1c1bd26",
+        "ar": null,
+        "fa": "tafa4eef554f9dbadbae80ed4",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mba4a10d48ae3886e960aec6c",
+          "language": "fa",
+          "start": 0,
+          "end": 87,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00008-s5776601fa200d656",
+        "ar": null,
+        "fa": "t6c6a85dbadad7dbd15d64d6b",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mba4a10d48ae3886e960aec6c",
+          "language": "fa",
+          "start": 0,
+          "end": 142,
+          "target_start": 88
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00009-sffb5d2ca98a39362",
+        "ar": null,
+        "fa": "tf8f3ce823a1faa9a70e4003f",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m75812b92469db9f4bc699ca2",
+          "language": "fa",
+          "start": 0,
+          "end": 504,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00010-s675e991a29b04755",
+        "ar": null,
+        "fa": "tae2fe5ef309cfa950992694f",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m75812b92469db9f4bc699ca2",
+          "language": "fa",
+          "start": 0,
+          "end": 205,
+          "target_start": 505
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "mbef2fd55cc24a6e61869ad4d",
+        "ar": null,
+        "fa": "ta6ff4d9dad87d06f7146fe0e",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00007-sa9589fa433a28961",
+          "language": "fa",
+          "start": 0,
+          "end": 76,
+          "target_start": 0
+        },
+        {
+          "row": "mba4a10d48ae3886e960aec6c",
+          "language": "fa",
+          "start": 76,
+          "end": 306,
+          "target_start": 0
+        },
+        {
+          "row": "r00008-se07a301f95e00b80",
+          "language": "fa",
+          "start": 306,
+          "end": 364,
+          "target_start": 0
+        },
+        {
+          "row": "r00008-sbfef81de5eaf1cb4",
+          "language": "fa",
+          "start": 364,
+          "end": 507,
+          "target_start": 0
+        },
+        {
+          "row": "r00008-s902d332c276e1cb3",
+          "language": "fa",
+          "start": 507,
+          "end": 600,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "mb8279524ae80f18620fd6e95",
+        "ar": null,
+        "fa": "tc040b9da1b5eb82a954ae24e",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00009-sbfc25d95448d1c43",
+          "language": "fa",
+          "start": 0,
+          "end": 5,
+          "target_start": 0
+        },
+        {
+          "row": "r00009-s90365ad7e7c83484",
+          "language": "fa",
+          "start": 5,
+          "end": 183,
+          "target_start": 0
+        },
+        {
+          "row": "m75812b92469db9f4bc699ca2",
+          "language": "fa",
+          "start": 183,
+          "end": 893,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s6ce460d2b2369f85",
+          "language": "fa",
+          "start": 893,
+          "end": 992,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s2c50164068128fe4",
+          "language": "fa",
+          "start": 992,
+          "end": 998,
+          "target_start": 0
+        },
+        {
+          "row": "r00010-s52e209a7aff993a0",
+          "language": "fa",
+          "start": 998,
+          "end": 1018,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
   "insertions": [
     {
       "row": "m7ae642055fed0a4d3e068edc",
@@ -749,21 +993,21 @@
       "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
     },
     {
-      "row": "mbef2fd55cc24a6e61869ad4d",
+      "row": "mba4a10d48ae3886e960aec6c",
       "language": "fa",
-      "target_start": 163,
+      "target_start": 87,
       "value": " ",
-      "left": "r00007",
-      "right": "r00008",
+      "left": "r00007-s0f783240c1c1bd26",
+      "right": "r00008-s5776601fa200d656",
       "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     },
     {
-      "row": "mb8279524ae80f18620fd6e95",
+      "row": "m75812b92469db9f4bc699ca2",
       "language": "fa",
-      "target_start": 687,
+      "target_start": 504,
       "value": " ",
-      "left": "r00009",
-      "right": "r00010",
+      "left": "r00009-sffb5d2ca98a39362",
+      "right": "r00010-s675e991a29b04755",
       "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
