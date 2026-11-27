@@ -319,6 +319,39 @@ git push origin "$OWN_BRANCH"
 
 The snapshot command prints `partial-authored-snapshot` or `author-ready`; it makes a commit containing **only your own completed authored items**, attaches it to your own branch and never pushes. Even after a predecessor merge, a revised snapshot descends from your previous isolated snapshot, not your peer-merged branch. A partial snapshot supports early review; do **not** call it author-ready. Never guess the SHA or status.
 
+Both the snapshot generator and `restore-snapshot-texts` recognize the standard
+`Isolated agent-N authored snapshot` subject and the consolidated
+`Isolated agent-N consolidated author snapshot` subject. They choose the sole
+maximal reachable snapshot by ancestry, not date or log order. If there are
+multiple incomparable maxima, both stop and print all candidate SHAs; neither
+chooses a winner or writes corpus data.
+
+If exactly two own snapshots are incomparable, explicitly inspect both and
+choose a primary snapshot whose tree you intend to publish. The guarded bridge
+can only use the two exact reachable maximal candidates. It verifies isolation,
+frozen assignments, canonical reconstruction, retained immutable pooled values,
+previous live-row and alias lineage, and that the selected authored item,
+mapping, plan and layout match the committed branch. It fails closed on a
+missing alias, reused identity, foreign file, dirty or untracked work, or an
+incomplete history. It does not establish semantic, scholarly or rights approval,
+or review commits outside the two published snapshots. The bridge tree is
+exactly the explicitly chosen primary tree, and its two parents are primary
+and secondary; attaching it preserves the current branch tree. It never merges
+a peer's moving branch or migrates historical-link proposals.
+
+```sh
+# Use the actual full SHAs printed by the incomparable-snapshot error.
+node --import tsx scripts/six-agent-snapshot.ts --base "$BASE" --agent "$ME" \
+  --bridge-primary "$PRIMARY" --bridge-secondary "$SECONDARY"
+# Inspect the result and copy its review_sha256; do not change HEAD or drafts.
+node --import tsx scripts/six-agent-snapshot.ts --base "$BASE" --agent "$ME" \
+  --bridge-primary "$PRIMARY" --bridge-secondary "$SECONDARY" --confirm "$REVIEW_SHA256"
+```
+
+The returned bridge SHA is an ancestry bridge, **not** a new review or an
+`author-ready` certification. A later normal snapshot descends from the bridge;
+push only your own branch and give the reviewer the exact resulting SHA.
+
 For a predecessor snapshot, use a `ready` message sent by that predecessor to you for this base. Verify its exact `commit` is reachable from the discovered `PEER_TIP` using `git merge-base --is-ancestor "$PEER_SNAPSHOT" "$PEER_TIP"`. When there are multiple ready messages, select the newest by **snapshot commit ancestry**, not message line order; a later revision descends from the previous snapshot. If candidates are incomparable or the tip does not contain the snapshot, report it rather than guessing. Review available partial snapshots in parallel. When the full `author-ready` snapshot is available, merge **that exact snapshot into your own branch**, not the moving peer tip, with both co-author trailers; after revisions, merge the newer descendant and redo affected reviews.
 
 Do not wait for the predecessor to finish *its* predecessor merge, or wait for all six agents. If the predecessor has not pushed an author-ready snapshot, continue your own work and review available batches; if all remaining work is waiting on one neighbor, report the specific condition and stop rather than polling forever. The user can ask you to resume. If GitHub branch reads/pushes are unavailable in the Arena session, report the error without credentials and ask the coordinator for a commit/file handoff.

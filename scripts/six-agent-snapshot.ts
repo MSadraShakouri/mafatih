@@ -7,8 +7,9 @@ import { gitCommit, gitFile, loadCorpusAtCommit } from '../src/git-corpus.js';
 import { AgentPartitionsSchema, AgentPlanSchema, verifyAgentPartitions } from '../src/split-agent.js';
 import { verifyCanonicalResult } from '../src/split-canonical.js';
 import { requireAgentBranch } from '../src/six-agent-branch.js';
+import { selectAuthorSnapshot, verifyAuthorSnapshotBridge } from '../src/six-agent-snapshot-history.js';
 
-const usage='Usage: node --import tsx scripts/six-agent-snapshot.ts --base FULL_COMMIT --agent agent-N';
+const usage='Usage: node --import tsx scripts/six-agent-snapshot.ts --base FULL_COMMIT --agent agent-N [--bridge-primary SNAPSHOT --bridge-secondary SNAPSHOT [--confirm HASH]]';
 function run(args:string[],options:SpawnSyncOptions={}):string {
   const p=spawnSync('git',args,{...options,encoding:'utf8',maxBuffer:128*1024*1024});
   if(p.status!==0)throw new Error(`git ${args.join(' ')}: ${p.stderr.trim()} ${p.stdout.trim()}`);return p.stdout.trim();
@@ -16,7 +17,7 @@ function run(args:string[],options:SpawnSyncOptions={}):string {
 function existsAt(commit:string,file:string):boolean{return spawnSync('git',['cat-file','-e',`${commit}:${file}`]).status===0;}
 function main():void {
   const args=process.argv.slice(2),flags:Record<string,string>={};
-  for(let i=0;i<args.length;i++){const key=args[i]!;if(!['--base','--agent'].includes(key)||flags[key]||!args[i+1])throw new Error(usage);flags[key]=args[++i]!;}
+  for(let i=0;i<args.length;i++){const key=args[i]!;if(!['--base','--agent','--bridge-primary','--bridge-secondary','--confirm'].includes(key)||flags[key]||!args[i+1])throw new Error(usage);flags[key]=args[++i]!;}
   const baseSha=gitCommit(flags['--base']??''),who=flags['--agent'];
   if(!who||!/^agent-[1-6]$/.test(who))throw new Error(usage);
   const root=path.resolve(run(['rev-parse','--show-toplevel']));process.chdir(root);
@@ -24,6 +25,30 @@ function main():void {
   if(spawnSync('git',['diff','--quiet']).status!==0||spawnSync('git',['diff','--cached','--quiet']).status!==0)throw new Error('Commit your tracked changes before creating a snapshot; do not discard them');
   const head=run(['rev-parse','HEAD']);
   if(spawnSync('git',['merge-base','--is-ancestor',baseSha,head]).status!==0)throw new Error('The common preparation base is not an ancestor of your branch');
+  const primary=flags['--bridge-primary'],secondary=flags['--bridge-secondary'],confirm=flags['--confirm'];
+  if(primary||secondary||confirm){
+    if(!primary||!secondary)throw new Error(usage);
+    if(spawnSync('git',['rev-parse','-q','--verify','MERGE_HEAD']).status===0)throw new Error('Resolve the existing merge before bridging');
+    if(run(['status','--porcelain','--untracked-files=all']))throw new Error('Commit or preserve all tracked and untracked work before bridging');
+    verifyAuthorSnapshotBridge(baseSha,head,who,primary,secondary);
+    const tree=run(['rev-parse',`${primary}^{tree}`]);
+    const review=crypto.createHash('sha256').update(JSON.stringify({protocol:'author-snapshot-bridge-v1',base:baseSha,head,author:who,primary,secondary,tree})).digest('hex');
+    if(!confirm){
+      console.log(JSON.stringify({status:'snapshot-bridge-preview',base:baseSha,head,agent:who,primary,secondary,tree,review_sha256:review,
+        note:'No files changed. The bridge uses exactly the primary tree and both parent histories; inspect the explicit choice and obtain review.'},null,2));return;
+    }
+    if(!/^[a-f0-9]{64}$/.test(confirm)||confirm!==review)throw new Error('Stale or invalid snapshot bridge confirmation');
+    if(run(['rev-parse','HEAD'])!==head||run(['status','--porcelain','--untracked-files=all']))throw new Error('Branch or worktree changed after bridge verification; preserve work and retry');
+    const identity={...process.env,GIT_AUTHOR_NAME:'Arena Agent',GIT_AUTHOR_EMAIL:'agent@arena.ai',GIT_COMMITTER_NAME:'Arena Agent',GIT_COMMITTER_EMAIL:'agent@arena.ai'};
+    const message=`Isolated ${who} authored snapshot\n\nExplicit bridge of independently published incomparable snapshots.\n\nCo-authored-by: Sadra Shakouri <sadra.shakouri@gmail.com>\nCo-authored-by: Arena Agent <agent@arena.ai>`;
+    const snapshot=run(['commit-tree',tree,'-p',primary,'-p',secondary,'-m',message],{env:identity});
+    const attach=`Attach ${who} authored snapshot bridge\n\nCo-authored-by: Sadra Shakouri <sadra.shakouri@gmail.com>\nCo-authored-by: Arena Agent <agent@arena.ai>`;
+    const merged=spawnSync('git',['merge','--no-ff','--strategy=ours','-m',attach,snapshot],{encoding:'utf8',env:identity,maxBuffer:128*1024*1024});
+    if(merged.status!==0)throw new Error(`Bridge ${snapshot} created but attachment failed; preserve and report. ${merged.stderr} ${merged.stdout}`);
+    console.log(JSON.stringify({status:'snapshot-bridge-attached',agent:who,base:baseSha,snapshot,primary,secondary,tree,review_sha256:review,
+      own_branch_tip:run(['rev-parse','HEAD']),note:'The bridge tree is exactly the explicit primary tree. Push only your own branch and obtain independent review.'},null,2));return;
+  }
+
   const attr=run(['check-attr','merge','--','data/texts/00.json','coordination/agent-1-agent-2.jsonl']);
   if(!attr.includes('mafatih-texts')||!attr.includes('mafatih-messages') ||
      !run(['config','--local','--get','merge.mafatih-texts.driver']).includes('merge-agent-files.mjs') ||
@@ -33,8 +58,8 @@ function main():void {
   const manifestPath='docs/split-assignments/assignments.json', manifestRaw=gitFile(baseSha,manifestPath);
   if(gitFile(head,manifestPath)!==manifestRaw)throw new Error('Assignment manifest differs from the frozen base');
   const manifest=AgentPartitionsSchema.parse(JSON.parse(manifestRaw) as unknown),base=loadCorpusAtCommit(baseSha),current=loadCorpusAtCommit(head);
-  const prior=run(['log','--topo-order','-1','--format=%H',`--grep=^Isolated ${who} authored snapshot$`,head]);
-  const parent=prior||baseSha;
+  const parent=selectAuthorSnapshot(baseSha,head,who);
+  const prior=parent===baseSha?'':parent;
   if(spawnSync('git',['merge-base','--is-ancestor',baseSha,parent]).status!==0)throw new Error('Prior author snapshot does not descend from the common base');
   const parentCorpus=prior?loadCorpusAtCommit(prior):base;
   verifyAgentPartitions(base,manifest);

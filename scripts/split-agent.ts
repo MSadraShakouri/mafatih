@@ -36,7 +36,7 @@ No tool certifies meaning or rights.`;
 const files = [
   '.gitattributes', '.gitignore', 'scripts/split-agent.ts', 'scripts/six-agent.ts', 'scripts/six-agent-snapshot.ts',
   'scripts/merge-agent-files.mjs', 'scripts/build-data.ts', 'scripts/split-plan.ts', 'scripts/test-six-agent-migrated-corpus.ts',
-  'src/split-agent.ts', 'src/split-agent-batch.ts', 'src/six-agent-branch.ts',
+  'src/split-agent.ts', 'src/split-agent-batch.ts', 'src/six-agent-branch.ts', 'src/six-agent-snapshot-history.ts',
   'src/split-canonical.ts', 'src/six-agent-review.ts', 'src/row-splits.ts', 'src/row-alias-history.ts', 'src/row-alias-migration.ts',
   'src/row-revision.ts', 'src/row-version-safety.ts', 'src/git-corpus.ts', 'src/corpus.ts', 'src/editor.ts',
   'src/line-breaks.ts', 'src/line-break-history.ts', 'src/source-page-history.ts', 'src/punctuation-history.ts',
@@ -47,7 +47,7 @@ const files = [
   'tests/split-agent.test.ts', 'tests/split-plans.test.ts', 'tests/six-agent-split.test.ts', 'tests/six-agent-build.test.ts',
   'tests/six-agent-sqlite.test.ts', 'tests/six-agent-merge.test.ts', 'tests/six-agent-cli.test.ts', 'tests/six-agent-arena.test.ts',
   'tests/six-agent-row-merge.test.ts', 'tests/six-agent-merge-cli.test.ts', 'tests/six-agent-revision.test.ts',
-  'tests/six-agent-revision-cli.test.ts', 'tests/runtime-audio.test.ts', 'tests/browser/row-split-links.spec.ts', 'tests/browser/row-version-links.spec.ts',
+  'tests/six-agent-revision-cli.test.ts', 'tests/six-agent-snapshot-parent.test.ts', 'tests/runtime-audio.test.ts', 'tests/browser/row-split-links.spec.ts', 'tests/browser/row-version-links.spec.ts',
   'tests/browser/row-source-fixture.ts', 'tests/browser/line-breaks.spec.ts', 'tests/browser/manual-explanations.spec.ts',
   'tests/browser/punctuation.spec.ts', 'tests/browser/reader-edge-cases.spec.ts', 'tests/browser/search-pointer-alignment.spec.ts',
   'tests/browser/search-ta-marbuta.spec.ts', 'tests/browser/search.spec.ts', 'tests/browser/typography.spec.ts', 'tests/browser/wide-reader-layout.spec.ts',

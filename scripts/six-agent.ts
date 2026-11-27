@@ -14,6 +14,7 @@ import { parseAliasMigrationBundle, verifyHistoricalAliasEvidence } from '../src
 import { prepareLiveRevision, verifyLiveRevisionHistory } from '../src/row-revision.js';
 import { sha256, textId } from '../src/text-ids.js';
 import { checkedAgent, currentAgentBranch, discoverAgentPeer, neighbors, registerAgent, requireAgentBranch } from '../src/six-agent-branch.js';
+import { selectAuthorSnapshot } from '../src/six-agent-snapshot-history.js';
 
 const usage=`Six-agent canonical workflow (text/JSON only; never pushes or opens a PR):
   node --import tsx scripts/six-agent.ts register --agent agent-N --base COMMIT
@@ -279,9 +280,7 @@ function main():void {
       throw new Error('Commit tracked changes and resolve any existing merge before restoring snapshot text; do not discard work');
     const untracked=spawnSync('git',['ls-files','--others','--exclude-standard','--','data/'],{encoding:'utf8'});
     if(untracked.status!==0||untracked.stdout.trim())throw new Error('Preserve and resolve untracked data files before restoring snapshot text');
-    const history=spawnSync('git',['log','--topo-order','-1','--format=%H',`--grep=^Isolated ${who} authored snapshot$`,'HEAD'],{encoding:'utf8'});
-    if(history.status!==0)throw new Error('Could not find prior authored snapshot');
-    const parent=history.stdout.trim()||baseSha;
+    const parent=selectAuthorSnapshot(baseSha,gitCommit(spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).stdout.trim()),who);
     if(spawnSync('git',['merge-base','--is-ancestor',baseSha,parent]).status!==0)throw new Error('Prior snapshot does not descend from frozen base');
     const dataRoot=path.join(root,'data');
     if(fs.realpathSync(dataRoot)!==dataRoot)throw new Error('Refusing canonical writes through a data-directory symlink');
