@@ -4,7 +4,7 @@
   "author": "agent-4",
   "baseline_item_sha256": "5c2309f094331686d2f0b35aaf8a10b5744922eefb83d70a6febdcdc06992db5",
   "plan_sha256": "4704b243ce8034bd6c0a007b67d4c3b7a178c895185703830ccad57cf3cd79e4",
-  "layout_sha256": "e2f8c7b4d3a4025fa064982215366e078d51db8705e7356eb82cb5bcf76af920",
+  "layout_sha256": "9b8fda73ecd05336ef322c847366de780967599900f2a54e77afb7d5da1a73bc",
   "rows": [
     {
       "original": {
@@ -84,7 +84,7 @@
         "m1b8b3c05b64fb2fa898a9a70",
         "r00004-sd741bb38cf46ad44",
         "r00004-s07a3b58f0961cf91",
-        "r00004-s78cd245d2e8ca9fe"
+        "m225635dc6106c6e0b6d25906"
       ],
       "ar": [],
       "fa": [
@@ -110,7 +110,7 @@
           "target_start": 0
         },
         {
-          "row": "r00004-s78cd245d2e8ca9fe",
+          "row": "m225635dc6106c6e0b6d25906",
           "language": "fa",
           "start": 626,
           "end": 926,
@@ -125,16 +125,16 @@
         "fa": "t6af08f730b191a19f823fe5e"
       },
       "results": [
-        "r00005-s9993f31df7edd284",
+        "m225635dc6106c6e0b6d25906",
         "m35668a6e229b207f2af243cc"
       ],
       "ar": [
         {
-          "row": "r00005-s9993f31df7edd284",
+          "row": "m225635dc6106c6e0b6d25906",
           "language": "fa",
           "start": 0,
           "end": 482,
-          "target_start": 0
+          "target_start": 301
         },
         {
           "row": "m35668a6e229b207f2af243cc",
@@ -350,6 +350,42 @@
     },
     {
       "original": {
+        "id": "r00004-s78cd245d2e8ca9fe",
+        "ar": null,
+        "fa": "te6f1f7fe0c6b781d08e41340",
+        "kind": "quotation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m225635dc6106c6e0b6d25906",
+          "language": "fa",
+          "start": 0,
+          "end": 300,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-s9993f31df7edd284",
+        "ar": null,
+        "fa": "t87727f617706972cde222656",
+        "kind": "quotation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m225635dc6106c6e0b6d25906",
+          "language": "fa",
+          "start": 0,
+          "end": 482,
+          "target_start": 301
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "m0db83e16ff5931ff82ca8e2d",
         "ar": null,
         "fa": "t81175d6e02fd127f1b3f9dca",
@@ -401,7 +437,7 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00004-s78cd245d2e8ca9fe",
+          "row": "m225635dc6106c6e0b6d25906",
           "language": "fa",
           "start": 0,
           "end": 300,
@@ -419,11 +455,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00005-s9993f31df7edd284",
+          "row": "m225635dc6106c6e0b6d25906",
           "language": "fa",
           "start": 0,
           "end": 482,
-          "target_start": 0
+          "target_start": 301
         }
       ]
     },
@@ -514,6 +550,15 @@
       "left": "r00005-s07589039be45be65",
       "right": "r00006",
       "reason": "Continue the quoted prayer across the source boundary."
+    },
+    {
+      "row": "m225635dc6106c6e0b6d25906",
+      "language": "fa",
+      "target_start": 300,
+      "value": " ",
+      "left": "r00004-s78cd245d2e8ca9fe",
+      "right": "r00005-s9993f31df7edd284",
+      "reason": "Complete the quoted prayer phrase across the source boundary."
     }
   ]
 }
