@@ -3,8 +3,8 @@
   "item": "ziyarat-warith",
   "author": "agent-4",
   "baseline_item_sha256": "cc9982a7f206ff3c3486cd085c0910dff7d1513408106b36c2db4fc68f5e2f1f",
-  "plan_sha256": "a02bb01a8072236523bbea9aee97350416187cfc182e4b098abbb4178991f42e",
-  "layout_sha256": "d6612f0612b9de7f88a26d7a9d403faa01794783caf4691f1346ffeee0c7b833",
+  "plan_sha256": "91b865ce5ccbfd0078eef7c390817271a06a6fe06f3d2f2190d0548ca2cb7f78",
+  "layout_sha256": "8e19065cae925b1264367d8ac2d12ef3830f932d1ace9aeeb34d4d1e93da60e2",
   "rows": [
     {
       "original": {
@@ -4039,17 +4039,46 @@
     },
     {
       "original": {
+        "id": "r00147",
+        "ar": null,
+        "fa": "t03066116c7a074793b3ece4f",
+        "kind": "instruction"
+      },
+      "results": [
+        "r00147-s6ac14aa8ac95408b",
+        "r00147-sd202a7e1a455c8d1"
+      ],
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00147-s6ac14aa8ac95408b",
+          "language": "fa",
+          "start": 0,
+          "end": 128,
+          "target_start": 0
+        },
+        {
+          "row": "r00147-sd202a7e1a455c8d1",
+          "language": "fa",
+          "start": 128,
+          "end": 188,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00148",
         "ar": "tb33ac43ce72b8af3a00a0bc3",
         "fa": null,
         "kind": "instruction"
       },
       "results": [
-        "r00148-s8946eea1f6a2cdb4"
+        "r00148-s80f68e0a9692dcbb"
       ],
       "ar": [
         {
-          "row": "r00148-s8946eea1f6a2cdb4",
+          "row": "r00148-s80f68e0a9692dcbb",
           "language": "fa",
           "start": 0,
           "end": 12,
@@ -4127,6 +4156,24 @@
           "start": 0,
           "end": 68,
           "target_start": 52
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00148-s8946eea1f6a2cdb4",
+        "ar": null,
+        "fa": "tb33ac43ce72b8af3a00a0bc3",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00148-s80f68e0a9692dcbb",
+          "language": "fa",
+          "start": 0,
+          "end": 12,
+          "target_start": 0
         }
       ]
     }

@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-warith",
   "author": "agent-4",
-  "plan_sha256": "a02bb01a8072236523bbea9aee97350416187cfc182e4b098abbb4178991f42e",
+  "plan_sha256": "91b865ce5ccbfd0078eef7c390817271a06a6fe06f3d2f2190d0548ca2cb7f78",
   "rows": [
     {
       "row": "r00001",
@@ -2601,7 +2601,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -2615,7 +2625,8 @@
             "source": "ar",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     }
