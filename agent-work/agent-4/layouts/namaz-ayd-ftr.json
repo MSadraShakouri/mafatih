@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-ayd-ftr",
   "author": "agent-4",
-  "plan_sha256": "2f809a3f82429a8844134f0f422f2901900f351622f530c0498f266ee4f8d80e",
+  "plan_sha256": "be51ad233387e1d5383db35492710edc95c06cacefb4e5c85a73dfd379f59776",
   "rows": [
     {
       "row": "r00001",
@@ -47,7 +47,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -61,7 +71,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -384,8 +395,8 @@
   ],
   "merges": [
     {
-      "left": "r00003",
-      "right": "r00004-s1c27c3072f6239a1",
+      "left": "r00003-s83d3fea6e0d8d0c2",
+      "right": "r00004-s84c369186b86c2ea",
       "checked": true,
       "spacing": {
         "mode": "fa-space",

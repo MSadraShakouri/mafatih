@@ -3,8 +3,8 @@
   "item": "namaz-ayd-ftr",
   "author": "agent-4",
   "baseline_item_sha256": "f738f6886f8c4a30ad13c958ff3e203f92ac133dd30daacf8f09961465a90303",
-  "plan_sha256": "2f809a3f82429a8844134f0f422f2901900f351622f530c0498f266ee4f8d80e",
-  "layout_sha256": "9b3981755c620fd9704524a0267257a42710298b54fb1f20645f671cb3ce56df",
+  "plan_sha256": "be51ad233387e1d5383db35492710edc95c06cacefb4e5c85a73dfd379f59776",
+  "layout_sha256": "93a09a2dff0a157e5339c5b08f6abfb3c7c5958832dfa5cda5ea4c60dc4633cb",
   "rows": [
     {
       "original": {
@@ -61,14 +61,22 @@
         "fa": "t4ca5d006e02f7a90df5555f5"
       },
       "results": [
-        "m7e85621e71b31ade466c89a6"
+        "r00003-s7617816fcdb0325f",
+        "m3b29e34df7259d6a4d9a8161"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "m7e85621e71b31ade466c89a6",
+          "row": "r00003-s7617816fcdb0325f",
           "language": "fa",
           "start": 0,
+          "end": 39,
+          "target_start": 0
+        },
+        {
+          "row": "m3b29e34df7259d6a4d9a8161",
+          "language": "fa",
+          "start": 39,
           "end": 132,
           "target_start": 0
         }
@@ -81,17 +89,17 @@
         "fa": "t4c8d7d956e2afbdd4db2138c"
       },
       "results": [
-        "m7e85621e71b31ade466c89a6",
+        "m3b29e34df7259d6a4d9a8161",
         "r00004-s2be99374d16bcc7b"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "m7e85621e71b31ade466c89a6",
+          "row": "m3b29e34df7259d6a4d9a8161",
           "language": "fa",
           "start": 0,
           "end": 273,
-          "target_start": 133
+          "target_start": 94
         },
         {
           "row": "r00004-s2be99374d16bcc7b",
@@ -452,6 +460,67 @@
   "aliases": [
     {
       "original": {
+        "id": "r00003-s83d3fea6e0d8d0c2",
+        "ar": null,
+        "fa": "tb07973e61e20f31d3c9e78f5",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m3b29e34df7259d6a4d9a8161",
+          "language": "fa",
+          "start": 0,
+          "end": 93,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-s84c369186b86c2ea",
+        "ar": null,
+        "fa": "t44cb90dcff88ac967bb1b679",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m3b29e34df7259d6a4d9a8161",
+          "language": "fa",
+          "start": 0,
+          "end": 273,
+          "target_start": 94
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "m7e85621e71b31ade466c89a6",
+        "ar": null,
+        "fa": "t41960a521dd0f87165cfa567",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00003-s7617816fcdb0325f",
+          "language": "fa",
+          "start": 0,
+          "end": 39,
+          "target_start": 0
+        },
+        {
+          "row": "m3b29e34df7259d6a4d9a8161",
+          "language": "fa",
+          "start": 39,
+          "end": 406,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00004-s1c27c3072f6239a1",
         "ar": null,
         "fa": "t44cb90dcff88ac967bb1b679",
@@ -460,11 +529,11 @@
       "ar": [],
       "fa": [
         {
-          "row": "m7e85621e71b31ade466c89a6",
+          "row": "m3b29e34df7259d6a4d9a8161",
           "language": "fa",
           "start": 0,
           "end": 273,
-          "target_start": 133
+          "target_start": 94
         }
       ]
     },
@@ -795,12 +864,12 @@
   ],
   "insertions": [
     {
-      "row": "m7e85621e71b31ade466c89a6",
+      "row": "m3b29e34df7259d6a4d9a8161",
       "language": "fa",
-      "target_start": 132,
+      "target_start": 93,
       "value": " ",
-      "left": "r00003",
-      "right": "r00004-s1c27c3072f6239a1",
+      "left": "r00003-s83d3fea6e0d8d0c2",
+      "right": "r00004-s84c369186b86c2ea",
       "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
