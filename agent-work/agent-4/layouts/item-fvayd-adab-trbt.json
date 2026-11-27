@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "item-fvayd-adab-trbt",
   "author": "agent-4",
-  "plan_sha256": "23d926e6aa2e2499c1c44c93fb56fe6b6a4e7b1513173d893598deaf4461a6a1",
+  "plan_sha256": "75bd8793175644f80405c028056747ec0c94e1760e6212a1b902fd41a5440063",
   "rows": [
     {
       "row": "r00001",
@@ -318,7 +318,44 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": {
+            "source": "fa",
+            "part": 3
+          },
+          "fa": null,
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
