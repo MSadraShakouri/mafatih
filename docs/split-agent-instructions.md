@@ -321,7 +321,10 @@ The snapshot command prints `partial-authored-snapshot` or `author-ready`; it ma
 
 Both the snapshot generator and `restore-snapshot-texts` recognize the standard
 `Isolated agent-N authored snapshot` subject and the consolidated
-`Isolated agent-N consolidated author snapshot` subject. They choose the sole
+`Isolated agent-N consolidated author snapshot` subject, and structurally valid
+`Isolated agent-N guarded bridge snapshot` subjects. A bridge must have two
+incomparable recognized author-snapshot parents and exactly one parent's tree;
+this structural test does not certify its semantic or link review. They choose the sole
 maximal reachable snapshot by ancestry, not date or log order. If there are
 multiple incomparable maxima, both stop and print all candidate SHAs; neither
 chooses a winner or writes corpus data.
@@ -334,18 +337,31 @@ previous live-row and alias lineage, and that the selected authored item,
 mapping, plan and layout match the committed branch. It fails closed on a
 missing alias, reused identity, foreign file, dirty or untracked work, or an
 incomplete history. It does not establish semantic, scholarly or rights approval,
-or review commits outside the two published snapshots. The bridge tree is
-exactly the explicitly chosen primary tree, and its two parents are primary
-and secondary; attaching it preserves the current branch tree. It never merges
-a peer's moving branch or migrates historical-link proposals.
+or review commits outside the two published snapshots. Scope is restricted to
+assigned item, mapping, plan and layout files and immutable text shards. Every
+additional author metadata path must be explicitly declared with its exact
+primary and secondary blob IDs (use JSON `null` when absent); mismatched,
+undeclared, deleted, foreign or unused declarations fail. This makes a changed
+metadata file an explicit decision, not an automatic choice or approval.
+
+The bridge tree is exactly the explicitly chosen primary tree. `--bridge-first`
+can specify either candidate as the first parent (the primary is the default),
+so the tree choice and parent order are independent. The preview also tests the
+actual merge in a disposable Git object store: any conflict or any difference
+from the current branch tree is refused. It never uses an `ours` merge, merges
+a peer's moving branch, or migrates historical-link proposals.
 
 ```sh
 # Use the actual full SHAs printed by the incomparable-snapshot error.
 node --import tsx scripts/six-agent-snapshot.ts --base "$BASE" --agent "$ME" \
-  --bridge-primary "$PRIMARY" --bridge-secondary "$SECONDARY"
-# Inspect the result and copy its review_sha256; do not change HEAD or drafts.
+  --bridge-primary "$PRIMARY" --bridge-secondary "$SECONDARY" \
+  --bridge-first "$FIRST" --bridge-metadata "$METADATA_JSON"
+# METADATA_JSON is a JSON array of {"path":"...","primary":"<blob SHA or null>",
+# "secondary":"<blob SHA or null>"}; use [] when no extra metadata is present.
+# Inspect both blob versions, the result and its review_sha256 before confirming.
 node --import tsx scripts/six-agent-snapshot.ts --base "$BASE" --agent "$ME" \
-  --bridge-primary "$PRIMARY" --bridge-secondary "$SECONDARY" --confirm "$REVIEW_SHA256"
+  --bridge-primary "$PRIMARY" --bridge-secondary "$SECONDARY" \
+  --bridge-first "$FIRST" --bridge-metadata "$METADATA_JSON" --confirm "$REVIEW_SHA256"
 ```
 
 The returned bridge SHA is an ancestry bridge, **not** a new review or an

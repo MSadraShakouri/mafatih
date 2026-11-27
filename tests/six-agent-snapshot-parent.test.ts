@@ -50,13 +50,14 @@ test('both snapshot tools detect consolidated titles, refuse incomparable parent
     const first=JSON.parse(snapshot(d,'--base',base,'--agent','agent-1')) as {snapshot:string};
     // Create sibling isolated snapshots through a temporary index, not by changing the checkout.
     const extraA='historical secondary-only value',extraB='newer additional value',idA=textId(extraA),idB=textId(extraB);
-    function sibling(values:string[],subject:string,foreign=false,withAlias=false):string {
+    function sibling(values:string[],subject:string,foreign=false,withAlias=false,metadata?:string):string {
       const index=path.join(d,`.temporary-index-${Math.random()}`),env={...process.env,GIT_INDEX_FILE:index};
       run(d,'git',['read-tree',first.snapshot],{env});
       const shards=new Map<string,Record<string,string>>();
       for(const value of values){const id=textId(value),file=`data/texts/${id.slice(1,3)}.json`;let shard=shards.get(file);
         if(!shard){shard=JSON.parse(git(d,'show',`${first.snapshot}:${file}`)) as Record<string,string>;shards.set(file,shard);}shard[id]=value;}
       for(const [file,body] of shards){const oid=run(d,'git',['hash-object','-w','--stdin'],{input:JSON.stringify(body,null,2)+'\n'});run(d,'git',['update-index','--cacheinfo',`100644,${oid},${file}`],{env});}
+      if(metadata!==undefined){const oid=run(d,'git',['hash-object','-w','--stdin'],{input:metadata});run(d,'git',['update-index','--add','--cacheinfo',`100644,${oid},agent-work/agent-1/BRIDGE-NOTES.md`],{env});}
       if(withAlias){
         const record=promoteRowSplitRecord(RowSplitRecordSchema.parse(JSON.parse(git(d,'show',`${first.snapshot}:data/row-splits/sample.json`))));
         record.aliases!.push({original:{id:'retired-child',ar:original,fa:null,kind:'recitation'},ar:[{row:'r1',language:'ar',start:0,end:6,target_start:0}],fa:[]});
@@ -67,8 +68,8 @@ test('both snapshot tools detect consolidated titles, refuse incomparable parent
       const tree=run(d,'git',['write-tree'],{env});fs.unlinkSync(index);
       return git(d,'commit-tree',tree,'-p',first.snapshot,'-m',subject);
     }
-    const primary=sibling([extraA,extraB],'Isolated agent-1 consolidated author snapshot');
-    const secondary=sibling([extraA],'Isolated agent-1 authored snapshot');
+    const primary=sibling([extraA,extraB],'Isolated agent-1 consolidated author snapshot',false,false,'selected metadata');
+    const secondary=sibling([extraA],'Isolated agent-1 authored snapshot',false,false,'previous metadata');
     git(d,'merge','-q','--no-ff','-m','attach consolidated',primary);
     // Restore must use the consolidated parent even if an older standard title is present.
     const file=`data/texts/${idB.slice(1,3)}.json`,shard=JSON.parse(fs.readFileSync(path.join(d,file),'utf8')) as Record<string,string>;
@@ -80,32 +81,60 @@ test('both snapshot tools detect consolidated titles, refuse incomparable parent
     assert.equal(git(d,'rev-parse',`${newer.snapshot}^`),primary,'generator must use the consolidated snapshot, not the older standard title');
     const preferred=newer.snapshot;
     git(d,'merge','-q','--no-ff','--strategy=ours','-m','attach sibling',secondary);
-    const head=git(d,'rev-parse','HEAD'),tree=git(d,'rev-parse','HEAD^{tree}');
+    const head=git(d,'rev-parse','HEAD');let tree=git(d,'rev-parse','HEAD^{tree}');
     for(const script of [snap,cli]){
       const args=script===snap?['--base',base,'--agent','agent-1']:['restore-snapshot-texts','--base',base,'--agent','agent-1'];
       const error=run(d,process.execPath,['--import',tsx,script,...args],{fail:/Incomparable author snapshots/});assert.ok(error.includes(preferred)&&error.includes(secondary));
       assert.equal(git(d,'rev-parse','HEAD'),head);assert.equal(git(d,'status','--porcelain'),'');
     }
-    const args=['--base',base,'--agent','agent-1','--bridge-primary',preferred,'--bridge-secondary',secondary];
-    run(d,process.execPath,['--import',tsx,snap,'--base',base,'--agent','agent-1','--bridge-primary',secondary,'--bridge-secondary',preferred],{fail:/pooled value .* missing or changed/});
+    const metaPath='agent-work/agent-1/BRIDGE-NOTES.md';
+    const metadata=[{path:metaPath,primary:git(d,'rev-parse',`${preferred}:${metaPath}`),secondary:git(d,'rev-parse',`${secondary}:${metaPath}`)}];
+    const args=['--base',base,'--agent','agent-1','--bridge-primary',preferred,'--bridge-secondary',secondary,'--bridge-first',secondary,'--bridge-metadata',JSON.stringify(metadata)];
+    run(d,process.execPath,['--import',tsx,snap,'--base',base,'--agent','agent-1','--bridge-primary',preferred,'--bridge-secondary',secondary],{fail:/explicit metadata decision required/});
+    run(d,process.execPath,['--import',tsx,snap,'--base',base,'--agent','agent-1','--bridge-primary',preferred,'--bridge-secondary',secondary,'--bridge-metadata',JSON.stringify([{...metadata[0],primary:'0'.repeat(40)}])],{fail:/metadata decision does not match/});
+    run(d,process.execPath,['--import',tsx,snap,'--base',base,'--agent','agent-1','--bridge-primary',secondary,'--bridge-secondary',preferred,'--bridge-metadata',JSON.stringify([{path:metaPath,primary:metadata[0]!.secondary,secondary:metadata[0]!.primary}])],{fail:/pooled value .* missing or changed/});
     run(d,process.execPath,['--import',tsx,snap,'--base',base,'--agent','agent-1','--bridge-primary',preferred,'--bridge-secondary',first.snapshot],{fail:/both distinct incomparable maximal snapshots/});
     run(d,process.execPath,['--import',tsx,snap,...args,'--confirm','0'.repeat(64)],{fail:/Stale or invalid/});
     put(d,'unrelated.txt','keep');run(d,process.execPath,['--import',tsx,snap,...args],{fail:/untracked work/});assert.equal(fs.readFileSync(path.join(d,'unrelated.txt'),'utf8'),'keep');fs.unlinkSync(path.join(d,'unrelated.txt'));
     const preview=JSON.parse(snapshot(d,...args)) as {review_sha256:string;tree:string};assert.equal(preview.tree,git(d,'rev-parse',`${preferred}^{tree}`));
-    const applied=JSON.parse(snapshot(d,...args,'--confirm',preview.review_sha256)) as {snapshot:string;status:string};assert.equal(applied.status,'snapshot-bridge-attached');
+    put(d,'tracked-branch-note.txt','unrelated preserved content');git(d,'add','tracked-branch-note.txt');git(d,'commit','-qm','advance branch after preview');
+    const advanced=git(d,'rev-parse','HEAD');tree=git(d,'rev-parse','HEAD^{tree}');
+    run(d,process.execPath,['--import',tsx,snap,...args,'--confirm',preview.review_sha256],{fail:/Stale or invalid/});
+    assert.equal(git(d,'rev-parse','HEAD'),advanced);assert.equal(fs.readFileSync(path.join(d,'tracked-branch-note.txt'),'utf8'),'unrelated preserved content');
+    const refreshed=JSON.parse(snapshot(d,...args)) as {review_sha256:string};
+    const applied=JSON.parse(snapshot(d,...args,'--confirm',refreshed.review_sha256)) as {snapshot:string;status:string};assert.equal(applied.status,'snapshot-bridge-attached');
     assert.equal(git(d,'rev-parse',`${applied.snapshot}^{tree}`),preview.tree);assert.equal(git(d,'rev-parse','HEAD^{tree}'),tree);
-    assert.equal(git(d,'rev-parse',`${applied.snapshot}^1`),preferred);assert.equal(git(d,'rev-parse',`${applied.snapshot}^2`),secondary);
+    assert.equal(git(d,'rev-parse',`${applied.snapshot}^1`),secondary);assert.equal(git(d,'rev-parse',`${applied.snapshot}^2`),preferred);
+    assert.equal(git(d,'show','-s','--format=%s',applied.snapshot),'Isolated agent-1 guarded bridge snapshot');
+    const afterBridge=JSON.parse(agent(d,'restore-snapshot-texts','--base',base,'--agent','agent-1')) as {prior_snapshot:string};
+    assert.equal(afterBridge.prior_snapshot,applied.snapshot,'restore must select the guarded bridge');
     const next=JSON.parse(snapshot(d,'--base',base,'--agent','agent-1')) as {snapshot:string};assert.equal(git(d,'rev-parse',`${next.snapshot}^`),applied.snapshot);
     assert.equal(git(d,'status','--porcelain'),'');assert.ok(idA);
     // The selected tree must not lose a published alias, even if both snapshots are individually valid.
     const withAlias=sibling([extraA],'Isolated agent-1 consolidated author snapshot',false,true);
     const virtualHead=git(d,'commit-tree',git(d,'rev-parse','HEAD^{tree}'),'-p',git(d,'rev-parse','HEAD'),'-p',withAlias,'-m','synthetic history');
     const helper=pathToFileURL(path.join(root,'src/six-agent-snapshot-history.ts')).href;
-    run(d,process.execPath,['--import',tsx,'--input-type=module','-e',`import {verifyAuthorSnapshotBridge} from ${JSON.stringify(helper)}; verifyAuthorSnapshotBridge(${JSON.stringify(base)},${JSON.stringify(virtualHead)},'agent-1',${JSON.stringify(next.snapshot)},${JSON.stringify(withAlias)});`],{fail:/selected snapshot lost a published alias/});
-    const foreign=sibling([extraA],'Isolated agent-1 consolidated author snapshot',true);
+    run(d,process.execPath,['--import',tsx,'--input-type=module','-e',`import {verifyAuthorSnapshotBridge} from ${JSON.stringify(helper)}; verifyAuthorSnapshotBridge(${JSON.stringify(base)},${JSON.stringify(virtualHead)},'agent-1',${JSON.stringify(next.snapshot)},${JSON.stringify(withAlias)},${JSON.stringify([{path:metaPath,primary:metadata[0]!.primary,secondary:null}])});`],{fail:/selected snapshot lost a published alias/});
+    const invalidBridge=git(d,'commit-tree',git(d,'rev-parse',`${first.snapshot}^{tree}`),'-p',preferred,'-p',secondary,'-m','Isolated agent-1 guarded bridge snapshot');
+    run(d,process.execPath,['--import',tsx,'--input-type=module','-e',`import {selectAuthorSnapshot} from ${JSON.stringify(helper)}; selectAuthorSnapshot(${JSON.stringify(base)},${JSON.stringify(invalidBridge)},'agent-1');`],{fail:/malformed guarded bridge/});
+    // A real add/add conflict must be detected by merge-tree without changing HEAD.
+    function attachmentTree(value:string):string {
+      const index=path.join(d,`.attachment-index-${Math.random()}`),env={...process.env,GIT_INDEX_FILE:index};
+      run(d,'git',['read-tree',first.snapshot],{env});const oid=run(d,'git',['hash-object','-w','--stdin'],{input:value});
+      run(d,'git',['update-index','--add','--cacheinfo',`100644,${oid},attachment.txt`],{env});
+      const result=run(d,'git',['write-tree'],{env});fs.unlinkSync(index);return result;
+    }
+    const leftTree=attachmentTree('left change'),rightTree=attachmentTree('right change');
+    const left=git(d,'commit-tree',leftTree,'-p',first.snapshot,'-m','left'),right=git(d,'commit-tree',rightTree,'-p',first.snapshot,'-m','right');
+    const checkAttach=(h:string,treeId:string)=>`import {verifyBridgeAttachment} from ${JSON.stringify(helper)}; verifyBridgeAttachment(${JSON.stringify(h)},${JSON.stringify(treeId)},${JSON.stringify(right)},${JSON.stringify(secondary)});`;
+    const beforeAttach=git(d,'rev-parse','HEAD');
+    run(d,process.execPath,['--import',tsx,'--input-type=module','-e',checkAttach(left,rightTree)],{fail:/Bridge attachment has merge conflicts/});
+    run(d,process.execPath,['--import',tsx,'--input-type=module','-e',checkAttach(first.snapshot,rightTree)],{fail:/Bridge attachment would change the branch tree/});
+    assert.equal(git(d,'rev-parse','HEAD'),beforeAttach);assert.equal(git(d,'status','--porcelain'),'');
+    const foreign=sibling([extraA],'Isolated agent-1 consolidated author snapshot',true,false,'selected metadata');
     git(d,'merge','-q','--no-ff','--strategy=ours','-m','attach non-isolated snapshot',foreign);
     const foreignHead=git(d,'rev-parse','HEAD');
-    run(d,process.execPath,['--import',tsx,snap,'--base',base,'--agent','agent-1','--bridge-primary',next.snapshot,'--bridge-secondary',foreign],{fail:/non-isolated path data\/foreign.json/});
+    run(d,process.execPath,['--import',tsx,snap,'--base',base,'--agent','agent-1','--bridge-primary',next.snapshot,'--bridge-secondary',foreign,'--bridge-metadata',JSON.stringify([{path:metaPath,primary:metadata[0]!.primary,secondary:metadata[0]!.primary}])],{fail:/non-isolated path data\/foreign.json/});
     assert.equal(git(d,'rev-parse','HEAD'),foreignHead);assert.equal(git(d,'status','--porcelain'),'');
   } finally {fs.rmSync(d,{recursive:true,force:true});}
 });

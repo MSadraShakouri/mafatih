@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { validateCorpus } from './corpus.js';
 import { gitCommit, gitFile, loadCorpusAtCommit } from './git-corpus.js';
@@ -23,7 +26,7 @@ function exists(commit:string,file:string):boolean {return spawnSync('git',['cat
 const sameFields=(a:Row,b:Row):boolean=>a.ar===b.ar&&a.fa===b.fa&&
   JSON.stringify(a.sources?.ar ?? [])===JSON.stringify(b.sources?.ar ?? [])&&JSON.stringify(a.sources?.fa ?? [])===JSON.stringify(b.sources?.fa ?? []);
 
-/** Enumerate both published snapshot subject forms and select only by ancestry.
+/** Enumerate recognized published snapshot subjects and select only by ancestry.
  * Never rely on dates, log order, or a manually selected incomparable candidate. */
 export function maximalAuthorSnapshots(base:string,head:string,who:string):string[] {
   gitCommit(base);gitCommit(head);
@@ -31,8 +34,17 @@ export function maximalAuthorSnapshots(base:string,head:string,who:string):strin
   if(git(['rev-parse','--is-shallow-repository'])!=='false')throw new Error('Full history is required to select an author snapshot');
   if(!ancestor(base,head))throw new Error('Frozen base is not an ancestor of HEAD');
   const output=git(['log','--format=%H%x09%s',`${base}..${head}`]);
-  const titles=new Set([`Isolated ${who} authored snapshot`,`Isolated ${who} consolidated author snapshot`]);
-  const candidates=output?output.split('\n').map(line=>line.split('\t')).filter(parts=>titles.has(parts.slice(1).join('\t'))).map(parts=>parts[0]!):[];
+  const guarded=`Isolated ${who} guarded bridge snapshot`;
+  const titles=new Set([`Isolated ${who} authored snapshot`,`Isolated ${who} consolidated author snapshot`,guarded]);
+  const entries=output?output.split('\n').map(line=>line.split('\t')).filter(parts=>titles.has(parts.slice(1).join('\t'))):[];
+  for(const entry of entries.filter(parts=>parts.slice(1).join('\t')===guarded)){
+    const bridge=entry[0]!,parents=git(['show','-s','--format=%P',bridge]).split(' ').filter(Boolean);
+    if(parents.length!==2||parents[0]===parents[1]||parents.some(p=>!ancestor(base,p))||
+       parents.some(p=>!titles.has(git(['show','-s','--format=%s',p])))||ancestor(parents[0]!,parents[1]!)||ancestor(parents[1]!,parents[0]!)||
+       !parents.some(p=>git(['rev-parse',`${p}^{tree}`])===git(['rev-parse',`${bridge}^{tree}`])))
+      throw new Error(`${bridge}: malformed guarded bridge; preserve and report`);
+  }
+  const candidates=entries.map(parts=>parts[0]!);
   if(candidates.length>10000)throw new Error('Too many snapshot candidates; preserve and report');
   const maximal=candidates.filter(a=>!candidates.some(b=>a!==b&&ancestor(a,b))).sort();
   return maximal;
@@ -43,10 +55,11 @@ export function selectAuthorSnapshot(base:string,head:string,who:string):string 
   return maximal[0] ?? base;
 }
 
-/** Validate a proposed tree-preserving two-parent bridge. The first parent is
+export type BridgeMetadata={path:string;primary:string|null;secondary:string|null};
+/** Validate a proposed tree-preserving two-parent bridge. The selected tree is
  * explicit, never inferred. All old live rows and existing aliases from the
  * other parent must still resolve with the same frozen occurrence lineage. */
-export function verifyAuthorSnapshotBridge(base:string,head:string,who:string,primary:string,secondary:string):void {
+export function verifyAuthorSnapshotBridge(base:string,head:string,who:string,primary:string,secondary:string,metadata:BridgeMetadata[]=[]):void {
   gitCommit(primary);gitCommit(secondary);
   const candidates=maximalAuthorSnapshots(base,head,who);
   if(primary===secondary||candidates.length!==2||!candidates.includes(primary)||!candidates.includes(secondary))
@@ -57,18 +70,42 @@ export function verifyAuthorSnapshotBridge(base:string,head:string,who:string,pr
   verifyAgentPartitions(frozen,manifest);
   const group=manifest.groups.find(g=>g.agent===who);if(!group)throw new Error('Missing author assignment');
   const assigned=new Set(group.items.map(i=>i.item));
-  // Both parents must be isolated to this author's items, pool additions and own metadata.
+  // Extra metadata is allowed only with an explicit, hash-bound decision per path.
+  if(!Array.isArray(metadata))throw new Error('Bridge metadata must be an array');
+  const approved=new Map<string,BridgeMetadata>();
+  for(const entry of metadata){
+    if(!entry||typeof entry!=='object'||Object.keys(entry).sort().join(',')!=='path,primary,secondary'||
+       typeof entry.path!=='string'||!entry.path.startsWith(`agent-work/${who}/`)||
+       !/^[a-zA-Z0-9._/-]+$/.test(entry.path)||entry.path.split('/').includes('..')||
+       entry.path===`agent-work/${who}/registration.json`||entry.path.startsWith(`agent-work/${who}/plans/`)||
+       entry.path.startsWith(`agent-work/${who}/layouts/`)||entry.path.split('/').some(part=>part===''||part==='.')||
+       ![entry.primary,entry.secondary].every(id=>id===null||typeof id==='string'&&/^[a-f0-9]{40}$/.test(id))||approved.has(entry.path))
+      throw new Error('Invalid or duplicate bridge metadata declaration');
+    approved.set(entry.path,entry);
+  }
+  const blob=(commit:string,file:string):string|null=>{
+    const output=gitRaw(['ls-tree','-z','--full-tree',commit,'--',file]);
+    if(!output)return null;
+    const match=/^100644 blob ([a-f0-9]{40})\t([^\0]+)\0$/.exec(output);
+    if(!match||match[2]!==file)throw new Error(`${file}: metadata must be a regular 100644 blob`);
+    return match[1]!;
+  };
+  const used=new Set<string>();
   for(const snapshot of [primary,secondary]){
     const paths=gitRaw(['diff','--name-only','-z',base,snapshot]).split('\0').filter(Boolean);
     for(const file of paths){
-      const item=/^data\/(?:items|row-splits)\/([a-z0-9-]+)\.json$/.exec(file);
-      if(file.startsWith(`agent-work/${who}/`)||/^data\/texts\/[0-9a-f]{2}\.json$/.test(file)||(item&&assigned.has(item[1]!)))continue;
-      throw new Error(`${snapshot}: non-isolated path ${file}`);
+      const data=/^data\/(?:items|row-splits)\/([a-z0-9-]+)\.json$/.exec(file);
+      const work=new RegExp(`^agent-work/${who}/(?:plans|layouts)/([a-z0-9-]+)\\.json$`).exec(file);
+      if(/^data\/texts\/[0-9a-f]{2}\.json$/.test(file)||(data&&assigned.has(data[1]!))||(work&&assigned.has(work[1]!)))continue;
+      const decision=approved.get(file);
+      if(!decision)throw new Error(`${snapshot}: non-isolated path ${file}; explicit metadata decision required`);
+      used.add(file);
+      if(blob(primary,file)!==decision.primary||blob(secondary,file)!==decision.secondary)
+        throw new Error(`${file}: metadata decision does not match both published blobs`);
+      if(decision.secondary!==null&&decision.primary===null)throw new Error(`${file}: selected snapshot lost published author metadata`);
     }
   }
-  // A bridge must not silently drop the other snapshot's own metadata files.
-  for(const file of gitRaw(['ls-tree','-r','--name-only','-z',secondary,'--',`agent-work/${who}/`]).split('\0').filter(Boolean))
-    if(!exists(primary,file))throw new Error(`${file}: selected snapshot lost published author metadata`);
+  if(used.size!==approved.size)throw new Error('Bridge metadata contains unused decisions');
   const selected=loadCorpusAtCommit(primary),other=loadCorpusAtCommit(secondary),branch=loadCorpusAtCommit(head);
   for(const [name,corpus] of [['primary',selected],['secondary',other],['branch',branch]] as const){
     const errors=validateCorpus(corpus).errors;if(errors.length)throw new Error(`${name} corpus invalid: ${errors.join('; ')}`);
@@ -120,4 +157,31 @@ export function verifyAuthorSnapshotBridge(base:string,head:string,who:string,pr
       else if(!live||oldRecord)throw new Error(`${item}/${old.id}: missing lineage`);
     }
   }
+}
+
+/** Verify Git's actual merge result; conflicts and all tree changes are holds. */
+export function verifyExistingBridgeAttachment(head:string,snapshot:string,env:NodeJS.ProcessEnv=process.env):void {
+  const merged=spawnSync('git',['merge-tree','--write-tree',head,snapshot],{encoding:'utf8',env,maxBuffer:128*1024*1024});
+  if(merged.status!==0)throw new Error(`Bridge attachment has merge conflicts; preserve and resolve independently: ${merged.stderr.trim()} ${merged.stdout.trim()}`);
+  const mergedTree=merged.stdout.trim().split('\n')[0],headTree=git(['rev-parse',`${head}^{tree}`]);
+  if(mergedTree!==headTree){
+    const diff=spawnSync('git',['diff-tree','--no-commit-id','--name-status','-r',headTree,mergedTree!],{encoding:'utf8',env,maxBuffer:128*1024*1024});
+    if(diff.status!==0)throw new Error('Cannot inspect proposed bridge attachment');
+    throw new Error(`Bridge attachment would change the branch tree; preserve and review: ${diff.stdout.trim()}`);
+  }
+}
+
+/** Rehearse a candidate bridge in a disposable object database, without
+ * creating a commit in the project repository or modifying the worktree. */
+export function verifyBridgeAttachment(head:string,tree:string,first:string,second:string,identity:NodeJS.ProcessEnv=process.env):void {
+  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'mafatih-bridge-merge-'));
+  try {
+    const objects=path.join(temp,'objects');fs.mkdirSync(objects);
+    const existing=path.resolve(git(['rev-parse','--git-path','objects']));
+    const env={...identity,GIT_OBJECT_DIRECTORY:objects,
+      GIT_ALTERNATE_OBJECT_DIRECTORIES:[existing,process.env.GIT_ALTERNATE_OBJECT_DIRECTORIES].filter(Boolean).join(path.delimiter)};
+    const probe=spawnSync('git',['commit-tree',tree,'-p',first,'-p',second,'-m','Temporary bridge merge probe'],{encoding:'utf8',env,maxBuffer:128*1024*1024});
+    if(probe.status!==0)throw new Error(`Cannot construct temporary bridge probe: ${probe.stderr.trim()}`);
+    verifyExistingBridgeAttachment(head,probe.stdout.trim(),env);
+  } finally {fs.rmSync(temp,{recursive:true,force:true});}
 }
