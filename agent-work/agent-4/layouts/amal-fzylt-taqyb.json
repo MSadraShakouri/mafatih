@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-fzylt-taqyb",
   "author": "agent-4",
-  "plan_sha256": "0dc19612c85d3b3398e4c83403b56fd3c0fd065d03e420c7d5bfe11cd7b35d6d",
+  "plan_sha256": "e91168562dc3ecbf0bf071448b65386bded0a96d83eb7fdf463bcf64fe08c643",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -79,6 +89,17 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-saabe6c8229b130ea",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+      }
     }
   ]
 }

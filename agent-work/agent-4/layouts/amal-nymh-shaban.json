@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-nymh-shaban",
   "author": "agent-4",
-  "plan_sha256": "8d1307a6ea46589ee7cd7793efef8f9aebdf32bb8cec38397533151db68ec19e",
+  "plan_sha256": "3e3bb4e6a1c69164f38ed70389afce9d050f9da07b2c3a5c6392b218e44f2043",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,35 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -101,6 +129,17 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+      }
     }
   ]
 }

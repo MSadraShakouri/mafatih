@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "khavas-kfn-myt",
   "author": "agent-4",
-  "plan_sha256": "7a3bc92f6277901ac370a2242eab227897c3dbefcb5697b912829f16e1859507",
+  "plan_sha256": "47ffcc02333e140a200a1dadf01d1fd462cfec1b2356f0617073a10d0ee17610",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,44 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 4
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -78,6 +115,17 @@
           "kind": "instruction"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-s145803ea17a94120",
+      "right": "r00002",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+      }
     }
   ]
 }

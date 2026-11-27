@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-ayd-ghdyr",
   "author": "agent-4",
-  "plan_sha256": "89a6949db9ca3d133fce5627816445605c40dfdd6d76fbdc6fc1c6f3e2149b40",
+  "plan_sha256": "7e19f020cd1b67447105a338e9651bfe0a61a3b901038e4bbe3415ec51d3ca77",
   "rows": [
     {
       "row": "r00001",
@@ -114,7 +114,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -128,7 +138,35 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -142,7 +180,26 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -156,7 +213,35 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -413,6 +498,80 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002",
+      "right": "r00003",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00004",
+      "right": "r00005",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00014",
+      "right": "r00015",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00016",
+      "right": "r00017",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00021",
+      "right": "r00022",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00025",
+      "right": "r00026",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00007-s0f783240c1c1bd26",
+      "right": "r00008-s5776601fa200d656",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00009-sffb5d2ca98a39362",
+      "right": "r00010-s675e991a29b04755",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
     }
   ]
 }

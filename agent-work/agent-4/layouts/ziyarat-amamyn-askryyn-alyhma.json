@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-amamyn-askryyn-alyhma",
   "author": "agent-4",
-  "plan_sha256": "cca8d5f129eaea7e4bc57cff13a6f31c99a5b25fbd2045d0b0cc41aebeb35a15",
+  "plan_sha256": "fc1ac8abfff17be932f647ab53d2421823e624539b0d9c39ecabe0501b17fb7a",
   "rows": [
     {
       "row": "r00001",
@@ -36,32 +36,24 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": {
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
-          "fa": {
-            "source": "fa",
-            "part": 0
-          },
-          "kind": "note"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "note"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -294,16 +286,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     }

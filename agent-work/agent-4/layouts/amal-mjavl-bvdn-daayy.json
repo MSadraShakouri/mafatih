@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-mjavl-bvdn-daayy",
   "author": "agent-4",
-  "plan_sha256": "10817d59085d5d93bcd9474a9f0391d7af21bcd4e17869b3db5afa06fc2d69d9",
+  "plan_sha256": "450129a1303bad54be02b186fbd161f707dca963cbbce21f15c06dd8904653c4",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -83,7 +84,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -97,7 +99,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -110,16 +113,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -128,20 +127,34 @@
       "checked": true,
       "output": [
         {
-          "ar": {
+          "ar": null,
+          "fa": {
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
           "fa": {
+            "source": "ar",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
+          "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -182,16 +195,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -204,16 +213,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -226,16 +231,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -248,16 +249,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -288,6 +285,31 @@
           "kind": "quotation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-s8939275b275c817a",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review."
+      }
+    },
+    {
+      "left": "r00003",
+      "right": "r00004",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review."
+      }
+    },
+    {
+      "left": "r00001-s205e9629de3f86b8",
+      "right": "r00001-sd0076416ed435839",
+      "checked": true
     }
   ]
 }

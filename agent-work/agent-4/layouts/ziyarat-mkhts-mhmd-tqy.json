@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-mkhts-mhmd-tqy",
   "author": "agent-4",
-  "plan_sha256": "3637fa74873859660d27934c41ceb043356b5a5eb3f12f47740d73a8dfc37a52",
+  "plan_sha256": "61d9b5757a053f27e84b115849a12212d146356d2abd7dda87b4c0ec5971d0e0",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -163,7 +173,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "heading"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -177,7 +197,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -306,7 +327,26 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -365,9 +405,48 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002",
+      "right": "r00003",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00010",
+      "right": "r00011",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00012-scce7b1135e7d7ce0",
+      "right": "r00013",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
     }
   ]
 }

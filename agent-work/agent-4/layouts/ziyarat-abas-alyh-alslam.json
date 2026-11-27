@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-abas-alyh-alslam",
   "author": "agent-4",
-  "plan_sha256": "a701f435a797316916b73555f34cb25eedec17b46986d49729d0af546b5ba032",
+  "plan_sha256": "44cc008d70d70c8a93420807992204b275ff07ea61f53b2350a8ac16eb60d8e2",
   "rows": [
     {
       "row": "r00001",
@@ -30,6 +30,14 @@
             "part": 0
           },
           "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction"
         }
       ]
     },
@@ -327,6 +335,44 @@
           "kind": "instruction"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00006",
+      "right": "r00007",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00008",
+      "right": "r00009",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00014",
+      "right": "r00015",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "r00016-s8439aeaccefac974",
+      "right": "r00017",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
     }
   ]
 }

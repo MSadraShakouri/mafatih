@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "ziyarat-jnab-hany-bn",
   "author": "agent-4",
   "baseline_item_sha256": "c234f9369e658170ae26f95c4d0176752dae9b73fa1c224913f9bf10308a5778",
   "plan_sha256": "2a09cc4fec046e7aca2d48f6f4ead75bd16ff66ed10b682961b129962e17f79d",
-  "layout_sha256": "2ed5a21ca50879a8370a1e0e0367081da9a237acd94707bfb52816f80e50f51d",
+  "layout_sha256": "a543cb6616297c85c8f3d3b52ea2841b9e3c39b4722483a8b8c212a6522d17c6",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 100
+          "end": 100,
+          "target_start": 0
         }
       ]
     },
@@ -32,37 +33,39 @@
         "fa": "t465d1fae9621fb80ba149eb7"
       },
       "results": [
-        "r00002-sb4c2bfb77eb89124",
-        "r00002-s93ed69e2ceaad8b5",
-        "r00002-s33d1515313a177c7",
-        "r00002-sa6349511538646ee"
+        "r00002-seec1518a7d7be734",
+        "m179ed1cbe5dcfc6810c2484f"
       ],
       "ar": [
         {
-          "row": "r00002-sb4c2bfb77eb89124",
+          "row": "r00002-seec1518a7d7be734",
           "language": "ar",
           "start": 0,
-          "end": 76
+          "end": 76,
+          "target_start": 0
         },
         {
-          "row": "r00002-s93ed69e2ceaad8b5",
+          "row": "m179ed1cbe5dcfc6810c2484f",
           "language": "ar",
           "start": 76,
-          "end": 246
+          "end": 246,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00002-s33d1515313a177c7",
+          "row": "r00002-seec1518a7d7be734",
           "language": "fa",
           "start": 0,
-          "end": 50
+          "end": 50,
+          "target_start": 0
         },
         {
-          "row": "r00002-sa6349511538646ee",
+          "row": "m179ed1cbe5dcfc6810c2484f",
           "language": "fa",
           "start": 50,
-          "end": 165
+          "end": 165,
+          "target_start": 0
         }
       ]
     },
@@ -73,65 +76,69 @@
         "fa": "t6a60f14ab51a3bb14de86d8b"
       },
       "results": [
-        "r00003-s90ce2cbb3805f148",
-        "r00003-se283c95e6594ac46",
-        "r00003-s4ced2172db710711",
-        "r00003-s75f171481d1693e0",
-        "r00003-sa800142d710dfc87",
-        "r00003-s17ee679a21196393",
-        "r00003-s246e32d857da5bce",
-        "r00003-s18b87c54f5bf9640"
+        "m179ed1cbe5dcfc6810c2484f",
+        "r00003-sdd5df5cec6c9fa4b",
+        "r00003-sc02d2a34d8b85630",
+        "r00003-sff5ffbc45aeb9a82"
       ],
       "ar": [
         {
-          "row": "r00003-s90ce2cbb3805f148",
+          "row": "m179ed1cbe5dcfc6810c2484f",
           "language": "ar",
           "start": 0,
-          "end": 111
+          "end": 111,
+          "target_start": 171
         },
         {
-          "row": "r00003-se283c95e6594ac46",
+          "row": "r00003-sdd5df5cec6c9fa4b",
           "language": "ar",
           "start": 111,
-          "end": 192
+          "end": 192,
+          "target_start": 0
         },
         {
-          "row": "r00003-s4ced2172db710711",
+          "row": "r00003-sc02d2a34d8b85630",
           "language": "ar",
           "start": 192,
-          "end": 395
+          "end": 395,
+          "target_start": 0
         },
         {
-          "row": "r00003-s75f171481d1693e0",
+          "row": "r00003-sff5ffbc45aeb9a82",
           "language": "ar",
           "start": 395,
-          "end": 590
+          "end": 590,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00003-sa800142d710dfc87",
+          "row": "m179ed1cbe5dcfc6810c2484f",
           "language": "fa",
           "start": 0,
-          "end": 107
+          "end": 107,
+          "target_start": 116
         },
         {
-          "row": "r00003-s17ee679a21196393",
+          "row": "r00003-sdd5df5cec6c9fa4b",
           "language": "fa",
           "start": 107,
-          "end": 205
+          "end": 205,
+          "target_start": 0
         },
         {
-          "row": "r00003-s246e32d857da5bce",
+          "row": "r00003-sc02d2a34d8b85630",
           "language": "fa",
           "start": 205,
-          "end": 376
+          "end": 376,
+          "target_start": 0
         },
         {
-          "row": "r00003-s18b87c54f5bf9640",
+          "row": "r00003-sff5ffbc45aeb9a82",
           "language": "fa",
           "start": 376,
-          "end": 554
+          "end": 554,
+          "target_start": 0
         }
       ]
     },
@@ -150,9 +157,300 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 131
+          "end": 131,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s35f3eab1f8a5bb20",
+        "ar": "ta8dd857f9c82ed2ab2070e94",
+        "fa": "t4f0ab7fda1ac5a9fb1231e3e",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "ar",
+          "start": 0,
+          "end": 170,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "fa",
+          "start": 0,
+          "end": 115,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s52eef1bddbca12d2",
+        "ar": "t69179f7fd4cb2853c569192a",
+        "fa": "tde90be1cb51b726d98bccd6f",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "ar",
+          "start": 0,
+          "end": 111,
+          "target_start": 171
+        }
+      ],
+      "fa": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "fa",
+          "start": 0,
+          "end": 107,
+          "target_start": 116
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-sb4c2bfb77eb89124",
+        "ar": "t8882e092dcb131d85a8e8d54",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00002-seec1518a7d7be734",
+          "language": "ar",
+          "start": 0,
+          "end": 76,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00002-s93ed69e2ceaad8b5",
+        "ar": "ta8dd857f9c82ed2ab2070e94",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "ar",
+          "start": 0,
+          "end": 170,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00002-s33d1515313a177c7",
+        "ar": null,
+        "fa": "t1b36d26ff13fedfa30797a82",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00002-seec1518a7d7be734",
+          "language": "fa",
+          "start": 0,
+          "end": 50,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-sa6349511538646ee",
+        "ar": null,
+        "fa": "t4f0ab7fda1ac5a9fb1231e3e",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "fa",
+          "start": 0,
+          "end": 115,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s90ce2cbb3805f148",
+        "ar": "t69179f7fd4cb2853c569192a",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "ar",
+          "start": 0,
+          "end": 111,
+          "target_start": 171
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00003-se283c95e6594ac46",
+        "ar": "t348f79f0b3f7308289495161",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00003-sdd5df5cec6c9fa4b",
+          "language": "ar",
+          "start": 0,
+          "end": 81,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00003-s4ced2172db710711",
+        "ar": "tfa6c0e454d7ee4e67351c4fc",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00003-sc02d2a34d8b85630",
+          "language": "ar",
+          "start": 0,
+          "end": 203,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00003-s75f171481d1693e0",
+        "ar": "tf55a1a3a8d9704d3dfac16e9",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00003-sff5ffbc45aeb9a82",
+          "language": "ar",
+          "start": 0,
+          "end": 195,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00003-sa800142d710dfc87",
+        "ar": null,
+        "fa": "tde90be1cb51b726d98bccd6f",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m179ed1cbe5dcfc6810c2484f",
+          "language": "fa",
+          "start": 0,
+          "end": 107,
+          "target_start": 116
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s17ee679a21196393",
+        "ar": null,
+        "fa": "te53031378515ce9a91ffed41",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00003-sdd5df5cec6c9fa4b",
+          "language": "fa",
+          "start": 0,
+          "end": 98,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s246e32d857da5bce",
+        "ar": null,
+        "fa": "t47ce4416738362a080b67231",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00003-sc02d2a34d8b85630",
+          "language": "fa",
+          "start": 0,
+          "end": 171,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00003-s18b87c54f5bf9640",
+        "ar": null,
+        "fa": "t657bf460ee4b8bf0d670ad82",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00003-sff5ffbc45aeb9a82",
+          "language": "fa",
+          "start": 0,
+          "end": 178,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m179ed1cbe5dcfc6810c2484f",
+      "language": "ar",
+      "target_start": 170,
+      "value": " ",
+      "left": "r00002-s35f3eab1f8a5bb20",
+      "right": "r00003-s52eef1bddbca12d2",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "m179ed1cbe5dcfc6810c2484f",
+      "language": "fa",
+      "target_start": 115,
+      "value": " ",
+      "left": "r00002-s35f3eab1f8a5bb20",
+      "right": "r00003-s52eef1bddbca12d2",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "khavas-astkharh-tsbyh-mnqvl",
   "author": "agent-4",
   "baseline_item_sha256": "a96031506fdfd188bbc0893b22c1aba4ab83b7c326d7e6af95e75aa9e167c2fa",
   "plan_sha256": "80871c5794b539daf033878d361fd6de7e338c83bf533d7b5d65f17ae9d520f6",
-  "layout_sha256": "c8ce6eae0b9f74d2637ceb5234a9833dec52ffa1a86aad0e408fcd5428c49ebe",
+  "layout_sha256": "38a82b1115f9a6a28e4716cf77f68838d9b2607963e48d20d1a798990fbe1d17",
   "rows": [
     {
       "original": {
@@ -22,13 +22,15 @@
           "row": "r00001-s87a4572572fe3091",
           "language": "fa",
           "start": 0,
-          "end": 120
+          "end": 120,
+          "target_start": 0
         },
         {
           "row": "r00001-sd0076416ed435839",
           "language": "fa",
           "start": 120,
-          "end": 422
+          "end": 422,
+          "target_start": 0
         }
       ]
     },
@@ -50,31 +52,36 @@
           "row": "r00002-sb9f57278a5910780",
           "language": "fa",
           "start": 0,
-          "end": 276
+          "end": 276,
+          "target_start": 0
         },
         {
           "row": "r00002-s1c7ff9511e88e649",
           "language": "ar",
           "start": 276,
-          "end": 412
+          "end": 412,
+          "target_start": 0
         },
         {
           "row": "r00002-s1bfd4e5d6bd3378e",
           "language": "ar",
           "start": 412,
-          "end": 664
+          "end": 664,
+          "target_start": 0
         },
         {
           "row": "r00002-s745573a3e3a3bc77",
           "language": "ar",
           "start": 664,
-          "end": 733
+          "end": 733,
+          "target_start": 0
         },
         {
           "row": "r00002-s6307ff7d1a1c0aea",
           "language": "ar",
           "start": 733,
-          "end": 801
+          "end": 801,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -82,25 +89,29 @@
           "row": "r00002-s1c7ff9511e88e649",
           "language": "fa",
           "start": 0,
-          "end": 139
+          "end": 139,
+          "target_start": 0
         },
         {
           "row": "r00002-s1bfd4e5d6bd3378e",
           "language": "fa",
           "start": 139,
-          "end": 354
+          "end": 354,
+          "target_start": 0
         },
         {
           "row": "r00002-s745573a3e3a3bc77",
           "language": "fa",
           "start": 354,
-          "end": 414
+          "end": 414,
+          "target_start": 0
         },
         {
           "row": "r00002-s6307ff7d1a1c0aea",
           "language": "fa",
           "start": 414,
-          "end": 458
+          "end": 458,
+          "target_start": 0
         }
       ]
     },
@@ -111,15 +122,16 @@
         "fa": "t260c511b72131ec21bc5bb9f"
       },
       "results": [
-        "r00003"
+        "mb031c3fc555ed48e8f4f811f"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00003",
+          "row": "mb031c3fc555ed48e8f4f811f",
           "language": "fa",
           "start": 0,
-          "end": 149
+          "end": 149,
+          "target_start": 0
         }
       ]
     },
@@ -130,24 +142,57 @@
         "fa": "t75489a1b6e7489cce52771d7"
       },
       "results": [
-        "r00004-s1c27c3072f6239a1",
+        "mb031c3fc555ed48e8f4f811f",
         "r00004-s6781612fc75b6e23"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004-s1c27c3072f6239a1",
+          "row": "mb031c3fc555ed48e8f4f811f",
           "language": "fa",
           "start": 0,
-          "end": 85
+          "end": 85,
+          "target_start": 150
         },
         {
           "row": "r00004-s6781612fc75b6e23",
           "language": "fa",
           "start": 85,
-          "end": 272
+          "end": 272,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00004-s1c27c3072f6239a1",
+        "ar": null,
+        "fa": "tb20a6f64701253655811c682",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mb031c3fc555ed48e8f4f811f",
+          "language": "fa",
+          "start": 0,
+          "end": 85,
+          "target_start": 150
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "mb031c3fc555ed48e8f4f811f",
+      "language": "fa",
+      "target_start": 149,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004-s1c27c3072f6239a1",
+      "reason": "Complete the decision rule and preserve both source alternatives."
     }
   ]
 }

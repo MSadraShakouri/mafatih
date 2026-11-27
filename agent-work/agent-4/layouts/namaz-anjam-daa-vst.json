@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "namaz-anjam-daa-vst",
   "author": "agent-4",
-  "plan_sha256": "76b6b9033d059e77bcf569d15a90182753a51c996863767817844e9de1cea34b",
+  "plan_sha256": "c90e502af34f39164e1982314d94469036a692a16ba54c71eec05111894bcf3e",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },

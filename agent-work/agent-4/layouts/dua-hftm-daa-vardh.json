@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "dua-hftm-daa-vardh",
   "author": "agent-4",
-  "plan_sha256": "7b1225ac9e8df97b48a5d5c294d90e53a03ed776e81b696cde6f6fb16bc0284e",
+  "plan_sha256": "18a24184f2fa91f3bae8da12aaf9cb43c74088496c19303e43f02e618b7ef527",
   "rows": [
     {
       "row": "r00001",
@@ -99,16 +99,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -151,16 +147,12 @@
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -181,16 +173,12 @@
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -203,16 +191,12 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -233,16 +217,12 @@
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -280,7 +260,8 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "instruction"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -326,7 +307,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -334,7 +316,8 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "instruction"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -342,7 +325,8 @@
             "source": "fa",
             "part": 2
           },
-          "kind": "instruction"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -355,18 +339,43 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-sa3fbdb6fa458720f",
+      "right": "r00002-sb122fdb543464f4c",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00003",
+      "right": "r00004",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00007-s96935ee66e3fd322",
+      "right": "r00008",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the paired prayer without changing either supplied rendering."
+      }
     }
   ]
 }

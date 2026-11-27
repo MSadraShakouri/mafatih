@@ -58,32 +58,24 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": {
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
-          "fa": {
-            "source": "fa",
-            "part": 0
-          },
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "recitation"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -122,6 +114,17 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-s730fcd91e8c82399",
+      "right": "r00002",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
     }
   ]
 }

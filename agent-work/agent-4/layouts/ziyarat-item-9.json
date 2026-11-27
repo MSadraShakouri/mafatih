@@ -64,32 +64,24 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
+          "fa": {
+            "source": "fa",
+            "part": 0
+          },
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": {
             "source": "ar",
             "part": 1
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
-          "fa": {
-            "source": "fa",
-            "part": 0
-          },
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "recitation"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -102,48 +94,36 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 1
-          },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 2
-          },
-          "fa": null,
-          "kind": "recitation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "recitation"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "recitation"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
           "fa": {
             "source": "fa",
             "part": 2
           },
-          "kind": "recitation"
+          "kind": "recitation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -198,6 +178,35 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002",
+      "right": "r00003-s1828851db03b603e",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00004-sb4f7d6d5791cc484",
+      "right": "r00005-s1fa57fc41bdb7621",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00006-s301ee66f47674098",
+      "right": "r00007",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
     }
   ]
 }

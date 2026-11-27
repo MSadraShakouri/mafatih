@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "amal-aamal-akhr-zy",
   "author": "agent-4",
-  "plan_sha256": "f34f6d0e34bc03e17a0e50b0cf3fd9ae7572eeb5ddf2328c01d026b860cf6bfb",
+  "plan_sha256": "3d47e0708d39b2b5e81f81f07e9b0befa878835f8556cf9ad19fe400e3c34ca5",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "heading",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -29,7 +39,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -85,6 +105,17 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-s2aa090098a6808db",
+      "right": "r00002-sa35c43f774f2ad27",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the interrupted bibliographic attribution, preserve the narrative source and the old row links."
+      }
     }
   ]
 }

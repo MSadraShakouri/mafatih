@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "item-jrb-dml-qvba",
   "author": "agent-4",
-  "plan_sha256": "6dbbb74b25d1cb0282198aa97107085366489b64197b21bb24dee71b8e186738",
+  "plan_sha256": "104bddf0f9f6412e03b06a711bc203e564b9b0f01df899ea12430435e3e15e61",
   "rows": [
     {
       "row": "r00001",
@@ -14,6 +14,30 @@
           "fa": {
             "source": "fa",
             "part": 0
+          },
+          "kind": "heading"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 2
+          },
+          "kind": "note"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
           },
           "kind": "instruction"
         }
@@ -88,6 +112,17 @@
           "kind": "recitation"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00003-s97dcb687a6c9f782",
+      "right": "r00004",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
+      }
     }
   ]
 }

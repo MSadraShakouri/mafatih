@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "dua-hftm-daa-vardh",
   "author": "agent-4",
   "baseline_item_sha256": "ecb465ba7074b52696c3cf91cf46125252f1299921c4f301fff1ac54394c9791",
-  "plan_sha256": "7b1225ac9e8df97b48a5d5c294d90e53a03ed776e81b696cde6f6fb16bc0284e",
-  "layout_sha256": "278902e3a2f9be0462121e6ebf702738ac21ac6be07a0244a35609afcbcf01e9",
+  "plan_sha256": "18a24184f2fa91f3bae8da12aaf9cb43c74088496c19303e43f02e618b7ef527",
+  "layout_sha256": "f3fb3e787a9659e74a0bfa83b2d5dedcb136db64386371dca66729ecb8b9712c",
   "rows": [
     {
       "original": {
@@ -14,7 +14,7 @@
       },
       "results": [
         "r00001-s87a4572572fe3091",
-        "r00001-sa3fbdb6fa458720f"
+        "m231b07e67564246ab96b482f"
       ],
       "ar": [],
       "fa": [
@@ -22,13 +22,15 @@
           "row": "r00001-s87a4572572fe3091",
           "language": "fa",
           "start": 0,
-          "end": 30
+          "end": 30,
+          "target_start": 0
         },
         {
-          "row": "r00001-sa3fbdb6fa458720f",
+          "row": "m231b07e67564246ab96b482f",
           "language": "fa",
           "start": 30,
-          "end": 172
+          "end": 172,
+          "target_start": 0
         }
       ]
     },
@@ -39,7 +41,7 @@
         "fa": "tf9d135cc65bbaca892b54971"
       },
       "results": [
-        "r00002-sb122fdb543464f4c",
+        "m231b07e67564246ab96b482f",
         "r00002-s51331c3b3dd06d15",
         "r00002-sefe2b44d479f4e2b",
         "r00002-sf6e25be0fda6aaff",
@@ -48,34 +50,39 @@
       "ar": [],
       "fa": [
         {
-          "row": "r00002-sb122fdb543464f4c",
+          "row": "m231b07e67564246ab96b482f",
           "language": "fa",
           "start": 0,
-          "end": 17
+          "end": 17,
+          "target_start": 143
         },
         {
           "row": "r00002-s51331c3b3dd06d15",
           "language": "ar",
           "start": 17,
-          "end": 121
+          "end": 121,
+          "target_start": 0
         },
         {
           "row": "r00002-sefe2b44d479f4e2b",
           "language": "fa",
           "start": 121,
-          "end": 305
+          "end": 305,
+          "target_start": 0
         },
         {
           "row": "r00002-sf6e25be0fda6aaff",
           "language": "ar",
           "start": 305,
-          "end": 395
+          "end": 395,
+          "target_start": 0
         },
         {
           "row": "r00002-sd76a281bc67a885e",
           "language": "fa",
           "start": 395,
-          "end": 804
+          "end": 804,
+          "target_start": 0
         }
       ]
     },
@@ -86,22 +93,24 @@
         "fa": "tedafce201ba37eb5e50bbd4e"
       },
       "results": [
-        "r00003"
+        "m7e83ec947ecdd6acf81cfaf2"
       ],
       "ar": [
         {
-          "row": "r00003",
+          "row": "m7e83ec947ecdd6acf81cfaf2",
           "language": "ar",
           "start": 0,
-          "end": 139
+          "end": 139,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00003",
+          "row": "m7e83ec947ecdd6acf81cfaf2",
           "language": "fa",
           "start": 0,
-          "end": 123
+          "end": 123,
+          "target_start": 0
         }
       ]
     },
@@ -112,23 +121,24 @@
         "fa": "t5a05a391014b5111fef92613"
       },
       "results": [
-        "r00004-sa48f69d269a72791",
-        "r00004-saabe6c8229b130ea"
+        "m7e83ec947ecdd6acf81cfaf2"
       ],
       "ar": [
         {
-          "row": "r00004-sa48f69d269a72791",
+          "row": "m7e83ec947ecdd6acf81cfaf2",
           "language": "ar",
           "start": 0,
-          "end": 126
+          "end": 126,
+          "target_start": 140
         }
       ],
       "fa": [
         {
-          "row": "r00004-saabe6c8229b130ea",
+          "row": "m7e83ec947ecdd6acf81cfaf2",
           "language": "fa",
           "start": 0,
-          "end": 84
+          "end": 84,
+          "target_start": 124
         }
       ]
     },
@@ -148,13 +158,15 @@
           "row": "r00005-saba56576a8f4a2e8",
           "language": "fa",
           "start": 0,
-          "end": 176
+          "end": 176,
+          "target_start": 0
         },
         {
           "row": "r00005-s8444c51363c4430d",
           "language": "ar",
           "start": 176,
-          "end": 293
+          "end": 293,
+          "target_start": 0
         }
       ]
     },
@@ -166,29 +178,31 @@
       },
       "results": [
         "r00006-sf793fe842b07432f",
-        "r00006-sffb0fbe94541cff2",
-        "r00006-sac7cfe4397cd2200"
+        "r00006-s8c0d2eb7c4ed8f4d"
       ],
       "ar": [
         {
           "row": "r00006-sf793fe842b07432f",
           "language": "fa",
           "start": 0,
-          "end": 32
+          "end": 32,
+          "target_start": 0
         },
         {
-          "row": "r00006-sffb0fbe94541cff2",
+          "row": "r00006-s8c0d2eb7c4ed8f4d",
           "language": "ar",
           "start": 32,
-          "end": 219
+          "end": 219,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00006-sac7cfe4397cd2200",
+          "row": "r00006-s8c0d2eb7c4ed8f4d",
           "language": "fa",
           "start": 0,
-          "end": 153
+          "end": 153,
+          "target_start": 0
         }
       ]
     },
@@ -200,29 +214,31 @@
       },
       "results": [
         "r00007-s437311542faefd68",
-        "r00007-sd40ca7b7f73b78f7",
-        "r00007-s207e67823f746577"
+        "mdcacc0ca270ecc0f07ff9b1d"
       ],
       "ar": [
         {
           "row": "r00007-s437311542faefd68",
           "language": "fa",
           "start": 0,
-          "end": 86
+          "end": 86,
+          "target_start": 0
         },
         {
-          "row": "r00007-sd40ca7b7f73b78f7",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "ar",
           "start": 86,
-          "end": 304
+          "end": 304,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00007-s207e67823f746577",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "fa",
           "start": 0,
-          "end": 221
+          "end": 221,
+          "target_start": 0
         }
       ]
     },
@@ -233,23 +249,24 @@
         "fa": "te36ffcfd0bc6b66bf867c1c6"
       },
       "results": [
-        "r00008-s6bbb477ed900eaea",
-        "r00008-s88eba61461dcd450"
+        "mdcacc0ca270ecc0f07ff9b1d"
       ],
       "ar": [
         {
-          "row": "r00008-s6bbb477ed900eaea",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "ar",
           "start": 0,
-          "end": 25
+          "end": 25,
+          "target_start": 219
         }
       ],
       "fa": [
         {
-          "row": "r00008-s88eba61461dcd450",
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
           "language": "fa",
           "start": 0,
-          "end": 20
+          "end": 20,
+          "target_start": 222
         }
       ]
     },
@@ -261,29 +278,31 @@
       },
       "results": [
         "r00009-sc64421e6669ebe6d",
-        "r00009-s7e35f20e21823632",
-        "r00009-sace04f5552303cc5"
+        "r00009-s52bc75bc063fb5c1"
       ],
       "ar": [
         {
           "row": "r00009-sc64421e6669ebe6d",
           "language": "fa",
           "start": 0,
-          "end": 13
+          "end": 13,
+          "target_start": 0
         },
         {
-          "row": "r00009-s7e35f20e21823632",
+          "row": "r00009-s52bc75bc063fb5c1",
           "language": "ar",
           "start": 13,
-          "end": 283
+          "end": 283,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00009-sace04f5552303cc5",
+          "row": "r00009-s52bc75bc063fb5c1",
           "language": "fa",
           "start": 0,
-          "end": 232
+          "end": 232,
+          "target_start": 0
         }
       ]
     },
@@ -297,20 +316,22 @@
         "r00010-s70dfccf5c0fc10de",
         "r00010-s68bc5adb439ddf26",
         "r00010-s3d412748668b3db4",
-        "r00010-s0df7b38f9b05a58b"
+        "r00010-sd55a844c5817622f"
       ],
       "ar": [
         {
           "row": "r00010-s70dfccf5c0fc10de",
           "language": "fa",
           "start": 0,
-          "end": 85
+          "end": 85,
+          "target_start": 0
         },
         {
           "row": "r00010-s68bc5adb439ddf26",
           "language": "ar",
           "start": 85,
-          "end": 685
+          "end": 685,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -318,13 +339,15 @@
           "row": "r00010-s3d412748668b3db4",
           "language": "fa",
           "start": 0,
-          "end": 177
+          "end": 177,
+          "target_start": 0
         },
         {
-          "row": "r00010-s0df7b38f9b05a58b",
+          "row": "r00010-sd55a844c5817622f",
           "language": "fa",
           "start": 177,
-          "end": 551
+          "end": 551,
+          "target_start": 0
         }
       ]
     },
@@ -339,54 +362,61 @@
         "r00011-s53ddf1fd1e1f5d29",
         "r00011-s7a14ade5a5159fe6",
         "r00011-sb9dae3413b73754a",
-        "r00011-sff3d5cac0f1b50db",
-        "r00011-sd0acd38d458f476f",
-        "r00011-s122bf2e78f29d187"
+        "r00011-sf87534e3226fb990",
+        "r00011-s72497165d5898045",
+        "r00011-sfa0f852435df04db"
       ],
       "ar": [
         {
           "row": "r00011-sfb3628401260f71e",
           "language": "ar",
           "start": 0,
-          "end": 285
+          "end": 285,
+          "target_start": 0
         },
         {
           "row": "r00011-s53ddf1fd1e1f5d29",
           "language": "ar",
           "start": 285,
-          "end": 413
+          "end": 413,
+          "target_start": 0
         },
         {
           "row": "r00011-s7a14ade5a5159fe6",
           "language": "ar",
           "start": 413,
-          "end": 729
+          "end": 729,
+          "target_start": 0
         },
         {
           "row": "r00011-sb9dae3413b73754a",
           "language": "ar",
           "start": 729,
-          "end": 1011
+          "end": 1011,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00011-sff3d5cac0f1b50db",
+          "row": "r00011-sf87534e3226fb990",
           "language": "fa",
           "start": 0,
-          "end": 210
+          "end": 210,
+          "target_start": 0
         },
         {
-          "row": "r00011-sd0acd38d458f476f",
+          "row": "r00011-s72497165d5898045",
           "language": "fa",
           "start": 210,
-          "end": 480
+          "end": 480,
+          "target_start": 0
         },
         {
-          "row": "r00011-s122bf2e78f29d187",
+          "row": "r00011-sfa0f852435df04db",
           "language": "fa",
           "start": 480,
-          "end": 871
+          "end": 871,
+          "target_start": 0
         }
       ]
     },
@@ -397,25 +427,479 @@
         "fa": "t6df7161a427fce17a0359f67"
       },
       "results": [
-        "r00012-sbfe3fbffbfa108a5",
-        "r00012-s91aea3b6d0cd077b"
+        "r00012"
       ],
       "ar": [
         {
-          "row": "r00012-sbfe3fbffbfa108a5",
+          "row": "r00012",
           "language": "ar",
           "start": 0,
-          "end": 101
+          "end": 101,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00012-s91aea3b6d0cd077b",
+          "row": "r00012",
           "language": "fa",
           "start": 0,
-          "end": 100
+          "end": 100,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00001-sa3fbdb6fa458720f",
+        "ar": null,
+        "fa": "tab2f4b333831381b8d67bd7b",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m231b07e67564246ab96b482f",
+          "language": "fa",
+          "start": 0,
+          "end": 142,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00002-sb122fdb543464f4c",
+        "ar": null,
+        "fa": "ta7fce532f8f23afe12139b01",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m231b07e67564246ab96b482f",
+          "language": "fa",
+          "start": 0,
+          "end": 17,
+          "target_start": 143
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00007-s96935ee66e3fd322",
+        "ar": "t7c44a8e4d53a0357b7b63b94",
+        "fa": "t2907d147f9ae1cd81e775247",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "ar",
+          "start": 0,
+          "end": 218,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "fa",
+          "start": 0,
+          "end": 221,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-sffb0fbe94541cff2",
+        "ar": "t81652600fac06947259b6dde",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00006-s8c0d2eb7c4ed8f4d",
+          "language": "ar",
+          "start": 0,
+          "end": 187,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00006-sb387dc06664daf82",
+        "ar": null,
+        "fa": "tf600a1d67df673e48f806cd2",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00006-s8c0d2eb7c4ed8f4d",
+          "language": "fa",
+          "start": 0,
+          "end": 153,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00007-sd40ca7b7f73b78f7",
+        "ar": "t7c44a8e4d53a0357b7b63b94",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "ar",
+          "start": 0,
+          "end": 218,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00007-s7028dc1aa2a207ae",
+        "ar": null,
+        "fa": "t2907d147f9ae1cd81e775247",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "fa",
+          "start": 0,
+          "end": 221,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00009-s7e35f20e21823632",
+        "ar": "tdd667f477ee67f8e9c978ec7",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00009-s52bc75bc063fb5c1",
+          "language": "ar",
+          "start": 0,
+          "end": 270,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00009-s5e860a6509b30134",
+        "ar": null,
+        "fa": "tcede7757d65aa2a0f1dbef53",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00009-s52bc75bc063fb5c1",
+          "language": "fa",
+          "start": 0,
+          "end": 232,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00006-sac7cfe4397cd2200",
+        "ar": null,
+        "fa": "tf600a1d67df673e48f806cd2",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00006-s8c0d2eb7c4ed8f4d",
+          "language": "fa",
+          "start": 0,
+          "end": 153,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00007-s207e67823f746577",
+        "ar": null,
+        "fa": "t2907d147f9ae1cd81e775247",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "fa",
+          "start": 0,
+          "end": 221,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00009-sace04f5552303cc5",
+        "ar": null,
+        "fa": "tcede7757d65aa2a0f1dbef53",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00009-s52bc75bc063fb5c1",
+          "language": "fa",
+          "start": 0,
+          "end": 232,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00010-s0df7b38f9b05a58b",
+        "ar": null,
+        "fa": "t11899e7145544afba0ed75c7",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00010-sd55a844c5817622f",
+          "language": "fa",
+          "start": 0,
+          "end": 374,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00011-sff3d5cac0f1b50db",
+        "ar": null,
+        "fa": "t5fc27a8622221aea998a2780",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00011-sf87534e3226fb990",
+          "language": "fa",
+          "start": 0,
+          "end": 210,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00011-sd0acd38d458f476f",
+        "ar": null,
+        "fa": "tde0fb921b708f943e4b8b82c",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00011-s72497165d5898045",
+          "language": "fa",
+          "start": 0,
+          "end": 270,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00011-s122bf2e78f29d187",
+        "ar": null,
+        "fa": "tf40229cd36512f7acfcf472f",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00011-sfa0f852435df04db",
+          "language": "fa",
+          "start": 0,
+          "end": 391,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-sa48f69d269a72791",
+        "ar": "t37bd37892280dbe50b464f78",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "m7e83ec947ecdd6acf81cfaf2",
+          "language": "ar",
+          "start": 0,
+          "end": 126,
+          "target_start": 140
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00004-saabe6c8229b130ea",
+        "ar": null,
+        "fa": "t5a05a391014b5111fef92613",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m7e83ec947ecdd6acf81cfaf2",
+          "language": "fa",
+          "start": 0,
+          "end": 84,
+          "target_start": 124
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00008-s6bbb477ed900eaea",
+        "ar": "te109edf4ba4683337a92f617",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "ar",
+          "start": 0,
+          "end": 25,
+          "target_start": 219
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00008-s88eba61461dcd450",
+        "ar": null,
+        "fa": "te36ffcfd0bc6b66bf867c1c6",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "mdcacc0ca270ecc0f07ff9b1d",
+          "language": "fa",
+          "start": 0,
+          "end": 20,
+          "target_start": 222
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00012-sbfe3fbffbfa108a5",
+        "ar": "tc733ba52439a98058fff3d96",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00012",
+          "language": "ar",
+          "start": 0,
+          "end": 101,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00012-s91aea3b6d0cd077b",
+        "ar": null,
+        "fa": "t6df7161a427fce17a0359f67",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00012",
+          "language": "fa",
+          "start": 0,
+          "end": 100,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m231b07e67564246ab96b482f",
+      "language": "fa",
+      "target_start": 142,
+      "value": " ",
+      "left": "r00001-sa3fbdb6fa458720f",
+      "right": "r00002-sb122fdb543464f4c",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "m7e83ec947ecdd6acf81cfaf2",
+      "language": "ar",
+      "target_start": 139,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "m7e83ec947ecdd6acf81cfaf2",
+      "language": "fa",
+      "target_start": 123,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+    },
+    {
+      "row": "mdcacc0ca270ecc0f07ff9b1d",
+      "language": "ar",
+      "target_start": 218,
+      "value": " ",
+      "left": "r00007-s96935ee66e3fd322",
+      "right": "r00008",
+      "reason": "Complete the paired prayer without changing either supplied rendering."
+    },
+    {
+      "row": "mdcacc0ca270ecc0f07ff9b1d",
+      "language": "fa",
+      "target_start": 221,
+      "value": " ",
+      "left": "r00007-s96935ee66e3fd322",
+      "right": "r00008",
+      "reason": "Complete the paired prayer without changing either supplied rendering."
     }
   ]
 }

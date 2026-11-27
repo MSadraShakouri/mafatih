@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 2,
   "item": "ziyarat-zkrmsajd-mazmh-mdynh",
   "author": "agent-4",
   "baseline_item_sha256": "54dc6f23b27e9019e9fffefa9ad818b8e59a315d58144e4907150d95e7db962a",
   "plan_sha256": "094d3ceb1588dad714b22e83d10af30840c19330813b1e8a4e779f55f074fb62",
-  "layout_sha256": "68ec8cfe8f160777935c60a4de2758ddb5739528d501e81932c0ef8d9cb43ca6",
+  "layout_sha256": "7a5886597896aacbbaa4123bbfd330b10a94bedb29e4219583d8f5419eab2dcb",
   "rows": [
     {
       "original": {
@@ -21,7 +21,8 @@
           "row": "r00001",
           "language": "fa",
           "start": 0,
-          "end": 137
+          "end": 137,
+          "target_start": 0
         }
       ]
     },
@@ -40,7 +41,8 @@
           "row": "r00002",
           "language": "fa",
           "start": 0,
-          "end": 322
+          "end": 322,
+          "target_start": 0
         }
       ]
     },
@@ -60,13 +62,15 @@
           "row": "r00003-s1828851db03b603e",
           "language": "fa",
           "start": 0,
-          "end": 102
+          "end": 102,
+          "target_start": 0
         },
         {
           "row": "r00003-sf4b2084d004db1f5",
           "language": "fa",
           "start": 102,
-          "end": 473
+          "end": 473,
+          "target_start": 0
         }
       ]
     },
@@ -77,37 +81,39 @@
         "fa": "tf494918594d21b7435b2b563"
       },
       "results": [
-        "r00004-sa48f69d269a72791",
-        "r00004-sa44b8f05e3e4e602",
-        "r00004-s0243d87b86c35021",
-        "r00004-s8cd93268f2b72979"
+        "r00004-s96ea190883a52f17",
+        "r00004-sd5a4bbaead4bc993"
       ],
       "ar": [
         {
-          "row": "r00004-sa48f69d269a72791",
+          "row": "r00004-s96ea190883a52f17",
           "language": "ar",
           "start": 0,
-          "end": 259
+          "end": 259,
+          "target_start": 0
         },
         {
-          "row": "r00004-sa44b8f05e3e4e602",
+          "row": "r00004-sd5a4bbaead4bc993",
           "language": "ar",
           "start": 259,
-          "end": 350
+          "end": 350,
+          "target_start": 0
         }
       ],
       "fa": [
         {
-          "row": "r00004-s0243d87b86c35021",
+          "row": "r00004-s96ea190883a52f17",
           "language": "fa",
           "start": 0,
-          "end": 222
+          "end": 222,
+          "target_start": 0
         },
         {
-          "row": "r00004-s8cd93268f2b72979",
+          "row": "r00004-sd5a4bbaead4bc993",
           "language": "fa",
           "start": 222,
-          "end": 307
+          "end": 307,
+          "target_start": 0
         }
       ]
     },
@@ -126,7 +132,8 @@
           "row": "r00005",
           "language": "fa",
           "start": 0,
-          "end": 228
+          "end": 228,
+          "target_start": 0
         }
       ]
     },
@@ -145,7 +152,82 @@
           "row": "r00006",
           "language": "fa",
           "start": 0,
-          "end": 23
+          "end": 23,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00004-sa48f69d269a72791",
+        "ar": "t03ba4009c68b5fd46ccb3c41",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00004-s96ea190883a52f17",
+          "language": "ar",
+          "start": 0,
+          "end": 259,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00004-sa44b8f05e3e4e602",
+        "ar": "t682c47528b019d258533c925",
+        "fa": null,
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "r00004-sd5a4bbaead4bc993",
+          "language": "ar",
+          "start": 0,
+          "end": 91,
+          "target_start": 0
+        }
+      ],
+      "fa": []
+    },
+    {
+      "original": {
+        "id": "r00004-s0243d87b86c35021",
+        "ar": null,
+        "fa": "t6bfbe7ede902fe642f3015be",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00004-s96ea190883a52f17",
+          "language": "fa",
+          "start": 0,
+          "end": 222,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-s8cd93268f2b72979",
+        "ar": null,
+        "fa": "t6b580f703681c5e045dccddd",
+        "kind": "recitation"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "r00004-sd5a4bbaead4bc993",
+          "language": "fa",
+          "start": 0,
+          "end": 85,
+          "target_start": 0
         }
       ]
     }

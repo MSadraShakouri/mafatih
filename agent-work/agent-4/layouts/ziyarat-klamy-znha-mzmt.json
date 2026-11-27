@@ -42,80 +42,60 @@
             "source": "ar",
             "part": 0
           },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 1
-          },
-          "fa": null,
-          "kind": "note"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 2
-          },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 3
-          },
-          "fa": null,
-          "kind": "note"
-        },
-        {
-          "ar": {
-            "source": "ar",
-            "part": 4
-          },
-          "fa": null,
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "quotation"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 1
+          },
           "fa": {
             "source": "fa",
             "part": 1
           },
-          "kind": "note"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 2
+          },
           "fa": {
             "source": "fa",
             "part": 2
           },
-          "kind": "quotation"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 3
+          },
           "fa": {
             "source": "fa",
             "part": 3
           },
-          "kind": "note"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
-          "ar": null,
+          "ar": {
+            "source": "ar",
+            "part": 4
+          },
           "fa": {
             "source": "fa",
             "part": 4
           },
-          "kind": "quotation"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -154,6 +134,17 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00004-s6781612fc75b6e23",
+      "right": "r00005",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
     }
   ]
 }

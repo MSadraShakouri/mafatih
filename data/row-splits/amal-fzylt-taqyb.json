@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "amal-fzylt-taqyb",
   "author": "agent-4",
   "baseline_item_sha256": "0f4479422daf4b7cc0fb73586270cfba64d4d1f9031ebe222122551bd9725164",
-  "plan_sha256": "0dc19612c85d3b3398e4c83403b56fd3c0fd065d03e420c7d5bfe11cd7b35d6d",
-  "layout_sha256": "c333a188a1e7b9b8d08ced9df22538a4baed98693443dc63c08980ac7085b819",
+  "plan_sha256": "e91168562dc3ecbf0bf071448b65386bded0a96d83eb7fdf463bcf64fe08c643",
+  "layout_sha256": "9f0ab0189f802d3e0578bb13286aaad76e78b91033853efcce902a79c7f7d705",
   "rows": [
     {
       "original": {
@@ -13,15 +13,24 @@
         "fa": "t51b6508a279243d62d8303d9"
       },
       "results": [
-        "r00001"
+        "r00001-s56c8af349f11adc6",
+        "r00001-s9befc958e213e62c"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "r00001-s56c8af349f11adc6",
           "language": "fa",
           "start": 0,
-          "end": 98
+          "end": 48,
+          "target_start": 0
+        },
+        {
+          "row": "r00001-s9befc958e213e62c",
+          "language": "fa",
+          "start": 48,
+          "end": 98,
+          "target_start": 0
         }
       ]
     },
@@ -39,7 +48,8 @@
           "row": "r00002",
           "language": "ar",
           "start": 0,
-          "end": 53
+          "end": 53,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -47,7 +57,8 @@
           "row": "r00002",
           "language": "fa",
           "start": 0,
-          "end": 64
+          "end": 64,
+          "target_start": 0
         }
       ]
     },
@@ -59,7 +70,7 @@
       },
       "results": [
         "r00003-s1828851db03b603e",
-        "r00003-s1b27bb8c75bc48e1"
+        "m690d48deaeb308ec25fb618d"
       ],
       "ar": [],
       "fa": [
@@ -67,13 +78,15 @@
           "row": "r00003-s1828851db03b603e",
           "language": "fa",
           "start": 0,
-          "end": 521
+          "end": 521,
+          "target_start": 0
         },
         {
-          "row": "r00003-s1b27bb8c75bc48e1",
+          "row": "m690d48deaeb308ec25fb618d",
           "language": "fa",
           "start": 521,
-          "end": 653
+          "end": 653,
+          "target_start": 0
         }
       ]
     },
@@ -84,24 +97,75 @@
         "fa": "tfe8c29b0a0d39bc422b2e9ef"
       },
       "results": [
-        "r00004-saabe6c8229b130ea",
+        "m690d48deaeb308ec25fb618d",
         "r00004-s6781612fc75b6e23"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00004-saabe6c8229b130ea",
+          "row": "m690d48deaeb308ec25fb618d",
           "language": "fa",
           "start": 0,
-          "end": 377
+          "end": 377,
+          "target_start": 133
         },
         {
           "row": "r00004-s6781612fc75b6e23",
           "language": "fa",
           "start": 377,
-          "end": 881
+          "end": 881,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00003-s1b27bb8c75bc48e1",
+        "ar": null,
+        "fa": "t5d4c618b9428eaa2b59ee5cb",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m690d48deaeb308ec25fb618d",
+          "language": "fa",
+          "start": 0,
+          "end": 132,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00004-saabe6c8229b130ea",
+        "ar": null,
+        "fa": "t41a183cb0e91241883faf35f",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m690d48deaeb308ec25fb618d",
+          "language": "fa",
+          "start": 0,
+          "end": 377,
+          "target_start": 133
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m690d48deaeb308ec25fb618d",
+      "language": "fa",
+      "target_start": 132,
+      "value": " ",
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-saabe6c8229b130ea",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review."
     }
   ]
 }
