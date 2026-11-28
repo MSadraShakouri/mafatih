@@ -4,11 +4,11 @@
   "item": "khavas-hrz-mvsy-kazm",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "232fa2e82636abc59349cd8d7dc17af2e9283b653a49d3303420fc64e565aeef",
-  "layout_sha256": "33dc39d9ed79860457047d8189356a83f4137973d8e62067c53085385eb96474",
-  "result_item_sha256": "de77172a8a7a2d58af8e0ede43b93cd2036a2e9c219113801704be845b389624",
-  "result_record_sha256": "66e7707987b19ceea96c7f3f648693512cf82112be69171f574028da249e97e0",
+  "layout_sha256": "f3f067299c574460d92bd31fb8eb28d8eac2ebd77bcce43715c9a17ffa45a201",
+  "result_item_sha256": "7766a71196c3e04ce73635f2ee5e57021155d72fd32a10659d9b78fac50e3e54",
+  "result_record_sha256": "06d795bd6c3bb93150061f2700252e24c4baebcb9f165341b9366ce960bde72e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,63 +23,87 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The ordinal heading and source narrative are separated. Reviewed fa source."
+        "note": "Heading and attributed account remain separate and claims attributed."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The attributed poem is paired with its supplied Persian rendering. Reviewed ar source."
+        "note": "The quotation stays paired with its supplied rendering."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The attributed poem is paired with its supplied Persian rendering. Reviewed fa source."
+        "note": "The supplied rendering stays paired with the quotation."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian narrative transition is correctly moved, and the prayer is paired, but the last Arabic attribute continues in r00004 while its Persian is already complete here. Reviewed ar source."
+        "note": "The Persian narrative prefix is correctly moved; the interrupted Arabic passage is now grouped with its continuation."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian narrative transition is correctly moved, and the prayer is paired, but the last Arabic attribute continues in r00004 while its Persian is already complete here. Reviewed fa source."
+        "note": "The prayer is paired and the existing asymmetry with the Arabic continuation is preserved."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening Arabic word completes the preceding attribute; the Persian for that attribute appears in r00003. Group the passage without inventing text. Reviewed ar source."
+        "note": "The opening Arabic word completes the prior passage; the subsequent petition is grouped without added words."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening Arabic word completes the preceding attribute; the Persian for that attribute appears in r00003. Group the passage without inventing text. Reviewed fa source."
+        "note": "The Persian source already completes the corresponding attribute earlier; the supplied continuation is retained without invented translation."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The narrated aftermath is a source report, not independent historical verification. Reviewed fa source."
+        "note": "The later attributed outcome is a separate note."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The heading, narrative, quotation and prayer roles are well separated, but r00003/04 interrupts an Arabic phrase while its Persian completes it earlier; group the passage. Preserve source claims, wording and links."
-  }
+    "decision": "accept",
+    "note": "The attributed report, paired quotation and joined prayer retain their roles. The source asymmetry remains uncorrected and no claim is certified; available isolated-history IDs and fields were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m4028a6e9b999ddc6746f443d",
+      "language": "ar",
+      "target_start": 237,
+      "value": " ",
+      "left": "r00003-s9f97c4871ba80c47",
+      "right": "r00004",
+      "reason": "Complete the bilingual prayer while retaining the source asymmetry, with one proposed space per language.",
+      "decision": "accept",
+      "note": "The Arabic promise and its following object are separate words; U+0020 is justified."
+    },
+    {
+      "row": "m4028a6e9b999ddc6746f443d",
+      "language": "fa",
+      "target_start": 223,
+      "value": " ",
+      "left": "r00003-s9f97c4871ba80c47",
+      "right": "r00004",
+      "reason": "Complete the bilingual prayer while retaining the source asymmetry, with one proposed space per language.",
+      "decision": "accept",
+      "note": "The Persian sentence and following conjunction are separate words; U+0020 is justified."
+    }
+  ]
 }

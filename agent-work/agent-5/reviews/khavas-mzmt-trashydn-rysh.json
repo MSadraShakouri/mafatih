@@ -4,11 +4,11 @@
   "item": "khavas-mzmt-trashydn-rysh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "093b74e9414c6cb37c15e102e19d8738f0177f2ece8da21b5dc6509b28666f2c",
-  "layout_sha256": "f5ab202336f3795402f203e6e27acf97a63f67281837bc4239c4ca3fabdf61ad",
-  "result_item_sha256": "b98ed44a1c1416d734276c27df3725b647eb5981f70bac4301ea81a30bf14ffc",
-  "result_record_sha256": "d04e0fc9f2dbaa205bd5246dfa3b0ca76713e5ed94338974b2536e735b656d32",
+  "layout_sha256": "7a35d937d39ea350c0037dd2c65292e1e893a0eb3f3fc79c4ec3a971dafac007",
+  "result_item_sha256": "6d4b14c52b1a3f2c5ec4c599bba1050b9f37b3ad9b429b57ee1376cc3298e0d6",
+  "result_record_sha256": "af5b3893ed4db12b57ba8cbf4f38329e853c108447c0396b785a92bcf20ad417",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,23 +21,36 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The reported quotation attribution ends mid-sentence and continues نقل‌شده at r00002; group that report if links permit."
+        "note": "The attributed statement is joined to the continuation without merging the later distinct report."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first part completes r00001 and recounts a reported saying; the second moves into a different historical report. Preserve that transition while repairing the interrupted source boundary."
+        "note": "The opening completes the earlier report; the distinct later historical report stays separate as a note."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
-  }
+    "decision": "accept",
+    "note": "The joined report and the distinct later report remain separate notes. All claims remain attributed; available isolated-history IDs and fields were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m453ab4ac65155a95bd719aad",
+      "language": "fa",
+      "target_start": 158,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the attributed report with one proposed Persian space, retaining its source characterization.",
+      "decision": "accept",
+      "note": "One U+0020 separates the honorific from the following Persian verb."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "amal-fzylt-msjd-kvfh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "35bdb018793c325e6fe4fc6691086859cf97dbbe46a33493f1317b625f6195de",
-  "layout_sha256": "5c52f4b85242b6469f389cdd5c427c66baafde3336f1f9b36f495ae2bb1ea643",
-  "result_item_sha256": "35658abfb40102ee024af9f85ce9e39b1defd76a73761770925c93d728b04772",
-  "result_record_sha256": "3f362a005f1ff5cd6f8d88df859566a8d5379fee8276e273965f5f95d746840b",
+  "layout_sha256": "f17a916d44f71b4089debf98cd870c26645341bb3f22566034da081a17bbdddd",
+  "result_item_sha256": "196f370cef7a585c6e42c12280704bd3275e224088ae4dfc5cec57941c1a6ea1",
+  "result_record_sha256": "5dc56d2036587fd921270ddff640d61e8e57d9da608d1b864dc01c78597d8c45",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,28 +23,28 @@
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The opening descriptions and attributed claims remain source context. Reviewed fa source."
+        "note": "The introductory attributed merits remain a note."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first report break is sensible, but the final report is interrupted mid-number across r00003. Reviewed fa source."
+        "note": "The interrupted number and report now continue into the next source row."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002’s report; later splits identify new attributed reports, but the final narrative question continues in r00004. Reviewed fa source."
+        "note": "The first report is completed and the interrupted narrative question is grouped."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The opening continues the narrative question in r00003; the concluding reference and comparison are distinct explanatory context. Reviewed fa source."
+        "kind": "revise",
+        "note": "The narrative continuation is grouped, but the closing citation and comparative explanation remain mixed into the long note mde48436c2798e02702533601."
       }
     ],
     "punctuation": [],
@@ -52,6 +52,30 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group report continuations r00002/03 and narrative question r00003/04; retain the author’s other report boundaries and attributed claims as claims. Distinguish the closing citation and explanation where possible; preserve links."
-  }
+    "note": "Both continuations are now grouped; the ending citation and comparison remain mixed into mde48436c2798e02702533601/fa and require supported, link-preserving separation. Preserve reported claims. Available historical IDs and fields were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m4181a00203cbc3c01cc784df",
+      "language": "fa",
+      "target_start": 150,
+      "value": " ",
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "One U+0020 separates the coordinated Persian number expressions."
+    },
+    {
+      "row": "mde48436c2798e02702533601",
+      "language": "fa",
+      "target_start": 500,
+      "value": " ",
+      "left": "r00003-s2fd8d78ba1da248f",
+      "right": "r00004",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "One U+0020 separates the question verb from the following interrogative."
+    }
+  ]
 }

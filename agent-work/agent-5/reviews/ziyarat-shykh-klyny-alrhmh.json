@@ -4,11 +4,11 @@
   "item": "ziyarat-shykh-klyny-alrhmh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "ca7d9b230d48c7f7ef1a212292fa75ab98c933b1d160ed8e2ffa923ff6be7569",
-  "layout_sha256": "3ed48566a7333b8379906a0dd1827dbb14dd855437070597664755b05c4d1f86",
-  "result_item_sha256": "f56dff8f3b996904646f8aa82570c219a970b96fa9bd125b71e445c4ce7544e5",
-  "result_record_sha256": "afbc52526f6348ad8b8bdb29e4308f67775335a4f841fad23adbe0f066a7db7f",
+  "layout_sha256": "fe6e2480d59f41700742ec31a17d308ce0f3fa6df38a07728fb43fabc6d4784a",
+  "result_item_sha256": "8dcdbdc742e6148aab41e09fc7b27444ac1f67e56b803093468cf221ce55544d",
+  "result_record_sha256": "2e360e4afc0f3cee18b8d45812b4267c086fbd778c7ab077b0e375da91f7d604",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -22,15 +22,15 @@
         "row": "r00001",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "Biographical account begins with a recommendation to visit and continues across r00002 at جلالت / عظمت. Preserve the phrase; consider separating practical recommendation from the biography without orphaning links."
+        "kind": "revise",
+        "note": "The biography continues correctly, but the opening visit recommendation is still mixed into the long note."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The opening completes r00001 and the closing refers the reader to another book; group the interrupted biographical report."
+        "kind": "revise",
+        "note": "The continuation is joined, but the final reference to consult a book is still mixed into the biographical note."
       }
     ],
     "punctuation": [],
@@ -38,6 +38,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
-  }
+    "note": "The interrupted biography is joined, but its opening visit recommendation and closing reference remain mixed into m668e1fb5d563d3053b4e454a/fa. Use link-safe role separation. Available historical IDs and fields were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m668e1fb5d563d3053b4e454a",
+      "language": "fa",
+      "target_start": 298,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "One U+0020 separates the Persian paired terms at the continuation."
+    }
+  ]
 }

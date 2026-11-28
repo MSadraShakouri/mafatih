@@ -4,11 +4,11 @@
   "item": "namaz-fzylt-ayh-alkrsy",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "51c2cd0def5491b94f4ad2fb1a454e8124775c05fe43f45f72b8a1a1aeccb96e",
-  "layout_sha256": "fa8250053dca6adc37e1fa9af3d36dcca7ffe8240ac36dc077421c33e8367286",
-  "result_item_sha256": "35b2a5abba22b83c2db576dcdbeec245cec01bb85c2732495521c12b99b4648b",
-  "result_record_sha256": "b5f84a1a705c356d78ca9d910c393d2a6e36d1c964e1916c836b7f7cd021afac",
+  "layout_sha256": "eb55f8cc95ea6218249c12ca1f78475a6f315166a7dc151bd9079c3029ac62db",
+  "result_item_sha256": "d5ebd95f014d4ddd7e01576cb3761ba8e4b3f222e953088652a760f1b624d271",
+  "result_record_sha256": "e6c8f9cb8c79df6f3d00c29b4a095790ab804b8a1fa885c547c480fb9a9a7a79",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,23 +21,36 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This Persian report is correctly placed in the Persian slot despite its original Arabic field; it ends روایت and continues شده at the start of r00002."
+        "note": "The original Arabic slot contains Persian attribution, which is moved to Persian and grouped with the continuation."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first piece completes the preceding attribution; the later pieces begin distinct reported merits. Consider a link-safe join at the interrupted Persian verb."
+        "note": "The first portion completes the prior attribution; the later distinct merit reports stay separate as notes."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
-  }
+    "decision": "accept",
+    "note": "The attribution is completed and subsequent claims remain separate attributed notes; no protection claim is certified. Available isolated-history IDs and fields were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "mac0db5da0e26580a4a55a159",
+      "language": "fa",
+      "target_start": 63,
+      "value": " ",
+      "left": "r00001-saa3ec3f116259495",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the attributed report with one proposed Persian space, preserving cross-language source lineage.",
+      "decision": "accept",
+      "note": "The two parts of the Persian verb are separate words here; U+0020 completes the attribution."
+    }
+  ]
 }

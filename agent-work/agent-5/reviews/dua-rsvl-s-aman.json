@@ -4,11 +4,11 @@
   "item": "dua-rsvl-s-aman",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "eb01d36c3c8ecc773c97f80f7a8488c3705c61561e51afa162e06526ed79b16e",
-  "layout_sha256": "35a670090751316569445fbc84efa9e378c0c0c49a242f2e4fe08f72346f71bc",
-  "result_item_sha256": "701f9bb1b52695c4247e186f2b036a8fee968dbd25f619d981f5344f01b59fa9",
-  "result_record_sha256": "a22d698dc782554b5ed774b26ee7bd8f56833a4de1cce684a7bc2cdeb09158b3",
+  "layout_sha256": "1e6a98a58edb6635b4e646d6333b31123ac0f1dc80be8e1e0b8135dea9c8774b",
+  "result_item_sha256": "005133fb237476b65f4e0c4e8626f629cf9fbac1f64d13761b561d348768d89c",
+  "result_record_sha256": "ed0d2fa700c87ac01de78834b4187609e6024dbbf65b65e58de9edf45f946591",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,37 +21,50 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian attribution was correctly moved from the Arabic field, but its title/description continues in r00002. Reviewed ar source."
+        "note": "The Persian attribution stored in the original Arabic field is correctly moved to Persian and grouped with r00002; its attributed protection claim is not verified."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The moved Persian words complete the attributed description in r00001; group the prose, treating the protective claim as attributed. Reviewed ar source."
+        "note": "The Persian continuation stored in the original Arabic field completes r00001, and is correctly grouped and placed in Persian."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The basmala and subsequent three devotional sections are paired at meaningful transitions. Reviewed ar source."
+        "note": "The four Arabic recitation sections and their boundaries correspond to the existing Persian renderings; preserve the supplied source."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The basmala and subsequent three devotional sections are paired at meaningful transitions. Reviewed fa source."
+        "note": "The four Persian recitation sections align with the Arabic requests, preserving the supplied wording and its preexisting typographical defects."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The Persian attribution/description crosses r00001/02 and should be coherent; the four Arabic/Persian sections align. Preserve the reported protection claim, source text and anchors."
-  }
+    "decision": "accept",
+    "note": "The Persian attribution/claim is continuous, correctly moved from the original Arabic fields, and remains a reported claim. All four paired recitation sections correspond. Available isolated-history IDs and fields were checked; no candidate migration is approved."
+  },
+  "spacing_review": [
+    {
+      "row": "m4d131af35395796d404f88a6",
+      "language": "fa",
+      "target_start": 82,
+      "value": " ",
+      "left": "r00001-saa3ec3f116259495",
+      "right": "r00002-s0b1d6d51987de706",
+      "reason": "Complete the same attributed report with one proposed Persian space.",
+      "decision": "accept",
+      "note": "The Persian preposition and following noun are separate words; one U+0020 preserves the intended sentence."
+    }
+  ]
 }

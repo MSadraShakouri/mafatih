@@ -4,11 +4,11 @@
   "item": "monajat-mnajat-sfr",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "5f41c9216130f04703b2172ce8f474ce8c71d5a7a5b2c3e86f74a49e77ab0f23",
-  "layout_sha256": "993ef665f557e8ee8911296e59b6009b6ab6958907b1a9fe447bf57b6d9807b3",
-  "result_item_sha256": "7b33df03bc062ed9b640b46f6551ed8363ac342ee43fbd13731f1e5906d1ce30",
-  "result_record_sha256": "00a4ef3e8f38be73eeef085b9203c2dc2ab476ddfa3389c7a00ad435b219945d",
+  "layout_sha256": "d0da94f74fca66c671130a816d65341ce2e44a39b75530dc9c5f41a2c7508594",
+  "result_item_sha256": "4e75004e206e604b20bce975c6886999af8728aacbe5746a57642719636fbe1a",
+  "result_record_sha256": "7fa8bb97db61bf7b390960542b3c7ada8ad8b8bbc4644930e76f9711a61a3296",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,30 +21,30 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first two paired cuts mark natural request transitions, but the final Arabic and Persian fragment ends mid-phrase and continues in r00002. Reviewed ar source."
+        "note": "The existing prayer divisions group distinct requests; the formerly interrupted final travel request now joins its continuation, preserving the Arabic variant."
       },
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first two paired cuts mark natural request transitions, but the final Arabic and Persian fragment ends mid-phrase and continues in r00002. Reviewed fa source."
+        "note": "The corresponding Persian requests align with the Arabic; the former final incomplete phrase now joins its continuation."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the Arabic/Persian travel request begun at the end of r00001; later internal cuts group related requests. Reviewed ar source."
+        "note": "The beginning completes r00001 and later cuts separate coherent request groups, preserving the supplied variant."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the Arabic/Persian travel request begun at the end of r00001; later internal cuts group related requests. Reviewed fa source."
+        "note": "The beginning completes r00001 and later request groupings correspond to the Arabic without inventing wording."
       }
     ],
     "punctuation": [],
@@ -52,6 +52,30 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The paired travel prayer divides into meaningful subsections, but both fields break a phrase across r00001/02. Group the continuation and preserve bracketed variants and existing links."
-  }
+    "note": "The joined paired travel request and both inserted spaces are accepted locally. Historical identity remains a hold: pre-frozen r00001/ar at 0b7c1108 uses the same ID but text reference tad6240f1559480faeced89ff differs by one U+0020 at code-point 568 from the frozen version t74779cbdc660050020f3be24; exact old-version offset mapping is not established. Do not silently edit text or approve a migration."
+  },
+  "spacing_review": [
+    {
+      "row": "m055aef95b60e2d4231233a63",
+      "language": "ar",
+      "target_start": 23,
+      "value": " ",
+      "left": "r00001-s36a52eb1dedee746",
+      "right": "r00002-se78f6df715196b3d",
+      "reason": "Complete the bilingual travel request with one proposed space per language; preserve the supplied variant.",
+      "decision": "accept",
+      "note": "The Arabic preposition and following noun are separate words; one U+0020 is justified."
+    },
+    {
+      "row": "m055aef95b60e2d4231233a63",
+      "language": "fa",
+      "target_start": 8,
+      "value": " ",
+      "left": "r00001-s36a52eb1dedee746",
+      "right": "r00002-se78f6df715196b3d",
+      "reason": "Complete the bilingual travel request with one proposed space per language; preserve the supplied variant.",
+      "decision": "accept",
+      "note": "The Persian preposition and following noun are separate words; one U+0020 is justified."
+    }
+  ]
 }

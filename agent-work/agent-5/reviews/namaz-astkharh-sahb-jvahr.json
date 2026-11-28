@@ -4,11 +4,11 @@
   "item": "namaz-astkharh-sahb-jvahr",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "a1b9d18f125ddab9f5899d7621db9a97e01cf1c77a23d188984ee8a1a9bde901",
-  "layout_sha256": "1bb5811dbe8fcc7cbd69adc5cf37598ee41b81546d204870cff9a545f73dba52",
-  "result_item_sha256": "c4e1532c5dbe2c3b78944c990f3ef84bae43057d1d9fd0d99a2919196838ffad",
-  "result_record_sha256": "d82012a9ea550dc580863142183a87a5637ce3f2b4f28206802c4f817264420b",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "161a98dc9821801e041efb8180ca65afb9697cc841ee2a31c79430498d870bb0",
+  "layout_sha256": "b639d2ff050dafde27dda8d43632ad72c740fb09110d4bbe61b2c13d394ae484",
+  "result_item_sha256": "e54ae3babc331d6e4bb031f9c347ff7d1276391a4ff45488b127bd52964577a2",
+  "result_record_sha256": "6e0aab7e6c399cf0443d31f1a9c6280992078cbf0798e604948ff6a08772a24e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "f29dffcf176e42ec7a31df0e4530d1d2fbee0638b08794b171350267b9ee9f04",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "0b907efb986fb5416105b7a31105ce7beb0471052a2ee28b40af0692900e7d69",
+    "preview_sha256": "a6a6ddd6335cb92d7a4963ebe62d5742f8ec019e5436de6d555103700e480fe5",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The first piece begins with source attribution and uncertain reported attribution before explaining the procedure; distinguish that report from practical instruction. The remaining numbered outcomes and closing compiler remark have distinct content."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The attribution and uncertain report are separated from the instructions and the compiler’s closing note; preserve the attributed procedure and stated outcome variants."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
+    "decision": "accept",
+    "note": "The report, procedure, outcome descriptions and closing reference retain their roles; do not certify the attributed claims. Available historical IDs and fields were checked."
   }
 }

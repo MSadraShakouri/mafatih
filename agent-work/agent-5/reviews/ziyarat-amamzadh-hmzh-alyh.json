@@ -4,11 +4,11 @@
   "item": "ziyarat-amamzadh-hmzh-alyh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "fade9fd196c3570ca7064bb6275a5b0c97b4d975ceeb2573af86b2878eaae088",
-  "layout_sha256": "d14bde9b860ce322a412a3632668506df79cbeb4941b89c0b3da3993ae008566",
-  "result_item_sha256": "f4a6a12115d3e8cda5574aee7180464bd7ccec2007316b4fe6c536d04a2398c7",
-  "result_record_sha256": "14df32e79624f52b38e21ea181bc23b5c583ea088f56bb7d24f2bbc18d1f12f6",
+  "layout_sha256": "9bbe285dd1576de0827d213fb85a48d1ebf75bf924ef8415a7bd11da2b1eedff",
+  "result_item_sha256": "c5ad270a68368673af27bbf3550c751ec34395e22eb50055ddeb6edd72553767",
+  "result_record_sha256": "1ca654a163e42564a2b04cdf50c78f41df4cf6b7389bec70d2e34ecafe825dcf",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,16 +21,16 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The attribution ends mid-sentence at که, continued in r00002; group the report if the historical links can be preserved."
+        "note": "The attribution now continues into the historical account; the space and old links were checked."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The first piece finishes the historical report and includes directions about which visitation to read; the second mixes historical information and advice to visit other graves. Distinguish practical directions from notes and join the interrupted attribution where safe."
+        "note": "The historical account is joined, but visitation directions in m3cf282c8466f123175491312 and advice in r00002-s7912db66cde98eb8 remain mixed into note rows."
       }
     ],
     "punctuation": [],
@@ -38,6 +38,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
-  }
+    "note": "The interrupted report is joined; separate visitation directions and recommendations from historical notes using supported link-preserving operations. Retain the quotation and attribution. Available historical IDs and fields were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m3cf282c8466f123175491312",
+      "language": "fa",
+      "target_start": 52,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction and following name require a space at the report continuation."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "amal-avzh-aqrb",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "f2be6d1f29e8a604830771ec4863b7a885e4002b4eca06b4332ab82d7b66d47a",
-  "layout_sha256": "1448176e2749160ca9b9142cac7dc91fc61fa1007be7146ac3be1b1ee62b5ebb",
-  "result_item_sha256": "9b42695e325db6b399972dfeccd8faddf2b472cd173c8a646866e055ed88c44c",
-  "result_record_sha256": "7938df54af0c28b3e1712d724c244a86002cb972780e487ba171c207d57d2893",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "45154069941c07089258b1e5742a79624032b1a167266dd0fd8a9849c793ce77",
+  "layout_sha256": "43d413785fc677dd384de5078dec52abf81532f12d3e9329e945d5a90359fff9",
+  "result_item_sha256": "99d73dfc8eeeaf192d72a8f3a3d6c2d59ac0f21d2cdf23d0fd92780aa823d92d",
+  "result_record_sha256": "ff2119d239c913badf54a2666b4520844c27da1089353c6912286bdf532cfed1",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,35 +16,35 @@
     "item_sha256": "d0a0536e712a2aa3ce4b7ba313fe3d53034b795aca8f7ad921cc6d0da2d4564b",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "8bd50c3526e3d40a1865790d7f53c1cef994a69ebc05e4a72d7a15c1802359bc",
+    "preview_sha256": "dd6d10ea7c400d67e6fe0cd6fac83fee9464229de5071c32f911eaac9494c316",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The attributed report has been moved correctly to Persian but continues at the beginning of r00002. Reviewed ar source."
+        "note": "Persian attribution in the original Arabic field is grouped with the following Persian report and correctly classified as note."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The first sentence completes the report attributed in r00001 and refers to an earlier verse; the subsequent conditional direction and attributed protection claim need distinct roles. Preserve the source reference rather than inventing the verse. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The opening completes the attributed note; the conditional direction and subsequent attributed claim are in separate instruction and note rows. The earlier verse referred to in this report is not present in this item; do not invent it."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The prayer and its existing Persian rendering correspond. Reviewed ar source."
+        "note": "The Arabic prayer remains paired with the provided Persian rendering."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The prayer and its existing Persian rendering correspond. Reviewed fa source."
+        "note": "The Persian rendering remains paired with the Arabic prayer; the attributed safety claim is not established medical protection."
       }
     ],
     "punctuation": [],
@@ -52,6 +52,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group the attributed report across r00001/02, and separate it and the later attributed safety claim from the actual direction. The source refers to a verse not present in this item; do not invent it or treat protection claims as medical advice. The prayer is paired."
-  }
+    "note": "The report, instruction and claim are structurally separated and paired prayer retained; the reference in r00002/fa to an absent earlier verse remains an editorial/source-context hold. Do not invent a verse or certify the attributed protection claim. Available isolated-history IDs and fields were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m9d14b9d90e88617efb036061",
+      "language": "fa",
+      "target_start": 44,
+      "value": " ",
+      "left": "r00001-saa3ec3f116259495",
+      "right": "r00002-s715b6a57ac51205e",
+      "reason": "Complete the source attribution without inventing the referenced verse or endorsing its reported claim.",
+      "decision": "accept",
+      "note": "One U+0020 separates the attribution punctuation from the following reported sentence."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "namaz-anjam-daa-vst",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "76b6b9033d059e77bcf569d15a90182753a51c996863767817844e9de1cea34b",
-  "layout_sha256": "08739d1772bd1a08669d628de2793c1f03f520eb82dcb5bd519ee88af00a4d8a",
-  "result_item_sha256": "61d1302fe80cbe5458d71b4c9fe7d56bddad23ef020035797f4a8790dadcb1b8",
-  "result_record_sha256": "456b6ac81d75d29a1f936348fa82ed45f61d969ec1e649787c04f1ef8cf865f8",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "c90e502af34f39164e1982314d94469036a692a16ba54c71eec05111894bcf3e",
+  "layout_sha256": "0239e2f6055fbdb71e8801e50205bb12dd937bcd924b6d590d8d8944faf1f86f",
+  "result_item_sha256": "c40ab69e8c94124d2b65ce075f29d810a14e4fbcbd775e96379a679b8eb3feba",
+  "result_record_sha256": "dfd1ddd85fb5898730b4f6bddec0755e26e66d19adb2c1b1b2468f71cbb6e8ba",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,42 +16,42 @@
     "item_sha256": "3cefe761695136df405b1db1332549fe584098511aeab9bf20554e0f205af423",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "38553f9cb3f3f301cdafddc740bc7b98dc9036507a5b763884b74bbb269fc3e4",
+    "preview_sha256": "5fe357074835272f49e1ad57c601dbd819ab7c23f904eea394e2f7cfa186b2e5",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The location/action title precedes detailed prayer instructions; distinguish the heading from the practical directions. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The opening title is separated from the practical prayer instruction."
       },
       {
         "row": "r00002",
         "language": "ar",
         "split": "accept",
         "kind": "accept",
-        "note": "The three prayers are divided at new supplications and paired with the supplied Persian. Reviewed ar source."
+        "note": "Three prayer groups are paired with the corresponding existing Persian."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The three prayers are divided at new supplications and paired with the supplied Persian. Reviewed fa source."
+        "note": "The three supplied renderings align with the Arabic prayer groups."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "The author’s account of the place and earlier reference is an explanatory note. Reviewed fa source."
+        "note": "The author’s explanation remains a separate attributed note."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Separate the title from its directions in r00001; the three paired prayers and author note are otherwise coherent. Preserve source and IDs."
+    "decision": "accept",
+    "note": "The title and instructions are separated; three paired prayers and the explanatory note remain distinct. Available historical IDs and fields were checked."
   }
 }
