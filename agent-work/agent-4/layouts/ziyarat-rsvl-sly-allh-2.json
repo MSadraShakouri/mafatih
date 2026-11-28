@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-rsvl-sly-allh-2",
   "author": "agent-4",
-  "plan_sha256": "40e0c53dc2df4ee28101f918edf185f99453714d9891fdec352b78e30d7fff8a",
+  "plan_sha256": "e3d18fcf064794648dc0e91cbdd481baa6d180c43a7c111c25f08b674f94679b",
   "rows": [
     {
       "row": "r00001",
@@ -15,7 +15,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "instruction",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -529,6 +539,24 @@
       "spacing": {
         "mode": "both-space",
         "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review."
+      }
+    },
+    {
+      "left": "m0ec22c534e4a8243f7274b12",
+      "right": "r00006",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "m281ce4b4178f3c9c97ad3c39",
+      "right": "r00017",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
       }
     }
   ]

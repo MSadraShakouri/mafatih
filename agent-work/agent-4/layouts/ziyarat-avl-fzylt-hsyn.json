@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-avl-fzylt-hsyn",
   "author": "agent-4",
-  "plan_sha256": "cb32e9be29101ec7b863bcf13b5ac730d63544cfe243e76378fdaa1c5c7e3c55",
+  "plan_sha256": "4704b243ce8034bd6c0a007b67d4c3b7a178c895185703830ccad57cf3cd79e4",
   "rows": [
     {
       "row": "r00001",
@@ -65,23 +65,35 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
-        },
-        {
-          "ar": {
-            "source": "fa",
-            "part": 1
-          },
-          "fa": null,
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
           "fa": {
             "source": "fa",
+            "part": 1
+          },
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": {
+            "source": "fa",
             "part": 2
           },
-          "kind": "note"
+          "fa": null,
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 3
+          },
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -95,7 +107,7 @@
             "source": "ar",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation"
         },
         {
           "ar": {
@@ -120,7 +132,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -134,7 +147,17 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "note"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -159,6 +182,53 @@
           "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002",
+      "right": "r00003-s1828851db03b603e",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the attributed report without endorsing claims."
+      }
+    },
+    {
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-sf5580626db5b2df0",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the interrupted source attribution."
+      }
+    },
+    {
+      "left": "r00007-s03b042ed549b3642",
+      "right": "r00008-s88eba61461dcd450",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the narrated account; separate remaining role findings."
+      }
+    },
+    {
+      "left": "r00005-s07589039be45be65",
+      "right": "r00006",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Continue the quoted prayer across the source boundary."
+      }
+    },
+    {
+      "left": "r00004-s78cd245d2e8ca9fe",
+      "right": "r00005-s9993f31df7edd284",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the quoted prayer phrase across the source boundary."
+      }
     }
   ]
 }

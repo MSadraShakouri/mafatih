@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-pyadh-rftn-shah",
   "author": "agent-4",
-  "plan_sha256": "3d9c7bdebb56c3ad6b018d2dd97a7c91150fcf67574cf04a70e836b480a6df23",
+  "plan_sha256": "d534181e21fa37d26220f2ef4af414281a54e7787727557cafa96d87043b4dc4",
   "rows": [
     {
       "row": "r00001",
@@ -23,7 +23,8 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "instruction"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -191,7 +192,8 @@
             "source": "fa",
             "part": 0
           },
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         },
         {
           "ar": null,
@@ -199,7 +201,8 @@
             "source": "fa",
             "part": 1
           },
-          "kind": "quotation"
+          "kind": "note",
+          "id_scheme": "lineage-v2"
         }
       ]
     },
@@ -225,22 +228,48 @@
       "checked": true,
       "output": [
         {
-          "ar": null,
-          "fa": {
+          "ar": {
             "source": "ar",
             "part": 0
           },
-          "kind": "quotation"
-        },
-        {
-          "ar": null,
           "fa": {
             "source": "fa",
             "part": 0
           },
-          "kind": "quotation"
+          "kind": "quotation",
+          "id_scheme": "lineage-v2"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00001-sc5e9d9539705078a",
+      "right": "r00001-sdc643a20efc8b62b",
+      "checked": true
+    },
+    {
+      "left": "r00012",
+      "right": "r00013-s579535577e8a6fbf",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the historical source report, preserving attributed history and existing row links."
+      }
+    },
+    {
+      "left": "m7645b194dc96728f453647f6",
+      "right": "r00002",
+      "checked": true,
+      "spacing": {
+        "mode": "fa-space",
+        "reason": "Complete the attributed historical account while preserving source and prior anchors."
+      }
+    },
+    {
+      "left": "m0543999e8a015ed1dc3c9c8d",
+      "right": "r00013-s6790b23d332073b7",
+      "checked": true
     }
   ]
 }

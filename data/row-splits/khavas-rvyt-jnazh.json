@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "khavas-rvyt-jnazh",
   "author": "agent-4",
   "baseline_item_sha256": "5a189e25664823fdad1c4c6a0dac7eb6af823df059cb958d58703705e9dadba6",
   "plan_sha256": "8cd3fa2f448c58d3775b91a8438cb59951aaa43ce482d125b4058eb1d592f97f",
-  "layout_sha256": "8c4be8a9ada6b2f32699d0264dc030a318bd991ee8057ba819d90039bcb0b637",
+  "layout_sha256": "7c8d77469d3500260810b95cd30f9ea38ed2a2aa9a2de30bc4a070ecb8addc66",
   "rows": [
     {
       "original": {
@@ -20,7 +20,8 @@
           "row": "r00001-s3db48b9cdceccaca",
           "language": "fa",
           "start": 0,
-          "end": 80
+          "end": 80,
+          "target_start": 0
         }
       ],
       "fa": []
@@ -40,13 +41,15 @@
           "row": "r00002-sb9f57278a5910780",
           "language": "fa",
           "start": 0,
-          "end": 19
+          "end": 19,
+          "target_start": 0
         },
         {
           "row": "r00002-s1c7ff9511e88e649",
           "language": "ar",
           "start": 19,
-          "end": 221
+          "end": 221,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -54,7 +57,8 @@
           "row": "r00002-s1c7ff9511e88e649",
           "language": "fa",
           "start": 0,
-          "end": 186
+          "end": 186,
+          "target_start": 0
         }
       ]
     },
@@ -74,19 +78,22 @@
           "row": "r00003-s3dbdf5fec4f8f8e0",
           "language": "fa",
           "start": 0,
-          "end": 62
+          "end": 62,
+          "target_start": 0
         },
         {
           "row": "r00003-s5f66162889627043",
           "language": "fa",
           "start": 62,
-          "end": 148
+          "end": 148,
+          "target_start": 0
         },
         {
           "row": "r00003-s28a9de14b1ea1628",
           "language": "ar",
           "start": 148,
-          "end": 263
+          "end": 263,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -94,7 +101,8 @@
           "row": "r00003-s28a9de14b1ea1628",
           "language": "fa",
           "start": 0,
-          "end": 92
+          "end": 92,
+          "target_start": 0
         }
       ]
     },
@@ -113,13 +121,15 @@
           "row": "r00004-s86898f86de8b9f04",
           "language": "fa",
           "start": 0,
-          "end": 77
+          "end": 77,
+          "target_start": 0
         },
         {
           "row": "r00004-se656eb44999bf14d",
           "language": "ar",
           "start": 77,
-          "end": 145
+          "end": 145,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -127,7 +137,8 @@
           "row": "r00004-se656eb44999bf14d",
           "language": "fa",
           "start": 0,
-          "end": 50
+          "end": 50,
+          "target_start": 0
         }
       ]
     },
@@ -139,7 +150,7 @@
       },
       "results": [
         "r00005-saba56576a8f4a2e8",
-        "r00005-sbf827ad20eeda70b"
+        "m71070a93a821f424314a68b0"
       ],
       "ar": [],
       "fa": [
@@ -147,13 +158,15 @@
           "row": "r00005-saba56576a8f4a2e8",
           "language": "fa",
           "start": 0,
-          "end": 158
+          "end": 158,
+          "target_start": 0
         },
         {
-          "row": "r00005-sbf827ad20eeda70b",
+          "row": "m71070a93a821f424314a68b0",
           "language": "fa",
           "start": 158,
-          "end": 421
+          "end": 421,
+          "target_start": 0
         }
       ]
     },
@@ -164,17 +177,49 @@
         "fa": "t66d58abf28629793d29392c7"
       },
       "results": [
-        "r00006"
+        "m71070a93a821f424314a68b0"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00006",
+          "row": "m71070a93a821f424314a68b0",
           "language": "fa",
           "start": 0,
-          "end": 153
+          "end": 153,
+          "target_start": 264
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00005-sbf827ad20eeda70b",
+        "ar": null,
+        "fa": "t6f5238cff632a48dab5ae785",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m71070a93a821f424314a68b0",
+          "language": "fa",
+          "start": 0,
+          "end": 263,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m71070a93a821f424314a68b0",
+      "language": "fa",
+      "target_start": 263,
+      "value": " ",
+      "left": "r00005-sbf827ad20eeda70b",
+      "right": "r00006",
+      "reason": "Complete the attributed report without endorsing its claim."
     }
   ]
 }

@@ -3,7 +3,7 @@
   "protocol": "ar-fa-canonical-v1",
   "item": "ziyarat-shhday-ahd",
   "author": "agent-4",
-  "plan_sha256": "56d124d2aee748bae1771cd460a455dc6828fb779878b725330e3959b8966d86",
+  "plan_sha256": "0b14ce9594e8c5bf2661ec8060c04adc1c7ca810eb4ad30c5827165086049493",
   "rows": [
     {
       "row": "r00001",
@@ -129,8 +129,45 @@
             "part": 0
           },
           "kind": "instruction"
+        },
+        {
+          "ar": null,
+          "fa": {
+            "source": "fa",
+            "part": 1
+          },
+          "kind": "note"
         }
       ]
+    }
+  ],
+  "merges": [
+    {
+      "left": "r00002-se66d2a8d6f823518",
+      "right": "r00003-s89233bbc4b8f1768",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00003-s20b0ac40a7179b1f",
+      "right": "r00004",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
+      }
+    },
+    {
+      "left": "r00001-sa329ad2c5a367a28",
+      "right": "r00002-s33ed15b82a54ab62",
+      "checked": true,
+      "spacing": {
+        "mode": "both-space",
+        "reason": "Complete the paired testimony across the source boundary."
+      }
     }
   ]
 }

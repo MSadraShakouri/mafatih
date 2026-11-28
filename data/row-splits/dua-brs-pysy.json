@@ -1,10 +1,10 @@
 {
-  "format_version": 1,
+  "format_version": 3,
   "item": "dua-brs-pysy",
   "author": "agent-4",
   "baseline_item_sha256": "84663b0c7561afd9a2f47b1bef481a92c7ce3f87b33a9bc5d61cfc3982d08162",
   "plan_sha256": "ccfecd6486e4f77ce3e994eec60b1e0f7a1c5a7746fdb6148f2a70ed19104afc",
-  "layout_sha256": "bb3d4d41d8a7a7b752862710f6d71b4cffb27d107374d6e2cc72800093d9e527",
+  "layout_sha256": "149e62ea262533c2d59be2fba3930b3e5082d105ac31f27bedea52efb7fcd78f",
   "rows": [
     {
       "original": {
@@ -13,15 +13,16 @@
         "fa": "t34ab9e1b0eb3fbb43fc36c9e"
       },
       "results": [
-        "r00001"
+        "m3767be2002ea05319ea3898b"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00001",
+          "row": "m3767be2002ea05319ea3898b",
           "language": "fa",
           "start": 0,
-          "end": 89
+          "end": 89,
+          "target_start": 0
         }
       ]
     },
@@ -32,22 +33,24 @@
         "fa": "t6df97784b61d7a774904e133"
       },
       "results": [
-        "r00002-s16b235f3fb54b1a5",
+        "m3767be2002ea05319ea3898b",
         "r00002-sb99308cb22091a05"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002-s16b235f3fb54b1a5",
+          "row": "m3767be2002ea05319ea3898b",
           "language": "fa",
           "start": 0,
-          "end": 38
+          "end": 38,
+          "target_start": 90
         },
         {
           "row": "r00002-sb99308cb22091a05",
           "language": "fa",
           "start": 38,
-          "end": 82
+          "end": 82,
+          "target_start": 0
         }
       ]
     },
@@ -68,13 +71,15 @@
           "row": "r00003-s90ce2cbb3805f148",
           "language": "ar",
           "start": 0,
-          "end": 89
+          "end": 89,
+          "target_start": 0
         },
         {
           "row": "r00003-se283c95e6594ac46",
           "language": "ar",
           "start": 89,
-          "end": 254
+          "end": 254,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -82,13 +87,15 @@
           "row": "r00003-sa800142d710dfc87",
           "language": "fa",
           "start": 0,
-          "end": 63
+          "end": 63,
+          "target_start": 0
         },
         {
           "row": "r00003-s17ee679a21196393",
           "language": "fa",
           "start": 63,
-          "end": 220
+          "end": 220,
+          "target_start": 0
         }
       ]
     },
@@ -107,7 +114,8 @@
           "row": "r00004",
           "language": "fa",
           "start": 0,
-          "end": 90
+          "end": 90,
+          "target_start": 0
         }
       ]
     },
@@ -120,26 +128,29 @@
       "results": [
         "r00005-s1461543daf3ad696",
         "r00005-s93affcc5f3ac5677",
-        "r00005-s0d0eb7c1a676184c"
+        "md2cd2a8e3fa9a4541337deed"
       ],
       "ar": [
         {
           "row": "r00005-s1461543daf3ad696",
           "language": "fa",
           "start": 0,
-          "end": 144
+          "end": 144,
+          "target_start": 0
         },
         {
           "row": "r00005-s93affcc5f3ac5677",
           "language": "ar",
           "start": 144,
-          "end": 288
+          "end": 288,
+          "target_start": 0
         },
         {
-          "row": "r00005-s0d0eb7c1a676184c",
+          "row": "md2cd2a8e3fa9a4541337deed",
           "language": "ar",
           "start": 288,
-          "end": 482
+          "end": 482,
+          "target_start": 0
         }
       ],
       "fa": [
@@ -147,13 +158,15 @@
           "row": "r00005-s93affcc5f3ac5677",
           "language": "fa",
           "start": 0,
-          "end": 108
+          "end": 108,
+          "target_start": 0
         },
         {
-          "row": "r00005-s0d0eb7c1a676184c",
+          "row": "md2cd2a8e3fa9a4541337deed",
           "language": "fa",
           "start": 108,
-          "end": 258
+          "end": 258,
+          "target_start": 0
         }
       ]
     },
@@ -164,22 +177,24 @@
         "fa": "t96ca8bb03ed44ba20f375c7b"
       },
       "results": [
-        "r00006"
+        "md2cd2a8e3fa9a4541337deed"
       ],
       "ar": [
         {
-          "row": "r00006",
+          "row": "md2cd2a8e3fa9a4541337deed",
           "language": "ar",
           "start": 0,
-          "end": 24
+          "end": 24,
+          "target_start": 195
         }
       ],
       "fa": [
         {
-          "row": "r00006",
+          "row": "md2cd2a8e3fa9a4541337deed",
           "language": "fa",
           "start": 0,
-          "end": 35
+          "end": 35,
+          "target_start": 151
         }
       ]
     },
@@ -200,21 +215,99 @@
           "row": "r00007-s207e67823f746577",
           "language": "fa",
           "start": 0,
-          "end": 28
+          "end": 28,
+          "target_start": 0
         },
         {
           "row": "r00007-s5b62bfa785d14038",
           "language": "fa",
           "start": 28,
-          "end": 102
+          "end": 102,
+          "target_start": 0
         },
         {
           "row": "r00007-s282f4e20d15b09ed",
           "language": "fa",
           "start": 102,
-          "end": 372
+          "end": 372,
+          "target_start": 0
         }
       ]
+    }
+  ],
+  "aliases": [
+    {
+      "original": {
+        "id": "r00002-s16b235f3fb54b1a5",
+        "ar": null,
+        "fa": "t57f03ded6ee0ccab1ccabc92",
+        "kind": "note"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m3767be2002ea05319ea3898b",
+          "language": "fa",
+          "start": 0,
+          "end": 38,
+          "target_start": 90
+        }
+      ]
+    },
+    {
+      "original": {
+        "id": "r00005-s0d0eb7c1a676184c",
+        "ar": "td6ccec0fbfd9bd647582ebd6",
+        "fa": "t73f30a8d1395a4502b0dd4c8",
+        "kind": "recitation"
+      },
+      "ar": [
+        {
+          "row": "md2cd2a8e3fa9a4541337deed",
+          "language": "ar",
+          "start": 0,
+          "end": 194,
+          "target_start": 0
+        }
+      ],
+      "fa": [
+        {
+          "row": "md2cd2a8e3fa9a4541337deed",
+          "language": "fa",
+          "start": 0,
+          "end": 150,
+          "target_start": 0
+        }
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m3767be2002ea05319ea3898b",
+      "language": "fa",
+      "target_start": 89,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the attributed report without endorsing any medical claim."
+    },
+    {
+      "row": "md2cd2a8e3fa9a4541337deed",
+      "language": "ar",
+      "target_start": 194,
+      "value": " ",
+      "left": "r00005-s0d0eb7c1a676184c",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer without changing either source."
+    },
+    {
+      "row": "md2cd2a8e3fa9a4541337deed",
+      "language": "fa",
+      "target_start": 150,
+      "value": " ",
+      "left": "r00005-s0d0eb7c1a676184c",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer without changing either source."
     }
   ]
 }

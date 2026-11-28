@@ -1,10 +1,10 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "item": "namaz-fzylt-hmd-ayh",
   "author": "agent-4",
   "baseline_item_sha256": "e91f4d718822861fff05be7be20b9b1224e0cb83831d7c1a774fbab7f23bf03b",
   "plan_sha256": "8d0ffba0ea62fcfc62f6270b41b56471f2ca2fa386f495bb3aec06e1b4c51c0a",
-  "layout_sha256": "8f6dcf28a79544170eae2d6949ff63d84e603d0e758e9b4df006df146c3ceda4",
+  "layout_sha256": "2bc82e27acab53511a13c5837c3d711baa84434a13c827d4ab68133e796797b0",
   "rows": [
     {
       "original": {
@@ -15,7 +15,7 @@
       "results": [
         "r00001-sc5e9d9539705078a",
         "r00001-sd0076416ed435839",
-        "r00001-s730fcd91e8c82399"
+        "m1eca89aa7e8154b93c65ada7"
       ],
       "ar": [],
       "fa": [
@@ -34,7 +34,7 @@
           "target_start": 0
         },
         {
-          "row": "r00001-s730fcd91e8c82399",
+          "row": "m1eca89aa7e8154b93c65ada7",
           "language": "fa",
           "start": 944,
           "end": 979,
@@ -49,16 +49,16 @@
         "fa": "t0b2b04db9e032f0d38c40f67"
       },
       "results": [
-        "r00002"
+        "m1eca89aa7e8154b93c65ada7"
       ],
       "ar": [],
       "fa": [
         {
-          "row": "r00002",
+          "row": "m1eca89aa7e8154b93c65ada7",
           "language": "fa",
           "start": 0,
           "end": 85,
-          "target_start": 0
+          "target_start": 36
         }
       ]
     },
@@ -160,6 +160,24 @@
   "aliases": [
     {
       "original": {
+        "id": "r00001-s730fcd91e8c82399",
+        "ar": null,
+        "fa": "t00d8e4c78bd96095ec92b2d1",
+        "kind": "instruction"
+      },
+      "ar": [],
+      "fa": [
+        {
+          "row": "m1eca89aa7e8154b93c65ada7",
+          "language": "fa",
+          "start": 0,
+          "end": 35,
+          "target_start": 0
+        }
+      ]
+    },
+    {
+      "original": {
         "id": "r00003-s90ce2cbb3805f148",
         "ar": "t5b2412e69d2c7eb2abd3fa8e",
         "fa": null,
@@ -229,6 +247,17 @@
           "target_start": 0
         }
       ]
+    }
+  ],
+  "insertions": [
+    {
+      "row": "m1eca89aa7e8154b93c65ada7",
+      "language": "fa",
+      "target_start": 35,
+      "value": " ",
+      "left": "r00001-s730fcd91e8c82399",
+      "right": "r00002",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review."
     }
   ]
 }
