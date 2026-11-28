@@ -1,6 +1,12 @@
 # Agent 5 coordinator handoff
 
-## Current review round update
+## Consolidated bridge review — current
+
+Agent 4's exact bridge `d265151bd911aff5d1756abf77b082f41b67414e` was merged at `5f4f2591775e2ef8f249115b6d683d4f03182e53`. Independent Agent 5 review of all 76 changed records is finished: 20 complete, 56 need work; 33 unchanged complete records were preserved and six unchanged open records reassessed. The resulting scope is 53 complete and 62 open of 115. All 276 proposed-space records were individually assessed. The single consolidated results and complete correction list are in `triage/agent-4-bridge-consolidated-review.md`, with exact historical variant metadata in `triage/bridge-historical-variants.json` and all per-source, preflight and per-space decisions in `reviews/`. Only subsequently changed items and mappings need fresh review.
+
+For `dua-yamn-thl-hady` the 26 withheld candidates were independently checked against all six named snapshots and recomposed through original source runs; the evidence matched, but no register rebinding or migration was authorized. The 26 remain provisional and withheld until a separately authorized, reviewed change. No human, scholarly, translation or rights approval is asserted. `audit-round` reports 53/686 complete, 62 invalid-or-incomplete and 571 missing records on this branch; the missing records concern not-yet-integrated other agents. See the consolidated review for tests, skipped tests, browser version and limitations.
+
+## Earlier review round update (historical)
 
 The earlier handoff below is historical. Agent 5's current isolated author-ready snapshot is `1a908eacb7a6b8cbb66f43569615f62c25548122`. Agent 6 independently accepted both revised items and the retained `dua-vdaa-hsyn-alyh` heading; at peer tip `2f0b97dd17e743b031aaa16778f47386f436a86d`, it reports all 115 assigned Agent 5 item reviews complete. This is not approval of historical-link candidates or a scholarly or rights certification.
 

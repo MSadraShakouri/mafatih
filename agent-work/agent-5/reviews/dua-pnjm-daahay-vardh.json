@@ -4,11 +4,11 @@
   "item": "dua-pnjm-daahay-vardh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "9362cd90e5bd0914aa5042b4ca7b0b47020d1cf63464f262e1f89fe4822cc510",
-  "layout_sha256": "85d314cded41aad9effb712f51588c10f868b78e6a67a74cff06bf12b6430a7d",
-  "result_item_sha256": "b6d411515680c6483d1e4368690fa84090fcbe000cffbe416f7c1b5fa971d960",
-  "result_record_sha256": "0c3fc55215cf069cc1548dbb00f9c455959ac40a112aaaa407c7b2a848417d55",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "d473edc6afca8ed4809b9836ac4eb3f209b06646c62dc11111fd21f291dba624",
+  "layout_sha256": "f76e99a7f423d4ea21382524842d10f18973dc0f20eda1fc283eb58d74e47baa",
+  "result_item_sha256": "abab5d6fab6d1c9b99f7de81fcee4e0e7227d898660007a6c7ddc1ffc3a8d569",
+  "result_record_sha256": "64b6c47ac6c71a4a81d756461a7cba5a3fa3f48c680fcea2b7a5efe91c4ea745",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "4e9f11f96e899647eebc2dc6728b73c0b14a67f7bae5890d637c2d3fdfdcab3a",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "f9cf5926348db9bbc5f1ae722fd04e13df1ec84a2fd10e517e09bcbb5a1e3709",
+    "preview_sha256": "8b4b30929f42d9496a6d740d7e3720dced4173161c411f8cfcc24974f038c60e",
     "sources": [
       {
         "row": "r00001",
@@ -28,30 +28,30 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic prayer and Persian rendering are detached; the closing هنيئاً continues with مريئاً in r00003, as the Persian گوارا continues لذیذ."
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "This is the existing Persian prayer rendering, not a note; its closing phrase continues in r00003 and must be aligned with Arabic."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002; the rest is the same prayer. Preserve both historical links when joining and pairing."
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Persian renders the prayer and continues r00002, rather than instructing the reader; align with matching Arabic."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
       },
       {
         "row": "r00004",
@@ -64,43 +64,43 @@
         "row": "r00004",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the existing Persian rendering of r00004/ar, not a note; pair with the corresponding prayer while preserving child IDs."
-      },
-      {
-        "row": "r00005",
-        "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The relocated prefix includes third label, historical report and a later recitation instruction; separate these roles. The prayer ends in an incomplete clause continued in r00006."
-      },
-      {
-        "row": "r00005",
-        "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Persian renders the same Arabic prayer and continues into r00006; it is not a note."
-      },
-      {
-        "row": "r00006",
-        "language": "ar",
-        "split": "revise",
         "kind": "accept",
-        "note": "The Arabic phrase completes r00005, not a standalone prayer; align both languages across the source boundary."
+        "note": "The existing prayer rendering is paired as recitation."
+      },
+      {
+        "row": "r00005",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
+      },
+      {
+        "row": "r00005",
+        "language": "fa",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
+      },
+      {
+        "row": "r00006",
+        "language": "ar",
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "This completes r00005 Persian rendering; not an independent note."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and its corresponding cross-row continuation are now paired and grouped; source asymmetry is retained."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "The compiler reports the location of the prayer in another book; this is a note rather than a direction to the reader."
+        "kind": "accept",
+        "note": "The heading or attributed compiler report is now properly classified."
       },
       {
         "row": "r00008",
@@ -113,15 +113,15 @@
         "row": "r00008",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This renders the preceding Arabic prayer, not a note; pair when link-preserving."
+        "kind": "accept",
+        "note": "The existing prayer rendering is paired as recitation."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The fifth numbered label introduces a reported attribution, not a direct instruction; distinguish heading and narrative."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The heading or attributed compiler report is now properly classified."
       },
       {
         "row": "r00010",
@@ -134,8 +134,8 @@
         "row": "r00010",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "The Persian renders both Arabic pieces, not a note, and ends in a phrase continuing into r00011."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but alignment and cross-row continuation remain unresolved."
       },
       {
         "row": "r00011",
@@ -148,8 +148,8 @@
         "row": "r00011",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "All three pieces are prayer renderings, not notes or instruction; boundaries do not match Arabic and the opening completes r00010."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but alignment and cross-row continuation remain unresolved."
       },
       {
         "row": "r00012",
@@ -176,15 +176,15 @@
         "row": "r00013",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "This is a Persian prayer rendering rather than instruction; it completes r00012 and spans both Arabic pieces."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but alignment and cross-row continuation remain unresolved."
       },
       {
         "row": "r00014",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "The compiler refers readers to prayers elsewhere in the book; this is a note/reference, not recitation instruction."
+        "kind": "accept",
+        "note": "The heading or attributed compiler report is now properly classified."
       }
     ],
     "punctuation": [],
@@ -208,6 +208,52 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Existing Persian prayer renderings r00002-r00006, r00008, r00010-r00011 and r00013 are detached and misclassified as note/instruction; their Arabic counterparts and cross-row continuations require matching boundaries. Persian r00012 is paired, but its closing clause continues in r00013. Introductions contain numbered labels and reported narrative as well as directions; the compiler remarks r00007/r00014 are notes. Preserve published IDs and request supported migration or non-adjacent-output support if needed."
-  }
+    "note": "The first and third prayer continuations are grouped, r00004/08 paired, and r00007/09/14 roles corrected. Numbered introductions still mix roles in r00001/04/05/08, and the r00010–13 prayer remains detached and interrupted. Historical r00005/ar version needs separate offset handling; no migration is authorized."
+  },
+  "spacing_review": [
+    {
+      "row": "mc9fb4e07220cee25903c8756",
+      "language": "ar",
+      "target_start": 158,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic adjectives are separate words."
+    },
+    {
+      "row": "mc9fb4e07220cee25903c8756",
+      "language": "fa",
+      "target_start": 103,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian adjectives are separate words."
+    },
+    {
+      "row": "mf09a727c289f5661a102ef37",
+      "language": "ar",
+      "target_start": 218,
+      "value": " ",
+      "left": "r00005-sed8af929f9f62b80",
+      "right": "r00006",
+      "reason": "Complete the paired prayer without changing source wording.",
+      "decision": "accept",
+      "note": "The Arabic universal and following noun require a space."
+    },
+    {
+      "row": "mf09a727c289f5661a102ef37",
+      "language": "fa",
+      "target_start": 204,
+      "value": " ",
+      "left": "r00005-sed8af929f9f62b80",
+      "right": "r00006",
+      "reason": "Complete the paired prayer without changing source wording.",
+      "decision": "accept",
+      "note": "The Persian universal and following noun require a space."
+    }
+  ]
 }

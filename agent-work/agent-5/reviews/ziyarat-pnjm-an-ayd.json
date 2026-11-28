@@ -4,11 +4,11 @@
   "item": "ziyarat-pnjm-an-ayd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "1e1dcab67cd4c734b30ca8cfd3384ca1dd4ec89996abd4e53a432a842e6e44fa",
-  "layout_sha256": "f9ae0f4ef5ed1cf47de986ff65da9e71be1d63c8c24f1bc34c97aada96ec3312",
-  "result_item_sha256": "68e64e5b9cb92070cffa70a4fee6a6baa9d4345ebaa7fc3ec2b2bad80ce8dbfc",
-  "result_record_sha256": "0aa89978b34a0ed85a9125c4739b439b0c4622d85c615b1128c363b38a457dbe",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "08a3aea426ea95b746c46ec343feeeb4f56eb7d5fe411bbc243f44ef2890d61a",
+  "layout_sha256": "de41c084f8b6865abeba2f2d7c3702570b365f9df3d4ea9adc6740b9faf50d9a",
+  "result_item_sha256": "7d9b00c908716a8553c4cd2f4cb9f7f4b864290e286f8b2cff00a310bbe5e471",
+  "result_record_sha256": "804b6fa6c5ea79f6520f95669f6033a72ff4cb5ff9b434738d08c7b7a9a2ef27",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,28 +16,28 @@
     "item_sha256": "df8aa5c5e09a880bd0a06a4b00a30a5d78fb42893211396afea3c52804c223a1",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "372a7d37b98bfb8a265d3e1d4f38707673dc0949d2e33348af3a7a36b8d4cb73",
+    "preview_sha256": "195a5d6fb7323bfeba41e6f6771359c50401c7bd6bc75c52905a65b89002e4bb",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening report is interrupted before its promised outcome, which begins r00002; group the source continuation. Assessment includes the fa source."
+        "note": "The opening and promised outcome are grouped as an attributed report."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The beginning completes r00001 and the final explanatory sentence continues into r00003; group interrupted reports without treating their claims as independently verified. Assessment includes the fa source."
+        "note": "The report is grouped with r00001, but its closing scholarly explanation still continues in r00003."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "The opening completes r00002’s scholarly explanation; the visitor’s instruction begins after it. Separate the roles and group the prior fragment. Assessment includes the fa source."
+        "kind": "accept",
+        "note": "The instruction is separate from the report, but the opening continues r00002."
       },
       {
         "row": "r00004",
@@ -77,23 +77,23 @@
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction and Arabic opening were separated and moved appropriately, but the Arabic formula continues in r00008 where its whole Persian rendering appears. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00008",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening Arabic word completes r00007’s formula while the Persian renders the complete phrase; group without inventing text. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening Arabic word completes r00007’s formula while the Persian renders the complete phrase; group without inventing text. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00009",
@@ -105,30 +105,30 @@
       {
         "row": "r00010",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields end with an incomplete testimony opening, completed in r00011. Preserve the source rendering’s differing title for Noah rather than silently changing it. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields end with an incomplete testimony opening, completed in r00011. Preserve the source rendering’s differing title for Noah rather than silently changing it. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00011",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00010’s testimony in Arabic and Persian. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00010’s testimony in Arabic and Persian. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00012",
@@ -140,30 +140,30 @@
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields end mid-phrase before the children of the addressee, completed in r00014. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields end mid-phrase before the children of the addressee, completed in r00014. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00014",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00013’s paired testimony. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00013’s paired testimony. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00015",
@@ -189,72 +189,72 @@
       {
         "row": "r00017",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The phrase for two prayer units is split after two; its completion and direction are in r00018. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00018",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction is correctly moved out of the Arabic source, but its first word completes r00017. The following Arabic prayer and Persian rendering correspond. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00018",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction is correctly moved out of the Arabic source, but its first word completes r00017. The following Arabic prayer and Persian rendering correspond. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00019",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction is correctly moved from the Arabic source. Its prayer ends within the paired petition continued at r00020. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00019",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction is correctly moved from the Arabic source. Its prayer ends within the paired petition continued at r00020. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00020",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00019’s bilingual phrase; remaining prayer and source rendering are in order. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00020",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00019’s bilingual phrase; remaining prayer and source rendering are in order. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00021",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction is separated from the Arabic opening but the first word of the greeting needs to join r00022, which has the full Persian rendering. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00022",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial Arabic completes r00021’s isolated greeting; its Persian renders the complete greeting. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00022",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial Arabic completes r00021’s isolated greeting; its Persian renders the complete greeting. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00023",
@@ -287,23 +287,23 @@
       {
         "row": "r00025",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "This is the beginning of an instruction, not a note, and its final word is supplied in r00026. Assessment includes the fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00026",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction is moved correctly and completes r00025; the following Arabic and existing Persian prayer correspond. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00026",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction is moved correctly and completes r00025; the following Arabic and existing Persian prayer correspond. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00027",
@@ -315,30 +315,30 @@
       {
         "row": "r00028",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired farewell ends at the unfinished place phrase completed by r00029. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00028",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired farewell ends at the unfinished place phrase completed by r00029. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00029",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the paired r00028 farewell. Assessment includes the ar source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00029",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the paired r00028 farewell. Assessment includes the fa source."
+        "note": "The paired prayer or direction continuation is now grouped and classified without inventing text."
       },
       {
         "row": "r00030",
@@ -364,9 +364,9 @@
       {
         "row": "r00032",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The initial departure direction precedes an attribution and comparison reported from two scholars; distinguish instruction and note. Assessment includes the fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The direction and reported scholarly comparison are distinct."
       }
     ],
     "punctuation": [],
@@ -374,6 +374,151 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The prayer pairings and language transfers are generally sound, but r00007/08 and r00021/22 isolate Arabic lead-ins from the full Persian renderings; bilingual phrases also cross r00010/11, r00013/14, r00019/20 and r00028/29. Prose is interrupted at r00001/02/03 and directions at r00017/18 and r00025/26. Separate r00003 and r00032 report/direction roles, and correct r00025’s kind. Preserve source omissions and row links; do not invent translations."
-  }
+    "note": "The identified prayers, directions and r00001/02 report are grouped, and r00003/32 roles distinguished. The r00002/03 scholarly explanation remains interrupted. Earlier r00004/ar, r00022/ar and r00027/fa versions require version-specific historical handling. Preserve all source omissions and claims."
+  },
+  "spacing_review": [
+    {
+      "row": "mfc9d394bcba215a16abcd56f",
+      "language": "ar",
+      "target_start": 14,
+      "value": " ",
+      "left": "r00007-sbd47d389958800f8",
+      "right": "r00008",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic adjective is separate from the preceding formula."
+    },
+    {
+      "row": "mb060024859b5fe906998f215",
+      "language": "ar",
+      "target_start": 581,
+      "value": " ",
+      "left": "r00010",
+      "right": "r00011",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic pronoun and following verb are separate."
+    },
+    {
+      "row": "mb060024859b5fe906998f215",
+      "language": "fa",
+      "target_start": 387,
+      "value": " ",
+      "left": "r00010",
+      "right": "r00011",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian pronoun and following noun require separation."
+    },
+    {
+      "row": "mb82faafac304a1951e8fef54",
+      "language": "ar",
+      "target_start": 703,
+      "value": " ",
+      "left": "r00013",
+      "right": "r00014",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic preposition and following noun require separation."
+    },
+    {
+      "row": "mb82faafac304a1951e8fef54",
+      "language": "fa",
+      "target_start": 535,
+      "value": " ",
+      "left": "r00013",
+      "right": "r00014",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian preposition and noun require separation."
+    },
+    {
+      "row": "m107ecc8601a65065b50f690a",
+      "language": "fa",
+      "target_start": 6,
+      "value": " ",
+      "left": "r00017",
+      "right": "r00018-s4322d97801b3ff23",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian number and noun require separation."
+    },
+    {
+      "row": "m82c06b043aa21584d3f484ef",
+      "language": "ar",
+      "target_start": 256,
+      "value": " ",
+      "left": "r00019-s2a227bae9469067c",
+      "right": "r00020",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic verb and preposition require separation."
+    },
+    {
+      "row": "m82c06b043aa21584d3f484ef",
+      "language": "fa",
+      "target_start": 192,
+      "value": " ",
+      "left": "r00019-s2a227bae9469067c",
+      "right": "r00020",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian pronoun and preposition require separation."
+    },
+    {
+      "row": "mb8a6402de692454830d5d991",
+      "language": "ar",
+      "target_start": 10,
+      "value": " ",
+      "left": "r00021-sb1806a51a3722a14",
+      "right": "r00022",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic greeting and preposition require separation."
+    },
+    {
+      "row": "md7aed931bd16783548350d75",
+      "language": "ar",
+      "target_start": 336,
+      "value": " ",
+      "left": "r00028",
+      "right": "r00029",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic preposition and following noun require separation."
+    },
+    {
+      "row": "md7aed931bd16783548350d75",
+      "language": "fa",
+      "target_start": 271,
+      "value": " ",
+      "left": "r00028",
+      "right": "r00029",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian preposition and following noun require separation."
+    },
+    {
+      "row": "ma55305311756a8befca02a96",
+      "language": "fa",
+      "target_start": 133,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the attributed report and preserve the claims as reported.",
+      "decision": "accept",
+      "note": "The Persian reported condition and result are separate."
+    },
+    {
+      "row": "m37eb0bcb2a74b81cf00ed4a7",
+      "language": "fa",
+      "target_start": 31,
+      "value": " ",
+      "left": "r00025",
+      "right": "r00026-s3d84d2748946a2f6",
+      "reason": "Complete the practical instruction and preserve the source movement and prior anchors.",
+      "decision": "accept",
+      "note": "The Persian adjective and following verb require separation."
+    }
+  ]
 }

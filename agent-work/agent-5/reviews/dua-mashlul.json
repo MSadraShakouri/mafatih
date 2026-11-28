@@ -4,11 +4,11 @@
   "item": "dua-mashlul",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "e38687245a3511c26202f53d9eb2e5340370c79829e8fa725aabd5eff25697fd",
-  "layout_sha256": "3d4a1fdf192d5dbeb45932cd07ff5679bd0ee1154c560670ec485bed877e449f",
-  "result_item_sha256": "8e189d7c755fc688d6f39ae981b9db520de4cdd5937aabf2a18e1cf029177155",
-  "result_record_sha256": "5e3c10d9d6b754d84c1f24d8eae3788611d9c8de0796031dce57e0f082c41910",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "ef39312176aced8dcc7229587e5be3be15bfc06854eed32da238ddd2d3f219e5",
+  "layout_sha256": "b1f81b9eb0ad81959a3e9acc451c0dc1ef19fd3e146eb15f8c6feb589b3fc1c0",
+  "result_item_sha256": "f05a85a7312eb451c81ea29f5d78aecedbc64c38910a00e1deb446d405dca6eb",
+  "result_record_sha256": "3e841b99257094476d0f6cd12f9a85c31a170b9681dde7b4e8934eac1b45d5f2",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "f68f5536fd71fb65c0cecedaa3c7d185703b8d23c16fbeec4b1d8422aa47e9c3",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "8130b97d6bce4e4e71e22ec223236b8c3f6e1fa4a4ab0a2ae37fd90b7e1b1170",
+    "preview_sha256": "beb4f07282a499a7ecdc5259fdc821e6fa150d2703c4421e949ed09bca5090b6",
     "sources": [
       {
         "row": "r00001",
@@ -3136,30 +3136,30 @@
       {
         "row": "r00225",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The quoted Quranic passage ends mid-sentence in both fields; its conclusion is in r00226."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00225",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The quoted Quranic passage ends mid-sentence in both fields; its conclusion is in r00226."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00226",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired quotation completes r00225; preserve all original punctuation."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00226",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired quotation completes r00225; preserve all original punctuation."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00227",
@@ -3192,30 +3192,30 @@
       {
         "row": "r00229",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian ends this appeal but its next word order differs from Arabic, with the promise and command in r00230; group r00229/30 to preserve the coherent relationship."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00229",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian ends this appeal but its next word order differs from Arabic, with the promise and command in r00230; group r00229/30 to preserve the coherent relationship."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00230",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields continue the appeal in r00229, with a differing Persian word order; keep the paired passage together without rewriting."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00230",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields continue the appeal in r00229, with a differing Persian word order; keep the paired passage together without rewriting."
+        "note": "The quotation or appeal is now paired and grouped across the earlier boundary without changing wording."
       },
       {
         "row": "r00231",
@@ -3262,9 +3262,9 @@
       {
         "row": "r00234",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The request to state one’s need, the expectation of fulfillment, and the instruction attributed to Muhaj al-Daawat have different roles; separate instruction and attributed note while retaining exact words."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Need-stating instruction, expectation, and attributed follow-up are now distinguished."
       }
     ],
     "punctuation": [],
@@ -3308,6 +3308,52 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The many divine-name invocations are generally paired individually. The Persian rendering of وَدُودُ appears in r00022 while Arabic is in r00023 and مُعِيدُ has no obvious rendering; keep available text together and do not invent the missing phrase. Quranic quote r00225/26 and word-order-dependent r00229/30 should be grouped; r00234 mixes instructions and attribution. Flag source discrepancy at r00217 (one Arabic بِهِ versus seven Persian repetitions) and the absent Persian for بَصِيرُ in r00073; preserve both witnesses. Seven historical LF decisions escalated after examining context. Preserve links and source text."
-  }
+    "note": "Two continuations are paired and grouped and the final instruction and report are distinguished. r00022/23 still misalign the rendering and have an apparent missing rendering; retain r00073 and r00217 source discrepancies, without invented translation. Seven historical LF decisions remain escalated. Earlier same-ID versions in r00070/ar, r00088/ar, r00098/ar, r00108/ar, r00134/ar+fa, r00192/ar+fa, r00209/ar+fa and r00225/ar require version-specific offset adjudication."
+  },
+  "spacing_review": [
+    {
+      "row": "m2923fad8220c9d2b9477fcb8",
+      "language": "ar",
+      "target_start": 118,
+      "value": " ",
+      "left": "r00225",
+      "right": "r00226",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic noun and subsequent verb are separate words."
+    },
+    {
+      "row": "m2923fad8220c9d2b9477fcb8",
+      "language": "fa",
+      "target_start": 78,
+      "value": " ",
+      "left": "r00225",
+      "right": "r00226",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian noun and following determiner are separate words."
+    },
+    {
+      "row": "m93eab3073534f5eae8aa3430",
+      "language": "ar",
+      "target_start": 37,
+      "value": " ",
+      "left": "r00229",
+      "right": "r00230",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic vocative and following comparison are separate words."
+    },
+    {
+      "row": "m93eab3073534f5eae8aa3430",
+      "language": "fa",
+      "target_start": 42,
+      "value": " ",
+      "left": "r00229",
+      "right": "r00230",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian vocative and following clause are separate."
+    }
+  ]
 }

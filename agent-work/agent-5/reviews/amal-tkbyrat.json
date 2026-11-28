@@ -4,11 +4,11 @@
   "item": "amal-tkbyrat",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "ee7b8682ea37c7188fb18ee2aae7e91451aa61cac9d477272d03bab6d471d651",
-  "layout_sha256": "26b406206c932a33b3880dc022b9c6ad5ab2864aa67d54119ca0d2aa87df8519",
-  "result_item_sha256": "1e61667cad166130220758b0f258844fa8bc35ac0d63d88210ff06d0551478cb",
-  "result_record_sha256": "cc7e1164e51bae654f9d4ee99253037f64f0186f62035b7f0a8d5c6a65a23a79",
+  "layout_sha256": "ebcfd733e67601a85045c4d419fef42a97e7a5be0bc6b5bcab54fa2e53983ff1",
+  "result_item_sha256": "acc1ae146fa19d1b2824a8ecc176bc77223a14c455a96f5ae3854b5f6db2d1b0",
+  "result_record_sha256": "b0527ead33e6333ffb86d4d045f73f165ea36233717ffb3e956129df6d4aa98a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,16 +21,16 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The prayer direction is interrupted before تکبیرة الاحرام and continues into r00002. Reviewed fa source."
+        "note": "The instruction is joined to its continuation."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction completes r00001 and goes on to introduce the prayer. Reviewed fa source."
+        "note": "The continuation completes the instructions and introduces the next prayer."
       },
       {
         "row": "r00003",
@@ -63,30 +63,30 @@
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The moved seventh-takbir direction and paired prayer are correct, but the final construction continues into r00006. Reviewed ar source."
+        "note": "The Persian instruction is moved and the paired prayer now continues into r00006."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The moved seventh-takbir direction and paired prayer are correct, but the final construction continues into r00006. Reviewed fa source."
+        "note": "The supplied Persian prayer is paired and joined to the continuation."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This paired prayer continues r00005; preserve both source fields. Reviewed ar source."
+        "note": "The paired Arabic prayer completes the preceding construction."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This paired prayer continues r00005; preserve both source fields. Reviewed fa source."
+        "note": "The Persian prayer completes the joined construction."
       }
     ],
     "punctuation": [],
@@ -94,6 +94,41 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group interrupted instruction r00001/02 and paired devotional construction r00005/06; the other moved directions and bilingual segments are appropriate. Preserve links and text."
-  }
+    "note": "Both interrupted constructions are grouped and the moved directions remain coherent. Pre-frozen 0b7c1108 r00003/ar and r00006/ar contain different historical text versions; exact version-specific link handling remains an independent hold, not a reason to change source or refresh hashes."
+  },
+  "spacing_review": [
+    {
+      "row": "m0e01b021fbc5169e6aecf901",
+      "language": "fa",
+      "target_start": 538,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the continuous practical instruction with one proposed Persian space.",
+      "decision": "accept",
+      "note": "The preposition and following technical term are separate words."
+    },
+    {
+      "row": "m47357f56b7327a5c2f8e755d",
+      "language": "ar",
+      "target_start": 113,
+      "value": " ",
+      "left": "r00005-s93affcc5f3ac5677",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer with one proposed space per language.",
+      "decision": "accept",
+      "note": "The Arabic clause and following conjunction require a space."
+    },
+    {
+      "row": "m47357f56b7327a5c2f8e755d",
+      "language": "fa",
+      "target_start": 113,
+      "value": " ",
+      "left": "r00005-s93affcc5f3ac5677",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer with one proposed space per language.",
+      "decision": "accept",
+      "note": "The Persian clause and following conjunction require a space."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "ziyarat-zkrmsajd-mazmh-mdynh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "094d3ceb1588dad714b22e83d10af30840c19330813b1e8a4e779f55f074fb62",
-  "layout_sha256": "68ec8cfe8f160777935c60a4de2758ddb5739528d501e81932c0ef8d9cb43ca6",
-  "result_item_sha256": "8b9fb752f34ec66c22e4dd61d5aa64a2dc534381ec1da17b99d10ec18987fb8a",
-  "result_record_sha256": "69637d98a45b91ffa26d7753a5cb1c59315c522efa047d42b8e57aeae11dba0d",
+  "layout_sha256": "7a5886597896aacbbaa4123bbfd330b10a94bedb29e4219583d8f5419eab2dcb",
+  "result_item_sha256": "2521afd173907eef106734fe7880014cf587c1477f89d3b63f35af9c537da5a8",
+  "result_record_sha256": "df04beb4abd6a3bd0054319930d2f9467ca78219e93b92f1209f6e1db779db1c",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -42,16 +42,16 @@
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both prayer segments have matching supplied Persian but are emitted as separate Arabic-only and Persian-only rows; pair each corresponding section. Reviewed ar source."
+        "note": "The two Arabic prayer sections are paired with their existing Persian renderings."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both prayer segments have matching supplied Persian but are emitted as separate Arabic-only and Persian-only rows; pair each corresponding section. Reviewed fa source."
+        "note": "Both supplied Persian sections are paired with corresponding Arabic."
       },
       {
         "row": "r00005",
@@ -73,6 +73,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Distinguish the cross-reference from visitor directions in r00002, and pair the corresponding Arabic/Persian prayer sections in r00004. Keep the intentionally omitted long prayer omitted, retain source claims and preserve links."
+    "note": "The two prayer sections are paired. The cross-reference remains mixed into r00002/fa visitor directions, and the deliberately omitted long prayer must not be invented. Preserve source claims and links."
   }
 }

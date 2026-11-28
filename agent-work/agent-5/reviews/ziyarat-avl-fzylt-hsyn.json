@@ -4,11 +4,11 @@
   "item": "ziyarat-avl-fzylt-hsyn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "cb32e9be29101ec7b863bcf13b5ac730d63544cfe243e76378fdaa1c5c7e3c55",
-  "layout_sha256": "8b89bb4f670cb1056dd6d82a86c9c5b14c0dc9010bf3940f0f4006b36fa0fdb0",
-  "result_item_sha256": "dcab2e6940e8b8bde51c3301e212b4f5d7ed130cace7548aa918fe31a2ac0f94",
-  "result_record_sha256": "2346eb80854e1f7842567b5a377a81a70c9ceabe7cfd7737a09512af6cfb7a39",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "4704b243ce8034bd6c0a007b67d4c3b7a178c895185703830ccad57cf3cd79e4",
+  "layout_sha256": "9b8fda73ecd05336ef322c847366de780967599900f2a54e77afb7d5da1a73bc",
+  "result_item_sha256": "761588f19652a22972a8ad569ec5e32998f43c2c972799498eb1f10a52029a87",
+  "result_record_sha256": "45a11ee84b45273f5ff4d3d9fa29327da80e2b8368b805e6fb55fde4f0c45ddd",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "5c2309f094331686d2f0b35aaf8a10b5744922eefb83d70a6febdcdc06992db5",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "03e04978ef273db4eaa9bda50a94446e657aa154967cb6cb9d18e847d6dc6b7d",
+    "preview_sha256": "838a21138f5b7ffd330eae9a2ce5cdc87b9ccf92eb23de5b30dc0142500f75d5",
     "sources": [
       {
         "row": "r00001",
@@ -28,58 +28,58 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The introductory attributed benefits end mid-sentence and continue in r00003; retain the claims as reported. Reviewed fa source."
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first part completes r00002; the source list and attribution at the end continue in r00004. Reviewed fa source."
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The attribution continues from r00003, then Persian quoted devotional prayer is classified as note around an Arabic quotation with no corresponding explicit Persian wording. Distinguish narration from prayer and preserve the source omission. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Persian prayer starts by completing the r00004 sentence and is classified as note, whereas the following Arabic quotation and supplied Persian are paired; distinguish prayer from narration and preserve the passage. Reviewed ar source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Persian prayer starts by completing the r00004 sentence and is classified as note, whereas the following Arabic quotation and supplied Persian are paired; distinguish prayer from narration and preserve the passage. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "This Persian passage continues the prayer at the end of r00005 and should be devotional recitation or quotation rather than a general note. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       },
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The first Persian sentence continues the prayer; the later narrative switches to the reporter and is interrupted into r00008. Distinguish prayer and report. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first words complete r00007’s report; the subsequent response is attributed source narrative. Reviewed fa source."
+        "note": "The interrupted prose or devotional quotation is grouped/classified; retain the Arabic excerpt without inventing a rendering and keep reports attributed."
       }
     ],
     "punctuation": [],
@@ -87,6 +87,63 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group the interrupted prose r00002/03, 03/04, 04/05 and 07/08; Persian devotional prayer in r00004–07 is interwoven with the report and misclassified as note. Preserve the Arabic quotation without inventing an absent rendering and retain reported claims and IDs."
-  }
+    "note": "The previously identified prose continuations and devotional quotations are distinguished and grouped. Preserve source asymmetry and historical claims, and separately adjudicate the pre-frozen r00005/ar variant against version-specific offsets."
+  },
+  "spacing_review": [
+    {
+      "row": "m06b6eb25700a9ef6ad4c439d",
+      "language": "fa",
+      "target_start": 589,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the attributed report without endorsing claims.",
+      "decision": "accept",
+      "note": "The Persian conjunction and subject after punctuation are separate."
+    },
+    {
+      "row": "m1b8b3c05b64fb2fa898a9a70",
+      "language": "fa",
+      "target_start": 207,
+      "value": " ",
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-sf5580626db5b2df0",
+      "reason": "Complete the interrupted source attribution.",
+      "decision": "accept",
+      "note": "The Persian adjective and its noun need separation."
+    },
+    {
+      "row": "mea8aa3f1bbc179bc81167688",
+      "language": "fa",
+      "target_start": 40,
+      "value": " ",
+      "left": "r00007-s03b042ed549b3642",
+      "right": "r00008-s88eba61461dcd450",
+      "reason": "Complete the narrated account; separate remaining role findings.",
+      "decision": "accept",
+      "note": "The Persian compound verb parts need separation."
+    },
+    {
+      "row": "m35668a6e229b207f2af243cc",
+      "language": "fa",
+      "target_start": 122,
+      "value": " ",
+      "left": "r00005-s07589039be45be65",
+      "right": "r00006",
+      "reason": "Continue the quoted prayer across the source boundary.",
+      "decision": "accept",
+      "note": "The Persian conjunction starts the next clause after punctuation."
+    },
+    {
+      "row": "m225635dc6106c6e0b6d25906",
+      "language": "fa",
+      "target_start": 300,
+      "value": " ",
+      "left": "r00004-s78cd245d2e8ca9fe",
+      "right": "r00005-s9993f31df7edd284",
+      "reason": "Complete the quoted prayer phrase across the source boundary.",
+      "decision": "accept",
+      "note": "The Persian compound verb parts need separation."
+    }
+  ]
 }

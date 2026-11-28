@@ -4,11 +4,11 @@
   "item": "ziyarat-mtlqh-amyrmvmnyn-alyh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "c927f8f7c85b5dfe9c58d36c2713bd08bd19ed8c5ef466bd65aaff1bb1a48cf0",
-  "layout_sha256": "9b5d05d8c4fa18266542b79f59586af20732374787c1a30ce81f2bad1e3f2ce9",
-  "result_item_sha256": "bff74a20752539b20745afc5d07b7acdb8f17f09ce693cd6c7d215b3d26989bb",
-  "result_record_sha256": "672b7827ec246dc111a2844f53c63d08fb648ea246c86efd4265be53918e3543",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "9fe51da47acae713b2f301be4109a78a048627fdd6582d3fd21da528e8eea024",
+  "layout_sha256": "e1fcaa2541c90d58e5fa5ac52f86fb564397a9845130808db105b29df0229898",
+  "result_item_sha256": "41dd51490d73e8e0e8403cdbd4d02969ae8982a936b149834b1668cc2c8869fe",
+  "result_record_sha256": "0709eca4e9f7be64b9cb4cff567a1e8a945395461e64241bba051f0bbc53405a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "84d5ec49f5cdc5ad8a88feef235729f137ccbbd3196d93ad4b666ec3c79cdda3",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "2df4230a0b997f544e0b62bfea699aa639b37254785aedf034d1b2514bcbb0b5",
+    "preview_sha256": "101fc350d9b9995cd314f2b9e27685c98f277351b9e3f75d8bdb642958dffb5d",
     "sources": [
       {
         "row": "r00001",
@@ -56,30 +56,30 @@
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The instruction is correctly separated and moved to Persian, but both prayer fields stop mid-phrase and continue in r00005. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The instruction is correctly separated and moved to Persian, but both prayer fields stop mid-phrase and continue in r00005. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial Arabic verb and Persian آمدم complete the paired invocation in r00004. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial Arabic verb and Persian آمدم complete the paired invocation in r00004. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00006",
@@ -105,30 +105,30 @@
       {
         "row": "r00008",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The courtyard direction is correctly separated, but the final praise of God continues in both languages into r00009. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The courtyard direction is correctly separated, but the final praise of God continues in both languages into r00009. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00009",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields begin with the relative clause completing r00008’s final praise. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields begin with the relative clause completing r00008’s final praise. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00010",
@@ -168,30 +168,30 @@
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The entry invocation ends before the description of the resident angels is complete in both languages; r00014 continues it. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The entry invocation ends before the description of the resident angels is complete in both languages; r00014 continues it. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00014",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields begin by completing r00013’s incomplete entry request; preserve the bracketed variant. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields begin by completing r00013’s incomplete entry request; preserve the bracketed variant. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00015",
@@ -217,58 +217,58 @@
       {
         "row": "r00017",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction was correctly moved to Persian, but the salutation’s sequence of descriptions continues in r00018. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00017",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction was correctly moved to Persian, but the salutation’s sequence of descriptions continues in r00018. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00018",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial descriptors and blessing complete the paired salutation started in r00017. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00018",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial descriptors and blessing complete the paired salutation started in r00017. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00019",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The blessing after the salutation ends at Arabic رحمة and Persian رحمت, completed in r00020. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00019",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The blessing after the salutation ends at Arabic رحمة and Persian رحمت, completed in r00020. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00020",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first words complete r00019’s paired blessing; the rest of the salutations remain in order. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00020",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first words complete r00019’s paired blessing; the rest of the salutations remain in order. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00021",
@@ -287,142 +287,142 @@
       {
         "row": "r00022",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The instruction is moved correctly; both fields split the greeting after سلام, before its continuation in r00023. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00022",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The instruction is moved correctly; both fields split the greeting after سلام, before its continuation in r00023. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00023",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00022’s greeting; the description continues from this row into r00024. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00023",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00022’s greeting; the description continues from this row into r00024. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00024",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first coordinated descriptions continue r00023; the end leaves the phrase for successors of prophets incomplete until r00025. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00024",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first coordinated descriptions continue r00023; the end leaves the phrase for successors of prophets incomplete until r00025. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00025",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial word completes r00024 in both fields; the following grave prayer and farewell remain paired. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00025",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial word completes r00024 in both fields; the following grave prayer and farewell remain paired. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00026",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction is separated correctly but the paired petition ends at the incomplete وسعة / وسعت, continued in r00027. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00026",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction is separated correctly but the paired petition ends at the incomplete وسعة / وسعت, continued in r00027. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00027",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial phrase completes r00026’s petition in both languages; retain the wording of the supplied rendering. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00027",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial phrase completes r00026’s petition in both languages; retain the wording of the supplied rendering. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00028",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The last paired invocation begins a contrasting phrase continued in r00029. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00028",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The last paired invocation begins a contrasting phrase continued in r00029. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00029",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00028’s paired invocation before a new supplication. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00029",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00028’s paired invocation before a new supplication. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00030",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction was correctly moved; the last paired testimony is unfinished after وجعلك / تو را and continues in r00031. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00030",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction was correctly moved; the last paired testimony is unfinished after وجعلك / تو را and continues in r00031. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00031",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both openings complete the testimony from r00030. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00031",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both openings complete the testimony from r00030. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00032",
@@ -441,23 +441,23 @@
       {
         "row": "r00033",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The one-word Persian transition is unfinished and continued by the instruction fragment in r00034. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The direction is grouped or distinguished from explanatory material without changing its source."
       },
       {
         "row": "r00034",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian instruction begins by completing r00033; the following prayer and supplied rendering remain paired. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The direction is grouped or distinguished from explanatory material without changing its source."
       },
       {
         "row": "r00034",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian instruction begins by completing r00033; the following prayer and supplied rendering remain paired. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The direction is grouped or distinguished from explanatory material without changing its source."
       },
       {
         "row": "r00035",
@@ -469,30 +469,30 @@
       {
         "row": "r00036",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The greeting is interrupted after السلام / سلام and completed in r00037. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00036",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The greeting is interrupted after السلام / سلام and completed in r00037. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00037",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00036’s paired greeting. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00037",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00036’s paired greeting. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00038",
@@ -532,30 +532,30 @@
       {
         "row": "r00041",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction is properly moved to Persian, but the supplication ends at an incomplete clause in both languages, continued in r00042. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00041",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The direction is properly moved to Persian, but the supplication ends at an incomplete clause in both languages, continued in r00042. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00042",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00041’s paired request; preserve the supplied imperfect Persian without invention. Reviewed ar source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00042",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00041’s paired request; preserve the supplied imperfect Persian without invention. Reviewed fa source; preserve original wording and reported variations."
+        "note": "The paired invocation or prayer is now grouped across its earlier boundary; keep source imperfections and bracketed variants."
       },
       {
         "row": "r00043",
@@ -588,9 +588,9 @@
       {
         "row": "r00045",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Practical steps are mixed with explanations that this is a place of supplication and forgiveness; distinguish instructions from explanatory comment without treating the source as verification. Reviewed fa source; preserve original wording and reported variations."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The direction is grouped or distinguished from explanatory material without changing its source."
       }
     ],
     "punctuation": [],
@@ -598,6 +598,305 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The directions are generally moved to Persian and prayers paired. However unfinished paired phrases cross r00004/05, 08/09, 13/14, 17/18, 19/20, 22/23, 23/24/25, 26/27, 28/29, 30/31, 36/37 and 41/42; the short instruction r00033 also continues into r00034. Separate r00045 directions from explanations. Keep source imperfections and bracketed variants, preserve published IDs and escalate unsupported migration."
-  }
+    "note": "The identified paired continuations, instruction continuation and r00045 role boundaries are grouped or distinguished. Earlier same-ID Arabic variants r00001, r00010, r00011, r00013, r00014, r00016 and r00020 still require version-specific offset adjudication; source wording and brackets remain intact."
+  },
+  "spacing_review": [
+    {
+      "row": "m21efdcc1e06682932bf556ec",
+      "language": "ar",
+      "target_start": 42,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic preposition and verb are separate."
+    },
+    {
+      "row": "m21efdcc1e06682932bf556ec",
+      "language": "fa",
+      "target_start": 44,
+      "value": " ",
+      "left": "r00004-se656eb44999bf14d",
+      "right": "r00005",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian compound verb parts need separation."
+    },
+    {
+      "row": "mdb311ce673bc744b1411ae57",
+      "language": "ar",
+      "target_start": 298,
+      "value": " ",
+      "left": "r00008-s4726693f173a10fd",
+      "right": "r00009",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic relative clause requires a preceding space."
+    },
+    {
+      "row": "mdb311ce673bc744b1411ae57",
+      "language": "fa",
+      "target_start": 257,
+      "value": " ",
+      "left": "r00008-s4726693f173a10fd",
+      "right": "r00009",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction starts the next clause."
+    },
+    {
+      "row": "me045619af27dbf9068cc8306",
+      "language": "ar",
+      "target_start": 763,
+      "value": " ",
+      "left": "r00013",
+      "right": "r00014",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The bracketed Arabic variant is a separate word."
+    },
+    {
+      "row": "me045619af27dbf9068cc8306",
+      "language": "fa",
+      "target_start": 590,
+      "value": " ",
+      "left": "r00013",
+      "right": "r00014",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian participle and following demonstrative require separation."
+    },
+    {
+      "row": "m7ecdc07c9a2e90b4b4a7667f",
+      "language": "ar",
+      "target_start": 255,
+      "value": " ",
+      "left": "r00017-s18f0993006f44169",
+      "right": "r00018",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic descriptor begins after punctuation."
+    },
+    {
+      "row": "m7ecdc07c9a2e90b4b4a7667f",
+      "language": "fa",
+      "target_start": 178,
+      "value": " ",
+      "left": "r00017-s18f0993006f44169",
+      "right": "r00018",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian descriptor begins after punctuation."
+    },
+    {
+      "row": "m1aac58befceb2702e8567b52",
+      "language": "ar",
+      "target_start": 450,
+      "value": " ",
+      "left": "r00019",
+      "right": "r00020",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic noun and divine name need separation."
+    },
+    {
+      "row": "m1aac58befceb2702e8567b52",
+      "language": "fa",
+      "target_start": 331,
+      "value": " ",
+      "left": "r00019",
+      "right": "r00020",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian noun and conjunction need separation."
+    },
+    {
+      "row": "mdd6a8c3337fe1e4d0dc4dcb7",
+      "language": "ar",
+      "target_start": 305,
+      "value": " ",
+      "left": "r00022-sf075bf57489fa6f3",
+      "right": "r00023",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic greeting and following preposition need separation."
+    },
+    {
+      "row": "mdd6a8c3337fe1e4d0dc4dcb7",
+      "language": "fa",
+      "target_start": 183,
+      "value": " ",
+      "left": "r00022-sf075bf57489fa6f3",
+      "right": "r00023",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian greeting and following preposition need separation."
+    },
+    {
+      "row": "mdd6a8c3337fe1e4d0dc4dcb7",
+      "language": "ar",
+      "target_start": 1411,
+      "value": " ",
+      "left": "r00024",
+      "right": "r00025",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic noun and following noun need separation."
+    },
+    {
+      "row": "mdd6a8c3337fe1e4d0dc4dcb7",
+      "language": "fa",
+      "target_start": 1026,
+      "value": " ",
+      "left": "r00024",
+      "right": "r00025",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian noun and modifier need separation."
+    },
+    {
+      "row": "mba63b2e77eef6997cecf9513",
+      "language": "ar",
+      "target_start": 371,
+      "value": " ",
+      "left": "r00026-sb0bf64cdb72daaec",
+      "right": "r00027",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic noun and following noun need separation."
+    },
+    {
+      "row": "mba63b2e77eef6997cecf9513",
+      "language": "fa",
+      "target_start": 344,
+      "value": " ",
+      "left": "r00026-sb0bf64cdb72daaec",
+      "right": "r00027",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian noun and complement need separation."
+    },
+    {
+      "row": "m0a88d2e516777497367d22b0",
+      "language": "ar",
+      "target_start": 625,
+      "value": " ",
+      "left": "r00028",
+      "right": "r00029",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction begins a separate phrase."
+    },
+    {
+      "row": "m0a88d2e516777497367d22b0",
+      "language": "fa",
+      "target_start": 458,
+      "value": " ",
+      "left": "r00028",
+      "right": "r00029",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction begins a separate phrase."
+    },
+    {
+      "row": "maffe5df90b12b1b6f333b457",
+      "language": "ar",
+      "target_start": 674,
+      "value": " ",
+      "left": "r00030-sf908733d811d4379",
+      "right": "r00031",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic verb and conjunction need separation."
+    },
+    {
+      "row": "maffe5df90b12b1b6f333b457",
+      "language": "fa",
+      "target_start": 422,
+      "value": " ",
+      "left": "r00030-sf908733d811d4379",
+      "right": "r00031",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian pronoun and conjunction need separation."
+    },
+    {
+      "row": "m15cc67584481d82d9390f903",
+      "language": "fa",
+      "target_start": 2,
+      "value": " ",
+      "left": "r00033",
+      "right": "r00034-sc677689db9f1656c",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian transition and verb need separation."
+    },
+    {
+      "row": "m6b20301aa8dfba793a019055",
+      "language": "ar",
+      "target_start": 174,
+      "value": " ",
+      "left": "r00036",
+      "right": "r00037",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic greeting and preposition need separation."
+    },
+    {
+      "row": "m6b20301aa8dfba793a019055",
+      "language": "fa",
+      "target_start": 105,
+      "value": " ",
+      "left": "r00036",
+      "right": "r00037",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian greeting and preposition need separation."
+    },
+    {
+      "row": "m3b8ca6c8c073fa0acc4c913a",
+      "language": "ar",
+      "target_start": 178,
+      "value": " ",
+      "left": "r00041-s7207e2a91378de76",
+      "right": "r00042",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic pronoun and adjective require separation."
+    },
+    {
+      "row": "m3b8ca6c8c073fa0acc4c913a",
+      "language": "fa",
+      "target_start": 170,
+      "value": " ",
+      "left": "r00041-s7207e2a91378de76",
+      "right": "r00042",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian noun and adjective need separation."
+    },
+    {
+      "row": "mdd6a8c3337fe1e4d0dc4dcb7",
+      "language": "ar",
+      "target_start": 763,
+      "value": " ",
+      "left": "m58291c8acf15ea51c3d86f70",
+      "right": "m3ce474b02f47d8c0beb2ed47",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The bracketed Arabic variant is a separate word."
+    },
+    {
+      "row": "mdd6a8c3337fe1e4d0dc4dcb7",
+      "language": "fa",
+      "target_start": 466,
+      "value": " ",
+      "left": "m58291c8acf15ea51c3d86f70",
+      "right": "m3ce474b02f47d8c0beb2ed47",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction begins after punctuation."
+    }
+  ]
 }

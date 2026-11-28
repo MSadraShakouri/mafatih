@@ -1,5 +1,9 @@
 # Agent 4 clarification and blocker assessment index
 
+## Current consolidated bridge review
+
+`agent-4-bridge-consolidated-review.md` is the final single-pass review and correction list for bridge `d265151bd911aff5d1756abf77b082f41b67414e`: 20 complete and 56 needs-work changed records, alongside 33 preserved unchanged complete and six reassessed unchanged open records. Exact available-history source variants are in `bridge-historical-variants.json`; per-source, historical-issue and space decisions are in `../reviews/`. This supersedes older counts below without erasing their history. Provisional link candidates remain withheld; only subsequently changed items need fresh review.
+
 Scope: Agent 4 triage at `8969178825705ad4df9655840e7848549e415a5e`, reviewing author snapshot `c9fa191acade1f72ab36e05f39ea931d4cb9cb5d`. These are independent semantic answers, not fixes or release approvals.
 
 - `agent-4-clarifications-1.md` through `agent-4-clarifications-6.md` respond to all 46 clarification/preview record dispositions. Review records remain needs-work where other findings remain; withdrawn length-only requests are explicitly identified.

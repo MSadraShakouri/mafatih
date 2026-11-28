@@ -4,11 +4,11 @@
   "item": "namaz-ayd-ftr",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "315d95b036fedbad03879e5eb11d9f91853339a05bf2144f7a70dc32b077f042",
-  "layout_sha256": "c88c02d6a511af6b1e342a3173847f6a2741e4578873df1a998d82600ce22a3c",
-  "result_item_sha256": "5cbbff904697bcb53608d38cf92a927cf9cce7275d21559046bb403e9c613f6a",
-  "result_record_sha256": "908eb5a6b357b6e3095a669e752fb29d3144279b90cdda9cdf89c0ba383b92d0",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "be51ad233387e1d5383db35492710edc95c06cacefb4e5c85a73dfd379f59776",
+  "layout_sha256": "93a09a2dff0a157e5339c5b08f6abfb3c7c5958832dfa5cda5ea4c60dc4633cb",
+  "result_item_sha256": "9bf55d171c6b99353b4b22d0fed22c7e2806c69fca59534b52d698b31e50c4d7",
+  "result_record_sha256": "2a2744a7ec74c2b2a7412aa13e99102a4c71f1e31a232282c7b9c61565d25d17",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "f738f6886f8c4a30ad13c958ff3e203f92ac133dd30daacf8f09961465a90303",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "66b1a52e8ea86f5dc028148a113851645bf6b6f2711f3fa5c9d118c593e0df52",
+    "preview_sha256": "3af4cd6965cb4f2cbf1c78e14f3850f921befc9e8ca3897332f6f6bdcc7a593f",
     "sources": [
       {
         "row": "r00001",
@@ -36,22 +36,22 @@
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the Persian rendering of r00002/ar, not a note; align it with the prayer if the published identities can be preserved."
+        "kind": "accept",
+        "note": "The prayer is now paired."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The opening explains the substitution, then a report of the Imam begins and continues into r00004; distinguish instruction from reported account and do not leave بجا isolated from می آرود."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The instruction and report are separated and the report continuation grouped."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The first piece continues r00003 and contains reported merit; the cut after هزار مرتبه سوره توحید leaves صد مرتبه of the alternate report in the next piece. Group the continuous report, classify the narrative and distinguish the actual timing instruction."
+        "note": "The opening report is joined and classified as note, but the alternate report and prayer timing remain to distinguish."
       },
       {
         "row": "r00005",
@@ -64,8 +64,8 @@
         "row": "r00005",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "These are renderings of r00005/ar invocations, not notes; their boundaries do not coincide with the three Arabic pieces. Align at corresponding invocations and preserve existing links."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but mismatched detached pieces and applicable cross-row continuations remain."
       },
       {
         "row": "r00006",
@@ -78,8 +78,8 @@
         "row": "r00006",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "This is a rendering of the invocations, not a note; the cuts do not align with the Arabic. Reconcile corresponding spans while preserving published links."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but mismatched detached pieces and applicable cross-row continuations remain."
       },
       {
         "row": "r00007",
@@ -92,8 +92,8 @@
         "row": "r00007",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "The text is a Persian rendering of the Arabic invocations, not a note; first cut ends with the rendering of a name in the next Arabic piece."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but mismatched detached pieces and applicable cross-row continuations remain."
       },
       {
         "row": "r00008",
@@ -105,9 +105,9 @@
       {
         "row": "r00008",
         "language": "fa",
-        "split": "accept",
-        "kind": "revise",
-        "note": "The existing Persian is the rendering of the Arabic invocations, not commentary; pair where meanings and boundary permit."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian is now recitation, but mismatched detached pieces and applicable cross-row continuations remain."
       },
       {
         "row": "r00009",
@@ -120,8 +120,8 @@
         "row": "r00009",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "The Persian is a prayer rendering, not a note; its divisions differ from Arabic and the request continues across r00010. Preserve source wording and do not invent missing passages."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but mismatched detached pieces and applicable cross-row continuations remain."
       },
       {
         "row": "r00010",
@@ -133,9 +133,9 @@
       {
         "row": "r00010",
         "language": "fa",
-        "split": "accept",
-        "kind": "revise",
-        "note": "This continues the Persian rendering of r00009/r00010, not a note; pair to matching Arabic once link-safe."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian is now recitation, but mismatched detached pieces and applicable cross-row continuations remain."
       },
       {
         "row": "r00011",
@@ -148,8 +148,8 @@
         "row": "r00011",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Both pieces are the existing rendering of the prayer, not notes; the Arabic prayer corresponds to both pieces, so align them as a coherent pair."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but mismatched detached pieces and applicable cross-row continuations remain."
       }
     ],
     "punctuation": [],
@@ -163,6 +163,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Existing Persian renderings in r00002 and r00005-r00011 are detached as notes rather than paired recitations. Several segment boundaries cut across corresponding invocations, notably r00007/ar يا continuing into r00008, and r00003/r00004 split a Persian report mid-phrase. Separate reported narrative from actual instructions. These are semantic, not length-only findings. Do not retire published child IDs or invent text; migration may be required."
-  }
+    "note": "r00002 is paired and r00003/04 report grouped; r00004 report and timing still mix roles. r00005–11 have recitation classifications but unequal and detached pairings, including the r00007/08 vocative and r00009/10 request. Retain the historical LF escalation; pre-frozen r00006/ar variant requires version-specific offsets."
+  },
+  "spacing_review": [
+    {
+      "row": "m3b29e34df7259d6a4d9a8161",
+      "language": "fa",
+      "target_start": 93,
+      "value": " ",
+      "left": "r00003-s83d3fea6e0d8d0c2",
+      "right": "r00004-s84c369186b86c2ea",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian compound verb parts require a space; retain existing spelling."
+    }
+  ]
 }

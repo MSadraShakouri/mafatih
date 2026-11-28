@@ -4,11 +4,11 @@
   "item": "dua-dvm-daahay-vqt",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "e9982c8154f928dff7fbc07c2c2981ad5b3ab02afa555c2ad3dd444c742c28b6",
-  "layout_sha256": "6398b7a94ea9e92d313ee0fc60fd72c6b8dc5f905ee8fc6fe805832f809d430a",
-  "result_item_sha256": "e801b63926d2231bbebd312771dcd5bdc3ccd3cdc81da5e1760e960717e4e43c",
-  "result_record_sha256": "52e130854cea492ca37144b776bec491c5fb4a314477fc64aa9885a9d37a419f",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "d4cd93284ec7581d10d71edf60d9cca30c3c7778dd8fb17a83f0e9e1a3370501",
+  "layout_sha256": "7241f18c9337565ba4eb8f25d82f9759d00846ad631936123328cd4ecdae912f",
+  "result_item_sha256": "7439d3e12b95c90dc84f56b3dd533290925484a311d842a934f4e3fa4002a4d1",
+  "result_record_sha256": "ca8abee899b6e0f6d62895582ce169972889f0542cbd456a78cf0b34bdbba60c",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "d6adc03c4722b3be6cadc6353fd558f56d7ea4ef1956b0b214592397d6fd32dc",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "0169c3f9019334c5f183d4228fa93eaae4958bdf77d18293eeaec1fd75099422",
+    "preview_sha256": "d0564454e392972a490d12ebba82e67ea418812a7e4c671451dc0fe8560b8128",
     "sources": [
       {
         "row": "r00001",
@@ -29,8 +29,8 @@
         "row": "r00001",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "The Persian renders the Arabic praise and is not a note; pair as recitation and inspect continuation into r00002."
+        "kind": "accept",
+        "note": "The existing Persian recitation is paired and the relevant continuation or narrative boundary is distinguished."
       },
       {
         "row": "r00002",
@@ -43,8 +43,8 @@
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This renders the Arabic prayer, not an instruction. A prior LF before closing punctuation was removed in documented unreviewed history; do not silently restore or treat that history as independent approval."
+        "kind": "accept",
+        "note": "The existing Persian recitation is paired and the relevant continuation or narrative boundary is distinguished."
       },
       {
         "row": "r00003",
@@ -78,8 +78,8 @@
         "row": "r00005",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is a prayer rendering rather than a note; pair with Arabic and inspect the r00005/r00006 continuation."
+        "kind": "accept",
+        "note": "The existing Persian recitation is paired and the relevant continuation or narrative boundary is distinguished."
       },
       {
         "row": "r00006",
@@ -92,8 +92,8 @@
         "row": "r00006",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is a prayer rendering rather than a note; pair as recitation, preserving the source continuation."
+        "kind": "accept",
+        "note": "The existing Persian recitation is paired and the relevant continuation or narrative boundary is distinguished."
       },
       {
         "row": "r00007",
@@ -140,9 +140,9 @@
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The field contains a Persian prayer rendering followed by narrative attribution; split at that transition, pair the prayer with Arabic, and keep the narrative as a note."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The existing Persian recitation is paired and the relevant continuation or narrative boundary is distinguished."
       },
       {
         "row": "r00012",
@@ -162,8 +162,8 @@
         "row": "r00013",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This renders the prayer and is not an instruction; pair as recitation."
+        "kind": "accept",
+        "note": "The existing Persian recitation is paired and the relevant continuation or narrative boundary is distinguished."
       }
     ],
     "punctuation": [],
@@ -187,6 +187,52 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00001-r00002, r00005-r00006 and r00013 have matching Persian prayer renderings misclassified and unpaired; inspect safe continuation joins in r00001/r00002 and r00005/r00006. r00011/fa combines a prayer rendering with following narrative: split by meaning, pair and classify. The numbered report beginning r00009 continues into r00010. Preserve documented historical line-break correction and separately review any space proposals."
-  }
+    "note": "The paired recitations and r00011 report are corrected, including both prayer continuations. r00003 and r00009 still mix reported narrative and directions or numbered account, and r00009/10 remains interrupted. Historical r00002/fa and r00004/ar variants require version-specific offsets; retain the escalated historical LF."
+  },
+  "spacing_review": [
+    {
+      "row": "ma00aafef2ac547637becb290",
+      "language": "ar",
+      "target_start": 78,
+      "value": " ",
+      "left": "r00001-s1c3eddaf647bdfb3",
+      "right": "r00002",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic verbs are separate words."
+    },
+    {
+      "row": "ma00aafef2ac547637becb290",
+      "language": "fa",
+      "target_start": 65,
+      "value": " ",
+      "left": "r00001-s1c3eddaf647bdfb3",
+      "right": "r00002",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction begins the following clause."
+    },
+    {
+      "row": "m9889b0af16baf18236b345e7",
+      "language": "ar",
+      "target_start": 97,
+      "value": " ",
+      "left": "r00005-s43eb5e9b2992d81f",
+      "right": "r00006",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic verb and preposition are separate words."
+    },
+    {
+      "row": "m9889b0af16baf18236b345e7",
+      "language": "fa",
+      "target_start": 93,
+      "value": " ",
+      "left": "r00005-s43eb5e9b2992d81f",
+      "right": "r00006",
+      "reason": "Complete the source passage and preserve the existing wording, reported claims, both witnesses and all old anchors; any proposed separator requires independent review.",
+      "decision": "accept",
+      "note": "The Persian verb and preposition are separate words."
+    }
+  ]
 }

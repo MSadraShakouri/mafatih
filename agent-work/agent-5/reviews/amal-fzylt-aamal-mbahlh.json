@@ -4,11 +4,11 @@
   "item": "amal-fzylt-aamal-mbahlh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "317aa25ff59693799f5c864ff7618313ea5540ee8c5e22cedb5201f047a43cd0",
-  "layout_sha256": "b6adbf80df8c754576f17769be34ea8366d8cf722753a8106330504f82ec40da",
-  "result_item_sha256": "a685d9a6f95c49f9bf71a333592b075d23ac8651fe947848e796891997541492",
-  "result_record_sha256": "b946886c8e28a82efbe45c151dc976fc01fc165226698545dd284b6b5da74d0c",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "818d410ee8dde8461577fc52dcbe5604eab5a4cb5f3f57afadd1724fdf6d7cda",
+  "layout_sha256": "9d725a9625293b24e04b7c8d26af174b9240620026b9262a67c665630b2c459f",
+  "result_item_sha256": "4083fa36302eef3c494cb35979930fc460dfd924822cb3d663593cfba52cca3f",
+  "result_record_sha256": "a47a62195bfaa6ee7f493e6c23ee59f1d8f10a7699168064a1b60c74fe22ab93",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,28 +16,28 @@
     "item_sha256": "6786acaf986de3fc3528ce3163e3d40030c77bb12b66c1f79d55e809db00d538",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "d05baf902fe013c86d4a22c7a1f805471e5f9a2bd51662f97eb34a7dbf29fd24",
+    "preview_sha256": "f9cf23d036ae858467ca2c89be637e5c664d50ada34c48e99230b95bc91e8f11",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The dated heading and narrative are followed by numbered practices; separate the headings and practical instructions from the report. The third practice continues in r00002. Assessment includes the fa source and actual output."
+        "note": "The dated heading, historical report and first numbered practices are separated, but the third instruction still continues into r00002/03."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "This completes the third practice, which begins in r00001, and ends before the final word of the same direction in r00003; group the interrupted prose. Assessment includes the fa source and actual output."
+        "note": "The third practice continues from r00001 into r00003 and remains interrupted."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The initial words finish the instruction in r00002; the fourth numbered prayer and its attribution are a separate heading/report. Assessment includes the fa source and actual output."
+        "note": "The opening completes the interrupted preceding direction; the fourth practice and its attribution remain separate."
       },
       {
         "row": "r00004",
@@ -91,142 +91,142 @@
       {
         "row": "r00008",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both Arabic and Persian end at an incomplete petition concerning divine will, continued in r00009; group the paired completion. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00008/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00008",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both Arabic and Persian end at an incomplete petition concerning divine will, continued in r00009; group the paired completion. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00008/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00009",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00008; the final invocation is interrupted in both languages before r00010. Preserve all wording and source punctuation. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00009/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00009",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00008; the final invocation is interrupted in both languages before r00010. Preserve all wording and source punctuation. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00009/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00010",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the prayer begun at the end of r00009 in both languages. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00010/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the prayer begun at the end of r00009 in both languages. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00010/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00011",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The final words in both fields introduce a petition for provision and continue in r00012; group the incomplete phrase. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00011/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The final words in both fields introduce a petition for provision and continue in r00012; group the incomplete phrase. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00011/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00012",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening in both fields completes r00011’s petition; subsequent paired prayers remain source text, including the supplied rendering. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00012/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00012",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening in both fields completes r00011’s petition; subsequent paired prayers remain source text, including the supplied rendering. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00012/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00013",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields end after an incomplete series item and continue in r00014; preserve the existing Persian rendering, including its typographical defect, without correction. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00013/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields end after an incomplete series item and continue in r00014; preserve the existing Persian rendering, including its typographical defect, without correction. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00013/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00014",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00013’s paired list; the final request proceeds into r00015’s coordinated objects. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00014/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00014",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00013’s paired list; the final request proceeds into r00015’s coordinated objects. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00014/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00015",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening continues r00014’s request and the final address proceeds into r00016; group coherent paired prayer units without changing source. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00015/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00015",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening continues r00014’s request and the final address proceeds into r00016; group coherent paired prayer units without changing source. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00015/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00016",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening vocative completes the address that follows r00015; preserve the existing rendering and its apparent typo. Assessment includes the ar source and actual output."
+        "note": "The earlier interrupted paired passage at r00016/ar now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00016",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening vocative completes the address that follows r00015; preserve the existing rendering and its apparent typo. Assessment includes the fa source and actual output."
+        "note": "The earlier interrupted paired passage at r00016/fa now continues in its coherent joined recitation; retain the supplied wording, variants and typographical defects."
       },
       {
         "row": "r00017",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The fifth numbered practice, its attribution, charity recommendation and visitation direction mix roles; separate them without adding a missing prayer or source. Assessment includes the fa source and actual output."
+        "note": "The numbered heading is separate, but attribution and several practical recommendations remain in the instruction."
       },
       {
         "row": "r00018",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The new dated heading is followed by a historical narrative and practical recommendations; distinguish these roles. Assessment includes the fa source and actual output."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The date heading, historical report and practical recommendations are now distinguished."
       }
     ],
     "punctuation": [],
@@ -250,6 +250,140 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Distinguish the dated headings, numbered practices, report and directions in r00001–04 and r00017–18. The prayer is mostly paired but interrupted across r00008/09/10, r00011/12 and r00013/14/15/16. The Persian ending of r00005 continues in r00006 where the Arabic begins a new petition; preserve and flag the apparent missing Arabic completion, do not invent it. Three prior Persian LF corrections are separately escalated. Preserve published IDs and report unsupported migration."
-  }
+    "note": "The numbered headings and dated report have been separated and the paired continuations r00008/09/10, r00011/12 and r00013–16 are grouped. The third practice remains interrupted across r00001/02/03, r00005/06 still has the Persian continuation and apparent missing Arabic completion, and r00017 still mixes attribution with practical steps. Preserve the source discrepancy and three escalated historical LF decisions; do not invent text or migrate historical variants."
+  },
+  "spacing_review": [
+    {
+      "row": "m3d847fef89470089ff5f8ccd",
+      "language": "ar",
+      "target_start": 392,
+      "value": " ",
+      "left": "r00008",
+      "right": "r00009",
+      "reason": "Complete the bilingual prayer petition while preserving historical line-break decisions.",
+      "decision": "accept",
+      "note": "The Arabic petition and following adjective are separate words."
+    },
+    {
+      "row": "m3d847fef89470089ff5f8ccd",
+      "language": "fa",
+      "target_start": 363,
+      "value": " ",
+      "left": "r00008",
+      "right": "r00009",
+      "reason": "Complete the bilingual prayer petition while preserving historical line-break decisions.",
+      "decision": "accept",
+      "note": "The Persian quantifier and noun are separate words."
+    },
+    {
+      "row": "mb0ca2ed92eb8480de1dbe477",
+      "language": "ar",
+      "target_start": 627,
+      "value": " ",
+      "left": "r00011",
+      "right": "r00012",
+      "reason": "Complete the bilingual prayer petition while preserving source wording.",
+      "decision": "accept",
+      "note": "The Arabic preposition and following noun require a space."
+    },
+    {
+      "row": "mb0ca2ed92eb8480de1dbe477",
+      "language": "fa",
+      "target_start": 619,
+      "value": " ",
+      "left": "r00011",
+      "right": "r00012",
+      "reason": "Complete the bilingual prayer petition while preserving source wording.",
+      "decision": "accept",
+      "note": "The Persian preposition and following noun require a space."
+    },
+    {
+      "row": "m63ddb0937642b8b3208ec0d7",
+      "language": "ar",
+      "target_start": 1127,
+      "value": " ",
+      "left": "r00013",
+      "right": "r00014",
+      "reason": "Complete the bilingual list while preserving the source typographical form.",
+      "decision": "accept",
+      "note": "The Arabic quantifier and list term require a space."
+    },
+    {
+      "row": "m63ddb0937642b8b3208ec0d7",
+      "language": "fa",
+      "target_start": 851,
+      "value": " ",
+      "left": "r00013",
+      "right": "r00014",
+      "reason": "Complete the bilingual list while preserving the source typographical form.",
+      "decision": "accept",
+      "note": "The Persian quantifier and following list term require a space."
+    },
+    {
+      "row": "m63ddb0937642b8b3208ec0d7",
+      "language": "ar",
+      "target_start": 2252,
+      "value": " ",
+      "left": "r00015",
+      "right": "r00016",
+      "reason": "Complete the paired address and preserve source spelling.",
+      "decision": "accept",
+      "note": "The Arabic punctuation and following address require a space."
+    },
+    {
+      "row": "m63ddb0937642b8b3208ec0d7",
+      "language": "fa",
+      "target_start": 1684,
+      "value": " ",
+      "left": "r00015",
+      "right": "r00016",
+      "reason": "Complete the paired address and preserve source spelling.",
+      "decision": "accept",
+      "note": "The Persian punctuation and following address require a space."
+    },
+    {
+      "row": "m3d847fef89470089ff5f8ccd",
+      "language": "ar",
+      "target_start": 1509,
+      "value": " ",
+      "left": "md8e06d1e315070eb19d036d6",
+      "right": "r00010",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic pronoun and following verb are distinct words."
+    },
+    {
+      "row": "m3d847fef89470089ff5f8ccd",
+      "language": "fa",
+      "target_start": 1407,
+      "value": " ",
+      "left": "md8e06d1e315070eb19d036d6",
+      "right": "r00010",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian vocative and verb are separate words."
+    },
+    {
+      "row": "m63ddb0937642b8b3208ec0d7",
+      "language": "ar",
+      "target_start": 1683,
+      "value": " ",
+      "left": "m7a347fd487d949419b3b6810",
+      "right": "m0ec25d03a46b7c21faf4a0f3",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic clauses and conjunction require a space."
+    },
+    {
+      "row": "m63ddb0937642b8b3208ec0d7",
+      "language": "fa",
+      "target_start": 1223,
+      "value": " ",
+      "left": "m7a347fd487d949419b3b6810",
+      "right": "m0ec25d03a46b7c21faf4a0f3",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian clauses and conjunction require a space."
+    }
+  ]
 }

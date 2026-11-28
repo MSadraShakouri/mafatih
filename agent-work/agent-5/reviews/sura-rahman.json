@@ -4,11 +4,11 @@
   "item": "sura-rahman",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "1b27fc0427f39475240de59f9f0315364b9edefad7c210c335678e76b5b76a6b",
-  "layout_sha256": "977fc544af40508068999539dbc7cf780f9f18b4bb8a20fe7bf5565ff8ba9852",
-  "result_item_sha256": "a35210d06b5ded45605ede841e83bd04b02731b475763180a85520b7e9122c07",
-  "result_record_sha256": "8dc6ff6accdb40b3a69bde6e4afa5430fe008a03fb1743314bf54ff942f33950",
+  "layout_sha256": "93f828e8bbf6d3ff848f9fc248b0a341c7908bce36a8bd81e5e39c9fef1e8209",
+  "result_item_sha256": "a4577e306c1179ec0cbb065dca3e62e679cc5d3d3054d1279c383d10a88f718f",
+  "result_record_sha256": "ddb1329c84179e7236cb6bd25cb5664626c4070e839e75a2853a0e92d425568d",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -490,30 +490,30 @@
       {
         "row": "r00035",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic vocative and corresponding Persian begin verse 33 but are cut away from the rest of the same verse in r00036; join the paired verse while preserving its existing text and links."
+        "note": "This source fragment is now grouped in its complete verse with the supplied paired rendering and verse marker; no text was invented."
       },
       {
         "row": "r00035",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic vocative and corresponding Persian begin verse 33 but are cut away from the rest of the same verse in r00036; join the paired verse while preserving its existing text and links."
+        "note": "This source fragment is now grouped in its complete verse with the supplied paired rendering and verse marker; no text was invented."
       },
       {
         "row": "r00036",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields continue the vocative of verse 33 at r00035; the marker and the main clause belong to that same verse. Group the two fragments without inventing text."
+        "note": "This source fragment is now grouped in its complete verse with the supplied paired rendering and verse marker; no text was invented."
       },
       {
         "row": "r00036",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields continue the vocative of verse 33 at r00035; the marker and the main clause belong to that same verse. Group the two fragments without inventing text."
+        "note": "This source fragment is now grouped in its complete verse with the supplied paired rendering and verse marker; no text was invented."
       },
       {
         "row": "r00037",
@@ -798,23 +798,23 @@
       {
         "row": "r00057",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This Arabic participle begins verse 54, while the complete Persian rendering and the rest of the Arabic are in r00058. Group with the continuation; no Persian text is present in this source."
+        "note": "This source fragment is now grouped in its complete verse with the supplied paired rendering and verse marker; no text was invented."
       },
       {
         "row": "r00058",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic begins with the continuation of the participle from r00057, and the Persian renders the whole verse 54. Group both source rows so the rendering pairs with the complete verse."
+        "note": "This source fragment is now grouped in its complete verse with the supplied paired rendering and verse marker; no text was invented."
       },
       {
         "row": "r00058",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic begins with the continuation of the participle from r00057, and the Persian renders the whole verse 54. Group both source rows so the rendering pairs with the complete verse."
+        "note": "This source fragment is now grouped in its complete verse with the supplied paired rendering and verse marker; no text was invented."
       },
       {
         "row": "r00059",
@@ -1158,6 +1158,41 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Read the audio label, basmala and all 78 verse texts in both languages. Most verse markers and renderings match, including the recurring refrain. Verse 33 is split across r00035/36 in both languages and verse 54 across r00057/58 with its Persian whole in r00058; restore complete verse groupings while preserving identities. Existing interpretation and audio metadata remain unchanged; this is not scholarly or rights approval."
-  }
+    "note": "Verses 33 and 54 now each form a complete paired row, with original markers and source asymmetry preserved. The pre-frozen r00003/ar text reference differs from the frozen version; historical version-aware handling remains unapproved and no old source should be silently restored. This is not scholarly, translation or rights certification."
+  },
+  "spacing_review": [
+    {
+      "row": "mc8ad20a5adb286891fd40b3c",
+      "language": "ar",
+      "target_start": 34,
+      "value": " ",
+      "left": "r00035",
+      "right": "r00036",
+      "reason": "Unify verse 33 and its supplied rendering; preserve the verse marker, audio label, and all row links.",
+      "decision": "accept",
+      "note": "The Arabic vocative and conditional phrase require a space."
+    },
+    {
+      "row": "mc8ad20a5adb286891fd40b3c",
+      "language": "fa",
+      "target_start": 17,
+      "value": " ",
+      "left": "r00035",
+      "right": "r00036",
+      "reason": "Unify verse 33 and its supplied rendering; preserve the verse marker, audio label, and all row links.",
+      "decision": "accept",
+      "note": "The Persian vocative and conditional phrase require a space."
+    },
+    {
+      "row": "m6a6f07215d5c3ac28568954f",
+      "language": "ar",
+      "target_start": 12,
+      "value": " ",
+      "left": "r00057",
+      "right": "r00058",
+      "reason": "Unify verse 54 with its complete supplied rendering; preserve its marker, audio label, and all row links.",
+      "decision": "accept",
+      "note": "The Arabic participle and prepositional phrase require a space."
+    }
+  ]
 }

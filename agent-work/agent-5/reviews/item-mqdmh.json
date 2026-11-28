@@ -4,11 +4,11 @@
   "item": "item-mqdmh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "a9dc32d442532d3c05e7d27d565ff97f1494d4abc9f8b83b947e5bd386e84ad2",
-  "layout_sha256": "cb01cd43165503571dd471b902acfe1bdc26be6a50d397a229ee89def0100ce7",
-  "result_item_sha256": "23fc1a65c58c987f66b3e0a0324990fde3e9d21a45f05b503d09ca230fbb2f82",
-  "result_record_sha256": "fb4ccba958fd53134603078461e377415294909f021582bd3c65f1103927198a",
+  "layout_sha256": "5b567ff50915265fdfba9569a948b7448f9c9c1894e58db27d4cebc4e221cf66",
+  "result_item_sha256": "a6fbf05921f517b775b8fe9aae7a1e46c2a646fd294ff43ba2ca6741519c59ae",
+  "result_record_sha256": "f169322d9645c15b577bb90e9095f3d686d2dc4b5b6996c26d7c4f89092bfddf",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -231,16 +231,16 @@
       {
         "row": "r00030",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The second example and its closing quotation mark continue in r00031; group the entry and preserve the existing marker and history."
+        "note": "The interrupted example or list item is now grouped, preserving source markers."
       },
       {
         "row": "r00031",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This completes the quoted example begun in r00030; group the continuation."
+        "note": "The interrupted example or list item is now grouped, preserving source markers."
       },
       {
         "row": "r00032",
@@ -266,16 +266,16 @@
       {
         "row": "r00035",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The list entry ends mid-phrase and continues in r00036; group the uninterrupted item."
+        "note": "The interrupted example or list item is now grouped, preserving source markers."
       },
       {
         "row": "r00036",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This is the end of the list entry in r00035; group with its beginning."
+        "note": "The interrupted example or list item is now grouped, preserving source markers."
       },
       {
         "row": "r00037",
@@ -529,6 +529,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00003 switches source languages but currently leaves its Arabic quotation in the Persian slot and the Persian rendering embedded in prose; separate the citation and pair existing quotation/rendering as feasible. r00030/31 divide one example, and r00035/36 divide one list item. Preserve all source text and existing markers. Historical line-break and marker changes are individually escalated for provenance review; no rights certification is implied by the publisher’s statements."
-  }
+    "note": "The r00030/31 and r00035/36 list continuations are grouped, while the r00003 Arabic quotation, Persian rendering and citation still require guarded separation and pairing. Historical LF and marker changes remain escalated, and earlier same-ID source variants require version-aware handling. No rights certification is implied."
+  },
+  "spacing_review": [
+    {
+      "row": "mb508ac774f5ddeab7c104298",
+      "language": "fa",
+      "target_start": 70,
+      "value": " ",
+      "left": "r00035",
+      "right": "r00036",
+      "reason": "Complete the interrupted list entry while retaining the source.",
+      "decision": "accept",
+      "note": "The Persian preposition and following noun are separate words."
+    }
+  ]
 }

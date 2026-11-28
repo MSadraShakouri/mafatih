@@ -4,11 +4,11 @@
   "item": "ziyarat-warith",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "41f857544e722ceb5373f6ac549f0cd8a05fd3cee2f198bd52360279deac167a",
-  "layout_sha256": "bd4fabccd6fba492bb74e227b1de0949f924cd41c6a12c25dcc799fd9ef2b392",
-  "result_item_sha256": "94152511f0a7c5ee45de2f77e1249effa9333c8c3a84d793be46011e4c74a93c",
-  "result_record_sha256": "ad490e404fdc0fa30a0a21c40f92456a4f50223702898ac8d5f76d878db2e553",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "91b865ce5ccbfd0078eef7c390817271a06a6fe06f3d2f2190d0548ca2cb7f78",
+  "layout_sha256": "c80da77266262b3abcef138185c097db45a979544096f6eb4fa8892222642aff",
+  "result_item_sha256": "9e7ad62a953cb3b48f2dbe35d3ffdcae804750a8a2e7c732fa2b45666e091800",
+  "result_record_sha256": "6562f69cc3cec737ac89b71df356914bb356ddb2c220519d68ea7bb5eb47c784",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "cc9982a7f206ff3c3486cd085c0910dff7d1513408106b36c2db4fc68f5e2f1f",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "43a156e64c0d1e2487ddd89e06340efc35d962de6d2c238a8a04b05dbcba932a",
+    "preview_sha256": "6fd6a21c5fc906b08ed49e0a757756631e4e689e86af15b7faef86fa5f67374e",
     "sources": [
       {
         "row": "r00001",
@@ -35,9 +35,9 @@
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The source attribution and report frame direct practical directions and an inline prayer reference; distinguish the report from the visitor directions while preserving the narrator’s words. Reviewed fa source; preserve the supplied words."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The visitor direction, report or explanation is distinguished, with the interrupted prose grouped."
       },
       {
         "row": "r00004",
@@ -49,30 +49,30 @@
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The invocation’s final object of healing continues as diseases in r00006; group both languages without rewriting the supplied Persian. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The invocation’s final object of healing continues as diseases in r00006; group both languages without rewriting the supplied Persian. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields complete r00005’s petition for healing. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields complete r00005’s petition for healing. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00007",
@@ -119,9 +119,9 @@
       {
         "row": "r00010",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Directions for post-bath prayer and travel are interleaved with a Quranic quotation and explanatory claims; separate source report/comment from directions while retaining the inline remembrance. Reviewed fa source; preserve the supplied words."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The visitor direction, report or explanation is distinguished, with the interrupted prose grouped."
       },
       {
         "row": "r00011",
@@ -378,30 +378,30 @@
       {
         "row": "r00029",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields split the night-and-day formula before r00030; group the greeting. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00029",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields split the night-and-day formula before r00030; group the greeting. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00030",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00029; both source fields contain similar Persian directions and now render as consecutive duplicated instruction rows. Preserve both witnesses but resolve their representation without implying two actions. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00030",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The opening completes r00029; both source fields contain similar Persian directions and now render as consecutive duplicated instruction rows. Preserve both witnesses but resolve their representation without implying two actions. Reviewed fa source; preserve the supplied words."
+        "note": "The greeting is grouped, but the two source versions of the direction are still presented consecutively as if separate actions."
       },
       {
         "row": "r00031",
@@ -714,23 +714,23 @@
       {
         "row": "r00053",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction is correctly separated, but the greeting is an Arabic-only fragment whose completion and entire Persian rendering are in r00054. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00054",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The beginning completes r00053’s Arabic greeting, and its Persian renders the whole formula. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00054",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The beginning completes r00053’s Arabic greeting, and its Persian renders the whole formula. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00055",
@@ -1001,30 +1001,30 @@
       {
         "row": "r00074",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic and Persian both stop before the adjective modifying wombs; group the completion in r00075. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00074",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic and Persian both stop before the adjective modifying wombs; group the completion in r00075. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00075",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening adjective completes r00074’s phrase in both languages; preserve the supplied typographical form of the Persian. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00075",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening adjective completes r00074’s phrase in both languages; preserve the supplied typographical form of the Persian. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00076",
@@ -1043,30 +1043,30 @@
       {
         "row": "r00077",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The testimony’s complement is left open, continued by the coordinated second pillar in r00078; group the short paired construction. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00077",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The testimony’s complement is left open, continued by the coordinated second pillar in r00078; group the short paired construction. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00078",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This paired clause continues r00077’s testimony; group for a complete unit. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00078",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This paired clause continues r00077’s testimony; group for a complete unit. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00079",
@@ -1141,30 +1141,30 @@
       {
         "row": "r00084",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields leave the content of the testimony until r00085; group the paired statement. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00084",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields leave the content of the testimony until r00085; group the paired statement. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00085",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired statement completes r00084’s testimony. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00085",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired statement completes r00084’s testimony. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00086",
@@ -1225,72 +1225,72 @@
       {
         "row": "r00090",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Persian leaves the phrase for spirits open to the shared possessive at r00091; keep the closely aligned blessing together. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00090",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Persian leaves the phrase for spirits open to the shared possessive at r00091; keep the closely aligned blessing together. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00091",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian possessive completes the shared terms in r00090/91; group these blessing phrases. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00091",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian possessive completes the shared terms in r00090/91; group these blessing phrases. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00092",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian adjective requires the shared referent and possessive supplied through r00094; group the blessing sequence. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00092",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian adjective requires the shared referent and possessive supplied through r00094; group the blessing sequence. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00093",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian adjective continues r00092 and depends on the referent in r00094; group them. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00093",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian adjective continues r00092 and depends on the referent in r00094; group them. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00094",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian possessive completes the shared blessing begun in r00092; retain both source fields. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00094",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian possessive completes the shared blessing begun in r00092; retain both source fields. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00095",
@@ -1330,30 +1330,30 @@
       {
         "row": "r00098",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields stop in the middle of the heaven-and-earth expression and resume in r00099. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00098",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both fields stop in the middle of the heaven-and-earth expression and resume in r00099. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00099",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired short expression completes r00098’s heaven-and-earth formula. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00099",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired short expression completes r00098’s heaven-and-earth formula. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00100",
@@ -1414,44 +1414,44 @@
       {
         "row": "r00104",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The request is grammatically incomplete until r00106; group the invocation with its petition r00105/06. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00104",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The request is grammatically incomplete until r00106; group the invocation with its petition r00105/06. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00105",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired clause continues r00104 before the actual request at r00106. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00105",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired clause continues r00104 before the actual request at r00106. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00106",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The request completes the paired construction of r00104/05. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00106",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The request completes the paired construction of r00104/05. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00107",
@@ -1561,30 +1561,30 @@
       {
         "row": "r00115",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both texts split the blessing after عليهما / درود خدا, before r00116’s completion. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00115",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both texts split the blessing after عليهما / درود خدا, before r00116’s completion. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00116",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both short fields complete the blessing in r00115. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00116",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both short fields complete the blessing in r00115. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00117",
@@ -1813,30 +1813,30 @@
       {
         "row": "r00133",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Persian anticipates the next clause with و من, which belongs with the Arabic and Persian in r00134; group the pair or recut at a shared semantic boundary. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00133",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Persian anticipates the next clause with و من, which belongs with the Arabic and Persian in r00134; group the pair or recut at a shared semantic boundary. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00134",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian continues the pronoun from r00133 while the Arabic starts its clause here; group or align their boundary. Historical LF is escalated separately. Reviewed ar source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00134",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian continues the pronoun from r00133 while the Arabic starts its clause here; group or align their boundary. Historical LF is escalated separately. Reviewed fa source; preserve the supplied words."
+        "note": "The matching interrupted testimony, blessing or greeting is now grouped; preserve the original witnesses."
       },
       {
         "row": "r00135",
@@ -2002,16 +2002,16 @@
       {
         "row": "r00147",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The directions transition to a reason/comment about the sanctuary and this explanatory sentence continues in r00148; separate roles and group the prose. Reviewed fa source; preserve the supplied words."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The visitor direction, report or explanation is distinguished, with the interrupted prose grouped."
       },
       {
         "row": "r00148",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Persian words complete r00147’s explanatory claim; preserve them with that note, rather than as a standalone instruction. Reviewed ar source; preserve the supplied words."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The visitor direction, report or explanation is distinguished, with the interrupted prose grouped."
       }
     ],
     "punctuation": [],
@@ -2025,6 +2025,294 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Most short invocations and renderings are paired. Complete broken bilingual phrases r00005/06, r00029/30, r00074/75, r00098/99 and r00115/16; reunite r00053 Arabic greeting with its full Persian in r00054; align Persian anticipation r00133/34. Other dependent continuations and mixed directions/report noted per source, including r00147/48. Two pairs of closely parallel Persian direction witnesses now appear consecutively at r00014 and r00030: preserve each witness but avoid presenting a repeated instruction as two sequential actions. Historical Arabic LF is escalated. Respect all published anchors and no invented text."
-  }
+    "note": "The identified paired prayer continuations and report/instruction transitions are repaired. Parallel source directions r00014 and r00030 remain consecutively presented as if repeated actions; preserve both witnesses while resolving representation. Historical Arabic LF remains escalated, and pre-frozen r00042–47/ar, r00119/ar and r00134/ar variants need version-specific adjudication."
+  },
+  "spacing_review": [
+    {
+      "row": "m88a925b38c190fad462ee2e0",
+      "language": "ar",
+      "target_start": 97,
+      "value": " ",
+      "left": "r00005",
+      "right": "r00006",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction is separate from the preceding noun."
+    },
+    {
+      "row": "m88a925b38c190fad462ee2e0",
+      "language": "fa",
+      "target_start": 86,
+      "value": " ",
+      "left": "r00005",
+      "right": "r00006",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction and preceding noun are separate."
+    },
+    {
+      "row": "m0b9a352c88caa2e93bc40efa",
+      "language": "ar",
+      "target_start": 69,
+      "value": " ",
+      "left": "r00029",
+      "right": "r00030-sda0e2b38f6c307a6",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction and preceding noun are separate."
+    },
+    {
+      "row": "m0b9a352c88caa2e93bc40efa",
+      "language": "fa",
+      "target_start": 40,
+      "value": " ",
+      "left": "r00029",
+      "right": "r00030-sda0e2b38f6c307a6",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction and preceding noun are separate."
+    },
+    {
+      "row": "m690d99af88f2f2a884936dd9",
+      "language": "ar",
+      "target_start": 19,
+      "value": " ",
+      "left": "r00053-seb517417eb3bc12e",
+      "right": "r00054",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic greeting and following vocative require separation."
+    },
+    {
+      "row": "m93c71bdbe2749f05532d8ffb",
+      "language": "ar",
+      "target_start": 74,
+      "value": " ",
+      "left": "r00074",
+      "right": "r00075",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic noun and modifier require separation."
+    },
+    {
+      "row": "m93c71bdbe2749f05532d8ffb",
+      "language": "fa",
+      "target_start": 55,
+      "value": " ",
+      "left": "r00074",
+      "right": "r00075",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian noun and modifier require separation."
+    },
+    {
+      "row": "m5a67fd7497d817aefed3959e",
+      "language": "ar",
+      "target_start": 43,
+      "value": " ",
+      "left": "r00077",
+      "right": "r00078",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction starts the next phrase."
+    },
+    {
+      "row": "m5a67fd7497d817aefed3959e",
+      "language": "fa",
+      "target_start": 37,
+      "value": " ",
+      "left": "r00077",
+      "right": "r00078",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction starts the next phrase."
+    },
+    {
+      "row": "mfd2e84b33f14ac33c2feb0ec",
+      "language": "ar",
+      "target_start": 63,
+      "value": " ",
+      "left": "r00084",
+      "right": "r00085",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction introducing testimony is separate."
+    },
+    {
+      "row": "mfd2e84b33f14ac33c2feb0ec",
+      "language": "fa",
+      "target_start": 52,
+      "value": " ",
+      "left": "r00084",
+      "right": "r00085",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction introducing testimony is separate."
+    },
+    {
+      "row": "m33c590acd1446234cc144961",
+      "language": "ar",
+      "target_start": 23,
+      "value": " ",
+      "left": "r00090",
+      "right": "r00091",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction starts the next phrase."
+    },
+    {
+      "row": "m33c590acd1446234cc144961",
+      "language": "fa",
+      "target_start": 10,
+      "value": " ",
+      "left": "r00090",
+      "right": "r00091",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction starts the next phrase."
+    },
+    {
+      "row": "m0ad4665df572fd7bbd1f7885",
+      "language": "ar",
+      "target_start": 20,
+      "value": " ",
+      "left": "r00093",
+      "right": "r00094",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction starts the next phrase."
+    },
+    {
+      "row": "m0ad4665df572fd7bbd1f7885",
+      "language": "fa",
+      "target_start": 6,
+      "value": " ",
+      "left": "r00093",
+      "right": "r00094",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction starts the next phrase."
+    },
+    {
+      "row": "mf9c7a2883cc83dd346b8fa80",
+      "language": "ar",
+      "target_start": 106,
+      "value": " ",
+      "left": "r00098",
+      "right": "r00099",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction or blessing noun is separate from its preceding word."
+    },
+    {
+      "row": "mf9c7a2883cc83dd346b8fa80",
+      "language": "fa",
+      "target_start": 50,
+      "value": " ",
+      "left": "r00098",
+      "right": "r00099",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian conjunction begins a separate phrase."
+    },
+    {
+      "row": "m0b60322fada23b6d553b9540",
+      "language": "ar",
+      "target_start": 89,
+      "value": " ",
+      "left": "r00105",
+      "right": "r00106",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic complement begins a separate phrase."
+    },
+    {
+      "row": "m0b60322fada23b6d553b9540",
+      "language": "fa",
+      "target_start": 81,
+      "value": " ",
+      "left": "r00105",
+      "right": "r00106",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian complement begins a separate phrase."
+    },
+    {
+      "row": "m0f6dac68957176f45ed3b2db",
+      "language": "ar",
+      "target_start": 106,
+      "value": " ",
+      "left": "r00115",
+      "right": "r00116",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction or blessing noun is separate from its preceding word."
+    },
+    {
+      "row": "m0f6dac68957176f45ed3b2db",
+      "language": "fa",
+      "target_start": 76,
+      "value": " ",
+      "left": "r00115",
+      "right": "r00116",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Persian blessing preposition is separate."
+    },
+    {
+      "row": "m792224ccc9c602c76cd851d7",
+      "language": "ar",
+      "target_start": 36,
+      "value": " ",
+      "left": "r00133",
+      "right": "r00134",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction begins a separate phrase."
+    },
+    {
+      "row": "m792224ccc9c602c76cd851d7",
+      "language": "fa",
+      "target_start": 43,
+      "value": " ",
+      "left": "r00133",
+      "right": "r00134",
+      "reason": "Complete the interrupted source passage, preserve both language witnesses and historical links; each proposed separator needs independent review.",
+      "decision": "accept",
+      "note": "The Arabic conjunction starts the next phrase."
+    },
+    {
+      "row": "m0b60322fada23b6d553b9540",
+      "language": "ar",
+      "target_start": 51,
+      "value": " ",
+      "left": "r00104",
+      "right": "me84a895753305791d0946c64",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The conjunction starts a separate phrase."
+    },
+    {
+      "row": "m0b60322fada23b6d553b9540",
+      "language": "fa",
+      "target_start": 51,
+      "value": " ",
+      "left": "r00104",
+      "right": "me84a895753305791d0946c64",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The conjunction starts a separate phrase."
+    },
+    {
+      "row": "mbc6c8cc64c2e1b45c7bfe094",
+      "language": "fa",
+      "target_start": 60,
+      "value": " ",
+      "left": "r00147-sd202a7e1a455c8d1",
+      "right": "r00148-s80f68e0a9692dcbb",
+      "reason": "Complete the attributed explanatory sentence across the source boundary.",
+      "decision": "accept",
+      "note": "The Persian noun and verb require separation."
+    }
+  ]
 }

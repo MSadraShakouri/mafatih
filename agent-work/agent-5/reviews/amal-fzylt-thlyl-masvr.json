@@ -4,11 +4,11 @@
   "item": "amal-fzylt-thlyl-masvr",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "92edf48ee1645c075770907bd5e0c7a76335006080bb3c1fa633bf0991ffe1c2",
-  "layout_sha256": "e43ac91509beccc1178cbd73a05d3d141ea03b243ca3a946f081d2f365cbe1c8",
-  "result_item_sha256": "d279692750a75ad171d9a6704fa82680a9af8b7dbd6d1ad9a62e00e0f5b3fd08",
-  "result_record_sha256": "8be3f81017c93a06ce91f04c46f4cc51be27c4b81a518ecc19f3613123321d9d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "98081c2201590d18096cc5fe5e4ee83144b6c4d36b0914c369a748366e4e66cf",
+  "layout_sha256": "986e8537eb7f58dbb485af70ab64c98790822fd78332630e128e88a3b06925bb",
+  "result_item_sha256": "e77166fba941a7817c12df087d0b4bc2af384b0ca15cf022b3b0d24f09e63dd6",
+  "result_record_sha256": "ce19ee8f91e488a1d6bd2ad87bacc780e4fe003b93d13505c8c83614a7c1a30a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "6ad94874ba7c91ad5e13c5160c002626075287719d3a81ade24dc6418e085196",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "c5949e8f56d9d4b2f40448449829e3875a51fcdced51d80212037572f40c4e05",
+    "preview_sha256": "85a956252d0e80335d69e4faec75efab34a42dae870785993945d7e5a654ab94",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The current cut interrupts a sentence between the two output rows; both contain one reported account, not an instruction followed by a note. Preserve the source anomaly within the sentence; do not invent text."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The complete numbered label is separated, and the interrupted reported account is continuous as a note; the source anomaly is preserved."
       },
       {
         "row": "r00002",
@@ -36,8 +36,8 @@
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the Persian rendering of r00002/ar, not an independent note; pair as recitation."
+        "kind": "accept",
+        "note": "The Persian formula is paired as recitation."
       },
       {
         "row": "r00003",
@@ -50,8 +50,8 @@
         "row": "r00003",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This renders the Arabic supplication, not a note; pair as recitation."
+        "kind": "accept",
+        "note": "The Persian supplication is paired as recitation."
       },
       {
         "row": "r00004",
@@ -64,8 +64,8 @@
         "row": "r00004",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the Persian rendering of the Arabic supplication, not a note; pair as recitation."
+        "kind": "accept",
+        "note": "The Persian supplication is paired as recitation."
       },
       {
         "row": "r00005",
@@ -85,8 +85,8 @@
         "row": "r00006",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "The field is a prayer rendering, not an instruction; pair as recitation."
+        "kind": "accept",
+        "note": "The Persian prayer is paired as recitation."
       },
       {
         "row": "r00007",
@@ -113,22 +113,22 @@
         "row": "r00009",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "The Persian renders the Arabic formula and should be paired as recitation. Persian includes additional divine descriptors absent in this Arabic source; retain and flag rather than inventing Arabic."
+        "kind": "accept",
+        "note": "The supplied formula is paired as recitation; its additional Persian descriptors remain an explicit source difference."
       },
       {
         "row": "r00010",
         "language": "ar",
         "split": "revise",
         "kind": "revise",
-        "note": "The leading words complete the r00009 Persian report, while the rest introduces the next prayer; inspect a safe separation and continuation join. The subsequent Arabic prayer is correctly extracted."
+        "note": "The leading Persian words moved from this field complete r00009’s report but remain mixed with the next numbered attribution in an instruction."
       },
       {
         "row": "r00010",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "The Persian is the Arabic prayer rendering, not an instruction; pair as recitation and preserve source spelling."
+        "kind": "accept",
+        "note": "The Persian prayer is paired with Arabic and marked recitation; source spelling remains."
       }
     ],
     "punctuation": [],
@@ -157,6 +157,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00008 is now correctly classified as note. The r00001 interrupted report, r00009/r00010 continuation and r00002-r00004, r00006, r00009 and r00010 misclassified and unpaired renderings remain; r00009 Persian includes extra descriptors absent in Arabic and must not be invented. Preserve prior links."
+    "note": "The r00001 report is coherent and the identified Persian renderings are paired as recitation. The leading words moved from r00010/ar still complete r00009’s report but are mixed with the next heading and attribution in r00010-s70dfccf5c0fc10de/fa. Preserve the extra Persian descriptors and source anomaly; do not invent Arabic."
   }
 }

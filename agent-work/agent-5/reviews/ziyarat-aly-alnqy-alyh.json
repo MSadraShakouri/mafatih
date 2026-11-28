@@ -4,11 +4,11 @@
   "item": "ziyarat-aly-alnqy-alyh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "ba2eb2c56edef4a2ce0445ad08edb3d25417bd09d6a800def58de167aeccd2a4",
-  "layout_sha256": "8d3462be984cc4769013096cf5d7989a59f44b43fd98161b2ac4b27c2628acf4",
-  "result_item_sha256": "a3e1710ca795df01ccb40e5bfd99ceb5774dc429c1b208c12df6aadbec91f5c2",
-  "result_record_sha256": "a8c0f81d1940ca457bd925f631154e284e381e269b23fb46e59cca454bb25e19",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "86fc06a9dc019930e4d67e37ce52d5cb54a3fa6da59676440bad5b695e3953b2",
+  "layout_sha256": "2841a5a363bb94aa63ffffc67667d0411f1cb1084b10a267ee2db91e26f354a9",
+  "result_item_sha256": "949fcfe376893732b34b941ea953ffd62d0497e259e5c8b428c6728943af8cc6",
+  "result_record_sha256": "b3b918a9f6c11497b70702906dbfe0e5b3123cf3bf7f7f83e5a5fe3aea71033e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "288acabc9932337f8033c6c7eb62fead2e6a5875251c3afce8bbe5250bf1db2c",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "631616dbf7e54ed10696b830d78c33bd0633b83d0d1e7c04c0b52ca3bc8c7ae4",
+    "preview_sha256": "067cd51488b9354b79a9af6138e569aafae7cbc5360b8709dce95b1960930f41",
     "sources": [
       {
         "row": "r00001",
@@ -36,8 +36,8 @@
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "The Persian is the existing greeting rendering, not a note; the first piece reaches into the second Arabic piece and the second continues to the next source row."
+        "kind": "accept",
+        "note": "Both Persian pieces are now recitation but remain detached and their boundaries do not match the Arabic."
       },
       {
         "row": "r00003",
@@ -50,8 +50,8 @@
         "row": "r00003",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "All three pieces render the Arabic ziyarat, not notes; mismatched source and cross-row boundaries need realignment."
+        "kind": "accept",
+        "note": "The Persian pieces are recitation but remain detached, with mismatched and cross-row boundaries."
       },
       {
         "row": "r00004",
@@ -64,8 +64,8 @@
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Three pieces render the Arabic testimony rather than note; pair by corresponding clauses and include the preceding cross-row continuation."
+        "kind": "accept",
+        "note": "The Persian testimony is recitation but remains detached and continues across the preceding boundary."
       },
       {
         "row": "r00005",
@@ -86,14 +86,14 @@
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "The first Arabic piece continues r00005 and the second continues into r00007; pair against the existing Persian and preserve child identities."
+        "note": "The two Arabic sections are now paired with the existing Persian, but the prayer still continues across r00005/06/07."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "These are Persian prayer renderings, not notes; opening continues the previous source row and ending continues into r00007."
+        "kind": "accept",
+        "note": "The two supplied Persian sections are paired as recitation, but cross-row continuations remain."
       },
       {
         "row": "r00007",
@@ -106,8 +106,8 @@
         "row": "r00007",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Both pieces render the Arabic prayer rather than notes; cut placement and continuation through r00008 require aligned grouping."
+        "kind": "accept",
+        "note": "Both Persian sections are recitation but remain detached and continue through r00008."
       },
       {
         "row": "r00008",
@@ -134,8 +134,8 @@
         "row": "r00009",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "All three pieces render the Arabic prayer, not note or instruction; align by matching meaning and preserve source words."
+        "kind": "accept",
+        "note": "The Persian pieces are recitation but remain detached with mismatched boundaries."
       },
       {
         "row": "r00010",
@@ -148,15 +148,15 @@
         "row": "r00010",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the Persian rendering of the r00010 prayer, not an instruction; pair with the Arabic if link-preserving."
+        "kind": "accept",
+        "note": "The existing Persian rendering is now paired with the Arabic prayer as recitation."
       },
       {
         "row": "r00011",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The opening gives a substitution direction, then a reported promise from the Imam; distinguish practical instruction from the narrated report."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The substitution instruction and reported promise are now distinct."
       }
     ],
     "punctuation": [],
@@ -180,6 +180,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The existing Persian renderings in r00002-r00004, r00006-r00010 are detached or misclassified as notes/instructions. r00008/fa crosses the boundary between two prayers, while its Arabic source has a separate Persian instruction between them. r00002/r00003, r00003/r00004 and r00005-r00008 contain source-row continuations. Align corresponding pieces and distinguish the final narrated report from instruction, preserving published IDs; these are semantic findings, not length-only cuts."
+    "note": "Most formerly misclassified Persian sections are now recitation, r00006 and r00010 are paired, and the final instruction and promise are separate. The r00002–04, r00007–09 alignments and cross-row continuations remain; r00008/fa still straddles two prayers around a moved instruction. Preserve source variants, exact wording and links."
   }
 }

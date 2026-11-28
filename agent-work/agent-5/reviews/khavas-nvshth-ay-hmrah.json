@@ -4,11 +4,11 @@
   "item": "khavas-nvshth-ay-hmrah",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "421d8910db84381980a8a954723d76fe33810eb9de57ce5321fdb84cf18287b6",
-  "layout_sha256": "5b2ceece32a605d0d66f78484a3789352fd2b8b6696311cf3efd228bc50ac4ec",
-  "result_item_sha256": "bf2c955c30055d4150e09511f6d97eeed0f94448072b4e55bd730b2c8e72b9f4",
-  "result_record_sha256": "0e314a708004b786ebca3315a44517558b83ee80cc9f1798ff2905022f8fa076",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "4a7648889656e638532f3ba3db51833dd29800a8c056e422548c816d13d641d1",
+  "layout_sha256": "f6b8efc251819d2c07969120a61817512fa94bd3129ab16f09a1a3dfd79127b8",
+  "result_item_sha256": "7282b4399a7e59d9ad2ed58268d040a548b6a487a632665e80d4801ef7060c41",
+  "result_record_sha256": "8178b8912860c674eb441470d0694a6b1f654ee5782f564f6c5ccb602842bb3c",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "4966aff097ee49525b81b3e401bbd5d58c48c8cb91b870892661ea563b40b410",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "31f2ac6e85c0cc0b40b8e783c0f789d6796bf0d9a3b7ed6b8a9b05a2ed8f7d1a",
+    "preview_sha256": "0e39a728e4c2ba186940ef80bc7b73bb7913f52d78f0f6d6704c152144ee44ce",
     "sources": [
       {
         "row": "r00001",
@@ -36,8 +36,8 @@
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "This renders the Arabic recitation, not a note. Its single span covers both Arabic pieces; align and pair, separating the basmala if safe."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but its detached differently cut rendering remains to be aligned."
       },
       {
         "row": "r00003",
@@ -50,8 +50,8 @@
         "row": "r00003",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This renders the Arabic document formula and is not an independent note; pair it with the Arabic in an appropriate consistent quoted/recitation role."
+        "kind": "accept",
+        "note": "The existing rendering is now paired as recitation; retain source discrepancies and repeated Arabic."
       },
       {
         "row": "r00004",
@@ -64,8 +64,8 @@
         "row": "r00004",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Persian renders the Arabic formula and is not a note; pair with the corresponding Arabic."
+        "kind": "accept",
+        "note": "The existing rendering is now paired as recitation; retain source discrepancies and repeated Arabic."
       },
       {
         "row": "r00005",
@@ -78,8 +78,8 @@
         "row": "r00005",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "These are renderings of the written formula, not note/instruction. Cuts do not correspond to the Arabic pieces; align and pair while retaining additions."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but its detached differently cut rendering remains to be aligned."
       },
       {
         "row": "r00006",
@@ -92,8 +92,8 @@
         "row": "r00006",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Both parts render the Arabic formula, not instruction/note. Their cut differs from Arabic; align and pair."
+        "kind": "accept",
+        "note": "The Persian is now recitation, but its detached differently cut rendering remains to be aligned."
       },
       {
         "row": "r00007",
@@ -106,8 +106,8 @@
         "row": "r00007",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This renders r00007/ar, not a standalone note; classify consistently and pair, preserving the cross-row continuation."
+        "kind": "accept",
+        "note": "The existing rendering is now paired as recitation; retain source discrepancies and repeated Arabic."
       },
       {
         "row": "r00008",
@@ -120,8 +120,8 @@
         "row": "r00008",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the Persian rendering of the Arabic address, not a separate note; pair consistently."
+        "kind": "accept",
+        "note": "The existing rendering is now paired as recitation; retain source discrepancies and repeated Arabic."
       },
       {
         "row": "r00009",
@@ -134,8 +134,8 @@
         "row": "r00009",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the Persian rendering of the Arabic reply, not a note; pair as a consistent quoted/recitation role. Source repetition in Arabic has no corresponding repeated Persian; preserve and flag."
+        "kind": "accept",
+        "note": "The existing rendering is now paired as recitation; retain source discrepancies and repeated Arabic."
       },
       {
         "row": "r00010",
@@ -171,6 +171,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00002-r00009 repeatedly place existing Persian renderings apart from matching Arabic and label them note/instruction. Align the unequal cuts in r00002, r00005 and r00006 by meaning, pair the written formulas consistently and preserve the r00006/r00007 continuation. r00009/ar source prefix includes both an address and an instruction; distinguish these while preserving the repeated Arabic and its Persian discrepancy. Do not invent text or bypass published-link guards."
+    "note": "Several renderings are paired and remaining Persian recitations are correctly classified; r00002, r00005/06 remain detached with unequal cuts and r00006/07 remain interrupted. r00009/ar prefix still mixes address with instruction; retain the Arabic repetition and Persian discrepancy. Pre-frozen r00005/ar variant needs version-specific review."
   }
 }

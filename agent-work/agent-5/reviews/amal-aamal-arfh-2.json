@@ -4,11 +4,11 @@
   "item": "amal-aamal-arfh-2",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "427a9cadb8a97cec9b41b930b1c7512e5096cee5e572f25c3da2488815705434",
-  "layout_sha256": "06541720f40d45d42cde5ae813265851a1181134e39e19eadb30f63a36c57952",
-  "result_item_sha256": "c85bc663a6f5ee3fc85ea1fc6c612de9e7239988ac4e2d98f011606ef31f2c45",
-  "result_record_sha256": "f4e4940f26273c2783b0fe51ae744e3f360f2a5a6832826fa9835b64e9e7fe43",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "862a002f19cabbe798682dc9539e82dd54926c758ed9b58df7b6fc2fd9b2dbfd",
+  "layout_sha256": "e0cb7b13df369f92806e4fc77cc899f18cb7fc4278e8d407193e1966aa12227a",
+  "result_item_sha256": "ef9954669a647ff0eb0a2a55fc2911bfea9946d65312c9a0ccb12a5779de91c5",
+  "result_record_sha256": "c0e4ed58c93a2115349c69020ccba06d575fc913cad3e90d13bb7dfddad7d92e",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "77fcd48509b5171bedc618132473c79c2a1da6e2872a4c7b933806b2278d8419",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "d861309825cb9e2b930cfc37b0c49f0dd54f5a7e50cbced8ae5fcc99a28543af",
+    "preview_sha256": "7843d01e8fceea849a043912236ef6140925c857d5e49c510e56b25c14db3f03",
     "sources": [
       {
         "row": "r00001",
@@ -30,7 +30,7 @@
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The three numbered practices and compiler closing remark are now separated. The first piece is the stated first practice (غسل), not a narrative note; use the appropriate practice/heading or instruction role. The second begins with the stated second practice, then moves into a report of merit and a future reference; distinguish the practice from the explanatory report rather than classifying the whole as a note. New child IDs must be preserved; request mapping migration if reclassification or further cuts would retire them."
+        "note": "The first practice is now instruction; the second practice remains mixed with reported merit and a future reference."
       },
       {
         "row": "r00003",
@@ -415,7 +415,7 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "The r00005 instruction/comment separation and r00033 instruction role are corrected; r00026/r00027 no longer have the mismatched bilingual boundary, and both newly proposed spaces are individually accepted. r00002 now separates the numbered practices, but its first practice is labelled note and its second combines a practice with reported merit; resolve these roles and boundary while preserving child links. The merged blessing contains distinct, corresponding later petitions at the explicitly identified openings in r00026/r00027; fine segmentation is a semantic finding, not a length-only request, and must preserve the merged ID. Historical LF removal remains separately escalated."
+    "note": "The first practice is correctly classified. The second practice still mixes instruction with reported merit; the joined r00026/27 blessing and distinct petitions retain a meaningful possible bilingual separation with published IDs preserved. The historical LF remains escalated; no silent restoration or migration."
   },
   "spacing_review": [
     {
@@ -427,7 +427,7 @@
       "right": "r00009",
       "reason": "Join the praise the source split across r00008 and r00009 in both languages",
       "decision": "accept",
-      "note": "Separate the Arabic preposition from the noun beginning r00009. The U+0020 is a proposed editorial correction, not an original source character."
+      "note": "The Arabic preposition and following noun require a space."
     },
     {
       "row": "m7553b0a83167f086e7dc763c",
@@ -438,7 +438,7 @@
       "right": "r00009",
       "reason": "Join the praise the source split across r00008 and r00009 in both languages",
       "decision": "accept",
-      "note": "Separate the relative clause from the Persian subject beginning r00009. The U+0020 is a proposed editorial correction, not an original source character."
+      "note": "The Persian relative clause and following noun are separate."
     },
     {
       "row": "mdbec1e72761d371d2829b9b7",
@@ -449,7 +449,7 @@
       "right": "r00018",
       "reason": "Join the praise the source split across r00017 and r00018 in both languages",
       "decision": "accept",
-      "note": "Separate the Arabic heavens from the conjunction for the earth. The U+0020 is a proposed editorial correction, not an original source character."
+      "note": "The Arabic conjunction is a separate word after the noun."
     },
     {
       "row": "mdbec1e72761d371d2829b9b7",
@@ -460,7 +460,7 @@
       "right": "r00018",
       "reason": "Join the praise the source split across r00017 and r00018 in both languages",
       "decision": "accept",
-      "note": "Separate the Persian heavens from the conjunction for the earth. The U+0020 is a proposed editorial correction, not an original source character."
+      "note": "The Persian conjunction is separate from the preceding noun."
     },
     {
       "row": "mfea91ea451eede4b236a077c",
@@ -471,7 +471,7 @@
       "right": "r00031",
       "reason": "Join the praise the source split across r00030 and r00031 in both languages",
       "decision": "accept",
-      "note": "Separate the Arabic superlative from the noun in r00031. The U+0020 is a proposed editorial correction, not an original source character."
+      "note": "The Arabic adjective and following noun require a space."
     },
     {
       "row": "mfea91ea451eede4b236a077c",
@@ -482,7 +482,7 @@
       "right": "r00031",
       "reason": "Join the praise the source split across r00030 and r00031 in both languages",
       "decision": "accept",
-      "note": "Separate the Persian superlative from the noun in r00031. The U+0020 is a proposed editorial correction, not an original source character."
+      "note": "The Persian adjective and following noun require a space."
     },
     {
       "row": "md9954596d59be1a71a3e08fb",
@@ -493,7 +493,7 @@
       "right": "r00027",
       "reason": "Join the blessing the source split across r00026 and r00027 so the Arabic and Persian break at the same phrase",
       "decision": "accept",
-      "note": "Separates the Arabic preposition عَلَىٰ from the following name مُحَمَّدٍ at the original row boundary; one proposed editorial U+0020, not source text."
+      "note": "The Arabic preposition and following name require a space."
     },
     {
       "row": "md9954596d59be1a71a3e08fb",
@@ -504,7 +504,7 @@
       "right": "r00027",
       "reason": "Join the blessing the source split across r00026 and r00027 so the Arabic and Persian break at the same phrase",
       "decision": "accept",
-      "note": "Separates the Persian name محمّد from the following conjunction و at the original row boundary; one proposed editorial U+0020, not source text."
+      "note": "The Persian name and conjunction require a space."
     }
   ]
 }
