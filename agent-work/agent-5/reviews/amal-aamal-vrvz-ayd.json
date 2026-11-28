@@ -4,11 +4,11 @@
   "item": "amal-aamal-vrvz-ayd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "9f813d907e65950822fe7543a8cdfc38273bc5f15f06232cce85b216f349e31b",
-  "layout_sha256": "ddd6f2f51160bf15543fcb5a6d79c2452b75720d1be4ab3bd74ed26d947919b9",
-  "result_item_sha256": "233eb21b3f73c15690c56fc66c9a6c29c5d2d7f682d0eaad3a060efd6c333d09",
-  "result_record_sha256": "337b8f945f48af46274d7f2645a051c40e5840a00c76615dbd0b725ff2d8f9b7",
+  "layout_sha256": "25354770c614b57abff44d0d380ed4b5499d1259ec60d678e77d98293afaa884",
+  "result_item_sha256": "9f69e66f54ca86a3e7dacc2f5d1e1f82dba4ef8f31ac5d25d3086b0e146ff9a9",
+  "result_record_sha256": "1f2b7831d049589243adc1cae548707baf4b67ca5bd805f2965fe6f4af4a2008",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,44 +28,44 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The day heading is separated, but the following description ends mid-name and resumes in r00003. Reviewed fa source."
+        "note": "The interrupted name and day description now continue across the original boundary."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the name and sentence in r00002; the second part is an attributed report. Reviewed fa source."
+        "note": "The earlier name is completed and the subsequent report remains distinct."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The narrated instruction is interrupted at the destination and continues in r00005. Reviewed fa source."
+        "note": "The attributed report is grouped with its continuation."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The opening completes r00004’s attributed report; the introductory statement marked as heading contains explanatory material, and the first practice combines a direction with attributed benefit claims. Reviewed fa source."
+        "note": "The report continuation is grouped, but the introductory explanatory statement and the first practice’s attributed benefits remain mixed with heading/instruction roles."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The third numbered practice is interrupted before its category and continues in r00007. Reviewed fa source."
+        "kind": "revise",
+        "note": "The third practice continues into r00007, but the instruction still includes explanatory attribution and cross-reference."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "This completes r00006’s account and cross-reference. Reviewed fa source."
+        "kind": "revise",
+        "note": "The continuation is grouped, but the explanatory cross-reference remains mixed into the practical instruction."
       },
       {
         "row": "r00008",
@@ -80,6 +80,41 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group interrupted material r00002/03, r00004/05 and r00006/07. Distinguish explanatory report and benefit claims from the practice directions in r00005. Preserve attributed claims and published identities."
-  }
+    "note": "The three interrupted passages are grouped. Remaining role corrections concern r00005 explanatory material and reported benefits, and m96fa9d1b62c7a4503d3638d2/fa explanatory attribution within instruction; preserve claims and published IDs."
+  },
+  "spacing_review": [
+    {
+      "row": "m6451383a2a6df9f160f7fc4b",
+      "language": "fa",
+      "target_start": 48,
+      "value": " ",
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the interrupted source name; retain attributed claims.",
+      "decision": "accept",
+      "note": "The Persian relational title and name are separate words."
+    },
+    {
+      "row": "m366cf6994bea78ad49798f5d",
+      "language": "fa",
+      "target_start": 110,
+      "value": " ",
+      "left": "r00004",
+      "right": "r00005-saba56576a8f4a2e8",
+      "reason": "Complete the attributed report in source order.",
+      "decision": "accept",
+      "note": "The place name and the following preposition are separate words."
+    },
+    {
+      "row": "m96fa9d1b62c7a4503d3638d2",
+      "language": "fa",
+      "target_start": 282,
+      "value": " ",
+      "left": "r00006-s34abe30a2fd8c1a9",
+      "right": "r00007",
+      "reason": "Complete the interrupted practice and source cross-reference.",
+      "decision": "accept",
+      "note": "The Persian noun and its modifier are separate words."
+    }
+  ]
 }

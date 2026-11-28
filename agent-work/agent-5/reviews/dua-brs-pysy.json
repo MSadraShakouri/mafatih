@@ -4,11 +4,11 @@
   "item": "dua-brs-pysy",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "ccfecd6486e4f77ce3e994eec60b1e0f7a1c5a7746fdb6148f2a70ed19104afc",
-  "layout_sha256": "bb3d4d41d8a7a7b752862710f6d71b4cffb27d107374d6e2cc72800093d9e527",
-  "result_item_sha256": "ab8ee671912845d4dc0db8a44d052ed5b0ee2558fdd96280f891ce210fc77818",
-  "result_record_sha256": "313625f70eb40e2d88bee52ae46f2e0e4a3971175f256d1174d34d63e8214276",
+  "layout_sha256": "149e62ea262533c2d59be2fba3930b3e5082d105ac31f27bedea52efb7fcd78f",
+  "result_item_sha256": "bb2b25d836096ffe8fa845749a96f3357ebfcac4d515d5cf920b5ae01a768414",
+  "result_record_sha256": "331b8dd3e25e8d972b5c08196eab2f821d67084d5eaa5701871699d21017ccff",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,16 +21,16 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The attributed report is interrupted mid-identification and continues in r00002. Reviewed fa source."
+        "note": "The attributed account now joins its continuation."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the report from r00001; the following attributed direction is separated. Reviewed fa source."
+        "note": "The opening completes the preceding narrative; the direction remains separate."
       },
       {
         "row": "r00003",
@@ -58,28 +58,28 @@
         "language": "ar",
         "split": "revise",
         "kind": "revise",
-        "note": "The moved Persian lead-in mixes attribution and direction; the second paired invocation ends mid-clause and continues in r00006. Reviewed ar source."
+        "note": "The paired invocation now joins r00006, but the moved Persian lead-in still mixes attribution and direction."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The moved Persian lead-in mixes attribution and direction; the second paired invocation ends mid-clause and continues in r00006. Reviewed fa source."
+        "note": "The paired invocation is joined, but its attributed lead-in and practical direction are still mixed."
       },
       {
         "row": "r00006",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired closing completes the construction in r00005. Reviewed ar source."
+        "note": "The Arabic continuation completes the joined prayer."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired closing completes the construction in r00005. Reviewed fa source."
+        "note": "The Persian continuation completes the paired prayer."
       },
       {
         "row": "r00007",
@@ -94,6 +94,41 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group interrupted r00001/02 narrative and r00005/06 prayer, pair r00003’s corresponding supplied renderings, and distinguish attributions from instructions. Preserve reported remedies and personal outcomes as source claims, not evidence of effectiveness; retain all links."
-  }
+    "note": "The report and r00005/06 prayer are now grouped. r00003 renderings remain language-only and r00005’s Persian attribution/direction remain mixed; r00007 still combines distinct reported remedies. Preserve source wording, links and attributed claims without presenting them as medical evidence."
+  },
+  "spacing_review": [
+    {
+      "row": "m3767be2002ea05319ea3898b",
+      "language": "fa",
+      "target_start": 89,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the attributed report without endorsing any medical claim.",
+      "decision": "accept",
+      "note": "The honorific title and name are separate words."
+    },
+    {
+      "row": "md2cd2a8e3fa9a4541337deed",
+      "language": "ar",
+      "target_start": 194,
+      "value": " ",
+      "left": "r00005-s0d0eb7c1a676184c",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer without changing either source.",
+      "decision": "accept",
+      "note": "The Arabic particle and following verb require a space."
+    },
+    {
+      "row": "md2cd2a8e3fa9a4541337deed",
+      "language": "fa",
+      "target_start": 150,
+      "value": " ",
+      "left": "r00005-s0d0eb7c1a676184c",
+      "right": "r00006",
+      "reason": "Complete the bilingual prayer without changing either source.",
+      "decision": "accept",
+      "note": "The Persian pronoun and following prepositional phrase are separate words."
+    }
+  ]
 }

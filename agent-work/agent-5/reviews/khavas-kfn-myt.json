@@ -4,11 +4,11 @@
   "item": "khavas-kfn-myt",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "7a3bc92f6277901ac370a2242eab227897c3dbefcb5697b912829f16e1859507",
-  "layout_sha256": "2d645d3e885dc57ba73597c5422a104d001027379746c5976162741a9908535f",
-  "result_item_sha256": "97b8d6b688a89ec4e899d77fcd7d4c735e93c48e857dda4d16b093808cadbac4",
-  "result_record_sha256": "355380a4525c9d25983e96b8e5d4adf1f5c112af871f8fde6faa047cb9e02652",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "47ffcc02333e140a200a1dadf01d1fd462cfec1b2356f0617073a10d0ee17610",
+  "layout_sha256": "986c8a62b4cb5a71a427f47532e979e0b529cfcca87fe8a441c76db0c8f38ec3",
+  "result_item_sha256": "ccde4f0a37c3b8cfa904a6eaf44dabff665ed2d53a7b7264f23a688afbc5620c",
+  "result_record_sha256": "0bfa15e81dd227de0c237992cb0af55a0cf90ae0ef692a5469ef0cd7fc7bf01d",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "fbebd4a12656ab011f05feedcf670959d34b549e876e44309b55a8bec3b502be",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "30ec9a12a5dcdeaf86217ba92f67a5ad15979581561e44a46afb2f05a49eac00",
+    "preview_sha256": "e52eb4d88931c911a7f5af9cbf21c0a5642a2b3666d108ee3beb0d336825bf27",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Directions for preparing the deceased intermingle with definitions and explanations of shroud components, and the final coordinated instruction continues in r00002. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Shroud definitions and preparation instructions are now separately classified, and the interrupted instruction continues into r00002."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the instruction begun in r00001; retain the precise cited quantities and practical context. Reviewed fa source."
+        "note": "The coordinated practical instruction completes r00001 with source quantities retained."
       },
       {
         "row": "r00003",
@@ -44,7 +44,20 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Separate practical instructions from explanations in r00001 and group the continued direction across r00001/02. The alternating instruction and untranslated Arabic inscription in r00003 are correctly placed. Preserve source quantities, wording and links."
-  }
+    "decision": "accept",
+    "note": "Explanations are separated from practical directions, the continuation is joined, and the later inscription stays in its supplied Arabic without inventing a translation. Available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "mf6f09dd8b192508ee7a1249a",
+      "language": "fa",
+      "target_start": 73,
+      "value": " ",
+      "left": "r00001-s145803ea17a94120",
+      "right": "r00002",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian demonstrative and following adjective are separate words."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "amal-aamal-sy-am",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "dec15e17297785d045052bde98f59dcbff71f730b51f3c3585095c2323a04713",
-  "layout_sha256": "ad8460bd3f0973e07ec509895056bc9b8bad28fbc6d00c51fdb30c931c2faac3",
-  "result_item_sha256": "ad0461188ee7b8df95f75f6a345bbedc58e3a4bb80db6534f0751ac1c9e64389",
-  "result_record_sha256": "92a0b5ca3282d794f38407f5c08a6fd41aee2c4f1e8fedf648666f6de82e659c",
+  "layout_sha256": "521c7e0051dddd978c2c9a6fede2ca838a4d48b15e0ebf6133da7a74ecded11b",
+  "result_item_sha256": "1af03ee031df0031fc95514760939923fc83cfb129ff4cef27c96277fcba593c",
+  "result_record_sha256": "97a63a3d854048071d952755bc7b80ee7912da3e49d577691ae47350624c1eef",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,37 +21,50 @@
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian title is correctly moved and internal prayer parts correspond; the final Arabic phrase is unfinished and the completion plus complete Persian rendering are in r00002. Reviewed ar source."
+        "note": "The title remains moved to Persian and the final Arabic invocation is joined with the continuation."
       },
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian title is correctly moved and internal prayer parts correspond; the final Arabic phrase is unfinished and the completion plus complete Persian rendering are in r00002. Reviewed fa source."
+        "note": "The title and supplied Persian rendering remain correctly placed; the final prayer is now paired with its complete rendering."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic beginning completes r00001’s prayer, while its Persian phrase renders the whole request; align them without altering the source. Reviewed ar source."
+        "note": "The continuation completes the prior Arabic prayer; the bracketed variant is retained."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic beginning completes r00001’s prayer, while its Persian phrase renders the whole request; align them without altering the source. Reviewed fa source."
+        "note": "The complete Persian rendering is paired with the joined Arabic request; source wording is unchanged."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The Persian heading and internal paired prayer segments are sound. The last Arabic invocation crosses r00001/02 and its complete Persian appears only in r00002; group that passage and retain bracketed variants and links."
-  }
+    "decision": "accept",
+    "note": "The final paired invocation is coherent and the bracketed variant and source asymmetry are retained. Available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "md92fb4be3f2e22abd57eff93",
+      "language": "ar",
+      "target_start": 118,
+      "value": " ",
+      "left": "r00001-sbec4b2d569e949d9",
+      "right": "r00002",
+      "reason": "Complete the Arabic clause and preserve the supplied whole Persian rendering and both historical links.",
+      "decision": "accept",
+      "note": "The preposition and following Arabic verb are distinct words and require U+0020."
+    }
+  ]
 }

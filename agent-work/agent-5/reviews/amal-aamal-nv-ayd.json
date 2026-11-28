@@ -4,11 +4,11 @@
   "item": "amal-aamal-nv-ayd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "a8fe750b05333034105a644ff9fd44e1177e383e61f6db678deffb96d29bed8b",
-  "layout_sha256": "5f11926d691f2d2b941bd6619e30793f3389b141109698633d0d4d03442dfd76",
-  "result_item_sha256": "00f1c55ac0c8cd294162bba1df5fae897bb3d99731238957242730bd426e6c7d",
-  "result_record_sha256": "a5c8578a563434143531ab00e35e5bb63f06d63b0af61a97cf2fcdc84b7f96cd",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "c2bbf7983740b1c787d47028b87f6d26e9fe51ac36d59db1b2467df6cc2445e3",
+  "layout_sha256": "8c5bfb89b368f05aeb2051f36c45214ba9fcfcbdf06d172691ae9e53234efc42",
+  "result_item_sha256": "302e76364ab36fea4a45ed279a70fa5a5fb58d816ae8905d3ccd415922ce9582",
+  "result_record_sha256": "345b162db72113f3ccd77d866189ccbfbf3f62ae633c28774052f63c6b5588ee",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,56 +16,56 @@
     "item_sha256": "23ebfad4762c988f32b3aea6198a7c90e8947638035c8a669f28a50435131251",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "f88149b81cbd6eb3e5eb0eef4720c827c712e38df07586986cde2469920b2523",
+    "preview_sha256": "19d7d228bbb8aa736a00bfb391e4c2bf0ccdd3a8354ca4ce6c953210b8b25fb6",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The heading is separated, but the first practice continues across r00001/02. Reviewed fa source."
+        "note": "The first practice now joins its continuation."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The opening completes the first practice. The third numbered practice mixes instruction with an attributed health/benefit claim; distinguish their roles. Reviewed fa source."
+        "note": "The opening completes the first practice, but the third practice still mixes instruction with an attributed health claim."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The fifth practice combines prayer and charity directions with an explanatory claim; distinguish them without verifying it. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The prayer and charity direction is separated from the attributed explanatory claim."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The source direction is correctly moved into Persian and the first verse paired, but the second verse is interrupted in both fields across r00004/05. Reviewed ar source."
+        "note": "The Persian instruction and existing verse rendering are preserved; the second Arabic verse now joins its continuation."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The source direction is correctly moved into Persian and the first verse paired, but the second verse is interrupted in both fields across r00004/05. Reviewed fa source."
+        "note": "The second Persian verse now joins its continuation and is paired."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first Arabic and Persian fragments complete r00004, while all four corresponding segments are emitted as separate language-only rows. Pair the existing renderings and preserve the prior LF provenance. Reviewed ar source."
+        "note": "The first fragment completes the joined verse and the remaining supplied Arabic portions are paired with their renderings."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first Arabic and Persian fragments complete r00004, while all four corresponding segments are emitted as separate language-only rows. Pair the existing renderings and preserve the prior LF provenance. Reviewed fa source."
+        "note": "The supplied Persian portions are paired in order; retain the source omission and prior LF provenance."
       }
     ],
     "punctuation": [],
@@ -79,6 +79,41 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group the first practice r00001/02 and the second verse r00004/05; pair the four corresponding language-only fragments in r00005. Separate practical instructions from their attributed benefit claims, and retain all Quran passages, source differences and links. Historical LF is escalated."
-  }
+    "note": "The interrupted first practice and paired verse are joined, the fifth practice is separated from its claim, and four verse renderings are paired. The third practice still mixes instruction and reported health benefit; the prior LF removal remains escalated, and source omissions must not be invented."
+  },
+  "spacing_review": [
+    {
+      "row": "m51f8b74258ee45cc045129d2",
+      "language": "fa",
+      "target_start": 132,
+      "value": " ",
+      "left": "r00001-sa3fbdb6fa458720f",
+      "right": "r00002-sb122fdb543464f4c",
+      "reason": "Complete the practice reference while retaining historical line-break provenance.",
+      "decision": "accept",
+      "note": "The Persian month phrase and month name are separate words."
+    },
+    {
+      "row": "m5f6a035bfcab60f8fc668354",
+      "language": "ar",
+      "target_start": 83,
+      "value": " ",
+      "left": "r00004-s9139a499aa920ed2",
+      "right": "r00005-s49a0157da90fa1f7",
+      "reason": "Complete the paired verse while preserving both source texts and historical links.",
+      "decision": "accept",
+      "note": "The Arabic predicate and following preposition are distinct words."
+    },
+    {
+      "row": "m5f6a035bfcab60f8fc668354",
+      "language": "fa",
+      "target_start": 83,
+      "value": " ",
+      "left": "r00004-s9139a499aa920ed2",
+      "right": "r00005-s49a0157da90fa1f7",
+      "reason": "Complete the paired verse while preserving both source texts and historical links.",
+      "decision": "accept",
+      "note": "The pronoun and following subject require word separation."
+    }
+  ]
 }

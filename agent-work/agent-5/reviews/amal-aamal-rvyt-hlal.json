@@ -4,11 +4,11 @@
   "item": "amal-aamal-rvyt-hlal",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "d69e95ced54d8cf4f988683b73b7e77a5a64ea1b44bcc27c245269ea73525463",
-  "layout_sha256": "6a1e5ba460e08649967d841af00c3a94c9a3360237c25c4ca7da2c7315dadee9",
-  "result_item_sha256": "bf63c0276bc97b994f3f1dc308bbbe45420155508113125a82c9b945967841f8",
-  "result_record_sha256": "7e7a9611113e4d11c9e5a8a92ef59bd1cab3fa58f2dde7ecbfb3182689e351d9",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "7d366e5c40096bff8a6adae6489cbcb053b268f4b45b2fb86d30c832bfb1ec77",
+  "layout_sha256": "aba54feca95b6193f95379b64be695e971d09093116ec4677c7be31c5aa4b44e",
+  "result_item_sha256": "e2d49e6a2c43b00fd3b3bec9e7fcf00fac33bf526142ef64a2218660c0971832",
+  "result_record_sha256": "ec4bbf6ba5f876025b296b95f62a44b66b9b75a606c8241b48602515d06255a0",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "a1a3dad0142593ac861f7949a561f6c130b6567ab6790ff38ecb36ecf400f1a0",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "89cd28dc6b39c7aa706605b9b561bebef5bc47d4946489e33e1e6232c091a047",
+    "preview_sha256": "876f8816efa5bde4c5cf2368fc713e92f4e085d97bc9cae195d348322be27dc0",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The cut at code point 3 isolates the first word as a note and leaves the ordinal with the instruction; keep the opening together or cut the complete section label, and choose a coherent role."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The full opening label is now a heading, with explanation and practice distinguished."
       },
       {
         "row": "r00002",
@@ -35,30 +35,30 @@
       {
         "row": "r00003",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": "This is recitation; its final clause continues at r00004/ar. The corresponding Persian is present in r00003/fa."
+        "note": "The prayer and rendering are now paired, but both fields continue into r00004."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "accept",
-        "kind": "revise",
-        "note": "This field renders r00003/ar and is prayer text, not a separate note; pair as recitation."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The rendering is now paired as recitation but continues into r00004."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": "Beginning completes the r00003/ar clause, then the next supplication follows; review a safe continuation pairing."
+        "note": "The opening completes r00003; use a link-preserving bilingual join."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "accept",
+        "split": "revise",
         "kind": "accept",
-        "note": "Beginning completes the r00003/fa clause; the remaining Persian corresponds to the following Arabic prayer."
+        "note": "The opening completes the preceding Persian prayer; use a link-preserving join."
       },
       {
         "row": "r00005",
@@ -78,8 +78,8 @@
         "row": "r00006",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "Both parts are renderings of the two Arabic prayer sentences; neither instruction nor note fits. Classify as recitation and pair by sentence."
+        "kind": "accept",
+        "note": "Both Persian prayer sentences are paired with the corresponding Arabic and marked recitation."
       },
       {
         "row": "r00007",
@@ -106,8 +106,8 @@
         "row": "r00008",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the continuation of the prayer rendering, not a note; pair it with r00008/ar as recitation."
+        "kind": "accept",
+        "note": "The continuation is paired with the Arabic and classified as recitation."
       }
     ],
     "punctuation": [],
@@ -121,6 +121,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00001 isolates only the first word of the opening label; correct that boundary. r00003, r00006 and r00008 keep matching Persian renderings as note/instruction and unpaired despite available Arabic: classify them as recitation and pair matching spans. r00003/r00004 also have a two-language continuation; inspect a safe boundary join. Preserve existing source characters, and separately review any proposed space."
+    "note": "The label, pairings and prayer roles are corrected. The Arabic and Persian prayer still continues across r00003/04; use a guarded link-safe join and independently assess its proposed spaces, preserving the r00007 source asymmetry."
   }
 }

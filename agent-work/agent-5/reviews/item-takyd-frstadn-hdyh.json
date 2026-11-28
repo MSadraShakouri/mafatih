@@ -4,11 +4,11 @@
   "item": "item-takyd-frstadn-hdyh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "12bcc85e834644f1cad61a16b9e2465887302b1421da8f3085ac6ad5778ad9e3",
-  "layout_sha256": "22c2e56586608e0afca08db7747dcbcfe715f2ec243584cdcb4887ec31e4d10a",
-  "result_item_sha256": "aa022bb39f12903bcef68837e1c94794176ee1b3e75ed4a1d188f7de27e743cb",
-  "result_record_sha256": "92c388ce97bba964fd4d4b9162356a4f19946a5c540eb7fc60a316fe4e822bde",
+  "layout_sha256": "0c21874267d8e83dd594eba1301c37697687c3595492e164d6976193e4029b06",
+  "result_item_sha256": "11db3226a70bc8d876fadd1dde46b72c856df06c927ab4400402c0fc97030291",
+  "result_record_sha256": "98bff4c5c4e8cab79a9554ef283e916af8f9b98c2fa784758383200ce6429c9d",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -35,23 +35,23 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening of an attributed report is interrupted and continues in r00003. Reviewed fa source."
+        "note": "The report attribution now continues into r00003."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The moved Persian note completes r00002’s attribution and introduces the paired prayer; its conditional outcome follows in r00004. Reviewed ar source."
+        "note": "The moved Persian note completes the attribution and precedes the paired prayer; the conditional outcome remains after it."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The moved Persian note completes r00002’s attribution and introduces the paired prayer; its conditional outcome follows in r00004. Reviewed fa source."
+        "note": "The report precedes the paired prayer and its conditional outcome remains after the prayer."
       },
       {
         "row": "r00004",
@@ -64,15 +64,15 @@
         "row": "r00005",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The opening completes r00004’s narrative, while the final dream account continues in r00006. Reviewed fa source."
+        "kind": "revise",
+        "note": "The dream account is now joined to r00006, but the preceding attributed narrative is still interrupted between r00004 and r00005."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The closing words complete r00005’s narrated dream. Reviewed fa source."
+        "note": "The closing words complete the dream account."
       }
     ],
     "punctuation": [],
@@ -80,6 +80,30 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group attribution and narrated continuations r00002/03, r00004/05 and r00005/06, while retaining the conditional report around the prayer. Distinguish practical directions from attributed reward claims in r00001; preserve supplied quotations, attributions and links."
-  }
+    "note": "The attribution and dream account are grouped, retaining the prayer within its conditional report. r00001 still mixes practical direction and attributed reward, and r00004/05 still interrupt the report; preserve order and links."
+  },
+  "spacing_review": [
+    {
+      "row": "m160799be4d73bd0d42aa8703",
+      "language": "fa",
+      "target_start": 31,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-s3dbdf5fec4f8f8e0",
+      "reason": "Complete the attributed report while retaining source context.",
+      "decision": "accept",
+      "note": "The name and the following honorific require a separating space."
+    },
+    {
+      "row": "mfccbd38d2d777e9fef4e1544",
+      "language": "fa",
+      "target_start": 80,
+      "value": " ",
+      "left": "r00005-sfc8c0739f3d3693c",
+      "right": "r00006",
+      "reason": "Complete the attributed dream account without endorsing its claim.",
+      "decision": "accept",
+      "note": "The noun and possessive word are distinct Persian words."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "khavas-tshya-jnazh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "c51553958c342dd979dc5cfa41f7e9839fc315b957c53d3a35da57f82e2dcdfa",
-  "layout_sha256": "cd5c3cc68c5a01d6ee7dc3374d4c445d6741af69481a808db7a4fa158eb00643",
-  "result_item_sha256": "0ac7a35e27f64ed5d89244bd10baa2bfe20d5994c9a9ec7475be14465fd26a96",
-  "result_record_sha256": "30238e1365cdda6fc561101f17faac33d22ab9a689760b1305082083d4b4db91",
+  "layout_sha256": "830c704e494772654488e4035ad267fad3d5c35680e28e9e4021663763280ef5",
+  "result_item_sha256": "2b16749db05a4965cb4214311f145c945b0c164141f769ffe702f4273cb68157",
+  "result_record_sha256": "c1056662e3ad8dc5edd89ea7a2b0b0d9aa283ddd649a71122525d112649cbaf4",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -23,14 +23,14 @@
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The first part combines a practical direction and reports; the final report ends with هفتاد and continues in r00002. Other cuts begin new reported sayings."
+        "note": "The interrupted report is joined, but r00001-sc5e9d9539705078a still mixes practical direction with attributed reports."
       },
       {
         "row": "r00002",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The first part completes r00001. The middle piece begins with a reported merit and then gives carrying directions, while the last mixes scholarly account and advice; distinguish the changes of role without orphaning links."
+        "note": "The preceding report is complete, but r00002-sb99308cb22091a05 mixes a merit claim with carrying instructions and r00002-se090ec1c15d74b91 mixes scholarly account and advice."
       }
     ],
     "punctuation": [],
@@ -38,6 +38,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
-  }
+    "note": "The interrupted report is joined. Distinguish the practical direction from reports in r00001-sc5e9d9539705078a/fa, the merit claim from carrying directions in r00002-sb99308cb22091a05/fa, and advice from scholarly account in r00002-se090ec1c15d74b91/fa, preserving anchors."
+  },
+  "spacing_review": [
+    {
+      "row": "m270f915c213b32e7c0d08cab",
+      "language": "fa",
+      "target_start": 97,
+      "value": " ",
+      "left": "r00001-sa021c793590ec5ab",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the attributed report; role distinctions remain a separate finding.",
+      "decision": "accept",
+      "note": "The numeral and following noun are distinct words."
+    }
+  ]
 }

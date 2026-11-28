@@ -4,11 +4,11 @@
   "item": "namaz-qzay-dyn-kfayt",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "6ec3fcfa33fcd1b119058c615e7b414b7474055a85f08cad8d8d8b7c4e6f0743",
-  "layout_sha256": "8031e3512135dfeb091c3484b0733aa357ace815949b1c9142d4543b31679be8",
-  "result_item_sha256": "617fa60b6dca810f4e50e0dc77bd100ba03881448b8ec49f6bd4bc1e6de555c6",
-  "result_record_sha256": "626f60ff7df4d04fd0dc1cba283a64a4068f4945b34e46fddf772cbc2a6d0ff1",
+  "layout_sha256": "35873fa9ce06acc647b06831e36e079db6623d355adb8edfe1f8ca0aed4dd276",
+  "result_item_sha256": "c8cc7016b315f6e291f30808d58ae738aa5dc3ceeb993b22209dc80f351c80eb",
+  "result_record_sha256": "2dc27ced9c5a7c26b12673e2c5f50d307d153fdef527fc506ea8bb9356a8adeb",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,44 +21,44 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial attributed complaint is interrupted before its object and continues in r00002. Reviewed fa source."
+        "note": "The attributed complaint is grouped with its continuation."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The source text completes the complaint begun in r00001. Reviewed fa source."
+        "note": "The prior complaint is completed without source changes."
       },
       {
         "row": "r00003",
         "language": "ar",
         "split": "revise",
         "kind": "revise",
-        "note": "The moved Persian beginning combines reported speech with practical prayer instructions; distinguish these roles while retaining the paired supplication. Reviewed ar source."
+        "note": "The paired prayer is retained, but the moved Persian introduction still mixes attributed speech and practical directions."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The moved Persian beginning combines reported speech with practical prayer instructions; distinguish these roles while retaining the paired supplication. Reviewed fa source."
+        "note": "The paired prayer is retained, but the introductory report and action remain in one instruction."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The direction and narrated aftermath are separated, but the Arabic and Persian-script versions of the invocation are emitted separately and the latter contains a source variant. Preserve both witnesses while aligning the list; the final note continues r00005. Reviewed fa source."
+        "kind": "revise",
+        "note": "The narrated aftermath is joined, but Arabic and Persian-script witnesses of the invocation remain detached; preserve the supplied variant."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The sentence completes the outcome narrated in r00004. Reviewed fa source."
+        "note": "The narrative outcome completes r00004 and stays an attributed note."
       },
       {
         "row": "r00006",
@@ -73,6 +73,30 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group the interrupted prose r00001/02 and r00004/05, distinguish attribution from direction, and align the two script witnesses of the invocation in r00004 without dropping the variant. Preserve claims and links."
-  }
+    "note": "Both narrative interruptions are grouped. Separate the reported introduction from direction in r00003 and align the two script witnesses in r00004 without losing the variant, source asymmetry or links. Claims are not certified."
+  },
+  "spacing_review": [
+    {
+      "row": "m5f1f4a4f88177d1e5c97042d",
+      "language": "fa",
+      "target_start": 217,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002",
+      "reason": "Complete the reported complaint without changing source attribution.",
+      "decision": "accept",
+      "note": "The noun and following verb are distinct Persian words."
+    },
+    {
+      "row": "md682244d17df096525ebb021",
+      "language": "fa",
+      "target_start": 53,
+      "value": " ",
+      "left": "r00004-sc95e4eb4083f3e93",
+      "right": "r00005",
+      "reason": "Complete the attributed outcome while preserving source witnesses.",
+      "decision": "accept",
+      "note": "The conjunctive phrase and following noun are separate words."
+    }
+  ]
 }

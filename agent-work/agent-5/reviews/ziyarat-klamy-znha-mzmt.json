@@ -4,11 +4,11 @@
   "item": "ziyarat-klamy-znha-mzmt",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "07f73a49c1477ad20ca29fe9cea673ddaea131ecfc46da790699611cf3d8367b",
-  "layout_sha256": "cfe1a9c5a1491e58b892fbef440b9cceea6ce7cf8f0da8ea2313ffc881e8b408",
-  "result_item_sha256": "8ca38cd04a41d063201c3e5ec6c2799806ec3f82fedc1316835a66b7a55d7566",
-  "result_record_sha256": "a52eaef0e122f007f82db26586f7bba6fe6b1b6b39ce5eb80ef71f5c45d1c49c",
+  "layout_sha256": "dfc74ca2e12c90791e58499239f36eef11a5216e6144b14ef3b9fa2a21a33d51",
+  "result_item_sha256": "a03645c8bc5a5cf649e9918361e2a8036abc2c90f80c76f799a5b7925d3fec90",
+  "result_record_sha256": "6d58ae1a8a9d95448fafe133c1a83fd64c77f1e5a585fcecf5eaacdab1b2d638",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -35,30 +35,30 @@
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Three Arabic quotations and two Arabic attribution phrases are separated from their matching Persian quotations and attributions, producing ten language-only rows. Pair corresponding supplied passages and preserve their respective roles. Reviewed ar source."
+        "note": "The three Arabic quotations and the two attribution phrases are paired with their supplied Persian counterparts; roles and source differences are retained."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Three Arabic quotations and two Arabic attribution phrases are separated from their matching Persian quotations and attributions, producing ten language-only rows. Pair corresponding supplied passages and preserve their respective roles. Reviewed fa source."
+        "note": "The three supplied translations and two attributions correspond to their Arabic partners; no source differences are normalized."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The numbered heading is mixed with the practical visitor instruction; the following author note begins a sentence completed in r00005. Reviewed fa source."
+        "note": "The author note is joined to r00005, but the numbered heading remains within the visitor instruction."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the author note started in r00004. Reviewed fa source."
+        "note": "The opening completes the author note."
       }
     ],
     "punctuation": [],
@@ -66,6 +66,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Pair the five corresponding Arabic/Persian quotation and attribution segments in r00003, preserving quoted roles and differing source wording. Split the numbered heading from the direction and group the author note across r00004/05. Retain the author’s views as attributed; preserve links."
-  }
+    "note": "The five quotation/attribution pairs are corrected and the note is joined. The numbered heading remains mixed into r00004-s1c27c3072f6239a1/fa instruction. Preserve attributed source views and links without endorsing them."
+  },
+  "spacing_review": [
+    {
+      "row": "m899dbdc938a27a2380864f75",
+      "language": "fa",
+      "target_start": 22,
+      "value": " ",
+      "left": "r00004-s6781612fc75b6e23",
+      "right": "r00005",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The phrase and following noun are separate Persian words."
+    }
+  ]
 }

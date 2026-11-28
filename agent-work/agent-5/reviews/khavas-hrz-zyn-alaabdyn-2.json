@@ -4,11 +4,11 @@
   "item": "khavas-hrz-zyn-alaabdyn-2",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "2a8ef8ea75aa629f178e3608605bccfb32482571c42869ee5281f7afd888f629",
-  "layout_sha256": "19e4aa2d211eef61b0307ee0ab4dd43d1bfb099fa74d690d7e50db293c18cd3f",
-  "result_item_sha256": "d7f9982e6edfad3e814122f500153cc3a08c7347b164f903a930956efb6c5526",
-  "result_record_sha256": "896e482ccd1e279c9c965f95e0e28c1de08a8344807f4362b8c52191388d30a4",
+  "layout_sha256": "c5612f3c53f964b3045ef79d914701e9c712d15f4a9dc4397e6c618b39981541",
+  "result_item_sha256": "4e635da5fefef30542052580d1bb1f30b99196693fa6e5ace23d7a1eaf37cbd1",
+  "result_record_sha256": "9717570fd128c350cfcd45d1b1338e373b38cb56d358680c82587ce6e12b9ce1",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,58 +28,58 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired prayer is interrupted before an adjective in r00003. Reviewed ar source."
+        "note": "The Arabic prayer is joined to the adjective and continuation in r00003."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired prayer is interrupted before an adjective in r00003. Reviewed fa source."
+        "note": "The Persian prayer is joined to the matching continuation."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first paired fragments complete r00002, but both corresponding Arabic/Persian sections are emitted separately; pair existing renderings. Reviewed ar source."
+        "note": "The two Arabic sections are paired with the supplied Persian."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first paired fragments complete r00002, but both corresponding Arabic/Persian sections are emitted separately; pair existing renderings. Reviewed fa source."
+        "note": "Both supplied Persian sections are paired with corresponding Arabic."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The three Arabic and three Persian sections correspond but render as separate language-only rows; the last Quranic quotation also continues into r00005. Reviewed ar source."
+        "note": "The Arabic sections are paired and the last quotation continues into r00005 in the joined row."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The three Arabic and three Persian sections correspond but render as separate language-only rows; the last Quranic quotation also continues into r00005. Reviewed fa source."
+        "note": "The supplied Persian sections are paired and the quotation continuation is joined."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired opening completes r00004’s quotation, followed by a blessing. Reviewed ar source."
+        "note": "The quotation continuation and blessing are paired."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired opening completes r00004’s quotation, followed by a blessing. Reviewed fa source."
+        "note": "The supplied quotation continuation and blessing are paired without inventing text."
       }
     ],
     "punctuation": [],
@@ -87,6 +87,52 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group the bilingual interruption r00002/03 and quoted continuation r00004/05, and pair the existing corresponding Arabic/Persian pieces of r00003 and r00004. Preserve quotation wording, source differences and row IDs."
-  }
+    "note": "The prayers and quotations are paired and both interruptions are joined. An earlier pre-frozen r00003/ar text variant from 0b7c1108 differs from the frozen source, so exact old-version offsets remain a separate historical identity hold; do not rebind or migrate it without authorization."
+  },
+  "spacing_review": [
+    {
+      "row": "m209459181f5c535f90c72a08",
+      "language": "ar",
+      "target_start": 280,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-sdcc09225d4cc1588",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic adjective and following comparative are separate words."
+    },
+    {
+      "row": "m209459181f5c535f90c72a08",
+      "language": "fa",
+      "target_start": 214,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-sdcc09225d4cc1588",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian adjective and comparative require a space."
+    },
+    {
+      "row": "me6ac8497dd7e0f79aeb8a43d",
+      "language": "ar",
+      "target_start": 285,
+      "value": " ",
+      "left": "r00004-s261a3e7d683a4772",
+      "right": "r00005",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The clauses are separated by the source punctuation and require a space."
+    },
+    {
+      "row": "me6ac8497dd7e0f79aeb8a43d",
+      "language": "fa",
+      "target_start": 261,
+      "value": " ",
+      "left": "r00004-s261a3e7d683a4772",
+      "right": "r00005",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian clauses are separated by a space."
+    }
+  ]
 }

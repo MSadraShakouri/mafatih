@@ -4,11 +4,11 @@
   "item": "namaz-fzylt",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "226722df7b5423c6f325e9091f4cea8d1ca95d3f08af9534bb16881d3f7ad965",
-  "layout_sha256": "e634825f0162dc190ef870b98361aced4550a079a089add976d847a19e3eb4a0",
-  "result_item_sha256": "ec74bfdea9e8fdde2453a88209bbf3aebcb83d1c0a52239638f87881605e6f05",
-  "result_record_sha256": "1f29adeb59b4c812f959805fbb59def79492541749cd524be57c8d447dd9e306",
+  "layout_sha256": "39bba3c1e420727ff6b77bb69231dbc409d891ee1b71453c935fe110a98cf6eb",
+  "result_item_sha256": "be376ead7b603f70a75103dd9ed003e7d7aec99ba21433f8e48545905d5739d3",
+  "result_record_sha256": "56b418d4de950bfdd0075d0dca944d8bea6343f9dc059d85b9d133b3b6540a7c",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,16 +21,16 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The two thematic sections are separated, but the second attributed narration ends mid-sentence and continues r00002. Reviewed fa source."
+        "note": "The interrupted lead-in now forms one attributed report."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "This short fragment completes the narrative lead-in of r00001 and introduces the next quotation. Reviewed fa source."
+        "note": "The continuation completes the preceding lead-in and leaves the quotation separate."
       },
       {
         "row": "r00003",
@@ -56,23 +56,23 @@
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The final attributed report is interrupted in its conditional outcome and continues in r00006. Reviewed fa source."
+        "note": "The interrupted conditional outcome is joined to its report."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The first fragment completes r00005; later separately attributed reports are divided, with the last continuing r00007. Reviewed fa source."
+        "kind": "revise",
+        "note": "Both interrupted reports are grouped, but multiple distinct attributed reports are collected into the same long notes."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The beginning completes r00006’s report; subsequent narratives have separate attribution and should remain distinguishable. Reviewed fa source."
+        "kind": "revise",
+        "note": "The continuation completes its earlier report, but subsequent distinct narratives remain inside the same note."
       }
     ],
     "punctuation": [],
@@ -80,6 +80,41 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Retain paired quotation and attributed commentary but group broken narrative r00001/02, r00005/06 and r00006/07. Multiple reward and health claims remain attributed, not verified. Preserve links."
-  }
+    "note": "The three interrupted narratives are grouped; distinguish the subsequent independently attributed narratives in m2435feb219a57e8ba0fd9bfa/fa and other long note material without orphaning links. Claims are not certified."
+  },
+  "spacing_review": [
+    {
+      "row": "mdde319a5f530b82e81e2f297",
+      "language": "fa",
+      "target_start": 300,
+      "value": " ",
+      "left": "r00001-sd0076416ed435839",
+      "right": "r00002",
+      "reason": "Complete the same attributed narration with one proposed Persian space.",
+      "decision": "accept",
+      "note": "The conjunction and following Persian word are separate."
+    },
+    {
+      "row": "m5ca080d369fad4980c2d88d6",
+      "language": "fa",
+      "target_start": 583,
+      "value": " ",
+      "left": "r00005",
+      "right": "r00006-s6b2b0ff07b4b8ae2",
+      "reason": "Complete the same attributed account with one proposed Persian space; retain the reported claim.",
+      "decision": "accept",
+      "note": "The connective and subject are separate words."
+    },
+    {
+      "row": "m2435feb219a57e8ba0fd9bfa",
+      "language": "fa",
+      "target_start": 363,
+      "value": " ",
+      "left": "r00006-saa9b9be4b3d5606d",
+      "right": "r00007",
+      "reason": "Complete the same attributed report with one proposed Persian space; retain its source claims.",
+      "decision": "accept",
+      "note": "The Persian phrase and following noun require word separation."
+    }
+  ]
 }

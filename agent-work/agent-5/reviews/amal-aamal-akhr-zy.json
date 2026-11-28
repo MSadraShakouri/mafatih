@@ -4,11 +4,11 @@
   "item": "amal-aamal-akhr-zy",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "f34f6d0e34bc03e17a0e50b0cf3fd9ae7572eeb5ddf2328c01d026b860cf6bfb",
-  "layout_sha256": "0a9a4207392b1a2d81b917d0aead2c0716a6fa0ca146d0f734b8d506cff00cb5",
-  "result_item_sha256": "709741377396df0652df807fd7b98d8687d3afc8ab328074f15b611edbe85b59",
-  "result_record_sha256": "456727be5a762c18c0ea4b8368a9037412bee8a30b391a0861520101717e15d9",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "3d47e0708d39b2b5e81f81f07e9b0befa878835f8556cf9ad19fe400e3c34ca5",
+  "layout_sha256": "e0a56c26d2b2ecfabd40b1fe38c137c1200700d519ede16714680bd9db058048",
+  "result_item_sha256": "9edb307a6d5ffcabeb7e75d84ce12c97d32114bcf950d43a94f55ec8b635ed66",
+  "result_record_sha256": "a1ecc83cfbf297b44fdc6b12732af7373d097ee0632897bf50f0467cbd9f2620",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "be264973a06aa8f72f9b0c96468a1efe084a2f08e60e529b8a6b01a325d92615",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "b8a49af44e734183edabd384dc1068b2931d113b1790ec071c05c637718743dd",
+    "preview_sha256": "7655e95880b4827e6a4bbf70936964c3c3ac301cf0473b1a1fb1a1bdf6c58690",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The dated heading and explanatory calendar note lead into the interrupted attribution that continues r00002; separate their roles. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The dated heading is separate from the calendar explanation and completed attribution."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The opening completes r00001’s interrupted book attribution and introduces a reported instruction; separate the source attribution from the actual practical directions. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The opening completes the attribution and the practical prayer directions are separated."
       },
       {
         "row": "r00003",
@@ -58,7 +58,20 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The opening date heading, calendar explanation and attributed report need distinct roles, and the citation is broken across r00001/02. Prayer sections are paired; retain the reported aftermath as a source claim and preserve links."
-  }
+    "decision": "accept",
+    "note": "The heading, report and practice have distinct roles; the citation is coherent and later prayers remain paired. Reported outcomes remain attributed and available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m22c9ea2bd0ac7d871ca0a282",
+      "language": "fa",
+      "target_start": 37,
+      "value": " ",
+      "left": "r00001-s2aa090098a6808db",
+      "right": "r00002-sa35c43f774f2ad27",
+      "reason": "Complete the interrupted bibliographic attribution, preserve the narrative source and the old row links.",
+      "decision": "accept",
+      "note": "The Persian noun and cited book title require a word-separating U+0020."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "ziyarat-shhday-ahd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "56d124d2aee748bae1771cd460a455dc6828fb779878b725330e3959b8966d86",
-  "layout_sha256": "7dfa0233bd94c6c6abe8f18a51f1f82476664015f09fb407d44071b7426eee32",
-  "result_item_sha256": "1b83c5051bbd8cd000a5b3dfbaab5b98810da69ea3705e8ea635a5b20da88cd3",
-  "result_record_sha256": "62a18603361befd5edd718d95fd23af536845c5ca75a6b9f69cb8302fcddc3d5",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "0b14ce9594e8c5bf2661ec8060c04adc1c7ca810eb4ad30c5827165086049493",
+  "layout_sha256": "95f2ddf42446fabe7515238b1cf5fa87d8c454dfd17700ee2f956941220e4c4a",
+  "result_item_sha256": "fc79e93cc848c9abc76060c586a3263f879c78318c76259ad03f91319b4f1544",
+  "result_record_sha256": "8b693c1f69b47a3a1212518979df4eafd5b9d2711eb16f98167e4e2a33d2b7d2",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,70 +16,70 @@
     "item_sha256": "71dcc9e39c61fbb1eff4c3a5a7b461647dcdbe86dceae4afcf0e17cbf3669688",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "a12e7eeffd2799f80fad367e05867fa25709ceb2b4654d339b24c7b664cd3001",
+    "preview_sha256": "851c2ec8c308d75c70388bd1712f79fa1f5fdcf9ca6679e9cc2b7331c1e9d301",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The moved Persian direction and first greeting are correct; the final paired testimony is interrupted across r00001/02. Reviewed ar source."
+        "note": "The moved direction remains separate and the testimony is joined to its continuation."
       },
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The moved Persian direction and first greeting are correct; the final paired testimony is interrupted across r00001/02. Reviewed fa source."
+        "note": "The supplied rendering is paired and the testimony continuation joined."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both Arabic sections have corresponding Persian emitted separately; the opening completes r00001 and the second passage continues r00003. Reviewed ar source."
+        "note": "The continuation is joined and Arabic prayer sections are paired in order."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both Arabic sections have corresponding Persian emitted separately; the opening completes r00001 and the second passage continues r00003. Reviewed fa source."
+        "note": "The supplied Persian prayer sections are paired in order."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both Arabic and Persian pieces are separate despite corresponding content; the opening continues r00002 and the closing invocation continues r00004. Reviewed ar source."
+        "note": "Both prayer sections are paired and the concluding invocation joins r00004."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both Arabic and Persian pieces are separate despite corresponding content; the opening continues r00002 and the closing invocation continues r00004. Reviewed fa source."
+        "note": "Both supplied rendering sections are paired and the concluding invocation joins r00004."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired initial request completes the invocation begun at the end of r00003. Reviewed ar source."
+        "note": "The opening completes the paired invocation."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired initial request completes the invocation begun at the end of r00003. Reviewed fa source."
+        "note": "The supplied opening completes the paired invocation."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The recitation direction precedes a separate attributed instruction for prayer; distinguish the source attribution while retaining the practical steps. Reviewed fa source."
+        "note": "The recitation direction is separated, but the later attributed prayer instruction remains combined with its attribution in a note."
       }
     ],
     "punctuation": [],
@@ -87,6 +87,74 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Pair corresponding existing Arabic/Persian parts of r00002/03 and group interrupted paired constructions r00001/02, 02/03 and 03/04. Keep the moved instruction and distinguish closing directions from attribution. Preserve text, variants and links."
-  }
+    "note": "The three paired interruptions are joined and the recitations aligned. The attributed prayer instruction remains mixed into r00005-sbf827ad20eeda70b/fa note; separate source attribution and practical step only with link-safe handling."
+  },
+  "spacing_review": [
+    {
+      "row": "m682b6b06cb08185c03d22bf6",
+      "language": "ar",
+      "target_start": 274,
+      "value": " ",
+      "left": "r00002-se66d2a8d6f823518",
+      "right": "r00003-s89233bbc4b8f1768",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic coordinated nouns require a separating space."
+    },
+    {
+      "row": "m682b6b06cb08185c03d22bf6",
+      "language": "fa",
+      "target_start": 199,
+      "value": " ",
+      "left": "r00002-se66d2a8d6f823518",
+      "right": "r00003-s89233bbc4b8f1768",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian list terms are separate words; retain its supplied wording."
+    },
+    {
+      "row": "m3abfb9bedb1d83bc0f57eb0f",
+      "language": "ar",
+      "target_start": 326,
+      "value": " ",
+      "left": "r00003-s20b0ac40a7179b1f",
+      "right": "r00004",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The vocative and the following Arabic verb are separate words."
+    },
+    {
+      "row": "m3abfb9bedb1d83bc0f57eb0f",
+      "language": "fa",
+      "target_start": 249,
+      "value": " ",
+      "left": "r00003-s20b0ac40a7179b1f",
+      "right": "r00004",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The vocative and following Persian phrase are distinct words."
+    },
+    {
+      "row": "mf49dfe3fcda676cb972a86e9",
+      "language": "ar",
+      "target_start": 304,
+      "value": " ",
+      "left": "r00001-sa329ad2c5a367a28",
+      "right": "r00002-s33ed15b82a54ab62",
+      "reason": "Complete the paired testimony across the source boundary.",
+      "decision": "accept",
+      "note": "The Arabic particle and following name are separate words."
+    },
+    {
+      "row": "mf49dfe3fcda676cb972a86e9",
+      "language": "fa",
+      "target_start": 221,
+      "value": " ",
+      "left": "r00001-sa329ad2c5a367a28",
+      "right": "r00002-s33ed15b82a54ab62",
+      "reason": "Complete the paired testimony across the source boundary.",
+      "decision": "accept",
+      "note": "The conjunction and following Persian noun are separate words."
+    }
+  ]
 }

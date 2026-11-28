@@ -4,11 +4,11 @@
   "item": "amal-tarykh-fzylt-msjd",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "b91de8cf16be7840f52bb16de5b8748196046db63cd1ae3c8c47a238b59bfee0",
-  "layout_sha256": "0028c589d9ec7c67208d36b18400d8a96c2a1f004f4a3ebe7bd32b22de7823d3",
-  "result_item_sha256": "574780f7bb284155de9214d448ce7ec7aa775eba5916a3aff48b612f656f6e98",
-  "result_record_sha256": "bdaaa154aff9858c01a45d66b3eb9310d8aa57bb4c9c27d03d0738b442ec5f22",
+  "layout_sha256": "bba21bb072b40489dd3ecaa9b21953684aced84af58d809a2844f1807a0314ce",
+  "result_item_sha256": "ffa6407fab20a74be46c92dbbc2fc219b537766f2963e7558cc9c7e4aa9fd1b4",
+  "result_record_sha256": "abbd39fee88b98f78ed0936581e296c5c788a8e82ff4319023958c0276f90947",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,23 +21,23 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The historical source narrative is interrupted mid-sentence and continues r00002. Reviewed fa source."
+        "note": "The historical report is joined through its continuation."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first part completes r00001; the third narrative ends mid-dialogue and continues in r00003. Reviewed fa source."
+        "note": "Both interrupted narratives now continue in coherent note rows."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002; the ending introduces a distinct quoted reply in r00004, so withdraw the request to join r00003/04."
+        "note": "The narrative completes the preceding row and leaves the introduction to the reply separate."
       },
       {
         "row": "r00004",
@@ -70,23 +70,23 @@
       {
         "row": "r00007",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The author’s cross-reference and setup for an enumeration is interrupted in r00008. Reviewed fa source."
+        "note": "The author’s introduction now joins the first enumerated claims."
       },
       {
         "row": "r00008",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The opening completes r00007 and sets out the attributed numbered claims; the twelfth item is interrupted into r00009. Reviewed fa source."
+        "kind": "revise",
+        "note": "The twelfth item now continues into r00009, but the enumerated attributed claims and authorial commentary remain joined in one note."
       },
       {
         "row": "r00009",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The opening completes the twelfth numbered item, followed by authorial opinion. Preserve discriminatory wording as source quotation without endorsing it. Reviewed fa source."
+        "kind": "revise",
+        "note": "The opening completes the item, but the subsequent commentary, including objectionable source language, remains mixed with the enumeration."
       }
     ],
     "punctuation": [],
@@ -94,6 +94,52 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group prose interruptions r00001/02, 02/03, 07/08 and 08/09. Withdraw the former r00003/04 join request: the first row introduces the following quoted reply, a meaningful narrative transition. Keep the paired quotation, distinguish numbered attributed claims and commentary, and preserve objectionable source opinions as attribution without endorsement. Maintain links."
-  }
+    "note": "The four interrupted reports are joined, while the separate reply remains distinct. The twelfth attributed item and later commentary in me17e7ff07f7c0ccfe0d7029f/fa remain mixed; retain and attribute objectionable source wording without endorsement. Preserve anchors."
+  },
+  "spacing_review": [
+    {
+      "row": "mc1737be91401e2988d089de9",
+      "language": "fa",
+      "target_start": 519,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "U+0020 separates the punctuation and ensuing adverb."
+    },
+    {
+      "row": "m5172e887322c8aa14428f8fc",
+      "language": "fa",
+      "target_start": 426,
+      "value": " ",
+      "left": "r00002-se090ec1c15d74b91",
+      "right": "r00003",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "U+0020 separates the verb and following Persian object."
+    },
+    {
+      "row": "m1059576f0223686b05504b51",
+      "language": "fa",
+      "target_start": 203,
+      "value": " ",
+      "left": "r00007",
+      "right": "r00008-s88eba61461dcd450",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "U+0020 separates the conditional clause from its conclusion."
+    },
+    {
+      "row": "me17e7ff07f7c0ccfe0d7029f",
+      "language": "fa",
+      "target_start": 520,
+      "value": " ",
+      "left": "r00008-sb553e7372366eba9",
+      "right": "r00009",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "U+0020 separates the numbered label from the following report."
+    }
+  ]
 }

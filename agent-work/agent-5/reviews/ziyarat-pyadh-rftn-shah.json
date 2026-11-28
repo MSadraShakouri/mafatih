@@ -4,11 +4,11 @@
   "item": "ziyarat-pyadh-rftn-shah",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "3d9c7bdebb56c3ad6b018d2dd97a7c91150fcf67574cf04a70e836b480a6df23",
-  "layout_sha256": "5a6689214cc2e755699102dd39d7afc3ef8226bf91065d307416bbab460d8605",
-  "result_item_sha256": "53c01880fbb14f5a812c6b429a67b8c6db2f50242c61fe6897d0ffcf44523da0",
-  "result_record_sha256": "1f9d94d1c7323ff3572e3304ae9e7a0846453a1c10fdcbf75fefb9fcd96f7c1b",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "d534181e21fa37d26220f2ef4af414281a54e7787727557cafa96d87043b4dc4",
+  "layout_sha256": "128f229237b302f0df0c6af34f2dedfcb555747362a49eedeeecb494e2f4942f",
+  "result_item_sha256": "b0181caae174e26539e13f7b9d14ca23e9d26c270692b9616a23f9b4ba456717",
+  "result_record_sha256": "4984ece6360f4dab7db04be197c6eacb73b4a1c1bf0e7f67962840f5397eb475",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "d35598fe4db8d2e6b03819f170b594602f05f1a5a028eb6248d81ddfd4f15e7e",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "ad10725f50c2635daf97328f4631352296a23298ba264af489c7ca47740ff875",
+    "preview_sha256": "5995ab98a9807edfafbbe2acb95e4529e8be4308263db8b9f9d7d94141d86389",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The cut divides a continuous historical account and the second portion is wrongly marked instruction; it continues into r00002. Preserve the text and consider safe grouping as narrative."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The historical narrative is now grouped with its continuation and classified as a note."
       },
       {
         "row": "r00002",
@@ -105,9 +105,9 @@
       {
         "row": "r00013",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "Both outputs are historical narration introducing an inscription, not quotations. The split divides a list of calligraphers; retain coherent narrative and inspect a safe join with r00012."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The joined historical narrative and inscription introduction are classified as note without the former split inside the list."
       },
       {
         "row": "r00014",
@@ -127,28 +127,52 @@
         "row": "r00015",
         "language": "ar",
         "split": "accept",
-        "kind": "revise",
-        "note": "This field is Arabic and should stay in the Arabic destination; the current layout moves it to Persian and leaves it unpaired."
+        "kind": "accept",
+        "note": "The Arabic inscription is back in Arabic and paired with its existing Persian rendering."
       },
       {
         "row": "r00015",
         "language": "fa",
         "split": "accept",
         "kind": "accept",
-        "note": "This is the Persian rendering of r00015/ar; pair the two quotations in their language slots."
+        "note": "The existing rendering is paired with the Arabic inscription without creating a translation."
       }
     ],
     "punctuation": [],
     "issues": [
       {
         "index": 0,
-        "decision": "escalate",
-        "note": "The identified field is Arabic and was moved to Persian incorrectly; return it to the Arabic slot and pair its actual Persian rendering."
+        "decision": "addressed",
+        "note": "The Arabic r00015 witness is restored to the Arabic destination and paired with the existing Persian rendering; source wording remains unchanged."
       }
     ]
   },
   "layout": {
-    "decision": "revise",
-    "note": "r00005 and r00012 narrative roles are now corrected, but r00001/r00013 historical narrative is still misclassified and interrupted, and r00015/ar is still in the Persian slot, unpaired with its rendering. The author reports this requires a link-preserving mapping migration."
-  }
+    "decision": "accept",
+    "note": "The historical narratives are grouped and correctly marked note; r00015 Arabic and Persian inscription are paired. Existing wording and historical links remain intact; no external historical claim is certified."
+  },
+  "spacing_review": [
+    {
+      "row": "m4ce7d17863ad185d4eb41c84",
+      "language": "fa",
+      "target_start": 146,
+      "value": " ",
+      "left": "r00012",
+      "right": "r00013-s579535577e8a6fbf",
+      "reason": "Complete the historical source report, preserving attributed history and existing row links.",
+      "decision": "accept",
+      "note": "The adjective and following verb are distinct words."
+    },
+    {
+      "row": "m2cd1d730c8288e258e1ff763",
+      "language": "fa",
+      "target_start": 433,
+      "value": " ",
+      "left": "m7645b194dc96728f453647f6",
+      "right": "r00002",
+      "reason": "Complete the attributed historical account while preserving source and prior anchors.",
+      "decision": "accept",
+      "note": "The destination and following verb require a space."
+    }
+  ]
 }

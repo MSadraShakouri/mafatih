@@ -4,11 +4,11 @@
   "item": "amal-aamal-rbya-alsany",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "90443e605cf49317d5ae6127b112c4a0339cbcdc5d6b13229d74fa1e5c19f645",
-  "layout_sha256": "c5d3aca493109e90591e3e9067bfe155f65362b9f4bc1dc98da894c4da2a14b8",
-  "result_item_sha256": "1b86acefecddff967603b26928edebc43df48d85925b8c2244b32a500237d288",
-  "result_record_sha256": "411f2eef6be0fef6f1992865880c08a5f0a28d0eaf21073fed0c65d13522b6e4",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "c6368cbc31a65acb1d1ccc7849d7cf2a8848cb26dc9c399a501cd535199559c7",
+  "layout_sha256": "929a30fb8afb0194dee232e7138967962db8f3c78b9109ffac96def61c228fc8",
+  "result_item_sha256": "1796735e52901f3214cf066244687cb12d593a6648f14db610af017a08260459",
+  "result_record_sha256": "487b09efd5092d4d8bc425ba390c0e00cf7baca0c09e6018b9ef7f579930ba6b",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,21 +16,21 @@
     "item_sha256": "d2bc0f541444bba78f98f455bde581cb79ce176510c34ba25ba6c38684cc56c6",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "f41fcb7e44921a4219d63970477b2390d0932eb0c5b89e7d5cd6df00266193b9",
+    "preview_sha256": "01ce1099f4feaf5cac8d11713e6335bcb8ee46507750bab29016eaa302e749a8",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The first note combines reported dates with a fasting recommendation; the second combines visitation and mourning recommendations with the evidence; the third combines a historical date and visitation recommendation. Distinguish practical directions from the narrative where warranted, preserving child IDs."
+        "split": "accept",
+        "kind": "accept",
+        "note": "Historical reports, fasting and visitation recommendations, and the evidence for the dates are now separate coherent note or instruction rows."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Read all output rows against their source context. Specific role and/or interrupted cross-row phrase findings are recorded per source above. These are not length-only cut requests; do not orphan published IDs, and escalate changes that need mapping migration."
+    "decision": "accept",
+    "note": "The reported dates and evidentiary account are distinguished from the practical recommendations. Claims remain attributed; available historical IDs were checked."
   }
 }

@@ -4,11 +4,11 @@
   "item": "amal-nymh-shaban",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "8d1307a6ea46589ee7cd7793efef8f9aebdf32bb8cec38397533151db68ec19e",
-  "layout_sha256": "05b75390590464b430a9f8e1612747f65c42c732bdc4cc2bcf6bddbd7e4c696e",
-  "result_item_sha256": "6a0aec88beea5712bba1e6d4a89bd14e6f58e21e1109c18bf702d7a3d4b36742",
-  "result_record_sha256": "a861f21c24ed238bf4eae80782bb262cf49609c4db2a2707de0050f885e7daa1",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "3e3bb4e6a1c69164f38ed70389afce9d050f9da07b2c3a5c6392b218e44f2043",
+  "layout_sha256": "e0ab34c3852dffeb355782085aec909994b92b9610dca69d79857f7bcaf8f9eb",
+  "result_item_sha256": "1b66b06afe4255abdcac7fc38defe1e1dd92e6a0818366d22ec36feda7796b9b",
+  "result_record_sha256": "d419876eb54c9fba21384baf42847402beb643559b287297d80f220fe7298fa4",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,28 +16,28 @@
     "item_sha256": "6b78991bdb0285849c421cb9b56aa1b752d0260ea91178d9d97b2e730d51bf1a",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "88ab8d228dae217063e3c57bee717440197c9371cb58c45e3ac4cad98b67b921",
+    "preview_sha256": "1791d0f6d3e15d12ea0080e3de59ddfc77779e363053e2e5ad0dcc5192ec9620",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The date heading, birth/eschatological context and recommendations on visitation and prayer use distinct roles and should be distinguished. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The date heading, birth context, recommendations and reported eschatological context now have distinct roles; the source quotation is preserved."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The later-days heading is separated, but its following attributed report ends mid-phrase and continues r00003. Reviewed fa source."
+        "note": "The attributed fasting report now joins its continuation."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002’s report; the new report and its embedded direction to recite are separated. Preserve the attributed speaker and context. Reviewed fa source."
+        "note": "The opening completes the report; the later report and direction stay distinct."
       },
       {
         "row": "r00004",
@@ -65,7 +65,20 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Distinguish the date heading and recommendations in r00001 and group the attributed report split across r00002/03. Preserve the reported speech, paired prayer and r00005 context without asserting its claim as established; maintain links."
-  }
+    "decision": "accept",
+    "note": "Date heading, context and recommendations are distinguished, and the interrupted attributed report is coherent. Claims remain attributed and source punctuation is preserved; available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m50c851b78f8599b75cd95c6d",
+      "language": "fa",
+      "target_start": 145,
+      "value": " ",
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The number phrase and following Persian modifier are distinct words."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "ziyarat-item-9",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "e6373fdcdbae61bb242d8cc05911580a7203a2523b47301369e8c3e3b2347e9c",
-  "layout_sha256": "3bac8623c7e8733c3bcbde998d5f223d6dd3431a9ee90d60e3ef93992bafd565",
-  "result_item_sha256": "b2b849210a99d0becedf7a9512650365e04799254f4bb1e8ea224022985699f4",
-  "result_record_sha256": "b356b340768d83f7c58d657f6df182301f18ee70b39980798b3d524cddf59192",
+  "layout_sha256": "1e86c8e4bca31f707dc586ef0b0f21b81c873c96a46660b07f9a849359c5f081",
+  "result_item_sha256": "e0daf7e3567ff1ed2f21264a2b8befe7987bd6a80373504f733f9fd16fceaddd",
+  "result_record_sha256": "d22be50ff6212ed80e7cd18a0d7e17d4fc8fef44fc2891d5c4646f9cfed270cc",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,58 +28,58 @@
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The reported dialogue ends mid-expression and continues in r00003. Reviewed fa source."
+        "note": "The interrupted reported dialogue is now joined."
       },
       {
         "row": "r00003",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The opening completes r00002’s report; the later visitor direction includes reported reward and a dialogue, so distinguish roles. Reviewed fa source."
+        "note": "The opening completes the dialogue, but the later visitor direction still includes reported reward and dialogue."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired salutations are emitted as separate Arabic and Persian parts, and both fields end mid-address continued in r00005. Reviewed ar source."
+        "note": "The salutations are paired and the interrupted address joined."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The paired salutations are emitted as separate Arabic and Persian parts, and both fields end mid-address continued in r00005. Reviewed fa source."
+        "note": "The existing Persian salutation is paired and the address continuation joined."
       },
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00004’s salutation; its Arabic/Persian passages are emitted separately despite corresponding supplied renderings. Keep the difference in the first supplied epithet unchanged. Reviewed ar source."
+        "note": "The salutation continuation and following supplied passages are now paired; retain the source epithet difference."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00004’s salutation; its Arabic/Persian passages are emitted separately despite corresponding supplied renderings. Keep the difference in the first supplied epithet unchanged. Reviewed fa source."
+        "note": "The supplied Persian is paired in order; preserve its differing epithet and source typo."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The visiting direction includes a narrated benefit claim, and the final reward note continues r00007. The Arabic greeting is untranslated and must remain so. Reviewed fa source."
+        "note": "The reward is joined to r00007, but the visiting direction still includes a narrated benefit claim; the Arabic greeting remains untranslated."
       },
       {
         "row": "r00007",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The opening completes r00006’s attributed reward and the closing cross-reference is explanatory context. Reviewed fa source."
+        "kind": "revise",
+        "note": "The preceding reward is completed, but the closing explanatory reference remains in the same note."
       }
     ],
     "punctuation": [],
@@ -87,6 +87,52 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Pair corresponding existing Arabic/Persian salutations in r00004/05 and group the interrupted paired address. Group reported prose r00002/03 and r00006/07; distinguish narration from instructions and claims. Preserve differing source epithet, untranslated greeting and links."
-  }
+    "note": "Reported prose and reward continuations are grouped and salutations paired. Distinguish instruction, dialogue and attributed claims in r00003 and r00006, and the explanatory reference in m3a4872849e82569a9307d3b7/fa; preserve the epithet difference, untranslated greeting and links."
+  },
+  "spacing_review": [
+    {
+      "row": "mb06959671f4889f4fcae0ad7",
+      "language": "fa",
+      "target_start": 287,
+      "value": " ",
+      "left": "r00002",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The two parts of the Persian time phrase are separate words."
+    },
+    {
+      "row": "m0a711b43cbc191f28410aead",
+      "language": "ar",
+      "target_start": 149,
+      "value": " ",
+      "left": "r00004-sb4f7d6d5791cc484",
+      "right": "r00005-s1fa57fc41bdb7621",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The name and following Arabic epithet require a space."
+    },
+    {
+      "row": "m0a711b43cbc191f28410aead",
+      "language": "fa",
+      "target_start": 92,
+      "value": " ",
+      "left": "r00004-sb4f7d6d5791cc484",
+      "right": "r00005-s1fa57fc41bdb7621",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The name and supplied Persian epithet are separate words."
+    },
+    {
+      "row": "m3a4872849e82569a9307d3b7",
+      "language": "fa",
+      "target_start": 89,
+      "value": " ",
+      "left": "r00006-s301ee66f47674098",
+      "right": "r00007",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The clause and following connective require a space."
+    }
+  ]
 }

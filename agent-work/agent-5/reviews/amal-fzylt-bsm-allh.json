@@ -4,11 +4,11 @@
   "item": "amal-fzylt-bsm-allh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "2eae9aa9451c37eacdcc87311213a7c161b20cf3a13128689f8bde8f655e8731",
-  "layout_sha256": "4be5f12f358b9a90abc323730d67f5abcd04f3286bf08a83e314ca2fcf1ddca8",
-  "result_item_sha256": "50571676692093fed36c18632db818fb74fe24084b83bcf4451430e8bff6eb36",
-  "result_record_sha256": "63d23aa5e7e1328f0838707736ff234ae2df2a4ac7711a8f33b62abd735613bc",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "75ddf3afa63378ed11d6cba24e16457d75066272a35b25c8c4dbcfbeefbee71d",
+  "layout_sha256": "2c780dd307ef19b0b09a98ec82bfb96dd295caa4420a17b35d3bf3a95a5dc2e8",
+  "result_item_sha256": "3c3810e9431c45c2956d14a6b392df67598111bb3d29652d13970ebb557b0b49",
+  "result_record_sha256": "d54e159c1ef19d9057a8be641aa3c63bad063181bc05a9ae4e3184b060d7e2bc",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,35 +16,35 @@
     "item_sha256": "05c9cc0beee30a4869a9962fe1e44336f2908798854a9091f63e97d688a6c282",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "7396fc6dbc5350780b08b578dc7d870b29dc18f70a5a630a6b213bbee946d40c",
+    "preview_sha256": "415f439859742b9d8fc76d40dacbc9eb4a747de7c3be36058cd87813eb11ab75",
     "sources": [
       {
         "row": "r00001",
         "language": "ar",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Persian opening moved from Arabic includes both an ordinal heading/source attribution and a recitation direction; distinguish them from the paired formula. Reviewed ar source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The ordinal heading, Persian source attribution and conditional phrase are separated; the supplied formula is paired."
       },
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The Persian opening moved from Arabic includes both an ordinal heading/source attribution and a recitation direction; distinguish them from the paired formula. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The existing Persian formula remains paired; the opening attribution and conditional report are distinct."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first note completes the conditional report introduced before the prayer in r00001; retain this structural link. The next report and eighth heading are separately identified. Reviewed fa source."
+        "note": "The conditional report concludes after its paired formula, followed by a separately attributed report and next heading."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The attributed narrative and complaint precede the instruction to recite; separate report from direction. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The attributed account and practical recitation direction are now separate."
       },
       {
         "row": "r00004",
@@ -58,7 +58,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The seventh report surrounds its paired formula and ends in r00002, while r00003 mixes attribution/narrative and direction. Preserve attribution and the untranslated formula in r00004; the source’s protective and health claims are not verified. Respect published anchors."
+    "decision": "accept",
+    "note": "The heading, attribution and narrative are distinguished from the practical direction. The conditional report retains its formula and later outcome in source order; the untranslated Arabic formula is preserved and health claims remain attributed, not certified. Available historical IDs were checked."
   }
 }

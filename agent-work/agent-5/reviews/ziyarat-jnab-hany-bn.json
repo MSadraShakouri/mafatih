@@ -4,11 +4,11 @@
   "item": "ziyarat-jnab-hany-bn",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "2a09cc4fec046e7aca2d48f6f4ead75bd16ff66ed10b682961b129962e17f79d",
-  "layout_sha256": "2ed5a21ca50879a8370a1e0e0367081da9a237acd94707bfb52816f80e50f51d",
-  "result_item_sha256": "f476fac5558ca30285d6cab7b6fc20eb7cc18082cd33436336b3a7f9ca15c320",
-  "result_record_sha256": "74caba0b22d920dd37221bbd4c129f0bbdb7cb8ae3c9a0a62e3748a9f2cf66d9",
+  "layout_sha256": "a543cb6616297c85c8f3d3b52ea2841b9e3c39b4722483a8b8c212a6522d17c6",
+  "result_item_sha256": "8e2c3ac0705f03b3baef5799170ebaedc787cb6ecb9ad6db152ee446c2409371",
+  "result_record_sha256": "21ea8d06bbbdd5222d5bf0db2c9f4d03fef4bf13e8f3793528da40945ae0a3f3",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -28,30 +28,30 @@
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic and Persian corresponding salutation parts are emitted separately; their final testimony opening continues in r00003. Reviewed ar source."
+        "note": "The salutation is paired and its interrupted testimony is joined with r00003."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Arabic and Persian corresponding salutation parts are emitted separately; their final testimony opening continues in r00003. Reviewed fa source."
+        "note": "The supplied Persian salutation is paired and its testimony continuation is joined."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002’s testimony; the four Arabic and four Persian parts correspond but are emitted as language-only rows. Pair existing renderings, preserving source differences. Reviewed ar source."
+        "note": "The testimony continuation is grouped and the remaining Arabic prayer sections are paired in order."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes r00002’s testimony; the four Arabic and four Persian parts correspond but are emitted as language-only rows. Pair existing renderings, preserving source differences. Reviewed fa source."
+        "note": "The testimony and subsequent Persian sections are paired with corresponding Arabic; preserve differences and apparent omission."
       },
       {
         "row": "r00004",
@@ -65,7 +65,31 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Corresponding salutation and testimony passages in r00002/03 are emitted in separate language-only rows. Pair existing texts and group the interrupted testimony. Keep the directions and preserve links; no new translation."
-  }
+    "decision": "accept",
+    "note": "Existing prayers and their renderings are paired, including the previously interrupted testimony. Source differences are preserved rather than translated anew; available isolated-history IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m179ed1cbe5dcfc6810c2484f",
+      "language": "ar",
+      "target_start": 170,
+      "value": " ",
+      "left": "r00002-s35f3eab1f8a5bb20",
+      "right": "r00003-s52eef1bddbca12d2",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic testimony verb and following particle require a space."
+    },
+    {
+      "row": "m179ed1cbe5dcfc6810c2484f",
+      "language": "fa",
+      "target_start": 115,
+      "value": " ",
+      "left": "r00002-s35f3eab1f8a5bb20",
+      "right": "r00003-s52eef1bddbca12d2",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian testimony phrase and following conjunction are distinct words."
+    }
+  ]
 }

@@ -4,11 +4,11 @@
   "item": "item-jrb-dml-qvba",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "6dbbb74b25d1cb0282198aa97107085366489b64197b21bb24dee71b8e186738",
-  "layout_sha256": "38fdf1cd70d0121cb2b5cd5d1d38d67d546c61d433d4b7e814fa305560721696",
-  "result_item_sha256": "a9b87a95d2f35a4bb85ab8cc3eb1db63d724654072c54b9e6fc71db2673b1214",
-  "result_record_sha256": "27f1921849a447b49fd6eb9b916110be61d34363c489f46ca1f6fb1fc568d8db",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "104bddf0f9f6412e03b06a711bc203e564b9b0f01df899ea12430435e3e15e61",
+  "layout_sha256": "9dbfc6303faee5d933e0f3746e9e47aeb56ca7c0bc3f020baab35a8382e4cb4f",
+  "result_item_sha256": "83ed9fbee9afcc06c6a167f8a335c0d69ef3f6dd3156c7a73a21685e1dde50c1",
+  "result_record_sha256": "7a86536442282445f9e2887f3303379339173a188e0883bd2bae9a452198cf3c",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "3c750fd32b6948f666e51e3af26cf105c853194490299cdeb462e42ed59ebdcf",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "107cb8f9c5cf8418ccc87d52892f8a1a22a613b36cb8a1c124ace6e1dc66bbff",
+    "preview_sha256": "5bcec2d9508aa4c307a5a366953d48b38e3e3b451a51f12996ef83b2b39a7707",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The title and definition/attribution are mixed with the practical recitation and writing direction; distinguish their roles without treating health claims as medical guidance. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The heading, explanation, attribution and practical direction are now separate rows."
       },
       {
         "row": "r00002",
@@ -42,37 +42,61 @@
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction is correctly moved from Arabic; the final recitation phrase in both fields is interrupted and continues in r00004. Reviewed ar source."
+        "note": "The moved Persian direction remains separate and the bilingual final sentence is joined."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian direction is correctly moved from Arabic; the final recitation phrase in both fields is interrupted and continues in r00004. Reviewed fa source."
+        "note": "The supplied Persian final sentence is joined and paired."
       },
       {
         "row": "r00004",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The brief paired ending completes r00003’s final sentence. Reviewed ar source."
+        "note": "The Arabic ending completes the joined sentence."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The brief paired ending completes r00003’s final sentence. Reviewed fa source."
+        "note": "The Persian ending completes the joined sentence."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Separate heading, explanation and practical direction in r00001, and group the bilingual ending r00003/04. Retain the existing moved direction and source claims without medical verification or invented text; preserve anchors."
-  }
+    "decision": "accept",
+    "note": "The heading, explanation, attributed report and practice are separated, and the bilingual ending is joined. The source claim is not medical verification; available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m87fa2dacb8c033f96a7295ba",
+      "language": "ar",
+      "target_start": 89,
+      "value": " ",
+      "left": "r00003-s97dcb687a6c9f782",
+      "right": "r00004",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The divine name and Arabic preposition are separate words."
+    },
+    {
+      "row": "m87fa2dacb8c033f96a7295ba",
+      "language": "fa",
+      "target_start": 69,
+      "value": " ",
+      "left": "r00003-s97dcb687a6c9f782",
+      "right": "r00004",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian name and following preposition are separate words."
+    }
+  ]
 }

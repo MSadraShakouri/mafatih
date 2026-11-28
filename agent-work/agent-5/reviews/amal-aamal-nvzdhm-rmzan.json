@@ -4,11 +4,11 @@
   "item": "amal-aamal-nvzdhm-rmzan",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "83c072ea2233005acc8e73a145f8ea0b2338d14767948ae742f499b6ce28f8b1",
-  "layout_sha256": "11a708948f785a2859da82cabd9bd5b65bc15ebd73142f3c46ecda331da527cc",
-  "result_item_sha256": "746d694bf9e50e7b506f67d912c0658596d673b5be9fe88cd660900ed78bc642",
-  "result_record_sha256": "d428e815c1e3ef38682194f54a9c56220f942eb0cd2e8c31950d7676ce500c13",
+  "layout_sha256": "8fc49ed00f6336802e754c38aba0100a0fa5b08f23c77f79ee6d3a46a95a02b2",
+  "result_item_sha256": "4325713caec27aab32d1b96dcc02d8deebf0ebf54817da6a0c250fadf47886f8",
+  "result_record_sha256": "89c9c746d9f815189ddb9032e0a0b362684878402ef170eaad2c0893880e9faf",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -63,16 +63,16 @@
       {
         "row": "r00005",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The two Arabic and two Persian prayer sections correspond but are emitted as separate language-only rows; pair the supplied renderings without changing source. Reviewed ar source."
+        "note": "The two Arabic petition groups are now paired with their existing corresponding Persian."
       },
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The two Arabic and two Persian prayer sections correspond but are emitted as separate language-only rows; pair the supplied renderings without changing source. Reviewed fa source."
+        "note": "Both Persian prayer sections are paired with their corresponding Arabic, retaining the supplied text."
       },
       {
         "row": "r00006",
@@ -86,7 +86,7 @@
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The numbered instructions and first formulas are appropriately placed, but r00005’s corresponding prayer sections are detached as separate language-only rows. Pair them in source order, preserving anchors and without inventing text."
+    "decision": "accept",
+    "note": "Both prayer groups are now paired in source order; existing instructions and formulas retain their roles. Available historical IDs were checked; no new translation or approval is implied."
   }
 }

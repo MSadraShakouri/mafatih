@@ -4,11 +4,11 @@
   "item": "amal-fzylt-taqyb",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "0dc19612c85d3b3398e4c83403b56fd3c0fd065d03e420c7d5bfe11cd7b35d6d",
-  "layout_sha256": "c333a188a1e7b9b8d08ced9df22538a4baed98693443dc63c08980ac7085b819",
-  "result_item_sha256": "2290663d56b545ccf375cf40c727a2b3cce2f34c98ca676d97fb999e7b0acb40",
-  "result_record_sha256": "2011e33800bbdc300494814f73b6b43e694c9168d99e4d66871209bad10a6abf",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "e91168562dc3ecbf0bf071448b65386bded0a96d83eb7fdf463bcf64fe08c643",
+  "layout_sha256": "9f0ab0189f802d3e0578bb13286aaad76e78b91033853efcce902a79c7f7d705",
+  "result_item_sha256": "cbbfcd18a05b9201a0f5bd2c50e3c5453221f81d770d58345863d4dea54ac8d4",
+  "result_record_sha256": "0ae1859c98d7172af416846fd1e117ce28a5133dbef40ded8ad838c52c88849a",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,14 +16,14 @@
     "item_sha256": "0f4479422daf4b7cc0fb73586270cfba64d4d1f9031ebe222122551bd9725164",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "db069b7ed57f5721622e7b011ee19e1d81f0733617dbbce5b8c861f959eb3de4",
+    "preview_sha256": "48410f583af5ec935c8efd417d0fa64887ded7467dea83beb91f53913fec6dad",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The initial post-prayer direction and explanation introduce a quotation; distinguish the direction from explanatory context. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The post-prayer direction and explanation are now separate."
       },
       {
         "row": "r00002",
@@ -42,16 +42,16 @@
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first section includes several reported interpretations; the second attribution continues over the r00003/04 boundary. Reviewed fa source."
+        "note": "The attributed discussion is grouped across the prior interruption."
       },
       {
         "row": "r00004",
         "language": "fa",
         "split": "revise",
         "kind": "revise",
-        "note": "The opening completes r00003’s attributed explanation and includes practical recommendations; distinguish these from the later author’s note. Reviewed fa source."
+        "note": "The opening completes the attributed discussion, but practical recommendations remain embedded in note m690d48deaeb308ec25fb618d."
       }
     ],
     "punctuation": [],
@@ -59,6 +59,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Separate the opening instruction from explanation and the later attributed discussion from practical recommendations. The r00003/04 sentence is interrupted; the Quranic quotation remains paired. Preserve provenance, wording and row links."
-  }
+    "note": "The opening direction is separated and the interrupted report joined, but m690d48deaeb308ec25fb618d/fa still contains practical recommendations within the attributed note. Preserve source attribution and links."
+  },
+  "spacing_review": [
+    {
+      "row": "m690d48deaeb308ec25fb618d",
+      "language": "fa",
+      "target_start": 132,
+      "value": " ",
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-saabe6c8229b130ea",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "A space separates the connective from the following Persian phrase."
+    }
+  ]
 }

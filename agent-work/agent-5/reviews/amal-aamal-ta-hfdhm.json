@@ -4,11 +4,11 @@
   "item": "amal-aamal-ta-hfdhm",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "c5891a35adbe7c89e85bbb4a479adcbe3f98c7eadcec083363fc15d2f55a0d3b",
-  "layout_sha256": "a53e31f69a6e06e8e3b7421d67a70178ee5723375cdaa734d086e7fad534773f",
-  "result_item_sha256": "bc02424f28a684c0068f5636ab223f0c856ba9a3185c46c85de267d17b5180aa",
-  "result_record_sha256": "91239ef4d83e4aaa43a715c4f83035bb44e6e52a609b1333d0d8516c6333d408",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "03815bdb00fa1de4278d6114c567ebe8db0f7828e8157e0979e01c35d3755564",
+  "layout_sha256": "dd625f98e7c59ebd6a310be42cf281396e6cc65bb008ceb233fd7ff140e2bf82",
+  "result_item_sha256": "d185de6e4ec7c7214b2403046aa0b400d4909778b9148e013f834b36279bc29c",
+  "result_record_sha256": "9a081dd3b1ceae353cbf7253964fbd7b967a09f9f772a60b95a4226ab8a90381",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,42 +16,55 @@
     "item_sha256": "e3b2006ac27237bcbd8c2fb980407c56ae61e50879d15979dfffb493d801dd7b",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "bd4362a79aace142ac21c80183ecc55a9360f013f4c21b19b11c4e86aa085e6e",
+    "preview_sha256": "9f7a61b20c84e172bcc26c611bede5a7bc16961a79644879218e3a7a138f2c50",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The dated heading and reported birth attribution are mixed with a practical two-unit prayer instruction; the last historical sentence continues in r00002. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The dated heading, attributed birth report and practical prayer direction are separate; the later report joins r00002."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the historical statement in r00001; the separately attributed later historical claim remains a note. Reviewed fa source."
+        "note": "The opening completes the preceding historical report; subsequent attribution is retained as a note."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The dated fourteenth-day heading introduces attributed historical reporting; distinguish the heading from the report. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The fourteenth-day heading and attributed report are distinct."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The seventeenth-night heading introduces devotional context and a separately attributed historical report; distinguish the heading and report. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The seventeenth-night heading and attributed account are distinct."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Distinguish dated headings, historical reports and the specific prayer instruction in r00001–04. Group the interrupted historical sentence r00001/02. Claims remain attributed, not verified; retain source language and anchors."
-  }
+    "decision": "accept",
+    "note": "Date headings, reports and practical prayer instruction have distinct roles; the interrupted report is grouped. Claims remain attributed; available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m2ab7a23f6aa07a562f0b2137",
+      "language": "fa",
+      "target_start": 64,
+      "value": " ",
+      "left": "r00001-s6293118522084e62",
+      "right": "r00002",
+      "reason": "Complete the interrupted historical report while preserving the source attribution and old row links.",
+      "decision": "accept",
+      "note": "The honorific and following Persian preposition are separate words."
+    }
+  ]
 }

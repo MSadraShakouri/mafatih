@@ -4,11 +4,11 @@
   "item": "ziyarat-daahay-bad-alyh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "05ad3deae9beb05cd19ae1151d1c80d8bd9a94e565574f1442588f9650b04499",
-  "layout_sha256": "38486b9b7e4da6d22bb78720c2cb4e859f7ca46bb0613762506de8e4a081a3af",
-  "result_item_sha256": "b649577e211913ac940bac05fd406bc57ac526d3505f12ca707995fd9657c654",
-  "result_record_sha256": "9ad6cf37387c0b3b3e45e9438d5b0767fa0acee6c22e2f235469316a37b91e63",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "14418c7b5445d3b0695427899b228609399414e2fd15dd28925d9a7efbd40c54",
+  "layout_sha256": "ef1dc14532016abc8b79b18785fd1ae4855cc829317692f8e4b1db9b031fa017",
+  "result_item_sha256": "81480f60b48b049b879b0eb5eeb75273122b679490c652fcc87f96ff1ac6a2ab",
+  "result_record_sha256": "435940a7eff51331996227d39e9617228d937d5c59a04b1c984a2a6886d9762f",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "220e7682cd2b8bec5a8b7de8cc966a7d0ea8c12244aa98d4695e8c7e0ded5a8a",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "4a7afa261b8d34d924a744e5cdae1a96ed0bb2096f463b9c719824eb17999ce5",
+    "preview_sha256": "2a9bad3cf99c575ce38c81d4405d53b21dddbf7d27379e3a44b7f96580b82f15",
     "sources": [
       {
         "row": "r00001",
@@ -36,8 +36,8 @@
         "row": "r00002",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "The three pieces are all prayer rendering, not two notes followed by recitation. Their boundaries do not match Arabic; adjust and pair."
+        "kind": "accept",
+        "note": "All supplied Persian parts are now recitation, but their clause boundaries remain mismatched with the separate Arabic fragments."
       },
       {
         "row": "r00003",
@@ -63,9 +63,9 @@
       {
         "row": "r00004",
         "language": "fa",
-        "split": "accept",
-        "kind": "revise",
-        "note": "Both pieces render Arabic supplication; the second is recitation, not instruction, and both should be paired with corresponding Arabic."
+        "split": "revise",
+        "kind": "accept",
+        "note": "Both Persian parts are now recitation, but the corresponding Arabic fragments remain detached."
       },
       {
         "row": "r00005",
@@ -78,8 +78,8 @@
         "row": "r00005",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Both pieces are prayer renderings, not recitation then note; align the Persian boundary with Arabic and pair."
+        "kind": "accept",
+        "note": "The Persian is recitation, but its cut still mismatches the Arabic boundary and its parts remain detached."
       },
       {
         "row": "r00006",
@@ -92,8 +92,8 @@
         "row": "r00006",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is a rendering of the Arabic prayer, not an instruction; pair as recitation."
+        "kind": "accept",
+        "note": "The supplied rendering is now paired with Arabic and correctly marked recitation."
       },
       {
         "row": "r00007",
@@ -114,6 +114,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00002, r00004-r00006 leave existing Persian prayer renderings unpaired, with several wrongly marked note or instruction. Align nonmatching clause boundaries in r00002 and r00005 before pairing. r00003/r00004 continue across rows in both languages; inspect a safe join. r00007 moves its mixed-language quotation correctly. Preserve prior links and separately review proposed spaces."
+    "note": "Persian prayer roles are corrected and r00006 is paired. The clause boundaries and pairing in r00002 and r00005 and the pairing in r00004 remain open, as does the bilingual continuation across r00003/04. Preserve source text and links."
   }
 }

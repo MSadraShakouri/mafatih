@@ -4,11 +4,11 @@
   "item": "amal-aamal-shaban",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "38d72b37de06d67c8630fad0ed94f148c48785f990d01497da07d0bc2afbeb62",
-  "layout_sha256": "0cc4283652eb59b74d53993ac77d49e91b20f89599aac4a6c257688b9f560932",
-  "result_item_sha256": "df8fd406ba413cdf2ba28c960bafc60f1e038cce47e5bb78d29befa2a234d665",
-  "result_record_sha256": "48affd0a59d847b326967bcf8daee3982c0294d0e345e76a30801958750207b0",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "62b3fdf63b221830c96f742dc4dce1bd9994f7709bf4956c6287a1361cb06816",
+  "layout_sha256": "dd2e0b69373198cca91b76e12bdfad321a9482de889ca331c6c3a2316b75272b",
+  "result_item_sha256": "83a2111aef168dfcc7fefe57fba9752538eb4f6571804a48649ba280e3a999ce",
+  "result_record_sha256": "d49c063481c32a7fe427ad286fd2fe222b89ceb0c494d884722146cfc59ba851",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,7 +16,7 @@
     "item_sha256": "4ec89f1319a566d5abb1c214ecb025b268f902fb88438b3c139b8825b8d5756e",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "dd038b11237615d86f81c101ff5d87ce8e8177eba06dc5e547fc99ca16d3f8d2",
+    "preview_sha256": "8d163e09753e372aa273b5b00db393ba3c79acc12913e91ad18bf897683070a2",
     "sources": [
       {
         "row": "r00001",
@@ -36,8 +36,8 @@
         "row": "r00002",
         "language": "fa",
         "split": "accept",
-        "kind": "revise",
-        "note": "This is the existing rendering of r00002/ar, not a note; classify and pair as recitation."
+        "kind": "accept",
+        "note": "The supplied Persian rendering is now paired as recitation."
       },
       {
         "row": "r00003",
@@ -50,8 +50,8 @@
         "row": "r00003",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Both parts are prayer renderings, not instruction. First part covers both initial Arabic fragments; align the semantic boundaries and pair without inventing words."
+        "kind": "accept",
+        "note": "Both supplied Persian fragments are now correctly marked recitation but remain unpaired and need the earlier semantic boundary alignment."
       },
       {
         "row": "r00004",
@@ -64,8 +64,8 @@
         "row": "r00004",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Both parts are prayer renderings, not note/instruction. Match the Arabic clause boundary and handle the final invocation continuing into r00005."
+        "kind": "accept",
+        "note": "The Persian is now recitation but remains unpaired; its clause boundary and continuation into r00005 still require link-safe handling."
       },
       {
         "row": "r00005",
@@ -77,9 +77,9 @@
       {
         "row": "r00005",
         "language": "fa",
-        "split": "accept",
-        "kind": "revise",
-        "note": "This continues the prior invocation and renders r00005/ar; classify and pair as recitation."
+        "split": "revise",
+        "kind": "accept",
+        "note": "The Persian prayer is now paired as recitation but the invocation still continues from r00004."
       },
       {
         "row": "r00006",
@@ -92,8 +92,8 @@
         "row": "r00006",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "Both Persian parts are renderings of the Arabic prayer rather than instructions; align their cuts with corresponding Arabic and pair as recitation."
+        "kind": "accept",
+        "note": "The Persian pieces are now recitation but remain detached and require semantic pairing."
       },
       {
         "row": "r00007",
@@ -106,8 +106,8 @@
         "row": "r00007",
         "language": "fa",
         "split": "revise",
-        "kind": "revise",
-        "note": "These are prayer renderings, not notes; the command begins the second Persian part but ends the first Arabic part, so align and pair."
+        "kind": "accept",
+        "note": "The Persian pieces are now recitation but remain detached, with the command on the other side of the Arabic boundary."
       },
       {
         "row": "r00008",
@@ -128,6 +128,6 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "r00008 attribution role is now correct. The r00001 label/narrative and r00002-r00007 mismatched, misclassified and unpaired renderings remain as recorded per source. Agent 4 reports the necessary alias migration is unavailable; preserve the existing links."
+    "note": "r00002 and r00005 are paired and the identified Persian prayer fragments reclassified as recitation. The r00001 label/report, r00003/04/06/07 pairing and boundaries, and the continuation r00004/05 remain open; preserve all published IDs and the earlier historical source variants."
   }
 }

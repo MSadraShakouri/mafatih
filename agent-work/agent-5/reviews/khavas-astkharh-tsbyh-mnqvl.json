@@ -4,11 +4,11 @@
   "item": "khavas-astkharh-tsbyh-mnqvl",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "80871c5794b539daf033878d361fd6de7e338c83bf533d7b5d65f17ae9d520f6",
-  "layout_sha256": "c8ce6eae0b9f74d2637ceb5234a9833dec52ffa1a86aad0e408fcd5428c49ebe",
-  "result_item_sha256": "bfdbc197fb2b1b9bef3fbc2e56cb1095ea7accdf88afe1c3873dbf33c306020d",
-  "result_record_sha256": "f12b78421bc0627ab9e9364a3f462762738f44272afc152c2e83fec78fb7297d",
+  "layout_sha256": "38a82b1115f9a6a28e4716cf77f68838d9b2607963e48d20d1a798990fbe1d17",
+  "result_item_sha256": "87c1acf0ff9d7a49c7e1bfe649222fa36d95d696420bc9bb228d2b6851350d56",
+  "result_record_sha256": "f7285a2f90e28756a29b9c1397bc6b7d0ccb94928a018de05f87de853c4d88e1",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -42,16 +42,16 @@
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The Persian decision rule is interrupted before its final negative case in r00004. Reviewed fa source."
+        "note": "The decision rule now continues into r00004."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial words complete r00003’s decision rule; the author’s explanation and cross-reference are separately classified. Reviewed fa source."
+        "note": "The opening completes the decision rule; the author explanation stays separate."
       }
     ],
     "punctuation": [],
@@ -59,6 +59,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group the attribution across r00001/02 and distinguish it from the prayer directions; group the interrupted decision rule r00003/04. Existing Arabic and Persian prayer segments align and the final author note is separated; preserve anchors and source text."
-  }
+    "note": "The interrupted decision rule is joined and the prayer remains paired. The attribution chain still crosses r00001/02 and is mixed with prayer directions; preserve source, ordering and links."
+  },
+  "spacing_review": [
+    {
+      "row": "mb031c3fc555ed48e8f4f811f",
+      "language": "fa",
+      "target_start": 149,
+      "value": " ",
+      "left": "r00003",
+      "right": "r00004-s1c27c3072f6239a1",
+      "reason": "Complete the decision rule and preserve both source alternatives.",
+      "decision": "accept",
+      "note": "The explanatory connective and following verb phrase require a space."
+    }
+  ]
 }

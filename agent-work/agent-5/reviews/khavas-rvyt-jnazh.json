@@ -4,11 +4,11 @@
   "item": "khavas-rvyt-jnazh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "8cd3fa2f448c58d3775b91a8438cb59951aaa43ce482d125b4058eb1d592f97f",
-  "layout_sha256": "8c4be8a9ada6b2f32699d0264dc030a318bd991ee8057ba819d90039bcb0b637",
-  "result_item_sha256": "88b6315efc149b076d6c38acfc92bde54a7181ece8da4ae2e9ffbc371abc500c",
-  "result_record_sha256": "e357567a8e0dfd34cce1b4eeef2259853bf33e3548412824ff054e6589e94200",
+  "layout_sha256": "7c8d77469d3500260810b95cd30f9ea38ed2a2aa9a2de30bc4a070ecb8addc66",
+  "result_item_sha256": "ddd1b5ed0ce7d4f43ec3b6d544acfb8e2977aa3f6e4dd455dbac1be324ac7f0d",
+  "result_record_sha256": "f0c392843850466638820abe6e409f5e7e6d5e73e2f72cb53c1980ae675803c7",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -70,16 +70,16 @@
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first note records different reported practices; the second starts an attributed report interrupted in r00006. Reviewed fa source."
+        "note": "The attributed report is now grouped with its continuation; the separately stated practices remain distinct."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The opening completes the reported reward in r00005, followed by a further attributed report. Reviewed fa source."
+        "note": "The opening completes the preceding report and its following account remains attributed."
       }
     ],
     "punctuation": [],
@@ -87,6 +87,19 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Group conditional report r00001/02/03 and the attributed report r00005/06; separate attribution from directions where moved at r00001 and r00003. Existing prayer renderings are paired. Preserve source claims and links."
-  }
+    "note": "The r00005/06 report is grouped, but r00001/02/03 remains a conditional report interrupted around a paired prayer; source attribution and practical directions in r00001 and r00003 remain mixed. Preserve the source reports, prayer order, source differences and links."
+  },
+  "spacing_review": [
+    {
+      "row": "m71070a93a821f424314a68b0",
+      "language": "fa",
+      "target_start": 263,
+      "value": " ",
+      "left": "r00005-sbf827ad20eeda70b",
+      "right": "r00006",
+      "reason": "Complete the attributed report without endorsing its claim.",
+      "decision": "accept",
+      "note": "The Persian pronoun and following verb are separate words."
+    }
+  ]
 }

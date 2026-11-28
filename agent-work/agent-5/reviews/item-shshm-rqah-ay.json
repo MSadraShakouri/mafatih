@@ -4,11 +4,11 @@
   "item": "item-shshm-rqah-ay",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
-  "plan_sha256": "eaf2b7b9bc0a8d4cab0010bf4a0dedf7f515d6ee9fa8b805d75062e9facb3126",
-  "layout_sha256": "2cc964c08662ff3a485e01bf758810a6f1c380698e25c4ffb0e50b410f555f83",
-  "result_item_sha256": "503bfcc407ab50055c2e84e586eec447c349a618517510cdeb1f91efdd1f54cd",
-  "result_record_sha256": "4183ad621c89f83105d116580cce77f0d7cff3be20071fc0e34d30cf47fa2ead",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
+  "plan_sha256": "068f339689545b1e7a6a428eb38df0f251228d113b3e111a24d1c31ce6b9f04c",
+  "layout_sha256": "a51da7fb10e12e42e7e71590f3150e2ebc37f6ba00faf9950a810e215599d0de",
+  "result_item_sha256": "3aef64b560d5be1672dc1b69a1257915878caad4ddb3ee8bece33e78421bc5cd",
+  "result_record_sha256": "9d70c8f10fa83625f01fa24e49032984e3f36ea7e47251ff4391f82f9daf379f",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -16,56 +16,80 @@
     "item_sha256": "85948994cb7af0d17cd939a9d23377c958ec3e45be3c81c24e7936d93c9592ba",
     "author": "agent-4",
     "reviewer": "agent-5",
-    "preview_sha256": "81406892a7b4f5a8b8f705c76ce2720f9fc606b27c7aa3c8e354fab577f8de8d",
+    "preview_sha256": "aa45422150405448f18f37021161d25f4cf18c3ef60ea936a67e0e326a6151c3",
     "sources": [
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The numbered heading and source attribution precede the practical instruction; distinguish their roles. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The numbered heading, source attribution and writing direction now have distinct roles."
       },
       {
         "row": "r00002",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "All four corresponding Arabic and Persian parts are emitted as separate language-only rows even though they align; pair each supplied rendering. Both languages also end mid-name and continue in r00003. Reviewed ar source."
+        "note": "The four supplied Arabic sections are paired and the interrupted name is joined."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "All four corresponding Arabic and Persian parts are emitted as separate language-only rows even though they align; pair each supplied rendering. Both languages also end mid-name and continue in r00003. Reviewed fa source."
+        "note": "The corresponding Persian is paired and its name continuation joined."
       },
       {
         "row": "r00003",
         "language": "ar",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both language parts continue r00002’s name and list, followed by a final request; pair corresponding sections and group the broken name without changing source text. Reviewed ar source."
+        "note": "The joined name completes the earlier list and the final request is paired."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "Both language parts continue r00002’s name and list, followed by a final request; pair corresponding sections and group the broken name without changing source text. Reviewed fa source."
+        "note": "The supplied name and final request are paired without adding text."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
-        "kind": "revise",
-        "note": "The procedural directions end with an explanatory promise; separate instruction from the reported claim without verifying it. Reviewed fa source."
+        "split": "accept",
+        "kind": "accept",
+        "note": "The procedural direction and attributed promise are separated."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "The four Arabic and Persian parts of r00002 and two of r00003 are emitted separately despite corresponding meaning, and the name is cut between r00002/03. Pair the existing renderings in source order and group the incomplete name. Distinguish title/attribution and procedure from the explanatory claim. Preserve published links and do not invent text."
-  }
+    "decision": "accept",
+    "note": "Heading, attribution, paired prayers and procedural direction are correctly distinguished; the interrupted name is joined and the promise remains an attributed source claim. Available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "ma174e83076135512e10a7a12",
+      "language": "ar",
+      "target_start": 140,
+      "value": " ",
+      "left": "r00002-s2b8dad77a9de939d",
+      "right": "r00003-s42bfee71bb8fa135",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Arabic patronymic and name are separate words."
+    },
+    {
+      "row": "ma174e83076135512e10a7a12",
+      "language": "fa",
+      "target_start": 77,
+      "value": " ",
+      "left": "r00002-s2b8dad77a9de939d",
+      "right": "r00003-s42bfee71bb8fa135",
+      "reason": "Complete the identified interrupted source passage and preserve historical anchors, original claims, variants and existing line-break decisions; every proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian patronymic and name are separate words."
+    }
+  ]
 }

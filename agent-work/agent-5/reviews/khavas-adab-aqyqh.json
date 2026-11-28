@@ -4,11 +4,11 @@
   "item": "khavas-adab-aqyqh",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "2a38787ef4bb3ac82163ec9bbb54e3e88ab3673e91f6a4b31fcaea61784ab161",
-  "layout_sha256": "51ce6502625589cc78b1fa2acc4de7035016a08c493d4d8dbfeee3f187a2eef1",
-  "result_item_sha256": "f05fe183e158a81d8187fe1282688294b4869446c58f2d257dc953aee9ce7d1d",
-  "result_record_sha256": "9b99bc49d65346345c5b6b027a1ef53b5118bdeff4c568584de9c0c2eff601e0",
+  "layout_sha256": "749d3524bf9f300e320dd7585d380a3d19995f2f5044897d89b4a9277ce4fc7c",
+  "result_item_sha256": "f0e2a69587e741b804e859647625b1b9b0de967e3433214edcb6a33fc00972c6",
+  "result_record_sha256": "22f30454cdc234af11e1c1542cf9088773189aa761fa723704e315f41dd1ba96",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,51 +21,51 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The attributed report ends mid-sentence and continues r00002; group while retaining attribution. Reviewed fa source."
+        "note": "The attributed report is joined to its continuation."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first fragment completes r00001, and the final reported procedure is interrupted into r00003. Reviewed fa source."
+        "note": "The preceding report and the final procedure now continue through their respective boundaries."
       },
       {
         "row": "r00003",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first fragment completes r00002; the final animal-age discussion continues in r00004. Reviewed fa source."
+        "note": "The prior report and animal-age description are joined at their interruptions."
       },
       {
         "row": "r00004",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The initial phrase completes r00003, and the final cooking discussion continues in r00005. Reviewed fa source."
+        "note": "The age discussion and cooking discussion continue coherently across the old boundaries."
       },
       {
         "row": "r00005",
         "language": "ar",
         "split": "revise",
         "kind": "accept",
-        "note": "The Persian first part completes r00004, and the author’s note introduces a paired Arabic quotation; the latter’s relationship to r00006 should remain clear. Reviewed ar source."
+        "note": "The report continuation and paired quotation remain in source order, but the r00006 commentary on the quotation remains separated from its antecedent."
       },
       {
         "row": "r00005",
         "language": "fa",
         "split": "revise",
         "kind": "accept",
-        "note": "The Persian first part completes r00004, and the author’s note introduces a paired Arabic quotation; the latter’s relationship to r00006 should remain clear. Reviewed fa source."
+        "note": "The supplied quotation remains paired; the immediately following commentary and separate legal opinion remain mixed in r00006."
       },
       {
         "row": "r00006",
         "language": "fa",
         "split": "revise",
-        "kind": "accept",
-        "note": "The opening comments on the quotation in r00005; retain this sentence with its antecedent and distinguish the subsequent attributed view. Reviewed fa source."
+        "kind": "revise",
+        "note": "The opening comments on the preceding quotation, then a separate attributed view follows in the same note; retain the quotation between its introduction and commentary while using supported role and link handling."
       }
     ],
     "punctuation": [],
@@ -73,6 +73,52 @@
   },
   "layout": {
     "decision": "revise",
-    "note": "Preserve the attributed reports, quotation and the author’s opinions, but group interrupted prose r00001/02, 02/03, 03/04 and 04/05 and the commentary following r00005’s quotation in r00006. Source reports and legal/health claims are not verification. Respect links and source order."
-  }
+    "note": "Four interrupted reports are joined. r00005’s paired quotation still has its explanatory continuation and a distinct attributed view in r00006; preserve quote order and request link-safe handling rather than a nonadjacent merge. Claims remain attributed."
+  },
+  "spacing_review": [
+    {
+      "row": "m94ba4a22e49aa63686a85872",
+      "language": "fa",
+      "target_start": 311,
+      "value": " ",
+      "left": "r00001",
+      "right": "r00002-s16b235f3fb54b1a5",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian adjective and noun require a space."
+    },
+    {
+      "row": "me09bef69254fbafb6f38a84d",
+      "language": "fa",
+      "target_start": 628,
+      "value": " ",
+      "left": "r00002-s7912db66cde98eb8",
+      "right": "r00003-s1828851db03b603e",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The Persian noun and verb require a space."
+    },
+    {
+      "row": "m9ba9e551340dc7ae8f86817a",
+      "language": "fa",
+      "target_start": 711,
+      "value": " ",
+      "left": "r00003-s1b27bb8c75bc48e1",
+      "right": "r00004-saabe6c8229b130ea",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The conjunction and following word are separate."
+    },
+    {
+      "row": "m77b65d8216bf37d4ea42d546",
+      "language": "fa",
+      "target_start": 500,
+      "value": " ",
+      "left": "r00004-s6781612fc75b6e23",
+      "right": "r00005-s27c9c493bd8f7f6a",
+      "reason": "Complete the interrupted source passage while retaining source order, attribution and prior links; each proposed space requires independent review.",
+      "decision": "accept",
+      "note": "The connective and following noun are separate."
+    }
+  ]
 }

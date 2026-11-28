@@ -4,11 +4,11 @@
   "item": "amal-fzylt-shaban",
   "author": "agent-4",
   "reviewer": "agent-5",
-  "author_commit": "c9fa191acade1f72ab36e05f39ea931d4cb9cb5d",
+  "author_commit": "d265151bd911aff5d1756abf77b082f41b67414e",
   "plan_sha256": "0a1a8a6056f1acc8cee0162a28d1122d825d768f03492b8c9a4a0fc296feccaf",
-  "layout_sha256": "fd2fbb0db07df4a62234c3c9893b82adcf8bb0c3aac19351c9c927d3e9e4e5d2",
-  "result_item_sha256": "6fe9003e8c0bf31dfd59084e5d0db34715b5672445e6397e3e0c70a608d7f85e",
-  "result_record_sha256": "822b519706812d48adf1f0aa8ff7732b5abaf9c95efdb2d9f320f45e252f9c11",
+  "layout_sha256": "bd8f14ed00b5a4159a0ec0f53faa26591f0b1382536dd531751a353b2d366c65",
+  "result_item_sha256": "7c672cd4c0bff69d365eeff7e31f2b5b8460e7358dc432ad8abb4a1ecbae10d1",
+  "result_record_sha256": "1034e7eb65f3af8001d2bbea88dd4eae12e33d8eac3a249ef6dedca4a4ece572",
   "semantic_review": {
     "format_version": 1,
     "protocol": "ar-fa-split-preflight-v1",
@@ -21,16 +21,16 @@
       {
         "row": "r00001",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The two attributed accounts are separated meaningfully; the second report is interrupted before its outcome in r00002. Reviewed fa source."
+        "note": "The attributed report now continues to its outcome without an interrupted phrase."
       },
       {
         "row": "r00002",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first and only phrase completes r00001’s attributed report. Reviewed fa source."
+        "note": "The fragment completes the preceding attributed report."
       },
       {
         "row": "r00003",
@@ -49,23 +49,47 @@
       {
         "row": "r00005",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The report ends mid-sentence and continues in r00006. Reviewed fa source."
+        "note": "The attributed report is joined to its ending; preserve the claim as reported."
       },
       {
         "row": "r00006",
         "language": "fa",
-        "split": "revise",
+        "split": "accept",
         "kind": "accept",
-        "note": "The first fragment completes r00005; the following transition correctly marks the overall division of monthly practices. Reviewed fa source."
+        "note": "The opening completes the report and the following transition remains separate."
       }
     ],
     "punctuation": [],
     "issues": []
   },
   "layout": {
-    "decision": "revise",
-    "note": "Group interrupted attributed reports r00001/02 and r00005/06. Withdraw the former r00003/04 join request: r00003 introduces the attributed speech and r00004 begins it, so this is a meaningful source division. Retain claims as claims, not independently verified, and preserve links."
-  }
+    "decision": "accept",
+    "note": "The two interrupted attributed reports are complete; the earlier r00003/04 source transition remains distinct. Claims are not verified. Available historical IDs were checked."
+  },
+  "spacing_review": [
+    {
+      "row": "m482588e2d649f7d3f9e7c2f3",
+      "language": "fa",
+      "target_start": 692,
+      "value": " ",
+      "left": "r00001-sd0076416ed435839",
+      "right": "r00002",
+      "reason": "Complete the same attributed report with one proposed Persian space.",
+      "decision": "accept",
+      "note": "The Persian conjunction and its following noun require a space."
+    },
+    {
+      "row": "m5a58a6a3120d8e333bb01a13",
+      "language": "fa",
+      "target_start": 165,
+      "value": " ",
+      "left": "r00005",
+      "right": "r00006-s6b2b0ff07b4b8ae2",
+      "reason": "Complete the same attributed report with one proposed Persian space; keep the later practices note separate.",
+      "decision": "accept",
+      "note": "The subject and predicate are separated by U+0020."
+    }
+  ]
 }
